@@ -8,18 +8,22 @@ schema: 2.0.0
 # Get-MgServicePrincipalOauth2PermissionGrantByRef
 
 ## SYNOPSIS
-Get ref of oauth2PermissionGrants from servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ```
-Get-MgServicePrincipalOauth2PermissionGrantByRef -ServicePrincipalId <String> [-Count] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgServicePrincipalOauth2PermissionGrantByRef -ServicePrincipalId <String> [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of oauth2PermissionGrants from servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -58,13 +62,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

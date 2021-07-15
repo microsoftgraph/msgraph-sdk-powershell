@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupAppRoleAssignment
 
 ## SYNOPSIS
-Update the navigation property appRoleAssignments in groups
+Represents the app roles a group has been granted for an application.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ Update-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-Additiona
 ```
 
 ## DESCRIPTION
-Update the navigation property appRoleAssignments in groups
+Represents the app roles a group has been granted for an application.
 
 ## EXAMPLES
 
@@ -101,7 +101,6 @@ The identifier (id) for the app role which is assigned to the principal.
 This app role must be exposed in the appRoles property on the resource application's service principal (resourceId).
 If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles.
 Required on create.
-Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -133,7 +132,9 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -243,7 +244,6 @@ Accept wildcard characters: False
 ### -PrincipalId
 The unique identifier (id) for the user, group or service principal being granted the app role.
 Required on create.
-Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -259,9 +259,8 @@ Accept wildcard characters: False
 
 ### -PrincipalType
 The type of the assigned principal.
-This can either be 'User', 'Group' or 'ServicePrincipal'.
+This can either be User, Group or ServicePrincipal.
 Read-only.
-Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -277,7 +276,6 @@ Accept wildcard characters: False
 
 ### -ResourceDisplayName
 The display name of the resource app's service principal to which the assignment is made.
-Does not support $filter.
 
 ```yaml
 Type: System.String
@@ -365,29 +363,26 @@ BODYPARAMETER <IMicrosoftGraphAppRoleAssignment>: Represents an Azure Active Dir
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create. Does not support $filter.
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
+  - `[CreatedDateTime <DateTime?>]`: The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
-  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create. Does not support $filter.
-  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be 'User', 'Group' or 'ServicePrincipal'. Read-only. Does not support $filter.
-  - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made. Does not support $filter.
+  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.
+  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.
+  - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
   - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -398,8 +393,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

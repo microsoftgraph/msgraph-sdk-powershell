@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: a014f2cc-f37d-45f2-81bc-8062e00945ca
+Module Guid: 44a18214-d5e1-4ba3-b64b-09ab640d02df
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -16,6 +16,9 @@ Invoke action addKey
 
 ### [Add-MgApplicationPassword](Add-MgApplicationPassword.md)
 Invoke action addPassword
+
+### [Add-MgServicePrincipalTokenSigningCertificate](Add-MgServicePrincipalTokenSigningCertificate.md)
+Invoke action addTokenSigningCertificate
 
 ### [Confirm-MgApplicationMemberGroup](Confirm-MgApplicationMemberGroup.md)
 Invoke action checkMemberGroups
@@ -42,28 +45,32 @@ Invoke action discover
 Invoke action discover
 
 ### [Get-MgApplication](Get-MgApplication.md)
-Get entity from applications by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
 Invoke action getByIds
 
 ### [Get-MgApplicationConnectorGroup](Get-MgApplicationConnectorGroup.md)
-Get connectorGroup from applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ### [Get-MgApplicationConnectorGroupByRef](Get-MgApplicationConnectorGroupByRef.md)
-Get ref of connectorGroup from applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
-### [Get-MgApplicationCreatedOnBehalf](Get-MgApplicationCreatedOnBehalf.md)
-Get createdOnBehalfOf from applications
+### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
+Read-only.
 
-### [Get-MgApplicationCreatedOnBehalfByRef](Get-MgApplicationCreatedOnBehalfByRef.md)
-Get ref of createdOnBehalfOf from applications
+### [Get-MgApplicationCreatedOnBehalfOfByRef](Get-MgApplicationCreatedOnBehalfOfByRef.md)
+Read-only.
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
 Invoke function delta
 
 ### [Get-MgApplicationExtensionProperty](Get-MgApplicationExtensionProperty.md)
-Get extensionProperties from applications
+Read-only.
+Nullable.
 
 ### [Get-MgApplicationHomeRealmDiscoveryPolicy](Get-MgApplicationHomeRealmDiscoveryPolicy.md)
 Get homeRealmDiscoveryPolicies from applications
@@ -72,7 +79,8 @@ Get homeRealmDiscoveryPolicies from applications
 Get ref of homeRealmDiscoveryPolicies from applications
 
 ### [Get-MgApplicationLogo](Get-MgApplicationLogo.md)
-Get media content for application from applications
+The main logo for the application.
+Not nullable.
 
 ### [Get-MgApplicationMemberGroup](Get-MgApplicationMemberGroup.md)
 Invoke action getMemberGroups
@@ -81,10 +89,14 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgApplicationOwner](Get-MgApplicationOwner.md)
-Get owners from applications
+Directory objects that are owners of the application.
+Read-only.
+Nullable.
 
 ### [Get-MgApplicationOwnerByRef](Get-MgApplicationOwnerByRef.md)
-Get ref of owners from applications
+Directory objects that are owners of the application.
+Read-only.
+Nullable.
 
 ### [Get-MgApplicationSynchronization](Get-MgApplicationSynchronization.md)
 Get synchronization from applications
@@ -96,19 +108,19 @@ Invoke action acquireAccessToken
 Get jobs from applications
 
 ### [Get-MgApplicationSynchronizationJobSchema](Get-MgApplicationSynchronizationJobSchema.md)
-Get schema from applications
+The synchronization schema configured for the job.
 
 ### [Get-MgApplicationSynchronizationJobSchemaDirectory](Get-MgApplicationSynchronizationJobSchemaDirectory.md)
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ### [Get-MgApplicationSynchronizationTemplate](Get-MgApplicationSynchronizationTemplate.md)
 Get templates from applications
 
 ### [Get-MgApplicationSynchronizationTemplateSchema](Get-MgApplicationSynchronizationTemplateSchema.md)
-Get schema from applications
+Default synchronization schema for the jobs based on this template.
 
 ### [Get-MgApplicationSynchronizationTemplateSchemaDirectory](Get-MgApplicationSynchronizationTemplateSchemaDirectory.md)
-Get directories from applications
+Contains the collection of directories and all of their objects.
 
 ### [Get-MgApplicationTemplate](Get-MgApplicationTemplate.md)
 Get entity from applicationTemplates by key
@@ -120,97 +132,138 @@ Get tokenIssuancePolicies from applications
 Get ref of tokenIssuancePolicies from applications
 
 ### [Get-MgApplicationTokenLifetimePolicy](Get-MgApplicationTokenLifetimePolicy.md)
-Get tokenLifetimePolicies from applications
+The tokenLifetimePolicies assigned to this application.
 
 ### [Get-MgApplicationTokenLifetimePolicyByRef](Get-MgApplicationTokenLifetimePolicyByRef.md)
-Get ref of tokenLifetimePolicies from applications
+The tokenLifetimePolicies assigned to this application.
 
 ### [Get-MgApplicationUserOwnedObject](Get-MgApplicationUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
 ### [Get-MgGroupAppRoleAssignment](Get-MgGroupAppRoleAssignment.md)
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
 
 ### [Get-MgOnPremisePublishingProfile](Get-MgOnPremisePublishingProfile.md)
 Get entity from onPremisesPublishingProfiles by key
 
 ### [Get-MgOnPremisePublishingProfileAgent](Get-MgOnPremisePublishingProfileAgent.md)
-Get agents from onPremisesPublishingProfiles
+List of existing onPremisesAgent objects.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileAgentGroup](Get-MgOnPremisePublishingProfileAgentGroup.md)
-Get agentGroups from onPremisesPublishingProfiles
+List of existing onPremisesAgentGroup objects.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileAgentGroupAgent](Get-MgOnPremisePublishingProfileAgentGroupAgent.md)
-Get agents from onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileAgentGroupPublishedResource](Get-MgOnPremisePublishingProfileAgentGroupPublishedResource.md)
-Get publishedResources from onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup](Get-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup.md)
-Get agentGroups from onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileConnector](Get-MgOnPremisePublishingProfileConnector.md)
-Get connectors from onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfileConnectorGroup](Get-MgOnPremisePublishingProfileConnectorGroup.md)
-Get connectorGroups from onPremisesPublishingProfiles
+List of existing connectorGroup objects for applications published through Application Proxy.
+Read-only.
+Nullable.
+
+### [Get-MgOnPremisePublishingProfileConnectorGroupApplication](Get-MgOnPremisePublishingProfileConnectorGroupApplication.md)
+Read-only.
+Nullable.
+
+### [Get-MgOnPremisePublishingProfileConnectorGroupApplicationByRef](Get-MgOnPremisePublishingProfileConnectorGroupApplicationByRef.md)
+Read-only.
+Nullable.
+
+### [Get-MgOnPremisePublishingProfileConnectorGroupMember](Get-MgOnPremisePublishingProfileConnectorGroupMember.md)
+Read-only.
+Nullable.
+
+### [Get-MgOnPremisePublishingProfileConnectorMemberOf](Get-MgOnPremisePublishingProfileConnectorMemberOf.md)
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ### [Get-MgOnPremisePublishingProfilePublishedResource](Get-MgOnPremisePublishingProfilePublishedResource.md)
-Get publishedResources from onPremisesPublishingProfiles
+List of existing publishedResource objects.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup](Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup.md)
-Get agentGroups from onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent](Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent.md)
-Get agents from onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource](Get-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource.md)
-Get publishedResources from onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipal](Get-MgServicePrincipal.md)
-Get entity from servicePrincipals by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
-Get appRoleAssignedTo from servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
 
 ### [Get-MgServicePrincipalAppRoleAssignment](Get-MgServicePrincipalAppRoleAssignment.md)
-Get appRoleAssignments from servicePrincipals
+App role assignment for another app or service, granted to this service principal.
 
 ### [Get-MgServicePrincipalById](Get-MgServicePrincipalById.md)
 Invoke action getByIds
 
 ### [Get-MgServicePrincipalClaimMappingPolicy](Get-MgServicePrincipalClaimMappingPolicy.md)
-Get claimsMappingPolicies from servicePrincipals
+The claimsMappingPolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalClaimMappingPolicyByRef](Get-MgServicePrincipalClaimMappingPolicyByRef.md)
-Get ref of claimsMappingPolicies from servicePrincipals
+The claimsMappingPolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalCreatedObject](Get-MgServicePrincipalCreatedObject.md)
-Get createdObjects from servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalCreatedObjectByRef](Get-MgServicePrincipalCreatedObjectByRef.md)
-Get ref of createdObjects from servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
+
+### [Get-MgServicePrincipalDelegatedPermissionClassification](Get-MgServicePrincipalDelegatedPermissionClassification.md)
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ### [Get-MgServicePrincipalDelta](Get-MgServicePrincipalDelta.md)
 Invoke function delta
 
 ### [Get-MgServicePrincipalEndpoint](Get-MgServicePrincipalEndpoint.md)
-Get endpoints from servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicy](Get-MgServicePrincipalHomeRealmDiscoveryPolicy.md)
-Get homeRealmDiscoveryPolicies from servicePrincipals
+The homeRealmDiscoveryPolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](Get-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
-Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+The homeRealmDiscoveryPolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalLicenseDetail](Get-MgServicePrincipalLicenseDetail.md)
 Get licenseDetails from servicePrincipals
-
-### [Get-MgServicePrincipalMember](Get-MgServicePrincipalMember.md)
-Get memberOf from servicePrincipals
-
-### [Get-MgServicePrincipalMemberByRef](Get-MgServicePrincipalMemberByRef.md)
-Get ref of memberOf from servicePrincipals
 
 ### [Get-MgServicePrincipalMemberGroup](Get-MgServicePrincipalMemberGroup.md)
 Invoke action getMemberGroups
@@ -218,23 +271,47 @@ Invoke action getMemberGroups
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
 Invoke action getMemberObjects
 
+### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
+Roles that this service principal is a member of.
+HTTP Methods: GET Read-only.
+Nullable.
+
+### [Get-MgServicePrincipalMemberOfByRef](Get-MgServicePrincipalMemberOfByRef.md)
+Roles that this service principal is a member of.
+HTTP Methods: GET Read-only.
+Nullable.
+
 ### [Get-MgServicePrincipalOauth2PermissionGrant](Get-MgServicePrincipalOauth2PermissionGrant.md)
-Get oauth2PermissionGrants from servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOauth2PermissionGrantByRef](Get-MgServicePrincipalOauth2PermissionGrantByRef.md)
-Get ref of oauth2PermissionGrants from servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOwnedObject](Get-MgServicePrincipalOwnedObject.md)
-Get ownedObjects from servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOwnedObjectByRef](Get-MgServicePrincipalOwnedObjectByRef.md)
-Get ref of ownedObjects from servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOwner](Get-MgServicePrincipalOwner.md)
-Get owners from servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalOwnerByRef](Get-MgServicePrincipalOwnerByRef.md)
-Get ref of owners from servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
 
 ### [Get-MgServicePrincipalPasswordSingleSignOnCredentials](Get-MgServicePrincipalPasswordSingleSignOnCredentials.md)
 Invoke action getPasswordSingleSignOnCredentials
@@ -249,43 +326,43 @@ Invoke action acquireAccessToken
 Get jobs from servicePrincipals
 
 ### [Get-MgServicePrincipalSynchronizationJobSchema](Get-MgServicePrincipalSynchronizationJobSchema.md)
-Get schema from servicePrincipals
+The synchronization schema configured for the job.
 
 ### [Get-MgServicePrincipalSynchronizationJobSchemaDirectory](Get-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
-Get directories from servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Get-MgServicePrincipalSynchronizationTemplate](Get-MgServicePrincipalSynchronizationTemplate.md)
 Get templates from servicePrincipals
 
 ### [Get-MgServicePrincipalSynchronizationTemplateSchema](Get-MgServicePrincipalSynchronizationTemplateSchema.md)
-Get schema from servicePrincipals
+Default synchronization schema for the jobs based on this template.
 
 ### [Get-MgServicePrincipalSynchronizationTemplateSchemaDirectory](Get-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
-Get directories from servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicy](Get-MgServicePrincipalTokenIssuancePolicy.md)
-Get tokenIssuancePolicies from servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicyByRef](Get-MgServicePrincipalTokenIssuancePolicyByRef.md)
-Get ref of tokenIssuancePolicies from servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicy](Get-MgServicePrincipalTokenLifetimePolicy.md)
-Get tokenLifetimePolicies from servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
-Get ref of tokenLifetimePolicies from servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
-### [Get-MgServicePrincipalTransitiveMember](Get-MgServicePrincipalTransitiveMember.md)
+### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
 Get transitiveMemberOf from servicePrincipals
 
-### [Get-MgServicePrincipalTransitiveMemberByRef](Get-MgServicePrincipalTransitiveMemberByRef.md)
+### [Get-MgServicePrincipalTransitiveMemberOfByRef](Get-MgServicePrincipalTransitiveMemberOfByRef.md)
 Get ref of transitiveMemberOf from servicePrincipals
 
 ### [Get-MgServicePrincipalUserOwnedObject](Get-MgServicePrincipalUserOwnedObject.md)
 Invoke action getUserOwnedObjects
 
 ### [Get-MgUserAppRoleAssignment](Get-MgUserAppRoleAssignment.md)
-Get appRoleAssignments from users
+Represents the app roles a user has been granted for an application.
 
 ### [Invoke-MgFilterApplicationSynchronizationJobSchemaOperator](Invoke-MgFilterApplicationSynchronizationJobSchemaOperator.md)
 Invoke function filterOperators
@@ -330,13 +407,16 @@ Invoke action parseExpression
 Add new entity to applications
 
 ### [New-MgApplicationExtensionProperty](New-MgApplicationExtensionProperty.md)
-Create new navigation property to extensionProperties for applications
+Read-only.
+Nullable.
 
 ### [New-MgApplicationHomeRealmDiscoveryPolicyByRef](New-MgApplicationHomeRealmDiscoveryPolicyByRef.md)
 Create new navigation property ref to homeRealmDiscoveryPolicies for applications
 
 ### [New-MgApplicationOwnerByRef](New-MgApplicationOwnerByRef.md)
-Create new navigation property ref to owners for applications
+Directory objects that are owners of the application.
+Read-only.
+Nullable.
 
 ### [New-MgApplicationSynchronizationJob](New-MgApplicationSynchronizationJob.md)
 Create new navigation property to jobs for applications
@@ -345,13 +425,13 @@ Create new navigation property to jobs for applications
 Invoke action provisionOnDemand
 
 ### [New-MgApplicationSynchronizationJobSchemaDirectory](New-MgApplicationSynchronizationJobSchemaDirectory.md)
-Create new navigation property to directories for applications
+Contains the collection of directories and all of their objects.
 
 ### [New-MgApplicationSynchronizationTemplate](New-MgApplicationSynchronizationTemplate.md)
 Create new navigation property to templates for applications
 
 ### [New-MgApplicationSynchronizationTemplateSchemaDirectory](New-MgApplicationSynchronizationTemplateSchemaDirectory.md)
-Create new navigation property to directories for applications
+Contains the collection of directories and all of their objects.
 
 ### [New-MgApplicationTemplate](New-MgApplicationTemplate.md)
 Add new entity to applicationTemplates
@@ -360,82 +440,127 @@ Add new entity to applicationTemplates
 Create new navigation property ref to tokenIssuancePolicies for applications
 
 ### [New-MgApplicationTokenLifetimePolicyByRef](New-MgApplicationTokenLifetimePolicyByRef.md)
-Create new navigation property ref to tokenLifetimePolicies for applications
+The tokenLifetimePolicies assigned to this application.
 
 ### [New-MgGroupAppRoleAssignment](New-MgGroupAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for groups
+Represents the app roles a group has been granted for an application.
 
 ### [New-MgOnPremisePublishingProfile](New-MgOnPremisePublishingProfile.md)
 Add new entity to onPremisesPublishingProfiles
 
 ### [New-MgOnPremisePublishingProfileAgent](New-MgOnPremisePublishingProfileAgent.md)
-Create new navigation property to agents for onPremisesPublishingProfiles
+List of existing onPremisesAgent objects.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileAgentGroup](New-MgOnPremisePublishingProfileAgentGroup.md)
-Create new navigation property to agentGroups for onPremisesPublishingProfiles
+List of existing onPremisesAgentGroup objects.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileAgentGroupAgent](New-MgOnPremisePublishingProfileAgentGroupAgent.md)
-Create new navigation property to agents for onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileAgentGroupPublishedResource](New-MgOnPremisePublishingProfileAgentGroupPublishedResource.md)
-Create new navigation property to publishedResources for onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup](New-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup.md)
-Create new navigation property to agentGroups for onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileConnector](New-MgOnPremisePublishingProfileConnector.md)
-Create new navigation property to connectors for onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfileConnectorGroup](New-MgOnPremisePublishingProfileConnectorGroup.md)
-Create new navigation property to connectorGroups for onPremisesPublishingProfiles
+List of existing connectorGroup objects for applications published through Application Proxy.
+Read-only.
+Nullable.
+
+### [New-MgOnPremisePublishingProfileConnectorGroupApplicationByRef](New-MgOnPremisePublishingProfileConnectorGroupApplicationByRef.md)
+Read-only.
+Nullable.
+
+### [New-MgOnPremisePublishingProfileConnectorMemberOf](New-MgOnPremisePublishingProfileConnectorMemberOf.md)
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ### [New-MgOnPremisePublishingProfilePublishedResource](New-MgOnPremisePublishingProfilePublishedResource.md)
-Create new navigation property to publishedResources for onPremisesPublishingProfiles
+List of existing publishedResource objects.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfilePublishedResourceAgentGroup](New-MgOnPremisePublishingProfilePublishedResourceAgentGroup.md)
-Create new navigation property to agentGroups for onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent](New-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent.md)
-Create new navigation property to agents for onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [New-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource](New-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource.md)
-Create new navigation property to publishedResources for onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [New-MgServicePrincipal](New-MgServicePrincipal.md)
 Add new entity to servicePrincipals
 
 ### [New-MgServicePrincipalAppRoleAssignedTo](New-MgServicePrincipalAppRoleAssignedTo.md)
-Create new navigation property to appRoleAssignedTo for servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
 
 ### [New-MgServicePrincipalAppRoleAssignment](New-MgServicePrincipalAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for servicePrincipals
+App role assignment for another app or service, granted to this service principal.
 
 ### [New-MgServicePrincipalClaimMappingPolicyByRef](New-MgServicePrincipalClaimMappingPolicyByRef.md)
-Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+The claimsMappingPolicies assigned to this service principal.
 
 ### [New-MgServicePrincipalCreatedObjectByRef](New-MgServicePrincipalCreatedObjectByRef.md)
-Create new navigation property ref to createdObjects for servicePrincipals
+Directory objects created by this service principal.
+Read-only.
+Nullable.
+
+### [New-MgServicePrincipalDelegatedPermissionClassification](New-MgServicePrincipalDelegatedPermissionClassification.md)
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ### [New-MgServicePrincipalEndpoint](New-MgServicePrincipalEndpoint.md)
-Create new navigation property to endpoints for servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
-Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+The homeRealmDiscoveryPolicies assigned to this service principal.
 
 ### [New-MgServicePrincipalLicenseDetail](New-MgServicePrincipalLicenseDetail.md)
 Create new navigation property to licenseDetails for servicePrincipals
 
-### [New-MgServicePrincipalMemberByRef](New-MgServicePrincipalMemberByRef.md)
-Create new navigation property ref to memberOf for servicePrincipals
+### [New-MgServicePrincipalMemberOfByRef](New-MgServicePrincipalMemberOfByRef.md)
+Roles that this service principal is a member of.
+HTTP Methods: GET Read-only.
+Nullable.
 
 ### [New-MgServicePrincipalOauth2PermissionGrantByRef](New-MgServicePrincipalOauth2PermissionGrantByRef.md)
-Create new navigation property ref to oauth2PermissionGrants for servicePrincipals
+Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
+Read-only.
+Nullable.
 
 ### [New-MgServicePrincipalOwnedObjectByRef](New-MgServicePrincipalOwnedObjectByRef.md)
-Create new navigation property ref to ownedObjects for servicePrincipals
+Directory objects that are owned by this service principal.
+Read-only.
+Nullable.
 
 ### [New-MgServicePrincipalOwnerByRef](New-MgServicePrincipalOwnerByRef.md)
-Create new navigation property ref to owners for servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
 
 ### [New-MgServicePrincipalPasswordSingleSignOnCredentials](New-MgServicePrincipalPasswordSingleSignOnCredentials.md)
 Invoke action createPasswordSingleSignOnCredentials
@@ -447,25 +572,25 @@ Create new navigation property to jobs for servicePrincipals
 Invoke action provisionOnDemand
 
 ### [New-MgServicePrincipalSynchronizationJobSchemaDirectory](New-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
-Create new navigation property to directories for servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [New-MgServicePrincipalSynchronizationTemplate](New-MgServicePrincipalSynchronizationTemplate.md)
 Create new navigation property to templates for servicePrincipals
 
 ### [New-MgServicePrincipalSynchronizationTemplateSchemaDirectory](New-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
-Create new navigation property to directories for servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [New-MgServicePrincipalTokenIssuancePolicyByRef](New-MgServicePrincipalTokenIssuancePolicyByRef.md)
-Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
+The tokenIssuancePolicies assigned to this service principal.
 
 ### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
-Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
+The tokenLifetimePolicies assigned to this service principal.
 
-### [New-MgServicePrincipalTransitiveMemberByRef](New-MgServicePrincipalTransitiveMemberByRef.md)
+### [New-MgServicePrincipalTransitiveMemberOfByRef](New-MgServicePrincipalTransitiveMemberOfByRef.md)
 Create new navigation property ref to transitiveMemberOf for servicePrincipals
 
 ### [New-MgUserAppRoleAssignment](New-MgUserAppRoleAssignment.md)
-Create new navigation property to appRoleAssignments for users
+Represents the app roles a user has been granted for an application.
 
 ### [Ping-MgApplicationsSynchronization](Ping-MgApplicationsSynchronization.md)
 Invoke function Ping
@@ -474,16 +599,19 @@ Invoke function Ping
 Invoke function Ping
 
 ### [Remove-MgApplication](Remove-MgApplication.md)
-Delete entity from applications
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgApplicationConnectorGroupByRef](Remove-MgApplicationConnectorGroupByRef.md)
-Delete ref of navigation property connectorGroup for applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
-### [Remove-MgApplicationCreatedOnBehalfByRef](Remove-MgApplicationCreatedOnBehalfByRef.md)
-Delete ref of navigation property createdOnBehalfOf for applications
+### [Remove-MgApplicationCreatedOnBehalfOfByRef](Remove-MgApplicationCreatedOnBehalfOfByRef.md)
+Read-only.
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
-Delete navigation property extensionProperties for applications
+Read-only.
+Nullable.
 
 ### [Remove-MgApplicationKey](Remove-MgApplicationKey.md)
 Invoke action removeKey
@@ -498,73 +626,104 @@ Delete navigation property synchronization for applications
 Delete navigation property jobs for applications
 
 ### [Remove-MgApplicationSynchronizationJobSchema](Remove-MgApplicationSynchronizationJobSchema.md)
-Delete navigation property schema for applications
+The synchronization schema configured for the job.
 
 ### [Remove-MgApplicationSynchronizationJobSchemaDirectory](Remove-MgApplicationSynchronizationJobSchemaDirectory.md)
-Delete navigation property directories for applications
+Contains the collection of directories and all of their objects.
 
 ### [Remove-MgApplicationSynchronizationTemplate](Remove-MgApplicationSynchronizationTemplate.md)
 Delete navigation property templates for applications
 
 ### [Remove-MgApplicationSynchronizationTemplateSchema](Remove-MgApplicationSynchronizationTemplateSchema.md)
-Delete navigation property schema for applications
+Default synchronization schema for the jobs based on this template.
 
 ### [Remove-MgApplicationSynchronizationTemplateSchemaDirectory](Remove-MgApplicationSynchronizationTemplateSchemaDirectory.md)
-Delete navigation property directories for applications
+Contains the collection of directories and all of their objects.
 
 ### [Remove-MgApplicationTemplate](Remove-MgApplicationTemplate.md)
 Delete entity from applicationTemplates
 
 ### [Remove-MgGroupAppRoleAssignment](Remove-MgGroupAppRoleAssignment.md)
-Delete navigation property appRoleAssignments for groups
+Represents the app roles a group has been granted for an application.
 
 ### [Remove-MgOnPremisePublishingProfile](Remove-MgOnPremisePublishingProfile.md)
 Delete entity from onPremisesPublishingProfiles
 
 ### [Remove-MgOnPremisePublishingProfileAgent](Remove-MgOnPremisePublishingProfileAgent.md)
-Delete navigation property agents for onPremisesPublishingProfiles
+List of existing onPremisesAgent objects.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileAgentGroup](Remove-MgOnPremisePublishingProfileAgentGroup.md)
-Delete navigation property agentGroups for onPremisesPublishingProfiles
+List of existing onPremisesAgentGroup objects.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileAgentGroupAgent](Remove-MgOnPremisePublishingProfileAgentGroupAgent.md)
-Delete navigation property agents for onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileAgentGroupPublishedResource](Remove-MgOnPremisePublishingProfileAgentGroupPublishedResource.md)
-Delete navigation property publishedResources for onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup](Remove-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup.md)
-Delete navigation property agentGroups for onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileConnector](Remove-MgOnPremisePublishingProfileConnector.md)
-Delete navigation property connectors for onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfileConnectorGroup](Remove-MgOnPremisePublishingProfileConnectorGroup.md)
-Delete navigation property connectorGroups for onPremisesPublishingProfiles
+List of existing connectorGroup objects for applications published through Application Proxy.
+Read-only.
+Nullable.
+
+### [Remove-MgOnPremisePublishingProfileConnectorMemberOf](Remove-MgOnPremisePublishingProfileConnectorMemberOf.md)
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ### [Remove-MgOnPremisePublishingProfilePublishedResource](Remove-MgOnPremisePublishingProfilePublishedResource.md)
-Delete navigation property publishedResources for onPremisesPublishingProfiles
+List of existing publishedResource objects.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroup](Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroup.md)
-Delete navigation property agentGroups for onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent](Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent.md)
-Delete navigation property agents for onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource](Remove-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource.md)
-Delete navigation property publishedResources for onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Remove-MgServicePrincipal](Remove-MgServicePrincipal.md)
-Delete entity from servicePrincipals
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
-Delete navigation property appRoleAssignedTo for servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
 
 ### [Remove-MgServicePrincipalAppRoleAssignment](Remove-MgServicePrincipalAppRoleAssignment.md)
-Delete navigation property appRoleAssignments for servicePrincipals
+App role assignment for another app or service, granted to this service principal.
+
+### [Remove-MgServicePrincipalDelegatedPermissionClassification](Remove-MgServicePrincipalDelegatedPermissionClassification.md)
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ### [Remove-MgServicePrincipalEndpoint](Remove-MgServicePrincipalEndpoint.md)
-Delete navigation property endpoints for servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ### [Remove-MgServicePrincipalLicenseDetail](Remove-MgServicePrincipalLicenseDetail.md)
 Delete navigation property licenseDetails for servicePrincipals
@@ -579,22 +738,22 @@ Delete navigation property synchronization for servicePrincipals
 Delete navigation property jobs for servicePrincipals
 
 ### [Remove-MgServicePrincipalSynchronizationJobSchema](Remove-MgServicePrincipalSynchronizationJobSchema.md)
-Delete navigation property schema for servicePrincipals
+The synchronization schema configured for the job.
 
 ### [Remove-MgServicePrincipalSynchronizationJobSchemaDirectory](Remove-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
-Delete navigation property directories for servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Remove-MgServicePrincipalSynchronizationTemplate](Remove-MgServicePrincipalSynchronizationTemplate.md)
 Delete navigation property templates for servicePrincipals
 
 ### [Remove-MgServicePrincipalSynchronizationTemplateSchema](Remove-MgServicePrincipalSynchronizationTemplateSchema.md)
-Delete navigation property schema for servicePrincipals
+Default synchronization schema for the jobs based on this template.
 
 ### [Remove-MgServicePrincipalSynchronizationTemplateSchemaDirectory](Remove-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
-Delete navigation property directories for servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Remove-MgUserAppRoleAssignment](Remove-MgUserAppRoleAssignment.md)
-Delete navigation property appRoleAssignments for users
+Represents the app roles a user has been granted for an application.
 
 ### [Restart-MgApplicationSynchronizationJob](Restart-MgApplicationSynchronizationJob.md)
 Invoke action restart
@@ -609,13 +768,15 @@ Invoke action restore
 Invoke action restore
 
 ### [Set-MgApplicationConnectorGroupByRef](Set-MgApplicationConnectorGroupByRef.md)
-Update the ref of navigation property connectorGroup in applications
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
-### [Set-MgApplicationCreatedOnBehalfByRef](Set-MgApplicationCreatedOnBehalfByRef.md)
-Update the ref of navigation property createdOnBehalfOf in applications
+### [Set-MgApplicationCreatedOnBehalfOfByRef](Set-MgApplicationCreatedOnBehalfOfByRef.md)
+Read-only.
 
 ### [Set-MgApplicationLogo](Set-MgApplicationLogo.md)
-Update media content for application in applications
+The main logo for the application.
+Not nullable.
 
 ### [Start-MgApplicationSynchronizationJob](Start-MgApplicationSynchronizationJob.md)
 Invoke action start
@@ -648,10 +809,12 @@ Invoke action validateProperties
 Invoke action validateCredentials
 
 ### [Update-MgApplication](Update-MgApplication.md)
-Update entity in applications
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgApplicationExtensionProperty](Update-MgApplicationExtensionProperty.md)
-Update the navigation property extensionProperties in applications
+Read-only.
+Nullable.
 
 ### [Update-MgApplicationSynchronization](Update-MgApplicationSynchronization.md)
 Update the navigation property synchronization in applications
@@ -660,73 +823,104 @@ Update the navigation property synchronization in applications
 Update the navigation property jobs in applications
 
 ### [Update-MgApplicationSynchronizationJobSchema](Update-MgApplicationSynchronizationJobSchema.md)
-Update the navigation property schema in applications
+The synchronization schema configured for the job.
 
 ### [Update-MgApplicationSynchronizationJobSchemaDirectory](Update-MgApplicationSynchronizationJobSchemaDirectory.md)
-Update the navigation property directories in applications
+Contains the collection of directories and all of their objects.
 
 ### [Update-MgApplicationSynchronizationTemplate](Update-MgApplicationSynchronizationTemplate.md)
 Update the navigation property templates in applications
 
 ### [Update-MgApplicationSynchronizationTemplateSchema](Update-MgApplicationSynchronizationTemplateSchema.md)
-Update the navigation property schema in applications
+Default synchronization schema for the jobs based on this template.
 
 ### [Update-MgApplicationSynchronizationTemplateSchemaDirectory](Update-MgApplicationSynchronizationTemplateSchemaDirectory.md)
-Update the navigation property directories in applications
+Contains the collection of directories and all of their objects.
 
 ### [Update-MgApplicationTemplate](Update-MgApplicationTemplate.md)
 Update entity in applicationTemplates
 
 ### [Update-MgGroupAppRoleAssignment](Update-MgGroupAppRoleAssignment.md)
-Update the navigation property appRoleAssignments in groups
+Represents the app roles a group has been granted for an application.
 
 ### [Update-MgOnPremisePublishingProfile](Update-MgOnPremisePublishingProfile.md)
 Update entity in onPremisesPublishingProfiles
 
 ### [Update-MgOnPremisePublishingProfileAgent](Update-MgOnPremisePublishingProfileAgent.md)
-Update the navigation property agents in onPremisesPublishingProfiles
+List of existing onPremisesAgent objects.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileAgentGroup](Update-MgOnPremisePublishingProfileAgentGroup.md)
-Update the navigation property agentGroups in onPremisesPublishingProfiles
+List of existing onPremisesAgentGroup objects.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileAgentGroupAgent](Update-MgOnPremisePublishingProfileAgentGroupAgent.md)
-Update the navigation property agents in onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileAgentGroupPublishedResource](Update-MgOnPremisePublishingProfileAgentGroupPublishedResource.md)
-Update the navigation property publishedResources in onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup](Update-MgOnPremisePublishingProfileAgentGroupPublishedResourceAgentGroup.md)
-Update the navigation property agentGroups in onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileConnector](Update-MgOnPremisePublishingProfileConnector.md)
-Update the navigation property connectors in onPremisesPublishingProfiles
+List of existing connector objects for applications published through Application Proxy.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfileConnectorGroup](Update-MgOnPremisePublishingProfileConnectorGroup.md)
-Update the navigation property connectorGroups in onPremisesPublishingProfiles
+List of existing connectorGroup objects for applications published through Application Proxy.
+Read-only.
+Nullable.
+
+### [Update-MgOnPremisePublishingProfileConnectorMemberOf](Update-MgOnPremisePublishingProfileConnectorMemberOf.md)
+The connectorGroup that the connector is a member of.
+Read-only.
 
 ### [Update-MgOnPremisePublishingProfilePublishedResource](Update-MgOnPremisePublishingProfilePublishedResource.md)
-Update the navigation property publishedResources in onPremisesPublishingProfiles
+List of existing publishedResource objects.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfilePublishedResourceAgentGroup](Update-MgOnPremisePublishingProfilePublishedResourceAgentGroup.md)
-Update the navigation property agentGroups in onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent](Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupAgent.md)
-Update the navigation property agents in onPremisesPublishingProfiles
+List of onPremisesAgent that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource](Update-MgOnPremisePublishingProfilePublishedResourceAgentGroupPublishedResource.md)
-Update the navigation property publishedResources in onPremisesPublishingProfiles
+List of publishedResource that are assigned to an onPremisesAgentGroup.
+Read-only.
+Nullable.
 
 ### [Update-MgServicePrincipal](Update-MgServicePrincipal.md)
-Update entity in servicePrincipals
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Update-MgServicePrincipalAppRoleAssignedTo](Update-MgServicePrincipalAppRoleAssignedTo.md)
-Update the navigation property appRoleAssignedTo in servicePrincipals
+App role assignments for this app or service, granted to users, groups, and other service principals.
 
 ### [Update-MgServicePrincipalAppRoleAssignment](Update-MgServicePrincipalAppRoleAssignment.md)
-Update the navigation property appRoleAssignments in servicePrincipals
+App role assignment for another app or service, granted to this service principal.
+
+### [Update-MgServicePrincipalDelegatedPermissionClassification](Update-MgServicePrincipalDelegatedPermissionClassification.md)
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ### [Update-MgServicePrincipalEndpoint](Update-MgServicePrincipalEndpoint.md)
-Update the navigation property endpoints in servicePrincipals
+Endpoints available for discovery.
+Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
 
 ### [Update-MgServicePrincipalLicenseDetail](Update-MgServicePrincipalLicenseDetail.md)
 Update the navigation property licenseDetails in servicePrincipals
@@ -741,20 +935,20 @@ Update the navigation property synchronization in servicePrincipals
 Update the navigation property jobs in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationJobSchema](Update-MgServicePrincipalSynchronizationJobSchema.md)
-Update the navigation property schema in servicePrincipals
+The synchronization schema configured for the job.
 
 ### [Update-MgServicePrincipalSynchronizationJobSchemaDirectory](Update-MgServicePrincipalSynchronizationJobSchemaDirectory.md)
-Update the navigation property directories in servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Update-MgServicePrincipalSynchronizationTemplate](Update-MgServicePrincipalSynchronizationTemplate.md)
 Update the navigation property templates in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationTemplateSchema](Update-MgServicePrincipalSynchronizationTemplateSchema.md)
-Update the navigation property schema in servicePrincipals
+Default synchronization schema for the jobs based on this template.
 
 ### [Update-MgServicePrincipalSynchronizationTemplateSchemaDirectory](Update-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
-Update the navigation property directories in servicePrincipals
+Contains the collection of directories and all of their objects.
 
 ### [Update-MgUserAppRoleAssignment](Update-MgUserAppRoleAssignment.md)
-Update the navigation property appRoleAssignments in users
+Represents the app roles a user has been granted for an application.
 

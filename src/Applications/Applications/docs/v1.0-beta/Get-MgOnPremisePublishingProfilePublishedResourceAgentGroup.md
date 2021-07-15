@@ -8,16 +8,18 @@ schema: 2.0.0
 # Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup
 
 ## SYNOPSIS
-Get agentGroups from onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
 Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup -OnPremisesPublishingProfileId <String>
- -PublishedResourceId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+ -PublishedResourceId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -49,13 +51,15 @@ Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup -InputObject <IAppli
 ### List1
 ```
 Get-MgOnPremisePublishingProfilePublishedResourceAgentGroup -OnPremisesAgentGroupId <String>
- -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> -PublishedResourceId <String> [-Count]
+ -OnPremisesAgentId <String> -OnPremisesPublishingProfileId <String> -PublishedResourceId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get agentGroups from onPremisesPublishingProfiles
+List of onPremisesAgentGroups that a publishedResource is assigned to.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -94,13 +98,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List, List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -344,17 +349,14 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -365,8 +367,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
