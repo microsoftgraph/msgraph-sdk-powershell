@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamPrimaryChannelMessageHostedContent
 
 ## SYNOPSIS
-Create new navigation property to hostedContents for teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## SYNTAX
 
@@ -22,13 +22,13 @@ New-MgTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -TeamId <St
 ### Create
 ```
 New-MgTeamPrimaryChannelMessageHostedContent -ChatMessageId <String> -TeamId <String>
- -BodyParameter <IMicrosoftGraphChatMessageHostedContent1> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
-New-MgTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity>
- -BodyParameter <IMicrosoftGraphChatMessageHostedContent1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> -BodyParameter <Hashtable>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -39,7 +39,7 @@ New-MgTeamPrimaryChannelMessageHostedContent -InputObject <ITeamsIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Create new navigation property to hostedContents for teams
+Content in a message hosted by Microsoft Teams - for example, images or code snippets.
 
 ## EXAMPLES
 
@@ -80,10 +80,9 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 chatMessageHostedContent
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent1
+Type: System.Collections.Hashtable
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -110,7 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -ContentBytesInputFile
-Input File for ContentBytes (.)
+Input File for ContentBytes (Write only.
+Bytes for the hosted content (such as images).)
 
 ```yaml
 Type: System.String
@@ -125,7 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -ContentType
-.
+Write only.
+Content type, such as image/png, image/jpg.
 
 ```yaml
 Type: System.String
@@ -221,13 +222,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent1
-
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatMessageHostedContent
 
 ## NOTES
 
@@ -237,12 +238,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphChatMessageHostedContent1>: chatMessageHostedContent
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ContentBytes <Byte[]>]`: 
-  - `[ContentType <String>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[ChannelId <String>]`: key: id of channel
@@ -255,13 +250,19 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
+  - `[TeamsAppDefinitionId <String>]`: key: id of teamsAppDefinition
+  - `[TeamsAppId <String>]`: key: id of teamsApp
   - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: id of teamsAsyncOperation
   - `[TeamsTabId <String>]`: key: id of teamsTab
+  - `[TeamworkTagId <String>]`: key: id of teamworkTag
+  - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest

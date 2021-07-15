@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgTeamOperation
 
 ## SYNOPSIS
-Create new navigation property to operations for teams
+The async operations that ran or are running on this team.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgTeamOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Create new navigation property to operations for teams
+The async operations that ran or are running on this team.
 
 ## EXAMPLES
 
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 ```
 
 ### -OperationType
-teamsAsyncOperationType
+.
 
 ```yaml
 Type: System.String
@@ -327,7 +327,7 @@ BODYPARAMETER <IMicrosoftGraphTeamsAsyncOperation>: teamsAsyncOperation
     - `[Code <String>]`: Operation error code.
     - `[Message <String>]`: Operation error message.
   - `[LastActionDateTime <DateTime?>]`: Time when the async operation was last updated.
-  - `[OperationType <String>]`: teamsAsyncOperationType
+  - `[OperationType <String>]`: 
   - `[Status <String>]`: teamsAsyncOperationStatus
   - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
   - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
@@ -348,13 +348,19 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
+  - `[TeamsAppDefinitionId <String>]`: key: id of teamsAppDefinition
+  - `[TeamsAppId <String>]`: key: id of teamsApp
   - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: id of teamsAsyncOperation
   - `[TeamsTabId <String>]`: key: id of teamsTab
+  - `[TeamworkTagId <String>]`: key: id of teamworkTag
+  - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest

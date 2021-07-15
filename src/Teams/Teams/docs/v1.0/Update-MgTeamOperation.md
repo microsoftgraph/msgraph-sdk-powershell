@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamOperation
 
 ## SYNOPSIS
-Update the navigation property operations in teams
+The async operations that ran or are running on this team.
 
 ## SYNTAX
 
@@ -24,12 +24,12 @@ Update-MgTeamOperation -TeamId <String> -TeamsAsyncOperationId <String> [-Additi
 ### Update1
 ```
 Update-MgTeamOperation -TeamId <String> -TeamsAsyncOperationId <String>
- -BodyParameter <IMicrosoftGraphTeamsAsyncOperation> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphTeamsAsyncOperation1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgTeamOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation>
+Update-MgTeamOperation -InputObject <ITeamsIdentity> -BodyParameter <IMicrosoftGraphTeamsAsyncOperation1>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -43,7 +43,7 @@ Update-MgTeamOperation -InputObject <ITeamsIdentity> [-AdditionalProperties <Has
 ```
 
 ## DESCRIPTION
-Update the navigation property operations in teams
+The async operations that ran or are running on this team.
 
 ## EXAMPLES
 
@@ -102,7 +102,7 @@ teamsAsyncOperation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -OperationType
-teamsAsyncOperationType
+.
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsAsyncOperation1
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
@@ -349,7 +349,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTeamsAsyncOperation>: teamsAsyncOperation
+BODYPARAMETER <IMicrosoftGraphTeamsAsyncOperation1>: teamsAsyncOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AttemptsCount <Int32?>]`: Number of times the operation was attempted before being marked successful or failed.
@@ -359,7 +359,7 @@ BODYPARAMETER <IMicrosoftGraphTeamsAsyncOperation>: teamsAsyncOperation
     - `[Code <String>]`: Operation error code.
     - `[Message <String>]`: Operation error message.
   - `[LastActionDateTime <DateTime?>]`: Time when the async operation was last updated.
-  - `[OperationType <String>]`: teamsAsyncOperationType
+  - `[OperationType <String>]`: 
   - `[Status <String>]`: teamsAsyncOperationStatus
   - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
   - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
@@ -380,13 +380,19 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OfferShiftRequestId <String>]`: key: id of offerShiftRequest
   - `[OpenShiftChangeRequestId <String>]`: key: id of openShiftChangeRequest
   - `[OpenShiftId <String>]`: key: id of openShift
+  - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
+  - `[TeamsAppDefinitionId <String>]`: key: id of teamsAppDefinition
+  - `[TeamsAppId <String>]`: key: id of teamsApp
   - `[TeamsAppInstallationId <String>]`: key: id of teamsAppInstallation
   - `[TeamsAsyncOperationId <String>]`: key: id of teamsAsyncOperation
   - `[TeamsTabId <String>]`: key: id of teamsTab
+  - `[TeamworkTagId <String>]`: key: id of teamworkTag
+  - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest

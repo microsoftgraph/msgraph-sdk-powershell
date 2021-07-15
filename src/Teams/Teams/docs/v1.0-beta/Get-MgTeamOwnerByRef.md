@@ -8,17 +8,23 @@ schema: 2.0.0
 # Get-MgTeamOwnerByRef
 
 ## SYNOPSIS
-Get ref of owners from teams
+The list of this team's owners.
+Currently, when creating a team using application permissions, exactly one owner must be specified.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ## SYNTAX
 
 ```
-Get-MgTeamOwnerByRef -TeamId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgTeamOwnerByRef -TeamId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of owners from teams
+The list of this team's owners.
+Currently, when creating a team using application permissions, exactly one owner must be specified.
+When using user delegated permissions, no owner can be specified (the current user is the owner).
+Owner must be specified as an object ID (GUID), not a UPN.
 
 ## EXAMPLES
 
@@ -57,13 +63,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
