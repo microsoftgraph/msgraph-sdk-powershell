@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgGroupEventSingleValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +28,9 @@ Remove-MgGroupEventSingleValueExtendedProperty -InputObject <ICalendarIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

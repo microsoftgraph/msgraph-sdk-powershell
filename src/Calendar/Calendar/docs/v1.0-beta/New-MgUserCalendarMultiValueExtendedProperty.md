@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserCalendarMultiValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -64,7 +66,9 @@ New-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

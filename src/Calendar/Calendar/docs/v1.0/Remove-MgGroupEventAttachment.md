@@ -8,7 +8,10 @@ schema: 2.0.0
 # Remove-MgGroupEventAttachment
 
 ## SYNOPSIS
-Delete navigation property attachments for groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Remove-MgGroupEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Delete navigation property attachments for groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

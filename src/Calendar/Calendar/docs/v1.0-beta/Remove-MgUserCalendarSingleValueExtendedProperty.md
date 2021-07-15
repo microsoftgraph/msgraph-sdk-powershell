@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -38,7 +40,9 @@ Remove-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity
 ```
 
 ## DESCRIPTION
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

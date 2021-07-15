@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List3 (Default)
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -UserId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserCalendarSingleValueExtendedProperty -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -46,13 +48,15 @@ Get-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity> [
 
 ### List
 ```
-Get-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String> [-Count]
+Get-MgUserCalendarSingleValueExtendedProperty -CalendarId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -106,13 +110,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List, List3
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

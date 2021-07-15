@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserCalendarPermission
 
 ## SYNOPSIS
-Delete navigation property calendarPermissions for users
+The permissions of the users with whom the calendar is shared.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Remove-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-Delete navigation property calendarPermissions for users
+The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
 

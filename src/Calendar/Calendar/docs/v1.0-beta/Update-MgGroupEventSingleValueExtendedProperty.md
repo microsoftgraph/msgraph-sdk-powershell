@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgGroupEventSingleValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -42,7 +44,9 @@ Update-MgGroupEventSingleValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

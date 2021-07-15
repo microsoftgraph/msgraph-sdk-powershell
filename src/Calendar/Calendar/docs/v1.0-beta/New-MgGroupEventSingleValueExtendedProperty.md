@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgGroupEventSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ New-MgGroupEventSingleValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

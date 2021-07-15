@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgUserCalendarMultiValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -70,7 +72,9 @@ Update-MgUserCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

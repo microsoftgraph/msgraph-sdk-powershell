@@ -8,7 +8,11 @@ schema: 2.0.0
 # Remove-MgGroupEventInstance
 
 ## SYNOPSIS
-Delete navigation property instances for groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +29,11 @@ Remove-MgGroupEventInstance -InputObject <ICalendarIdentity> [-IfMatch <String>]
 ```
 
 ## DESCRIPTION
-Delete navigation property instances for groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

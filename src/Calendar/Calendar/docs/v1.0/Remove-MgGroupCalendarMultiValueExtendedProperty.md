@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgGroupCalendarMultiValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +28,9 @@ Remove-MgGroupCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity
 ```
 
 ## DESCRIPTION
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

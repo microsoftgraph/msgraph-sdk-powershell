@@ -8,7 +8,10 @@ schema: 2.0.0
 # Remove-MgUserEvent
 
 ## SYNOPSIS
-Delete navigation property events for users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Remove-MgUserEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-Delete navigation property events for users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

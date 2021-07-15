@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserEventCalendar
 
 ## SYNOPSIS
-Delete navigation property calendar for users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgUserEventCalendar -InputObject <ICalendarIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Delete navigation property calendar for users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## EXAMPLES
 

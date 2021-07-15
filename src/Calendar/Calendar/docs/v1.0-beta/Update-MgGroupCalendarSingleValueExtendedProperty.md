@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgGroupCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -42,7 +44,9 @@ Update-MgGroupCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentit
 ```
 
 ## DESCRIPTION
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

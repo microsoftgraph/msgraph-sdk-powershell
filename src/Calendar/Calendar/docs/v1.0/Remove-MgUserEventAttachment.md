@@ -8,7 +8,10 @@ schema: 2.0.0
 # Remove-MgUserEventAttachment
 
 ## SYNOPSIS
-Delete navigation property attachments for users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Remove-MgUserEventAttachment -InputObject <ICalendarIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete navigation property attachments for users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

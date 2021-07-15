@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupCalendar
 
 ## SYNOPSIS
-Get calendar from groups
+The group's calendar.
+Read-only.
 
 ## SYNTAX
 
@@ -24,7 +25,8 @@ Get-MgGroupCalendar -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get calendar from groups
+The group's calendar.
+Read-only.
 
 ## EXAMPLES
 

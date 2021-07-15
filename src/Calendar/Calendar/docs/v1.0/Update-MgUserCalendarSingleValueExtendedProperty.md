@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -70,7 +72,9 @@ Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity
 ```
 
 ## DESCRIPTION
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserEventExtension
 
 ## SYNOPSIS
-Create new navigation property to extensions for users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgUserEventExtension -InputObject <ICalendarIdentity> [-AdditionalProperties
 ```
 
 ## DESCRIPTION
-Create new navigation property to extensions for users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

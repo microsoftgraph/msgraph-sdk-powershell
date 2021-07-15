@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgGroupCalendarMultiValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -41,7 +43,9 @@ Update-MgGroupCalendarMultiValueExtendedProperty -InputObject <ICalendarIdentity
 ```
 
 ## DESCRIPTION
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

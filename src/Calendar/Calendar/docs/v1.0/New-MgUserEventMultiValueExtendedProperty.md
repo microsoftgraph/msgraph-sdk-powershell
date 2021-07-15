@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserEventMultiValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -38,7 +40,9 @@ New-MgUserEventMultiValueExtendedProperty -InputObject <ICalendarIdentity> [-Add
 ```
 
 ## DESCRIPTION
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

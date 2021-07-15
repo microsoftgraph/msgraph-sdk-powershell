@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgUserCalendar
 
 ## SYNOPSIS
-Get calendar from users
+The user's primary calendar.
+Read-only.
 
 ## SYNTAX
 
@@ -25,13 +26,14 @@ Get-MgUserCalendar -InputObject <ICalendarIdentity> [-ExpandProperty <String[]>]
 
 ### List1
 ```
-Get-MgUserCalendar -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+Get-MgUserCalendar -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get calendar from users
+The user's primary calendar.
+Read-only.
 
 ## EXAMPLES
 
@@ -70,13 +72,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

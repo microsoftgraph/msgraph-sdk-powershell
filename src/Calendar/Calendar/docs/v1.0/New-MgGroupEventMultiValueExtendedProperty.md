@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgGroupEventMultiValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ New-MgGroupEventMultiValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

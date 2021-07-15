@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgGroupEventExtension
 
 ## SYNOPSIS
-Update the navigation property extensions in groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ Update-MgGroupEventExtension -InputObject <ICalendarIdentity> [-AdditionalProper
 ```
 
 ## DESCRIPTION
-Update the navigation property extensions in groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
 

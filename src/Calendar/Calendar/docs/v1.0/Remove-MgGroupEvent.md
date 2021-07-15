@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupEvent
 
 ## SYNOPSIS
-Delete navigation property events for groups
+The group's events.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgGroupEvent -InputObject <ICalendarIdentity> [-IfMatch <String>] [-PassT
 ```
 
 ## DESCRIPTION
-Delete navigation property events for groups
+The group's events.
 
 ## EXAMPLES
 
