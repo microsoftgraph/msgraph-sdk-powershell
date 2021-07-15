@@ -14,9 +14,9 @@ Get picture from financials
 
 ### List (Default)
 ```
-Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceLineId <String> [-Count]
+Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceLineId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -47,9 +47,9 @@ Get-MgFinancialCompanySaleInvoiceLineItemPicture -InputObject <IFinancialsIdenti
 ### List1
 ```
 Get-MgFinancialCompanySaleInvoiceLineItemPicture -CompanyId <String> -SalesInvoiceId <String>
- -SalesInvoiceLineId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+ -SalesInvoiceLineId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -107,13 +107,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List, List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

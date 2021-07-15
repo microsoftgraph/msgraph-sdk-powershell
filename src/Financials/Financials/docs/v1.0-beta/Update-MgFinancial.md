@@ -14,8 +14,8 @@ Update financials
 
 ### UpdateExpanded (Default)
 ```
-Update-MgFinancial [-AdditionalProperties <Hashtable>] [-Companies <IMicrosoftGraphCompany[]>] [-Id <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgFinancial [-AdditionalProperties <Hashtable>] [-Companies <IMicrosoftGraphCompany[]>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -96,21 +96,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -179,7 +164,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphFinancials>: financials
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
   - `[Companies <IMicrosoftGraphCompany[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[Accounts <IMicrosoftGraphAccount[]>]`: 
