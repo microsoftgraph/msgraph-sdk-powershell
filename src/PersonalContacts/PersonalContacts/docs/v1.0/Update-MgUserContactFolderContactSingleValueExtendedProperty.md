@@ -8,18 +8,20 @@ schema: 2.0.0
 # Update-MgUserContactFolderContactSingleValueExtendedProperty
 
 ## SYNOPSIS
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the contact.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
 Update-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Update
 ```
 Update-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <String> -ContactId <String>
  -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
@@ -27,14 +29,14 @@ Update-MgUserContactFolderContactSingleValueExtendedProperty -ContactFolderId <S
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity
 ```
 Update-MgUserContactFolderContactSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded
 ```
 Update-MgUserContactFolderContactSingleValueExtendedProperty -InputObject <IPersonalContactsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -42,7 +44,9 @@ Update-MgUserContactFolderContactSingleValueExtendedProperty -InputObject <IPers
 ```
 
 ## DESCRIPTION
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the contact.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -71,7 +75,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -87,7 +91,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -102,7 +106,7 @@ key: id of contactFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -117,7 +121,7 @@ key: id of contact
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -132,7 +136,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -148,7 +152,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -178,7 +182,7 @@ key: id of singleValueLegacyExtendedProperty
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -193,7 +197,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -208,7 +212,7 @@ A property value.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False

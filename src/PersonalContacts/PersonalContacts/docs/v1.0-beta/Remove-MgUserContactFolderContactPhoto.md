@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserContactFolderContactPhoto
 
 ## SYNOPSIS
-Delete navigation property photo for users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property photo for users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserContactFolderContactPhoto
 
 ## SYNOPSIS
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ Update-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
 

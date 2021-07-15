@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserContact
 
 ## SYNOPSIS
-Delete navigation property contacts for users
+The user's contacts.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgUserContact -InputObject <IPersonalContactsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete navigation property contacts for users
+The user's contacts.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

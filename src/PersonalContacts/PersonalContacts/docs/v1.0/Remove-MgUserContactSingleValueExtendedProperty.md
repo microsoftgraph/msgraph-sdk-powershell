@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserContactSingleValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the contact.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +28,9 @@ Remove-MgUserContactSingleValueExtendedProperty -InputObject <IPersonalContactsI
 ```
 
 ## DESCRIPTION
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the contact.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

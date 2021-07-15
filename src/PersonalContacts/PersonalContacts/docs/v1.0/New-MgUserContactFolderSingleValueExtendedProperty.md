@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserContactFolderSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the contactFolder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ New-MgUserContactFolderSingleValueExtendedProperty -InputObject <IPersonalContac
 ```
 
 ## DESCRIPTION
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the contactFolder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

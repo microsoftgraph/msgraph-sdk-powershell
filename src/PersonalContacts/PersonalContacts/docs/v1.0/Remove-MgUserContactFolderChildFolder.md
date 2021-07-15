@@ -8,7 +8,10 @@ schema: 2.0.0
 # Remove-MgUserContactFolderChildFolder
 
 ## SYNOPSIS
-Delete navigation property childFolders for users
+The collection of child folders in the folder.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +28,10 @@ Remove-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property childFolders for users
+The collection of child folders in the folder.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

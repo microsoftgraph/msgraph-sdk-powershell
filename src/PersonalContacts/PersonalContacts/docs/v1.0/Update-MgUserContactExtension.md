@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserContactExtension
 
 ## SYNOPSIS
-Update the navigation property extensions in users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ Update-MgUserContactExtension -InputObject <IPersonalContactsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Update the navigation property extensions in users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## EXAMPLES
 

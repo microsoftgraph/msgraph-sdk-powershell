@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserContactFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the contactFolder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,7 +41,9 @@ New-MgUserContactFolderMultiValueExtendedProperty -InputObject <IPersonalContact
 ```
 
 ## DESCRIPTION
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the contactFolder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgUserContactExtension
 
 ## SYNOPSIS
-Create new navigation property to extensions for users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgUserContactExtension -InputObject <IPersonalContactsIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Create new navigation property to extensions for users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## EXAMPLES
 
