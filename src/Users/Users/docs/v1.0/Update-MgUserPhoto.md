@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserPhoto
 
 ## SYNOPSIS
-Update the navigation property photo in users
+The user's profile photo.
+Read-only.
 
 ## SYNTAX
 
@@ -61,7 +62,8 @@ Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtab
 ```
 
 ## DESCRIPTION
-Update the navigation property photo in users
+The user's profile photo.
+Read-only.
 
 ## EXAMPLES
 
@@ -285,18 +287,19 @@ BODYPARAMETER <IMicrosoftGraphProfilePhoto>: profilePhoto
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

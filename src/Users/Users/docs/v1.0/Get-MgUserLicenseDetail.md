@@ -8,51 +8,48 @@ schema: 2.0.0
 # Get-MgUserLicenseDetail
 
 ## SYNOPSIS
-Get licenseDetails from users
+A collection of this user's license details.
+Read-only.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserLicenseDetail -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgUserLicenseDetail -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgUserLicenseDetail -LicenseDetailsId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserLicenseDetail -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get licenseDetails from users
+A collection of this user's license details.
+Read-only.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get a user's license details
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgUserLicenseDetail -UserId '0ec3a5e8-b4b6-4678-90ff-ce786055065f' | Format-List
 
-{{ Add output here }}
+Id                   : BF5i-6pS2kKxDRTxGV1mX6sU3Mts2TBMufRq2nzcHUY
+ServicePlans         : {WINDOWSUPDATEFORBUSINESS_DEPLOYMENTSERVICE, UNIVERSAL_PRINT_01, M365_LIGHTHOUSE_CUSTOMER_PLAN1, POWER_VIRTUAL_AGENTS_O365_P3...}
+SkuId                : ae5a2394-6002-4128-80c0-d27fe0d823a3
+SkuPartNumber        : SPB
+AdditionalProperties : {}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example retrieves the license details of the specified user.
 
 ## PARAMETERS
 
@@ -71,13 +68,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -122,7 +120,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -137,7 +135,7 @@ key: id of licenseDetails
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -242,7 +240,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -274,18 +272,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

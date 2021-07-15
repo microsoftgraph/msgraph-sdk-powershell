@@ -8,36 +8,40 @@ schema: 2.0.0
 # Set-MgUserManagerByRef
 
 ## SYNOPSIS
-Update the ref of navigation property manager in users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgUserManagerByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update1
+### Set1
 ```
 Set-MgUserManagerByRef -UserId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### SetViaIdentity1
 ```
 Set-MgUserManagerByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### SetViaIdentityExpanded1
 ```
 Set-MgUserManagerByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property manager in users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## EXAMPLES
 
@@ -66,7 +70,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -81,7 +85,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +101,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -127,7 +131,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -192,18 +196,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

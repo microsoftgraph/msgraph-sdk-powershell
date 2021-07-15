@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserManagerByRef
 
 ## SYNOPSIS
-Delete ref of navigation property manager for users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgUserManagerByRef -InputObject <IUsersIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property manager for users
+The user or contact that is this user's manager.
+Read-only.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ## EXAMPLES
 
@@ -163,18 +167,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
