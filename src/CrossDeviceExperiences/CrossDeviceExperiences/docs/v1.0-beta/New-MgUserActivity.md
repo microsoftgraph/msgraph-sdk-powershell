@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserActivity
 
 ## SYNOPSIS
-Create new navigation property to activities for users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -47,7 +49,9 @@ New-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-ActivationUr
 ```
 
 ## DESCRIPTION
-Create new navigation property to activities for users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

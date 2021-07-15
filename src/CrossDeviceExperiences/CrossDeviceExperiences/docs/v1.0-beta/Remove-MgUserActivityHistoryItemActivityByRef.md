@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserActivityHistoryItemActivityByRef
 
 ## SYNOPSIS
-Delete ref of navigation property activity for users
+Optional.
+NavigationProperty/Containment; navigation property to the associated activity.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgUserActivityHistoryItemActivityByRef -InputObject <ICrossDeviceExperien
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property activity for users
+Optional.
+NavigationProperty/Containment; navigation property to the associated activity.
 
 ## EXAMPLES
 

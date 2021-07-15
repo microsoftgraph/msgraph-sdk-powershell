@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Delete navigation property historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property historyItems for users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## EXAMPLES
 
