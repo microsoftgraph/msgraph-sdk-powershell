@@ -96,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the program control type
 
 ```yaml
 Type: System.String
@@ -180,7 +180,7 @@ BODYPARAMETER <IMicrosoftGraphProgramControlType>: programControlType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ControlTypeGroupId <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of the program control type
 
 ## RELATED LINKS
 

@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the business flow template
 
 ```yaml
 Type: System.String
@@ -164,7 +164,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphBusinessFlowTemplate>: businessFlowTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of the business flow template
 
 ## RELATED LINKS
 
