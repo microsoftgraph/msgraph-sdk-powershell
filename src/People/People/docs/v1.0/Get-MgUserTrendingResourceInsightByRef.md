@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserTrendingResourceInsightByRef
 
 ## SYNOPSIS
-Get ref of resource from users
+Used for navigating to the trending document.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgUserTrendingResourceInsightByRef -InputObject <IPeopleIdentity> [<CommonPa
 ```
 
 ## DESCRIPTION
-Get ref of resource from users
+Used for navigating to the trending document.
 
 ## EXAMPLES
 
@@ -122,8 +122,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person

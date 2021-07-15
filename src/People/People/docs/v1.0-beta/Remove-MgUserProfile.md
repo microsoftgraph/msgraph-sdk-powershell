@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfile
 
 ## SYNOPSIS
-Delete navigation property profile for users
+Represents properties that are descriptive of a user in a tenant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfile -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassTh
 ```
 
 ## DESCRIPTION
-Delete navigation property profile for users
+Represents properties that are descriptive of a user in a tenant.
 
 ## EXAMPLES
 
@@ -170,8 +170,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person

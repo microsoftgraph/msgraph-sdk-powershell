@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserProfileNote
 
 ## SYNOPSIS
-Delete navigation property notes for users
+Represents notes that a user has added to their profile.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserProfileNote -InputObject <IPeopleIdentity> [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Delete navigation property notes for users
+Represents notes that a user has added to their profile.
 
 ## EXAMPLES
 
@@ -185,8 +185,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person

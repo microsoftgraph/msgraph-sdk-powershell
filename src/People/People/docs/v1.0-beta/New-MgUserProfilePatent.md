@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfilePatent
 
 ## SYNOPSIS
-Create new navigation property to patents for users
+Represents patents that a user has added to their profile.
 
 ## SYNTAX
 
@@ -17,9 +17,9 @@ Create new navigation property to patents for users
 New-MgUserProfilePatent -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsPending]
- [-IssuedDate <DateTime>] [-IssuingAuthority <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Number <String>] [-Source <IMicrosoftGraphPersonDataSource>]
- [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
+ [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -39,13 +39,13 @@ New-MgUserProfilePatent -InputObject <IPeopleIdentity> -BodyParameter <IMicrosof
 New-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-IsPending] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
+ [-IsPending] [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
- [-Source <IMicrosoftGraphPersonDataSource>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to patents for users
+Represents patents that a user has added to their profile.
 
 ## EXAMPLES
 
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Descpription of the patent or filing.
 
 ```yaml
 Type: System.String
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Title of the patent or filing.
 
 ```yaml
 Type: System.String
@@ -224,6 +224,21 @@ Accept wildcard characters: False
 ```
 
 ### -IsPending
+Indicates the patent is pending.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IsSearchable
 .
 
 ```yaml
@@ -239,7 +254,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuedDate
-.
+The date that the patent was granted.
 
 ```yaml
 Type: System.DateTime
@@ -254,7 +269,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuingAuthority
-.
+Authority which granted the patent.
 
 ```yaml
 Type: System.String
@@ -285,7 +300,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -300,7 +315,7 @@ Accept wildcard characters: False
 ```
 
 ### -Number
-.
+The patent number.
 
 ```yaml
 Type: System.String
@@ -315,11 +330,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -346,7 +361,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-.
+URL referencing the patent or filing.
 
 ```yaml
 Type: System.String
@@ -424,24 +439,25 @@ BODYPARAMETER <IMicrosoftGraphItemPatent>: itemPatent
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[IsPending <Boolean?>]`: 
-  - `[IssuedDate <DateTime?>]`: 
-  - `[IssuingAuthority <String>]`: 
-  - `[Number <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Description <String>]`: Descpription of the patent or filing.
+  - `[DisplayName <String>]`: Title of the patent or filing.
+  - `[IsPending <Boolean?>]`: Indicates the patent is pending.
+  - `[IssuedDate <DateTime?>]`: The date that the patent was granted.
+  - `[IssuingAuthority <String>]`: Authority which granted the patent.
+  - `[Number <String>]`: The patent number.
+  - `[WebUrl <String>]`: URL referencing the patent or filing.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -454,8 +470,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -466,8 +482,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -493,9 +509,9 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
 

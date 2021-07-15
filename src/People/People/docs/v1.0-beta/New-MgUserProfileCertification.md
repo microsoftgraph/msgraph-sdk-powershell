@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileCertification
 
 ## SYNOPSIS
-Create new navigation property to certifications for users
+Represents the details of certifications associated with a person.
 
 ## SYNTAX
 
@@ -17,9 +17,9 @@ Create new navigation property to certifications for users
 New-MgUserProfileCertification -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CertificationId <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
- [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IssuedDate <DateTime>]
+ [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
  [-IssuingAuthority <String>] [-IssuingCompany <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSource>] [-StartDate <DateTime>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>]
  [-ThumbnailUrl <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ New-MgUserProfileCertification -InputObject <IPeopleIdentity>
 New-MgUserProfileCertification -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CertificationId <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-EndDate <DateTime>]
- [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IssuedDate <DateTime>]
+ [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-IssuedDate <DateTime>]
  [-IssuingAuthority <String>] [-IssuingCompany <String>] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSource>] [-StartDate <DateTime>]
+ [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>] [-StartDate <DateTime>]
  [-ThumbnailUrl <String>] [-WebUrl <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to certifications for users
+Represents the details of certifications associated with a person.
 
 ## EXAMPLES
 
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -CertificationId
-.
+The referenceable identifier for the certification.
 
 ```yaml
 Type: System.String
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description of the certification.
 
 ```yaml
 Type: System.String
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Title of the certification.
 
 ```yaml
 Type: System.String
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndDate
-.
+The date that the certification expires.
 
 ```yaml
 Type: System.DateTime
@@ -255,8 +255,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IssuedDate
+### -IsSearchable
 .
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IssuedDate
+The date that the certification was issued.
 
 ```yaml
 Type: System.DateTime
@@ -271,7 +286,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuingAuthority
-.
+Authority which granted the certification.
 
 ```yaml
 Type: System.String
@@ -286,7 +301,7 @@ Accept wildcard characters: False
 ```
 
 ### -IssuingCompany
-.
+Company which granted the certification.
 
 ```yaml
 Type: System.String
@@ -317,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -332,11 +347,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -348,7 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartDate
-.
+The date that the certification became valid.
 
 ```yaml
 Type: System.DateTime
@@ -363,7 +378,7 @@ Accept wildcard characters: False
 ```
 
 ### -ThumbnailUrl
-.
+URL referencing a thumbnail of the certification.
 
 ```yaml
 Type: System.String
@@ -393,7 +408,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-.
+URL referencing the certification.
 
 ```yaml
 Type: System.String
@@ -471,27 +486,28 @@ BODYPARAMETER <IMicrosoftGraphPersonCertification>: personCertification
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[CertificationId <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[EndDate <DateTime?>]`: 
-  - `[IssuedDate <DateTime?>]`: 
-  - `[IssuingAuthority <String>]`: 
-  - `[IssuingCompany <String>]`: 
-  - `[StartDate <DateTime?>]`: 
-  - `[ThumbnailUrl <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[CertificationId <String>]`: The referenceable identifier for the certification.
+  - `[Description <String>]`: Description of the certification.
+  - `[DisplayName <String>]`: Title of the certification.
+  - `[EndDate <DateTime?>]`: The date that the certification expires.
+  - `[IssuedDate <DateTime?>]`: The date that the certification was issued.
+  - `[IssuingAuthority <String>]`: Authority which granted the certification.
+  - `[IssuingCompany <String>]`: Company which granted the certification.
+  - `[StartDate <DateTime?>]`: The date that the certification became valid.
+  - `[ThumbnailUrl <String>]`: URL referencing a thumbnail of the certification.
+  - `[WebUrl <String>]`: URL referencing the certification.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -504,8 +520,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -516,8 +532,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -543,9 +559,9 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
 

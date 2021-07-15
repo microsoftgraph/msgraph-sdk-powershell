@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Create new navigation property to educationalActivities for users
+Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 
 ## SYNTAX
 
@@ -17,9 +17,9 @@ Create new navigation property to educationalActivities for users
 New-MgUserProfileEducationalActivity -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>] [-Id <String>]
- [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSource>]
+ [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
  [-StartMonthYear <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -40,14 +40,14 @@ New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity>
 New-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>] [-Id <String>]
- [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSource>]
+ [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
  [-StartMonthYear <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to educationalActivities for users
+Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 
 ## EXAMPLES
 
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompletionMonthYear
-.
+The month and year the user graduated or completed the activity.
 
 ```yaml
 Type: System.DateTime
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndMonthYear
-.
+The month and year the user completed the educational activity referenced.
 
 ```yaml
 Type: System.DateTime
@@ -241,6 +241,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IsSearchable
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedBy
 identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
@@ -258,7 +273,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -289,11 +304,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
+personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -305,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartMonthYear
-.
+The month and year the user commenced the activity referenced.
 
 ```yaml
 Type: System.DateTime
@@ -398,45 +413,46 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[CompletionMonthYear <DateTime?>]`: 
-  - `[EndMonthYear <DateTime?>]`: 
+  - `[CompletionMonthYear <DateTime?>]`: The month and year the user graduated or completed the activity.
+  - `[EndMonthYear <DateTime?>]`: The month and year the user completed the educational activity referenced.
   - `[Institution <IMicrosoftGraphInstitutionData>]`: institutionData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
+    - `[Description <String>]`: Short description of the institution the user studied at.
+    - `[DisplayName <String>]`: Name of the institution the user studied at.
     - `[Location <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[WebUrl <String>]`: 
+    - `[WebUrl <String>]`: Link to the institution or department homepage.
   - `[Program <IMicrosoftGraphEducationalActivityDetail>]`: educationalActivityDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Abbreviation <String>]`: 
-    - `[Activities <String>]`: 
-    - `[Awards <String>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[FieldsOfStudy <String>]`: 
-    - `[Grade <String>]`: 
-    - `[Notes <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[StartMonthYear <DateTime?>]`: 
+    - `[Abbreviation <String>]`: Shortened name of the degree or program (example: PhD, MBA)
+    - `[Activities <String[]>]`: Extracurricular activities undertaken alongside the program.
+    - `[Awards <String[]>]`: Any awards or honors associated with the program.
+    - `[Description <String>]`: Short description of the program provided by the user.
+    - `[DisplayName <String>]`: Long-form name of the program that the user has provided.
+    - `[FieldsOfStudy <String[]>]`: Majors and minors associated with the program. (if applicable)
+    - `[Grade <String>]`: The final grade, class, GPA or score.
+    - `[Notes <String>]`: Additional notes the user has provided.
+    - `[WebUrl <String>]`: Link to the degree or program page.
+  - `[StartMonthYear <DateTime?>]`: The month and year the user commenced the activity referenced.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -449,8 +465,8 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -461,8 +477,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -481,18 +497,18 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
 
 INSTITUTION <IMicrosoftGraphInstitutionData>: institutionData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[Description <String>]`: Short description of the institution the user studied at.
+  - `[DisplayName <String>]`: Name of the institution the user studied at.
   - `[Location <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[WebUrl <String>]`: 
+  - `[WebUrl <String>]`: Link to the institution or department homepage.
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -505,19 +521,19 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 PROGRAM <IMicrosoftGraphEducationalActivityDetail>: educationalActivityDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Abbreviation <String>]`: 
-  - `[Activities <String>]`: 
-  - `[Awards <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[FieldsOfStudy <String>]`: 
-  - `[Grade <String>]`: 
-  - `[Notes <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Abbreviation <String>]`: Shortened name of the degree or program (example: PhD, MBA)
+  - `[Activities <String[]>]`: Extracurricular activities undertaken alongside the program.
+  - `[Awards <String[]>]`: Any awards or honors associated with the program.
+  - `[Description <String>]`: Short description of the program provided by the user.
+  - `[DisplayName <String>]`: Long-form name of the program that the user has provided.
+  - `[FieldsOfStudy <String[]>]`: Majors and minors associated with the program. (if applicable)
+  - `[Grade <String>]`: The final grade, class, GPA or score.
+  - `[Notes <String>]`: Additional notes the user has provided.
+  - `[WebUrl <String>]`: Link to the degree or program page.
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
 
