@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationUserUserByRef
 
 ## SYNOPSIS
-Get ref of user from education
+The directory user corresponding to this user.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgEducationUserUserByRef -InputObject <IEducationIdentity> [<CommonParameter
 ```
 
 ## DESCRIPTION
-Get ref of user from education
+The directory user corresponding to this user.
 
 ## EXAMPLES
 

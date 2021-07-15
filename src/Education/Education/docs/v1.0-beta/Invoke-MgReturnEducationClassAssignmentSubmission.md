@@ -12,13 +12,13 @@ Invoke action return
 
 ## SYNTAX
 
-### Return (Default)
+### Return1 (Default)
 ```
 Invoke-MgReturnEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReturnViaIdentity
+### ReturnViaIdentity1
 ```
 Invoke-MgReturnEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -54,7 +54,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Return
+Parameter Sets: Return1
 Aliases:
 
 Required: True
@@ -69,7 +69,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Return
+Parameter Sets: Return1
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of educationSubmission
 
 ```yaml
 Type: System.String
-Parameter Sets: Return
+Parameter Sets: Return1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: ReturnViaIdentity
+Parameter Sets: ReturnViaIdentity1
 Aliases:
 
 Required: True

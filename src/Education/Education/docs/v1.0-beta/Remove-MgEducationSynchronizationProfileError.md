@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationSynchronizationProfileError
 
 ## SYNOPSIS
-Delete navigation property errors for education
+All errors associated with this synchronization profile.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property errors for education
+All errors associated with this synchronization profile.
 
 ## EXAMPLES
 

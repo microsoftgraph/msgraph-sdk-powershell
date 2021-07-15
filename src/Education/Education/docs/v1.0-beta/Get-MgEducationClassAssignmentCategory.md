@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgEducationClassAssignmentCategory
 
 ## SYNOPSIS
-Get categories from education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### List1 (Default)
+### List3 (Default)
 ```
-Get-MgEducationClassAssignmentCategory -EducationClassId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgEducationClassAssignmentCategory -EducationClassId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -25,7 +27,7 @@ Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -Educatio
  -EducationClassId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get1
+### Get3
 ```
 Get-MgEducationClassAssignmentCategory -EducationCategoryId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
@@ -37,7 +39,7 @@ Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-Expan
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity3
 ```
 Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -45,13 +47,15 @@ Get-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-Expan
 
 ### List
 ```
-Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String> [-Count]
+Get-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get categories from education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -80,7 +84,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases:
 
 Required: False
@@ -90,13 +94,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List, List1
-Aliases:
+Type: System.String
+Parameter Sets: List, List3
+Aliases: CV
 
 Required: False
 Position: Named
@@ -125,7 +130,7 @@ key: id of educationCategory
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1
+Parameter Sets: Get, Get3
 Aliases:
 
 Required: True
@@ -140,7 +145,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List, List1
+Parameter Sets: Get, Get3, List, List3
 Aliases:
 
 Required: True
@@ -170,7 +175,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases:
 
 Required: False
@@ -186,7 +191,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -201,7 +206,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases:
 
 Required: False
@@ -231,7 +236,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases:
 
 Required: False
@@ -246,7 +251,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases:
 
 Required: False
@@ -261,7 +266,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases: OrderBy
 
 Required: False
@@ -276,7 +281,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List, List1
+Parameter Sets: List, List3
 Aliases: Limit
 
 Required: False

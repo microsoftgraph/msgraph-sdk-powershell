@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgEducationUserAssignmentSubmissionOutcome
 
 ## SYNOPSIS
-Delete navigation property outcomes for education
+Read-Write.
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +27,8 @@ Remove-MgEducationUserAssignmentSubmissionOutcome -InputObject <IEducationIdenti
 ```
 
 ## DESCRIPTION
-Delete navigation property outcomes for education
+Read-Write.
+Nullable.
 
 ## EXAMPLES
 

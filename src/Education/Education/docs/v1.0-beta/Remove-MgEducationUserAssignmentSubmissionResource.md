@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationUserAssignmentSubmissionResource
 
 ## SYNOPSIS
-Delete navigation property resources for education
+Nullable.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgEducationUserAssignmentSubmissionResource -InputObject <IEducationIdent
 ```
 
 ## DESCRIPTION
-Delete navigation property resources for education
+Nullable.
 
 ## EXAMPLES
 

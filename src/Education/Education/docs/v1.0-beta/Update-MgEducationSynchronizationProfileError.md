@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEducationSynchronizationProfileError
 
 ## SYNOPSIS
-Update the navigation property errors in education
+All errors associated with this synchronization profile.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgEducationSynchronizationProfileError -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property errors in education
+All errors associated with this synchronization profile.
 
 ## EXAMPLES
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -EntryType
-.
+Represents the sync entity (school, section, student, teacher).
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ErrorCode
-.
+Represents the error code for this error.
 
 ```yaml
 Type: System.String
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -ErrorMessage
-.
+Contains a description of the error.
 
 ```yaml
 Type: System.String
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -JoiningValue
-.
+The unique identifier for the entry.
 
 ```yaml
 Type: System.String
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecordedDateTime
-.
+The time of occurrence of this error.
 
 ```yaml
 Type: System.DateTime
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReportableIdentifier
-.
+The identifier of this error entry.
 
 ```yaml
 Type: System.String
@@ -321,12 +321,12 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationError>: educationSynchronizationError
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[EntryType <String>]`: 
-  - `[ErrorCode <String>]`: 
-  - `[ErrorMessage <String>]`: 
-  - `[JoiningValue <String>]`: 
-  - `[RecordedDateTime <DateTime?>]`: 
-  - `[ReportableIdentifier <String>]`: 
+  - `[EntryType <String>]`: Represents the sync entity (school, section, student, teacher).
+  - `[ErrorCode <String>]`: Represents the error code for this error.
+  - `[ErrorMessage <String>]`: Contains a description of the error.
+  - `[JoiningValue <String>]`: The unique identifier for the entry.
+  - `[RecordedDateTime <DateTime?>]`: The time of occurrence of this error.
+  - `[ReportableIdentifier <String>]`: The identifier of this error entry.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment

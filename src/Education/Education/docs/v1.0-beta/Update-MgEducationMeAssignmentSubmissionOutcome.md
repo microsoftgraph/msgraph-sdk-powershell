@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgEducationMeAssignmentSubmissionOutcome
 
 ## SYNOPSIS
-Update the navigation property outcomes in education
+Read-Write.
+Nullable.
 
 ## SYNTAX
 
@@ -41,7 +42,8 @@ Update-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity
 ```
 
 ## DESCRIPTION
-Update the navigation property outcomes in education
+Read-Write.
+Nullable.
 
 ## EXAMPLES
 

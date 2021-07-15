@@ -12,12 +12,12 @@ Invoke function delta
 
 ## SYNTAX
 
-### Delta (Default)
+### Delta1 (Default)
 ```
 Get-MgEducationClassSchoolDelta -EducationClassId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity
+### DeltaViaIdentity1
 ```
 Get-MgEducationClassSchoolDelta -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
@@ -52,7 +52,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta
+Parameter Sets: Delta1
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: DeltaViaIdentity
+Parameter Sets: DeltaViaIdentity1
 Aliases:
 
 Required: True
@@ -87,7 +87,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSchool1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSchool
 
 ## NOTES
 

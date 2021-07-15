@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolAdministrativeUnit
 
 ## SYNOPSIS
-Get administrativeUnit from education
+The underlying administrativeUnit for this school.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get administrativeUnit from education
+The underlying administrativeUnit for this school.
 
 ## EXAMPLES
 

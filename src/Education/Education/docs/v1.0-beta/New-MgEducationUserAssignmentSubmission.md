@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgEducationUserAssignmentSubmission
 
 ## SYNOPSIS
-Create new navigation property to submissions for education
+Once published, there is a submission object for each student representing their work and grade.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -16,10 +18,9 @@ Create new navigation property to submissions for education
 ```
 New-MgEducationUserAssignmentSubmission -EducationAssignmentId <String> -EducationUserId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Outcomes <IMicrosoftGraphEducationOutcome[]>]
- [-Recipient <Hashtable>] [-ReleasedBy <IMicrosoftGraphIdentitySet>] [-ReleasedDateTime <DateTime>]
- [-Resources <IMicrosoftGraphEducationSubmissionResource[]>] [-ResourcesFolderUrl <String>]
- [-ReturnedBy <IMicrosoftGraphIdentitySet>] [-ReturnedDateTime <DateTime>] [-Status <String>]
- [-SubmittedBy <IMicrosoftGraphIdentitySet>] [-SubmittedDateTime <DateTime>]
+ [-Recipient <Hashtable>] [-Resources <IMicrosoftGraphEducationSubmissionResource[]>]
+ [-ResourcesFolderUrl <String>] [-ReturnedBy <IMicrosoftGraphIdentitySet>] [-ReturnedDateTime <DateTime>]
+ [-Status <String>] [-SubmittedBy <IMicrosoftGraphIdentitySet>] [-SubmittedDateTime <DateTime>]
  [-SubmittedResources <IMicrosoftGraphEducationSubmissionResource[]>]
  [-UnsubmittedBy <IMicrosoftGraphIdentitySet>] [-UnsubmittedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -41,7 +42,6 @@ New-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity>
 ```
 New-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-Outcomes <IMicrosoftGraphEducationOutcome[]>] [-Recipient <Hashtable>]
- [-ReleasedBy <IMicrosoftGraphIdentitySet>] [-ReleasedDateTime <DateTime>]
  [-Resources <IMicrosoftGraphEducationSubmissionResource[]>] [-ResourcesFolderUrl <String>]
  [-ReturnedBy <IMicrosoftGraphIdentitySet>] [-ReturnedDateTime <DateTime>] [-Status <String>]
  [-SubmittedBy <IMicrosoftGraphIdentitySet>] [-SubmittedDateTime <DateTime>]
@@ -51,7 +51,9 @@ New-MgEducationUserAssignmentSubmission -InputObject <IEducationIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Create new navigation property to submissions for education
+Once published, there is a submission object for each student representing their work and grade.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -168,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -Outcomes
-.
+Read-Write.
+Nullable.
 To construct, see NOTES section for OUTCOMES properties and create a hash table.
 
 ```yaml
@@ -198,39 +201,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReleasedBy
-identitySet
-To construct, see NOTES section for RELEASEDBY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ReleasedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Resources
-.
+Nullable.
 To construct, see NOTES section for RESOURCES properties and create a hash table.
 
 ```yaml
@@ -246,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourcesFolderUrl
-.
+Folder where all file resources for this submission need to be stored.
 
 ```yaml
 Type: System.String
@@ -277,7 +249,9 @@ Accept wildcard characters: False
 ```
 
 ### -ReturnedDateTime
-.
+Moment in time when the submission was returned.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -323,7 +297,9 @@ Accept wildcard characters: False
 ```
 
 ### -SubmittedDateTime
-.
+Moment in time when the submission was moved into the submitted state.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -338,7 +314,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubmittedResources
-.
+Read-only.
+Nullable.
 To construct, see NOTES section for SUBMITTEDRESOURCES properties and create a hash table.
 
 ```yaml
@@ -370,7 +347,9 @@ Accept wildcard characters: False
 ```
 
 ### -UnsubmittedDateTime
-.
+Moment in time when the submission was moved from submitted into the working state.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -440,7 +419,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationSubmission>: educationSubmission
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: 
+  - `[Outcomes <IMicrosoftGraphEducationOutcome[]>]`: Read-Write. Nullable.
     - `[Id <String>]`: Read-only.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -453,27 +432,25 @@ BODYPARAMETER <IMicrosoftGraphEducationSubmission>: educationSubmission
     - `[LastModifiedDateTime <DateTime?>]`: 
   - `[Recipient <IMicrosoftGraphEducationSubmissionRecipient>]`: educationSubmissionRecipient
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ReleasedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[ReleasedDateTime <DateTime?>]`: 
-  - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
+  - `[Resources <IMicrosoftGraphEducationSubmissionResource[]>]`: Nullable.
     - `[Id <String>]`: Read-only.
-    - `[AssignmentResourceUrl <String>]`: 
+    - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
     - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[DisplayName <String>]`: 
+      - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[DisplayName <String>]`: Display name of resource.
       - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-      - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[ResourcesFolderUrl <String>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ResourcesFolderUrl <String>]`: Folder where all file resources for this submission need to be stored.
   - `[ReturnedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[ReturnedDateTime <DateTime?>]`: 
+  - `[ReturnedDateTime <DateTime?>]`: Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Status <String>]`: educationSubmissionStatus
   - `[SubmittedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[SubmittedDateTime <DateTime?>]`: 
-  - `[SubmittedResources <IMicrosoftGraphEducationSubmissionResource[]>]`: 
+  - `[SubmittedDateTime <DateTime?>]`: Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[SubmittedResources <IMicrosoftGraphEducationSubmissionResource[]>]`: Read-only. Nullable.
   - `[UnsubmittedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[UnsubmittedDateTime <DateTime?>]`: 
+  - `[UnsubmittedDateTime <DateTime?>]`: Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
@@ -489,7 +466,7 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationSynchronizationProfileId <String>]`: key: id of educationSynchronizationProfile
   - `[EducationUserId <String>]`: key: id of educationUser
 
-OUTCOMES <IMicrosoftGraphEducationOutcome[]>: .
+OUTCOMES <IMicrosoftGraphEducationOutcome[]>: Read-Write. Nullable.
   - `[Id <String>]`: Read-only.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -501,18 +478,9 @@ OUTCOMES <IMicrosoftGraphEducationOutcome[]>: .
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: 
 
-RELEASEDBY <IMicrosoftGraphIdentitySet>: identitySet
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Application <IMicrosoftGraphIdentity>]`: identity
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
-  - `[Device <IMicrosoftGraphIdentity>]`: identity
-  - `[User <IMicrosoftGraphIdentity>]`: identity
-
-RESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: .
+RESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: Nullable.
   - `[Id <String>]`: Read-only.
-  - `[AssignmentResourceUrl <String>]`: 
+  - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -523,10 +491,10 @@ RESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: .
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 RETURNEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -546,9 +514,9 @@ SUBMITTEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
-SUBMITTEDRESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: .
+SUBMITTEDRESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: Read-only. Nullable.
   - `[Id <String>]`: Read-only.
-  - `[AssignmentResourceUrl <String>]`: 
+  - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -559,10 +527,10 @@ SUBMITTEDRESOURCES <IMicrosoftGraphEducationSubmissionResource[]>: .
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 UNSUBMITTEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -12,13 +12,13 @@ Invoke action submit
 
 ## SYNTAX
 
-### Submit (Default)
+### Submit1 (Default)
 ```
 Submit-MgEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SubmitViaIdentity
+### SubmitViaIdentity1
 ```
 Submit-MgEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -54,7 +54,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Submit
+Parameter Sets: Submit1
 Aliases:
 
 Required: True
@@ -69,7 +69,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Submit
+Parameter Sets: Submit1
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of educationSubmission
 
 ```yaml
 Type: System.String
-Parameter Sets: Submit
+Parameter Sets: Submit1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: SubmitViaIdentity
+Parameter Sets: SubmitViaIdentity1
 Aliases:
 
 Required: True

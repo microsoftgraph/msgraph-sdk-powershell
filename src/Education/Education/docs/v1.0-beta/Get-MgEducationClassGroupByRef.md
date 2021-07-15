@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationClassGroupByRef
 
 ## SYNOPSIS
-Get ref of group from education
+The underlying Microsoft 365 group object.
 
 ## SYNTAX
 
@@ -23,7 +23,7 @@ Get-MgEducationClassGroupByRef -InputObject <IEducationIdentity> [<CommonParamet
 ```
 
 ## DESCRIPTION
-Get ref of group from education
+The underlying Microsoft 365 group object.
 
 ## EXAMPLES
 

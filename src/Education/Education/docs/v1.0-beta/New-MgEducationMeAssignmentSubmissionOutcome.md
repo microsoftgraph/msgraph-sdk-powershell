@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEducationMeAssignmentSubmissionOutcome
 
 ## SYNOPSIS
-Create new navigation property to outcomes for education
+Read-Write.
+Nullable.
 
 ## SYNTAX
 
@@ -39,7 +40,8 @@ New-MgEducationMeAssignmentSubmissionOutcome -InputObject <IEducationIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to outcomes for education
+Read-Write.
+Nullable.
 
 ## EXAMPLES
 

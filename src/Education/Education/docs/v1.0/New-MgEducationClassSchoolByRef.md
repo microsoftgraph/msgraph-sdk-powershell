@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEducationClassSchoolByRef
 
 ## SYNOPSIS
-Create new navigation property ref to schools for education
+All schools that this class is associated with.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgEducationClassSchoolByRef -InputObject <IEducationIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to schools for education
+All schools that this class is associated with.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignmentRubric
 
 ## SYNOPSIS
-Delete navigation property rubric for education
+When set, the grading rubric attached to this assignment.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgEducationMeAssignmentRubric -InputObject <IEducationIdentity> [-IfMatch
 ```
 
 ## DESCRIPTION
-Delete navigation property rubric for education
+When set, the grading rubric attached to this assignment.
 
 ## EXAMPLES
 

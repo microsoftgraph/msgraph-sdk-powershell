@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignmentCategory
 
 ## SYNOPSIS
-Delete navigation property categories for education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +27,9 @@ Remove-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-IfMat
 ```
 
 ## DESCRIPTION
-Delete navigation property categories for education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for education
+List of assignments for the user.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgEducationMeAssignment -InputObject <IEducationIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for education
+List of assignments for the user.
+Nullable.
 
 ## EXAMPLES
 

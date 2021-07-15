@@ -8,15 +8,17 @@ schema: 2.0.0
 # Get-MgEducationMeAssignmentResource
 
 ## SYNOPSIS
-Get resources from education
+Learning objects that are associated with this assignment.
+Only teachers can modify this list.
+Nullable.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgEducationMeAssignmentResource -EducationAssignmentId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgEducationMeAssignmentResource -EducationAssignmentId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,7 +34,9 @@ Get-MgEducationMeAssignmentResource -InputObject <IEducationIdentity> [-ExpandPr
 ```
 
 ## DESCRIPTION
-Get resources from education
+Learning objects that are associated with this assignment.
+Only teachers can modify this list.
+Nullable.
 
 ## EXAMPLES
 
@@ -71,13 +75,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

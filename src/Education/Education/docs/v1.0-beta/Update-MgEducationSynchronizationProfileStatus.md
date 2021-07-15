@@ -8,15 +8,16 @@ schema: 2.0.0
 # Update-MgEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
-Update the navigation property profileStatus in education
+The synchronization status.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastSynchronizationDateTime <DateTime>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastActivityDateTime <DateTime>]
+ [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -36,12 +37,13 @@ Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastSynchronizationDateTime <DateTime>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastActivityDateTime <DateTime>]
+ [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property profileStatus in education
+The synchronization status.
 
 ## EXAMPLES
 
@@ -142,8 +144,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LastSynchronizationDateTime
+### -LastActivityDateTime
 .
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LastSynchronizationDateTime
+Represents the time when most recent changes have been observed in the directory.
 
 ```yaml
 Type: System.DateTime
@@ -243,7 +260,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationSynchronizationProfileStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[LastSynchronizationDateTime <DateTime?>]`: 
+  - `[LastActivityDateTime <DateTime?>]`: 
+  - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time when most recent changes have been observed in the directory.
   - `[Status <String>]`: educationSynchronizationStatus
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter

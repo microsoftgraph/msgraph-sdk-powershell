@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEducationClassMemberByRef
 
 ## SYNOPSIS
-Create new navigation property ref to members for education
+All users in the class.
+Nullable.
 
 ## SYNTAX
 
@@ -37,7 +38,8 @@ New-MgEducationClassMemberByRef -InputObject <IEducationIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to members for education
+All users in the class.
+Nullable.
 
 ## EXAMPLES
 
