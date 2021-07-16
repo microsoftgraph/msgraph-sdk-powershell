@@ -1,55 +1,100 @@
 ---
 external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemactivitybyinterval
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitepermission
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemActivityByInterval
+# Get-MgSitePermission
 
 ## SYNOPSIS
-Invoke function getActivitiesByInterval
+The permissions associated with the site.
+Nullable.
 
 ## SYNTAX
 
-### Get1 (Default)
+### List1 (Default)
 ```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- [<CommonParameters>]
-```
-
-### Get2
-```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- -EndDateTime <String> -Interval <String> -StartDateTime <String> [<CommonParameters>]
+Get-MgSitePermission -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
+ [-CountVariable <String>] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### Get1
 ```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgSitePermission -PermissionId <String> -SiteId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgSitePermission -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getActivitiesByInterval
+The permissions associated with the site.
+Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -EndDateTime
-Usage: endDateTime={endDateTime}
+### -All
+List all pages.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
 Type: String
-Parameter Sets: Get2
+Parameter Sets: List1
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: String
+Parameter Sets: List1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -62,7 +107,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: ISitesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity1
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -72,12 +117,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Interval
-Usage: interval={interval}
+### -PageSize
+Sets the page size of results.
+
+```yaml
+Type: Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PermissionId
+key: id of permission
 
 ```yaml
 Type: String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -87,30 +147,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ListId
-key: id of list
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: String
-Parameter Sets: Get1, Get2
-Aliases:
+Type: String[]
+Parameter Sets: (All)
+Aliases: Select
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ListItemId
-key: id of listItem
+### -Search
+Search items by search phrases
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: List1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -122,7 +182,7 @@ key: id of site
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: List1, Get1
 Aliases:
 
 Required: True
@@ -132,15 +192,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartDateTime
-Usage: startDateTime={startDateTime}
+### -Sort
+Order items by property values
 
 ```yaml
-Type: String
-Parameter Sets: Get2
+Type: String[]
+Parameter Sets: List1
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List1
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -155,7 +245,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
 ## NOTES
 
 ALIASES

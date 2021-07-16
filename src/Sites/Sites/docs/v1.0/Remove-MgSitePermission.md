@@ -1,55 +1,47 @@
 ---
 external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemactivitybyinterval
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitepermission
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemActivityByInterval
+# Remove-MgSitePermission
 
 ## SYNOPSIS
-Invoke function getActivitiesByInterval
+The permissions associated with the site.
+Nullable.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Delete1 (Default)
 ```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
+Remove-MgSitePermission -PermissionId <String> -SiteId <String> [-IfMatch <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### DeleteViaIdentity1
+```
+Remove-MgSitePermission -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Get2
-```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- -EndDateTime <String> -Interval <String> -StartDateTime <String> [<CommonParameters>]
-```
-
-### GetViaIdentity2
-```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Invoke function getActivitiesByInterval
+The permissions associated with the site.
+Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -EndDateTime
-Usage: endDateTime={endDateTime}
+### -IfMatch
+ETag
 
 ```yaml
 Type: String
-Parameter Sets: Get2
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -62,7 +54,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: ISitesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity1
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -72,42 +64,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Interval
-Usage: interval={interval}
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: String
-Parameter Sets: Get2
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ListId
-key: id of list
+### -PermissionId
+key: id of permission
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ListItemId
-key: id of listItem
-
-```yaml
-Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -122,7 +99,7 @@ key: id of site
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -132,15 +109,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartDateTime
-Usage: startDateTime={startDateTime}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: String
-Parameter Sets: Get2
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -155,7 +148,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### System.Boolean
 ## NOTES
 
 ALIASES

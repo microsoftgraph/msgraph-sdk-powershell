@@ -1,43 +1,45 @@
 ---
 external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitelistcontenttypecolumnlink
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/grant-mgsitepermission
 schema: 2.0.0
 ---
 
-# New-MgSiteListContentTypeColumnLink
+# Grant-MgSitePermission
 
 ## SYNOPSIS
-The collection of columns that are required by this content type
+Invoke action grant
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### GrantExpanded1 (Default)
 ```
-New-MgSiteListContentTypeColumnLink -ContentTypeId <String> -ListId <String> -SiteId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Name <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgSiteListContentTypeColumnLink -ContentTypeId <String> -ListId <String> -SiteId <String>
- -BodyParameter <IMicrosoftGraphColumnLink> [-WhatIf] [-Confirm] [<CommonParameters>]
+Grant-MgSitePermission -PermissionId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### Grant1
 ```
-New-MgSiteListContentTypeColumnLink -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Name <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Grant-MgSitePermission -PermissionId <String> -SiteId <String>
+ -BodyParameter <IPaths141Mc2FSitesSiteIdPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### GrantViaIdentityExpanded1
 ```
-New-MgSiteListContentTypeColumnLink -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphColumnLink>
+Grant-MgSitePermission -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+ [-Recipients <IMicrosoftGraphDriveRecipient[]>] [-Roles <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GrantViaIdentity1
+```
+Grant-MgSitePermission -InputObject <ISitesIdentity>
+ -BodyParameter <IPaths141Mc2FSitesSiteIdPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of columns that are required by this content type
+Invoke action grant
 
 ## EXAMPLES
 
@@ -48,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -59,48 +61,18 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-columnLink
+.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: IMicrosoftGraphColumnLink
-Parameter Sets: Create1, CreateViaIdentity1
+Type: IPaths141Mc2FSitesSiteIdPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1
+Parameter Sets: Grant1, GrantViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ContentTypeId
-key: id of contentType
-
-```yaml
-Type: String
-Parameter Sets: CreateExpanded1, Create1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -110,7 +82,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: ISitesIdentity
-Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
+Parameter Sets: GrantViaIdentityExpanded1, GrantViaIdentity1
 Aliases:
 
 Required: True
@@ -120,12 +92,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ListId
-key: id of list
+### -PermissionId
+key: id of permission
 
 ```yaml
 Type: String
-Parameter Sets: CreateExpanded1, Create1
+Parameter Sets: GrantExpanded1, Grant1
 Aliases:
 
 Required: True
@@ -135,12 +107,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-The name of the column in this content type.
+### -Recipients
+.
+To construct, see NOTES section for RECIPIENTS properties and create a hash table.
 
 ```yaml
-Type: String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: IMicrosoftGraphDriveRecipient[]
+Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Roles
+.
+
+```yaml
+Type: String[]
+Parameter Sets: GrantExpanded1, GrantViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -155,7 +143,7 @@ key: id of site
 
 ```yaml
 Type: String
-Parameter Sets: CreateExpanded1, Create1
+Parameter Sets: GrantExpanded1, Grant1
 Aliases:
 
 Required: True
@@ -201,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.PowerShell.Models.IPaths141Mc2FSitesSiteIdPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission1
 ## NOTES
 
 ALIASES
@@ -215,10 +203,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphColumnLink>: columnLink
+BODYPARAMETER <IPaths141Mc2FSitesSiteIdPermissionsPermissionIdMicrosoftGraphGrantPostRequestbodyContentApplicationJsonSchema1>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Name <String>]`: The name of the column  in this content type.
+  - `[Recipients <IMicrosoftGraphDriveRecipient[]>]`: 
+    - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
+    - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
+    - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
+  - `[Roles <String[]>]`: 
 
 INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
@@ -244,5 +235,10 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[UserId <String>]`: key: id of user
+
+RECIPIENTS <IMicrosoftGraphDriveRecipient[]>: .
+  - `[Alias <String>]`: The alias of the domain object, for cases where an email address is unavailable (e.g. security groups).
+  - `[Email <String>]`: The email address for the recipient, if the recipient has an associated email address.
+  - `[ObjectId <String>]`: The unique identifier for the recipient in the directory.
 
 ## RELATED LINKS

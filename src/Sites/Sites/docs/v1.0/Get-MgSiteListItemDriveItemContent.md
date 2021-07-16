@@ -1,60 +1,35 @@
 ---
 external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemactivitybyinterval
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemActivityByInterval
+# Get-MgSiteListItemDriveItemContent
 
 ## SYNOPSIS
-Invoke function getActivitiesByInterval
+Get media content for the navigation property driveItem from sites
 
 ## SYNTAX
 
 ### Get1 (Default)
 ```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- [<CommonParameters>]
-```
-
-### Get2
-```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- -EndDateTime <String> -Interval <String> -StartDateTime <String> [<CommonParameters>]
-```
-
-### GetViaIdentity2
-```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String> -OutFile <String>
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
+Get-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getActivitiesByInterval
+Get media content for the navigation property driveItem from sites
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -EndDateTime
-Usage: endDateTime={endDateTime}
-
-```yaml
-Type: String
-Parameter Sets: Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -62,7 +37,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: ISitesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity1
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -72,27 +47,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Interval
-Usage: interval={interval}
-
-```yaml
-Type: String
-Parameter Sets: Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ListId
 key: id of list
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -107,10 +67,40 @@ key: id of listItem
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -122,22 +112,7 @@ key: id of site
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StartDateTime
-Usage: startDateTime={startDateTime}
-
-```yaml
-Type: String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -155,7 +130,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### System.Boolean
 ## NOTES
 
 ALIASES

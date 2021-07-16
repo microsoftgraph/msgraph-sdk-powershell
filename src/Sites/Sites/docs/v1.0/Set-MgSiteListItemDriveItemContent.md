@@ -1,52 +1,59 @@
 ---
 external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemactivitybyinterval
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/set-mgsitelistitemdriveitemcontent
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemActivityByInterval
+# Set-MgSiteListItemDriveItemContent
 
 ## SYNOPSIS
-Invoke function getActivitiesByInterval
+Update media content for the navigation property driveItem in sites
 
 ## SYNTAX
 
-### Get1 (Default)
+### Set1 (Default)
 ```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- [<CommonParameters>]
-```
-
-### Get2
-```
-Get-MgSiteListItemActivityByInterval -ListId <String> -ListItemId <String> -SiteId <String>
- -EndDateTime <String> -Interval <String> -StartDateTime <String> [<CommonParameters>]
+Set-MgSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### SetViaIdentity1
 ```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgSiteListItemActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
+Set-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> [-BodyParameter <Stream>] -InFile <String>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getActivitiesByInterval
+Update media content for the navigation property driveItem in sites
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -EndDateTime
-Usage: endDateTime={endDateTime}
+### -BodyParameter
+.
+
+```yaml
+Type: Stream
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
 Type: String
-Parameter Sets: Get2
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -62,7 +69,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: ISitesIdentity
-Parameter Sets: GetViaIdentity2, GetViaIdentity1
+Parameter Sets: SetViaIdentity1
 Aliases:
 
 Required: True
@@ -72,27 +79,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Interval
-Usage: interval={interval}
-
-```yaml
-Type: String
-Parameter Sets: Get2
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ListId
 key: id of list
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -107,10 +99,25 @@ key: id of listItem
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Set1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -122,7 +129,7 @@ key: id of site
 
 ```yaml
 Type: String
-Parameter Sets: Get1, Get2
+Parameter Sets: Set1
 Aliases:
 
 Required: True
@@ -132,15 +139,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartDateTime
-Usage: startDateTime={startDateTime}
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: String
-Parameter Sets: Get2
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -153,9 +176,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+### System.IO.Stream
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
+### System.Boolean
 ## NOTES
 
 ALIASES
