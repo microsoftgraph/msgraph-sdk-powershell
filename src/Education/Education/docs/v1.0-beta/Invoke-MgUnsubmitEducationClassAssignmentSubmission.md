@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/invoke-mgunsubmiteducationclassassignmentsubmission
 schema: 2.0.0
@@ -12,15 +12,15 @@ Invoke action unsubmit
 
 ## SYNTAX
 
-### Unsubmit (Default)
+### Unsubmit1 (Default)
 ```
 Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
- -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -EducationSubmissionId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UnsubmitViaIdentity
+### UnsubmitViaIdentity1
 ```
-Invoke-MgUnsubmitEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
+Invoke-MgUnsubmitEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -29,32 +29,14 @@ Invoke action unsubmit
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EducationAssignmentId
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
-Parameter Sets: Unsubmit
+Type: String
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -68,8 +50,8 @@ Accept wildcard characters: False
 key: id of educationClass
 
 ```yaml
-Type: System.String
-Parameter Sets: Unsubmit
+Type: String
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -83,8 +65,8 @@ Accept wildcard characters: False
 key: id of educationSubmission
 
 ```yaml
-Type: System.String
-Parameter Sets: Unsubmit
+Type: String
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -99,8 +81,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: UnsubmitViaIdentity
+Type: IEducationIdentity
+Parameter Sets: UnsubmitViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +112,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -147,11 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
-
 ## NOTES
 
 ALIASES
@@ -176,4 +156,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-

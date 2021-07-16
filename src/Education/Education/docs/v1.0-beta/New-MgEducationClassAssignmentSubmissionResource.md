@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationclassassignmentsubmissionresource
 schema: 2.0.0
@@ -8,59 +8,41 @@ schema: 2.0.0
 # New-MgEducationClassAssignmentSubmissionResource
 
 ## SYNOPSIS
-Create new navigation property to resources for education
+Nullable.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>]
- [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-Resource <IMicrosoftGraphEducationResource>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgEducationClassAssignmentSubmissionResource -EducationAssignmentId <String> -EducationClassId <String>
- -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -EducationSubmissionId <String> -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
-```
-New-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
  [-AdditionalProperties <Hashtable>] [-AssignmentResourceUrl <String>] [-Id <String>]
- [-Resource <IMicrosoftGraphEducationResource>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Resource <IMicrosoftGraphEducationResource>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgEducationClassAssignmentSubmissionResource -InputObject <IEducationIdentity>
+ -BodyParameter <IMicrosoftGraphEducationSubmissionResource> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to resources for education
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -68,8 +50,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,11 +62,12 @@ Accept wildcard characters: False
 ```
 
 ### -AssignmentResourceUrl
-.
+Pointer to the assignment from which this resource was copied.
+If this is null, the student uploaded the resource.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -99,8 +82,8 @@ educationSubmissionResource
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
-Parameter Sets: Create, CreateViaIdentity
+Type: IMicrosoftGraphEducationSubmissionResource
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -114,8 +97,8 @@ Accept wildcard characters: False
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -129,8 +112,8 @@ Accept wildcard characters: False
 key: id of educationClass
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -144,8 +127,8 @@ Accept wildcard characters: False
 key: id of educationSubmission
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -159,8 +142,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -175,8 +158,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IEducationIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -191,8 +174,8 @@ educationResource
 To construct, see NOTES section for RESOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationResource
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: IMicrosoftGraphEducationResource
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -206,7 +189,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -222,7 +205,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -239,13 +222,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmissionResource
-
 ## NOTES
 
 ALIASES
@@ -258,7 +238,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AssignmentResourceUrl <String>]`: 
+  - `[AssignmentResourceUrl <String>]`: Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
   - `[Resource <IMicrosoftGraphEducationResource>]`: educationResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -269,10 +249,10 @@ BODYPARAMETER <IMicrosoftGraphEducationSubmissionResource>: educationSubmissionR
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DisplayName <String>]`: Display name of resource.
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
@@ -298,10 +278,9 @@ RESOURCE <IMicrosoftGraphEducationResource>: educationResource
       - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DisplayName <String>]`: Display name of resource.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Moment in time when the resource was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ## RELATED LINKS
-

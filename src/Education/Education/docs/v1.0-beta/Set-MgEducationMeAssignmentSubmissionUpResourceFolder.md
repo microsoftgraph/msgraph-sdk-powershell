@@ -1,50 +1,32 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationclassassignmentresourcefolderurl
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationmeassignmentsubmissionupresourcefolder
 schema: 2.0.0
 ---
 
-# Get-MgEducationClassAssignmentResourceFolderUrl
+# Set-MgEducationMeAssignmentSubmissionUpResourceFolder
 
 ## SYNOPSIS
-Invoke function getResourcesFolderUrl
+Invoke function setUpResourcesFolder
 
 ## SYNTAX
 
-### Get (Default)
+### Set (Default)
 ```
-Get-MgEducationClassAssignmentResourceFolderUrl -EducationAssignmentId <String> -EducationClassId <String>
- [<CommonParameters>]
+Set-MgEducationMeAssignmentSubmissionUpResourceFolder -EducationAssignmentId <String>
+ -EducationSubmissionId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### SetViaIdentity
 ```
-Get-MgEducationClassAssignmentResourceFolderUrl -InputObject <IEducationIdentity> [<CommonParameters>]
+Set-MgEducationMeAssignmentSubmissionUpResourceFolder -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getResourcesFolderUrl
+Invoke function setUpResourcesFolder
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -52,8 +34,8 @@ PS C:\> {{ Add code here }}
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
+Type: String
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -63,12 +45,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EducationClassId
-key: id of educationClass
+### -EducationSubmissionId
+key: id of educationSubmission
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
+Type: String
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -83,8 +65,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity
+Type: IEducationIdentity
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -100,11 +82,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
-
 ## OUTPUTS
 
-### System.String
-
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSubmission
 ## NOTES
 
 ALIASES
@@ -129,4 +109,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-
