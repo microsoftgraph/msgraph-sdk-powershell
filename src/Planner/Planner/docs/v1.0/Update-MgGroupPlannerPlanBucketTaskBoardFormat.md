@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Planner-help.xml
 Module Name: Microsoft.Graph.Planner
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mggroupplannerplanbuckettaskboardformat
 schema: 2.0.0
@@ -18,28 +18,28 @@ Used to render the task correctly in the task board view when grouped by bucket.
 ```
 Update-MgGroupPlannerPlanBucketTaskBoardFormat -GroupId <String> -PlannerBucketId <String>
  -PlannerPlanId <String> -PlannerTaskId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OrderHint <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgGroupPlannerPlanBucketTaskBoardFormat -GroupId <String> -PlannerBucketId <String>
  -PlannerPlanId <String> -PlannerTaskId <String>
- -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgGroupPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity>
- -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgGroupPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-OrderHint <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgGroupPlannerPlanBucketTaskBoardFormat -InputObject <IPlannerIdentity>
+ -BodyParameter <IMicrosoftGraphPlannerBucketTaskBoardTaskFormat> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -56,7 +56,7 @@ Used to render the task correctly in the task board view when grouped by bucket.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -72,7 +72,7 @@ plannerBucketTaskBoardTaskFormat
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
+Type: IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -87,8 +87,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -118,8 +118,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IPlannerIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -134,7 +134,7 @@ Hint used to order tasks in the Bucket view of the Task Board.
 The format is defined as outlined here.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -164,8 +164,8 @@ Accept wildcard characters: False
 key: id of plannerBucket
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -179,8 +179,8 @@ Accept wildcard characters: False
 key: id of plannerPlan
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -194,8 +194,8 @@ Accept wildcard characters: False
 key: id of plannerTask
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -225,7 +225,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -242,13 +242,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucketTaskBoardTaskFormat
-
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -274,4 +271,3 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

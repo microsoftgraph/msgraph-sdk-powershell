@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Planner-help.xml
 Module Name: Microsoft.Graph.Planner
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner/update-mggroupplannerplan
 schema: 2.0.0
@@ -19,20 +19,14 @@ Returns the plannerPlans owned by the group.
 Update-MgGroupPlannerPlan -GroupId <String> -PlannerPlanId <String> [-AdditionalProperties <Hashtable>]
  [-Buckets <IMicrosoftGraphPlannerBucket[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Details <IMicrosoftGraphPlannerPlanDetails>] [-Id <String>] [-Owner <String>]
- [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgGroupPlannerPlan -GroupId <String> -PlannerPlanId <String>
- -BodyParameter <IMicrosoftGraphPlannerPlan> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgGroupPlannerPlan -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgGroupPlannerPlan -GroupId <String> -PlannerPlanId <String> -BodyParameter <IMicrosoftGraphPlannerPlan>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,8 +34,14 @@ Update-MgGroupPlannerPlan -InputObject <IPlannerIdentity> -BodyParameter <IMicro
 Update-MgGroupPlannerPlan -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-Buckets <IMicrosoftGraphPlannerBucket[]>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-Details <IMicrosoftGraphPlannerPlanDetails>] [-Id <String>] [-Owner <String>]
- [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Tasks <IMicrosoftGraphPlannerTask[]>] [-Title <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgGroupPlannerPlan -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerPlan>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +57,7 @@ Returns the plannerPlans owned by the group.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -73,7 +73,7 @@ plannerPlan
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
+Type: IMicrosoftGraphPlannerPlan
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -91,7 +91,7 @@ Nullable.
 To construct, see NOTES section for BUCKETS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket[]
+Type: IMicrosoftGraphPlannerBucket[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -107,7 +107,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -125,7 +125,7 @@ The Timestamp type represents date and time information using ISO 8601 format an
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -141,7 +141,7 @@ plannerPlanDetails
 To construct, see NOTES section for DETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails
+Type: IMicrosoftGraphPlannerPlanDetails
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -156,8 +156,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -187,8 +187,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPlannerIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -201,10 +201,10 @@ Accept wildcard characters: False
 ### -Owner
 ID of the Group that owns the plan.
 A valid group must exist before this field can be set.
-After it is set, this property can’t be updated.
+After it is set, this property can't be updated.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -234,8 +234,8 @@ Accept wildcard characters: False
 key: id of plannerPlan
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -252,7 +252,7 @@ Nullable.
 To construct, see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTask[]
+Type: IMicrosoftGraphPlannerTask[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -268,7 +268,7 @@ Required.
 Title of the plan.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -299,7 +299,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -316,13 +316,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlan
-
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -409,7 +406,7 @@ BODYPARAMETER <IMicrosoftGraphPlannerPlan>: plannerPlan
       - `[Category6 <String>]`: The label associated with Category 6
     - `[SharedWith <IMicrosoftGraphPlannerUserIds>]`: plannerUserIds
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Owner <String>]`: ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.
+  - `[Owner <String>]`: ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can't be updated.
   - `[Tasks <IMicrosoftGraphPlannerTask[]>]`: Collection of tasks in the plan. Read-only. Nullable.
   - `[Title <String>]`: Required. Title of the plan.
 
@@ -563,3 +560,4 @@ TASKS <IMicrosoftGraphPlannerTask[]>: Collection of tasks in the plan. Read-only
 
 ## RELATED LINKS
 
+## RELATED LINKS
