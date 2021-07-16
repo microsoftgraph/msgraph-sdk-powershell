@@ -1,76 +1,72 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mgusermanageddevicelogcollectionrequestdownloadurl
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/initialize-mguserserviceplan
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceLogCollectionRequestDownloadUrl
+# Initialize-MgUserServicePlan
 
 ## SYNOPSIS
-Invoke action createDownloadUrl
+Invoke action activateServicePlan
 
 ## SYNTAX
 
-### Create (Default)
+### ActivateExpanded (Default)
 ```
-New-MgUserManagedDeviceLogCollectionRequestDownloadUrl -DeviceLogCollectionResponseId <String>
- -ManagedDeviceId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Initialize-MgUserServicePlan -UserId <String> [-AdditionalProperties <Hashtable>] [-ServicePlanId <String>]
+ [-SkuId <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### Activate
 ```
-New-MgUserManagedDeviceLogCollectionRequestDownloadUrl -InputObject <IUsersActionsIdentity> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Initialize-MgUserServicePlan -UserId <String>
+ -BodyParameter <IPaths1T7Q69JUsersUserIdMicrosoftGraphActivateserviceplanPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ActivateViaIdentityExpanded
+```
+Initialize-MgUserServicePlan -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-ServicePlanId <String>] [-SkuId <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ActivateViaIdentity
+```
+Initialize-MgUserServicePlan -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1T7Q69JUsersUserIdMicrosoftGraphActivateserviceplanPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action createDownloadUrl
+Invoke action activateServicePlan
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -DeviceLogCollectionResponseId
-key: id of deviceLogCollectionResponse
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Create
+Type: Hashtable
+Parameter Sets: ActivateExpanded, ActivateViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity
+Type: IPaths1T7Q69JUsersUserIdMicrosoftGraphActivateserviceplanPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Activate, ActivateViaIdentity
 Aliases:
 
 Required: True
@@ -80,15 +76,61 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceId
-key: id of managedDevice
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: Create
+Type: IUsersActionsIdentity
+Parameter Sets: ActivateViaIdentityExpanded, ActivateViaIdentity
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ServicePlanId
+.
+
+```yaml
+Type: String
+Parameter Sets: ActivateExpanded, ActivateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SkuId
+.
+
+```yaml
+Type: String
+Parameter Sets: ActivateExpanded, ActivateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -99,8 +141,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create
+Type: String
+Parameter Sets: ActivateExpanded, Activate
 Aliases:
 
 Required: True
@@ -114,7 +156,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +172,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -146,12 +188,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IPaths1T7Q69JUsersUserIdMicrosoftGraphActivateserviceplanPostRequestbodyContentApplicationJsonSchema
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
-### System.String
-
+### System.Boolean
 ## NOTES
 
 ALIASES
@@ -160,6 +201,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IPaths1T7Q69JUsersUserIdMicrosoftGraphActivateserviceplanPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[ServicePlanId <String>]`: 
+  - `[SkuId <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -181,8 +227,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-

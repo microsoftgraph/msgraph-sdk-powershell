@@ -1,62 +1,58 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mguserwindowinformationprotectiondeviceregistration
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mgusermanageddevicelogcollectionresponsedownloadurl
 schema: 2.0.0
 ---
 
-# Clear-MgUserWindowInformationProtectionDeviceRegistration
+# New-MgUserManagedDeviceLogCollectionResponseDownloadUrl
 
 ## SYNOPSIS
-Invoke action wipe
+Invoke action createDownloadUrl
 
 ## SYNTAX
 
-### Wipe (Default)
+### Create (Default)
 ```
-Clear-MgUserWindowInformationProtectionDeviceRegistration -UserId <String>
- -WindowsInformationProtectionDeviceRegistrationId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgUserManagedDeviceLogCollectionResponseDownloadUrl -DeviceLogCollectionResponseId <String>
+ -ManagedDeviceId <String> -UserId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### WipeViaIdentity
+### CreateViaIdentity
 ```
-Clear-MgUserWindowInformationProtectionDeviceRegistration -InputObject <IUsersActionsIdentity> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserManagedDeviceLogCollectionResponseDownloadUrl -InputObject <IUsersActionsIdentity> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action wipe
+Invoke action createDownloadUrl
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
+
+### -DeviceLogCollectionResponseId
+key: id of deviceLogCollectionResponse
+
+```yaml
+Type: String
+Parameter Sets: Create
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: WipeViaIdentity
+Type: IUsersActionsIdentity
+Parameter Sets: CreateViaIdentity
 Aliases:
 
 Required: True
@@ -66,15 +62,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Create
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -85,23 +81,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Wipe
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WindowsInformationProtectionDeviceRegistrationId
-key: id of windowsInformationProtectionDeviceRegistration
-
-```yaml
-Type: System.String
-Parameter Sets: Wipe
+Type: String
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -115,7 +96,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -131,7 +112,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -148,11 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
-### System.Boolean
-
+### System.String
 ## NOTES
 
 ALIASES
@@ -182,8 +161,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-

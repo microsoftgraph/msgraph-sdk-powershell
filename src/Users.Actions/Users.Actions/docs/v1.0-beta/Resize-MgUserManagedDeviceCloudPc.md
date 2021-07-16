@@ -1,65 +1,48 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/reset-mguserpassword
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/resize-mgusermanageddevicecloudpc
 schema: 2.0.0
 ---
 
-# Reset-MgUserPassword
+# Resize-MgUserManagedDeviceCloudPc
 
 ## SYNOPSIS
-Invoke action changePassword
+Invoke action resizeCloudPc
 
 ## SYNTAX
 
-### ChangeExpanded1 (Default)
+### ResizeExpanded (Default)
 ```
-Reset-MgUserPassword -UserId <String> [-AdditionalProperties <Hashtable>] [-CurrentPassword <String>]
- [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Change1
-```
-Reset-MgUserPassword -UserId <String>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Resize-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-TargetServicePlanId <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### ChangeViaIdentity1
+### Resize
 ```
-Reset-MgUserPassword -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Resize-MgUserManagedDeviceCloudPc -ManagedDeviceId <String> -UserId <String>
+ -BodyParameter <IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### ChangeViaIdentityExpanded1
+### ResizeViaIdentityExpanded
 ```
-Reset-MgUserPassword -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-CurrentPassword <String>] [-NewPassword <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Resize-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-TargetServicePlanId <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ResizeViaIdentity
+```
+Resize-MgUserManagedDeviceCloudPc -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action changePassword
+Invoke action resizeCloudPc
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,8 +50,8 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: ChangeExpanded1, ChangeViaIdentityExpanded1
+Type: Hashtable
+Parameter Sets: ResizeExpanded, ResizeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,29 +66,14 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1
-Parameter Sets: Change1, ChangeViaIdentity1
+Type: IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Resize, ResizeViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CurrentPassword
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ChangeExpanded1, ChangeViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -114,8 +82,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ChangeViaIdentity1, ChangeViaIdentityExpanded1
+Type: IUsersActionsIdentity
+Parameter Sets: ResizeViaIdentityExpanded, ResizeViaIdentity
 Aliases:
 
 Required: True
@@ -125,15 +93,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NewPassword
-.
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: ChangeExpanded1, ChangeViaIdentityExpanded1
+Type: String
+Parameter Sets: ResizeExpanded, Resize
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -144,8 +112,23 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetServicePlanId
+.
+
+```yaml
+Type: String
+Parameter Sets: ResizeExpanded, ResizeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -159,8 +142,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Change1, ChangeExpanded1
+Type: String
+Parameter Sets: ResizeExpanded, Resize
 Aliases:
 
 Required: True
@@ -174,7 +157,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -190,7 +173,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -206,14 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1
-
+### Microsoft.Graph.PowerShell.Models.IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -223,10 +203,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IPaths3Mx0JpUsersUserIdMicrosoftGraphChangepasswordPostRequestbodyContentApplicationJsonSchema1>: .
+BODYPARAMETER <IPaths1Bsz0SuUsersUserIdManageddevicesManageddeviceIdMicrosoftGraphResizecloudpcPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CurrentPassword <String>]`: 
-  - `[NewPassword <String>]`: 
+  - `[TargetServicePlanId <String>]`: 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -248,8 +227,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-
