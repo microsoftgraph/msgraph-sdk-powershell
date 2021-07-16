@@ -1,49 +1,47 @@
 ---
 external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationextensionproperty
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationtemplate
 schema: 2.0.0
 ---
 
-# Update-MgApplicationExtensionProperty
+# Update-MgApplicationTemplate
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Update entity in applicationTemplates
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
-Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
- [-AdditionalProperties <Hashtable>] [-AppDisplayName <String>] [-DataType <String>]
- [-DeletedDateTime <DateTime>] [-Id <String>] [-IsSyncedFromOnPremises] [-Name <String>]
- [-TargetObjects <String[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgApplicationExtensionProperty -ApplicationId <String> -ExtensionPropertyId <String>
- -BodyParameter <IMicrosoftGraphExtensionProperty> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
+ [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
+ [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
+ [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### Update
 ```
-Update-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-AppDisplayName <String>] [-DataType <String>] [-DeletedDateTime <DateTime>] [-Id <String>]
- [-IsSyncedFromOnPremises] [-Name <String>] [-TargetObjects <String[]>] [-PassThru] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-MgApplicationTemplate -ApplicationTemplateId <String>
+ -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentityExpanded
 ```
-Update-MgApplicationExtensionProperty -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphExtensionProperty> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
+ [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
+ [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
+ -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Read-only.
-Nullable.
+Update entity in applicationTemplates
 
 ## EXAMPLES
 
@@ -54,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -64,28 +62,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AppDisplayName
-Display name of the application object on which this extension property is defined.
-Read-only.
+### -ApplicationTemplateId
+key: id of applicationTemplate
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ApplicationId
-key: id of application
-
-```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, Update1
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -96,13 +78,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
+applicationTemplate
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: IMicrosoftGraphExtensionProperty
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: IMicrosoftGraphApplicationTemplate
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -112,16 +93,13 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DataType
-Specifies the data type of the value the extension property can hold.
-Following values are supported.
-Not nullable.
-Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format.
-Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
+### -Categories
+The list of categories for the application.
+Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 
 ```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -131,12 +109,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeletedDateTime
-.
+### -Description
+A description of the application.
 
 ```yaml
-Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -146,15 +124,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExtensionPropertyId
-key: id of extensionProperty
+### -DisplayName
+The name of the application.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, Update1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HomePageUrl
+The home page URL of the application.
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -166,7 +159,7 @@ Read-only.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -182,7 +175,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IApplicationsIdentity
-Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -192,29 +185,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IsSyncedFromOnPremises
-Indicates if this extension property was sycned from onpremises directory using Azure AD Connect.
-Read-only.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-Name of the extension property.
-Not nullable.
+### -LogoUrl
+The URL to get the logo for this application.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -239,14 +215,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetObjects
-Following values are supported.
-Not nullable.
-UserGroupOrganizationDeviceApplication
+### -Publisher
+The name of the publisher for this application.
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupportedProvisioningTypes
+The list of provisioning modes supported by this application.
+The only valid value is sync.
 
 ```yaml
 Type: String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupportedSingleSignOnModes
+The list of single sign-on modes supported by this application.
+The supported values are oidc, password, saml, and notSupported.
+
+```yaml
+Type: String[]
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -293,7 +299,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionProperty
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
 ## OUTPUTS
 
 ### System.Boolean
@@ -306,15 +312,17 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphExtensionProperty>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphApplicationTemplate>: applicationTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[AppDisplayName <String>]`: Display name of the application object on which this extension property is defined. Read-only.
-  - `[DataType <String>]`: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-  - `[IsSyncedFromOnPremises <Boolean?>]`: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
-  - `[Name <String>]`: Name of the extension property. Not nullable.
-  - `[TargetObjects <String[]>]`: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
+  - `[Categories <String[]>]`: The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+  - `[Description <String>]`: A description of the application.
+  - `[DisplayName <String>]`: The name of the application.
+  - `[HomePageUrl <String>]`: The home page URL of the application.
+  - `[LogoUrl <String>]`: The URL to get the logo for this application.
+  - `[Publisher <String>]`: The name of the publisher for this application.
+  - `[SupportedProvisioningTypes <String[]>]`: The list of provisioning modes supported by this application. The only valid value is sync.
+  - `[SupportedSingleSignOnModes <String[]>]`: The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment

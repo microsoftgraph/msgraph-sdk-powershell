@@ -1,51 +1,58 @@
 ---
 external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalendpoint
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgserviceprincipaldelegatedpermissionclassification
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalEndpoint
+# Update-MgServicePrincipalDelegatedPermissionClassification
 
 ## SYNOPSIS
-Endpoints available for discovery.
-Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ## SYNTAX
 
-### List1 (Default)
+### UpdateExpanded1 (Default)
 ```
-Get-MgServicePrincipalEndpoint -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>]
- [-All] [-CountVariable <String>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgServicePrincipalEndpoint -EndpointId <String> -ServicePrincipalId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Update-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
+ -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>]
+ [-PermissionId <String>] [-PermissionName <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### Update1
 ```
-Get-MgServicePrincipalEndpoint -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Update-MgServicePrincipalDelegatedPermissionClassification -DelegatedPermissionClassificationId <String>
+ -ServicePrincipalId <String> -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded1
+```
+Update-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Classification <String>] [-Id <String>] [-PermissionId <String>]
+ [-PermissionName <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgServicePrincipalDelegatedPermissionClassification -InputObject <IApplicationsIdentity>
+ -BodyParameter <IMicrosoftGraphDelegatedPermissionClassification> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Endpoints available for discovery.
-Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
+The permission classifications for delegated permissions exposed by the app that this service principal represents.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: List1
+Type: Hashtable
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -55,14 +62,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -BodyParameter
+delegatedPermissionClassification
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphDelegatedPermissionClassification
+Parameter Sets: Update1, UpdateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Classification
+permissionClassificationType
 
 ```yaml
 Type: String
-Parameter Sets: List1
-Aliases: CV
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
 
 Required: False
 Position: Named
@@ -71,12 +93,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EndpointId
-key: id of endpoint
+### -DelegatedPermissionClassificationId
+key: id of delegatedPermissionClassification
 
 ```yaml
 Type: String
-Parameter Sets: Get1
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -86,27 +108,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
+### -Id
+Read-only.
 
 ```yaml
 Type: String
-Parameter Sets: List1
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -122,7 +129,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IApplicationsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -132,12 +139,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: Int32
-Parameter Sets: List1
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -147,13 +154,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
+### -PermissionId
+The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+Required on create.
+Does not support $filter.
 
 ```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: Select
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
 
 Required: False
 Position: Named
@@ -162,12 +171,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -PermissionName
+The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+Does not support $filter.
 
 ```yaml
 Type: String
-Parameter Sets: List1
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -182,7 +192,7 @@ key: id of servicePrincipal
 
 ```yaml
 Type: String
-Parameter Sets: List1, Get1
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -192,13 +202,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sort
-Order items by property values
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: String[]
-Parameter Sets: List1
-Aliases: OrderBy
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
 Required: False
 Position: Named
@@ -207,28 +217,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Top
-Show only the first n items
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: Int32
-Parameter Sets: List1
-Aliases: Limit
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: Int32
-Parameter Sets: List1
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -243,9 +239,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDelegatedPermissionClassification
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEndpoint
+### System.Boolean
 ## NOTES
 
 ALIASES
@@ -254,6 +251,13 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IMicrosoftGraphDelegatedPermissionClassification>: delegatedPermissionClassification
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[Classification <String>]`: permissionClassificationType
+  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
