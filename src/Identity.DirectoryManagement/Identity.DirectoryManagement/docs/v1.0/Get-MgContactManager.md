@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgContactManager
 
 ## SYNOPSIS
-Get manager from contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Get-MgContactManager -InputObject <IIdentityDirectoryManagementIdentity> [-Expan
 ```
 
 ## DESCRIPTION
-Get manager from contacts
+The user or contact that is this contact's manager.
+Read-only.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -146,9 +130,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

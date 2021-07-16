@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDirectorySettingTemplate
 
 ## SYNOPSIS
-Update entity in directorySettingTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
@@ -42,27 +43,10 @@ Update-MgDirectorySettingTemplate -InputObject <IIdentityDirectoryManagementIden
 ```
 
 ## DESCRIPTION
-Update entity in directorySettingTemplates
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -114,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description of the template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -144,7 +129,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of the template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -205,7 +191,8 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-.
+Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.
+Read-only.
 To construct, see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
@@ -277,13 +264,13 @@ BODYPARAMETER <IMicrosoftGraphDirectorySettingTemplate>: Represents an Azure Act
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Values <IMicrosoftGraphSettingTemplateValue[]>]`: 
-    - `[DefaultValue <String>]`: Default value for the setting.
-    - `[Description <String>]`: Description of the setting.
-    - `[Name <String>]`: Name of the setting.
-    - `[Type <String>]`: Type of the setting.
+  - `[Description <String>]`: Description of the template. Read-only.
+  - `[DisplayName <String>]`: Display name of the template. Read-only.
+  - `[Values <IMicrosoftGraphSettingTemplateValue[]>]`: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+    - `[DefaultValue <String>]`: Default value for the setting. Read-only.
+    - `[Description <String>]`: Description of the setting. Read-only.
+    - `[Name <String>]`: Name of the setting. Read-only.
+    - `[Type <String>]`: Type of the setting. Read-only.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -301,16 +288,19 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
-VALUES <IMicrosoftGraphSettingTemplateValue[]>: .
-  - `[DefaultValue <String>]`: Default value for the setting.
-  - `[Description <String>]`: Description of the setting.
-  - `[Name <String>]`: Name of the setting.
-  - `[Type <String>]`: Type of the setting.
+VALUES <IMicrosoftGraphSettingTemplateValue[]>: Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template. Read-only.
+  - `[DefaultValue <String>]`: Default value for the setting. Read-only.
+  - `[Description <String>]`: Description of the setting. Read-only.
+  - `[Name <String>]`: Name of the setting. Read-only.
+  - `[Type <String>]`: Type of the setting. Read-only.
 
 ## RELATED LINKS
 

@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgDirectoryRole
 
 ## SYNOPSIS
-Update entity in directoryRoles
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
@@ -16,7 +17,8 @@ Update entity in directoryRoles
 ```
 Update-MgDirectoryRole -DirectoryRoleId <String> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -36,32 +38,16 @@ Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-AdditionalProperties <Hashtable>]
  [-DeletedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Members <IMicrosoftGraphDirectoryObject[]>] [-RoleTemplateId <String>]
+ [-ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update entity in directoryRoles
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -241,6 +227,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ScopedMembers
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
+To construct, see NOTES section for SCOPEDMEMBERS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -304,6 +308,14 @@ BODYPARAMETER <IMicrosoftGraphDirectoryRole>: Represents an Azure Active Directo
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
   - `[RoleTemplateId <String>]`: The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
+  - `[ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+    - `[Id <String>]`: Read-only.
+    - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+    - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
+    - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
@@ -321,14 +333,26 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 MEMBERS <IMicrosoftGraphDirectoryObject[]>: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
+
+SCOPEDMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+  - `[Id <String>]`: Read-only.
+  - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+  - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
+  - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
 
 ## RELATED LINKS
 

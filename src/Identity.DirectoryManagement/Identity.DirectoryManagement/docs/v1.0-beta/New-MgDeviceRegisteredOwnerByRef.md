@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgDeviceRegisteredOwnerByRef
 
 ## SYNOPSIS
-Create new navigation property ref to registeredOwners for devices
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -37,27 +41,13 @@ New-MgDeviceRegisteredOwnerByRef -InputObject <IIdentityDirectoryManagementIdent
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to registeredOwners for devices
+The user that cloud joined the device or registered their personal device.
+The registered owner is set at the time of registration.
+Currently, there can be only one owner.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -191,9 +181,12 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

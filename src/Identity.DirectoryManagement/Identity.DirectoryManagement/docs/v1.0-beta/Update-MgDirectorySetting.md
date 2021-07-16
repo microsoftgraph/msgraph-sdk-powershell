@@ -43,24 +43,6 @@ Update entity in settings
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -110,7 +92,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of this group of settings, which comes from the associated template.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -171,7 +154,8 @@ Accept wildcard characters: False
 ```
 
 ### -TemplateId
-.
+Unique identifier for the template used to create this group of settings.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -186,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-.
+Collection of name value pairs.
+Must contain and set all the settings defined in the template.
 To construct, see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
@@ -257,10 +242,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
-  - `[TemplateId <String>]`: 
-  - `[Values <IMicrosoftGraphSettingValue[]>]`: 
-    - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
+  - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
+  - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
+  - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name value pairs. Must contain and set all the settings defined in the template.
+    - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
@@ -279,13 +264,16 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
-VALUES <IMicrosoftGraphSettingValue[]>: .
-  - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
+VALUES <IMicrosoftGraphSettingValue[]>: Collection of name value pairs. Must contain and set all the settings defined in the template.
+  - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
   - `[Value <String>]`: Value of the setting.
 
 ## RELATED LINKS
