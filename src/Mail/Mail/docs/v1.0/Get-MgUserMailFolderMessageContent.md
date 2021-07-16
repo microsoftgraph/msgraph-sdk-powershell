@@ -1,55 +1,35 @@
 ---
 external help file: Microsoft.Graph.Mail-help.xml
 Module Name: Microsoft.Graph.Mail
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/remove-mgusermailfoldermultivalueextendedproperty
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.mail/get-mgusermailfoldermessagecontent
 schema: 2.0.0
 ---
 
-# Remove-MgUserMailFolderMultiValueExtendedProperty
+# Get-MgUserMailFolderMessageContent
 
 ## SYNOPSIS
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Get media content for the navigation property messages from users
 
 ## SYNTAX
 
-### Delete (Default)
+### Get (Default)
 ```
-Remove-MgUserMailFolderMultiValueExtendedProperty -MailFolderId <String>
- -MultiValueLegacyExtendedPropertyId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Get-MgUserMailFolderMessageContent -MailFolderId <String> -MessageId <String> -UserId <String>
+ -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### GetViaIdentity
 ```
-Remove-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity> [-IfMatch <String>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Get-MgUserMailFolderMessageContent -InputObject <IMailIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of multi-value extended properties defined for the mailFolder.
-Read-only.
-Nullable.
+Get media content for the navigation property messages from users
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -IfMatch
-ETag
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -57,7 +37,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IMailIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -72,7 +52,7 @@ key: id of mailFolder
 
 ```yaml
 Type: String
-Parameter Sets: Delete
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -82,12 +62,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MultiValueLegacyExtendedPropertyId
-key: id of multiValueLegacyExtendedProperty
+### -MessageId
+key: id of message
 
 ```yaml
 Type: String
-Parameter Sets: Delete
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -117,41 +112,10 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Delete
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
