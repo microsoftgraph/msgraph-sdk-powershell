@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsiteactivitybyinterval
 schema: 2.0.0
@@ -19,16 +19,16 @@ Get-MgSiteActivityByInterval -SiteId <String> [<CommonParameters>]
 
 ### Get2
 ```
-Get-MgSiteActivityByInterval -EndDateTime <String> -Interval <String> -SiteId <String> -StartDateTime <String>
+Get-MgSiteActivityByInterval -SiteId <String> -EndDateTime <String> -Interval <String> -StartDateTime <String>
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity2
 ```
 Get-MgSiteActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgSiteActivityByInterval -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
@@ -44,7 +44,7 @@ Invoke function getActivitiesByInterval
 Usage: endDateTime={endDateTime}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get2
 Aliases:
 
@@ -60,8 +60,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Type: ISitesIdentity
+Parameter Sets: GetViaIdentity2, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 Usage: interval={interval}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get2
 Aliases:
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1, Get2
 Aliases:
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 Usage: startDateTime={startDateTime}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get2
 Aliases:
 
@@ -122,11 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemActivityStat1
-
 ## NOTES
 
 ALIASES
@@ -162,4 +160,3 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

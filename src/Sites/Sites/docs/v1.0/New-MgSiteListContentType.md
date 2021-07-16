@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/new-mgsitelistcontenttype
 schema: 2.0.0
@@ -17,20 +17,14 @@ The collection of content types present in this list.
 New-MgSiteListContentType -ListId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
  [-ColumnLinks <IMicrosoftGraphColumnLink[]>] [-Description <String>] [-Group <String>] [-Hidden]
  [-Id <String>] [-InheritedFrom <IMicrosoftGraphItemReference>] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-ReadOnly] [-Sealed] [-Confirm] [-WhatIf]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-ReadOnly] [-Sealed] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgSiteListContentType -ListId <String> -SiteId <String> -BodyParameter <IMicrosoftGraphContentType1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgSiteListContentType -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphContentType1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -38,8 +32,14 @@ New-MgSiteListContentType -InputObject <ISitesIdentity> -BodyParameter <IMicroso
 New-MgSiteListContentType -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
  [-ColumnLinks <IMicrosoftGraphColumnLink[]>] [-Description <String>] [-Group <String>] [-Hidden]
  [-Id <String>] [-InheritedFrom <IMicrosoftGraphItemReference>] [-Name <String>]
- [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-ReadOnly] [-Sealed] [-Confirm] [-WhatIf]
+ [-Order <IMicrosoftGraphContentTypeOrder>] [-ParentId <String>] [-ReadOnly] [-Sealed] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgSiteListContentType -InputObject <ISitesIdentity> -BodyParameter <IMicrosoftGraphContentType1> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ The collection of content types present in this list.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ contentType
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
+Type: IMicrosoftGraphContentType1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ The collection of columns that are required by this content type
 To construct, see NOTES section for COLUMNLINKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink[]
+Type: IMicrosoftGraphColumnLink[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 The descriptive text for the item.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -116,7 +116,7 @@ The name of the group this content type belongs to.
 Helps organize related content types.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 Indicates whether the content type is hidden in the list's 'New' menu.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ itemReference
 To construct, see NOTES section for INHERITEDFROM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
+Type: IMicrosoftGraphItemReference
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -178,8 +178,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: ISitesIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -193,8 +193,8 @@ Accept wildcard characters: False
 key: id of list
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 The name of the content type.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -224,7 +224,7 @@ contentTypeOrder
 To construct, see NOTES section for ORDER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeOrder
+Type: IMicrosoftGraphContentTypeOrder
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -239,7 +239,7 @@ Accept wildcard characters: False
 The unique identifier of the content type.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -254,7 +254,7 @@ Accept wildcard characters: False
 If true, the content type cannot be modified unless this value is first set to false.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -270,7 +270,7 @@ If true, the content type cannot be modified by users or through push-down opera
 Only site collection administrators can seal or unseal content types.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -285,8 +285,8 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -300,7 +300,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -316,7 +316,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -333,13 +333,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-
 ## NOTES
 
 ALIASES
@@ -439,4 +436,3 @@ ORDER <IMicrosoftGraphContentTypeOrder>: contentTypeOrder
   - `[Position <Int32?>]`: Specifies the position in which the Content Type appears in the selection UI.
 
 ## RELATED LINKS
-
