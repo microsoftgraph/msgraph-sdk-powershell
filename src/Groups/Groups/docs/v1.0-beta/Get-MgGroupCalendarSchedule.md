@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupcalendarschedule
 schema: 2.0.0
@@ -16,28 +16,28 @@ Invoke action getSchedule
 ```
 Get-MgGroupCalendarSchedule -GroupId <String> [-AdditionalProperties <Hashtable>]
  [-AvailabilityViewInterval <Int32>] [-EndTime <IMicrosoftGraphDateTimeZone>] [-Schedules <String[]>]
- [-StartTime <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartTime <IMicrosoftGraphDateTimeZone>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Get1
 ```
 Get-MgGroupCalendarSchedule -GroupId <String>
  -BodyParameter <IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgGroupCalendarSchedule -InputObject <IGroupsIdentity>
- -BodyParameter <IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### GetViaIdentityExpanded1
 ```
 Get-MgGroupCalendarSchedule -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-AvailabilityViewInterval <Int32>] [-EndTime <IMicrosoftGraphDateTimeZone>] [-Schedules <String[]>]
- [-StartTime <IMicrosoftGraphDateTimeZone>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartTime <IMicrosoftGraphDateTimeZone>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgGroupCalendarSchedule -InputObject <IGroupsIdentity>
+ -BodyParameter <IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Invoke action getSchedule
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema
+Type: IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get1, GetViaIdentity1
 Aliases:
 
@@ -98,7 +98,7 @@ dateTimeTimeZone
 To construct, see NOTES section for ENDTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: IMicrosoftGraphDateTimeZone
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -113,8 +113,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1, GetExpanded1
+Type: String
+Parameter Sets: GetExpanded1, Get1
 Aliases:
 
 Required: True
@@ -129,8 +129,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentityExpanded1
+Type: IGroupsIdentity
+Parameter Sets: GetViaIdentityExpanded1, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -160,7 +160,7 @@ dateTimeTimeZone
 To construct, see NOTES section for STARTTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
+Type: IMicrosoftGraphDateTimeZone
 Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,7 +191,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -208,13 +208,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPathsB1HbbpGroupsGroupIdCalendarMicrosoftGraphGetschedulePostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScheduleInformation
-
 ## NOTES
 
 ALIASES
@@ -268,4 +265,3 @@ STARTTIME <IMicrosoftGraphDateTimeZone>: dateTimeTimeZone
   - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
 
 ## RELATED LINKS
-

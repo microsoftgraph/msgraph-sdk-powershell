@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggroupthreadpostmention
 schema: 2.0.0
@@ -17,28 +17,29 @@ Create new navigation property to mentions for groups
 New-MgGroupThreadPostMention -ConversationThreadId <String> -GroupId <String> -PostId <String>
  [-AdditionalProperties <Hashtable>] [-Application <String>] [-ClientReference <String>]
  [-CreatedBy <IMicrosoftGraphEmailAddress>] [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>]
- [-Mentioned <IMicrosoftGraphEmailAddress>] [-MentionText <String>] [-ServerCreatedDateTime <DateTime>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MentionText <String>] [-Mentioned <IMicrosoftGraphEmailAddress>] [-ServerCreatedDateTime <DateTime>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgGroupThreadPostMention -ConversationThreadId <String> -GroupId <String> -PostId <String>
- -BodyParameter <IMicrosoftGraphMention> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgGroupThreadPostMention -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphMention> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphMention> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgGroupThreadPostMention -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Application <String>] [-ClientReference <String>] [-CreatedBy <IMicrosoftGraphEmailAddress>]
- [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>] [-Mentioned <IMicrosoftGraphEmailAddress>]
- [-MentionText <String>] [-ServerCreatedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-DeepLink <String>] [-Id <String>] [-MentionText <String>]
+ [-Mentioned <IMicrosoftGraphEmailAddress>] [-ServerCreatedDateTime <DateTime>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgGroupThreadPostMention -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphMention> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,7 +53,7 @@ Create new navigation property to mentions for groups
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -69,7 +70,7 @@ Optional.
 Not used and defaulted as null for message.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -85,7 +86,7 @@ mention
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
+Type: IMicrosoftGraphMention
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -102,7 +103,7 @@ Optional.
 Not used and defaulted as null for message.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -117,8 +118,8 @@ Accept wildcard characters: False
 key: id of conversationThread
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -133,7 +134,7 @@ emailAddress
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +149,7 @@ Accept wildcard characters: False
 The date and time that the mention is created on the client.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -165,7 +166,7 @@ Optional.
 Not used and defaulted as null for message.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -180,8 +181,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -195,7 +196,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -211,8 +212,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IGroupsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -227,7 +228,7 @@ emailAddress
 To construct, see NOTES section for MENTIONED properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -244,7 +245,7 @@ Not used and defaulted as null for message.
 To get the mentions in a message, see the bodyPreview property of the message instead.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -259,8 +260,8 @@ Accept wildcard characters: False
 key: id of post
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -276,7 +277,7 @@ Optional.
 Not used and defaulted as null for message.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -291,7 +292,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -307,7 +308,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -324,13 +325,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMention
-
 ## NOTES
 
 ALIASES
@@ -389,4 +387,3 @@ MENTIONED <IMicrosoftGraphEmailAddress>: emailAddress
   - `[Name <String>]`: The display name of an entity instance.
 
 ## RELATED LINKS
-

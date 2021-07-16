@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/invoke-mgacceptgroupeventtentatively
 schema: 2.0.0
@@ -15,29 +15,29 @@ Invoke action tentativelyAccept
 ### AcceptExpanded1 (Default)
 ```
 Invoke-MgAcceptGroupEventTentatively -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Accept1
 ```
 Invoke-MgAcceptGroupEventTentatively -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1In5HfGroupsGroupIdEventsEventIdMicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AcceptViaIdentityExpanded1
+```
+Invoke-MgAcceptGroupEventTentatively -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity1
 ```
 Invoke-MgAcceptGroupEventTentatively -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1In5HfGroupsGroupIdEventsEventIdMicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AcceptViaIdentityExpanded1
-```
-Invoke-MgAcceptGroupEventTentatively -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Invoke action tentativelyAccept
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1In5HfGroupsGroupIdEventsEventIdMicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1In5HfGroupsGroupIdEventsEventIdMicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Accept1, AcceptViaIdentity1
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
@@ -97,8 +97,8 @@ Accept wildcard characters: False
 key: id of event
 
 ```yaml
-Type: System.String
-Parameter Sets: Accept1, AcceptExpanded1
+Type: String
+Parameter Sets: AcceptExpanded1, Accept1
 Aliases:
 
 Required: True
@@ -112,8 +112,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Accept1, AcceptExpanded1
+Type: String
+Parameter Sets: AcceptExpanded1, Accept1
 Aliases:
 
 Required: True
@@ -128,8 +128,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: AcceptViaIdentity1, AcceptViaIdentityExpanded1
+Type: IGroupsIdentity
+Parameter Sets: AcceptViaIdentityExpanded1, AcceptViaIdentity1
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -159,7 +159,7 @@ timeSlot
 To construct, see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Type: IMicrosoftGraphTimeSlot
 Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -205,7 +205,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -222,13 +222,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths1In5HfGroupsGroupIdEventsEventIdMicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -282,4 +279,3 @@ PROPOSEDNEWTIME <IMicrosoftGraphTimeSlot>: timeSlot
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
-

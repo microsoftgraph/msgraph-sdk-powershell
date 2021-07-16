@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupphotocontent
 schema: 2.0.0
@@ -23,12 +23,12 @@ Get-MgGroupPhotoContent -GroupId <String> -ProfilePhotoId <String> -OutFile <Str
  [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgGroupPhotoContent -InputObject <IGroupsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgGroupPhotoContent -InputObject <IGroupsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
@@ -44,7 +44,7 @@ The group's profile photo.
 key: id of group
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get, Get1
 Aliases:
 
@@ -60,8 +60,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Type: IGroupsIdentity
+Parameter Sets: GetViaIdentity1, GetViaIdentity
 Aliases:
 
 Required: True
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 key: id of profilePhoto
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -122,11 +122,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -160,4 +158,3 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

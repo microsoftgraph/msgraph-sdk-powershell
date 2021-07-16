@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/stop-mggroupcalendarevent
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action cancel
 ### CancelExpanded (Default)
 ```
 Stop-MgGroupCalendarEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Comment <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Cancel
 ```
 Stop-MgGroupCalendarEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1HhqhocGroupsGroupIdCalendarEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CancelViaIdentityExpanded
+```
+Stop-MgGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Comment <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CancelViaIdentity
 ```
 Stop-MgGroupCalendarEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1HhqhocGroupsGroupIdCalendarEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CancelViaIdentityExpanded
-```
-Stop-MgGroupCalendarEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-Comment <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Invoke action cancel
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1HhqhocGroupsGroupIdCalendarEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1HhqhocGroupsGroupIdCalendarEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
@@ -95,8 +95,8 @@ Accept wildcard characters: False
 key: id of event
 
 ```yaml
-Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Type: String
+Parameter Sets: CancelExpanded, Cancel
 Aliases:
 
 Required: True
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Type: String
+Parameter Sets: CancelExpanded, Cancel
 Aliases:
 
 Required: True
@@ -126,8 +126,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
+Type: IGroupsIdentity
+Parameter Sets: CancelViaIdentityExpanded, CancelViaIdentity
 Aliases:
 
 Required: True
@@ -141,7 +141,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -172,7 +172,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -189,13 +189,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths1HhqhocGroupsGroupIdCalendarEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -233,4 +230,3 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

@@ -95,15 +95,15 @@ The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Get-MgGroupCreatedOnBehalfOf](Get-MgGroupCreatedOnBehalfOf.md)
-The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+### [Get-MgGroupConversationThreadPostSingleValueExtendedProperty](Get-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+The collection of single-value extended properties defined for the post.
 Read-only.
+Nullable.
 
-### [Get-MgGroupCreatedOnBehalfOfByRef](Get-MgGroupCreatedOnBehalfOfByRef.md)
-The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+### [Get-MgGroupConversationThreadPostSingleValueExtendedProperty](Get-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+The collection of single-value extended properties defined for the post.
 Read-only.
+Nullable.
 
 ### [Get-MgGroupDelta](Get-MgGroupDelta.md)
 Invoke function delta
@@ -513,10 +513,10 @@ The collection of single-value extended properties defined for the post.
 Read-only.
 Nullable.
 
-### [Remove-MgGroupCreatedOnBehalfOfByRef](Remove-MgGroupCreatedOnBehalfOfByRef.md)
-The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+### [Remove-MgGroupConversationThreadPostSingleValueExtendedProperty](Remove-MgGroupConversationThreadPostSingleValueExtendedProperty.md)
+The collection of single-value extended properties defined for the post.
 Read-only.
+Nullable.
 
 ### [Remove-MgGroupEndpoint](Remove-MgGroupEndpoint.md)
 Endpoints for the group.
@@ -588,10 +588,8 @@ Invoke action resetUnseenCount
 ### [Restore-MgGroup](Restore-MgGroup.md)
 Invoke action restore
 
-### [Set-MgGroupCreatedOnBehalfOfByRef](Set-MgGroupCreatedOnBehalfOfByRef.md)
-The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
-Read-only.
+### [Restore-MgGroup](Restore-MgGroup.md)
+Invoke action restore
 
 ### [Set-MgGroupLicense](Set-MgGroupLicense.md)
 Invoke action assignLicense
