@@ -11,249 +11,6 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Devices.CorporateManagement Cmdlets
-### [Clear-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration](Clear-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration.md)
-Invoke action wipe
-
-### [Get-MgDeviceAppMgt](Get-MgDeviceAppMgt.md)
-Get deviceAppManagement
-
-### [Get-MgDeviceAppMgtAndroidManagedAppProtection](Get-MgDeviceAppMgtAndroidManagedAppProtection.md)
-Android managed app policies.
-
-### [Get-MgDeviceAppMgtAndroidManagedAppProtectionApp](Get-MgDeviceAppMgtAndroidManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
-
-### [Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
-
-### [Get-MgDeviceAppMgtDefaultManagedAppProtection](Get-MgDeviceAppMgtDefaultManagedAppProtection.md)
-Default managed app policies.
-
-### [Get-MgDeviceAppMgtDefaultManagedAppProtectionApp](Get-MgDeviceAppMgtDefaultManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
-
-### [Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
-
-### [Get-MgDeviceAppMgtEnterpriseCodeSigningCertificate](Get-MgDeviceAppMgtEnterpriseCodeSigningCertificate.md)
-The Windows Enterprise Code Signing Certificate.
-
-### [Get-MgDeviceAppMgtiOSLobAppProvisioningConfiguration](Get-MgDeviceAppMgtiOSLobAppProvisioningConfiguration.md)
-The IOS Lob App Provisioning Configurations.
-
-### [Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment](Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment.md)
-The associated group assignments for IosLobAppProvisioningConfiguration.
-
-### [Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses](Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses.md)
-The list of device installation states for this mobile app configuration.
-
-### [Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment](Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment.md)
-The associated group assignments.
-
-### [Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses](Get-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses.md)
-The list of user installation states for this mobile app configuration.
-
-### [Get-MgDeviceAppMgtiOSManagedAppProtection](Get-MgDeviceAppMgtiOSManagedAppProtection.md)
-iOS managed app policies.
-
-### [Get-MgDeviceAppMgtiOSManagedAppProtectionApp](Get-MgDeviceAppMgtiOSManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
-
-### [Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary](Get-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
-
-### [Get-MgDeviceAppMgtManagedAppPolicy](Get-MgDeviceAppMgtManagedAppPolicy.md)
-Managed app policies.
-
-### [Get-MgDeviceAppMgtManagedAppRegistration](Get-MgDeviceAppMgtManagedAppRegistration.md)
-The managed app registrations.
-
-### [Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy](Get-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy.md)
-Zero or more policys already applied on the registered app when it last synchronized with managment service.
-
-### [Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy](Get-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy.md)
-Zero or more policies admin intended for the app as of now.
-
-### [Get-MgDeviceAppMgtManagedAppRegistrationOperation](Get-MgDeviceAppMgtManagedAppRegistrationOperation.md)
-Zero or more long running operations triggered on the app registration.
-
-### [Get-MgDeviceAppMgtManagedAppRegistrationUserId](Get-MgDeviceAppMgtManagedAppRegistrationUserId.md)
-Invoke function getUserIdsWithFlaggedAppRegistration
-
-### [Get-MgDeviceAppMgtManagedAppStatuses](Get-MgDeviceAppMgtManagedAppStatuses.md)
-The managed app statuses.
-
-### [Get-MgDeviceAppMgtManagedEBook](Get-MgDeviceAppMgtManagedEBook.md)
-The Managed eBook.
-
-### [Get-MgDeviceAppMgtManagedEBookAssignment](Get-MgDeviceAppMgtManagedEBookAssignment.md)
-The list of assignments for this eBook.
-
-### [Get-MgDeviceAppMgtManagedEBookCategory](Get-MgDeviceAppMgtManagedEBookCategory.md)
-The mobile eBook categories.
-
-### [Get-MgDeviceAppMgtManagedEBookCategoryByRef](Get-MgDeviceAppMgtManagedEBookCategoryByRef.md)
-The list of categories for this eBook.
-
-### [Get-MgDeviceAppMgtManagedEBookDeviceState](Get-MgDeviceAppMgtManagedEBookDeviceState.md)
-The list of installation states for this eBook.
-
-### [Get-MgDeviceAppMgtManagedEBookInstallSummary](Get-MgDeviceAppMgtManagedEBookInstallSummary.md)
-Mobile App Install Summary.
-
-### [Get-MgDeviceAppMgtManagedEBookUserStateSummary](Get-MgDeviceAppMgtManagedEBookUserStateSummary.md)
-The list of installation states for this eBook.
-
-### [Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState](Get-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState.md)
-The install state of the eBook.
-
-### [Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy](Get-MgDeviceAppMgtMdmWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are MDM enrolled.
-
-### [Get-MgDeviceAppMgtMobileApp](Get-MgDeviceAppMgtMobileApp.md)
-The mobile apps.
-
-### [Get-MgDeviceAppMgtMobileAppAssignment](Get-MgDeviceAppMgtMobileAppAssignment.md)
-The list of group assignments for this mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppCategory](Get-MgDeviceAppMgtMobileAppCategory.md)
-The mobile app categories.
-
-### [Get-MgDeviceAppMgtMobileAppCategoryByRef](Get-MgDeviceAppMgtMobileAppCategoryByRef.md)
-The list of categories for this app.
-
-### [Get-MgDeviceAppMgtMobileAppConfiguration](Get-MgDeviceAppMgtMobileAppConfiguration.md)
-The Managed Device Mobile Application Configurations.
-
-### [Get-MgDeviceAppMgtMobileAppConfigurationAssignment](Get-MgDeviceAppMgtMobileAppConfigurationAssignment.md)
-The list of group assignemenets for app configration.
-
-### [Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses](Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses.md)
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-
-### [Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary](Get-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary.md)
-App configuration device status summary.
-
-### [Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses](Get-MgDeviceAppMgtMobileAppConfigurationUserStatuses.md)
-List of ManagedDeviceMobileAppConfigurationUserStatus.
-
-### [Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary](Get-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary.md)
-App configuration user status summary.
-
-### [Get-MgDeviceAppMgtMobileAppCount](Get-MgDeviceAppMgtMobileAppCount.md)
-Invoke function getMobileAppCount
-
-### [Get-MgDeviceAppMgtMobileAppDeviceStatuses](Get-MgDeviceAppMgtMobileAppDeviceStatuses.md)
-The list of installation states for this mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppDeviceStatusesApp](Get-MgDeviceAppMgtMobileAppDeviceStatusesApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef](Get-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppDeviceStatusesAppRelatedAppState](Get-MgDeviceAppMgtMobileAppDeviceStatusesAppRelatedAppState.md)
-Invoke function getRelatedAppStates
-
-### [Get-MgDeviceAppMgtMobileAppInstallSummary](Get-MgDeviceAppMgtMobileAppInstallSummary.md)
-Mobile App Install Summary.
-
-### [Get-MgDeviceAppMgtMobileAppRelatedAppState](Get-MgDeviceAppMgtMobileAppRelatedAppState.md)
-Invoke function getRelatedAppStates
-
-### [Get-MgDeviceAppMgtMobileAppRelationship](Get-MgDeviceAppMgtMobileAppRelationship.md)
-List of relationships for this mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppTopMobileApp](Get-MgDeviceAppMgtMobileAppTopMobileApp.md)
-Invoke function getTopMobileApps
-
-### [Get-MgDeviceAppMgtMobileAppUserStatuses](Get-MgDeviceAppMgtMobileAppUserStatuses.md)
-The list of installation states for this mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesApp](Get-MgDeviceAppMgtMobileAppUserStatusesApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesAppByRef](Get-MgDeviceAppMgtMobileAppUserStatusesAppByRef.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesAppRelatedAppState](Get-MgDeviceAppMgtMobileAppUserStatusesAppRelatedAppState.md)
-Invoke function getRelatedAppStates
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses](Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses.md)
-The install state of the app on devices.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp](Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef](Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
-
-### [Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelatedAppState](Get-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelatedAppState.md)
-Invoke function getRelatedAppStates
-
-### [Get-MgDeviceAppMgtPolicySet](Get-MgDeviceAppMgtPolicySet.md)
-The PolicySet of Policies and Applications
-
-### [Get-MgDeviceAppMgtPolicySetAssignment](Get-MgDeviceAppMgtPolicySetAssignment.md)
-Assignments of the PolicySet.
-
-### [Get-MgDeviceAppMgtPolicySetItem](Get-MgDeviceAppMgtPolicySetItem.md)
-Items of the PolicySet with maximum count 100.
-
-### [Get-MgDeviceAppMgtSideLoadingKey](Get-MgDeviceAppMgtSideLoadingKey.md)
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-
-### [Get-MgDeviceAppMgtSymantecCodeSigningCertificate](Get-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
-The WinPhone Symantec Code Signing Certificate.
-
-### [Get-MgDeviceAppMgtTargetedManagedAppConfiguration](Get-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Targeted managed app configurations.
-
-### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp](Get-MgDeviceAppMgtTargetedManagedAppConfigurationApp.md)
-List of apps to which the policy is deployed.
-
-### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment](Get-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment.md)
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-
-### [Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary](Get-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
-
-### [Get-MgDeviceAppMgtTask](Get-MgDeviceAppMgtTask.md)
-Device app management tasks.
-
-### [Get-MgDeviceAppMgtVppToken](Get-MgDeviceAppMgtVppToken.md)
-List of Vpp tokens for this organization.
-
-### [Get-MgDeviceAppMgtVppTokenLicense](Get-MgDeviceAppMgtVppTokenLicense.md)
-Invoke function getLicensesForApp
-
-### [Get-MgDeviceAppMgtWdacSupplementalPolicy](Get-MgDeviceAppMgtWdacSupplementalPolicy.md)
-The collection of Windows Defender Application Control Supplemental Policies.
-
-### [Get-MgDeviceAppMgtWdacSupplementalPolicyAssignment](Get-MgDeviceAppMgtWdacSupplementalPolicyAssignment.md)
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
-
-### [Get-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary](Get-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary.md)
-WindowsDefenderApplicationControl supplemental policy deployment summary.
-
-### [Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses](Get-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses.md)
-The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
-
-### [Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration](Get-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration.md)
-Windows information protection device registrations that are not MDM enrolled.
-
-### [Get-MgDeviceAppMgtWindowInformationProtectionPolicy](Get-MgDeviceAppMgtWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are not MDM enrolled.
-
-### [Get-MgDeviceAppMgtWindowInformationProtectionWipeAction](Get-MgDeviceAppMgtWindowInformationProtectionWipeAction.md)
-Windows information protection wipe actions.
-
-### [Get-MgDeviceAppMgtWindowManagementApp](Get-MgDeviceAppMgtWindowManagementApp.md)
-Windows management app.
-
-### [Get-MgDeviceAppMgtWindowManagementAppByRef](Get-MgDeviceAppMgtWindowManagementAppByRef.md)
-Windows management app.
-
 ### [Get-MgOfficeClientConfiguration](Get-MgOfficeClientConfiguration.md)
 List of office Client configuration.
 
@@ -380,164 +137,164 @@ Invoke action targetApps
 ### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
 Invoke action targetApps
 
-### [New-MgDeviceAppMgtAndroidManagedAppProtection](New-MgDeviceAppMgtAndroidManagedAppProtection.md)
-Android managed app policies.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtAndroidManagedAppProtectionApp](New-MgDeviceAppMgtAndroidManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtDefaultManagedAppProtection](New-MgDeviceAppMgtDefaultManagedAppProtection.md)
-Default managed app policies.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtDefaultManagedAppProtectionApp](New-MgDeviceAppMgtDefaultManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtEnterpriseCodeSigningCertificate](New-MgDeviceAppMgtEnterpriseCodeSigningCertificate.md)
-The Windows Enterprise Code Signing Certificate.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration](New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration.md)
-The IOS Lob App Provisioning Configurations.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment](New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment.md)
-The associated group assignments for IosLobAppProvisioningConfiguration.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses](New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses.md)
-The list of device installation states for this mobile app configuration.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment](New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment.md)
-The associated group assignments.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses](New-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses.md)
-The list of user installation states for this mobile app configuration.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSManagedAppProtection](New-MgDeviceAppMgtiOSManagedAppProtection.md)
-iOS managed app policies.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtiOSManagedAppProtectionApp](New-MgDeviceAppMgtiOSManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppPolicy](New-MgDeviceAppMgtManagedAppPolicy.md)
-Managed app policies.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppRegistration](New-MgDeviceAppMgtManagedAppRegistration.md)
-The managed app registrations.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy](New-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy.md)
-Zero or more policys already applied on the registered app when it last synchronized with managment service.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy](New-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy.md)
-Zero or more policies admin intended for the app as of now.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppRegistrationOperation](New-MgDeviceAppMgtManagedAppRegistrationOperation.md)
-Zero or more long running operations triggered on the app registration.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedAppStatuses](New-MgDeviceAppMgtManagedAppStatuses.md)
-The managed app statuses.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBook](New-MgDeviceAppMgtManagedEBook.md)
-The Managed eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookAssignment](New-MgDeviceAppMgtManagedEBookAssignment.md)
-The list of assignments for this eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookCategory](New-MgDeviceAppMgtManagedEBookCategory.md)
-The mobile eBook categories.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookCategoryByRef](New-MgDeviceAppMgtManagedEBookCategoryByRef.md)
-The list of categories for this eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookDeviceState](New-MgDeviceAppMgtManagedEBookDeviceState.md)
-The list of installation states for this eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookUserStateSummary](New-MgDeviceAppMgtManagedEBookUserStateSummary.md)
-The list of installation states for this eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState](New-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState.md)
-The install state of the eBook.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy](New-MgDeviceAppMgtMdmWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are MDM enrolled.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileApp](New-MgDeviceAppMgtMobileApp.md)
-The mobile apps.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppAssignment](New-MgDeviceAppMgtMobileAppAssignment.md)
-The list of group assignments for this mobile app.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppCategory](New-MgDeviceAppMgtMobileAppCategory.md)
-The mobile app categories.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppCategoryByRef](New-MgDeviceAppMgtMobileAppCategoryByRef.md)
-The list of categories for this app.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppConfiguration](New-MgDeviceAppMgtMobileAppConfiguration.md)
-The Managed Device Mobile Application Configurations.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppConfigurationAssignment](New-MgDeviceAppMgtMobileAppConfigurationAssignment.md)
-The list of group assignemenets for app configration.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses](New-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses.md)
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppConfigurationUserStatuses](New-MgDeviceAppMgtMobileAppConfigurationUserStatuses.md)
-List of ManagedDeviceMobileAppConfigurationUserStatus.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppDeviceStatuses](New-MgDeviceAppMgtMobileAppDeviceStatuses.md)
-The list of installation states for this mobile app.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppRelationship](New-MgDeviceAppMgtMobileAppRelationship.md)
-List of relationships for this mobile app.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppUserStatuses](New-MgDeviceAppMgtMobileAppUserStatuses.md)
-The list of installation states for this mobile app.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses](New-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses.md)
-The install state of the app on devices.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtPolicySet](New-MgDeviceAppMgtPolicySet.md)
-The PolicySet of Policies and Applications
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtPolicySetAssignment](New-MgDeviceAppMgtPolicySetAssignment.md)
-Assignments of the PolicySet.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtPolicySetItem](New-MgDeviceAppMgtPolicySetItem.md)
-Items of the PolicySet with maximum count 100.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtSideLoadingKey](New-MgDeviceAppMgtSideLoadingKey.md)
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtTargetedManagedAppConfiguration](New-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Targeted managed app configurations.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtTargetedManagedAppConfigurationApp](New-MgDeviceAppMgtTargetedManagedAppConfigurationApp.md)
-List of apps to which the policy is deployed.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment](New-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment.md)
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtTask](New-MgDeviceAppMgtTask.md)
-Device app management tasks.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtVppToken](New-MgDeviceAppMgtVppToken.md)
-List of Vpp tokens for this organization.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWdacSupplementalPolicy](New-MgDeviceAppMgtWdacSupplementalPolicy.md)
-The collection of Windows Defender Application Control Supplemental Policies.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWdacSupplementalPolicyAssignment](New-MgDeviceAppMgtWdacSupplementalPolicyAssignment.md)
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses](New-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses.md)
-The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration](New-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration.md)
-Windows information protection device registrations that are not MDM enrolled.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWindowInformationProtectionPolicy](New-MgDeviceAppMgtWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are not MDM enrolled.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
-### [New-MgDeviceAppMgtWindowInformationProtectionWipeAction](New-MgDeviceAppMgtWindowInformationProtectionWipeAction.md)
-Windows information protection wipe actions.
+### [Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp](Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp.md)
+Invoke action targetApps
 
 ### [New-MgOfficeClientConfiguration](New-MgOfficeClientConfiguration.md)
 List of office Client configuration.
@@ -602,200 +359,200 @@ The collection property of AppLogUploadRequest.
 ### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
 Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtAndroidManagedAppProtection](Remove-MgDeviceAppMgtAndroidManagedAppProtection.md)
-Android managed app policies.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtAndroidManagedAppProtectionApp](Remove-MgDeviceAppMgtAndroidManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary](Remove-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtDefaultManagedAppProtection](Remove-MgDeviceAppMgtDefaultManagedAppProtection.md)
-Default managed app policies.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtDefaultManagedAppProtectionApp](Remove-MgDeviceAppMgtDefaultManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary](Remove-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate](Remove-MgDeviceAppMgtEnterpriseCodeSigningCertificate.md)
-The Windows Enterprise Code Signing Certificate.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSLobAppProvisioningConfiguration](Remove-MgDeviceAppMgtiOSLobAppProvisioningConfiguration.md)
-The IOS Lob App Provisioning Configurations.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment](Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment.md)
-The associated group assignments for IosLobAppProvisioningConfiguration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses](Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses.md)
-The list of device installation states for this mobile app configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment](Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment.md)
-The associated group assignments.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses](Remove-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses.md)
-The list of user installation states for this mobile app configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSManagedAppProtection](Remove-MgDeviceAppMgtiOSManagedAppProtection.md)
-iOS managed app policies.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSManagedAppProtectionApp](Remove-MgDeviceAppMgtiOSManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary](Remove-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppPolicy](Remove-MgDeviceAppMgtManagedAppPolicy.md)
-Managed app policies.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppRegistration](Remove-MgDeviceAppMgtManagedAppRegistration.md)
-The managed app registrations.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy](Remove-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy.md)
-Zero or more policys already applied on the registered app when it last synchronized with managment service.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy](Remove-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy.md)
-Zero or more policies admin intended for the app as of now.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppRegistrationOperation](Remove-MgDeviceAppMgtManagedAppRegistrationOperation.md)
-Zero or more long running operations triggered on the app registration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedAppStatuses](Remove-MgDeviceAppMgtManagedAppStatuses.md)
-The managed app statuses.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBook](Remove-MgDeviceAppMgtManagedEBook.md)
-The Managed eBook.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookAssignment](Remove-MgDeviceAppMgtManagedEBookAssignment.md)
-The list of assignments for this eBook.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookCategory](Remove-MgDeviceAppMgtManagedEBookCategory.md)
-The mobile eBook categories.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookDeviceState](Remove-MgDeviceAppMgtManagedEBookDeviceState.md)
-The list of installation states for this eBook.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookInstallSummary](Remove-MgDeviceAppMgtManagedEBookInstallSummary.md)
-Mobile App Install Summary.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookUserStateSummary](Remove-MgDeviceAppMgtManagedEBookUserStateSummary.md)
-The list of installation states for this eBook.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState](Remove-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState.md)
-The install state of the eBook.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMdmWindowInformationProtectionPolicy](Remove-MgDeviceAppMgtMdmWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are MDM enrolled.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileApp](Remove-MgDeviceAppMgtMobileApp.md)
-The mobile apps.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppAssignment](Remove-MgDeviceAppMgtMobileAppAssignment.md)
-The list of group assignments for this mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppCategory](Remove-MgDeviceAppMgtMobileAppCategory.md)
-The mobile app categories.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfiguration](Remove-MgDeviceAppMgtMobileAppConfiguration.md)
-The Managed Device Mobile Application Configurations.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfigurationAssignment](Remove-MgDeviceAppMgtMobileAppConfigurationAssignment.md)
-The list of group assignemenets for app configration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses](Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses.md)
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary](Remove-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary.md)
-App configuration device status summary.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfigurationUserStatuses](Remove-MgDeviceAppMgtMobileAppConfigurationUserStatuses.md)
-List of ManagedDeviceMobileAppConfigurationUserStatus.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary](Remove-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary.md)
-App configuration user status summary.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppDeviceStatuses](Remove-MgDeviceAppMgtMobileAppDeviceStatuses.md)
-The list of installation states for this mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef](Remove-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppInstallSummary](Remove-MgDeviceAppMgtMobileAppInstallSummary.md)
-Mobile App Install Summary.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppRelationship](Remove-MgDeviceAppMgtMobileAppRelationship.md)
-List of relationships for this mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppUserStatuses](Remove-MgDeviceAppMgtMobileAppUserStatuses.md)
-The list of installation states for this mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppUserStatusesAppByRef](Remove-MgDeviceAppMgtMobileAppUserStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses](Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses.md)
-The install state of the app on devices.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef](Remove-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtPolicySet](Remove-MgDeviceAppMgtPolicySet.md)
-The PolicySet of Policies and Applications
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtPolicySetAssignment](Remove-MgDeviceAppMgtPolicySetAssignment.md)
-Assignments of the PolicySet.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtPolicySetItem](Remove-MgDeviceAppMgtPolicySetItem.md)
-Items of the PolicySet with maximum count 100.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtSideLoadingKey](Remove-MgDeviceAppMgtSideLoadingKey.md)
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtSymantecCodeSigningCertificate](Remove-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
-The WinPhone Symantec Code Signing Certificate.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtTargetedManagedAppConfiguration](Remove-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Targeted managed app configurations.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtTargetedManagedAppConfigurationApp](Remove-MgDeviceAppMgtTargetedManagedAppConfigurationApp.md)
-List of apps to which the policy is deployed.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment](Remove-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment.md)
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary](Remove-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtTask](Remove-MgDeviceAppMgtTask.md)
-Device app management tasks.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtVppToken](Remove-MgDeviceAppMgtVppToken.md)
-List of Vpp tokens for this organization.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWdacSupplementalPolicy](Remove-MgDeviceAppMgtWdacSupplementalPolicy.md)
-The collection of Windows Defender Application Control Supplemental Policies.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWdacSupplementalPolicyAssignment](Remove-MgDeviceAppMgtWdacSupplementalPolicyAssignment.md)
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary](Remove-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary.md)
-WindowsDefenderApplicationControl supplemental policy deployment summary.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses](Remove-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses.md)
-The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration](Remove-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration.md)
-Windows information protection device registrations that are not MDM enrolled.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWindowInformationProtectionPolicy](Remove-MgDeviceAppMgtWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are not MDM enrolled.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWindowInformationProtectionWipeAction](Remove-MgDeviceAppMgtWindowInformationProtectionWipeAction.md)
-Windows information protection wipe actions.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
-### [Remove-MgDeviceAppMgtWindowManagementAppByRef](Remove-MgDeviceAppMgtWindowManagementAppByRef.md)
-Windows management app.
+### [New-MgUserWindowInformationProtectionDeviceRegistrationByRef](New-MgUserWindowInformationProtectionDeviceRegistrationByRef.md)
+Zero or more WIP device registrations that belong to the user.
 
 ### [Remove-MgOfficeClientConfiguration](Remove-MgOfficeClientConfiguration.md)
 List of office Client configuration.
@@ -857,95 +614,95 @@ The list of mobile app troubleshooting events for this user.
 ### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
 The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppDeviceLicense](Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppDeviceLicense.md)
-Revoke assigned iOS VPP device license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppLicense](Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppLicense.md)
-Revoke all assigned iOS VPP licenses for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppUserLicense](Revoke-MgDeviceAppMgtMobileAppDeviceStatusesAppMicrosoftGraphIoVppAppUserLicense.md)
-Revoke assigned iOS VPP user license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense](Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense.md)
-Revoke assigned iOS VPP device license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppLicense](Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppLicense.md)
-Revoke all assigned iOS VPP licenses for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppUserLicense](Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppUserLicense.md)
-Revoke assigned iOS VPP user license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppDeviceLicense](Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppDeviceLicense.md)
-Revoke assigned iOS VPP device license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppLicense](Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppLicense.md)
-Revoke all assigned iOS VPP licenses for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppUserLicense](Revoke-MgDeviceAppMgtMobileAppUserStatusesAppMicrosoftGraphIoVppAppUserLicense.md)
-Revoke assigned iOS VPP user license for given app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Revoke-MgDeviceAppMgtVppTokenLicense](Revoke-MgDeviceAppMgtVppTokenLicense.md)
-Revoke licenses associated with a specific appleVolumePurchaseProgramToken
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration](Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppPolicyMicrosoftGraphTargetedManagedAppProtection](Set-MgDeviceAppMgtManagedAppPolicyMicrosoftGraphTargetedManagedAppProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppPolicyMicrosoftGraphWindowInformationProtection](Set-MgDeviceAppMgtManagedAppPolicyMicrosoftGraphWindowInformationProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppRegistrationAppliedPolicyMicrosoftGraphTargetedManagedAppProtection](Set-MgDeviceAppMgtManagedAppRegistrationAppliedPolicyMicrosoftGraphTargetedManagedAppProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppRegistrationAppliedPolicyMicrosoftGraphWindowInformationProtection](Set-MgDeviceAppMgtManagedAppRegistrationAppliedPolicyMicrosoftGraphWindowInformationProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphTargetedManagedAppProtection](Set-MgDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphTargetedManagedAppProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphWindowInformationProtection](Set-MgDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphWindowInformationProtection.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtManagedEBook](Set-MgDeviceAppMgtManagedEBook.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileApp](Set-MgDeviceAppMgtMobileApp.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppConfiguration](Set-MgDeviceAppMgtMobileAppConfiguration.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppDeviceStatusesApp](Set-MgDeviceAppMgtMobileAppDeviceStatusesApp.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef](Set-MgDeviceAppMgtMobileAppDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppUserStatusesApp](Set-MgDeviceAppMgtMobileAppUserStatusesApp.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppUserStatusesAppByRef](Set-MgDeviceAppMgtMobileAppUserStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp](Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesApp.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef](Set-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppByRef.md)
-The navigation link to the mobile app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtTargetedManagedAppConfiguration](Set-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtWdacSupplementalPolicy](Set-MgDeviceAppMgtWdacSupplementalPolicy.md)
-Invoke action assign
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtWindowManagementAppAsManagedInstaller](Set-MgDeviceAppMgtWindowManagementAppAsManagedInstaller.md)
-Set the Managed Installer status for the caller tenant
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
-### [Set-MgDeviceAppMgtWindowManagementAppByRef](Set-MgDeviceAppMgtWindowManagementAppByRef.md)
-Windows management app.
+### [Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest](Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest.md)
+The collection property of AppLogUploadRequest.
 
 ### [Set-MgOfficeClientConfiguration](Set-MgOfficeClientConfiguration.md)
 Invoke action assign
@@ -956,221 +713,221 @@ Update media content for the navigation property clientConfigurations in officeC
 ### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
 Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Sync-MgDeviceAppMgtMicrosoftStore](Sync-MgDeviceAppMgtMicrosoftStore.md)
-Syncs Intune account with Microsoft Store For Business
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Sync-MgDeviceAppMgtVppTokenLicense](Sync-MgDeviceAppMgtVppTokenLicense.md)
-Syncs licenses associated with a specific appleVolumePurchaseProgramToken
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Sync-MgDeviceAppMgtVppTokenLicenseCount](Sync-MgDeviceAppMgtVppTokenLicenseCount.md)
-Invoke action syncLicenseCounts
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Test-MgDeviceAppMgtMobileAppXml](Test-MgDeviceAppMgtMobileAppXml.md)
-Invoke action validateXml
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgt](Update-MgDeviceAppMgt.md)
-Update deviceAppManagement
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtAndroidManagedAppProtection](Update-MgDeviceAppMgtAndroidManagedAppProtection.md)
-Android managed app policies.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtAndroidManagedAppProtectionApp](Update-MgDeviceAppMgtAndroidManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary](Update-MgDeviceAppMgtAndroidManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtDefaultManagedAppProtection](Update-MgDeviceAppMgtDefaultManagedAppProtection.md)
-Default managed app policies.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtDefaultManagedAppProtectionApp](Update-MgDeviceAppMgtDefaultManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary](Update-MgDeviceAppMgtDefaultManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate](Update-MgDeviceAppMgtEnterpriseCodeSigningCertificate.md)
-The Windows Enterprise Code Signing Certificate.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSLobAppProvisioningConfiguration](Update-MgDeviceAppMgtiOSLobAppProvisioningConfiguration.md)
-The IOS Lob App Provisioning Configurations.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment](Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationAssignment.md)
-The associated group assignments for IosLobAppProvisioningConfiguration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses](Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationDeviceStatuses.md)
-The list of device installation states for this mobile app configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment](Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationGroupAssignment.md)
-The associated group assignments.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses](Update-MgDeviceAppMgtiOSLobAppProvisioningConfigurationUserStatuses.md)
-The list of user installation states for this mobile app configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSManagedAppProtection](Update-MgDeviceAppMgtiOSManagedAppProtection.md)
-iOS managed app policies.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSManagedAppProtectionApp](Update-MgDeviceAppMgtiOSManagedAppProtectionApp.md)
-List of apps to which the policy is deployed.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary](Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppPolicy](Update-MgDeviceAppMgtManagedAppPolicy.md)
-Managed app policies.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppRegistration](Update-MgDeviceAppMgtManagedAppRegistration.md)
-The managed app registrations.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy](Update-MgDeviceAppMgtManagedAppRegistrationAppliedPolicy.md)
-Zero or more policys already applied on the registered app when it last synchronized with managment service.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy](Update-MgDeviceAppMgtManagedAppRegistrationIntendedPolicy.md)
-Zero or more policies admin intended for the app as of now.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppRegistrationOperation](Update-MgDeviceAppMgtManagedAppRegistrationOperation.md)
-Zero or more long running operations triggered on the app registration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedAppStatuses](Update-MgDeviceAppMgtManagedAppStatuses.md)
-The managed app statuses.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBook](Update-MgDeviceAppMgtManagedEBook.md)
-The Managed eBook.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookAssignment](Update-MgDeviceAppMgtManagedEBookAssignment.md)
-The list of assignments for this eBook.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookCategory](Update-MgDeviceAppMgtManagedEBookCategory.md)
-The mobile eBook categories.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookDeviceState](Update-MgDeviceAppMgtManagedEBookDeviceState.md)
-The list of installation states for this eBook.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookInstallSummary](Update-MgDeviceAppMgtManagedEBookInstallSummary.md)
-Mobile App Install Summary.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookUserStateSummary](Update-MgDeviceAppMgtManagedEBookUserStateSummary.md)
-The list of installation states for this eBook.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState](Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState.md)
-The install state of the eBook.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy](Update-MgDeviceAppMgtMdmWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are MDM enrolled.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileApp](Update-MgDeviceAppMgtMobileApp.md)
-The mobile apps.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppAssignment](Update-MgDeviceAppMgtMobileAppAssignment.md)
-The list of group assignments for this mobile app.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppCategory](Update-MgDeviceAppMgtMobileAppCategory.md)
-The mobile app categories.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfiguration](Update-MgDeviceAppMgtMobileAppConfiguration.md)
-The Managed Device Mobile Application Configurations.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfigurationAssignment](Update-MgDeviceAppMgtMobileAppConfigurationAssignment.md)
-The list of group assignemenets for app configration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses](Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses.md)
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary](Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatusSummary.md)
-App configuration device status summary.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses](Update-MgDeviceAppMgtMobileAppConfigurationUserStatuses.md)
-List of ManagedDeviceMobileAppConfigurationUserStatus.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary](Update-MgDeviceAppMgtMobileAppConfigurationUserStatusSummary.md)
-App configuration user status summary.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppDeviceStatuses](Update-MgDeviceAppMgtMobileAppDeviceStatuses.md)
-The list of installation states for this mobile app.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppDeviceStatusesAppRelationship](Update-MgDeviceAppMgtMobileAppDeviceStatusesAppRelationship.md)
-Invoke action updateRelationships
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppInstallSummary](Update-MgDeviceAppMgtMobileAppInstallSummary.md)
-Mobile App Install Summary.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppRelationship](Update-MgDeviceAppMgtMobileAppRelationship.md)
-List of relationships for this mobile app.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppUserStatuses](Update-MgDeviceAppMgtMobileAppUserStatuses.md)
-The list of installation states for this mobile app.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship](Update-MgDeviceAppMgtMobileAppUserStatusesAppRelationship.md)
-Invoke action updateRelationships
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses](Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatuses.md)
-The install state of the app on devices.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship](Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship.md)
-Invoke action updateRelationships
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMultipleMobileAppRelationship](Update-MgDeviceAppMgtMultipleMobileAppRelationship.md)
-Invoke action updateRelationships
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtMultiplePolicySet](Update-MgDeviceAppMgtMultiplePolicySet.md)
-Invoke action update
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtPolicySet](Update-MgDeviceAppMgtPolicySet.md)
-The PolicySet of Policies and Applications
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtPolicySetAssignment](Update-MgDeviceAppMgtPolicySetAssignment.md)
-Assignments of the PolicySet.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtPolicySetItem](Update-MgDeviceAppMgtPolicySetItem.md)
-Items of the PolicySet with maximum count 100.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtSideLoadingKey](Update-MgDeviceAppMgtSideLoadingKey.md)
-Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtSymantecCodeSigningCertificate](Update-MgDeviceAppMgtSymantecCodeSigningCertificate.md)
-The WinPhone Symantec Code Signing Certificate.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTargetedManagedAppConfiguration](Update-MgDeviceAppMgtTargetedManagedAppConfiguration.md)
-Targeted managed app configurations.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTargetedManagedAppConfigurationApp](Update-MgDeviceAppMgtTargetedManagedAppConfigurationApp.md)
-List of apps to which the policy is deployed.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment](Update-MgDeviceAppMgtTargetedManagedAppConfigurationAssignment.md)
-Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary](Update-MgDeviceAppMgtTargetedManagedAppConfigurationDeploymentSummary.md)
-Navigation property to deployment summary of the configuration.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTask](Update-MgDeviceAppMgtTask.md)
-Device app management tasks.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtTaskStatus](Update-MgDeviceAppMgtTaskStatus.md)
-Set the task's status and attach a note.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtVppToken](Update-MgDeviceAppMgtVppToken.md)
-List of Vpp tokens for this organization.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWdacSupplementalPolicy](Update-MgDeviceAppMgtWdacSupplementalPolicy.md)
-The collection of Windows Defender Application Control Supplemental Policies.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWdacSupplementalPolicyAssignment](Update-MgDeviceAppMgtWdacSupplementalPolicyAssignment.md)
-The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary](Update-MgDeviceAppMgtWdacSupplementalPolicyDeploySummary.md)
-WindowsDefenderApplicationControl supplemental policy deployment summary.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses](Update-MgDeviceAppMgtWdacSupplementalPolicyDeviceStatuses.md)
-The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration](Update-MgDeviceAppMgtWindowInformationProtectionDeviceRegistration.md)
-Windows information protection device registrations that are not MDM enrolled.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWindowInformationProtectionPolicy](Update-MgDeviceAppMgtWindowInformationProtectionPolicy.md)
-Windows information protection for apps running on devices which are not MDM enrolled.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
-### [Update-MgDeviceAppMgtWindowInformationProtectionWipeAction](Update-MgDeviceAppMgtWindowInformationProtectionWipeAction.md)
-Windows information protection wipe actions.
+### [Set-MgOfficeClientConfigurationUserPerencePayloadByRef](Set-MgOfficeClientConfigurationUserPerencePayloadByRef.md)
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
 ### [Update-MgOfficeClientConfiguration](Update-MgOfficeClientConfiguration.md)
 List of office Client configuration.

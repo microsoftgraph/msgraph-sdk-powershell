@@ -1,121 +1,44 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/revoke-mgdeviceappmgtmobileappmicrosoftgraphiovppappdevicelicense
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermobileapptroubleshootingeventapplogcollectionrequest
 schema: 2.0.0
 ---
 
-# Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense
+# Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Revoke assigned iOS VPP device license for given app.
+The collection property of AppLogUploadRequest.
 
 ## SYNTAX
 
-### RevokeExpanded (Default)
+### Delete (Default)
 ```
-Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense -MobileAppId <String>
- [-AdditionalProperties <Hashtable>] [-ManagedDeviceId <String>] [-NotifyManagedDevices] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Revoke
-```
-Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense -MobileAppId <String>
- -BodyParameter <IPathsYaugoeDeviceappmanagementMobileappsMobileappIdMicrosoftGraphIosvppappMicrosoftGraphRevokedevicelicensePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
+ -MobileAppTroubleshootingEventId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### RevokeViaIdentity
+### DeleteViaIdentity
 ```
-Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense
- -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IPathsYaugoeDeviceappmanagementMobileappsMobileappIdMicrosoftGraphIosvppappMicrosoftGraphRevokedevicelicensePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RevokeViaIdentityExpanded
-```
-Revoke-MgDeviceAppMgtMobileAppMicrosoftGraphIoVppAppDeviceLicense
- -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-ManagedDeviceId <String>] [-NotifyManagedDevices] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
+ -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Revoke assigned iOS VPP device license for given app.
+The collection property of AppLogUploadRequest.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -AppLogCollectionRequestId
+key: id of appLogCollectionRequest
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: RevokeExpanded, RevokeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsYaugoeDeviceappmanagementMobileappsMobileappIdMicrosoftGraphIosvppappMicrosoftGraphRevokedevicelicensePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Revoke, RevokeViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: RevokeViaIdentity, RevokeViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ManagedDeviceId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: RevokeExpanded, RevokeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MobileAppId
-key: id of mobileApp
-
-```yaml
-Type: System.String
-Parameter Sets: Revoke, RevokeExpanded
+Type: String
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -125,26 +48,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NotifyManagedDevices
-.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: RevokeExpanded, RevokeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -155,11 +63,72 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -MobileAppTroubleshootingEventId
+key: id of mobileAppTroubleshootingEvent
+
+```yaml
+Type: String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+key: id of user
+
+```yaml
+Type: String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -175,7 +144,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -192,28 +161,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IPathsYaugoeDeviceappmanagementMobileappsMobileappIdMicrosoftGraphIosvppappMicrosoftGraphRevokedevicelicensePostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Revoke-MgDeviceAppManagementMobileAppMicrosoftGraphIoVppAppDeviceLicense
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IPathsYaugoeDeviceappmanagementMobileappsMobileappIdMicrosoftGraphIosvppappMicrosoftGraphRevokedevicelicensePostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ManagedDeviceId <String>]`: 
-  - `[NotifyManagedDevices <Boolean?>]`: 
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -284,4 +242,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

@@ -1,84 +1,65 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappuserstatusesdevicestatusesapprelationship
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgofficeclientconfigurationuserperencepayloadbyref
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship
+# Set-MgOfficeClientConfigurationUserPerencePayloadByRef
 
 ## SYNOPSIS
-Invoke action updateRelationships
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Set (Default)
 ```
-Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship -MobileAppId <String>
- -MobileAppInstallStatusId <String> -UserAppInstallStatusId <String> [-AdditionalProperties <Hashtable>]
- [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgOfficeClientConfigurationUserPerencePayloadByRef -OfficeClientConfigurationId <String>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update
+### SetViaIdentity
 ```
-Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship -MobileAppId <String>
- -MobileAppInstallStatusId <String> -UserAppInstallStatusId <String>
- -BodyParameter <IPaths1Ded30ADeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdDevicestatusesMobileappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship
- -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IPaths1Ded30ADeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdDevicestatusesMobileappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDeviceAppMgtMobileAppUserStatusesDeviceStatusesAppRelationship
- -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgOfficeClientConfigurationUserPerencePayloadByRef -InputObject <IDevicesCorporateManagementIdentity>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action updateRelationships
+Update media content for the navigation property clientConfigurations in officeConfiguration
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -BodyParameter
+.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Stream
+Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Ded30ADeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdDevicestatusesMobileappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Update, UpdateViaIdentity
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -87,8 +68,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -98,27 +79,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MobileAppId
-key: id of mobileApp
+### -OfficeClientConfigurationId
+key: id of officeClientConfiguration
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MobileAppInstallStatusId
-key: id of mobileAppInstallStatus
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -132,7 +98,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -143,42 +109,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Relationships
-.
-To construct, see NOTES section for RELATIONSHIPS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppRelationship[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAppInstallStatusId
-key: id of userAppInstallStatus
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -194,7 +129,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -211,33 +146,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IPaths1Ded30ADeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdDevicestatusesMobileappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema
-
+### System.IO.Stream
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementMobileAppUserStatusesDeviceStatusesAppRelationship
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IPaths1Ded30ADeviceappmanagementMobileappsMobileappIdUserstatusesUserappinstallstatusIdDevicestatusesMobileappinstallstatusIdAppMicrosoftGraphUpdaterelationshipsPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[TargetDisplayName <String>]`: The target mobile app's display name.
-    - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
-    - `[TargetId <String>]`: The target mobile app's app id.
-    - `[TargetPublisher <String>]`: The target mobile app's publisher.
-    - `[TargetType <String>]`: mobileAppRelationshipType
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -307,13 +227,4 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[TargetDisplayName <String>]`: The target mobile app's display name.
-  - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
-  - `[TargetId <String>]`: The target mobile app's app id.
-  - `[TargetPublisher <String>]`: The target mobile app's publisher.
-  - `[TargetType <String>]`: mobileAppRelationshipType
-
 ## RELATED LINKS
-

@@ -1,100 +1,65 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/set-mgdeviceappmgtioslobappprovisioningconfiguration
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermobileapptroubleshootingeventapplogcollectionrequest
 schema: 2.0.0
 ---
 
-# Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
+# Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
 
 ## SYNOPSIS
-Invoke action assign
+The collection property of AppLogUploadRequest.
 
 ## SYNTAX
 
-### AssignExpanded (Default)
+### Delete (Default)
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
- [-AdditionalProperties <Hashtable>]
- [-AppProvisioningConfigurationGroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]
- [-IOSLobAppProvisioningConfigAssignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest -AppLogCollectionRequestId <String>
+ -MobileAppTroubleshootingEventId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### Assign
+### DeleteViaIdentity
 ```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -IosLobAppProvisioningConfigurationId <String>
- -BodyParameter <IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AssignViaIdentity
-```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AssignViaIdentityExpanded
-```
-Set-MgDeviceAppMgtiOSLobAppProvisioningConfiguration -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>]
- [-AppProvisioningConfigurationGroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]
- [-IOSLobAppProvisioningConfigAssignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserMobileAppTroubleshootingEventAppLogCollectionRequest
+ -InputObject <IDevicesCorporateManagementIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action assign
+The collection property of AppLogUploadRequest.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -AppLogCollectionRequestId
+key: id of appLogCollectionRequest
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AppProvisioningConfigurationGroupAssignments
-.
-To construct, see NOTES section for APPPROVISIONINGCONFIGURATIONGROUPASSIGNMENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Assign, AssignViaIdentity
+Type: String
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -103,8 +68,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -114,28 +79,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IOSLobAppProvisioningConfigAssignments
-.
-To construct, see NOTES section for IOSLOBAPPPROVISIONINGCONFIGASSIGNMENTS properties and create a hash table.
+### -MobileAppTroubleshootingEventId
+key: id of mobileAppTroubleshootingEvent
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IosLobAppProvisioningConfigurationId
-key: id of iosLobAppProvisioningConfiguration
-
-```yaml
-Type: System.String
-Parameter Sets: Assign, AssignExpanded
+Type: String
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -149,7 +98,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -160,11 +109,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserId
+key: id of user
+
+```yaml
+Type: String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -180,7 +144,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -197,39 +161,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Set-MgDeviceAppManagementiOSLobAppProvisioningConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-APPPROVISIONINGCONFIGURATIONGROUPASSIGNMENTS <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
-
-BODYPARAMETER <IPathsNqkqhnDeviceappmanagementIoslobappprovisioningconfigurationsIoslobappprovisioningconfigurationIdMicrosoftGraphAssignPostRequestbodyContentApplicationJsonSchema>: .
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AppProvisioningConfigurationGroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
-  - `[IOSLobAppProvisioningConfigAssignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -299,12 +241,4 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-IOSLOBAPPPROVISIONINGCONFIGASSIGNMENTS <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
-
 ## RELATED LINKS
-
