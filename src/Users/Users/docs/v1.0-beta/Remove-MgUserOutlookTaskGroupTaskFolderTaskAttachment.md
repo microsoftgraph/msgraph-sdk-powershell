@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mguseroutlooktaskgrouptaskfoldertaskattachment
 schema: 2.0.0
@@ -18,13 +18,13 @@ Nullable.
 ```
 Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment -AttachmentId <String> -OutlookTaskFolderId <String>
  -OutlookTaskGroupId <String> -OutlookTaskId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-MgUserOutlookTaskGroupTaskFolderTaskAttachment -InputObject <IUsersIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,7 +40,7 @@ Nullable.
 key: id of attachment
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -55,7 +55,7 @@ Accept wildcard characters: False
 ETag
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -71,7 +71,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
+Type: IUsersIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 key: id of outlookTaskFolder
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -101,7 +101,7 @@ Accept wildcard characters: False
 key: id of outlookTaskGroup
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -116,7 +116,7 @@ Accept wildcard characters: False
 key: id of outlookTask
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -177,7 +177,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -194,11 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -226,4 +224,3 @@ INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

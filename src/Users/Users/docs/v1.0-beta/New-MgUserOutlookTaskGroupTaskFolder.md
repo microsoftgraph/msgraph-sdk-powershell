@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguseroutlooktaskgrouptaskfolder
 schema: 2.0.0
@@ -21,19 +21,13 @@ New-MgUserOutlookTaskGroupTaskFolder -OutlookTaskGroupId <String> -UserId <Strin
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-ParentGroupKey <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Tasks <IMicrosoftGraphOutlookTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphOutlookTask[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserOutlookTaskGroupTaskFolder -OutlookTaskGroupId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphOutlookTaskFolder> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity>
- -BodyParameter <IMicrosoftGraphOutlookTaskFolder> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphOutlookTaskFolder> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -43,7 +37,13 @@ New-MgUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity> [-AdditionalP
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-ParentGroupKey <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
- [-Tasks <IMicrosoftGraphOutlookTask[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Tasks <IMicrosoftGraphOutlookTask[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserOutlookTaskGroupTaskFolder -InputObject <IUsersIdentity>
+ -BodyParameter <IMicrosoftGraphOutlookTaskFolder> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +59,7 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ outlookTaskFolder
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder
+Type: IMicrosoftGraphOutlookTaskFolder
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 The version of the task folder.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -121,8 +121,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IUsersIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 True if the folder is the default task folder.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -154,7 +154,7 @@ Nullable.
 To construct, see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 The name of the task folder.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -184,8 +184,8 @@ Accept wildcard characters: False
 key: id of outlookTaskGroup
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 The unique GUID identifier for the task folder's parent group.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Nullable.
 To construct, see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ Nullable.
 To construct, see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTask[]
+Type: IMicrosoftGraphOutlookTask[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -250,8 +250,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -265,7 +265,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -281,7 +281,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -298,13 +298,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder
-
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookTaskFolder
-
 ## NOTES
 
 ALIASES
@@ -466,3 +463,4 @@ TASKS <IMicrosoftGraphOutlookTask[]>: The tasks in this task folder. Read-only. 
 
 ## RELATED LINKS
 
+## RELATED LINKS

@@ -1,45 +1,43 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusermemberofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguserextension
 schema: 2.0.0
 ---
 
-# New-MgUserMemberOfByRef
+# New-MgUserExtension
 
 ## SYNOPSIS
-The groups, directory roles and administrative units that the user is a member of.
-Read-only.
+The collection of open extensions defined for the user.
 Nullable.
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
-New-MgUserMemberOfByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+New-MgUserExtension -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
-New-MgUserMemberOfByRef -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity1
-```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgUserExtension -UserId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+New-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The groups, directory roles and administrative units that the user is a member of.
-Read-only.
+The collection of open extensions defined for the user.
 Nullable.
 
 ## EXAMPLES
@@ -50,8 +48,8 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: Hashtable
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -62,11 +60,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-.
+extension
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Type: Hashtable
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -76,13 +74,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Id
+Read-only.
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Type: IUsersIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -96,8 +109,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -111,7 +124,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -127,7 +140,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -144,18 +157,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsU8Jh5VUsersUserIdMemberofRefPostResponses201ContentApplicationJsonSchema
-
+### System.String
 ## NOTES
 
 ALIASES
-
-### New-MgUserMemberByRef
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -180,4 +188,3 @@ INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
