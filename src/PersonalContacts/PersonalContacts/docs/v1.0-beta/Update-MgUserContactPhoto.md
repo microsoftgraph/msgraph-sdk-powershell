@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserContactPhoto
 
 ## SYNOPSIS
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
@@ -37,27 +38,10 @@ Update-MgUserContactPhoto -InputObject <IPersonalContactsIdentity> [-AdditionalP
 ```
 
 ## DESCRIPTION
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

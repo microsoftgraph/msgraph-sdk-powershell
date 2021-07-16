@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserContactFolderContactExtension
 
 ## SYNOPSIS
-Delete navigation property extensions for users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Remove-MgUserContactFolderContactExtension -InputObject <IPersonalContactsIdenti
 ```
 
 ## DESCRIPTION
-Delete navigation property extensions for users
+The collection of open extensions defined for the contact.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
