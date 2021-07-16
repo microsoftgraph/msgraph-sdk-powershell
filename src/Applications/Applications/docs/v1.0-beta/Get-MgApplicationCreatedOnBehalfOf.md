@@ -1,31 +1,31 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationcreatedonbehalfof
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationconnectorgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationCreatedOnBehalfOf
+# Get-MgApplicationConnectorGroupByRef
 
 ## SYNOPSIS
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
-Get-MgApplicationCreatedOnBehalfOf -ApplicationId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgApplicationConnectorGroupByRef -ApplicationId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
-Get-MgApplicationCreatedOnBehalfOf -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## EXAMPLES
 
@@ -35,26 +35,11 @@ Read-only.
 key: id of application
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1
+Type: String
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -66,8 +51,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: GetViaIdentity1
+Type: IApplicationsIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -77,37 +62,18 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
+### System.String
 ## NOTES
 
 ALIASES
-
-### Get-MgApplicationCreatedOnBehalf
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -139,4 +105,3 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

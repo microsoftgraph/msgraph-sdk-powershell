@@ -1,43 +1,45 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgapplicationcreatedonbehalfofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/set-mgapplicationconnectorgroupbyref
 schema: 2.0.0
 ---
 
-# Set-MgApplicationCreatedOnBehalfOfByRef
+# Set-MgApplicationConnectorGroupByRef
 
 ## SYNOPSIS
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## SYNTAX
 
 ### SetExpanded (Default)
 ```
-Set-MgApplicationCreatedOnBehalfOfByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationConnectorGroupByRef -ApplicationId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgApplicationCreatedOnBehalfOfByRef -ApplicationId <String> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentity
-```
-Set-MgApplicationCreatedOnBehalfOfByRef -InputObject <IApplicationsIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationConnectorGroupByRef -ApplicationId <String> -BodyParameter <Hashtable> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
-Set-MgApplicationCreatedOnBehalfOfByRef -InputObject <IApplicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> -BodyParameter <Hashtable>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## EXAMPLES
 
@@ -47,7 +49,7 @@ Read-only.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -62,8 +64,8 @@ Accept wildcard characters: False
 key: id of application
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -77,7 +79,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -93,8 +95,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Type: IApplicationsIdentity
+Parameter Sets: SetViaIdentityExpanded, SetViaIdentity
 Aliases:
 
 Required: True
@@ -108,7 +110,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -123,7 +125,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -139,7 +141,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -156,18 +158,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Set-MgApplicationCreatedOnBehalfByRef
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -199,4 +196,3 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

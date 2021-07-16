@@ -59,11 +59,13 @@ Nullable.
 The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
-### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
-Read-only.
+### [Get-MgApplicationConnectorGroupByRef](Get-MgApplicationConnectorGroupByRef.md)
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
-### [Get-MgApplicationCreatedOnBehalfOfByRef](Get-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Get-MgApplicationConnectorGroupByRef](Get-MgApplicationConnectorGroupByRef.md)
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
 Invoke function delta
@@ -271,15 +273,11 @@ Invoke action getMemberGroups
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgServicePrincipalMemberOfByRef](Get-MgServicePrincipalMemberOfByRef.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgServicePrincipalOauth2PermissionGrant](Get-MgServicePrincipalOauth2PermissionGrant.md)
 Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
@@ -352,11 +350,11 @@ The tokenLifetimePolicies assigned to this service principal.
 ### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
 
-### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
-Get transitiveMemberOf from servicePrincipals
+### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
-### [Get-MgServicePrincipalTransitiveMemberOfByRef](Get-MgServicePrincipalTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from servicePrincipals
+### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [Get-MgServicePrincipalUserOwnedObject](Get-MgServicePrincipalUserOwnedObject.md)
 Invoke action getUserOwnedObjects
@@ -541,10 +539,8 @@ The homeRealmDiscoveryPolicies assigned to this service principal.
 ### [New-MgServicePrincipalLicenseDetail](New-MgServicePrincipalLicenseDetail.md)
 Create new navigation property to licenseDetails for servicePrincipals
 
-### [New-MgServicePrincipalMemberOfByRef](New-MgServicePrincipalMemberOfByRef.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [New-MgServicePrincipalLicenseDetail](New-MgServicePrincipalLicenseDetail.md)
+Create new navigation property to licenseDetails for servicePrincipals
 
 ### [New-MgServicePrincipalOauth2PermissionGrantByRef](New-MgServicePrincipalOauth2PermissionGrantByRef.md)
 Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
@@ -586,8 +582,8 @@ The tokenIssuancePolicies assigned to this service principal.
 ### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
 
-### [New-MgServicePrincipalTransitiveMemberOfByRef](New-MgServicePrincipalTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for servicePrincipals
+### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [New-MgUserAppRoleAssignment](New-MgUserAppRoleAssignment.md)
 Represents the app roles a user has been granted for an application.
@@ -606,8 +602,9 @@ The directoryObject type is the base type for many other directory entity types.
 The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
-### [Remove-MgApplicationCreatedOnBehalfOfByRef](Remove-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Remove-MgApplicationConnectorGroupByRef](Remove-MgApplicationConnectorGroupByRef.md)
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Read-only.
@@ -771,8 +768,9 @@ Invoke action restore
 The connectorGroup the application is using with Azure AD Application Proxy.
 Nullable.
 
-### [Set-MgApplicationCreatedOnBehalfOfByRef](Set-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Set-MgApplicationConnectorGroupByRef](Set-MgApplicationConnectorGroupByRef.md)
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ### [Set-MgApplicationLogo](Set-MgApplicationLogo.md)
 The main logo for the application.

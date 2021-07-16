@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/update-mgapplicationtemplate
 schema: 2.0.0
@@ -17,19 +17,13 @@ Update entity in applicationTemplates
 Update-MgApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
- [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgApplicationTemplate -ApplicationTemplateId <String>
- -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
- -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
@@ -37,7 +31,13 @@ Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
 Update-MgApplicationTemplate -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
  [-Categories <String[]>] [-Description <String>] [-DisplayName <String>] [-HomePageUrl <String>]
  [-Id <String>] [-LogoUrl <String>] [-Publisher <String>] [-SupportedProvisioningTypes <String[]>]
- [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SupportedSingleSignOnModes <String[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgApplicationTemplate -InputObject <IApplicationsIdentity>
+ -BodyParameter <IMicrosoftGraphApplicationTemplate> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Update entity in applicationTemplates
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -66,8 +66,8 @@ Accept wildcard characters: False
 key: id of applicationTemplate
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ applicationTemplate
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
+Type: IMicrosoftGraphApplicationTemplate
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -98,7 +98,7 @@ The list of categories for the application.
 Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 A description of the application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 The name of the application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 The home page URL of the application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -174,8 +174,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IApplicationsIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 The URL to get the logo for this application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 The name of the publisher for this application.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -235,7 +235,7 @@ The list of provisioning modes supported by this application.
 The only valid value is sync.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -251,7 +251,7 @@ The list of single sign-on modes supported by this application.
 The supported values are oidc, password, saml, and notSupported.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -282,7 +282,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -299,13 +299,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationTemplate
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -352,4 +349,3 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

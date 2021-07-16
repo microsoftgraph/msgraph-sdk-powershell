@@ -1,29 +1,31 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationcreatedonbehalfofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgapplicationconnectorgroupbyref
 schema: 2.0.0
 ---
 
-# Get-MgApplicationCreatedOnBehalfOfByRef
+# Get-MgApplicationConnectorGroupByRef
 
 ## SYNOPSIS
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgApplicationCreatedOnBehalfOfByRef -ApplicationId <String> [<CommonParameters>]
+Get-MgApplicationConnectorGroupByRef -ApplicationId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgApplicationCreatedOnBehalfOfByRef -InputObject <IApplicationsIdentity> [<CommonParameters>]
+Get-MgApplicationConnectorGroupByRef -InputObject <IApplicationsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Read-only.
+The connectorGroup the application is using with Azure AD Application Proxy.
+Nullable.
 
 ## EXAMPLES
 
@@ -33,7 +35,7 @@ Read-only.
 key: id of application
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -49,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: IApplicationsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -66,16 +68,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-
 ## OUTPUTS
 
 ### System.String
-
 ## NOTES
 
 ALIASES
-
-### Get-MgApplicationCreatedOnBehalfByRef
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -107,4 +105,3 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

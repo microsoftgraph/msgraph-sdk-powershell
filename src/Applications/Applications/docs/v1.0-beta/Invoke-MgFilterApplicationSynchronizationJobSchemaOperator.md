@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/invoke-mgfilterapplicationsynchronizationjobschemaoperator
 schema: 2.0.0
@@ -35,7 +35,7 @@ Invoke function filterOperators
 key: id of application
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Filter
 Aliases:
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+Type: IApplicationsIdentity
 Parameter Sets: FilterViaIdentity
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 key: id of synchronizationJob
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Filter
 Aliases:
 
@@ -83,11 +83,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFilterOperatorSchema
-
 ## NOTES
 
 ALIASES
@@ -122,4 +120,3 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
