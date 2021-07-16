@@ -1,40 +1,56 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Applications-help.xml
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalmemberof
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/get-mgserviceprincipalmemberobject
 schema: 2.0.0
 ---
 
-# Get-MgServicePrincipalMemberOf
+# Get-MgServicePrincipalMemberObject
 
 ## SYNOPSIS
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+Invoke action getMemberObjects
 
 ## SYNTAX
 
+### GetExpanded1 (Default)
 ```
-Get-MgServicePrincipalMemberOf -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgServicePrincipalMemberObject -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+ [-SecurityEnabledOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Get1
+```
+Get-MgServicePrincipalMemberObject -ServicePrincipalId <String>
+ -BodyParameter <IPaths1Md6PmhServiceprincipalsServiceprincipalIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentityExpanded1
+```
+Get-MgServicePrincipalMemberObject -InputObject <IApplicationsIdentity> [-AdditionalProperties <Hashtable>]
+ [-SecurityEnabledOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgServicePrincipalMemberObject -InputObject <IApplicationsIdentity>
+ -BodyParameter <IPaths1Md6PmhServiceprincipalsServiceprincipalIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+Invoke action getMemberObjects
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: Hashtable
+Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -44,88 +60,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: IPaths1Md6PmhServiceprincipalsServiceprincipalIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Get1, GetViaIdentity1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.Int32
-Parameter Sets: (All)
+Type: IApplicationsIdentity
+Parameter Sets: GetViaIdentityExpanded1, GetViaIdentity1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
+### -SecurityEnabledOnly
+.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Select
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Search
-Search items by search phrases
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: SwitchParameter
+Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -139,8 +111,8 @@ Accept wildcard characters: False
 key: id of servicePrincipal
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: String
+Parameter Sets: GetExpanded1, Get1
 Aliases:
 
 Required: True
@@ -150,13 +122,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Skip the first n items
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Int32
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
@@ -165,28 +137,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Sort
-Order items by property values
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases: Limit
+Aliases: wi
 
 Required: False
 Position: Named
@@ -200,15 +158,46 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
+### Microsoft.Graph.PowerShell.Models.IPaths1Md6PmhServiceprincipalsServiceprincipalIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
+### System.String
 ## NOTES
 
 ALIASES
 
-### Get-MgServicePrincipalMember
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODYPARAMETER <IPaths1Md6PmhServiceprincipalsServiceprincipalIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[SecurityEnabledOnly <Boolean?>]`: 
+
+INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
+  - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
+  - `[ApplicationId <String>]`: key: id of application
+  - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
+  - `[ConnectorGroupId <String>]`: key: id of connectorGroup
+  - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
+  - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
+  - `[EndpointId <String>]`: key: id of endpoint
+  - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[GroupId <String>]`: key: id of group
+  - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
+  - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
+  - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
+  - `[OnPremisesAgentId1 <String>]`: key: id of onPremisesAgent
+  - `[OnPremisesPublishingProfileId <String>]`: key: id of onPremisesPublishingProfile
+  - `[PublishedResourceId <String>]`: key: id of publishedResource
+  - `[PublishedResourceId1 <String>]`: key: id of publishedResource
+  - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
+  - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
+  - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

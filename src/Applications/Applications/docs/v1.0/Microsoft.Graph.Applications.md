@@ -42,11 +42,11 @@ The directoryObject type is the base type for many other directory entity types.
 ### [Get-MgApplicationById](Get-MgApplicationById.md)
 Invoke action getByIds
 
-### [Get-MgApplicationCreatedOnBehalfOf](Get-MgApplicationCreatedOnBehalfOf.md)
-Read-only.
+### [Get-MgApplicationById](Get-MgApplicationById.md)
+Invoke action getByIds
 
-### [Get-MgApplicationCreatedOnBehalfOfByRef](Get-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Get-MgApplicationById](Get-MgApplicationById.md)
+Invoke action getByIds
 
 ### [Get-MgApplicationDelta](Get-MgApplicationDelta.md)
 Invoke function delta
@@ -150,15 +150,11 @@ Invoke action getMemberGroups
 ### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgServicePrincipalMemberOf](Get-MgServicePrincipalMemberOf.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgServicePrincipalMemberOfByRef](Get-MgServicePrincipalMemberOfByRef.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [Get-MgServicePrincipalMemberObject](Get-MgServicePrincipalMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgServicePrincipalOauth2PermissionGrant](Get-MgServicePrincipalOauth2PermissionGrant.md)
 Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
@@ -204,11 +200,11 @@ The tokenLifetimePolicies assigned to this service principal.
 ### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
 
-### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
-Get transitiveMemberOf from servicePrincipals
+### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
-### [Get-MgServicePrincipalTransitiveMemberOfByRef](Get-MgServicePrincipalTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from servicePrincipals
+### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [Get-MgUserAppRoleAssignment](Get-MgUserAppRoleAssignment.md)
 Represents the app roles a user has been granted for an application.
@@ -270,10 +266,8 @@ Services like Sharepoint populate this property with a tenant specific SharePoin
 ### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
 The homeRealmDiscoveryPolicies assigned to this service principal.
 
-### [New-MgServicePrincipalMemberOfByRef](New-MgServicePrincipalMemberOfByRef.md)
-Roles that this service principal is a member of.
-HTTP Methods: GET Read-only.
-Nullable.
+### [New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef](New-MgServicePrincipalHomeRealmDiscoveryPolicyByRef.md)
+The homeRealmDiscoveryPolicies assigned to this service principal.
 
 ### [New-MgServicePrincipalOauth2PermissionGrantByRef](New-MgServicePrincipalOauth2PermissionGrantByRef.md)
 Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user.
@@ -297,8 +291,8 @@ The tokenIssuancePolicies assigned to this service principal.
 ### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
 
-### [New-MgServicePrincipalTransitiveMemberOfByRef](New-MgServicePrincipalTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for servicePrincipals
+### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
+The tokenLifetimePolicies assigned to this service principal.
 
 ### [New-MgUserAppRoleAssignment](New-MgUserAppRoleAssignment.md)
 Represents the app roles a user has been granted for an application.
@@ -307,8 +301,9 @@ Represents the app roles a user has been granted for an application.
 Represents an Azure Active Directory object.
 The directoryObject type is the base type for many other directory entity types.
 
-### [Remove-MgApplicationCreatedOnBehalfOfByRef](Remove-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Remove-MgApplication](Remove-MgApplication.md)
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ### [Remove-MgApplicationExtensionProperty](Remove-MgApplicationExtensionProperty.md)
 Read-only.
@@ -358,8 +353,8 @@ Invoke action restore
 ### [Restore-MgServicePrincipal](Restore-MgServicePrincipal.md)
 Invoke action restore
 
-### [Set-MgApplicationCreatedOnBehalfOfByRef](Set-MgApplicationCreatedOnBehalfOfByRef.md)
-Read-only.
+### [Restore-MgServicePrincipal](Restore-MgServicePrincipal.md)
+Invoke action restore
 
 ### [Set-MgApplicationLogo](Set-MgApplicationLogo.md)
 The main logo for the application.
