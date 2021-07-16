@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Financials-help.xml
 Module Name: Microsoft.Graph.Financials
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/get-mgfinancialcompanysaleinvoicelineitempicturecontent
 schema: 2.0.0
@@ -21,16 +21,16 @@ Get-MgFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -Pic
 ### Get1
 ```
 Get-MgFinancialCompanySaleInvoiceLineItemPictureContent -CompanyId <String> -PictureId <String>
- -SalesInvoiceId <String> -SalesInvoiceLineId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+ -SalesInvoiceLineId <String> -SalesInvoiceId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgFinancialCompanySaleInvoiceLineItemPictureContent -InputObject <IFinancialsIdentity> -OutFile <String>
  [-PassThru] [<CommonParameters>]
@@ -47,7 +47,7 @@ Get media content for the navigation property picture from financials
 key: id of company
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get, Get1
 Aliases:
 
@@ -63,8 +63,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Type: IFinancialsIdentity
+Parameter Sets: GetViaIdentity1, GetViaIdentity
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 key: id of picture
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get, Get1
 Aliases:
 
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 key: id of salesInvoice
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 key: id of salesInvoiceLine
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get, Get1
 Aliases:
 
@@ -155,11 +155,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -208,4 +206,3 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
   - `[VendorId <String>]`: key: id of vendor
 
 ## RELATED LINKS
-

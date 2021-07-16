@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Financials-help.xml
 Module Name: Microsoft.Graph.Financials
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.financials/set-mgfinancialcompanysaleorderlineitempicturecontent
 schema: 2.0.0
@@ -15,27 +15,27 @@ Update media content for the navigation property picture in financials
 ### Set (Default)
 ```
 Set-MgFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
- -SalesOrderLineId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf]
+ -SalesOrderLineId <String> [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Set1
 ```
 Set-MgFinancialCompanySaleOrderLineItemPictureContent -CompanyId <String> -PictureId <String>
- -SalesOrderId <String> -SalesOrderLineId <String> -InFile <String> [-BodyParameter <Stream>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentity
-```
-Set-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SalesOrderLineId <String> -SalesOrderId <String> [-BodyParameter <Stream>] -InFile <String> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetViaIdentity1
 ```
-Set-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgFinancialCompanySaleOrderLineItemPictureContent -InputObject <IFinancialsIdentity>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Update media content for the navigation property picture in financials
 .
 
 ```yaml
-Type: System.IO.Stream
+Type: Stream
 Parameter Sets: (All)
 Aliases:
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 key: id of company
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Set, Set1
 Aliases:
 
@@ -81,7 +81,7 @@ This should include a path and file name.
 If you omit the path, the current location will be used.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -97,8 +97,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentity1
+Type: IFinancialsIdentity
+Parameter Sets: SetViaIdentity1, SetViaIdentity
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 key: id of picture
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Set, Set1
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 key: id of salesOrder
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Set1
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 key: id of salesOrderLine
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Set, Set1
 Aliases:
 
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -188,7 +188,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -205,13 +205,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
-
 ### System.IO.Stream
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -260,4 +257,3 @@ INPUTOBJECT <IFinancialsIdentity>: Identity Parameter
   - `[VendorId <String>]`: key: id of vendor
 
 ## RELATED LINKS
-
