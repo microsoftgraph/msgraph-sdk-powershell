@@ -8,7 +8,7 @@ schema: 2.0.0
 # Publish-MgBookingBusiness
 
 ## SYNOPSIS
-Invoke action publish
+Makes the scheduling page of this business available to the general public.
 
 ## SYNTAX
 
@@ -24,27 +24,9 @@ Publish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confirm
 ```
 
 ## DESCRIPTION
-Invoke action publish
+Makes the scheduling page of this business available to the general public.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

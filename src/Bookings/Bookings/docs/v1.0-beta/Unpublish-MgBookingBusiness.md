@@ -8,7 +8,7 @@ schema: 2.0.0
 # Unpublish-MgBookingBusiness
 
 ## SYNOPSIS
-Invoke action unpublish
+Prevents the general public from seeing the scheduling page of this business.
 
 ## SYNTAX
 
@@ -24,27 +24,9 @@ Unpublish-MgBookingBusiness -InputObject <IBookingsIdentity> [-PassThru] [-Confi
 ```
 
 ## DESCRIPTION
-Invoke action unpublish
+Prevents the general public from seeing the scheduling page of this business.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

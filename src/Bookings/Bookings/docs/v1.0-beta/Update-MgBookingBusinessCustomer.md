@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgBookingBusinessCustomer
 
 ## SYNOPSIS
-Update the navigation property customers in bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalPr
 ```
 
 ## DESCRIPTION
-Update the navigation property customers in bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -124,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-Display name of this entity.
+A name for the derived entity, which interfaces with customers.
 
 ```yaml
 Type: System.String
@@ -139,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-The e-mail address of this person.
+The email address of the person.
 
 ```yaml
 Type: System.String
