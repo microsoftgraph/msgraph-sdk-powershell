@@ -1,29 +1,29 @@
 ---
 external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mgusermanagedappuserblocked
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertodolisttaskdelta
 schema: 2.0.0
 ---
 
-# Test-MgUserManagedAppUserBlocked
+# Get-MgUserTodoListTaskDelta
 
 ## SYNOPSIS
-Gets the blocked state of a managed app user.
+Invoke function delta
 
 ## SYNTAX
 
-### Is (Default)
+### Delta1 (Default)
 ```
-Test-MgUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
+Get-MgUserTodoListTaskDelta -TodoTaskListId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### IsViaIdentity
+### DeltaViaIdentity1
 ```
-Test-MgUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserTodoListTaskDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the blocked state of a managed app user.
+Invoke function delta
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersFunctionsIdentity
-Parameter Sets: IsViaIdentity
+Parameter Sets: DeltaViaIdentity1
 Aliases:
 
 Required: True
@@ -45,12 +45,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: String
+Parameter Sets: Delta1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Is
+Parameter Sets: Delta1
 Aliases:
 
 Required: True
@@ -68,7 +83,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
 ## NOTES
 
 ALIASES

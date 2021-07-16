@@ -1,29 +1,39 @@
 ---
 external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mgusermanagedappuserblocked
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanageddevicewithappfailure
 schema: 2.0.0
 ---
 
-# Test-MgUserManagedAppUserBlocked
+# Get-MgUserManagedDeviceWithAppFailure
 
 ## SYNOPSIS
-Gets the blocked state of a managed app user.
+Retrieves the list of devices with failed apps
 
 ## SYNTAX
 
-### Is (Default)
+### Get (Default)
 ```
-Test-MgUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
+Get-MgUserManagedDeviceWithAppFailure -UserId <String> [<CommonParameters>]
 ```
 
-### IsViaIdentity
+### Get1
 ```
-Test-MgUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserManagedDeviceWithAppFailure -UserId <String> [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgUserManagedDeviceWithAppFailure -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgUserManagedDeviceWithAppFailure -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the blocked state of a managed app user.
+Retrieves the list of devices with failed apps
 
 ## EXAMPLES
 
@@ -35,7 +45,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersFunctionsIdentity
-Parameter Sets: IsViaIdentity
+Parameter Sets: GetViaIdentity1, GetViaIdentity
 Aliases:
 
 Required: True
@@ -50,7 +60,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Is
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -68,7 +78,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceSummarizedAppState
+### System.String
 ## NOTES
 
 ALIASES

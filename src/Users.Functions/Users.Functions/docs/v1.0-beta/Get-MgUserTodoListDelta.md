@@ -1,29 +1,29 @@
 ---
 external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mgusermanagedappuserblocked
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertodolistdelta
 schema: 2.0.0
 ---
 
-# Test-MgUserManagedAppUserBlocked
+# Get-MgUserTodoListDelta
 
 ## SYNOPSIS
-Gets the blocked state of a managed app user.
+Invoke function delta
 
 ## SYNTAX
 
-### Is (Default)
+### Delta1 (Default)
 ```
-Test-MgUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
+Get-MgUserTodoListDelta -UserId <String> [<CommonParameters>]
 ```
 
-### IsViaIdentity
+### DeltaViaIdentity1
 ```
-Test-MgUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserTodoListDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the blocked state of a managed app user.
+Invoke function delta
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersFunctionsIdentity
-Parameter Sets: IsViaIdentity
+Parameter Sets: DeltaViaIdentity1
 Aliases:
 
 Required: True
@@ -50,7 +50,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Is
+Parameter Sets: Delta1
 Aliases:
 
 Required: True
@@ -68,7 +68,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTaskList
 ## NOTES
 
 ALIASES

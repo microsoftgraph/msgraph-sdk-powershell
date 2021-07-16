@@ -1,33 +1,50 @@
 ---
 external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/test-mgusermanagedappuserblocked
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgfilteruserpendingaccessreviewinstancedecision
 schema: 2.0.0
 ---
 
-# Test-MgUserManagedAppUserBlocked
+# Invoke-MgFilterUserPendingAccessReviewInstanceDecision
 
 ## SYNOPSIS
-Gets the blocked state of a managed app user.
+Invoke function filterByCurrentUser
 
 ## SYNTAX
 
-### Is (Default)
+### Filter (Default)
 ```
-Test-MgUserManagedAppUserBlocked -UserId <String> [<CommonParameters>]
+Invoke-MgFilterUserPendingAccessReviewInstanceDecision -AccessReviewInstanceId <String> -On <String>
+ -UserId <String> [<CommonParameters>]
 ```
 
-### IsViaIdentity
+### FilterViaIdentity
 ```
-Test-MgUserManagedAppUserBlocked -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgFilterUserPendingAccessReviewInstanceDecision -InputObject <IUsersFunctionsIdentity>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Gets the blocked state of a managed app user.
+Invoke function filterByCurrentUser
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AccessReviewInstanceId
+key: id of accessReviewInstance
+
+```yaml
+Type: String
+Parameter Sets: Filter
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -35,7 +52,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersFunctionsIdentity
-Parameter Sets: IsViaIdentity
+Parameter Sets: FilterViaIdentity
 Aliases:
 
 Required: True
@@ -45,12 +62,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -On
+Usage: on={on}
+
+```yaml
+Type: String
+Parameter Sets: Filter
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Is
+Parameter Sets: Filter
 Aliases:
 
 Required: True
@@ -68,7 +100,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewInstanceDecisionItem
 ## NOTES
 
 ALIASES
