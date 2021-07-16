@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## SYNTAX
 
@@ -16,7 +16,7 @@ Create new navigation property to mobileAppConfigurations for deviceAppManagemen
 ```
 New-MgDeviceAppMgtMobileAppConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
+ [-Description <String>] [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]
  [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-RoleScopeTagIds <String[]>]
  [-TargetedMobileApps <String[]>]
@@ -32,27 +32,9 @@ New-MgDeviceAppMgtMobileAppConfiguration -BodyParameter <IMicrosoftGraphManagedD
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppConfigurations for deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -138,7 +120,7 @@ List of ManagedDeviceMobileAppConfigurationDeviceStatus.
 To construct, see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -370,7 +352,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration>: An abstract 
     - `[NotApplicablePlatformCount <Int32?>]`: Number of not applicable devices due to mismatch platform and policy
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
     - `[Id <String>]`: Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -404,7 +386,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration>: An abstract 
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[Version <Int32?>]`: Version of the device configuration.
 
-DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
   - `[Id <String>]`: Read-only.
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.

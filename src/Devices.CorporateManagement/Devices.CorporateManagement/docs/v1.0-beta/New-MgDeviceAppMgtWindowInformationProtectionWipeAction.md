@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+Windows information protection wipe actions.
 
 ## SYNTAX
 
@@ -28,27 +28,9 @@ New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+Windows information protection wipe actions.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtMobileApp
 
 ## SYNOPSIS
-Update the navigation property mobileApps in deviceAppManagement
+The mobile apps.
 
 ## SYNTAX
 
@@ -22,8 +22,8 @@ Update-MgDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Has
  [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>] [-PublishingState <String>]
  [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-RoleScopeTagIds <String[]>]
- [-UploadState <Int32>] [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SupersededAppCount <Int32>] [-SupersedingAppCount <Int32>] [-UploadState <Int32>]
+ [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -49,32 +49,14 @@ Update-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity
  [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>] [-PublishingState <String>]
  [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-RoleScopeTagIds <String[]>]
- [-UploadState <Int32>] [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-SupersededAppCount <Int32>] [-SupersedingAppCount <Int32>] [-UploadState <Int32>]
+ [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileApps in deviceAppManagement
+The mobile apps.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -491,9 +473,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SupersededAppCount
+The total number of apps this app is directly or indirectly superseded by.
+
+```yaml
+Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupersedingAppCount
+The total number of apps this app directly or indirectly supersedes.
+
+```yaml
+Type: System.Int32
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UploadState
 The upload state.
-Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
 
 ```yaml
 Type: System.Int32
@@ -657,9 +668,14 @@ BODYPARAMETER <IMicrosoftGraphMobileApp>: An abstract class containing the base 
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
     - `[Id <String>]`: Read-only.
     - `[TargetDisplayName <String>]`: The target mobile app's display name.
+    - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
+    - `[TargetPublisher <String>]`: The target mobile app's publisher.
+    - `[TargetType <String>]`: mobileAppRelationshipType
   - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-  - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+  - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+  - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+  - `[UploadState <Int32?>]`: The upload state.
   - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
     - `[Id <String>]`: Read-only.
     - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
@@ -730,9 +746,14 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
+      - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
+      - `[TargetPublisher <String>]`: The target mobile app's publisher.
+      - `[TargetType <String>]`: mobileAppRelationshipType
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-    - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+    - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+    - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+    - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
@@ -758,15 +779,15 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -806,14 +827,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -845,7 +866,10 @@ LARGEICON <IMicrosoftGraphMimeContent>: Contains properties for a generic mime c
 RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: List of relationships for this mobile app.
   - `[Id <String>]`: Read-only.
   - `[TargetDisplayName <String>]`: The target mobile app's display name.
+  - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
   - `[TargetId <String>]`: The target mobile app's app id.
+  - `[TargetPublisher <String>]`: The target mobile app's publisher.
+  - `[TargetType <String>]`: mobileAppRelationshipType
 
 USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation states for this mobile app.
   - `[Id <String>]`: Read-only.
@@ -916,9 +940,14 @@ USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation s
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
+      - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
+      - `[TargetPublisher <String>]`: The target mobile app's publisher.
+      - `[TargetType <String>]`: mobileAppRelationshipType
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-    - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+    - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+    - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+    - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
   - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
   - `[FailedDeviceCount <Int32?>]`: Failed Device Count.

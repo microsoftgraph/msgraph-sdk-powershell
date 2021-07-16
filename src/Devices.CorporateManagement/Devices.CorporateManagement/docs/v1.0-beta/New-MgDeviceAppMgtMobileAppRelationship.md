@@ -8,14 +8,15 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileAppRelationship
 
 ## SYNOPSIS
-Create new navigation property to relationships for deviceAppManagement
+List of relationships for this mobile app.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtMobileAppRelationship -MobileAppId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-TargetDisplayName <String>] [-TargetId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-TargetDisplayName <String>] [-TargetDisplayVersion <String>] [-TargetId <String>]
+ [-TargetPublisher <String>] [-TargetType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -33,32 +34,15 @@ New-MgDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagemen
 ### CreateViaIdentityExpanded
 ```
 New-MgDeviceAppMgtMobileAppRelationship -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetDisplayName <String>] [-TargetId <String>]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-TargetDisplayName <String>]
+ [-TargetDisplayVersion <String>] [-TargetId <String>] [-TargetPublisher <String>] [-TargetType <String>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to relationships for deviceAppManagement
+List of relationships for this mobile app.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -154,8 +138,53 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TargetDisplayVersion
+The target mobile app's display version.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TargetId
 The target mobile app's app id.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetPublisher
+The target mobile app's publisher.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TargetType
+mobileAppRelationshipType
 
 ```yaml
 Type: System.String
@@ -228,20 +257,23 @@ BODYPARAMETER <IMicrosoftGraphMobileAppRelationship>: Describes a relationship b
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[TargetDisplayName <String>]`: The target mobile app's display name.
+  - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
   - `[TargetId <String>]`: The target mobile app's app id.
+  - `[TargetPublisher <String>]`: The target mobile app's publisher.
+  - `[TargetType <String>]`: mobileAppRelationshipType
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -281,14 +313,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

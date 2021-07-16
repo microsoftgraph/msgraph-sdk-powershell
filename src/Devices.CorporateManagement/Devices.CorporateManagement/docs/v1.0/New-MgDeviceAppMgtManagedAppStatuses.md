@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppStatuses
 
 ## SYNOPSIS
-Create new navigation property to managedAppStatuses for deviceAppManagement
+The managed app statuses.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ New-MgDeviceAppMgtManagedAppStatuses -BodyParameter <IMicrosoftGraphManagedAppSt
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedAppStatuses for deviceAppManagement
+The managed app statuses.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

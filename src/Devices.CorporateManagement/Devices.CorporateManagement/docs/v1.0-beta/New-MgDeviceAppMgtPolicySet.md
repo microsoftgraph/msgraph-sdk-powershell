@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtPolicySet
 
 ## SYNOPSIS
-Create new navigation property to policySets for deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## SYNTAX
 
@@ -28,27 +28,9 @@ New-MgDeviceAppMgtPolicySet -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create new navigation property to policySets for deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

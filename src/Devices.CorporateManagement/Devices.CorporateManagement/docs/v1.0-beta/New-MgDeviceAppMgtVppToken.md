@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtVppToken
 
 ## SYNOPSIS
-Create new navigation property to vppTokens for deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## SYNTAX
 
@@ -29,27 +29,9 @@ New-MgDeviceAppMgtVppToken -BodyParameter <IMicrosoftGraphVppToken> [-Confirm] [
 ```
 
 ## DESCRIPTION
-Create new navigation property to vppTokens for deviceAppManagement
+List of Vpp tokens for this organization.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -223,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastSyncDateTime
-The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
 
 ```yaml
 Type: System.DateTime
@@ -422,7 +404,7 @@ BODYPARAMETER <IMicrosoftGraphVppToken>: You purchase multiple licenses for iOS 
   - `[DisplayName <String>]`: An admin specified token friendly name.
   - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the Apple Volume Purchase Program Token.
   - `[LastModifiedDateTime <DateTime?>]`: Last modification date time associated with the Apple Volume Purchase Program Token.
-  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the Apple Volume Purchase Program Token.
+  - `[LastSyncDateTime <DateTime?>]`: The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
   - `[LastSyncStatus <String>]`: vppTokenSyncStatus
   - `[LocationName <String>]`: Token location returned from Apple VPP.
   - `[OrganizationName <String>]`: The organization associated with the Apple Volume Purchase Program Token

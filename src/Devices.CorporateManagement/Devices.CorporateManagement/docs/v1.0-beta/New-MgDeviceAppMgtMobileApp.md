@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileApp
 
 ## SYNOPSIS
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## SYNTAX
 
@@ -22,8 +22,8 @@ New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
  [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
  [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>] [-PublishingState <String>]
  [-Relationships <IMicrosoftGraphMobileAppRelationship[]>] [-RoleScopeTagIds <String[]>]
- [-UploadState <Int32>] [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-SupersededAppCount <Int32>] [-SupersedingAppCount <Int32>] [-UploadState <Int32>]
+ [-UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -33,27 +33,9 @@ New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -424,9 +406,38 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SupersededAppCount
+The total number of apps this app is directly or indirectly superseded by.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SupersedingAppCount
+The total number of apps this app directly or indirectly supersedes.
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UploadState
 The upload state.
-Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
 
 ```yaml
 Type: System.Int32
@@ -588,9 +599,14 @@ BODYPARAMETER <IMicrosoftGraphMobileApp>: An abstract class containing the base 
   - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
     - `[Id <String>]`: Read-only.
     - `[TargetDisplayName <String>]`: The target mobile app's display name.
+    - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
     - `[TargetId <String>]`: The target mobile app's app id.
+    - `[TargetPublisher <String>]`: The target mobile app's publisher.
+    - `[TargetType <String>]`: mobileAppRelationshipType
   - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-  - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+  - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+  - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+  - `[UploadState <Int32?>]`: The upload state.
   - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
     - `[Id <String>]`: Read-only.
     - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
@@ -661,9 +677,14 @@ DEVICESTATUSES <IMicrosoftGraphMobileAppInstallStatus[]>: The list of installati
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
+      - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
+      - `[TargetPublisher <String>]`: The target mobile app's publisher.
+      - `[TargetType <String>]`: mobileAppRelationshipType
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-    - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+    - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+    - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+    - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[App <IMicrosoftGraphMobileApp>]`: An abstract class containing the base properties for Intune mobile apps.
@@ -708,7 +729,10 @@ LARGEICON <IMicrosoftGraphMimeContent>: Contains properties for a generic mime c
 RELATIONSHIPS <IMicrosoftGraphMobileAppRelationship[]>: List of relationships for this mobile app.
   - `[Id <String>]`: Read-only.
   - `[TargetDisplayName <String>]`: The target mobile app's display name.
+  - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
   - `[TargetId <String>]`: The target mobile app's app id.
+  - `[TargetPublisher <String>]`: The target mobile app's publisher.
+  - `[TargetType <String>]`: mobileAppRelationshipType
 
 USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation states for this mobile app.
   - `[Id <String>]`: Read-only.
@@ -779,9 +803,14 @@ USERSTATUSES <IMicrosoftGraphUserAppInstallStatus[]>: The list of installation s
     - `[Relationships <IMicrosoftGraphMobileAppRelationship[]>]`: List of relationships for this mobile app.
       - `[Id <String>]`: Read-only.
       - `[TargetDisplayName <String>]`: The target mobile app's display name.
+      - `[TargetDisplayVersion <String>]`: The target mobile app's display version.
       - `[TargetId <String>]`: The target mobile app's app id.
+      - `[TargetPublisher <String>]`: The target mobile app's publisher.
+      - `[TargetType <String>]`: mobileAppRelationshipType
     - `[RoleScopeTagIds <String[]>]`: List of scope tag ids for this mobile app.
-    - `[UploadState <Int32?>]`: The upload state. Possible values are: 0 - `Not Ready`, 1 - `Ready`, 2 - `Processing`.
+    - `[SupersededAppCount <Int32?>]`: The total number of apps this app is directly or indirectly superseded by.
+    - `[SupersedingAppCount <Int32?>]`: The total number of apps this app directly or indirectly supersedes.
+    - `[UploadState <Int32?>]`: The upload state.
     - `[UserStatuses <IMicrosoftGraphUserAppInstallStatus[]>]`: The list of installation states for this mobile app.
   - `[DeviceStatuses <IMicrosoftGraphMobileAppInstallStatus[]>]`: The install state of the app on devices.
   - `[FailedDeviceCount <Int32?>]`: Failed Device Count.

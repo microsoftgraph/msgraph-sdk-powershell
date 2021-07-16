@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
 
 ## SYNOPSIS
-Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+The IOS Lob App Provisioning Configurations.
 
 ## SYNTAX
 
@@ -16,7 +16,7 @@ Create new navigation property to iosLobAppProvisioningConfigurations for device
 ```
 New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphIosLobAppProvisioningConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
+ [-Description <String>] [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]
  [-DisplayName <String>] [-ExpirationDateTime <DateTime>]
  [-GroupAssignments <IMicrosoftGraphMobileAppProvisioningConfigGroupAssignment[]>] [-Id <String>]
  [-LastModifiedDateTime <DateTime>] [-PayloadFileName <String>] [-PayloadInputFile <String>]
@@ -32,27 +32,9 @@ New-MgDeviceAppMgtiOSLobAppProvisioningConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to iosLobAppProvisioningConfigurations for deviceAppManagement
+The IOS Lob App Provisioning Configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -138,7 +120,7 @@ The list of device installation states for this mobile app configuration.
 To construct, see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -226,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -PayloadFileName
-Payload file name (*.mobileprovision | *.xml).
+Payload file name (.mobileprovision
 
 ```yaml
 Type: System.String
@@ -373,7 +355,7 @@ BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic pr
       - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
   - `[CreatedDateTime <DateTime?>]`: DateTime the object was created.
   - `[Description <String>]`: Admin provided description of the Device Configuration.
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: The list of device installation states for this mobile app configuration.
+  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: The list of device installation states for this mobile app configuration.
     - `[Id <String>]`: Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -390,7 +372,7 @@ BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic pr
     - `[TargetGroupId <String>]`: The ID of the AAD group in which the app provisioning configuration is being targeted.
   - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
   - `[Payload <Byte[]>]`: Payload. (UTF8 encoded byte array)
-  - `[PayloadFileName <String>]`: Payload file name (*.mobileprovision | *.xml).
+  - `[PayloadFileName <String>]`: Payload file name (.mobileprovision
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this iOS LOB app provisioning configuration entity.
   - `[UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]`: The list of user installation states for this mobile app configuration.
     - `[Id <String>]`: Read-only.
@@ -401,7 +383,7 @@ BODYPARAMETER <IMicrosoftGraphIosLobAppProvisioningConfiguration>: This topic pr
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[Version <Int32?>]`: Version of the device configuration.
 
-DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>: The list of device installation states for this mobile app configuration.
+DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>: The list of device installation states for this mobile app configuration.
   - `[Id <String>]`: Read-only.
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.

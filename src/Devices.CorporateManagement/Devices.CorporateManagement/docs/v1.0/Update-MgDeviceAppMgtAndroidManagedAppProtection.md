@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtAndroidManagedAppProtection
 
 ## SYNOPSIS
-Update the navigation property androidManagedAppProtections in deviceAppManagement
+Android managed app policies.
 
 ## SYNTAX
 
@@ -39,14 +39,14 @@ Update-MgDeviceAppMgtAndroidManagedAppProtection -AndroidManagedAppProtectionId 
 ### Update
 ```
 Update-MgDeviceAppMgtAndroidManagedAppProtection -AndroidManagedAppProtectionId <String>
- -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppMgtAndroidManagedAppProtection -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphAndroidManagedAppProtection1> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -75,27 +75,9 @@ Update-MgDeviceAppMgtAndroidManagedAppProtection -InputObject <IDevicesCorporate
 ```
 
 ## DESCRIPTION
-Update the navigation property androidManagedAppProtections in deviceAppManagement
+Android managed app policies.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -226,7 +208,7 @@ Policy used to configure detailed management settings targeted to specific secur
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -269,7 +251,6 @@ Accept wildcard characters: False
 
 ### -CustomBrowserDisplayName
 Friendly name of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 
 ```yaml
 Type: System.String
@@ -284,8 +265,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomBrowserPackageId
-Unique identifier of the preferred custom browser to open weblink on Android.
-When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+Unique identifier of a custom browser to open weblink on Android.
 
 ```yaml
 Type: System.String
@@ -894,7 +874,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAndroidManagedAppProtection1
 
 ## OUTPUTS
 
@@ -922,7 +902,7 @@ ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>: Navigation p
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
+BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection1>: Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
@@ -967,8 +947,8 @@ BODYPARAMETER <IMicrosoftGraphAndroidManagedAppProtection>: Policy used to confi
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
-  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-  - `[CustomBrowserPackageId <String>]`: Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+  - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android.
+  - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1001,15 +981,15 @@ DEPLOYMENTSUMMARY <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The Manage
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -1049,14 +1029,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

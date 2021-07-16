@@ -1,69 +1,53 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgusermanageddevicelogcollectionrequest
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermanageddevicelogcollectionresponse
 schema: 2.0.0
 ---
 
-# New-MgUserManagedDeviceLogCollectionRequest
+# Update-MgUserManagedDeviceLogCollectionResponse
 
 ## SYNOPSIS
-Create new navigation property to logCollectionRequests for users
+List of log collection requests
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### UpdateExpanded (Default)
 ```
-New-MgUserManagedDeviceLogCollectionRequest -ManagedDeviceId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-ErrorCode <Int64>] [-ExpirationDateTimeUtc <DateTime>] [-Id <String>]
- [-InitiatedByUserPrincipalName <String>] [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>]
- [-RequestedDateTimeUtc <DateTime>] [-Size <Double>] [-Status <String>] [-Confirm] [-WhatIf]
+Update-MgUserManagedDeviceLogCollectionResponse -DeviceLogCollectionResponseId <String>
+ -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ErrorCode <Int64>]
+ [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
+ [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
+ [-Size <Double>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### Update
+```
+Update-MgUserManagedDeviceLogCollectionResponse -DeviceLogCollectionResponseId <String>
+ -ManagedDeviceId <String> -UserId <String> -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse>
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
+ -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Create
+### UpdateViaIdentityExpanded
 ```
-New-MgUserManagedDeviceLogCollectionRequest -ManagedDeviceId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserManagedDeviceLogCollectionRequest -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgUserManagedDeviceLogCollectionRequest -InputObject <IDevicesCorporateManagementIdentity>
+Update-MgUserManagedDeviceLogCollectionResponse -InputObject <IDevicesCorporateManagementIdentity>
  [-ManagedDeviceId <String>] [-AdditionalProperties <Hashtable>] [-ErrorCode <Int64>]
  [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
  [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>] [-Size <Double>] [-Status <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to logCollectionRequests for users
+List of log collection requests
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -72,7 +56,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -88,7 +72,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -98,13 +82,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -DeviceLogCollectionResponseId
+key: id of deviceLogCollectionResponse
+
+```yaml
+Type: System.String
+Parameter Sets: Update, UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ErrorCode
 The error code, if any.
 Valid values -9.22337203685478E+18 to 9.22337203685478E+18
 
 ```yaml
 Type: System.Int64
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -119,7 +118,7 @@ The DateTime of the expiration of the logs
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -134,7 +133,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -149,7 +148,7 @@ The UPN for who initiated the request
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -165,7 +164,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -180,7 +179,7 @@ key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -195,7 +194,22 @@ The device Id
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -210,7 +224,7 @@ The DateTime the request was received
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -225,7 +239,7 @@ The DateTime of the request
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -241,7 +255,7 @@ Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -256,7 +270,7 @@ The status of the log collection request
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -271,7 +285,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -323,7 +337,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
+### System.Boolean
 
 ## NOTES
 
@@ -349,15 +363,15 @@ BODYPARAMETER <IMicrosoftGraphDeviceLogCollectionResponse>: Windows Log Collecti
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -397,14 +411,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

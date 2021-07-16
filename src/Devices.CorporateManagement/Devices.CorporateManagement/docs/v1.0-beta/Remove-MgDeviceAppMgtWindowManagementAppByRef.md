@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgDeviceAppMgtWindowManagementAppByRef
 
 ## SYNOPSIS
-Delete ref of navigation property windowsManagementApp for deviceAppManagement
+Windows management app.
 
 ## SYNTAX
 
@@ -18,27 +18,9 @@ Remove-MgDeviceAppMgtWindowManagementAppByRef [-IfMatch <String>] [-PassThru] [-
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property windowsManagementApp for deviceAppManagement
+Windows management app.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
