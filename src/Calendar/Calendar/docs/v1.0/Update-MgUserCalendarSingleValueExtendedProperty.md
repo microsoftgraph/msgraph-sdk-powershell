@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Calendar-help.xml
 Module Name: Microsoft.Graph.Calendar
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/update-mgusercalendarsinglevalueextendedproperty
 schema: 2.0.0
@@ -16,58 +16,57 @@ Nullable.
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String>
- -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Update2
-```
-Update-MgUserCalendarSingleValueExtendedProperty -CalendarId <String>
- -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateExpanded2
 ```
-Update-MgUserCalendarSingleValueExtendedProperty -CalendarId <String>
- -SingleValueLegacyExtendedPropertyId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
+ -CalendarId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### Update2
 ```
-Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity2
-```
-Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
+ -CalendarId <String> -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### Update1
 ```
-Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
+Update-MgUserCalendarSingleValueExtendedProperty -SingleValueLegacyExtendedPropertyId <String> -UserId <String>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded2
 ```
 Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded1
+```
+Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+ [-AdditionalProperties <Hashtable>] [-Id <String>] [-Value <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity2
+```
+Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
+ -BodyParameter <IMicrosoftGraphSingleValueLegacyExtendedProperty> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -84,8 +83,8 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Type: Hashtable
+Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -100,8 +99,8 @@ singleValueLegacyExtendedProperty
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
-Parameter Sets: Update1, Update2, UpdateViaIdentity1, UpdateViaIdentity2
+Type: IMicrosoftGraphSingleValueLegacyExtendedProperty
+Parameter Sets: Update2, Update1, UpdateViaIdentity2, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -115,8 +114,8 @@ Accept wildcard characters: False
 key: id of calendar
 
 ```yaml
-Type: System.String
-Parameter Sets: Update2, UpdateExpanded2
+Type: String
+Parameter Sets: UpdateExpanded2, Update2
 Aliases:
 
 Required: True
@@ -130,8 +129,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -146,8 +145,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentity2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Type: ICalendarIdentity
+Parameter Sets: UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentity2, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -161,7 +160,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -176,8 +175,8 @@ Accept wildcard characters: False
 key: id of singleValueLegacyExtendedProperty
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, Update2, UpdateExpanded1, UpdateExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateExpanded2, Update2, Update1
 Aliases:
 
 Required: True
@@ -191,8 +190,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, Update2, UpdateExpanded1, UpdateExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateExpanded2, Update2, Update1
 Aliases:
 
 Required: True
@@ -206,8 +205,8 @@ Accept wildcard characters: False
 A property value.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded1, UpdateViaIdentityExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateExpanded2, UpdateViaIdentityExpanded2, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -221,7 +220,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -237,7 +236,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -254,13 +253,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -290,4 +286,3 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
