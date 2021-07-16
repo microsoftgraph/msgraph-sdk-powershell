@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/invoke-mgreopencomplianceediscoverycase
 schema: 2.0.0
@@ -14,12 +14,12 @@ Invoke action reopen
 
 ### Reopen (Default)
 ```
-Invoke-MgReopenComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgReopenComplianceEdiscoveryCase -CaseId <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ReopenViaIdentity
 ```
-Invoke-MgReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgReopenComplianceEdiscoveryCase -InputObject <IComplianceIdentity> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -34,7 +34,7 @@ Invoke action reopen
 key: id of case
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Reopen
 Aliases:
 
@@ -50,7 +50,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: IComplianceIdentity
 Parameter Sets: ReopenViaIdentity
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -96,7 +96,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -113,11 +113,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -143,4 +141,3 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/set-mgcomplianceediscoverycasetagparentbyref
 schema: 2.0.0
@@ -15,25 +15,25 @@ Returns the parent tag of the specified tag.
 ### SetExpanded (Default)
 ```
 Set-MgComplianceEdiscoveryCaseTagParentByRef -CaseId <String> -TagId <String>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Set
 ```
 Set-MgComplianceEdiscoveryCaseTagParentByRef -CaseId <String> -TagId <String> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentity
-```
-Set-MgComplianceEdiscoveryCaseTagParentByRef -InputObject <IComplianceIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgComplianceEdiscoveryCaseTagParentByRef -InputObject <IComplianceIdentity>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgComplianceEdiscoveryCaseTagParentByRef -InputObject <IComplianceIdentity> -BodyParameter <Hashtable>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,7 +47,7 @@ Returns the parent tag of the specified tag.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 key: id of case
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -93,8 +93,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Type: IComplianceIdentity
+Parameter Sets: SetViaIdentityExpanded, SetViaIdentity
 Aliases:
 
 Required: True
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -123,8 +123,8 @@ Accept wildcard characters: False
 key: id of tag
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -154,7 +154,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -171,13 +171,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -203,4 +200,3 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
-

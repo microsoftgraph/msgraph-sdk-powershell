@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/new-mgcomplianceediscoverycasesourcecollectionnoncustodialsourcebyref
 schema: 2.0.0
@@ -15,25 +15,25 @@ noncustodialDataSource sources that are included in the sourceCollection
 ### CreateExpanded (Default)
 ```
 New-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSourceByRef -CaseId <String>
- -SourceCollectionId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SourceCollectionId <String> [-AdditionalProperties <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSourceByRef -CaseId <String>
- -SourceCollectionId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSourceByRef -InputObject <IComplianceIdentity>
- -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -SourceCollectionId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSourceByRef -InputObject <IComplianceIdentity>
- [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgComplianceEdiscoveryCaseSourceCollectionNoncustodialSourceByRef -InputObject <IComplianceIdentity>
+ -BodyParameter <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,7 +47,7 @@ noncustodialDataSource sources that are included in the sourceCollection
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -77,8 +77,8 @@ Accept wildcard characters: False
 key: id of case
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -93,8 +93,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IComplianceIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -108,8 +108,8 @@ Accept wildcard characters: False
 key: id of sourceCollection
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -139,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -156,13 +156,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths159I4QvComplianceEdiscoveryCasesCaseIdSourcecollectionsSourcecollectionIdNoncustodialsourcesRefPostResponses201ContentApplicationJsonSchema
-
 ## NOTES
 
 ALIASES
@@ -188,4 +185,3 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
-

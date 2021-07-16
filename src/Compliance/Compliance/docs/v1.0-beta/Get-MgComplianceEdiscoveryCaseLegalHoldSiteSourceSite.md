@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/get-mgcomplianceediscoverycaselegalholdsitesourcesite
 schema: 2.0.0
@@ -35,7 +35,7 @@ The SharePoint site associated with the siteSource.
 key: id of case
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -50,7 +50,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -66,7 +66,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
+Type: IComplianceIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 key: id of legalHold
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 key: id of siteSource
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -128,11 +128,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSite
-
 ## NOTES
 
 ALIASES
@@ -158,4 +156,3 @@ INPUTOBJECT <IComplianceIdentity>: Identity Parameter
   - `[UserSourceId <String>]`: key: id of userSource
 
 ## RELATED LINKS
-

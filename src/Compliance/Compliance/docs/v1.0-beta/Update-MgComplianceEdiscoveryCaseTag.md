@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/update-mgcomplianceediscoverycasetag
 schema: 2.0.0
@@ -17,20 +17,14 @@ Returns a list of tag objects associated to this case.
 Update-MgComplianceEdiscoveryCaseTag -CaseId <String> -TagId <String> [-AdditionalProperties <Hashtable>]
  [-ChildSelectability <String>] [-ChildTags <IMicrosoftGraphEdiscoveryTag[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphEdiscoveryTag>] [-PassThru] [-Confirm] [-WhatIf]
+ [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphEdiscoveryTag>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgComplianceEdiscoveryCaseTag -CaseId <String> -TagId <String>
- -BodyParameter <IMicrosoftGraphEdiscoveryTag> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoveryTag> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryTag> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -38,8 +32,14 @@ Update-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity>
 Update-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity> [-AdditionalProperties <Hashtable>]
  [-ChildSelectability <String>] [-ChildTags <IMicrosoftGraphEdiscoveryTag[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphEdiscoveryTag>] [-PassThru] [-Confirm] [-WhatIf]
+ [-LastModifiedDateTime <DateTime>] [-Parent <IMicrosoftGraphEdiscoveryTag>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgComplianceEdiscoveryCaseTag -InputObject <IComplianceIdentity>
+ -BodyParameter <IMicrosoftGraphEdiscoveryTag> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Returns a list of tag objects associated to this case.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ tag
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
+Type: IMicrosoftGraphEdiscoveryTag
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -84,8 +84,8 @@ Accept wildcard characters: False
 key: id of case
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 childSelectability
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ Returns the tags that are a child of a tag.
 To construct, see NOTES section for CHILDTAGS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag[]
+Type: IMicrosoftGraphEdiscoveryTag[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -131,7 +131,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 The description for the tag.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 Display name of the tag.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -192,8 +192,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IComplianceIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 The date and time the tag was last modified.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -223,7 +223,7 @@ tag
 To construct, see NOTES section for PARENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
+Type: IMicrosoftGraphEdiscoveryTag
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -253,8 +253,8 @@ Accept wildcard characters: False
 key: id of tag
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -284,7 +284,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -301,13 +301,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryTag
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -395,4 +392,3 @@ PARENT <IMicrosoftGraphEdiscoveryTag>: tag
   - `[Parent <IMicrosoftGraphEdiscoveryTag>]`: tag
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Compliance-help.xml
 Module Name: Microsoft.Graph.Compliance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.compliance/new-mgcomplianceediscoverycasesourcecollection
 schema: 2.0.0
@@ -14,42 +14,42 @@ Returns a list of sourceCollection objects associated with this case.
 
 ### CreateExpanded (Default)
 ```
-New-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String> [-AdditionalProperties <Hashtable>]
- [-AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]
- [-AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>] [-ContentQuery <String>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
+New-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String>
+ [-AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>]
+ [-AdditionalProperties <Hashtable>] [-AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]
+ [-ContentQuery <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-CustodianSources <IMicrosoftGraphEdiscoveryDataSource[]>] [-DataSourceScopes <String>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastEstimateStatisticsOperation <IMicrosoftGraphEdiscoveryEstimateStatisticsOperation>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-Confirm] [-WhatIf]
+ [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgComplianceEdiscoveryCaseSourceCollection -CaseId <String>
- -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity>
+ [-AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>]
  [-AdditionalProperties <Hashtable>] [-AdditionalSources <IMicrosoftGraphEdiscoveryDataSource[]>]
- [-AddToReviewSetOperation <IMicrosoftGraphEdiscoveryAddToReviewSetOperation>] [-ContentQuery <String>]
- [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
+ [-ContentQuery <String>] [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-CustodianSources <IMicrosoftGraphEdiscoveryDataSource[]>] [-DataSourceScopes <String>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>]
  [-LastEstimateStatisticsOperation <IMicrosoftGraphEdiscoveryEstimateStatisticsOperation>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-Confirm] [-WhatIf]
+ [-NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgComplianceEdiscoveryCaseSourceCollection -InputObject <IComplianceIdentity>
+ -BodyParameter <IMicrosoftGraphEdiscoverySourceCollection> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,7 +63,7 @@ Returns a list of sourceCollection objects associated with this case.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -79,7 +79,7 @@ Adds an additional source to the sourceCollection.
 To construct, see NOTES section for ADDITIONALSOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryDataSource[]
+Type: IMicrosoftGraphEdiscoveryDataSource[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -95,7 +95,7 @@ addToReviewSetOperation
 To construct, see NOTES section for ADDTOREVIEWSETOPERATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryAddToReviewSetOperation
+Type: IMicrosoftGraphEdiscoveryAddToReviewSetOperation
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -111,7 +111,7 @@ sourceCollection
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
+Type: IMicrosoftGraphEdiscoverySourceCollection
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -126,8 +126,8 @@ Accept wildcard characters: False
 key: id of case
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ For details, see Keyword queries and search conditions for Content Search and eD
 You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date\>=06/01/2016 AND Date\<=07/01/2016
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -159,7 +159,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 The date and time the sourceCollection was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ Custodian sources that are included in the sourceCollection.
 To construct, see NOTES section for CUSTODIANSOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryDataSource[]
+Type: IMicrosoftGraphEdiscoveryDataSource[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 dataSourceScopes
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 The description of the sourceCollection
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 The display name of the sourceCollection
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -266,8 +266,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IComplianceIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -282,7 +282,7 @@ estimateStatisticsOperation
 To construct, see NOTES section for LASTESTIMATESTATISTICSOPERATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryEstimateStatisticsOperation
+Type: IMicrosoftGraphEdiscoveryEstimateStatisticsOperation
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -298,7 +298,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 The last date and time the sourceCollection was modified.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -329,7 +329,7 @@ noncustodialDataSource sources that are included in the sourceCollection
 To construct, see NOTES section for NONCUSTODIALSOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryNoncustodialDataSource[]
+Type: IMicrosoftGraphEdiscoveryNoncustodialDataSource[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -360,7 +360,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -377,13 +377,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoverySourceCollection
-
 ## NOTES
 
 ALIASES
@@ -760,3 +757,4 @@ NONCUSTODIALSOURCES <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>: noncust
 
 ## RELATED LINKS
 
+## RELATED LINKS
