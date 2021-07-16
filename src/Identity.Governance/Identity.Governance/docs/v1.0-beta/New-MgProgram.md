@@ -28,24 +28,6 @@ Add new entity to programs
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -80,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -Controls
-.
+Controls associated with the program.
 To construct, see NOTES section for CONTROLS properties and create a hash table.
 
 ```yaml
@@ -96,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+The description of the program.
 
 ```yaml
 Type: System.String
@@ -111,7 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the program.
+Required on create.
 
 ```yaml
 Type: System.String
@@ -194,12 +177,12 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphProgram>: program
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Controls <IMicrosoftGraphProgramControl[]>]`: 
+  - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
     - `[Id <String>]`: Read-only.
-    - `[ControlId <String>]`: 
-    - `[ControlTypeId <String>]`: 
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
+    - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
+    - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
+    - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
+    - `[DisplayName <String>]`: The name of the control.
     - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -207,22 +190,22 @@ BODYPARAMETER <IMicrosoftGraphProgram>: program
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[Program <IMicrosoftGraphProgram>]`: program
-    - `[ProgramId <String>]`: 
+    - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
     - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
       - `[Id <String>]`: Unique identifier for the identity.
-      - `[Type <String>]`: 
-    - `[Status <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+      - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
+    - `[Status <String>]`: The life cycle status of the control.
+  - `[Description <String>]`: The description of the program.
+  - `[DisplayName <String>]`: The name of the program.  Required on create.
 
-CONTROLS <IMicrosoftGraphProgramControl[]>: .
+CONTROLS <IMicrosoftGraphProgramControl[]>: Controls associated with the program.
   - `[Id <String>]`: Read-only.
-  - `[ControlId <String>]`: 
-  - `[ControlTypeId <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
+  - `[ControlId <String>]`: The controlId of the control, in particular the identifier of an access review. Required on create.
+  - `[ControlTypeId <String>]`: The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.
+  - `[CreatedDateTime <DateTime?>]`: The creation date and time of the program control.
+  - `[DisplayName <String>]`: The name of the control.
   - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
@@ -232,16 +215,16 @@ CONTROLS <IMicrosoftGraphProgramControl[]>: .
   - `[Program <IMicrosoftGraphProgram>]`: program
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Controls <IMicrosoftGraphProgramControl[]>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-  - `[ProgramId <String>]`: 
+    - `[Controls <IMicrosoftGraphProgramControl[]>]`: Controls associated with the program.
+    - `[Description <String>]`: The description of the program.
+    - `[DisplayName <String>]`: The name of the program.  Required on create.
+  - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
   - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
-    - `[Type <String>]`: 
-  - `[Status <String>]`: 
+    - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
+  - `[Status <String>]`: The life cycle status of the control.
 
 ## RELATED LINKS
 

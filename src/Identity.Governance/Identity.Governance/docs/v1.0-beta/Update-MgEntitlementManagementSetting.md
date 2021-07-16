@@ -30,24 +30,6 @@ Update the navigation property settings in identityGovernance
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -DaysUntilExternalUserDeletedAfterBlocked
-.
+If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
 
 ```yaml
 Type: System.Int32
@@ -97,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalUserLifecycleAction
-.
+One of None, BlockSignIn, or BlockSignInAndDelete.
 
 ```yaml
 Type: System.String
@@ -195,8 +177,8 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEntitlementManagementSettings>: entitlementManagementSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DaysUntilExternalUserDeletedAfterBlocked <Int32?>]`: 
-  - `[ExternalUserLifecycleAction <String>]`: 
+  - `[DaysUntilExternalUserDeletedAfterBlocked <Int32?>]`: If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
+  - `[ExternalUserLifecycleAction <String>]`: One of None, BlockSignIn, or BlockSignInAndDelete.
 
 ## RELATED LINKS
 
