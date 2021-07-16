@@ -1,20 +1,20 @@
 ---
 external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguseronlinemeeting
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationonlinemeeting
 schema: 2.0.0
 ---
 
-# Update-MgUserOnlineMeeting
+# Update-MgCommunicationOnlineMeeting
 
 ## SYNOPSIS
-Update the navigation property onlineMeetings in users
+Update the navigation property onlineMeetings in communications
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-AccessLevel <String>]
+Update-MgCommunicationOnlineMeeting -OnlineMeetingId <String> [-AccessLevel <String>]
  [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
  [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AllowedPresenters <String>]
  [-AlternativeRecordingInputFile <String>] [-AttendeeReportInputFile <String>]
@@ -33,13 +33,13 @@ Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-AccessLe
 
 ### Update1
 ```
-Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgCommunicationOnlineMeeting -OnlineMeetingId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting1>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AccessLevel <String>]
+Update-MgCommunicationOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AccessLevel <String>]
  [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
  [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AllowedPresenters <String>]
  [-AlternativeRecordingInputFile <String>] [-AttendeeReportInputFile <String>]
@@ -58,12 +58,12 @@ Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AccessL
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
+Update-MgCommunicationOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property onlineMeetings in users
+Update the navigation property onlineMeetings in communications
 
 ## EXAMPLES
 
@@ -603,21 +603,6 @@ Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserId
-key: id of user
-
-```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, Update1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

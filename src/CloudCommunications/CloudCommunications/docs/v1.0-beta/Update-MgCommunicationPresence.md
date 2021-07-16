@@ -1,33 +1,33 @@
 ---
 external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguserpresence
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationpresence
 schema: 2.0.0
 ---
 
-# Update-MgUserPresence
+# Update-MgCommunicationPresence
 
 ## SYNOPSIS
-Update the navigation property presence in users
+Update the navigation property presences in communications
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserPresence -UserId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
+Update-MgCommunicationPresence -PresenceId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
  [-Availability <String>] [-Id <String>] [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]
  [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence1> [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Update-MgCommunicationPresence -PresenceId <String> -BodyParameter <IMicrosoftGraphPresence1> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
+Update-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
  [-AdditionalProperties <Hashtable>] [-Availability <String>] [-Id <String>]
  [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -35,12 +35,12 @@ Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <St
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphPresence1>
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgCommunicationPresence -InputObject <ICloudCommunicationsIdentity>
+ -BodyParameter <IMicrosoftGraphPresence1> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property presence in users
+Update the navigation property presences in communications
 
 ## EXAMPLES
 
@@ -171,8 +171,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserId
-key: id of user
+### -PresenceId
+key: id of presence
 
 ```yaml
 Type: String

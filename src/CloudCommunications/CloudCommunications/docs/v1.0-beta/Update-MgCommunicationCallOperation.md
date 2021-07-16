@@ -1,66 +1,53 @@
 ---
 external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguserpresence
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationcalloperation
 schema: 2.0.0
 ---
 
-# Update-MgUserPresence
+# Update-MgCommunicationCallOperation
 
 ## SYNOPSIS
-Update the navigation property presence in users
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### UpdateExpanded1 (Default)
 ```
-Update-MgUserPresence -UserId <String> [-Activity <String>] [-AdditionalProperties <Hashtable>]
- [-Availability <String>] [-Id <String>] [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserPresence -UserId <String> -BodyParameter <IMicrosoftGraphPresence1> [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Update-MgCommunicationCallOperation -CallId <String> -CommsOperationId <String>
+ -BodyParameter <IMicrosoftGraphCommsOperation> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-Activity <String>]
- [-AdditionalProperties <Hashtable>] [-Availability <String>] [-Id <String>]
- [-OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>] [-PassThru] [-WhatIf] [-Confirm]
+Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserPresence -InputObject <ICloudCommunicationsIdentity> -BodyParameter <IMicrosoftGraphPresence1>
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+ -BodyParameter <IMicrosoftGraphCommsOperation> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property presence in users
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -Activity
-The supplemental information to a user's availability.
-Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
-
-```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AdditionalProperties
 Additional Parameters
@@ -77,9 +64,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Availability
-The base presence information for a user.
-Possible values are Available, AvailableIdle, Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
+### -BodyParameter
+commsOperation
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphCommsOperation
+Parameter Sets: Update1, UpdateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CallId
+key: id of call
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ClientContext
+Unique Client Context string.
+Max limit is 256 chars.
 
 ```yaml
 Type: String
@@ -93,19 +111,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-presence
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -CommsOperationId
+key: id of commsOperation
 
 ```yaml
-Type: IMicrosoftGraphPresence1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -140,22 +157,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutOfOfficeSettings
-outOfOfficeSettings
-To construct, see NOTES section for OUTOFOFFICESETTINGS properties and create a hash table.
-
-```yaml
-Type: IMicrosoftGraphOutOfOfficeSettings
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -171,15 +172,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserId
-key: id of user
+### -ResultInfo
+resultInfo
+To construct, see NOTES section for RESULTINFO properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphResultInfo
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Status
+operationStatus
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, Update1
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -223,7 +240,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
 ## OUTPUTS
 
 ### System.Boolean
@@ -236,15 +253,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPresence1>: presence
+BODYPARAMETER <IMicrosoftGraphCommsOperation>: commsOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.
-  - `[Availability <String>]`: The base presence information for a user. Possible values are Available, AvailableIdle,  Away, BeRightBack, Busy, BusyIdle, DoNotDisturb, Offline, PresenceUnknown
-  - `[OutOfOfficeSettings <IMicrosoftGraphOutOfOfficeSettings>]`: outOfOfficeSettings
+  - `[ClientContext <String>]`: Unique Client Context string. Max limit is 256 chars.
+  - `[ResultInfo <IMicrosoftGraphResultInfo>]`: resultInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
-    - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+    - `[Code <Int32?>]`: The result code.
+    - `[Message <String>]`: The message.
+    - `[Subcode <Int32?>]`: The result sub-code.
+  - `[Status <String>]`: operationStatus
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
@@ -257,9 +275,10 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[SessionId <String>]`: key: id of session
   - `[UserId <String>]`: key: id of user
 
-OUTOFOFFICESETTINGS <IMicrosoftGraphOutOfOfficeSettings>: outOfOfficeSettings
+RESULTINFO <IMicrosoftGraphResultInfo>: resultInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[IsOutOfOffice <Boolean?>]`: True if either:It is currently in the out of office time window configured on the Outlook or Teams client.There is currently an event on the user's calendar that's marked as Show as Out of OfficeOtherwise, false.
-  - `[Message <String>]`: The out of office message that the user configured on Outlook client (Automatic Replies (Out of Office)) or the Teams client (Schedule out of office).
+  - `[Code <Int32?>]`: The result code.
+  - `[Message <String>]`: The message.
+  - `[Subcode <Int32?>]`: The result sub-code.
 
 ## RELATED LINKS

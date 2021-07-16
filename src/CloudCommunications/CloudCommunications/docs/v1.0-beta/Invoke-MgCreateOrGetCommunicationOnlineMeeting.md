@@ -1,24 +1,23 @@
 ---
 external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mguseronlinemeeting
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgcreateorgetcommunicationonlinemeeting
 schema: 2.0.0
 ---
 
-# Update-MgUserOnlineMeeting
+# Invoke-MgCreateOrGetCommunicationOnlineMeeting
 
 ## SYNOPSIS
-Update the navigation property onlineMeetings in users
+Create new navigation property to onlineMeetings for communications
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### CreateExpanded2 (Default)
 ```
-Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-AccessLevel <String>]
- [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
- [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AllowedPresenters <String>]
- [-AlternativeRecordingInputFile <String>] [-AttendeeReportInputFile <String>]
- [-AudioConferencing <IMicrosoftGraphAudioConferencing1>]
+Invoke-MgCreateOrGetCommunicationOnlineMeeting [-AccessLevel <String>] [-AdditionalProperties <Hashtable>]
+ [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic] [-AllowMeetingChat <String>]
+ [-AllowTeamworkReactions] [-AllowedPresenters <String>] [-AlternativeRecordingInputFile <String>]
+ [-AttendeeReportInputFile <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing1>]
  [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-CanceledDateTime <DateTime>]
  [-Capabilities <String[]>] [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>]
  [-EndDateTime <DateTime>] [-EntryExitAnnouncement] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
@@ -27,43 +26,18 @@ Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-AccessLe
  [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordingInputFile <String>]
- [-StartDateTime <DateTime>] [-Subject <String>] [-VideoTeleconferenceId <String>] [-PassThru] [-WhatIf]
+ [-StartDateTime <DateTime>] [-Subject <String>] [-VideoTeleconferenceId <String>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### Create2
+```
+Invoke-MgCreateOrGetCommunicationOnlineMeeting -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-WhatIf]
  [-Confirm] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AccessLevel <String>]
- [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
- [-AllowMeetingChat <String>] [-AllowTeamworkReactions] [-AllowedPresenters <String>]
- [-AlternativeRecordingInputFile <String>] [-AttendeeReportInputFile <String>]
- [-AudioConferencing <IMicrosoftGraphAudioConferencing1>]
- [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings>] [-CanceledDateTime <DateTime>]
- [-Capabilities <String[]>] [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>]
- [-EndDateTime <DateTime>] [-EntryExitAnnouncement] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
- [-Id <String>] [-IsBroadcast] [-IsCancelled] [-IsEntryExitAnnounced]
- [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinUrl <String>]
- [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
- [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
- [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordingInputFile <String>]
- [-StartDateTime <DateTime>] [-Subject <String>] [-VideoTeleconferenceId <String>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphOnlineMeeting1> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property onlineMeetings in users
+Create new navigation property to onlineMeetings for communications
 
 ## EXAMPLES
 
@@ -74,7 +48,7 @@ accessLevel
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -89,7 +63,7 @@ Additional Parameters
 
 ```yaml
 Type: Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -104,7 +78,7 @@ Indicates whether attendees can turn on their camera.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -119,7 +93,7 @@ Indicates whether attendees can turn on their microphone.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -134,7 +108,7 @@ onlineMeetingPresenters
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -149,7 +123,7 @@ meetingChatMode
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -164,7 +138,7 @@ Indicates if Teams reactions are enabled for the meeting.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -180,7 +154,7 @@ Read-only.)
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -196,7 +170,7 @@ Read-only.)
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -212,7 +186,7 @@ To construct, see NOTES section for AUDIOCONFERENCING properties and create a ha
 
 ```yaml
 Type: IMicrosoftGraphAudioConferencing1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -228,7 +202,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: IMicrosoftGraphOnlineMeeting1
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Create2
 Aliases:
 
 Required: True
@@ -244,7 +218,7 @@ To construct, see NOTES section for BROADCASTSETTINGS properties and create a ha
 
 ```yaml
 Type: IMicrosoftGraphBroadcastMeetingSettings
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -259,7 +233,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -274,7 +248,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -290,7 +264,7 @@ To construct, see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
 Type: IMicrosoftGraphChatInfo
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -306,7 +280,7 @@ Read-only.
 
 ```yaml
 Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -321,7 +295,7 @@ The meeting end time in UTC.
 
 ```yaml
 Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -336,7 +310,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -351,7 +325,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -368,7 +342,7 @@ Optional.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -383,7 +357,7 @@ Read-only.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -393,28 +367,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: ICloudCommunicationsIdentity
-Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -IsBroadcast
 Indicates whether this is a live event.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -429,7 +387,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -444,7 +402,7 @@ Indicates whether to announce when callers join or leave.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -460,7 +418,7 @@ To construct, see NOTES section for JOININFORMATION properties and create a hash
 
 ```yaml
 Type: IMicrosoftGraphItemBody
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -475,7 +433,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -491,7 +449,7 @@ To construct, see NOTES section for LOBBYBYPASSSETTINGS properties and create a 
 
 ```yaml
 Type: IMicrosoftGraphLobbyBypassSettings
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -507,25 +465,10 @@ To construct, see NOTES section for MEETINGATTENDANCEREPORT properties and creat
 
 ```yaml
 Type: IMicrosoftGraphMeetingAttendanceReport
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OnlineMeetingId
-key: id of onlineMeeting
-
-```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, Update1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -538,22 +481,7 @@ To construct, see NOTES section for PARTICIPANTS properties and create a hash ta
 
 ```yaml
 Type: IMicrosoftGraphMeetingParticipants1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -569,7 +497,7 @@ Read-only.)
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -584,7 +512,7 @@ The meeting start time in UTC.
 
 ```yaml
 Type: DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -599,25 +527,10 @@ The subject of the online meeting.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserId
-key: id of user
-
-```yaml
-Type: String
-Parameter Sets: UpdateExpanded1, Update1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -630,7 +543,7 @@ Read-only.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: CreateExpanded2
 Aliases:
 
 Required: False
@@ -676,11 +589,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting1
 ## NOTES
 
 ALIASES
@@ -795,17 +707,6 @@ CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
-
-INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
-  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
-  - `[CallId <String>]`: key: id of call
-  - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CommsOperationId <String>]`: key: id of commsOperation
-  - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
-  - `[ParticipantId <String>]`: key: id of participant
-  - `[PresenceId <String>]`: key: id of presence
-  - `[SessionId <String>]`: key: id of session
-  - `[UserId <String>]`: key: id of user
 
 JOININFORMATION <IMicrosoftGraphItemBody>: itemBody
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
