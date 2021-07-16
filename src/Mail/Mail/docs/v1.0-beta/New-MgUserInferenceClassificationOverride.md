@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserInferenceClassificationOverride
 
 ## SYNOPSIS
-Create new navigation property to overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ New-MgUserInferenceClassificationOverride -InputObject <IMailIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Create new navigation property to overrides for users
+A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -230,8 +216,8 @@ BODYPARAMETER <IMicrosoftGraphInferenceClassificationOverride>: inferenceClassif
   - `[ClassifyAs <String>]`: inferenceClassificationType
   - `[SenderEmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of the person or entity.
-    - `[Name <String>]`: The display name of the person or entity.
+    - `[Address <String>]`: The email address of an entity instance.
+    - `[Name <String>]`: The display name of an entity instance.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -249,8 +235,8 @@ INPUTOBJECT <IMailIdentity>: Identity Parameter
 
 SENDEREMAILADDRESS <IMicrosoftGraphEmailAddress>: emailAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Address <String>]`: The email address of the person or entity.
-  - `[Name <String>]`: The display name of the person or entity.
+  - `[Address <String>]`: The email address of an entity instance.
+  - `[Name <String>]`: The display name of an entity instance.
 
 ## RELATED LINKS
 

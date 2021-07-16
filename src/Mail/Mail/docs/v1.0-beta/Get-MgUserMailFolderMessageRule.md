@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-Get messageRules from users
+The collection of rules that apply to the user's Inbox folder.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgUserMailFolderMessageRule -MailFolderId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,27 +32,9 @@ Get-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get messageRules from users
+The collection of rules that apply to the user's Inbox folder.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,13 +53,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

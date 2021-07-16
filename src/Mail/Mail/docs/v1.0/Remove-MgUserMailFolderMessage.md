@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessage
 
 ## SYNOPSIS
-Delete navigation property messages for users
+The collection of messages in the mailFolder.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgUserMailFolderMessage -InputObject <IMailIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Delete navigation property messages for users
+The collection of messages in the mailFolder.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

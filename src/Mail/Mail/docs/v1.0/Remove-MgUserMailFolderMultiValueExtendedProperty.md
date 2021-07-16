@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMultiValueExtendedProperty
 
 ## SYNOPSIS
-Delete navigation property multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -26,27 +28,11 @@ Remove-MgUserMailFolderMultiValueExtendedProperty -InputObject <IMailIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the mailFolder.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

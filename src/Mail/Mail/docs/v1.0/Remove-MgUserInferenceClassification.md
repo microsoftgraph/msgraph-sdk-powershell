@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserInferenceClassification
 
 ## SYNOPSIS
-Delete navigation property inferenceClassification for users
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgUserInferenceClassification -InputObject <IMailIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete navigation property inferenceClassification for users
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

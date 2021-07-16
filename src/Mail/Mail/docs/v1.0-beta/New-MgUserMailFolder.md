@@ -8,14 +8,16 @@ schema: 2.0.0
 # New-MgUserMailFolder
 
 ## SYNOPSIS
-Create new navigation property to mailFolders for users
+The user's mail folders.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgUserMailFolder -UserId <String> [-AdditionalProperties <Hashtable>] [-ChildFolderCount <Int32>]
- [-ChildFolders <IMicrosoftGraphMailFolder1[]>] [-DisplayName <String>] [-Id <String>]
+ [-ChildFolders <IMicrosoftGraphMailFolder1[]>] [-DisplayName <String>] [-Id <String>] [-IsHidden]
  [-MessageRules <IMicrosoftGraphMessageRule[]>] [-Messages <IMicrosoftGraphMessage1[]>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>]
@@ -41,7 +43,8 @@ New-MgUserMailFolder -InputObject <IMailIdentity> -BodyParameter <IMicrosoftGrap
 ```
 New-MgUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties <Hashtable>]
  [-ChildFolderCount <Int32>] [-ChildFolders <IMicrosoftGraphMailFolder1[]>] [-DisplayName <String>]
- [-Id <String>] [-MessageRules <IMicrosoftGraphMessageRule[]>] [-Messages <IMicrosoftGraphMessage1[]>]
+ [-Id <String>] [-IsHidden] [-MessageRules <IMicrosoftGraphMessageRule[]>]
+ [-Messages <IMicrosoftGraphMessage1[]>]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]
  [-ParentFolderId <String>]
  [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]
@@ -51,27 +54,11 @@ New-MgUserMailFolder -InputObject <IMailIdentity> [-AdditionalProperties <Hashta
 ```
 
 ## DESCRIPTION
-Create new navigation property to mailFolders for users
+The user's mail folders.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -180,6 +167,23 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsHidden
+Indicates whether the mailFolder is hidden.
+This property can be set only when creating the folder.
+Find more information in Hidden mail folders.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -328,7 +332,10 @@ Accept wildcard characters: False
 ```
 
 ### -WellKnownName
-.
+The well-known folder name for the folder.
+The possible values are listed above.
+This property is only set for default folders created by Outlook.
+For other folders, this property is null.
 
 ```yaml
 Type: System.String
@@ -401,6 +408,7 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
   - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
   - `[ChildFolders <IMicrosoftGraphMailFolder1[]>]`: The collection of child folders in the mailFolder.
   - `[DisplayName <String>]`: The mailFolder's display name.
+  - `[IsHidden <Boolean?>]`: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
   - `[MessageRules <IMicrosoftGraphMessageRule[]>]`: The collection of rules that apply to the user's Inbox folder.
     - `[Id <String>]`: Read-only.
     - `[Actions <IMicrosoftGraphMessageRuleActions>]`: messageRuleActions
@@ -411,14 +419,14 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
       - `[ForwardAsAttachmentTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded as an attachment.
         - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Address <String>]`: The email address of the person or entity.
-          - `[Name <String>]`: The display name of the person or entity.
+          - `[Address <String>]`: The email address of an entity instance.
+          - `[Name <String>]`: The display name of an entity instance.
       - `[ForwardTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded.
       - `[MarkAsRead <Boolean?>]`: Indicates whether a message should be marked as read.
       - `[MarkImportance <String>]`: importance
       - `[MoveToFolder <String>]`: The ID of the folder that a message will be moved to.
       - `[PermanentDelete <Boolean?>]`: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-      - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email addresses to which a message should be redirected.
+      - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email address to which a message should be redirected.
       - `[StopProcessingRules <Boolean?>]`: Indicates whether subsequent rules should be evaluated.
     - `[Conditions <IMicrosoftGraphMessageRulePredicates>]`: messageRulePredicates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -464,22 +472,22 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
   - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
       - `[Id <String>]`: Read-only.
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-      - `[Name <String>]`: The attachment's file name.
+      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format.
+    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
     - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the message.
     - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
     - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
@@ -489,8 +497,8 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
       - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[FlagStatus <String>]`: followupFlagStatus
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -506,27 +514,27 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
     - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
     - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
     - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-    - `[Mentions <IMicrosoftGraphMention[]>]`: 
+    - `[Mentions <IMicrosoftGraphMention[]>]`: A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
       - `[Id <String>]`: Read-only.
-      - `[Application <String>]`: 
-      - `[ClientReference <String>]`: 
+      - `[Application <String>]`: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
+      - `[ClientReference <String>]`: A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
       - `[CreatedBy <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[DeepLink <String>]`: 
-      - `[MentionText <String>]`: 
+      - `[CreatedDateTime <DateTime?>]`: The date and time that the mention is created on the client.
+      - `[DeepLink <String>]`: A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
+      - `[MentionText <String>]`: Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
       - `[Mentioned <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[ServerCreatedDateTime <DateTime?>]`: 
+      - `[ServerCreatedDateTime <DateTime?>]`: The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
     - `[MentionsPreview <IMicrosoftGraphMentionsPreview>]`: mentionsPreview
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsMentioned <Boolean?>]`: 
+      - `[IsMentioned <Boolean?>]`: True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String[]>]`: A collection of property values.
     - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.
+    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.
+    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String>]`: A property value.
@@ -535,7 +543,7 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
     - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
     - `[UnsubscribeData <String[]>]`: 
     - `[UnsubscribeEnabled <Boolean?>]`: 
-    - `[WebLink <String>]`: The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+    - `[WebLink <String>]`: The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
   - `[ParentFolderId <String>]`: The unique identifier for the mailFolder's parent mailFolder.
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
@@ -544,13 +552,14 @@ BODYPARAMETER <IMicrosoftGraphMailFolder1>: mailFolder
   - `[UserConfigurations <IMicrosoftGraphUserConfiguration[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[BinaryData <Byte[]>]`: 
-  - `[WellKnownName <String>]`: 
+  - `[WellKnownName <String>]`: The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
 
 CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in the mailFolder.
   - `[Id <String>]`: Read-only.
   - `[ChildFolderCount <Int32?>]`: The number of immediate child mailFolders in the current mailFolder.
   - `[ChildFolders <IMicrosoftGraphMailFolder1[]>]`: The collection of child folders in the mailFolder.
   - `[DisplayName <String>]`: The mailFolder's display name.
+  - `[IsHidden <Boolean?>]`: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
   - `[MessageRules <IMicrosoftGraphMessageRule[]>]`: The collection of rules that apply to the user's Inbox folder.
     - `[Id <String>]`: Read-only.
     - `[Actions <IMicrosoftGraphMessageRuleActions>]`: messageRuleActions
@@ -561,14 +570,14 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
       - `[ForwardAsAttachmentTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded as an attachment.
         - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Address <String>]`: The email address of the person or entity.
-          - `[Name <String>]`: The display name of the person or entity.
+          - `[Address <String>]`: The email address of an entity instance.
+          - `[Name <String>]`: The display name of an entity instance.
       - `[ForwardTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded.
       - `[MarkAsRead <Boolean?>]`: Indicates whether a message should be marked as read.
       - `[MarkImportance <String>]`: importance
       - `[MoveToFolder <String>]`: The ID of the folder that a message will be moved to.
       - `[PermanentDelete <Boolean?>]`: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-      - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email addresses to which a message should be redirected.
+      - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email address to which a message should be redirected.
       - `[StopProcessingRules <Boolean?>]`: Indicates whether subsequent rules should be evaluated.
     - `[Conditions <IMicrosoftGraphMessageRulePredicates>]`: messageRulePredicates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -614,22 +623,22 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
   - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
     - `[Categories <String[]>]`: The categories associated with the item
     - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
       - `[Id <String>]`: Read-only.
       - `[ContentType <String>]`: The MIME type.
       - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-      - `[Name <String>]`: The attachment's file name.
+      - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
       - `[Size <Int32?>]`: The length of the attachment in bytes.
     - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
     - `[Body <IMicrosoftGraphItemBody>]`: itemBody
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Content <String>]`: The content of the item.
       - `[ContentType <String>]`: bodyType
-    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format.
+    - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
     - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the message.
     - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
     - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
@@ -639,8 +648,8 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+        - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+        - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
       - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[FlagStatus <String>]`: followupFlagStatus
       - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -656,27 +665,27 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
     - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
     - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
     - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-    - `[Mentions <IMicrosoftGraphMention[]>]`: 
+    - `[Mentions <IMicrosoftGraphMention[]>]`: A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
       - `[Id <String>]`: Read-only.
-      - `[Application <String>]`: 
-      - `[ClientReference <String>]`: 
+      - `[Application <String>]`: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
+      - `[ClientReference <String>]`: A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
       - `[CreatedBy <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[CreatedDateTime <DateTime?>]`: 
-      - `[DeepLink <String>]`: 
-      - `[MentionText <String>]`: 
+      - `[CreatedDateTime <DateTime?>]`: The date and time that the mention is created on the client.
+      - `[DeepLink <String>]`: A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
+      - `[MentionText <String>]`: Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
       - `[Mentioned <IMicrosoftGraphEmailAddress>]`: emailAddress
-      - `[ServerCreatedDateTime <DateTime?>]`: 
+      - `[ServerCreatedDateTime <DateTime?>]`: The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
     - `[MentionsPreview <IMicrosoftGraphMentionsPreview>]`: mentionsPreview
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[IsMentioned <Boolean?>]`: 
+      - `[IsMentioned <Boolean?>]`: True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
     - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String[]>]`: A collection of property values.
     - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.
+    - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
     - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.
+    - `[SentDateTime <DateTime?>]`: The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Value <String>]`: A property value.
@@ -685,7 +694,7 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
     - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
     - `[UnsubscribeData <String[]>]`: 
     - `[UnsubscribeEnabled <Boolean?>]`: 
-    - `[WebLink <String>]`: The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+    - `[WebLink <String>]`: The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
   - `[ParentFolderId <String>]`: The unique identifier for the mailFolder's parent mailFolder.
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
@@ -694,7 +703,7 @@ CHILDFOLDERS <IMicrosoftGraphMailFolder1[]>: The collection of child folders in 
   - `[UserConfigurations <IMicrosoftGraphUserConfiguration[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[BinaryData <Byte[]>]`: 
-  - `[WellKnownName <String>]`: 
+  - `[WellKnownName <String>]`: The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.
 
 INPUTOBJECT <IMailIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -720,14 +729,14 @@ MESSAGERULES <IMicrosoftGraphMessageRule[]>: The collection of rules that apply 
     - `[ForwardAsAttachmentTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded as an attachment.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Address <String>]`: The email address of the person or entity.
-        - `[Name <String>]`: The display name of the person or entity.
+        - `[Address <String>]`: The email address of an entity instance.
+        - `[Name <String>]`: The display name of an entity instance.
     - `[ForwardTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded.
     - `[MarkAsRead <Boolean?>]`: Indicates whether a message should be marked as read.
     - `[MarkImportance <String>]`: importance
     - `[MoveToFolder <String>]`: The ID of the folder that a message will be moved to.
     - `[PermanentDelete <Boolean?>]`: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-    - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email addresses to which a message should be redirected.
+    - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email address to which a message should be redirected.
     - `[StopProcessingRules <Boolean?>]`: Indicates whether subsequent rules should be evaluated.
   - `[Conditions <IMicrosoftGraphMessageRulePredicates>]`: messageRulePredicates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -774,26 +783,26 @@ MESSAGERULES <IMicrosoftGraphMessageRule[]>: The collection of rules that apply 
 MESSAGES <IMicrosoftGraphMessage1[]>: The collection of messages in the mailFolder.
   - `[Categories <String[]>]`: The categories associated with the item
   - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[Attachments <IMicrosoftGraphAttachment[]>]`: The fileAttachment and itemAttachment attachments for the message.
     - `[Id <String>]`: Read-only.
     - `[ContentType <String>]`: The MIME type.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false.
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
-    - `[Name <String>]`: The attachment's file name.
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Name <String>]`: The display name of the attachment. This does not need to be the actual file name.
     - `[Size <Int32?>]`: The length of the attachment in bytes.
   - `[BccRecipients <IMicrosoftGraphRecipient[]>]`: The Bcc: recipients for the message.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[Body <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
-  - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format.
+  - `[BodyPreview <String>]`: The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.
   - `[CcRecipients <IMicrosoftGraphRecipient[]>]`: The Cc: recipients for the message.
   - `[ConversationId <String>]`: The ID of the conversation the email belongs to.
   - `[ConversationIndex <Byte[]>]`: Indicates the position of the message within the conversation.
@@ -803,8 +812,8 @@ MESSAGES <IMicrosoftGraphMessage1[]>: The collection of messages in the mailFold
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CompletedDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
     - `[DueDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[FlagStatus <String>]`: followupFlagStatus
     - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
@@ -820,27 +829,27 @@ MESSAGES <IMicrosoftGraphMessage1[]>: The collection of messages in the mailFold
   - `[IsDraft <Boolean?>]`: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
   - `[IsRead <Boolean?>]`: Indicates whether the message has been read.
   - `[IsReadReceiptRequested <Boolean?>]`: Indicates whether a read receipt is requested for the message.
-  - `[Mentions <IMicrosoftGraphMention[]>]`: 
+  - `[Mentions <IMicrosoftGraphMention[]>]`: A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
     - `[Id <String>]`: Read-only.
-    - `[Application <String>]`: 
-    - `[ClientReference <String>]`: 
+    - `[Application <String>]`: The name of the application where the mention is created. Optional. Not used and defaulted as null for message.
+    - `[ClientReference <String>]`: A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.
     - `[CreatedBy <IMicrosoftGraphEmailAddress>]`: emailAddress
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DeepLink <String>]`: 
-    - `[MentionText <String>]`: 
+    - `[CreatedDateTime <DateTime?>]`: The date and time that the mention is created on the client.
+    - `[DeepLink <String>]`: A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.
+    - `[MentionText <String>]`: Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.
     - `[Mentioned <IMicrosoftGraphEmailAddress>]`: emailAddress
-    - `[ServerCreatedDateTime <DateTime?>]`: 
+    - `[ServerCreatedDateTime <DateTime?>]`: The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.
   - `[MentionsPreview <IMicrosoftGraphMentionsPreview>]`: mentionsPreview
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[IsMentioned <Boolean?>]`: 
+    - `[IsMentioned <Boolean?>]`: True if the signed-in user is mentioned in the parent resource instance. Read-only. Supports filter.
   - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String[]>]`: A collection of property values.
   - `[ParentFolderId <String>]`: The unique identifier for the message's parent mailFolder.
-  - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.
+  - `[ReceivedDateTime <DateTime?>]`: The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[ReplyTo <IMicrosoftGraphRecipient[]>]`: The email addresses to use when replying.
   - `[Sender <IMicrosoftGraphRecipient>]`: recipient
-  - `[SentDateTime <DateTime?>]`: The date and time the message was sent.
+  - `[SentDateTime <DateTime?>]`: The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>]`: The collection of single-value extended properties defined for the message. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Value <String>]`: A property value.
@@ -849,7 +858,7 @@ MESSAGES <IMicrosoftGraphMessage1[]>: The collection of messages in the mailFold
   - `[UniqueBody <IMicrosoftGraphItemBody>]`: itemBody
   - `[UnsubscribeData <String[]>]`: 
   - `[UnsubscribeEnabled <Boolean?>]`: 
-  - `[WebLink <String>]`: The URL to open the message in Outlook Web App.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.This URL can be accessed from within an iFrame.
+  - `[WebLink <String>]`: The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.
 
 MULTIVALUEEXTENDEDPROPERTIES <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
   - `[Id <String>]`: Read-only.

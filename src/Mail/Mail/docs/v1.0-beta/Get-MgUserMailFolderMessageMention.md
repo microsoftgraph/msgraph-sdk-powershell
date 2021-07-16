@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgUserMailFolderMessageMention
 
 ## SYNOPSIS
-Get mentions from users
+A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
+By default, a GET /messages does not return this property unless you apply $expand on the property.
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String> [-Count]
+Get-MgUserMailFolderMessageMention -MailFolderId <String> -MessageId <String> -UserId <String>
  [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get
@@ -32,27 +33,10 @@ Get-MgUserMailFolderMessageMention -InputObject <IMailIdentity> [-ExpandProperty
 ```
 
 ## DESCRIPTION
-Get mentions from users
+A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest.
+By default, a GET /messages does not return this property unless you apply $expand on the property.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,13 +55,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

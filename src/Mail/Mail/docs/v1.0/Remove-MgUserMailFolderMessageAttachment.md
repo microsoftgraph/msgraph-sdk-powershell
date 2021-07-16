@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageAttachment
 
 ## SYNOPSIS
-Delete navigation property attachments for users
+The fileAttachment and itemAttachment attachments for the message.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgUserMailFolderMessageAttachment -InputObject <IMailIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete navigation property attachments for users
+The fileAttachment and itemAttachment attachments for the message.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-Update the navigation property messageRules in users
+The collection of rules that apply to the user's Inbox folder.
 
 ## SYNTAX
 
@@ -42,27 +42,9 @@ Update-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-Actions <IMicr
 ```
 
 ## DESCRIPTION
-Update the navigation property messageRules in users
+The collection of rules that apply to the user's Inbox folder.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -373,14 +355,14 @@ ACTIONS <IMicrosoftGraphMessageRuleActions>: messageRuleActions
   - `[ForwardAsAttachmentTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded as an attachment.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[ForwardTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded.
   - `[MarkAsRead <Boolean?>]`: Indicates whether a message should be marked as read.
   - `[MarkImportance <String>]`: importance
   - `[MoveToFolder <String>]`: The ID of the folder that a message will be moved to.
   - `[PermanentDelete <Boolean?>]`: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-  - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email addresses to which a message should be redirected.
+  - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email address to which a message should be redirected.
   - `[StopProcessingRules <Boolean?>]`: Indicates whether subsequent rules should be evaluated.
 
 BODYPARAMETER <IMicrosoftGraphMessageRule>: messageRule
@@ -394,14 +376,14 @@ BODYPARAMETER <IMicrosoftGraphMessageRule>: messageRule
     - `[ForwardAsAttachmentTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded as an attachment.
       - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Address <String>]`: The email address of the person or entity.
-        - `[Name <String>]`: The display name of the person or entity.
+        - `[Address <String>]`: The email address of an entity instance.
+        - `[Name <String>]`: The display name of an entity instance.
     - `[ForwardTo <IMicrosoftGraphRecipient[]>]`: The email addresses of the recipients to which a message should be forwarded.
     - `[MarkAsRead <Boolean?>]`: Indicates whether a message should be marked as read.
     - `[MarkImportance <String>]`: importance
     - `[MoveToFolder <String>]`: The ID of the folder that a message will be moved to.
     - `[PermanentDelete <Boolean?>]`: Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-    - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email addresses to which a message should be redirected.
+    - `[RedirectTo <IMicrosoftGraphRecipient[]>]`: The email address to which a message should be redirected.
     - `[StopProcessingRules <Boolean?>]`: Indicates whether subsequent rules should be evaluated.
   - `[Conditions <IMicrosoftGraphMessageRulePredicates>]`: messageRulePredicates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -453,8 +435,8 @@ CONDITIONS <IMicrosoftGraphMessageRulePredicates>: messageRulePredicates
   - `[FromAddresses <IMicrosoftGraphRecipient[]>]`: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[HasAttachments <Boolean?>]`: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
   - `[HeaderContains <String[]>]`: Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
   - `[Importance <String>]`: importance
@@ -493,8 +475,8 @@ EXCEPTIONS <IMicrosoftGraphMessageRulePredicates>: messageRulePredicates
   - `[FromAddresses <IMicrosoftGraphRecipient[]>]`: Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
   - `[HasAttachments <Boolean?>]`: Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
   - `[HeaderContains <String[]>]`: Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
   - `[Importance <String>]`: importance

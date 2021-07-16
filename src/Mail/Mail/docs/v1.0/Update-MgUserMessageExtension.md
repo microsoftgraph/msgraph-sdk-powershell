@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserMessageExtension
 
 ## SYNOPSIS
-Update the navigation property extensions in users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -37,27 +38,10 @@ Update-MgUserMessageExtension -InputObject <IMailIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Update the navigation property extensions in users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

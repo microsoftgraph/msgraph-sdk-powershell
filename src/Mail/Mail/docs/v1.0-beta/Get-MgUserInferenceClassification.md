@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserInferenceClassification
 
 ## SYNOPSIS
-Get inferenceClassification from users
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Get-MgUserInferenceClassification -InputObject <IMailIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-Get inferenceClassification from users
+Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
