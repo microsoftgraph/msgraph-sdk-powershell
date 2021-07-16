@@ -1,141 +1,57 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtiosmanagedappprotectiondeploymentsummary
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-Navigation property to deployment summary of the configuration.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary -IosManagedAppProtectionId <String>
- [-AdditionalProperties <Hashtable>] [-ConfigurationDeployedUserCount <Int32>]
- [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary -IosManagedAppProtectionId <String>
- -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary
- -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedAppPolicyDeploymentSummary> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDeviceAppMgtiOSManagedAppProtectionDeploymentSummary
- -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
- [-ConfigurationDeployedUserCount <Int32>]
- [-ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]
- [-DisplayName <String>] [-Id <String>] [-LastRefreshTime <DateTime>] [-Version <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Navigation property to deployment summary of the configuration.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
-Parameter Sets: Update, UpdateViaIdentity
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ConfigurationDeployedUserCount
-Not yet documented
-
-```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConfigurationDeploymentSummaryPerApp
-Not yet documented
-To construct, see NOTES section for CONFIGURATIONDEPLOYMENTSUMMARYPERAPP properties and create a hash table.
+### -IfMatch
+ETag
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-Not yet documented
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -150,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -161,30 +77,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IosManagedAppProtectionId
-key: id of iosManagedAppProtection
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastRefreshTime
-Not yet documented
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -195,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -206,15 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
-Version of the entity.
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -225,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -241,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -258,40 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementiOSManagedAppProtectionDeploymentSummary
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphManagedAppPolicyDeploymentSummary>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ConfigurationDeployedUserCount <Int32?>]`: Not yet documented
-  - `[ConfigurationDeploymentSummaryPerApp <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>]`: Not yet documented
-    - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
-    - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: Not yet documented
-  - `[LastRefreshTime <DateTime?>]`: Not yet documented
-  - `[Version <String>]`: Version of the entity.
-
-CONFIGURATIONDEPLOYMENTSUMMARYPERAPP <IMicrosoftGraphManagedAppPolicyDeploymentSummaryPerApp[]>: Not yet documented
-  - `[ConfigurationAppliedUserCount <Int32?>]`: Number of users the policy is applied.
-  - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -362,4 +240,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

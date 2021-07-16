@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
@@ -18,20 +18,13 @@ Update-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String
  -UserId <String> [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>]
  [-PlatformType <String>] [-SettingCount <Int32>]
  [-SettingStates <IMicrosoftGraphDeviceConfigurationSettingState1[]>] [-State <String>] [-Version <Int32>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update1
 ```
 Update-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
- -UserId <String> -BodyParameter <IMicrosoftGraphDeviceConfigurationState1> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceConfigurationState1> [-PassThru] [-Confirm] [-WhatIf]
+ -UserId <String> -BodyParameter <IMicrosoftGraphDeviceConfigurationState1> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -39,8 +32,15 @@ Update-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateMana
 ```
 Update-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-PlatformType <String>]
- [-SettingCount <Int32>] [-SettingStates <IMicrosoftGraphDeviceConfigurationSettingState1[]>]
- [-State <String>] [-Version <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SettingCount <Int32>] [-SettingStates <IMicrosoftGraphDeviceConfigurationSettingState1[]>] [-State <String>]
+ [-Version <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ -BodyParameter <IMicrosoftGraphDeviceConfigurationState1> [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +54,7 @@ Device configuration states for this device.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -70,7 +70,7 @@ Device Configuration State for a given device.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationState1
+Type: IMicrosoftGraphDeviceConfigurationState1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -85,8 +85,8 @@ Accept wildcard characters: False
 key: id of deviceConfigurationState
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 The name of the policy for this policyBase
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -131,8 +131,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -146,8 +146,8 @@ Accept wildcard characters: False
 key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 Count of how many setting a policy holds
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for SETTINGSTATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationSettingState1[]
+Type: IMicrosoftGraphDeviceConfigurationSettingState1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -222,7 +222,7 @@ Accept wildcard characters: False
 complianceStatus
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -237,8 +237,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -252,7 +252,7 @@ Accept wildcard characters: False
 The version of the policy
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -267,7 +267,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -283,7 +283,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -300,13 +300,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceConfigurationState1
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -425,4 +422,3 @@ SETTINGSTATES <IMicrosoftGraphDeviceConfigurationSettingState1[]>: .
   - `[UserPrincipalName <String>]`: UserPrincipalName.
 
 ## RELATED LINKS
-

@@ -1,87 +1,57 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappassignment
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppAssignment
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-The list of group assignments for this mobile app.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <String>] [-Settings <Hashtable>]
- [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgDeviceAppMgtMobileAppAssignment -MobileAppAssignmentId <String> -MobileAppId <String>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileAppAssignment1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgDeviceAppMgtMobileAppAssignment -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-Intent <String>] [-Settings <Hashtable>]
- [-Target <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The list of group assignments for this mobile app.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-A class containing the properties used for Group Assignment of a Mobile App.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -IfMatch
+ETag
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
-Parameter Sets: Update1, UpdateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -96,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -107,42 +77,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Intent
-installIntent
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MobileAppAssignmentId
-key: id of mobileAppAssignment
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MobileAppId
-key: id of mobileApp
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -156,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -167,30 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Settings
-Abstract class to contain properties used to assign a mobile app to a group.
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Target
-Base type for assignment targets.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -201,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -217,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -234,32 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementMobileAppAssignment
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphMobileAppAssignment1>: A class containing the properties used for Group Assignment of a Mobile App.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Intent <String>]`: installIntent
-  - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -330,4 +240,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

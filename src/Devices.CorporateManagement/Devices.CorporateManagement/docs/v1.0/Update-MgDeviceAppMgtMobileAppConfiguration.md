@@ -1,196 +1,57 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfiguration
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppConfiguration
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-The Managed Device Mobile Application Configurations.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtMobileAppConfiguration -ManagedDeviceMobileAppConfigurationId <String>
- [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
- [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]
- [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TargetedMobileApps <String[]>]
- [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]
- [-UserStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1>] [-Version <Int32>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update1
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtMobileAppConfiguration -ManagedDeviceMobileAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfiguration1> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfiguration1> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
- [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]
- [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TargetedMobileApps <String[]>]
- [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]
- [-UserStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1>] [-Version <Int32>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The Managed Device Mobile Application Configurations.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Assignments
-The list of group assignemenets for app configration.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-An abstract class for Mobile app configuration for enrolled devices.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CreatedDateTime
-DateTime the object was created.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
-Admin provided description of the Device Configuration.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceStatuses
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-To construct, see NOTES section for DEVICESTATUSES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceStatusSummary
-Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
-To construct, see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-Admin provided name of the device configuration.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -205,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -216,27 +77,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LastModifiedDateTime
-DateTime the object was last modified.
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagedDeviceMobileAppConfigurationId
-key: id of managedDeviceMobileAppConfiguration
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -250,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -261,62 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetedMobileApps
-the associated app.
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.String[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserStatuses
-List of ManagedDeviceMobileAppConfigurationUserStatus.
-To construct, see NOTES section for USERSTATUSES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserStatusSummary
-Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
-To construct, see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Version
-Version of the device configuration.
-
-```yaml
-Type: System.Int32
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -327,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -343,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -360,99 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementMobileAppConfiguration
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-ASSIGNMENTS <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>: The list of group assignemenets for app configration.
-  - `[Id <String>]`: Read-only.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-
-BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>: An abstract class for Mobile app configuration for enrolled devices.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]`: The list of group assignemenets for app configration.
-    - `[Id <String>]`: Read-only.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: DateTime the object was created.
-  - `[Description <String>]`: Admin provided description of the Device Configuration.
-  - `[DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]`: Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
-    - `[ErrorCount <Int32?>]`: Number of error devices
-    - `[FailedCount <Int32?>]`: Number of failed devices
-    - `[LastUpdateDateTime <DateTime?>]`: Last update time
-    - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
-    - `[PendingCount <Int32?>]`: Number of pending devices
-    - `[SuccessCount <Int32?>]`: Number of succeeded devices
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-    - `[Id <String>]`: Read-only.
-    - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
-    - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
-    - `[DeviceModel <String>]`: The device model that is being reported
-    - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
-    - `[Status <String>]`: complianceStatus
-    - `[UserName <String>]`: The User Name that is being reported
-    - `[UserPrincipalName <String>]`: UserPrincipalName.
-  - `[DisplayName <String>]`: Admin provided name of the device configuration.
-  - `[LastModifiedDateTime <DateTime?>]`: DateTime the object was last modified.
-  - `[TargetedMobileApps <String[]>]`: the associated app.
-  - `[UserStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1>]`: Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Read-only.
-    - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
-    - `[ErrorCount <Int32?>]`: Number of error Users
-    - `[FailedCount <Int32?>]`: Number of failed Users
-    - `[LastUpdateDateTime <DateTime?>]`: Last update time
-    - `[NotApplicableCount <Int32?>]`: Number of not applicable users
-    - `[PendingCount <Int32?>]`: Number of pending Users
-    - `[SuccessCount <Int32?>]`: Number of succeeded Users
-  - `[UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]`: List of ManagedDeviceMobileAppConfigurationUserStatus.
-    - `[Id <String>]`: Read-only.
-    - `[DevicesCount <Int32?>]`: Devices count for that user.
-    - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
-    - `[Status <String>]`: complianceStatus
-    - `[UserDisplayName <String>]`: User name of the DevicePolicyStatus.
-    - `[UserPrincipalName <String>]`: UserPrincipalName.
-  - `[Version <Int32?>]`: Version of the device configuration.
-
-DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-  - `[Id <String>]`: Read-only.
-  - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
-  - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
-  - `[DeviceModel <String>]`: The device model that is being reported
-  - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
-  - `[Status <String>]`: complianceStatus
-  - `[UserName <String>]`: The User Name that is being reported
-  - `[UserPrincipalName <String>]`: UserPrincipalName.
-
-DEVICESTATUSSUMMARY <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>: Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
-  - `[ErrorCount <Int32?>]`: Number of error devices
-  - `[FailedCount <Int32?>]`: Number of failed devices
-  - `[LastUpdateDateTime <DateTime?>]`: Last update time
-  - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
-  - `[PendingCount <Int32?>]`: Number of pending devices
-  - `[SuccessCount <Int32?>]`: Number of succeeded devices
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -522,24 +239,4 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-USERSTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>: List of ManagedDeviceMobileAppConfigurationUserStatus.
-  - `[Id <String>]`: Read-only.
-  - `[DevicesCount <Int32?>]`: Devices count for that user.
-  - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
-  - `[Status <String>]`: complianceStatus
-  - `[UserDisplayName <String>]`: User name of the DevicePolicyStatus.
-  - `[UserPrincipalName <String>]`: UserPrincipalName.
-
-USERSTATUSSUMMARY <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1>: Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ConfigurationVersion <Int32?>]`: Version of the policy for that overview
-  - `[ErrorCount <Int32?>]`: Number of error Users
-  - `[FailedCount <Int32?>]`: Number of failed Users
-  - `[LastUpdateDateTime <DateTime?>]`: Last update time
-  - `[NotApplicableCount <Int32?>]`: Number of not applicable users
-  - `[PendingCount <Int32?>]`: Number of pending Users
-  - `[SuccessCount <Int32?>]`: Number of succeeded Users
-
 ## RELATED LINKS
-

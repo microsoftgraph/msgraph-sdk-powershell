@@ -1,140 +1,57 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileappconfigurationdevicestatuses
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses
- -ManagedDeviceMobileAppConfigurationDeviceStatusId <String> -ManagedDeviceMobileAppConfigurationId <String>
- [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
- [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update1
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses
- -ManagedDeviceMobileAppConfigurationDeviceStatusId <String> -ManagedDeviceMobileAppConfigurationId <String>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgDeviceAppMgtMobileAppConfigurationDeviceStatuses -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-ComplianceGracePeriodExpirationDateTime <DateTime>]
- [-DeviceDisplayName <String>] [-DeviceModel <String>] [-Id <String>] [-LastReportedDateTime <DateTime>]
- [-Status <String>] [-UserName <String>] [-UserPrincipalName <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-Contains properties, inherited properties and actions for an MDM mobile app configuration status for a device.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ComplianceGracePeriodExpirationDateTime
-The DateTime when device compliance grace period expires
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceDisplayName
-Device name of the DevicePolicyStatus.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceModel
-The device model that is being reported
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -149,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -160,42 +77,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LastReportedDateTime
-Last modified date time of the policy report.
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagedDeviceMobileAppConfigurationDeviceStatusId
-key: id of managedDeviceMobileAppConfigurationDeviceStatus
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagedDeviceMobileAppConfigurationId
-key: id of managedDeviceMobileAppConfiguration
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -209,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -220,45 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Status
-complianceStatus
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserName
-The User Name that is being reported
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserPrincipalName
-UserPrincipalName.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -269,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -285,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -302,34 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementMobileAppConfigurationDeviceStatuses
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1>: Contains properties, inherited properties and actions for an MDM mobile app configuration status for a device.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
-  - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
-  - `[DeviceModel <String>]`: The device model that is being reported
-  - `[LastReportedDateTime <DateTime?>]`: Last modified date time of the policy report.
-  - `[Status <String>]`: complianceStatus
-  - `[UserName <String>]`: The User Name that is being reported
-  - `[UserPrincipalName <String>]`: UserPrincipalName.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -400,4 +240,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

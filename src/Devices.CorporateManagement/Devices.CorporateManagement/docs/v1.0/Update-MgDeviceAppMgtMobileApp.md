@@ -1,201 +1,57 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmobileapp
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtMobileApp
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-The mobile apps.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtMobileApp -MobileAppId <String> [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-Developer <String>] [-DisplayName <String>]
- [-Id <String>] [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>]
- [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Owner <String>] [-PrivacyInformationUrl <String>]
- [-Publisher <String>] [-PublishingState <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update1
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtMobileApp -MobileAppId <String> -BodyParameter <IMicrosoftGraphMobileApp1> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphMobileApp1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgDeviceAppMgtMobileApp -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>]
- [-Categories <IMicrosoftGraphMobileAppCategory[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-Developer <String>] [-DisplayName <String>] [-Id <String>] [-InformationUrl <String>] [-IsFeatured]
- [-LargeIcon <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>] [-Notes <String>]
- [-Owner <String>] [-PrivacyInformationUrl <String>] [-Publisher <String>] [-PublishingState <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The mobile apps.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Assignments
-The list of group assignments for this mobile app.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-An abstract class containing the base properties for Intune mobile apps.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Categories
-The list of categories for this app.
-To construct, see NOTES section for CATEGORIES properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The date and time the app was created.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-The description of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Developer
-The developer of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-The admin provided or imported title of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationUrl
-The more information Url.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -210,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -221,91 +77,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -IsFeatured
-The value indicating whether the app is marked as featured by the admin.
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LargeIcon
-Contains properties for a generic mime content.
-To construct, see NOTES section for LARGEICON properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The date and time the app was last modified.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -MobileAppId
-key: id of mobileApp
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Notes
-Notes for the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Owner
-The owner of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -316,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -327,45 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrivacyInformationUrl
-The privacy statement Url.
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Publisher
-The publisher of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PublishingState
-mobileAppPublishingState
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -376,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -392,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -409,67 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: The list of group assignments for this mobile app.
-  - `[Id <String>]`: Read-only.
-  - `[Intent <String>]`: installIntent
-  - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-
-BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
-    - `[Id <String>]`: Read-only.
-    - `[Intent <String>]`: installIntent
-    - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-    - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: The name of the app category.
-    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
-  - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
-  - `[Description <String>]`: The description of the app.
-  - `[Developer <String>]`: The developer of the app.
-  - `[DisplayName <String>]`: The admin provided or imported title of the app.
-  - `[InformationUrl <String>]`: The more information Url.
-  - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
-  - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: Indicates the content mime type.
-    - `[Value <Byte[]>]`: The byte array that contains the actual content.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
-  - `[Notes <String>]`: Notes for the app.
-  - `[Owner <String>]`: The owner of the app.
-  - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
-  - `[Publisher <String>]`: The publisher of the app.
-  - `[PublishingState <String>]`: mobileAppPublishingState
-
-CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this app.
-  - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: The name of the app category.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -539,10 +239,4 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-LARGEICON <IMicrosoftGraphMimeContent>: Contains properties for a generic mime content.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: Indicates the content mime type.
-  - `[Value <Byte[]>]`: The byte array that contains the actual content.
-
 ## RELATED LINKS
-

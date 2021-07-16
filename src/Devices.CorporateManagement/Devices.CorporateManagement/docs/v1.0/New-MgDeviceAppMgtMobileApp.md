@@ -1,35 +1,48 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/new-mgdeviceappmgtmobileapp
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/invoke-mgtargetdeviceappmgttargetedmanagedappconfigurationapp
 schema: 2.0.0
 ---
 
-# New-MgDeviceAppMgtMobileApp
+# Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp
 
 ## SYNOPSIS
-The mobile apps.
+Invoke action targetApps
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### TargetExpanded1 (Default)
 ```
-New-MgDeviceAppMgtMobileApp [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphMobileAppAssignment1[]>] [-Categories <IMicrosoftGraphMobileAppCategory[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-Developer <String>] [-DisplayName <String>]
- [-Id <String>] [-InformationUrl <String>] [-IsFeatured] [-LargeIcon <IMicrosoftGraphMimeContent>]
- [-LastModifiedDateTime <DateTime>] [-Notes <String>] [-Owner <String>] [-PrivacyInformationUrl <String>]
- [-Publisher <String>] [-PublishingState <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp -TargetedManagedAppConfigurationId <String>
+ [-AdditionalProperties <Hashtable>] [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### Create1
+### Target1
 ```
-New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp -TargetedManagedAppConfigurationId <String>
+ -BodyParameter <IPathsXzr66BDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### TargetViaIdentityExpanded1
+```
+Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp
+ -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### TargetViaIdentity1
+```
+Invoke-MgTargetDeviceAppMgtTargetedManagedAppConfigurationApp
+ -InputObject <IDevicesCorporateManagementIdentity>
+ -BodyParameter <IPathsXzr66BDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The mobile apps.
+Invoke action targetApps
 
 ## EXAMPLES
 
@@ -39,8 +52,8 @@ The mobile apps.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Type: Hashtable
+Parameter Sets: TargetExpanded1, TargetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -50,13 +63,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Assignments
-The list of group assignments for this mobile app.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+### -Apps
+.
+To construct, see NOTES section for APPS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
-Parameter Sets: CreateExpanded1
+Type: IMicrosoftGraphManagedMobileApp[]
+Parameter Sets: TargetExpanded1, TargetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -67,12 +80,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-An abstract class containing the base properties for Intune mobile apps.
+.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
-Parameter Sets: Create1
+Type: IPathsXzr66BDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Target1, TargetViaIdentity1
 Aliases:
 
 Required: True
@@ -82,13 +95,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Categories
-The list of categories for this app.
-To construct, see NOTES section for CATEGORIES properties and create a hash table.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
-Parameter Sets: CreateExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: TargetViaIdentityExpanded1, TargetViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -98,211 +126,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CreatedDateTime
-The date and time the app was created.
+### -TargetedManagedAppConfigurationId
+key: id of targetedManagedAppConfiguration
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Type: String
+Parameter Sets: TargetExpanded1, Target1
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-The description of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Developer
-The developer of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DisplayName
-The admin provided or imported title of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InformationUrl
-The more information Url.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IsFeatured
-The value indicating whether the app is marked as featured by the admin.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LargeIcon
-Contains properties for a generic mime content.
-To construct, see NOTES section for LARGEICON properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastModifiedDateTime
-The date and time the app was last modified.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Notes
-Notes for the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Owner
-The owner of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PrivacyInformationUrl
-The privacy statement Url.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Publisher
-The publisher of the app.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PublishingState
-mobileAppPublishingState
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded1
-Aliases:
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -313,7 +145,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -329,7 +161,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -345,71 +177,100 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
-
+### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
+### Microsoft.Graph.PowerShell.Models.IPathsXzr66BDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
-
+### System.Boolean
 ## NOTES
 
 ALIASES
-
-### New-MgDeviceAppManagementMobileApp
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: The list of group assignments for this mobile app.
+APPS <IMicrosoftGraphManagedMobileApp[]>: .
   - `[Id <String>]`: Read-only.
-  - `[Intent <String>]`: installIntent
-  - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
+  - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base properties for Intune mobile apps.
+BODYPARAMETER <IPathsXzr66BDeviceappmanagementTargetedmanagedappconfigurationsTargetedmanagedappconfigurationIdMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
+  - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[Intent <String>]`: installIntent
-    - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
+    - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
-      - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Categories <IMicrosoftGraphMobileAppCategory[]>]`: The list of categories for this app.
-    - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: The name of the app category.
-    - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
-  - `[CreatedDateTime <DateTime?>]`: The date and time the app was created.
-  - `[Description <String>]`: The description of the app.
-  - `[Developer <String>]`: The developer of the app.
-  - `[DisplayName <String>]`: The admin provided or imported title of the app.
-  - `[InformationUrl <String>]`: The more information Url.
-  - `[IsFeatured <Boolean?>]`: The value indicating whether the app is marked as featured by the admin.
-  - `[LargeIcon <IMicrosoftGraphMimeContent>]`: Contains properties for a generic mime content.
-    - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: Indicates the content mime type.
-    - `[Value <Byte[]>]`: The byte array that contains the actual content.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time the app was last modified.
-  - `[Notes <String>]`: Notes for the app.
-  - `[Owner <String>]`: The owner of the app.
-  - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
-  - `[Publisher <String>]`: The publisher of the app.
-  - `[PublishingState <String>]`: mobileAppPublishingState
+    - `[Version <String>]`: Version of the entity.
 
-CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this app.
-  - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: The name of the app category.
-  - `[LastModifiedDateTime <DateTime?>]`: The date and time the mobileAppCategory was last modified.
-
-LARGEICON <IMicrosoftGraphMimeContent>: Contains properties for a generic mime content.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: Indicates the content mime type.
-  - `[Value <Byte[]>]`: The byte array that contains the actual content.
+INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
+  - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
+  - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
+  - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
+  - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
+  - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
+  - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
+  - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
+  - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
+  - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
+  - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
+  - `[EnrollmentConfigurationAssignmentId <String>]`: key: id of enrollmentConfigurationAssignment
+  - `[EnterpriseCodeSigningCertificateId <String>]`: key: id of enterpriseCodeSigningCertificate
+  - `[IosLobAppProvisioningConfigurationAssignmentId <String>]`: key: id of iosLobAppProvisioningConfigurationAssignment
+  - `[IosLobAppProvisioningConfigurationId <String>]`: key: id of iosLobAppProvisioningConfiguration
+  - `[IosManagedAppProtectionId <String>]`: key: id of iosManagedAppProtection
+  - `[ManagedAppOperationId <String>]`: key: id of managedAppOperation
+  - `[ManagedAppPolicyId <String>]`: key: id of managedAppPolicy
+  - `[ManagedAppRegistrationId <String>]`: key: id of managedAppRegistration
+  - `[ManagedAppStatusId <String>]`: key: id of managedAppStatus
+  - `[ManagedDeviceId <String>]`: key: id of managedDevice
+  - `[ManagedDeviceMobileAppConfigurationAssignmentId <String>]`: key: id of managedDeviceMobileAppConfigurationAssignment
+  - `[ManagedDeviceMobileAppConfigurationDeviceStatusId <String>]`: key: id of managedDeviceMobileAppConfigurationDeviceStatus
+  - `[ManagedDeviceMobileAppConfigurationId <String>]`: key: id of managedDeviceMobileAppConfiguration
+  - `[ManagedDeviceMobileAppConfigurationStateId <String>]`: key: id of managedDeviceMobileAppConfigurationState
+  - `[ManagedDeviceMobileAppConfigurationUserStatusId <String>]`: key: id of managedDeviceMobileAppConfigurationUserStatus
+  - `[ManagedEBookAssignmentId <String>]`: key: id of managedEBookAssignment
+  - `[ManagedEBookCategoryId <String>]`: key: id of managedEBookCategory
+  - `[ManagedEBookId <String>]`: key: id of managedEBook
+  - `[ManagedMobileAppId <String>]`: key: id of managedMobileApp
+  - `[MdmWindowsInformationProtectionPolicyId <String>]`: key: id of mdmWindowsInformationProtectionPolicy
+  - `[MobileAppAssignmentId <String>]`: key: id of mobileAppAssignment
+  - `[MobileAppCategoryId <String>]`: key: id of mobileAppCategory
+  - `[MobileAppId <String>]`: key: id of mobileApp
+  - `[MobileAppInstallStatusId <String>]`: key: id of mobileAppInstallStatus
+  - `[MobileAppIntentAndStateId <String>]`: key: id of mobileAppIntentAndState
+  - `[MobileAppProvisioningConfigGroupAssignmentId <String>]`: key: id of mobileAppProvisioningConfigGroupAssignment
+  - `[MobileAppRelationshipId <String>]`: key: id of mobileAppRelationship
+  - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
+  - `[OfficeClientConfigurationAssignmentId <String>]`: key: id of officeClientConfigurationAssignment
+  - `[OfficeClientConfigurationId <String>]`: key: id of officeClientConfiguration
+  - `[PolicySetAssignmentId <String>]`: key: id of policySetAssignment
+  - `[PolicySetId <String>]`: key: id of policySet
+  - `[PolicySetItemId <String>]`: key: id of policySetItem
+  - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
+  - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
+  - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
+  - `[Status <String>]`: Usage: status={status}
+  - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
+  - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
+  - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
+  - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: key: id of user
+  - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
+  - `[VppTokenId <String>]`: key: id of vppToken
+  - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
+  - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
+  - `[WindowsDefenderApplicationControlSupplementalPolicyId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicy
+  - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
+  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
+  - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
+  - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

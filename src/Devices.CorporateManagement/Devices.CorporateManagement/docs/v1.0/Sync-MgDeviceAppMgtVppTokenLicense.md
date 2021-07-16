@@ -1,42 +1,73 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/sync-mgdeviceappmgtvpptokenlicense
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Sync-MgDeviceAppMgtVppTokenLicense
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-Syncs licenses associated with a specific appleVolumePurchaseProgramToken
+Device configuration states for this device.
 
 ## SYNTAX
 
-### Sync1 (Default)
+### Delete1 (Default)
 ```
-Sync-MgDeviceAppMgtVppTokenLicense -VppTokenId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### SyncViaIdentity1
+### DeleteViaIdentity1
 ```
-Sync-MgDeviceAppMgtVppTokenLicense -InputObject <IDevicesCorporateManagementIdentity> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Syncs licenses associated with a specific appleVolumePurchaseProgramToken
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
+
+```yaml
+Type: String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: SyncViaIdentity1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -46,12 +77,42 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -VppTokenId
-key: id of vppToken
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: Sync1
+Type: String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+key: id of user
+
+```yaml
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -65,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -81,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -98,16 +159,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVppToken1
-
+### System.Boolean
 ## NOTES
 
 ALIASES
-
-### Sync-MgDeviceAppManagementVppTokenLicense
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -183,4 +240,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-

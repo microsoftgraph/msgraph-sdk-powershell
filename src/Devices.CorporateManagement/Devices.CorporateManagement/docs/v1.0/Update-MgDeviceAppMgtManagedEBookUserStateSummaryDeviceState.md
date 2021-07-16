@@ -1,108 +1,42 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgdeviceappmgtmanagedebookuserstatesummarydevicestate
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/remove-mgusermanageddeviceconfigurationstate
 schema: 2.0.0
 ---
 
-# Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState
+# Remove-MgUserManagedDeviceConfigurationState
 
 ## SYNOPSIS
-The install state of the eBook.
+Device configuration states for this device.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete1 (Default)
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState -DeviceInstallStateId <String>
- -ManagedEBookId <String> -UserInstallStateSummaryId <String> [-AdditionalProperties <Hashtable>]
- [-DeviceId <String>] [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <String>]
- [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -DeviceConfigurationStateId <String> -ManagedDeviceId <String>
+ -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update1
+### DeleteViaIdentity1
 ```
-Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState -DeviceInstallStateId <String>
- -ManagedEBookId <String> -UserInstallStateSummaryId <String>
- -BodyParameter <IMicrosoftGraphDeviceInstallState> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState
- -InputObject <IDevicesCorporateManagementIdentity> -BodyParameter <IMicrosoftGraphDeviceInstallState>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded1
-```
-Update-MgDeviceAppMgtManagedEBookUserStateSummaryDeviceState
- -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>] [-DeviceId <String>]
- [-DeviceName <String>] [-ErrorCode <String>] [-Id <String>] [-InstallState <String>]
- [-LastSyncDateTime <DateTime>] [-OSDescription <String>] [-OSVersion <String>] [-UserName <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserManagedDeviceConfigurationState -InputObject <IDevicesCorporateManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The install state of the eBook.
+Device configuration states for this device.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -DeviceConfigurationStateId
+key: id of deviceConfigurationState
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-Contains properties for the installation state for a device.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
-Parameter Sets: Update1, UpdateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DeviceId
-Device Id.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DeviceInstallStateId
-key: id of deviceInstallState
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -112,42 +46,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DeviceName
-Device name.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ErrorCode
-The error code for install failures.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -162,8 +66,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -173,75 +77,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InstallState
-installState
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LastSyncDateTime
-Last sync date and time.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ManagedEBookId
-key: id of managedEBook
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OSDescription
-OS Description.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OSVersion
-OS Version.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -252,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -263,30 +107,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserInstallStateSummaryId
-key: id of userInstallStateSummary
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserName
-Device User Name.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -297,7 +126,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -313,7 +142,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -330,35 +159,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
-
-### Update-MgDeviceAppManagementManagedEBookUserStateSummaryDeviceState
 
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphDeviceInstallState>: Contains properties for the installation state for a device.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[DeviceId <String>]`: Device Id.
-  - `[DeviceName <String>]`: Device name.
-  - `[ErrorCode <String>]`: The error code for install failures.
-  - `[InstallState <String>]`: installState
-  - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
-  - `[OSDescription <String>]`: OS Description.
-  - `[OSVersion <String>]`: OS Version.
-  - `[UserName <String>]`: Device User Name.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
@@ -429,4 +240,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-
