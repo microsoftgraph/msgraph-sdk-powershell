@@ -1,60 +1,135 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/remove-mginvitationinviteduserbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/update-mgpolicyfeaturerolloutpolicyapplyto
 schema: 2.0.0
 ---
 
-# Remove-MgInvitationInvitedUserByRef
+# Update-MgPolicyFeatureRolloutPolicyApplyTo
 
 ## SYNOPSIS
-Delete ref of navigation property invitedUser for invitations
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## SYNTAX
 
-### Delete (Default)
+### UpdateExpanded1 (Default)
 ```
-Remove-MgInvitationInvitedUserByRef -InvitationId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgPolicyFeatureRolloutPolicyApplyTo -DirectoryObjectId <String> -FeatureRolloutPolicyId <String>
+ [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Update1
 ```
-Remove-MgInvitationInvitedUserByRef -InputObject <IIdentitySignInsIdentity> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgPolicyFeatureRolloutPolicyApplyTo -DirectoryObjectId <String> -FeatureRolloutPolicyId <String>
+ -BodyParameter <IMicrosoftGraphDirectoryObject> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded1
+```
+Update-MgPolicyFeatureRolloutPolicyApplyTo -InputObject <IIdentitySignInsIdentity>
+ [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity1
+```
+Update-MgPolicyFeatureRolloutPolicyApplyTo -InputObject <IIdentitySignInsIdentity>
+ -BodyParameter <IMicrosoftGraphDirectoryObject> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property invitedUser for invitations
+Nullable.
+Specifies a list of directoryObjects that feature is enabled for.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -IfMatch
-ETag
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Hashtable
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphDirectoryObject
+Parameter Sets: Update1, UpdateViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DeletedDateTime
+.
+
+```yaml
+Type: DateTime
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DirectoryObjectId
+key: id of directoryObject
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FeatureRolloutPolicyId
+key: id of featureRolloutPolicy
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -69,8 +144,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: DeleteViaIdentity
+Type: IIdentitySignInsIdentity
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -80,26 +155,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InvitationId
-key: id of invitation
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -114,7 +174,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +190,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -147,11 +207,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -161,22 +220,29 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
+BODYPARAMETER <IMicrosoftGraphDirectoryObject>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[DeletedDateTime <DateTime?>]`: 
+
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -190,10 +256,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -201,7 +265,10 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-

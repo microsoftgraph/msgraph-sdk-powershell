@@ -1,67 +1,54 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mgpolicyconditionalaccesspolicy
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/new-mguserauthenticationmethod
 schema: 2.0.0
 ---
 
-# Get-MgPolicyConditionalAccessPolicy
+# New-MgUserAuthenticationMethod
 
 ## SYNOPSIS
-Get conditionalAccessPolicies from policies
+Create new navigation property to methods for users
 
 ## SYNTAX
 
-### List1 (Default)
+### CreateExpanded1 (Default)
 ```
-Get-MgPolicyConditionalAccessPolicy [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgPolicyConditionalAccessPolicy -ConditionalAccessPolicyId <String> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+New-MgUserAuthenticationMethod -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### Create1
 ```
-Get-MgPolicyConditionalAccessPolicy -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+New-MgUserAuthenticationMethod -UserId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded1
+```
+New-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get conditionalAccessPolicies from policies
+Create new navigation property to methods for users
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -All
-List all pages.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Type: Hashtable
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -71,57 +58,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConditionalAccessPolicyId
-key: id of conditionalAccessPolicy
+### -BodyParameter
+authenticationMethod
 
 ```yaml
-Type: System.String
-Parameter Sets: Get1
+Type: Hashtable
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -Id
+Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Filter
-Filter items by property values
-
-```yaml
-Type: System.String
-Parameter Sets: List1
+Type: String
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -136,8 +93,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: GetViaIdentity1
+Type: IIdentitySignInsIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -147,28 +104,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -UserId
+key: id of user
 
 ```yaml
-Type: System.Int32
-Parameter Sets: List1
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Property
-Select properties to be returned
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.String[]
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: Select
+Aliases: cf
 
 Required: False
 Position: Named
@@ -177,58 +134,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: List1
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: List1
-Aliases: Limit
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named
@@ -243,11 +156,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
+### System.Collections.Hashtable
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConditionalAccessPolicy
-
+### System.String
 ## NOTES
 
 ALIASES
@@ -259,20 +171,22 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -286,10 +200,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -297,7 +209,10 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-

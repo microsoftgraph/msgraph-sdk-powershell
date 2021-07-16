@@ -1,72 +1,49 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.SignIns-help.xml
 Module Name: Microsoft.Graph.Identity.SignIns
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/set-mginvitationinviteduserbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins/get-mguserauthenticationwindowhello
 schema: 2.0.0
 ---
 
-# Set-MgInvitationInvitedUserByRef
+# Get-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Update the ref of navigation property invitedUser in invitations
+Get windowsHelloForBusinessMethods from users
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### List1 (Default)
 ```
-Set-MgInvitationInvitedUserByRef -InvitationId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Set-MgInvitationInvitedUserByRef -InvitationId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgUserAuthenticationWindowHello -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>]
+ [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### Get1
 ```
-Set-MgInvitationInvitedUserByRef -InputObject <IIdentitySignInsIdentity> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgUserAuthenticationWindowHello -UserId <String> -WindowsHelloForBusinessAuthenticationMethodId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### GetViaIdentity1
 ```
-Set-MgInvitationInvitedUserByRef -InputObject <IIdentitySignInsIdentity> [-AdditionalProperties <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property invitedUser in invitations
+Get windowsHelloForBusinessMethods from users
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -All
+List all pages.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: SwitchParameter
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -76,18 +53,49 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-.
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
+Type: String
+Parameter Sets: List1
+Aliases: CV
 
-Required: True
+Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -96,8 +104,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IIdentitySignInsIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -107,12 +115,87 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -InvitationId
-key: id of invitation
+### -PageSize
+Sets the page size of results.
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Property
+Select properties to be returned
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: String
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: String[]
+Parameter Sets: List1
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List1
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserId
+key: id of user
+
+```yaml
+Type: String
+Parameter Sets: List1, Get1
 Aliases:
 
 Required: True
@@ -122,44 +205,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -WindowsHelloForBusinessAuthenticationMethodId
+key: id of windowsHelloForBusinessAuthenticationMethod
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Get1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Skip
+Skip the first n items
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Type: Int32
+Parameter Sets: List1
+Aliases:
 
 Required: False
 Position: Named
@@ -174,13 +241,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### System.Boolean
-
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod1
 ## NOTES
 
 ALIASES
@@ -192,20 +255,22 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
+  - `[AuthenticationContextClassReferenceId <String>]`: key: id of authenticationContextClassReference
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
+  - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
   - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
   - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[IdentityProviderId <String>]`: key: id of identityProvider
   - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
   - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
   - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
   - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
   - `[NamedLocationId <String>]`: key: id of namedLocation
@@ -219,10 +284,8 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[RiskDetectionId <String>]`: key: id of riskDetection
   - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
   - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
   - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
   - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
   - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
   - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
   - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
@@ -230,7 +293,10 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
   - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
+  - `[UnifiedRoleManagementPolicyAssignmentId <String>]`: key: id of unifiedRoleManagementPolicyAssignment
+  - `[UnifiedRoleManagementPolicyId <String>]`: key: id of unifiedRoleManagementPolicy
+  - `[UnifiedRoleManagementPolicyRuleId <String>]`: key: id of unifiedRoleManagementPolicyRule
   - `[UserId <String>]`: key: id of user
+  - `[WindowsHelloForBusinessAuthenticationMethodId <String>]`: key: id of windowsHelloForBusinessAuthenticationMethod
 
 ## RELATED LINKS
-
