@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CrossDeviceExperiences-help.xml
 Module Name: Microsoft.Graph.CrossDeviceExperiences
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/new-mguseractivityhistoryitem
 schema: 2.0.0
@@ -19,19 +19,13 @@ New-MgUserActivityHistoryItem -UserActivityId <String> -UserId <String> [-Active
  [-Activity <IMicrosoftGraphUserActivity>] [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastActiveDateTime <DateTime>]
  [-LastModifiedDateTime <DateTime>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserActivityHistoryItem -UserActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
- -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -40,7 +34,13 @@ New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity> [-A
  [-Activity <IMicrosoftGraphUserActivity>] [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-LastActiveDateTime <DateTime>]
  [-LastModifiedDateTime <DateTime>] [-StartedDateTime <DateTime>] [-Status <String>] [-UserTimezone <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
+ -BodyParameter <IMicrosoftGraphActivityHistoryItem> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +57,7 @@ The duration of active user engagement.
 if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -73,7 +73,7 @@ userActivity
 To construct, see NOTES section for ACTIVITY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity
+Type: IMicrosoftGraphUserActivity
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -104,7 +104,7 @@ activityHistoryItem
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
+Type: IMicrosoftGraphActivityHistoryItem
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -120,7 +120,7 @@ Set by the server.
 DateTime in UTC when the object was created on the server.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -137,7 +137,7 @@ UTC DateTime when the historyItem will undergo hard-delete.
 Can be set by the client.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -168,8 +168,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: ICrossDeviceExperiencesIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -184,7 +184,7 @@ Optional.
 UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -200,7 +200,7 @@ Set by the server.
 DateTime in UTC when the object was modified on the server.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ UTC DateTime when the historyItem (activity session) was started.
 Required for timeline history.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 status
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -247,8 +247,8 @@ Accept wildcard characters: False
 key: id of userActivity
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -262,8 +262,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -279,7 +279,7 @@ The timezone in which the user's device used to generate the activity was locate
 Values supplied as Olson IDs in order to support cross-platform representation.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -310,7 +310,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -327,13 +327,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem
-
 ## NOTES
 
 ALIASES
@@ -349,7 +346,7 @@ ACTIVITY <IMicrosoftGraphUserActivity>: userActivity
   - `[ActivationUrl <String>]`: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
   - `[ActivitySourceHost <String>]`: Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
   - `[AppActivityId <String>]`: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
-  - `[AppDisplayName <String>]`: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
+  - `[AppDisplayName <String>]`: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user's local device.
   - `[ContentInfo <IMicrosoftGraphJson>]`: Json
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ContentUrl <String>]`: Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
@@ -374,7 +371,7 @@ ACTIVITY <IMicrosoftGraphUserActivity>: userActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Attribution <IMicrosoftGraphImageInfo>]`: imageInfo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AddImageQuery <Boolean?>]`: Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
+      - `[AddImageQuery <Boolean?>]`: Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example - a high contrast image
       - `[AlternateText <String>]`: Optional; alt-text accessible content for the image
       - `[AlternativeText <String>]`: 
       - `[IconUrl <String>]`: Optional; URI that points to an icon which represents the application used to generate the activity
@@ -393,7 +390,7 @@ BODYPARAMETER <IMicrosoftGraphActivityHistoryItem>: activityHistoryItem
     - `[ActivationUrl <String>]`: Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
     - `[ActivitySourceHost <String>]`: Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.
     - `[AppActivityId <String>]`: Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.
-    - `[AppDisplayName <String>]`: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.
+    - `[AppDisplayName <String>]`: Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user's local device.
     - `[ContentInfo <IMicrosoftGraphJson>]`: Json
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ContentUrl <String>]`: Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).
@@ -408,7 +405,7 @@ BODYPARAMETER <IMicrosoftGraphActivityHistoryItem>: activityHistoryItem
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Attribution <IMicrosoftGraphImageInfo>]`: imageInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AddImageQuery <Boolean?>]`: Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
+        - `[AddImageQuery <Boolean?>]`: Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example - a high contrast image
         - `[AlternateText <String>]`: Optional; alt-text accessible content for the image
         - `[AlternativeText <String>]`: 
         - `[IconUrl <String>]`: Optional; URI that points to an icon which represents the application used to generate the activity
@@ -432,3 +429,4 @@ INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
 
 ## RELATED LINKS
 
+## RELATED LINKS

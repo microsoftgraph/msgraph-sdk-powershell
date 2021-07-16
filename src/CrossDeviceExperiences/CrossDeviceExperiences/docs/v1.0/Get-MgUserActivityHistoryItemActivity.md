@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CrossDeviceExperiences-help.xml
 Module Name: Microsoft.Graph.CrossDeviceExperiences
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.crossdeviceexperiences/get-mguseractivityhistoryitemactivity
 schema: 2.0.0
@@ -15,8 +15,8 @@ NavigationProperty/Containment; navigation property to the associated activity.
 
 ### Get1 (Default)
 ```
-Get-MgUserActivityHistoryItemActivity -ActivityHistoryItemId <String> -UserActivityId <String>
- -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgUserActivityHistoryItemActivity -ActivityHistoryItemId <String> -UserActivityId <String> -UserId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
@@ -37,7 +37,7 @@ NavigationProperty/Containment; navigation property to the associated activity.
 key: id of activityHistoryItem
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 Expand related entities
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Expand
 
@@ -68,7 +68,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
+Type: ICrossDeviceExperiencesIdentity
 Parameter Sets: GetViaIdentity1
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 Select properties to be returned
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases: Select
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 key: id of userActivity
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get1
 Aliases:
 
@@ -130,11 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity
-
 ## NOTES
 
 ALIASES
@@ -151,4 +149,3 @@ INPUTOBJECT <ICrossDeviceExperiencesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
