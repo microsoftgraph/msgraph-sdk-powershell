@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Calendar-help.xml
 Module Name: Microsoft.Graph.Calendar
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusercalendarpermission
 schema: 2.0.0
@@ -16,52 +16,52 @@ The permissions of the users with whom the calendar is shared.
 ```
 New-MgUserCalendarPermission -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedRoles <String[]>]
  [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>] [-IsInsideOrganization] [-IsRemovable]
- [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create2
-```
-New-MgUserCalendarPermission -UserId <String> -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### Create3
-```
-New-MgUserCalendarPermission -CalendarId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Role <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateExpanded3
 ```
-New-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgUserCalendarPermission -UserId <String> -CalendarId <String> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentity2
+### Create3
 ```
-New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity3
-```
-New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
- -BodyParameter <IMicrosoftGraphCalendarPermission> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserCalendarPermission -UserId <String> -CalendarId <String>
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded2
+### Create2
 ```
-New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
- [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgUserCalendarPermission -UserId <String> -BodyParameter <IMicrosoftGraphCalendarPermission> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded3
 ```
 New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
- [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded2
+```
+New-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-AdditionalProperties <Hashtable>]
+ [-AllowedRoles <String[]>] [-EmailAddress <IMicrosoftGraphEmailAddress>] [-Id <String>]
+ [-IsInsideOrganization] [-IsRemovable] [-Role <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity3
+```
+New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity2
+```
+New-MgUserCalendarPermission -InputObject <ICalendarIdentity>
+ -BodyParameter <IMicrosoftGraphCalendarPermission> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,8 +75,8 @@ The permissions of the users with whom the calendar is shared.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: Hashtable
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -91,8 +91,8 @@ List of allowed sharing or delegating permission levels for the calendar.
 Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.
 
 ```yaml
-Type: System.String[]
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: String[]
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -107,8 +107,8 @@ calendarPermission
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
-Parameter Sets: Create2, Create3, CreateViaIdentity2, CreateViaIdentity3
+Type: IMicrosoftGraphCalendarPermission
+Parameter Sets: Create3, Create2, CreateViaIdentity3, CreateViaIdentity2
 Aliases:
 
 Required: True
@@ -122,8 +122,8 @@ Accept wildcard characters: False
 key: id of calendar
 
 ```yaml
-Type: System.String
-Parameter Sets: Create3, CreateExpanded3
+Type: String
+Parameter Sets: CreateExpanded3, Create3
 Aliases:
 
 Required: True
@@ -138,8 +138,8 @@ emailAddress
 To construct, see NOTES section for EMAILADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: IMicrosoftGraphEmailAddress
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -153,8 +153,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: String
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -169,8 +169,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: CreateViaIdentity2, CreateViaIdentity3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: ICalendarIdentity
+Parameter Sets: CreateViaIdentityExpanded3, CreateViaIdentityExpanded2, CreateViaIdentity3, CreateViaIdentity2
 Aliases:
 
 Required: True
@@ -184,8 +184,8 @@ Accept wildcard characters: False
 True if the user in context (sharee or delegate) is inside the same organization as the calendar owner.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: SwitchParameter
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -201,8 +201,8 @@ The 'My organization' user determines the permissions other people within your o
 You cannot remove 'My organization' as a sharee to a calendar.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: SwitchParameter
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -216,8 +216,8 @@ Accept wildcard characters: False
 calendarRoleType
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded2, CreateViaIdentityExpanded3
+Type: String
+Parameter Sets: CreateExpanded2, CreateExpanded3, CreateViaIdentityExpanded3, CreateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -231,8 +231,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create2, Create3, CreateExpanded2, CreateExpanded3
+Type: String
+Parameter Sets: CreateExpanded2, CreateExpanded3, Create3, Create2
 Aliases:
 
 Required: True
@@ -246,7 +246,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -262,7 +262,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -279,13 +279,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission
-
 ## NOTES
 
 ALIASES
@@ -327,4 +324,3 @@ INPUTOBJECT <ICalendarIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Calendar-help.xml
 Module Name: Microsoft.Graph.Calendar
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgusercalendargroupcalendar
 schema: 2.0.0
@@ -25,25 +25,13 @@ New-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String> [-Add
  [-Id <String>] [-IsDefaultCalendar] [-IsRemovable] [-IsShared] [-IsSharedWithMe] [-IsTallyingResponses]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-Owner <IMicrosoftGraphEmailAddress>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphCalendar1> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity1
-```
-New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendar1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> [-CalendarGroupId <String>]
+New-MgUserCalendarGroupCalendar [-CalendarGroupId <String>] -InputObject <ICalendarIdentity>
  [-AdditionalProperties <Hashtable>] [-AllowedOnlineMeetingProviders <String[]>]
  [-CalendarPermissions <IMicrosoftGraphCalendarPermission[]>] [-CalendarView <IMicrosoftGraphEvent1[]>]
  [-CanEdit] [-CanShare] [-CanViewPrivateItems] [-ChangeKey <String>] [-Color <String>]
@@ -51,8 +39,20 @@ New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> [-CalendarGroup
  [-Id <String>] [-IsDefaultCalendar] [-IsRemovable] [-IsShared] [-IsSharedWithMe] [-IsTallyingResponses]
  [-MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>] [-Name <String>]
  [-Owner <IMicrosoftGraphEmailAddress>]
- [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-Confirm] [-WhatIf]
+ [-SingleValueExtendedProperties <IMicrosoftGraphSingleValueLegacyExtendedProperty[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### Create1
+```
+New-MgUserCalendarGroupCalendar -CalendarGroupId <String> -UserId <String>
+ -BodyParameter <IMicrosoftGraphCalendar1> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity1
+```
+New-MgUserCalendarGroupCalendar -InputObject <ICalendarIdentity> -BodyParameter <IMicrosoftGraphCalendar1>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,7 +69,7 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -85,7 +85,7 @@ Represent the online meeting service providers that can be used to create online
 Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -101,7 +101,7 @@ calendar
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
+Type: IMicrosoftGraphCalendar1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -116,11 +116,23 @@ Accept wildcard characters: False
 key: id of calendarGroup
 
 ```yaml
-Type: System.String
-Parameter Sets: Create1, CreateExpanded1, CreateViaIdentityExpanded1
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+```yaml
+Type: String
+Parameter Sets: CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -132,7 +144,7 @@ The calendarGroup in which to create the calendar.
 If the user has never explicitly set a group for the calendar, this property is null.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -148,7 +160,7 @@ The permissions of the users with whom the calendar is shared.
 To construct, see NOTES section for CALENDARPERMISSIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendarPermission[]
+Type: IMicrosoftGraphCalendarPermission[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -166,7 +178,7 @@ Read-only.
 To construct, see NOTES section for CALENDARVIEW properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent1[]
+Type: IMicrosoftGraphEvent1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -184,7 +196,7 @@ This property is also true for a user who has been shared a calendar and granted
 Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -201,7 +213,7 @@ Only the user who created the calendar can share it.
 Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -218,7 +230,7 @@ This property is set through an Outlook client or the corresponding calendarPerm
 Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -236,7 +248,7 @@ This allows Exchange to apply changes to the correct version of the object.
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -251,7 +263,7 @@ Accept wildcard characters: False
 calendarColor
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -266,7 +278,7 @@ Accept wildcard characters: False
 onlineMeetingProviderType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -284,7 +296,7 @@ Read-only.
 To construct, see NOTES section for EVENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEvent1[]
+Type: IMicrosoftGraphEvent1[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -300,7 +312,7 @@ The calendar color, expressed in a hex color code of three hexadecimal values, e
 If the user has never explicitly set a color for the calendar, this property is empty.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -315,7 +327,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -331,8 +343,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Type: ICalendarIdentity
+Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -346,7 +358,7 @@ Accept wildcard characters: False
 true if this is the default calendar where new events are created by default, false otherwise.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -361,7 +373,7 @@ Accept wildcard characters: False
 Indicates whether this user calendar can be deleted from the user mailbox.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -379,7 +391,7 @@ This property is set when sharing is initiated in an Outlook client, and can be 
 Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -397,7 +409,7 @@ This property is set when sharing is initiated in an Outlook client, and can be 
 Read-only.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -413,7 +425,7 @@ Indicates whether this user calendar supports tracking of meeting responses.
 Only meeting invites sent from users' primary calendars support tracking of meeting responses.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -431,7 +443,7 @@ Nullable.
 To construct, see NOTES section for MULTIVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMultiValueLegacyExtendedProperty[]
+Type: IMicrosoftGraphMultiValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -446,7 +458,7 @@ Accept wildcard characters: False
 The calendar name.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -462,7 +474,7 @@ emailAddress
 To construct, see NOTES section for OWNER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmailAddress
+Type: IMicrosoftGraphEmailAddress
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -480,7 +492,7 @@ Nullable.
 To construct, see NOTES section for SINGLEVALUEEXTENDEDPROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSingleValueLegacyExtendedProperty[]
+Type: IMicrosoftGraphSingleValueLegacyExtendedProperty[]
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -495,8 +507,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Type: String
+Parameter Sets: CreateExpanded1, Create1
 Aliases:
 
 Required: True
@@ -510,7 +522,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -526,7 +538,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -543,13 +555,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICalendarIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar1
-
 ## NOTES
 
 ALIASES
@@ -1085,3 +1094,4 @@ SINGLEVALUEEXTENDEDPROPERTIES <IMicrosoftGraphSingleValueLegacyExtendedProperty[
 
 ## RELATED LINKS
 
+## RELATED LINKS

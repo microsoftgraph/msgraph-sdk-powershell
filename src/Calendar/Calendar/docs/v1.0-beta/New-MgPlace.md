@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Calendar-help.xml
 Module Name: Microsoft.Graph.Calendar
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar/new-mgplace
 schema: 2.0.0
@@ -16,12 +16,12 @@ Add new entity to places
 ```
 New-MgPlace [-AdditionalProperties <Hashtable>] [-Address <IMicrosoftGraphPhysicalAddress1>]
  [-DisplayName <String>] [-GeoCoordinates <IMicrosoftGraphOutlookGeoCoordinates>] [-Id <String>]
- [-Phone <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Phone <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPlace -BodyParameter <IMicrosoftGraphPlace1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPlace -BodyParameter <IMicrosoftGraphPlace1> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +35,7 @@ Add new entity to places
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -51,7 +51,7 @@ physicalAddress
 To construct, see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
+Type: IMicrosoftGraphPhysicalAddress1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -67,7 +67,7 @@ place
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace1
+Type: IMicrosoftGraphPlace1
 Parameter Sets: Create1
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 The name associated with the place.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -98,7 +98,7 @@ outlookGeoCoordinates
 To construct, see NOTES section for GEOCOORDINATES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
+Type: IMicrosoftGraphOutlookGeoCoordinates
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 The phone number of the place.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -159,7 +159,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -176,11 +176,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace1
-
 ## NOTES
 
 ALIASES
@@ -231,4 +229,3 @@ GEOCOORDINATES <IMicrosoftGraphOutlookGeoCoordinates>: outlookGeoCoordinates
   - `[Longitude <Double?>]`: The longitude of the location.
 
 ## RELATED LINKS
-
