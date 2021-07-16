@@ -29,24 +29,6 @@ Delete navigation property onlineMeetings for users
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -IfMatch
@@ -177,7 +159,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
+  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
+  - `[CallId <String>]`: key: id of call
+  - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
+  - `[ParticipantId <String>]`: key: id of participant
+  - `[PresenceId <String>]`: key: id of presence
+  - `[SessionId <String>]`: key: id of session
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

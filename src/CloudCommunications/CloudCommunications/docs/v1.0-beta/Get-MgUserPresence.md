@@ -12,12 +12,12 @@ Get presence from users
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgUserPresence -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -27,24 +27,6 @@ Get-MgUserPresence -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty 
 Get presence from users
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +51,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +81,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -118,7 +100,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPresence1
 
 ## NOTES
 
@@ -130,7 +112,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
+  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
+  - `[CallId <String>]`: key: id of call
+  - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
+  - `[ParticipantId <String>]`: key: id of participant
+  - `[PresenceId <String>]`: key: id of presence
+  - `[SessionId <String>]`: key: id of session
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

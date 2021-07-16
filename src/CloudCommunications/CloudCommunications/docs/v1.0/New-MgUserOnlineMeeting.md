@@ -12,34 +12,36 @@ Create new navigation property to onlineMeetings for users
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
-New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>]
+New-MgUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>] [-AllowedPresenters <String>]
  [-AudioConferencing <IMicrosoftGraphAudioConferencing>] [-ChatInfo <IMicrosoftGraphChatInfo>]
  [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-ExternalId <String>] [-Id <String>]
- [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinWebUrl <String>]
+ [-IsEntryExitAnnounced] [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinWebUrl <String>]
+ [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
  [-VideoTeleconferenceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgUserOnlineMeeting -UserId <String> -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IMicrosoftGraphOnlineMeeting> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AdditionalProperties <Hashtable>]
- [-AudioConferencing <IMicrosoftGraphAudioConferencing>] [-ChatInfo <IMicrosoftGraphChatInfo>]
- [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>] [-ExternalId <String>] [-Id <String>]
- [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinWebUrl <String>]
+ [-AllowedPresenters <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
+ [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>] [-EndDateTime <DateTime>]
+ [-ExternalId <String>] [-Id <String>] [-IsEntryExitAnnounced] [-JoinInformation <IMicrosoftGraphItemBody>]
+ [-JoinWebUrl <String>] [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
  [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
  [-VideoTeleconferenceId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -49,24 +51,6 @@ Create new navigation property to onlineMeetings for users
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -74,7 +58,22 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowedPresenters
+onlineMeetingPresenters
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -90,7 +89,7 @@ To construct, see NOTES section for AUDIOCONFERENCING properties and create a ha
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAudioConferencing
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -106,7 +105,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -122,7 +121,7 @@ To construct, see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -138,7 +137,7 @@ Read-only.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -153,7 +152,7 @@ The meeting end time in UTC.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -164,11 +163,13 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalId
-.
+The external ID.
+A custom ID.
+Optional.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -183,7 +184,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -199,7 +200,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -209,13 +210,28 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -IsEntryExitAnnounced
+Indicates whether to announce when callers join or leave.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -JoinInformation
 itemBody
 To construct, see NOTES section for JOININFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -231,7 +247,23 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LobbyBypassSettings
+lobbyBypassSettings
+To construct, see NOTES section for LOBBYBYPASSSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLobbyBypassSettings
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -247,7 +279,7 @@ To construct, see NOTES section for PARTICIPANTS properties and create a hash ta
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -262,7 +294,7 @@ The meeting start time in UTC.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -277,7 +309,7 @@ The subject of the online meeting.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -292,7 +324,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -308,7 +340,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -373,7 +405,7 @@ To create the parameters described below, construct a hash table containing the 
 
 AUDIOCONFERENCING <IMicrosoftGraphAudioConferencing>: audioConferencing
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConferenceId <String>]`: 
+  - `[ConferenceId <String>]`: The conference id of the online meeting.
   - `[DialinUrl <String>]`: A URL to the externally-accessible web page that contains dial-in information.
   - `[TollFreeNumber <String>]`: The toll-free number that connects to the Audio Conference Provider.
   - `[TollNumber <String>]`: The toll number that connects to the Audio Conference Provider.
@@ -381,28 +413,34 @@ AUDIOCONFERENCING <IMicrosoftGraphAudioConferencing>: audioConferencing
 BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
+  - `[AllowedPresenters <String>]`: onlineMeetingPresenters
   - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConferenceId <String>]`: 
+    - `[ConferenceId <String>]`: The conference id of the online meeting.
     - `[DialinUrl <String>]`: A URL to the externally-accessible web page that contains dial-in information.
     - `[TollFreeNumber <String>]`: The toll-free number that connects to the Audio Conference Provider.
     - `[TollNumber <String>]`: The toll number that connects to the Audio Conference Provider.
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
+    - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
   - `[EndDateTime <DateTime?>]`: The meeting end time in UTC.
-  - `[ExternalId <String>]`: 
+  - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
+  - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
   - `[JoinWebUrl <String>]`: The join URL of the online meeting. Read-only.
+  - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+    - `[Scope <String>]`: lobbyBypassScope
   - `[Participants <IMicrosoftGraphMeetingParticipants>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
       - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -411,6 +449,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
           - `[Id <String>]`: Unique identifier for the identity.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
+      - `[Role <String>]`: 
       - `[Upn <String>]`: User principal name of the participant.
     - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
@@ -419,12 +458,19 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting>: onlineMeeting
 
 CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
+  - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
+  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
+  - `[CallId <String>]`: key: id of call
+  - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CommsOperationId <String>]`: key: id of commsOperation
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
+  - `[ParticipantId <String>]`: key: id of participant
+  - `[PresenceId <String>]`: key: id of presence
+  - `[SessionId <String>]`: key: id of session
   - `[UserId <String>]`: key: id of user
 
 JOININFORMATION <IMicrosoftGraphItemBody>: itemBody
@@ -432,9 +478,14 @@ JOININFORMATION <IMicrosoftGraphItemBody>: itemBody
   - `[Content <String>]`: The content of the item.
   - `[ContentType <String>]`: bodyType
 
+LOBBYBYPASSSETTINGS <IMicrosoftGraphLobbyBypassSettings>: lobbyBypassSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
+  - `[Scope <String>]`: lobbyBypassScope
+
 PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
@@ -443,6 +494,7 @@ PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
+    - `[Role <String>]`: 
     - `[Upn <String>]`: User principal name of the participant.
   - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
 
