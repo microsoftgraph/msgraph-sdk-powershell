@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportskype
 schema: 2.0.0
@@ -14,70 +14,17 @@ Invoke function getSkypeForBusinessActivityCounts
 
 ### Get14 (Default)
 ```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
-### Get15
+### Get30
 ```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get16
-```
-Get-MgReportSkype -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
-### Get17
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get18
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get19
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get20
-```
-Get-MgReportSkype -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get21
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get22
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get23
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get24
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get25
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get26
-```
-Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### Get27
+### Get29
 ```
 Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
@@ -87,87 +34,72 @@ Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParamet
 Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### Get29
+### Get27
 ```
 Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### Get30
+### Get26
 ```
 Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity14
+### Get25
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity15
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity16
+### Get24
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity17
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity18
+### Get23
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity19
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity20
+### Get22
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity21
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity22
+### Get21
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity23
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity24
+### Get19
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity25
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity26
+### Get18
 ```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity27
-```
-Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity28
+### Get17
+```
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### Get15
+```
+Get-MgReportSkype -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### Get20
+```
+Get-MgReportSkype -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### Get16
+```
+Get-MgReportSkype -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity30
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
@@ -177,9 +109,81 @@ Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] 
 Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### GetViaIdentity30
+### GetViaIdentity28
 ```
 Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity27
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity26
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity25
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity24
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity23
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity22
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity21
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity20
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity19
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity18
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity17
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity16
+```
+Get-MgReportSkype -InputObject <IReportsIdentity> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### Get14 (Default)
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
+```
+
+### Get30
+```
+Get-MgReportSkype -Period <String> -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -193,8 +197,8 @@ Invoke function getSkypeForBusinessActivityCounts
 Usage: date={date}
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: Get16, Get20
+Type: DateTime
+Parameter Sets: Get20, Get16
 Aliases:
 
 Required: True
@@ -209,8 +213,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: GetViaIdentity14, GetViaIdentity15, GetViaIdentity16, GetViaIdentity17, GetViaIdentity18, GetViaIdentity19, GetViaIdentity20, GetViaIdentity21, GetViaIdentity22, GetViaIdentity23, GetViaIdentity24, GetViaIdentity25, GetViaIdentity26, GetViaIdentity27, GetViaIdentity28, GetViaIdentity29, GetViaIdentity30
+Type: IReportsIdentity
+Parameter Sets: Get14, Get30, GetViaIdentity30, GetViaIdentity29, GetViaIdentity28, GetViaIdentity27, GetViaIdentity26, GetViaIdentity25, GetViaIdentity24, GetViaIdentity23, GetViaIdentity22, GetViaIdentity21, GetViaIdentity20, GetViaIdentity19, GetViaIdentity18, GetViaIdentity17, GetViaIdentity16
 Aliases:
 
 Required: True
@@ -224,8 +228,8 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: String
+Parameter Sets: Get14, Get30, Get29, Get28, Get27, Get26, Get25, Get24, Get23, Get22, Get21, Get19, Get18, Get17, Get15, Get20, Get16, GetViaIdentity30, GetViaIdentity29, GetViaIdentity28, GetViaIdentity27, GetViaIdentity26, GetViaIdentity25, GetViaIdentity24, GetViaIdentity23, GetViaIdentity22, GetViaIdentity21, GetViaIdentity20, GetViaIdentity19, GetViaIdentity18, GetViaIdentity17, GetViaIdentity16
 Aliases:
 
 Required: True
@@ -239,8 +243,8 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: SwitchParameter
+Parameter Sets: Get14, Get30, Get29, Get28, Get27, Get26, Get25, Get24, Get23, Get22, Get21, Get19, Get18, Get17, Get15, Get20, Get16, GetViaIdentity30, GetViaIdentity29, GetViaIdentity28, GetViaIdentity27, GetViaIdentity26, GetViaIdentity25, GetViaIdentity24, GetViaIdentity23, GetViaIdentity22, GetViaIdentity21, GetViaIdentity20, GetViaIdentity19, GetViaIdentity18, GetViaIdentity17, GetViaIdentity16
 Aliases:
 
 Required: False
@@ -254,8 +258,8 @@ Accept wildcard characters: False
 Usage: period={period}
 
 ```yaml
-Type: System.String
-Parameter Sets: Get14, Get15, Get17, Get18, Get19, Get21, Get22, Get23, Get24, Get25, Get26, Get27, Get28, Get29, Get30
+Type: String
+Parameter Sets: Get14, Get30, Get29, Get28, Get27, Get26, Get25, Get24, Get23, Get22, Get21, Get19, Get18, Get17, Get15
 Aliases:
 
 Required: True
@@ -271,11 +275,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -313,4 +315,3 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-
