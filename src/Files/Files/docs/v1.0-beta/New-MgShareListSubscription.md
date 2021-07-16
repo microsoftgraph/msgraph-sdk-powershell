@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Files-help.xml
 Module Name: Microsoft.Graph.Files
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/new-mgsharelistsubscription
 schema: 2.0.0
@@ -19,19 +19,13 @@ New-MgShareListSubscription -SharedDriveItemId <String> [-AdditionalProperties <
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationContentType <String>] [-NotificationQueryOptions <String>]
- [-NotificationUrl <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationUrl <String>] [-Resource <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgShareListSubscription -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphSubscription>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgShareListSubscription -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphSubscription>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgShareListSubscription -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphSubscription> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,7 +35,13 @@ New-MgShareListSubscription -InputObject <IFilesIdentity> [-AdditionalProperties
  [-EncryptionCertificate <String>] [-EncryptionCertificateId <String>] [-ExpirationDateTime <DateTime>]
  [-Id <String>] [-IncludeResourceData] [-LatestSupportedTlsVersion <String>]
  [-LifecycleNotificationUrl <String>] [-NotificationContentType <String>] [-NotificationQueryOptions <String>]
- [-NotificationUrl <String>] [-Resource <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NotificationUrl <String>] [-Resource <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgShareListSubscription -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphSubscription>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +55,7 @@ The set of subscriptions on the list.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -71,7 +71,7 @@ Identifier of the application used to create the subscription.
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -87,7 +87,7 @@ subscription
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
+Type: IMicrosoftGraphSubscription
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -107,7 +107,7 @@ Note: Drive root item and list change notifications support only the updated cha
 User and group change notifications support updated and deleted changeType.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -125,7 +125,7 @@ The client can check that the change notification came from the service by compa
 Optional.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -143,7 +143,7 @@ If the app used application permissions, this field contains the ID of the servi
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Optional.
 Required when includeResourceData is true.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Optional.
 Required when includeResourceData is true.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ See the table below for maximum supported subscription length of time.
 Required.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ When set to true, change notifications include resource data (such as content of
 Optional.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -242,8 +242,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IFilesIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -262,7 +262,7 @@ For subscribers whose notification endpoint already supports TLS 1.2, setting th
 In such cases, Microsoft Graph defaults the property to v1_2.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -280,7 +280,7 @@ Optional.
 Read more about how Outlook resources use lifecycle notifications.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -296,7 +296,7 @@ Desired content-type for MS Graph change notifications for supported resource ty
 The default content-type is the 'application/json' content-type.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -313,7 +313,7 @@ Clients receive notifications when resource reaches the state matching the query
 With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg when the print job is completed, when a print job resource isFetchable property value becomes true etc.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -330,7 +330,7 @@ This URL must make use of the HTTPS protocol.
 Required.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -348,7 +348,7 @@ See the possible resource path values for each supported resource.
 Required.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -363,8 +363,8 @@ Accept wildcard characters: False
 key: id of sharedDriveItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -394,7 +394,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -411,13 +411,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSubscription
-
 ## NOTES
 
 ALIASES
@@ -463,4 +460,3 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

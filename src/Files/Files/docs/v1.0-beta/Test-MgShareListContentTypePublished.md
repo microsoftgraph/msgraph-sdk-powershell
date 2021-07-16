@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Files-help.xml
 Module Name: Microsoft.Graph.Files
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/test-mgsharelistcontenttypepublished
 schema: 2.0.0
@@ -33,7 +33,7 @@ Invoke function isPublished
 key: id of contentType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Is
 Aliases:
 
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
+Type: IFilesIdentity
 Parameter Sets: IsViaIdentity
 Aliases:
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 key: id of sharedDriveItem
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Is
 Aliases:
 
@@ -81,11 +81,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -113,4 +111,3 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

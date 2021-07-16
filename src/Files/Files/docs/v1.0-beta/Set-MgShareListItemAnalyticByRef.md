@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Files-help.xml
 Module Name: Microsoft.Graph.Files
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/set-mgsharelistitemanalyticbyref
 schema: 2.0.0
@@ -15,49 +15,49 @@ Analytics about the view activities that took place on this item.
 ### SetExpanded1 (Default)
 ```
 Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Set
-```
-Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Set1
-```
-Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetExpanded
 ```
 Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String>
- [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### Set
 ```
-Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentity1
-```
-Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgShareListItemAnalyticByRef -ListItemId <String> -SharedDriveItemId <String> -BodyParameter <Hashtable>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### Set1
 ```
-Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-MgShareListItemAnalyticByRef -SharedDriveItemId <String> -BodyParameter <Hashtable> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded1
 ```
 Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity1
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgShareListItemAnalyticByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,8 +71,8 @@ Analytics about the view activities that took place on this item.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetExpanded1, SetViaIdentityExpanded, SetViaIdentityExpanded1
+Type: Hashtable
+Parameter Sets: SetExpanded1, SetExpanded, SetViaIdentityExpanded1, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -86,8 +86,8 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Set, Set1, SetViaIdentity, SetViaIdentity1
+Type: Hashtable
+Parameter Sets: Set, Set1, SetViaIdentity1, SetViaIdentity
 Aliases:
 
 Required: True
@@ -102,8 +102,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentity1, SetViaIdentityExpanded, SetViaIdentityExpanded1
+Type: IFilesIdentity
+Parameter Sets: SetViaIdentityExpanded1, SetViaIdentityExpanded, SetViaIdentity1, SetViaIdentity
 Aliases:
 
 Required: True
@@ -117,8 +117,8 @@ Accept wildcard characters: False
 key: id of listItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -147,8 +147,8 @@ Accept wildcard characters: False
 key: id of sharedDriveItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, Set1, SetExpanded, SetExpanded1
+Type: String
+Parameter Sets: SetExpanded1, SetExpanded, Set, Set1
 Aliases:
 
 Required: True
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -178,7 +178,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -195,13 +195,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -229,4 +226,3 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

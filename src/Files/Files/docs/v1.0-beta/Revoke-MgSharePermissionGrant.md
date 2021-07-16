@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Files-help.xml
 Module Name: Microsoft.Graph.Files
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files/revoke-mgsharepermissiongrant
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action revokeGrants
 ### RevokeExpanded (Default)
 ```
 Revoke-MgSharePermissionGrant -SharedDriveItemId <String> [-AdditionalProperties <Hashtable>]
- [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Revoke
 ```
 Revoke-MgSharePermissionGrant -SharedDriveItemId <String>
  -BodyParameter <IPaths50Xy75SharesShareddriveitemIdPermissionMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RevokeViaIdentityExpanded
+```
+Revoke-MgSharePermissionGrant -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
+ [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
 Revoke-MgSharePermissionGrant -InputObject <IFilesIdentity>
  -BodyParameter <IPaths50Xy75SharesShareddriveitemIdPermissionMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RevokeViaIdentityExpanded
-```
-Revoke-MgSharePermissionGrant -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
- [-Grantees <IMicrosoftGraphDriveRecipient[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Invoke action revokeGrants
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: RevokeExpanded, RevokeViaIdentityExpanded
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths50Xy75SharesShareddriveitemIdPermissionMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths50Xy75SharesShareddriveitemIdPermissionMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Revoke, RevokeViaIdentity
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for GRANTEES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveRecipient[]
+Type: IMicrosoftGraphDriveRecipient[]
 Parameter Sets: RevokeExpanded, RevokeViaIdentityExpanded
 Aliases:
 
@@ -97,8 +97,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: RevokeViaIdentity, RevokeViaIdentityExpanded
+Type: IFilesIdentity
+Parameter Sets: RevokeViaIdentityExpanded, RevokeViaIdentity
 Aliases:
 
 Required: True
@@ -112,8 +112,8 @@ Accept wildcard characters: False
 key: id of sharedDriveItem
 
 ```yaml
-Type: System.String
-Parameter Sets: Revoke, RevokeExpanded
+Type: String
+Parameter Sets: RevokeExpanded, Revoke
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -143,7 +143,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -160,13 +160,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths50Xy75SharesShareddriveitemIdPermissionMicrosoftGraphRevokegrantsPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPermission
-
 ## NOTES
 
 ALIASES
@@ -206,4 +203,3 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
