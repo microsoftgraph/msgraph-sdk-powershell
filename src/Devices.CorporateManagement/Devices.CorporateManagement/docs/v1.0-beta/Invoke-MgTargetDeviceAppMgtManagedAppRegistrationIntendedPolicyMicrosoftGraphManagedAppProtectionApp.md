@@ -1,71 +1,51 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CorporateManagement-help.xml
 Module Name: Microsoft.Graph.Devices.CorporateManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/update-mgusermanageddevicelogcollectionrequest
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.corporatemanagement/invoke-mgtargetdeviceappmgtmanagedappregistrationintendedpolicymicrosoftgraphmanagedappprotectionapp
 schema: 2.0.0
 ---
 
-# Update-MgUserManagedDeviceLogCollectionRequest
+# Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphManagedAppProtectionApp
 
 ## SYNOPSIS
-Update the navigation property logCollectionRequests in users
+Invoke action targetApps
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### TargetExpanded (Default)
 ```
-Update-MgUserManagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
- -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ErrorCode <Int64>]
- [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
- [-ManagedDeviceId1 <String>] [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>]
- [-Size <Double>] [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphManagedAppProtectionApp
+ -ManagedAppPolicyId <String> -ManagedAppRegistrationId <String> [-AdditionalProperties <Hashtable>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Update
+### Target
 ```
-Update-MgUserManagedDeviceLogCollectionRequest -DeviceLogCollectionResponseId <String>
- -ManagedDeviceId <String> -UserId <String> -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserManagedDeviceLogCollectionRequest -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphDeviceLogCollectionResponse> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphManagedAppProtectionApp
+ -ManagedAppPolicyId <String> -ManagedAppRegistrationId <String>
+ -BodyParameter <IPathsGn8E58DeviceappmanagementManagedappregistrationsManagedappregistrationIdIntendedpoliciesManagedapppolicyIdMicrosoftGraphManagedappprotectionMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### TargetViaIdentityExpanded
 ```
-Update-MgUserManagedDeviceLogCollectionRequest -InputObject <IDevicesCorporateManagementIdentity>
- [-ManagedDeviceId <String>] [-AdditionalProperties <Hashtable>] [-ErrorCode <Int64>]
- [-ExpirationDateTimeUtc <DateTime>] [-Id <String>] [-InitiatedByUserPrincipalName <String>]
- [-ReceivedDateTimeUtc <DateTime>] [-RequestedDateTimeUtc <DateTime>] [-Size <Double>] [-Status <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphManagedAppProtectionApp
+ -InputObject <IDevicesCorporateManagementIdentity> [-AdditionalProperties <Hashtable>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### TargetViaIdentity
+```
+Invoke-MgTargetDeviceAppMgtManagedAppRegistrationIntendedPolicyMicrosoftGraphManagedAppProtectionApp
+ -InputObject <IDevicesCorporateManagementIdentity>
+ -BodyParameter <IPathsGn8E58DeviceappmanagementManagedappregistrationsManagedappregistrationIdIntendedpoliciesManagedapppolicyIdMicrosoftGraphManagedappprotectionMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property logCollectionRequests in users
+Invoke action targetApps
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -73,8 +53,24 @@ PS C:\> {{ Add code here }}
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: Hashtable
+Parameter Sets: TargetExpanded, TargetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Apps
+.
+To construct, see NOTES section for APPS properties and create a hash table.
+
+```yaml
+Type: IMicrosoftGraphManagedMobileApp[]
+Parameter Sets: TargetExpanded, TargetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -85,94 +81,18 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Windows Log Collection request entity.
+.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
-Parameter Sets: Update, UpdateViaIdentity
+Type: IPathsGn8E58DeviceappmanagementManagedappregistrationsManagedappregistrationIdIntendedpoliciesManagedapppolicyIdMicrosoftGraphManagedappprotectionMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Target, TargetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DeviceLogCollectionResponseId
-key: id of deviceLogCollectionResponse
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ErrorCode
-The error code, if any.
-Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-
-```yaml
-Type: System.Int64
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpirationDateTimeUtc
-The DateTime of the expiration of the logs
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InitiatedByUserPrincipalName
-The UPN for who initiated the request
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -181,8 +101,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IDevicesCorporateManagementIdentity
+Parameter Sets: TargetViaIdentityExpanded, TargetViaIdentity
 Aliases:
 
 Required: True
@@ -192,12 +112,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceId
-key: id of managedDevice
+### -ManagedAppPolicyId
+key: id of managedAppPolicy
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded, UpdateViaIdentityExpanded
+Type: String
+Parameter Sets: TargetExpanded, Target
 Aliases:
 
 Required: True
@@ -207,15 +127,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceId1
-The device Id
+### -ManagedAppRegistrationId
+key: id of managedAppRegistration
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
+Type: String
+Parameter Sets: TargetExpanded, Target
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -226,7 +146,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -237,87 +157,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReceivedDateTimeUtc
-The DateTime the request was received
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RequestedDateTimeUtc
-The DateTime of the request
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Size
-The size of the logs.
-Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Status
-The status of the log collection request
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserId
-key: id of user
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -333,7 +177,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -350,13 +194,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceLogCollectionResponse
-
+### Microsoft.Graph.PowerShell.Models.IPathsGn8E58DeviceappmanagementManagedappregistrationsManagedappregistrationIdIntendedpoliciesManagedapppolicyIdMicrosoftGraphManagedappprotectionMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -366,30 +207,32 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDeviceLogCollectionResponse>: Windows Log Collection request entity.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+APPS <IMicrosoftGraphManagedMobileApp[]>: .
   - `[Id <String>]`: Read-only.
-  - `[ErrorCode <Int64?>]`: The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
-  - `[ExpirationDateTimeUtc <DateTime?>]`: The DateTime of the expiration of the logs
-  - `[InitiatedByUserPrincipalName <String>]`: The UPN for who initiated the request
-  - `[ManagedDeviceId <String>]`: The device Id
-  - `[ReceivedDateTimeUtc <DateTime?>]`: The DateTime the request was received
-  - `[RequestedDateTimeUtc <DateTime?>]`: The DateTime of the request
-  - `[Size <Double?>]`: The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-  - `[Status <String>]`: The status of the log collection request
+  - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Version <String>]`: Version of the entity.
+
+BODYPARAMETER <IPathsGn8E58DeviceappmanagementManagedappregistrationsManagedappregistrationIdIntendedpoliciesManagedapppolicyIdMicrosoftGraphManagedappprotectionMicrosoftGraphTargetappsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: 
+    - `[Id <String>]`: Read-only.
+    - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Version <String>]`: Version of the entity.
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -429,14 +272,14 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
   - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -447,4 +290,3 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
 ## RELATED LINKS
-
