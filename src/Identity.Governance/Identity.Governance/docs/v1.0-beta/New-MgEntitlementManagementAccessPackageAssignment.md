@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackageassignment
 schema: 2.0.0
@@ -15,17 +15,17 @@ Create a new entitlement management accessPackageAssignment
 ### CreateMultipleRequestAdminAddExistingUser (Default)
 ```
 New-MgEntitlementManagementAccessPackageAssignment -AccessPackageId <String> -AssignmentPolicyId <String>
- -RequiredUserId <String[]> [-Answers <IMicrosoftGraphAccessPackageAnswer[]>]
- [-ExistingAssignment <MicrosoftGraphAccessPackageAssignment[]>] [-Justification <String>]
- [-StartDate <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -RequiredUserId <String[]> [-ExistingAssignment <MicrosoftGraphAccessPackageAssignment[]>]
+ [-Answers <IMicrosoftGraphAccessPackageAnswer[]>] [-Justification <String>] [-StartDate <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateMultipleRequestAdminAddExistingGroupMember
 ```
 New-MgEntitlementManagementAccessPackageAssignment -AccessPackageId <String> -AssignmentPolicyId <String>
- -RequiredGroupMember <PSObject[]> [-Answers <IMicrosoftGraphAccessPackageAnswer[]>]
- [-ExistingAssignment <MicrosoftGraphAccessPackageAssignment[]>] [-Justification <String>]
- [-StartDate <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ExistingAssignment <MicrosoftGraphAccessPackageAssignment[]>]
+ [-Answers <IMicrosoftGraphAccessPackageAnswer[]>] [-Justification <String>] [-StartDate <String>]
+ -RequiredGroupMember <PSObject[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,9 +37,8 @@ Create a new entitlement management accessPackageAssignment
 
 ### -AccessPackageId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -55,7 +54,7 @@ Answers provided by the requestor to accessPackageQuestions asked of them at the
 To construct, see NOTES section for ANSWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]
+Type: IMicrosoftGraphAccessPackageAnswer[]
 Parameter Sets: (All)
 Aliases:
 
@@ -68,9 +67,8 @@ Accept wildcard characters: False
 
 ### -AssignmentPolicyId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -85,7 +83,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for EXISTINGASSIGNMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment[]
+Type: MicrosoftGraphAccessPackageAssignment[]
 Parameter Sets: (All)
 Aliases:
 
@@ -100,7 +98,7 @@ Accept wildcard characters: False
 The requestor's supplied justification.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -113,9 +111,8 @@ Accept wildcard characters: False
 
 ### -RequiredGroupMember
 
-
 ```yaml
-Type: System.Management.Automation.PSObject[]
+Type: PSObject[]
 Parameter Sets: CreateMultipleRequestAdminAddExistingGroupMember
 Aliases:
 
@@ -128,9 +125,8 @@ Accept wildcard characters: False
 
 ### -RequiredUserId
 
-
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateMultipleRequestAdminAddExistingUser
 Aliases:
 
@@ -143,9 +139,8 @@ Accept wildcard characters: False
 
 ### -StartDate
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -160,7 +155,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -176,7 +171,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -193,11 +188,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
-
 ## NOTES
 
 ALIASES
@@ -467,3 +460,4 @@ EXISTINGASSIGNMENT <MicrosoftGraphAccessPackageAssignment[]>:
 
 ## RELATED LINKS
 
+## RELATED LINKS

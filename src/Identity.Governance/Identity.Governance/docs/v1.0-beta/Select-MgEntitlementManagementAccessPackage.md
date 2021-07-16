@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/select-mgentitlementmanagementaccesspackage
 schema: 2.0.0
@@ -28,7 +28,7 @@ Select matching entitlement management accessPackage
 To construct, see NOTES section for ACCESSPACKAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage[]
+Type: MicrosoftGraphAccessPackage[]
 Parameter Sets: (All)
 Aliases:
 
@@ -41,9 +41,8 @@ Accept wildcard characters: False
 
 ### -PolicyWithNoApprovalRequiredForRequest
 
-
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -56,9 +55,8 @@ Accept wildcard characters: False
 
 ### -PolicyWithScopeType
 
-
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -75,11 +73,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage[]
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
-
 ## NOTES
 
 ALIASES
@@ -243,3 +239,4 @@ ACCESSPACKAGE <MicrosoftGraphAccessPackage[]>:
 
 ## RELATED LINKS
 
+## RELATED LINKS

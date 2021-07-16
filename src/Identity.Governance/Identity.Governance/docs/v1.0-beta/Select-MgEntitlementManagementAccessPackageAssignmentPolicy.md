@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/select-mgentitlementmanagementaccesspackageassignmentpolicy
 schema: 2.0.0
@@ -13,8 +13,9 @@ Select matching entitlement management accessPackageAssignmentPolicy
 ## SYNTAX
 
 ```
-Select-MgEntitlementManagementAccessPackageAssignmentPolicy [-NoApprovalRequiredForRequest]
- [-Policy <MicrosoftGraphAccessPackageAssignmentPolicy[]>] [-ScopeType <String[]>] [<CommonParameters>]
+Select-MgEntitlementManagementAccessPackageAssignmentPolicy
+ [-Policy <MicrosoftGraphAccessPackageAssignmentPolicy[]>] [-NoApprovalRequiredForRequest]
+ [-ScopeType <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,9 +27,8 @@ Select matching entitlement management accessPackageAssignmentPolicy
 
 ### -NoApprovalRequiredForRequest
 
-
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -43,7 +43,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for POLICY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignmentPolicy[]
+Type: MicrosoftGraphAccessPackageAssignmentPolicy[]
 Parameter Sets: (All)
 Aliases:
 
@@ -56,9 +56,8 @@ Accept wildcard characters: False
 
 ### -ScopeType
 
-
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: (All)
 Aliases:
 
@@ -75,11 +74,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignmentPolicy[]
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentPolicy
-
 ## NOTES
 
 ALIASES
@@ -247,3 +244,4 @@ POLICY <MicrosoftGraphAccessPackageAssignmentPolicy[]>:
 
 ## RELATED LINKS
 
+## RELATED LINKS

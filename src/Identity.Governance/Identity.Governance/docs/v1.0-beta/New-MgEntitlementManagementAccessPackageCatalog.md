@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackagecatalog
 schema: 2.0.0
@@ -16,18 +16,18 @@ Create new navigation property to accessPackageCatalogs for identityGovernance
 ```
 New-MgEntitlementManagementAccessPackageCatalog
  [-AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]
- [-AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]
  [-AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]
+ [-AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]
  [-AccessPackages <IMicrosoftGraphAccessPackage[]>] [-AdditionalProperties <Hashtable>]
  [-CatalogStatus <String>] [-CatalogType <String>] [-CreatedBy <String>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-IsExternallyVisible] [-ModifiedBy <String>]
- [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ModifiedDateTime <DateTime>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgEntitlementManagementAccessPackageCatalog -BodyParameter <IMicrosoftGraphAccessPackageCatalog>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEntitlementManagementAccessPackageCatalog -BodyParameter <IMicrosoftGraphAccessPackageCatalog> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +42,7 @@ Create new navigation property to accessPackageCatalogs for identityGovernance
 To construct, see NOTES section for ACCESSPACKAGERESOURCEROLES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRole[]
+Type: IMicrosoftGraphAccessPackageResourceRole[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -59,7 +59,7 @@ Nullable.
 To construct, see NOTES section for ACCESSPACKAGERESOURCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResource[]
+Type: IMicrosoftGraphAccessPackageResource[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for ACCESSPACKAGERESOURCESCOPES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceScope[]
+Type: IMicrosoftGraphAccessPackageResourceScope[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -93,7 +93,7 @@ Nullable.
 To construct, see NOTES section for ACCESSPACKAGES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage[]
+Type: IMicrosoftGraphAccessPackage[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -124,7 +124,7 @@ accessPackageCatalog
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+Type: IMicrosoftGraphAccessPackageCatalog
 Parameter Sets: Create
 Aliases:
 
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 Has the value Published if the access packages are available for management.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 One of UserManaged or ServiceDefault.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -170,7 +170,7 @@ UPN of the user who created this resource.
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -187,7 +187,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -202,7 +202,7 @@ Accept wildcard characters: False
 The description of the access package catalog.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -217,7 +217,7 @@ Accept wildcard characters: False
 The display name of the access package catalog.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -232,7 +232,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 Whether the access packages in this catalog can be requested by users outside of the tenant.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -263,7 +263,7 @@ The UPN of the user who last modified this resource.
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -280,7 +280,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -311,7 +311,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -328,11 +328,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
-
 ## NOTES
 
 ALIASES
@@ -778,3 +776,4 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
 
 ## RELATED LINKS
 
+## RELATED LINKS

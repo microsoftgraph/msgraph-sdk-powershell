@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/new-mgentitlementmanagementaccesspackageassignmentrequest
 schema: 2.0.0
@@ -14,16 +14,15 @@ Create new navigation property to accessPackageAssignmentRequests for identityGo
 
 ### CreateRequestAdminAdd (Default)
 ```
-New-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageId <String>
- -AssignmentPolicyId <String> -TargetId <String> [-Answers <IMicrosoftGraphAccessPackageAnswer[]>]
- [-Justification <String>] [-RequestType <String>] [-StartDate <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgEntitlementManagementAccessPackageAssignmentRequest [-Answers <IMicrosoftGraphAccessPackageAnswer[]>]
+ [-Justification <String>] [-RequestType <String>] -AccessPackageId <String> -AssignmentPolicyId <String>
+ -TargetId <String> [-StartDate <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgEntitlementManagementAccessPackageAssignmentRequest
- -BodyParameter <IMicrosoftGraphAccessPackageAssignmentRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphAccessPackageAssignmentRequest> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateExpanded
@@ -32,15 +31,15 @@ New-MgEntitlementManagementAccessPackageAssignmentRequest [-AccessPackage <IMicr
  [-AccessPackageAssignment <IMicrosoftGraphAccessPackageAssignment>] [-AdditionalProperties <Hashtable>]
  [-Answers <IMicrosoftGraphAccessPackageAnswer[]>] [-CompletedDate <DateTime>] [-CreatedDateTime <DateTime>]
  [-ExpirationDateTime <DateTime>] [-Id <String>] [-IsValidationOnly] [-Justification <String>]
- [-Requestor <IMicrosoftGraphAccessPackageSubject>] [-RequestState <String>] [-RequestStatus <String>]
- [-RequestType <String>] [-Schedule <IMicrosoftGraphRequestSchedule>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-RequestState <String>] [-RequestStatus <String>] [-RequestType <String>]
+ [-Requestor <IMicrosoftGraphAccessPackageSubject>] [-Schedule <IMicrosoftGraphRequestSchedule>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateRequestAdminRemove
 ```
-New-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentId <String>
- [-Justification <String>] [-RequestType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEntitlementManagementAccessPackageAssignmentRequest [-Justification <String>] [-RequestType <String>]
+ -AccessPackageAssignmentId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +54,7 @@ accessPackage
 To construct, see NOTES section for ACCESSPACKAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage
+Type: IMicrosoftGraphAccessPackage
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -71,7 +70,7 @@ accessPackageAssignment
 To construct, see NOTES section for ACCESSPACKAGEASSIGNMENT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignment
+Type: IMicrosoftGraphAccessPackageAssignment
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -84,9 +83,8 @@ Accept wildcard characters: False
 
 ### -AccessPackageAssignmentId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateRequestAdminRemove
 Aliases:
 
@@ -99,9 +97,8 @@ Accept wildcard characters: False
 
 ### -AccessPackageId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateRequestAdminAdd
 Aliases:
 
@@ -116,7 +113,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -132,8 +129,8 @@ Answers provided by the requestor to accessPackageQuestions asked of them at the
 To construct, see NOTES section for ANSWERS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAnswer[]
-Parameter Sets: CreateExpanded, CreateRequestAdminAdd
+Type: IMicrosoftGraphAccessPackageAnswer[]
+Parameter Sets: CreateRequestAdminAdd, CreateExpanded
 Aliases:
 
 Required: False
@@ -145,9 +142,8 @@ Accept wildcard characters: False
 
 ### -AssignmentPolicyId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateRequestAdminAdd
 Aliases:
 
@@ -163,7 +159,7 @@ accessPackageAssignmentRequest
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
+Type: IMicrosoftGraphAccessPackageAssignmentRequest
 Parameter Sets: Create
 Aliases:
 
@@ -181,7 +177,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -198,7 +194,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -213,7 +209,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -228,7 +224,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -243,7 +239,7 @@ Accept wildcard characters: False
 True if the request is not to be processed for assignment.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -258,8 +254,8 @@ Accept wildcard characters: False
 The requestor's supplied justification.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateRequestAdminAdd, CreateRequestAdminRemove
+Type: String
+Parameter Sets: CreateRequestAdminAdd, CreateExpanded, CreateRequestAdminRemove
 Aliases:
 
 Required: False
@@ -274,7 +270,7 @@ accessPackageSubject
 To construct, see NOTES section for REQUESTOR properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageSubject
+Type: IMicrosoftGraphAccessPackageSubject
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -290,7 +286,7 @@ One of PendingApproval, Canceled, Denied, Delivering, Delivered, PartiallyDelive
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -306,7 +302,7 @@ More information on the request processing status.
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -323,8 +319,8 @@ A request from the user themselves would have requestType of UserAdd or UserRemo
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateRequestAdminAdd, CreateRequestAdminRemove
+Type: String
+Parameter Sets: CreateRequestAdminAdd, CreateExpanded, CreateRequestAdminRemove
 Aliases:
 
 Required: False
@@ -339,7 +335,7 @@ requestSchedule
 To construct, see NOTES section for SCHEDULE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRequestSchedule
+Type: IMicrosoftGraphRequestSchedule
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -352,9 +348,8 @@ Accept wildcard characters: False
 
 ### -StartDate
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateRequestAdminAdd
 Aliases:
 
@@ -367,9 +362,8 @@ Accept wildcard characters: False
 
 ### -TargetId
 
-
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateRequestAdminAdd
 Aliases:
 
@@ -384,7 +378,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -400,7 +394,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -417,11 +411,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest
-
 ## NOTES
 
 ALIASES
@@ -1099,3 +1091,4 @@ SCHEDULE <IMicrosoftGraphRequestSchedule>: requestSchedule
 
 ## RELATED LINKS
 
+## RELATED LINKS

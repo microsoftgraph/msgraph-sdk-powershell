@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.Governance-help.xml
 Module Name: Microsoft.Graph.Identity.Governance
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/split-mgentitlementmanagementconnectedorganization
 schema: 2.0.0
@@ -13,7 +13,7 @@ Split elements of a connectedOrganization
 ## SYNTAX
 
 ```
-Split-MgEntitlementManagementConnectedOrganization -ByIdentitySource
+Split-MgEntitlementManagementConnectedOrganization [-ByIdentitySource]
  [-ConnectedOrganization <IMicrosoftGraphConnectedOrganization[]>] [<CommonParameters>]
 ```
 
@@ -26,9 +26,8 @@ Split elements of one or more Azure AD entitlement management connected organiza
 
 ### -ByIdentitySource
 
-
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -44,7 +43,7 @@ The connected organization.
 To construct, see NOTES section for CONNECTEDORGANIZATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
+Type: IMicrosoftGraphConnectedOrganization[]
 Parameter Sets: (All)
 Aliases:
 
@@ -61,7 +60,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization[]
-
 ## OUTPUTS
 
 ## NOTES
@@ -89,4 +87,3 @@ CONNECTEDORGANIZATION <IMicrosoftGraphConnectedOrganization[]>: The connected or
   - `[State <String>]`: connectedOrganizationState
 
 ## RELATED LINKS
-

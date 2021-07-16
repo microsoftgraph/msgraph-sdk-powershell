@@ -508,7 +508,7 @@ Read-only.
 The role assignment request for this approval object
 
 ### [Split-MgEntitlementManagementConnectedOrganization](Split-MgEntitlementManagementConnectedOrganization.md)
-Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
+Split elements of a connectedOrganization
 
 ### [Stop-MgAccessReview](Stop-MgAccessReview.md)
 Invoke action stop
