@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsiterecentnotebook
 schema: 2.0.0
@@ -14,7 +14,7 @@ Invoke function getRecentNotebooks
 
 ### Get (Default)
 ```
-Get-MgSiteRecentNotebook -IncludePersonalNotebooks -SiteId <String> [<CommonParameters>]
+Get-MgSiteRecentNotebook [-IncludePersonalNotebooks] -SiteId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity
@@ -33,7 +33,7 @@ Invoke function getRecentNotebooks
 Usage: includePersonalNotebooks={includePersonalNotebooks}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: Get
 Aliases:
 
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
+Type: ISitesIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -81,11 +81,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecentNotebook
-
 ## NOTES
 
 ALIASES
@@ -121,4 +119,3 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Sites-help.xml
 Module Name: Microsoft.Graph.Sites
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/update-mgsiteonenotepagecontent
 schema: 2.0.0
@@ -15,7 +15,7 @@ Invoke action onenotePatchContent
 ### PatchExpanded (Default)
 ```
 Update-MgSiteOnenotePageContent -OnenotePageId <String> -SiteId <String> [-AdditionalProperties <Hashtable>]
- [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -23,21 +23,21 @@ Update-MgSiteOnenotePageContent -OnenotePageId <String> -SiteId <String> [-Addit
 ```
 Update-MgSiteOnenotePageContent -OnenotePageId <String> -SiteId <String>
  -BodyParameter <IPaths1L1LpfrSitesSiteIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### PatchViaIdentityExpanded
+```
+Update-MgSiteOnenotePageContent -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
+ [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### PatchViaIdentity
 ```
 Update-MgSiteOnenotePageContent -InputObject <ISitesIdentity>
  -BodyParameter <IPaths1L1LpfrSitesSiteIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PatchViaIdentityExpanded
-```
-Update-MgSiteOnenotePageContent -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>]
- [-Commands <IMicrosoftGraphOnenotePatchContentCommand[]>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Invoke action onenotePatchContent
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1L1LpfrSitesSiteIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1L1LpfrSitesSiteIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Patch, PatchViaIdentity
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePatchContentCommand[]
+Type: IMicrosoftGraphOnenotePatchContentCommand[]
 Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
 Aliases:
 
@@ -99,8 +99,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: PatchViaIdentity, PatchViaIdentityExpanded
+Type: ISitesIdentity
+Parameter Sets: PatchViaIdentityExpanded, PatchViaIdentity
 Aliases:
 
 Required: True
@@ -114,8 +114,8 @@ Accept wildcard characters: False
 key: id of onenotePage
 
 ```yaml
-Type: System.String
-Parameter Sets: Patch, PatchExpanded
+Type: String
+Parameter Sets: PatchExpanded, Patch
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -144,8 +144,8 @@ Accept wildcard characters: False
 key: id of site
 
 ```yaml
-Type: System.String
-Parameter Sets: Patch, PatchExpanded
+Type: String
+Parameter Sets: PatchExpanded, Patch
 Aliases:
 
 Required: True
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -175,7 +175,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -192,13 +192,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1L1LpfrSitesSiteIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -248,4 +245,3 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
