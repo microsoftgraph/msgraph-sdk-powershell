@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DeviceManagement.Administration-help.xml
 Module Name: Microsoft.Graph.DeviceManagement.Administration
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.administration/new-mgdevicemanagementvirtualendpointprovisioningpolicy
 schema: 2.0.0
@@ -17,13 +17,13 @@ Cloud PC provisioning policy.
 New-MgDeviceManagementVirtualEndpointProvisioningPolicy [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>]
- [-OnPremisesConnectionId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-OnPremisesConnectionId <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgDeviceManagementVirtualEndpointProvisioningPolicy
- -BodyParameter <IMicrosoftGraphCloudPcProvisioningPolicy> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphCloudPcProvisioningPolicy> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,7 +37,7 @@ Cloud PC provisioning policy.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -56,7 +56,7 @@ See an example of getting the assignments relationship.
 To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]
+Type: IMicrosoftGraphCloudPcProvisioningPolicyAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ cloudPcProvisioningPolicy
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
+Type: IMicrosoftGraphCloudPcProvisioningPolicy
 Parameter Sets: Create
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 The provisioning policy description.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 The display name for the provisioning policy.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -129,10 +129,10 @@ Accept wildcard characters: False
 ```
 
 ### -ImageDisplayName
-The display name for the OS image you’re provisioning.
+The display name for the OS image you're provisioning.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ The ID of the OS image you want to provision on cloud PCs.
 The format for a gallery type image is: {publisher_offer_sku}.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 cloudPcProvisioningPolicyImageType
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -176,10 +176,10 @@ Accept wildcard characters: False
 
 ### -OnPremisesConnectionId
 The ID of the cloudPcOnPremisesConnection.
-To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the cloud PC service.
+To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that's validated by the cloud PC service.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -210,7 +210,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -227,11 +227,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcProvisioningPolicy
-
 ## NOTES
 
 ALIASES
@@ -255,10 +253,9 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: The provisioning policy description.
   - `[DisplayName <String>]`: The display name for the provisioning policy.
-  - `[ImageDisplayName <String>]`: The display name for the OS image you’re provisioning.
+  - `[ImageDisplayName <String>]`: The display name for the OS image you're provisioning.
   - `[ImageId <String>]`: The ID of the OS image you want to provision on cloud PCs. The format for a gallery type image is: {publisher_offer_sku}.
   - `[ImageType <String>]`: cloudPcProvisioningPolicyImageType
-  - `[OnPremisesConnectionId <String>]`: The ID of the cloudPcOnPremisesConnection. To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the cloud PC service.
+  - `[OnPremisesConnectionId <String>]`: The ID of the cloudPcOnPremisesConnection. To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that's validated by the cloud PC service.
 
 ## RELATED LINKS
-
