@@ -1,25 +1,24 @@
 ---
 external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintprinterconnector
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintsharealloweduserbyref
 schema: 2.0.0
 ---
 
-# Get-MgPrintPrinterConnector
+# Get-MgPrintShareAllowedUserByRef
 
 ## SYNOPSIS
-The connectors that are associated with the printer.
+The users who have access to print using the printer.
 
 ## SYNTAX
 
 ```
-Get-MgPrintPrinterConnector -PrinterId <String> [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
- [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
+Get-MgPrintShareAllowedUserByRef -PrinterShareId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The connectors that are associated with the printer.
+The users who have access to print using the printer.
 
 ## EXAMPLES
 
@@ -48,21 +47,6 @@ By default, this variable will be set in the global scope.
 Type: String
 Parameter Sets: (All)
 Aliases: CV
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: Expand
 
 Required: False
 Position: Named
@@ -101,8 +85,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PrinterId
-key: id of printer
+### -PrinterShareId
+key: id of printerShare
 
 ```yaml
 Type: String
@@ -110,21 +94,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Property
-Select properties to be returned
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases: Select
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -198,7 +167,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintConnector1
+### System.String
 ## NOTES
 
 ALIASES

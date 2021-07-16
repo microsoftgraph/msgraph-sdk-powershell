@@ -1,50 +1,32 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/get-mgprintreportuserarchivedprintjob
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/restore-mgprintprinterfactorydefault
 schema: 2.0.0
 ---
 
-# Get-MgPrintReportUserArchivedPrintJob
+# Restore-MgPrintPrinterFactoryDefault
 
 ## SYNOPSIS
-Invoke function getUserArchivedPrintJobs
+Invoke action restoreFactoryDefaults
 
 ## SYNTAX
 
-### Get (Default)
+### Restore1 (Default)
 ```
-Get-MgPrintReportUserArchivedPrintJob -PeriodEnd <DateTime> -PeriodStart <DateTime> -UserId <String>
+Restore-MgPrintPrinterFactoryDefault -PrinterId <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RestoreViaIdentity1
+```
+Restore-MgPrintPrinterFactoryDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity
-```
-Get-MgPrintReportUserArchivedPrintJob -InputObject <IDevicesCloudPrintIdentity> [<CommonParameters>]
-```
-
 ## DESCRIPTION
-Invoke function getUserArchivedPrintJobs
+Invoke action restoreFactoryDefaults
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,8 +35,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: GetViaIdentity
+Type: IDevicesCloudPrintIdentity
+Parameter Sets: RestoreViaIdentity1
 Aliases:
 
 Required: True
@@ -64,12 +46,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PeriodEnd
-.
+### -PassThru
+Returns true when the command succeeds
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: Get
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrinterId
+key: id of printer
+
+```yaml
+Type: String
+Parameter Sets: Restore1
 Aliases:
 
 Required: True
@@ -79,30 +76,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PeriodStart
-.
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.DateTime
-Parameter Sets: Get
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserId
-.
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -115,11 +113,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphArchivedPrintJob
-
+### System.Boolean
 ## NOTES
 
 ALIASES
@@ -130,25 +126,14 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
-  - `[GroupId <String>]`: 
-  - `[PeriodEnd <DateTime?>]`: 
-  - `[PeriodStart <DateTime?>]`: 
   - `[PrintConnectorId <String>]`: key: id of printConnector
-  - `[PrintIdentityId <String>]`: key: id of printIdentity
   - `[PrintOperationId <String>]`: key: id of printOperation
   - `[PrintServiceEndpointId <String>]`: key: id of printServiceEndpoint
   - `[PrintServiceId <String>]`: key: id of printService
   - `[PrintTaskDefinitionId <String>]`: key: id of printTaskDefinition
   - `[PrintTaskId <String>]`: key: id of printTask
   - `[PrintTaskTriggerId <String>]`: key: id of printTaskTrigger
-  - `[PrintUserIdentityId <String>]`: key: id of printUserIdentity
   - `[PrinterId <String>]`: key: id of printer
-  - `[PrinterId1 <String>]`: 
   - `[PrinterShareId <String>]`: key: id of printerShare
-  - `[ReportRootId <String>]`: key: id of reportRoot
-  - `[TimeSpanInMinutes <Int32?>]`: 
-  - `[TopListsSize <Int32?>]`: 
-  - `[UserId <String>]`: 
 
 ## RELATED LINKS
-
