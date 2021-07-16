@@ -1,34 +1,49 @@
 ---
 external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365groupactivitycount
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportuserarchivedprintjob
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365GroupActivityCount
+# Get-MgReportUserArchivedPrintJob
 
 ## SYNOPSIS
-Invoke function getOffice365GroupsActivityCounts
+Invoke function getUserArchivedPrintJobs
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
-Get-MgReportOffice365GroupActivityCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgReportOffice365GroupActivityCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgReportUserArchivedPrintJob -EndDateTime <DateTime> -StartDateTime <DateTime> -UserId <String>
  [<CommonParameters>]
 ```
 
+### GetViaIdentity1
+```
+Get-MgReportUserArchivedPrintJob -InputObject <IReportsIdentity> [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Invoke function getOffice365GroupsActivityCounts
+Invoke function getUserArchivedPrintJobs
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -EndDateTime
+Usage: endDateTime={endDateTime}
+
+```yaml
+Type: DateTime
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -36,7 +51,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IReportsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -46,12 +61,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
+### -StartDateTime
+Usage: startDateTime={startDateTime}
 
 ```yaml
-Type: String
-Parameter Sets: (All)
+Type: DateTime
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -61,27 +76,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Period
-Usage: period={period}
+### -UserId
+Usage: userId={userId}
 
 ```yaml
 Type: String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphArchivedPrintJob
 ## NOTES
 
 ALIASES

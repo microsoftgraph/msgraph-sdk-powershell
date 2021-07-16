@@ -1,34 +1,103 @@
 ---
 external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365groupactivitycount
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgauditlogprovisioning
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365GroupActivityCount
+# Get-MgAuditLogProvisioning
 
 ## SYNOPSIS
-Invoke function getOffice365GroupsActivityCounts
+Get provisioning from auditLogs
 
 ## SYNTAX
 
-### Get (Default)
+### List (Default)
 ```
-Get-MgReportOffice365GroupActivityCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgAuditLogProvisioning [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
+ [-CountVariable <String>] [<CommonParameters>]
+```
+
+### Get
+```
+Get-MgAuditLogProvisioning -ProvisioningObjectSummaryId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportOffice365GroupActivityCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+Get-MgAuditLogProvisioning -InputObject <IReportsIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getOffice365GroupsActivityCounts
+Get provisioning from auditLogs
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -All
+List all pages.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: String
+Parameter Sets: List
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -46,27 +115,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
+### -PageSize
+Sets the page size of results.
 
 ```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
+Type: Int32
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -76,8 +130,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Period
-Usage: period={period}
+### -Property
+Select properties to be returned
+
+```yaml
+Type: String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProvisioningObjectSummaryId
+key: id of provisioningObjectSummary
 
 ```yaml
 Type: String
@@ -85,6 +154,66 @@ Parameter Sets: Get
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: String
+Parameter Sets: List
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Sort
+Order items by property values
+
+```yaml
+Type: String[]
+Parameter Sets: List
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases: Limit
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Skip the first n items
+
+```yaml
+Type: Int32
+Parameter Sets: List
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -99,7 +228,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProvisioningObjectSummary
 ## NOTES
 
 ALIASES

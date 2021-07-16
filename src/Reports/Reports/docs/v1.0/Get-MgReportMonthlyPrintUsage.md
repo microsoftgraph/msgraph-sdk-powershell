@@ -1,40 +1,57 @@
 ---
 external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgauditlogdirectoryaudit
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmonthlyprintusage
 schema: 2.0.0
 ---
 
-# Get-MgAuditLogDirectoryAudit
+# Get-MgReportMonthlyPrintUsage
 
 ## SYNOPSIS
-Read-only.
-Nullable.
+Get monthlyPrintUsageByPrinter from reports
 
 ## SYNTAX
 
-### List1 (Default)
+### List2 (Default)
 ```
-Get-MgAuditLogDirectoryAudit [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
+Get-MgReportMonthlyPrintUsage [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
  [-CountVariable <String>] [<CommonParameters>]
 ```
 
-### Get1
+### Get2
 ```
-Get-MgAuditLogDirectoryAudit -DirectoryAuditId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity1
-```
-Get-MgAuditLogDirectoryAudit -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+Get-MgReportMonthlyPrintUsage -PrintUsageByPrinterId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
+### Get3
+```
+Get-MgReportMonthlyPrintUsage -PrintUsageByUserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
+### GetViaIdentity3
+```
+Get-MgReportMonthlyPrintUsage -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity2
+```
+Get-MgReportMonthlyPrintUsage -InputObject <IReportsIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### List3
+```
+Get-MgReportMonthlyPrintUsage [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
+ [-CountVariable <String>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Read-only.
-Nullable.
+Get monthlyPrintUsageByPrinter from reports
 
 ## EXAMPLES
 
@@ -45,7 +62,7 @@ List all pages.
 
 ```yaml
 Type: SwitchParameter
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -61,25 +78,10 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: String
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases: CV
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DirectoryAuditId
-key: id of directoryAudit
-
-```yaml
-Type: String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -106,7 +108,7 @@ Filter items by property values
 
 ```yaml
 Type: String
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -122,7 +124,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IReportsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity3, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -137,10 +139,40 @@ Sets the page size of results.
 
 ```yaml
 Type: Int32
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrintUsageByPrinterId
+key: id of printUsageByPrinter
+
+```yaml
+Type: String
+Parameter Sets: Get2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrintUsageByUserId
+key: id of printUsageByUser
+
+```yaml
+Type: String
+Parameter Sets: Get3
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -167,7 +199,7 @@ Search items by search phrases
 
 ```yaml
 Type: String
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -182,7 +214,7 @@ Order items by property values
 
 ```yaml
 Type: String[]
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases: OrderBy
 
 Required: False
@@ -197,7 +229,7 @@ Show only the first n items
 
 ```yaml
 Type: Int32
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases: Limit
 
 Required: False
@@ -212,7 +244,7 @@ Skip the first n items
 
 ```yaml
 Type: Int32
-Parameter Sets: List1
+Parameter Sets: List2, List3
 Aliases:
 
 Required: False
@@ -230,7 +262,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryAudit
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser
 ## NOTES
 
 ALIASES

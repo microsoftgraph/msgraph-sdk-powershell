@@ -1,34 +1,49 @@
 ---
 external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportoffice365groupactivitycount
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportprinterarchivedprintjob
 schema: 2.0.0
 ---
 
-# Get-MgReportOffice365GroupActivityCount
+# Get-MgReportPrinterArchivedPrintJob
 
 ## SYNOPSIS
-Invoke function getOffice365GroupsActivityCounts
+Invoke function getPrinterArchivedPrintJobs
 
 ## SYNTAX
 
 ### Get (Default)
 ```
-Get-MgReportOffice365GroupActivityCount -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgReportPrinterArchivedPrintJob -EndDateTime <DateTime> -PrinterId <String> -StartDateTime <DateTime>
+ [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgReportOffice365GroupActivityCount -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
- [<CommonParameters>]
+Get-MgReportPrinterArchivedPrintJob -InputObject <IReportsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getOffice365GroupsActivityCounts
+Invoke function getPrinterArchivedPrintJobs
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -EndDateTime
+Usage: endDateTime={endDateTime}
+
+```yaml
+Type: DateTime
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -46,12 +61,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
+### -PrinterId
+Usage: printerId={printerId}
 
 ```yaml
 Type: String
-Parameter Sets: (All)
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -61,26 +76,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -StartDateTime
+Usage: startDateTime={startDateTime}
 
 ```yaml
-Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Period
-Usage: period={period}
-
-```yaml
-Type: String
+Type: DateTime
 Parameter Sets: Get
 Aliases:
 
@@ -99,7 +99,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphArchivedPrintJob
 ## NOTES
 
 ALIASES
