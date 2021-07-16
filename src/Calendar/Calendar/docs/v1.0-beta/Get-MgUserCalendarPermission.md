@@ -8,15 +8,15 @@ schema: 2.0.0
 # Get-MgUserCalendarPermission
 
 ## SYNOPSIS
-Get calendarPermissions from users
+The permissions of the users with whom the calendar is shared.
 
 ## SYNTAX
 
 ### List2 (Default)
 ```
-Get-MgUserCalendarPermission -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgUserCalendarPermission -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get2
@@ -45,33 +45,15 @@ Get-MgUserCalendarPermission -InputObject <ICalendarIdentity> [-ExpandProperty <
 
 ### List3
 ```
-Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgUserCalendarPermission -CalendarId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get calendarPermissions from users
+The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -120,13 +102,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List2, List3
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

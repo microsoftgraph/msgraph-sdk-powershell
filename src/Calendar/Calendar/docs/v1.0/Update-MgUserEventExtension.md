@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserEventExtension
 
 ## SYNOPSIS
-Update the navigation property extensions in users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -37,27 +38,10 @@ Update-MgUserEventExtension -InputObject <ICalendarIdentity> [-AdditionalPropert
 ```
 
 ## DESCRIPTION
-Update the navigation property extensions in users
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

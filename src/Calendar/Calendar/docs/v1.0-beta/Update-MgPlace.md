@@ -45,24 +45,6 @@ Update entity in places
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -276,7 +258,7 @@ ADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[PostOfficeBox <String>]`: 
+  - `[PostOfficeBox <String>]`: The post office box number.
   - `[PostalCode <String>]`: The postal code.
   - `[State <String>]`: The state.
   - `[Street <String>]`: The street.
@@ -289,7 +271,7 @@ BODYPARAMETER <IMicrosoftGraphPlace1>: place
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.

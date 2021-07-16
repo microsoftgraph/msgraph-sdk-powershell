@@ -8,15 +8,19 @@ schema: 2.0.0
 # Get-MgGroupEventInstance
 
 ## SYNOPSIS
-Get instances from groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgGroupEventInstance -EventId <String> -GroupId <String> [-Count] [-ExpandProperty <String[]>]
- [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroupEventInstance -EventId <String> -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+ [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,27 +36,13 @@ Get-MgGroupEventInstance -InputObject <ICalendarIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get instances from groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,13 +61,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

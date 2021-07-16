@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupEventCalendar
 
 ## SYNOPSIS
-Get calendar from groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## SYNTAX
 
@@ -25,27 +27,11 @@ Get-MgGroupEventCalendar -InputObject <ICalendarIdentity> [-ExpandProperty <Stri
 ```
 
 ## DESCRIPTION
-Get calendar from groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

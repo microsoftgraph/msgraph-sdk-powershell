@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgUserCalendarGroup
 
 ## SYNOPSIS
-Delete navigation property calendarGroups for users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +27,11 @@ Remove-MgUserCalendarGroup -InputObject <ICalendarIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Delete navigation property calendarGroups for users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

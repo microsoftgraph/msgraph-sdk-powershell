@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserCalendarSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -64,27 +66,11 @@ New-MgUserCalendarSingleValueExtendedProperty -InputObject <ICalendarIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

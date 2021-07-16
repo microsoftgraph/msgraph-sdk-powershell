@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgGroupEventExtension
 
 ## SYNOPSIS
-Delete navigation property extensions for groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Remove-MgGroupEventExtension -InputObject <ICalendarIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete navigation property extensions for groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
