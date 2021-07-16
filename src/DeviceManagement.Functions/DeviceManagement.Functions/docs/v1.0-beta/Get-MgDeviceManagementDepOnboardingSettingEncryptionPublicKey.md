@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DeviceManagement.Functions-help.xml
 Module Name: Microsoft.Graph.DeviceManagement.Functions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions/get-mgdevicemanagementdeponboardingsettingencryptionpublickey
 schema: 2.0.0
@@ -20,8 +20,8 @@ Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey -DepOnboardingSett
 
 ### GetViaIdentity
 ```
-Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey
- -InputObject <IDeviceManagementFunctionsIdentity> [<CommonParameters>]
+Get-MgDeviceManagementDepOnboardingSettingEncryptionPublicKey -InputObject <IDeviceManagementFunctionsIdentity>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,7 +35,7 @@ Get a public key to use to encrypt the Apple device enrollment program token
 key: id of depOnboardingSetting
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Get
 Aliases:
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
+Type: IDeviceManagementFunctionsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -68,11 +68,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDeviceManagementFunctionsIdentity
-
 ## OUTPUTS
 
 ### System.String
-
 ## NOTES
 
 ALIASES
@@ -118,4 +116,3 @@ INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[Userid <String>]`: Usage: userid={userid}
 
 ## RELATED LINKS
-
