@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/update-mgcommunicationcallparticipant
 schema: 2.0.0
@@ -18,19 +18,13 @@ Nullable.
 Update-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo>] [-IsInLobby]
  [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream[]>] [-RecordingInfo <IMicrosoftGraphRecordingInfo>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgCommunicationCallParticipant -CallId <String> -ParticipantId <String>
- -BodyParameter <IMicrosoftGraphParticipant> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphParticipant> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphParticipant> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -38,7 +32,13 @@ Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity
 Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-Info <IMicrosoftGraphParticipantInfo>] [-IsInLobby]
  [-IsMuted] [-MediaStreams <IMicrosoftGraphMediaStream[]>] [-RecordingInfo <IMicrosoftGraphRecordingInfo>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgCommunicationCallParticipant -InputObject <ICloudCommunicationsIdentity>
+ -BodyParameter <IMicrosoftGraphParticipant> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ participant
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant
+Type: IMicrosoftGraphParticipant
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -84,8 +84,8 @@ Accept wildcard characters: False
 key: id of call
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ participantInfo
 To construct, see NOTES section for INFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipantInfo
+Type: IMicrosoftGraphParticipantInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -131,8 +131,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: ICloudCommunicationsIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -146,7 +146,7 @@ Accept wildcard characters: False
 true if the participant is in lobby.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 true if the participant is muted (client or server muted).
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ The list of media streams.
 To construct, see NOTES section for MEDIASTREAMS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMediaStream[]
+Type: IMicrosoftGraphMediaStream[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -192,8 +192,8 @@ Accept wildcard characters: False
 key: id of participant
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +223,7 @@ recordingInfo
 To construct, see NOTES section for RECORDINGINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecordingInfo
+Type: IMicrosoftGraphRecordingInfo
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -254,7 +254,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -271,13 +271,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphParticipant
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -363,4 +360,3 @@ RECORDINGINFO <IMicrosoftGraphRecordingInfo>: recordingInfo
   - `[RecordingStatus <String>]`: recordingStatus
 
 ## RELATED LINKS
-

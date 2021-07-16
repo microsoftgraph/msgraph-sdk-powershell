@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/new-mgcommunicationcalloperation
 schema: 2.0.0
@@ -15,28 +15,28 @@ Nullable.
 
 ### CreateExpanded (Default)
 ```
-New-MgCommunicationCallOperation -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-Id <String>] [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgCommunicationCallOperation -CallId <String> [-AdditionalProperties <Hashtable>] [-ClientContext <String>]
+ [-Id <String>] [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgCommunicationCallOperation -CallId <String> -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IMicrosoftGraphCommsOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgCommunicationCallOperation -CallId <String> -BodyParameter <IMicrosoftGraphCommsOperation> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Id <String>]
- [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ResultInfo <IMicrosoftGraphResultInfo>] [-Status <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgCommunicationCallOperation -InputObject <ICloudCommunicationsIdentity>
+ -BodyParameter <IMicrosoftGraphCommsOperation> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -67,7 +67,7 @@ commsOperation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
+Type: IMicrosoftGraphCommsOperation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -82,8 +82,8 @@ Accept wildcard characters: False
 key: id of call
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ Unique Client Context string.
 Max limit is 256 chars.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -129,8 +129,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: ICloudCommunicationsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -145,7 +145,7 @@ resultInfo
 To construct, see NOTES section for RESULTINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphResultInfo
+Type: IMicrosoftGraphResultInfo
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 operationStatus
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -191,7 +191,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -208,13 +208,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCommsOperation
-
 ## NOTES
 
 ALIASES
@@ -253,4 +250,3 @@ RESULTINFO <IMicrosoftGraphResultInfo>: resultInfo
   - `[Subcode <Int32?>]`: The result sub-code.
 
 ## RELATED LINKS
-

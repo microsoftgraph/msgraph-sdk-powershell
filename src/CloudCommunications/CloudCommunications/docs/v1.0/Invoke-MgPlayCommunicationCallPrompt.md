@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgplaycommunicationcallprompt
 schema: 2.0.0
@@ -15,28 +15,28 @@ Invoke action playPrompt
 ### PlayExpanded1 (Default)
 ```
 Invoke-MgPlayCommunicationCallPrompt -CallId <String> [-AdditionalProperties <Hashtable>]
- [-ClientContext <String>] [-Prompts <IMicrosoftGraphPrompt[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ClientContext <String>] [-Prompts <IMicrosoftGraphPrompt[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Play1
 ```
 Invoke-MgPlayCommunicationCallPrompt -CallId <String>
  -BodyParameter <IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### PlayViaIdentityExpanded1
+```
+Invoke-MgPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Prompts <IMicrosoftGraphPrompt[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### PlayViaIdentity1
 ```
 Invoke-MgPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PlayViaIdentityExpanded1
-```
-Invoke-MgPlayCommunicationCallPrompt -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Prompts <IMicrosoftGraphPrompt[]>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ Invoke action playPrompt
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: PlayExpanded1, PlayViaIdentityExpanded1
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Play1, PlayViaIdentity1
 Aliases:
 
@@ -81,8 +81,8 @@ Accept wildcard characters: False
 key: id of call
 
 ```yaml
-Type: System.String
-Parameter Sets: Play1, PlayExpanded1
+Type: String
+Parameter Sets: PlayExpanded1, Play1
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: PlayExpanded1, PlayViaIdentityExpanded1
 Aliases:
 
@@ -112,8 +112,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: PlayViaIdentity1, PlayViaIdentityExpanded1
+Type: ICloudCommunicationsIdentity
+Parameter Sets: PlayViaIdentityExpanded1, PlayViaIdentity1
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrompt[]
+Type: IMicrosoftGraphPrompt[]
 Parameter Sets: PlayExpanded1, PlayViaIdentityExpanded1
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -158,7 +158,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -175,13 +175,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths1Gzqcv2CommunicationsCallsCallIdMicrosoftGraphPlaypromptPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlayPromptOperation1
-
 ## NOTES
 
 ALIASES
@@ -208,4 +205,3 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

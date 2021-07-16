@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgrejectcommunicationcall
 schema: 2.0.0
@@ -15,28 +15,28 @@ Invoke action reject
 ### RejectExpanded1 (Default)
 ```
 Invoke-MgRejectCommunicationCall -CallId <String> [-AdditionalProperties <Hashtable>] [-CallbackUri <String>]
- [-Reason <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Reason <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Reject1
 ```
 Invoke-MgRejectCommunicationCall -CallId <String>
  -BodyParameter <IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RejectViaIdentityExpanded1
+```
+Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-Reason <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### RejectViaIdentity1
 ```
 Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RejectViaIdentityExpanded1
-```
-Invoke-MgRejectCommunicationCall -InputObject <ICloudCommunicationsIdentity>
- [-AdditionalProperties <Hashtable>] [-CallbackUri <String>] [-Reason <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,7 +50,7 @@ Invoke action reject
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: RejectExpanded1, RejectViaIdentityExpanded1
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
+Type: IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Reject1, RejectViaIdentity1
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: RejectExpanded1, RejectViaIdentityExpanded1
 Aliases:
 
@@ -96,8 +96,8 @@ Accept wildcard characters: False
 key: id of call
 
 ```yaml
-Type: System.String
-Parameter Sets: Reject1, RejectExpanded1
+Type: String
+Parameter Sets: RejectExpanded1, Reject1
 Aliases:
 
 Required: True
@@ -112,8 +112,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: RejectViaIdentity1, RejectViaIdentityExpanded1
+Type: ICloudCommunicationsIdentity
+Parameter Sets: RejectViaIdentityExpanded1, RejectViaIdentity1
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 rejectReason
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: RejectExpanded1, RejectViaIdentityExpanded1
 Aliases:
 
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -173,7 +173,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -190,13 +190,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths4QrghdCommunicationsCallsCallIdMicrosoftGraphRejectPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -223,4 +220,3 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

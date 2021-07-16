@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.CloudCommunications-help.xml
 Module Name: Microsoft.Graph.CloudCommunications
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications/invoke-mgrecordcommunicationcallresponse
 schema: 2.0.0
@@ -14,24 +14,17 @@ Invoke action recordResponse
 
 ### RecordExpanded1 (Default)
 ```
-Invoke-MgRecordCommunicationCallResponse -CallId <String> [-AdditionalProperties <Hashtable>]
- [-BargeInAllowed] [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>]
- [-MaxRecordDurationInSeconds <Int32>] [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep]
- [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Invoke-MgRecordCommunicationCallResponse -CallId <String> [-AdditionalProperties <Hashtable>] [-BargeInAllowed]
+ [-ClientContext <String>] [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
+ [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Record1
 ```
 Invoke-MgRecordCommunicationCallResponse -CallId <String>
  -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RecordViaIdentity1
-```
-Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
- -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RecordViaIdentityExpanded1
@@ -39,8 +32,15 @@ Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdent
 Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-BargeInAllowed] [-ClientContext <String>]
  [-InitialSilenceTimeoutInSeconds <Int32>] [-MaxRecordDurationInSeconds <Int32>]
- [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>]
- [-StopTones <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-MaxSilenceTimeoutInSeconds <Int32>] [-PlayBeep] [-Prompts <IMicrosoftGraphPrompt[]>] [-StopTones <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RecordViaIdentity1
+```
+Invoke-MgRecordCommunicationCallResponse -InputObject <ICloudCommunicationsIdentity>
+ -BodyParameter <IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +54,7 @@ Invoke action recordResponse
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
+Type: IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Record1, RecordViaIdentity1
 Aliases:
 
@@ -100,8 +100,8 @@ Accept wildcard characters: False
 key: id of call
 
 ```yaml
-Type: System.String
-Parameter Sets: Record1, RecordExpanded1
+Type: String
+Parameter Sets: RecordExpanded1, Record1
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -146,8 +146,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: RecordViaIdentity1, RecordViaIdentityExpanded1
+Type: ICloudCommunicationsIdentity
+Parameter Sets: RecordViaIdentityExpanded1, RecordViaIdentity1
 Aliases:
 
 Required: True
@@ -161,7 +161,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrompt[]
+Type: IMicrosoftGraphPrompt[]
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: RecordExpanded1, RecordViaIdentityExpanded1
 Aliases:
 
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -252,7 +252,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -269,13 +269,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IPaths14Wb7KqCommunicationsCallsCallIdMicrosoftGraphRecordresponsePostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecordOperation1
-
 ## NOTES
 
 ALIASES
@@ -308,4 +305,3 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
