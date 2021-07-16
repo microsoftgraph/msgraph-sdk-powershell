@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserProfile
 
 ## SYNOPSIS
-Get profile from users
+Represents properties that are descriptive of a user in a tenant.
 
 ## SYNTAX
 
@@ -24,27 +24,9 @@ Get-MgUserProfile -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-
 ```
 
 ## DESCRIPTION
-Get profile from users
+Represents properties that are descriptive of a user in a tenant.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -138,8 +120,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
