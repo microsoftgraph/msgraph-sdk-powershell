@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/set-mgprintprintersharebyref
 schema: 2.0.0
@@ -14,26 +14,26 @@ Update the ref of navigation property share in print
 
 ### SetExpanded (Default)
 ```
-Set-MgPrintPrinterShareByRef -PrinterId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Set-MgPrintPrinterShareByRef -PrinterId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-MgPrintPrinterShareByRef -PrinterId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
+Set-MgPrintPrinterShareByRef -PrinterId <String> -BodyParameter <Hashtable> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### SetViaIdentity
-```
-Set-MgPrintPrinterShareByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### SetViaIdentityExpanded
 ```
 Set-MgPrintPrinterShareByRef -InputObject <IDevicesCloudPrintIdentity> [-AdditionalProperties <Hashtable>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgPrintPrinterShareByRef -InputObject <IDevicesCloudPrintIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,7 +47,7 @@ Update the ref of navigation property share in print
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: Set, SetViaIdentity
 Aliases:
 
@@ -78,8 +78,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Type: IDevicesCloudPrintIdentity
+Parameter Sets: SetViaIdentityExpanded, SetViaIdentity
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -108,8 +108,8 @@ Accept wildcard characters: False
 key: id of printer
 
 ```yaml
-Type: System.String
-Parameter Sets: Set, SetExpanded
+Type: String
+Parameter Sets: SetExpanded, Set
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -139,7 +139,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -156,13 +156,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-
 ### System.Collections.Hashtable
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -184,4 +181,3 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrinterShareId <String>]`: key: id of printerShare
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/reset-mgprintprinterdefault
 schema: 2.0.0
@@ -14,12 +14,12 @@ Invoke action resetDefaults
 
 ### Reset (Default)
 ```
-Reset-MgPrintPrinterDefault -PrinterId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Reset-MgPrintPrinterDefault -PrinterId <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResetViaIdentity
 ```
-Reset-MgPrintPrinterDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-Confirm] [-WhatIf]
+Reset-MgPrintPrinterDefault -InputObject <IDevicesCloudPrintIdentity> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
+Type: IDevicesCloudPrintIdentity
 Parameter Sets: ResetViaIdentity
 Aliases:
 
@@ -50,7 +50,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 key: id of printer
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Reset
 Aliases:
 
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -96,7 +96,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -113,11 +113,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCloudPrintIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -139,4 +137,3 @@ INPUTOBJECT <IDevicesCloudPrintIdentity>: Identity Parameter
   - `[PrinterShareId <String>]`: key: id of printerShare
 
 ## RELATED LINKS
-

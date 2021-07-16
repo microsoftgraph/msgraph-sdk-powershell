@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintservice
 schema: 2.0.0
@@ -15,12 +15,12 @@ The list of available Universal Print service endpoints.
 ### CreateExpanded1 (Default)
 ```
 New-MgPrintService [-AdditionalProperties <Hashtable>] [-Endpoints <IMicrosoftGraphPrintServiceEndpoint1[]>]
- [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintService -BodyParameter <IMicrosoftGraphPrintService1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPrintService -BodyParameter <IMicrosoftGraphPrintService1> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ The list of available Universal Print service endpoints.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -50,7 +50,7 @@ printService
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
+Type: IMicrosoftGraphPrintService1
 Parameter Sets: Create1
 Aliases:
 
@@ -68,7 +68,7 @@ Nullable.
 To construct, see NOTES section for ENDPOINTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintServiceEndpoint1[]
+Type: IMicrosoftGraphPrintServiceEndpoint1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -114,7 +114,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -131,11 +131,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintService1
-
 ## NOTES
 
 ALIASES
@@ -159,4 +157,3 @@ ENDPOINTS <IMicrosoftGraphPrintServiceEndpoint1[]>: Endpoints that can be used t
   - `[Uri <String>]`: The URI that can be used to access the service.
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/update-mgprintreport
 schema: 2.0.0
@@ -26,13 +26,13 @@ Update-MgPrintReport [-AdditionalProperties <Hashtable>]
  [-MonthlyPrintUsageByUser <IMicrosoftGraphPrintUsageByUser[]>]
  [-MonthlyPrintUsageSummariesByPrinter <IMicrosoftGraphPrintUsageByPrinter[]>]
  [-MonthlyPrintUsageSummariesByUser <IMicrosoftGraphPrintUsageByUser[]>]
- [-UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>] [-PassThru] [-Confirm] [-WhatIf]
+ [-UserCredentialUsageDetails <IMicrosoftGraphUserCredentialUsageDetails[]>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgPrintReport -BodyParameter <IMicrosoftGraphReportRoot> [-PassThru] [-Confirm] [-WhatIf]
+Update-MgPrintReport -BodyParameter <IMicrosoftGraphReportRoot> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -47,7 +47,7 @@ Update the navigation property reports in print
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for APPLICATIONSIGNINDETAILEDSUMMARY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationSignInDetailedSummary[]
+Type: IMicrosoftGraphApplicationSignInDetailedSummary[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 authenticationMethodsRoot
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -94,7 +94,7 @@ The resource that represents an instance of History Reports.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReportRoot
+Type: IMicrosoftGraphReportRoot
 Parameter Sets: Update
 Aliases:
 
@@ -110,7 +110,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for CREDENTIALUSERREGISTRATIONDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCredentialUserRegistrationDetails[]
+Type: IMicrosoftGraphCredentialUserRegistrationDetails[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -126,7 +126,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGEBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter[]
+Type: IMicrosoftGraphPrintUsageByPrinter[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGEBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser[]
+Type: IMicrosoftGraphPrintUsageByUser[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGESUMMARIESBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter[]
+Type: IMicrosoftGraphPrintUsageByPrinter[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -174,7 +174,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for DAILYPRINTUSAGESUMMARIESBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser[]
+Type: IMicrosoftGraphPrintUsageByUser[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -189,7 +189,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -205,7 +205,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGEBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter[]
+Type: IMicrosoftGraphPrintUsageByPrinter[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGEBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser[]
+Type: IMicrosoftGraphPrintUsageByUser[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -237,7 +237,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGESUMMARIESBYPRINTER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByPrinter[]
+Type: IMicrosoftGraphPrintUsageByPrinter[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for MONTHLYPRINTUSAGESUMMARIESBYUSER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintUsageByUser[]
+Type: IMicrosoftGraphPrintUsageByUser[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for USERCREDENTIALUSAGEDETAILS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserCredentialUsageDetails[]
+Type: IMicrosoftGraphUserCredentialUsageDetails[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -299,7 +299,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -315,7 +315,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -332,11 +332,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReportRoot
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -500,3 +498,4 @@ USERCREDENTIALUSAGEDETAILS <IMicrosoftGraphUserCredentialUsageDetails[]>: .
 
 ## RELATED LINKS
 
+## RELATED LINKS

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprintoperation
 schema: 2.0.0
@@ -15,12 +15,12 @@ The list of print long running operations.
 ### CreateExpanded1 (Default)
 ```
 New-MgPrintOperation [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-Id <String>]
- [-Status <IMicrosoftGraphPrintOperationStatus>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Status <IMicrosoftGraphPrintOperationStatus>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintOperation -BodyParameter <IMicrosoftGraphPrintOperation> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgPrintOperation -BodyParameter <IMicrosoftGraphPrintOperation> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ The list of print long running operations.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -50,7 +50,7 @@ printOperation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
+Type: IMicrosoftGraphPrintOperation
 Parameter Sets: Create1
 Aliases:
 
@@ -66,7 +66,7 @@ The DateTimeOffset when the operation was created.
 Read-only.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -97,7 +97,7 @@ printOperationStatus
 To construct, see NOTES section for STATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperationStatus
+Type: IMicrosoftGraphPrintOperationStatus
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -128,7 +128,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -145,11 +145,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintOperation
-
 ## NOTES
 
 ALIASES
@@ -174,4 +172,3 @@ STATUS <IMicrosoftGraphPrintOperationStatus>: printOperationStatus
   - `[State <String>]`: printOperationProcessingState
 
 ## RELATED LINKS
-

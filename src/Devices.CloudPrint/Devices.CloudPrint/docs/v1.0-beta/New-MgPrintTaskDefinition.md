@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Devices.CloudPrint-help.xml
 Module Name: Microsoft.Graph.Devices.CloudPrint
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devices.cloudprint/new-mgprinttaskdefinition
 schema: 2.0.0
@@ -15,13 +15,13 @@ List of abstract definition for a task that can be triggered when various events
 ### CreateExpanded1 (Default)
 ```
 New-MgPrintTaskDefinition [-AdditionalProperties <Hashtable>] [-CreatedBy <IMicrosoftGraphAppIdentity>]
- [-DisplayName <String>] [-Id <String>] [-Tasks <IMicrosoftGraphPrintTask1[]>] [-Confirm] [-WhatIf]
+ [-DisplayName <String>] [-Id <String>] [-Tasks <IMicrosoftGraphPrintTask1[]>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgPrintTaskDefinition -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-Confirm] [-WhatIf]
+New-MgPrintTaskDefinition -BodyParameter <IMicrosoftGraphPrintTaskDefinition1> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ List of abstract definition for a task that can be triggered when various events
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -52,7 +52,7 @@ printTaskDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
+Type: IMicrosoftGraphPrintTaskDefinition1
 Parameter Sets: Create1
 Aliases:
 
@@ -68,7 +68,7 @@ appIdentity
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppIdentity
+Type: IMicrosoftGraphAppIdentity
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 The name of the printTaskDefinition.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -116,7 +116,7 @@ Read-only.
 To construct, see NOTES section for TASKS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTask1[]
+Type: IMicrosoftGraphPrintTask1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -131,7 +131,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -147,7 +147,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -164,11 +164,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintTaskDefinition1
-
 ## NOTES
 
 ALIASES
@@ -234,4 +232,3 @@ TASKS <IMicrosoftGraphPrintTask1[]>: A list of tasks that have been created base
     - `[Event <String>]`: printEvent
 
 ## RELATED LINKS
-
