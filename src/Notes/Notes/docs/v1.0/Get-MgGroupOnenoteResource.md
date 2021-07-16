@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgGroupOnenoteResource
 
 ## SYNOPSIS
-Get resources from groups
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +28,12 @@ Get-MgGroupOnenoteResource -InputObject <INotesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get resources from groups
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

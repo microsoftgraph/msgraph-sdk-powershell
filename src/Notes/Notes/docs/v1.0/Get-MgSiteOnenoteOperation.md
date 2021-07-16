@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgSiteOnenoteOperation
 
 ## SYNOPSIS
-Get operations from sites
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +28,12 @@ Get-MgSiteOnenoteOperation -InputObject <INotesIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get operations from sites
+The status of OneNote operations.
+Getting an operations collection is not supported, but you can get the status of long-running operations if the Operation-Location header is returned in the response.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
