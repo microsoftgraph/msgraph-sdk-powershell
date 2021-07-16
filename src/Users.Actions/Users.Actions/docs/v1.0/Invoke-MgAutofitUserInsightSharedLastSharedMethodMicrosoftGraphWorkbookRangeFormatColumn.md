@@ -1,51 +1,33 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/update-mgusermanageddevice
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgautofituserinsightsharedlastsharedmethodmicrosoftgraphworkbookrangeformatcolumn
 schema: 2.0.0
 ---
 
-# Update-MgUserManagedDevice
+# Invoke-MgAutofitUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeFormatColumn
 
 ## SYNOPSIS
-Invoke action windowsDefenderUpdateSignatures
+Invoke action autofitColumns
 
 ## SYNTAX
 
-### Update (Default)
+### Autofit (Default)
 ```
-Update-MgUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgAutofitUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeFormatColumn
+ -SharedInsightId <String> -UserId <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### AutofitViaIdentity
 ```
-Update-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Invoke-MgAutofitUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeFormatColumn
+ -InputObject <IUsersActionsIdentity> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action windowsDefenderUpdateSignatures
+Invoke action autofitColumns
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -54,8 +36,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: UpdateViaIdentity
+Type: IUsersActionsIdentity
+Parameter Sets: AutofitViaIdentity
 Aliases:
 
 Required: True
@@ -65,26 +47,11 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ManagedDeviceId
-key: id of managedDevice
-
-```yaml
-Type: System.String
-Parameter Sets: Update
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -95,12 +62,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SharedInsightId
+key: id of sharedInsight
+
+```yaml
+Type: String
+Parameter Sets: Autofit
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update
+Type: String
+Parameter Sets: Autofit
 Aliases:
 
 Required: True
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -130,7 +112,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -147,11 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -181,8 +161,9 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
-
