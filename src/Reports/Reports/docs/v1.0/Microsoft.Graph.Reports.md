@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: e3fe89f0-fa1c-41cf-ae9f-caee5a8fa2d9
+Module Guid: 0e941ce3-12b2-41bf-b4a5-7da1208e5047
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,19 +12,27 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Reports Cmdlets
 ### [Get-MgAuditLogDirectoryAudit](Get-MgAuditLogDirectoryAudit.md)
-Get directoryAudits from auditLogs
+Read-only.
+Nullable.
+
+### [Get-MgAuditLogProvisioning](Get-MgAuditLogProvisioning.md)
+Get provisioning from auditLogs
 
 ### [Get-MgAuditLogRestrictedSignIn](Get-MgAuditLogRestrictedSignIn.md)
 Get restrictedSignIns from auditLogs
 
 ### [Get-MgAuditLogSignIn](Get-MgAuditLogSignIn.md)
-Get signIns from auditLogs
+Read-only.
+Nullable.
+
+### [Get-MgReportDailyPrintUsage](Get-MgReportDailyPrintUsage.md)
+Get dailyPrintUsageByPrinter from reports
 
 ### [Get-MgReportDeviceConfigurationDeviceActivity](Get-MgReportDeviceConfigurationDeviceActivity.md)
-Invoke function deviceConfigurationDeviceActivity
+Metadata for the device configuration device activity report
 
 ### [Get-MgReportDeviceConfigurationUserActivity](Get-MgReportDeviceConfigurationUserActivity.md)
-Invoke function deviceConfigurationUserActivity
+Metadata for the device configuration user activity report
 
 ### [Get-MgReportEmailActivityCount](Get-MgReportEmailActivityCount.md)
 Invoke function getEmailActivityCounts
@@ -53,6 +61,9 @@ Invoke function getEmailAppUsageUserDetail
 ### [Get-MgReportEmailAppUsageVersionUserCount](Get-MgReportEmailAppUsageVersionUserCount.md)
 Invoke function getEmailAppUsageVersionsUserCounts
 
+### [Get-MgReportGroupArchivedPrintJob](Get-MgReportGroupArchivedPrintJob.md)
+Invoke function getGroupArchivedPrintJobs
+
 ### [Get-MgReportMailboxUsageDetail](Get-MgReportMailboxUsageDetail.md)
 Invoke function getMailboxUsageDetail
 
@@ -73,6 +84,9 @@ Invoke function managedDeviceEnrollmentFailureDetails
 
 ### [Get-MgReportManagedDeviceEnrollmentTopFailures](Get-MgReportManagedDeviceEnrollmentTopFailures.md)
 Invoke function managedDeviceEnrollmentTopFailures
+
+### [Get-MgReportMonthlyPrintUsage](Get-MgReportMonthlyPrintUsage.md)
+Get monthlyPrintUsageByPrinter from reports
 
 ### [Get-MgReportOffice365ActivationCount](Get-MgReportOffice365ActivationCount.md)
 Invoke function getOffice365ActivationCounts
@@ -140,6 +154,9 @@ Invoke function getOneDriveUsageFileCounts
 ### [Get-MgReportOneDriveUsageStorage](Get-MgReportOneDriveUsageStorage.md)
 Invoke function getOneDriveUsageStorage
 
+### [Get-MgReportPrinterArchivedPrintJob](Get-MgReportPrinterArchivedPrintJob.md)
+Invoke function getPrinterArchivedPrintJobs
+
 ### [Get-MgReportSharePointActivityFileCount](Get-MgReportSharePointActivityFileCount.md)
 Invoke function getSharePointActivityFileCounts
 
@@ -199,6 +216,9 @@ Invoke function getTeamsUserActivityUserDetail
 
 ### [Get-MgReportTeamUserActivityUserDetailEb13](Get-MgReportTeamUserActivityUserDetailEb13.md)
 Invoke function getTeamsUserActivityUserDetail
+
+### [Get-MgReportUserArchivedPrintJob](Get-MgReportUserArchivedPrintJob.md)
+Invoke function getUserArchivedPrintJobs
 
 ### [Get-MgReportYammerActivityCount](Get-MgReportYammerActivityCount.md)
 Invoke function getYammerActivityCounts
