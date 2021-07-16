@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserActivityHistoryItem
 
 ## SYNOPSIS
-Update the navigation property historyItems in users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## SYNTAX
 
@@ -45,27 +46,10 @@ Update-MgUserActivityHistoryItem -InputObject <ICrossDeviceExperiencesIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property historyItems in users
+Optional.
+NavigationProperty/Containment; navigation property to the activity's historyItems.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
