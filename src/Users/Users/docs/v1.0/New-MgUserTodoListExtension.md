@@ -1,43 +1,44 @@
 ---
 external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusertodolistextension
 schema: 2.0.0
 ---
 
-# New-MgUserExtension
+# New-MgUserTodoListExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
+The collection of open extensions defined for the task list.
 Nullable.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
-New-MgUserExtension -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-MgUserTodoListExtension -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgUserExtension -UserId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
+New-MgUserTodoListExtension -TodoTaskListId <String> -UserId <String> -BodyParameter <Hashtable> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded1
 ```
-New-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-MgUserTodoListExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
+New-MgUserTodoListExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
+The collection of open extensions defined for the task list.
 Nullable.
 
 ## EXAMPLES
@@ -102,6 +103,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: String
+Parameter Sets: CreateExpanded1, Create1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

@@ -1,69 +1,47 @@
 ---
 external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguserphoto
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusertodolisttasklinkedresource
 schema: 2.0.0
 ---
 
-# Update-MgUserPhoto
+# Update-MgUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
-The user's profile photo.
-Read-only.
+A collection of resources linked to the task.
 
 ## SYNTAX
 
-### UpdateExpanded2 (Default)
+### UpdateExpanded1 (Default)
 ```
-Update-MgUserPhoto -UserId <String> [-AdditionalProperties <Hashtable>] [-Height <Int32>] [-Id <String>]
- [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### UpdateExpanded3
-```
-Update-MgUserPhoto -UserId <String> -ProfilePhotoId <String> [-AdditionalProperties <Hashtable>]
- [-Height <Int32>] [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Update3
-```
-Update-MgUserPhoto -UserId <String> -ProfilePhotoId <String> -BodyParameter <IMicrosoftGraphProfilePhoto>
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### Update2
-```
-Update-MgUserPhoto -UserId <String> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru] [-WhatIf]
+Update-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
+ -TodoTaskListId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-ApplicationName <String>]
+ [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-WebUrl <String>] [-PassThru] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded3
+### Update1
 ```
-Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded2
-```
-Update-MgUserPhoto -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Height <Int32>]
- [-Id <String>] [-Width <Int32>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String>
+ -TodoTaskListId <String> -UserId <String> -BodyParameter <IMicrosoftGraphLinkedResource> [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity3
+### UpdateViaIdentityExpanded1
 ```
-Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+ [-ApplicationName <String>] [-DisplayName <String>] [-ExternalId <String>] [-Id <String>] [-WebUrl <String>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity2
+### UpdateViaIdentity1
 ```
-Update-MgUserPhoto -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphProfilePhoto> [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity>
+ -BodyParameter <IMicrosoftGraphLinkedResource> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's profile photo.
-Read-only.
+A collection of resources linked to the task.
 
 ## EXAMPLES
 
@@ -74,7 +52,22 @@ Additional Parameters
 
 ```yaml
 Type: Hashtable
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded3, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ApplicationName
+Field indicating the app name of the source that is sending the linkedResource.
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -85,12 +78,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-profilePhoto
+linkedResource
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: IMicrosoftGraphProfilePhoto
-Parameter Sets: Update3, Update2, UpdateViaIdentity3, UpdateViaIdentity2
+Type: IMicrosoftGraphLinkedResource
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -100,13 +93,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Height
-The height of the photo.
-Read-only.
+### -DisplayName
+Field indicating the title of the linkedResource.
 
 ```yaml
-Type: Int32
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded3, UpdateViaIdentityExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ExternalId
+Id of the object that is associated with this task on the third-party/partner system.
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -121,7 +128,7 @@ Read-only.
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded3, UpdateViaIdentityExpanded2
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -137,13 +144,28 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersIdentity
-Parameter Sets: UpdateViaIdentityExpanded3, UpdateViaIdentityExpanded2, UpdateViaIdentity3, UpdateViaIdentity2
+Parameter Sets: UpdateViaIdentityExpanded1, UpdateViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LinkedResourceId
+key: id of linkedResource
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -162,12 +184,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProfilePhotoId
-key: id of profilePhoto
+### -TodoTaskId
+key: id of todoTask
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded3, Update3
+Parameter Sets: UpdateExpanded1, Update1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: String
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -182,7 +219,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, Update3, Update2
+Parameter Sets: UpdateExpanded1, Update1
 Aliases:
 
 Required: True
@@ -192,13 +229,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Width
-The width of the photo.
-Read-only.
+### -WebUrl
+Deep link to the linkedResource.
 
 ```yaml
-Type: Int32
-Parameter Sets: UpdateExpanded2, UpdateExpanded3, UpdateViaIdentityExpanded3, UpdateViaIdentityExpanded2
+Type: String
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -244,7 +280,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 ## OUTPUTS
 
@@ -258,11 +294,13 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphProfilePhoto>: profilePhoto
+BODYPARAMETER <IMicrosoftGraphLinkedResource>: linkedResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Height <Int32?>]`: The height of the photo. Read-only.
-  - `[Width <Int32?>]`: The width of the photo. Read-only.
+  - `[ApplicationName <String>]`: Field indicating the app name of the source that is sending the linkedResource.
+  - `[DisplayName <String>]`: Field indicating the title of the linkedResource.
+  - `[ExternalId <String>]`: Id of the object that is associated with this task on the third-party/partner system.
+  - `[WebUrl <String>]`: Deep link to the linkedResource.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment

@@ -1,88 +1,76 @@
 ---
 external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/set-mguserphotocontent
 schema: 2.0.0
 ---
 
-# New-MgUserExtension
+# Set-MgUserPhotoContent
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
-Nullable.
+The user's profile photo.
+Read-only.
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### Set2 (Default)
 ```
-New-MgUserExtension -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
-```
-
-### Create1
-```
-New-MgUserExtension -UserId <String> -BodyParameter <Hashtable> [-WhatIf] [-Confirm] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded1
-```
-New-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-WhatIf]
+Set-MgUserPhotoContent -UserId <String> [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### Set3
 ```
-New-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-MgUserPhotoContent -UserId <String> -ProfilePhotoId <String> [-BodyParameter <Stream>] -InFile <String>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity3
+```
+Set-MgUserPhotoContent -InputObject <IUsersIdentity> [-BodyParameter <Stream>] -InFile <String> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetViaIdentity2
+```
+Set-MgUserPhotoContent -InputObject <IUsersIdentity> [-BodyParameter <Stream>] -InFile <String> [-PassThru]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
-Nullable.
+The user's profile photo.
+Read-only.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -BodyParameter
+.
 
 ```yaml
-Type: Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Type: Stream
+Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-extension
-
-```yaml
-Type: Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Id
-Read-only.
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
 Type: String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -95,7 +83,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IUsersIdentity
-Parameter Sets: CreateViaIdentityExpanded1, CreateViaIdentity1
+Parameter Sets: SetViaIdentity3, SetViaIdentity2
 Aliases:
 
 Required: True
@@ -105,12 +93,42 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProfilePhotoId
+key: id of profilePhoto
+
+```yaml
+Type: String
+Parameter Sets: Set3
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: CreateExpanded1, Create1
+Parameter Sets: Set2, Set3
 Aliases:
 
 Required: True
@@ -157,10 +175,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-### System.Collections.Hashtable
+### System.IO.Stream
 ## OUTPUTS
 
-### System.String
+### System.Boolean
 ## NOTES
 
 ALIASES

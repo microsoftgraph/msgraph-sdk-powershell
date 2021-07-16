@@ -1,39 +1,39 @@
 ---
 external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolistextension
 schema: 2.0.0
 ---
 
-# Get-MgUserExtension
+# Get-MgUserTodoListExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
+The collection of open extensions defined for the task list.
 Nullable.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserExtension -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
- [-CountVariable <String>] [<CommonParameters>]
+Get-MgUserTodoListExtension -TodoTaskListId <String> -UserId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>]
+ [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserExtension -ExtensionId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserTodoListExtension -ExtensionId <String> -TodoTaskListId <String> -UserId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserExtension -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgUserTodoListExtension -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
+The collection of open extensions defined for the task list.
 Nullable.
 
 ## EXAMPLES
@@ -186,6 +186,21 @@ Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: String
+Parameter Sets: List1, Get1
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,40 +1,38 @@
 ---
 external help file: Microsoft.Graph.Users-help.xml
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusertodolisttasklinkedresource
 schema: 2.0.0
 ---
 
-# Get-MgUserExtension
+# Get-MgUserTodoListTaskLinkedResource
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
-Nullable.
+A collection of resources linked to the task.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserExtension -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All]
- [-CountVariable <String>] [<CommonParameters>]
+Get-MgUserTodoListTaskLinkedResource -TodoTaskId <String> -TodoTaskListId <String> -UserId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserExtension -ExtensionId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserTodoListTaskLinkedResource -LinkedResourceId <String> -TodoTaskId <String> -TodoTaskListId <String>
+ -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserExtension -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserTodoListTaskLinkedResource -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
-Nullable.
+A collection of resources linked to the task.
 
 ## EXAMPLES
 
@@ -86,21 +84,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExtensionId
-key: id of extension
-
-```yaml
-Type: String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -129,6 +112,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -LinkedResourceId
+key: id of linkedResource
+
+```yaml
+Type: String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -192,6 +190,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TodoTaskId
+key: id of todoTask
+
+```yaml
+Type: String
+Parameter Sets: List1, Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TodoTaskListId
+key: id of todoTaskList
+
+```yaml
+Type: String
+Parameter Sets: List1, Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Top
 Show only the first n items
 
@@ -245,8 +273,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtension
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLinkedResource
 ## NOTES
 
 ALIASES
