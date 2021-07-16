@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofileeducationalactivity
 schema: 2.0.0
@@ -20,19 +20,13 @@ Update-MgUserProfileEducationalActivity -EducationalActivityId <String> -UserId 
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>]
  [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
- [-StartMonthYear <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartMonthYear <DateTime>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserProfileEducationalActivity -EducationalActivityId <String> -UserId <String>
- -BodyParameter <IMicrosoftGraphEducationalActivity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity>
- -BodyParameter <IMicrosoftGraphEducationalActivity> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEducationalActivity> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -43,7 +37,13 @@ Update-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-Additio
  [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
  [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
- [-StartMonthYear <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-StartMonthYear <DateTime>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity>
+ -BodyParameter <IMicrosoftGraphEducationalActivity> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +57,7 @@ Represents data that a user has supplied related to undergraduate, graduate, pos
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ educationalActivity
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
+Type: IMicrosoftGraphEducationalActivity
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 The month and year the user graduated or completed the activity.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -149,8 +149,8 @@ Accept wildcard characters: False
 key: id of educationalActivity
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 The month and year the user completed the educational activity referenced.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -195,7 +195,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -211,8 +211,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -227,7 +227,7 @@ institutionData
 To construct, see NOTES section for INSTITUTION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInstitutionData
+Type: IMicrosoftGraphInstitutionData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -258,7 +258,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -273,7 +273,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -304,7 +304,7 @@ educationalActivityDetail
 To construct, see NOTES section for PROGRAM properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivityDetail
+Type: IMicrosoftGraphEducationalActivityDetail
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -320,7 +320,7 @@ personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -335,7 +335,7 @@ Accept wildcard characters: False
 The month and year the user commenced the activity referenced.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -350,8 +350,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -365,7 +365,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -381,7 +381,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -398,13 +398,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
-
 ### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -548,4 +545,3 @@ SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[Type <String[]>]`: 
 
 ## RELATED LINKS
-

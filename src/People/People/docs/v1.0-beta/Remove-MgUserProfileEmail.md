@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/remove-mguserprofileemail
 schema: 2.0.0
@@ -14,13 +14,13 @@ Represents detailed information about email addresses associated with the user.
 
 ### Delete (Default)
 ```
-Remove-MgUserProfileEmail -ItemEmailId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgUserProfileEmail -ItemEmailId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
-Remove-MgUserProfileEmail -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgUserProfileEmail -InputObject <IPeopleIdentity> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -35,7 +35,7 @@ Represents detailed information about email addresses associated with the user.
 ETag
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
+Type: IPeopleIdentity
 Parameter Sets: DeleteViaIdentity
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 key: id of itemEmail
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Delete
 Aliases:
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -127,7 +127,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -144,11 +144,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -186,4 +184,3 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[WorkPositionId <String>]`: key: id of workPosition
 
 ## RELATED LINKS
-

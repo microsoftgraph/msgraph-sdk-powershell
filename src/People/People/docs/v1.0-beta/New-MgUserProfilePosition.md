@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofileposition
 schema: 2.0.0
@@ -18,21 +18,15 @@ New-MgUserProfilePosition -UserId <String> [-AdditionalProperties <Hashtable>] [
  [-Categories <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Manager <IMicrosoftGraphRelatedPerson>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSources>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserProfilePosition -UserId <String> -BodyParameter <IMicrosoftGraphWorkPosition> [-Confirm] [-WhatIf]
+New-MgUserProfilePosition -UserId <String> -BodyParameter <IMicrosoftGraphWorkPosition> [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserProfilePosition -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWorkPosition>
- [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,9 +35,15 @@ New-MgUserProfilePosition -InputObject <IPeopleIdentity> [-AdditionalProperties 
  [-AllowedAudiences <String>] [-Categories <String[]>] [-Colleagues <IMicrosoftGraphRelatedPerson[]>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>]
  [-Detail <IMicrosoftGraphPositionDetail>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
- [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
- [-LastModifiedDateTime <DateTime>] [-Manager <IMicrosoftGraphRelatedPerson>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-IsCurrent] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Manager <IMicrosoftGraphRelatedPerson>] [-Source <IMicrosoftGraphPersonDataSources>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserProfilePosition -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphWorkPosition> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +57,7 @@ Represents detailed information about work positions associated with a user's pr
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ workPosition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkPosition
+Type: IMicrosoftGraphWorkPosition
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 Categories that the user has associated with this position.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ Colleagues that are associated with this position.
 To construct, see NOTES section for COLLEAGUES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson[]
+Type: IMicrosoftGraphRelatedPerson[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -166,7 +166,7 @@ positionDetail
 To construct, see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPositionDetail
+Type: IMicrosoftGraphPositionDetail
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -213,8 +213,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -228,7 +228,7 @@ Accept wildcard characters: False
 Denotes whether or not the position is current.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -243,7 +243,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -259,7 +259,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -290,7 +290,7 @@ relatedPerson
 To construct, see NOTES section for MANAGER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRelatedPerson
+Type: IMicrosoftGraphRelatedPerson
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -306,7 +306,7 @@ personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -321,8 +321,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -352,7 +352,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -369,13 +369,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkPosition
-
 ### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkPosition
-
 ## NOTES
 
 ALIASES
@@ -532,3 +529,4 @@ SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
 
 ## RELATED LINKS
 
+## RELATED LINKS

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/new-mguserprofilenote
 schema: 2.0.0
@@ -18,20 +18,14 @@ New-MgUserProfileNote -UserId <String> [-AdditionalProperties <Hashtable>] [-All
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-Detail <IMicrosoftGraphItemBody>]
  [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-ThumbnailUrl <String>] [-Confirm] [-WhatIf]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-ThumbnailUrl <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgUserProfileNote -UserId <String> -BodyParameter <IMicrosoftGraphPersonAnnotation> [-Confirm] [-WhatIf]
+New-MgUserProfileNote -UserId <String> -BodyParameter <IMicrosoftGraphPersonAnnotation> [-WhatIf] [-Confirm]
  [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserProfileNote -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonAnnotation>
- [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -41,7 +35,13 @@ New-MgUserProfileNote -InputObject <IPeopleIdentity> [-AdditionalProperties <Has
  [-Detail <IMicrosoftGraphItemBody>] [-DisplayName <String>] [-Id <String>]
  [-Inference <IMicrosoftGraphInferenceData>] [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>]
  [-LastModifiedDateTime <DateTime>] [-Source <IMicrosoftGraphPersonDataSources>] [-ThumbnailUrl <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgUserProfileNote -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphPersonAnnotation> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +55,7 @@ Represents notes that a user has added to their profile.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ personAnnotation
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnotation
+Type: IMicrosoftGraphPersonAnnotation
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -102,7 +102,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ itemBody
 To construct, see NOTES section for DETAIL properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemBody
+Type: IMicrosoftGraphItemBody
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Contains a friendly name for the note.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -179,7 +179,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -195,8 +195,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -257,7 +257,7 @@ personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -272,7 +272,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -287,8 +287,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -318,7 +318,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -335,13 +335,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnotation
-
 ### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonAnnotation
-
 ## NOTES
 
 ALIASES
@@ -441,4 +438,3 @@ SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[Type <String[]>]`: 
 
 ## RELATED LINKS
-

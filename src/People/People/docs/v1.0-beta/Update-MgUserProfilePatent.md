@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.People-help.xml
 Module Name: Microsoft.Graph.People
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.people/update-mguserprofilepatent
 schema: 2.0.0
@@ -19,20 +19,14 @@ Update-MgUserProfilePatent -ItemPatentId <String> -UserId <String> [-AdditionalP
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsPending] [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgUserProfilePatent -ItemPatentId <String> -UserId <String> -BodyParameter <IMicrosoftGraphItemPatent>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Update-MgUserProfilePatent -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPatent>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -42,8 +36,14 @@ Update-MgUserProfilePatent -InputObject <IPeopleIdentity> [-AdditionalProperties
  [-Description <String>] [-DisplayName <String>] [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>]
  [-IsPending] [-IsSearchable] [-IssuedDate <DateTime>] [-IssuingAuthority <String>]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>] [-Number <String>]
- [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Source <IMicrosoftGraphPersonDataSources>] [-WebUrl <String>] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### UpdateViaIdentity
+```
+Update-MgUserProfilePatent -InputObject <IPeopleIdentity> -BodyParameter <IMicrosoftGraphItemPatent>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -57,7 +57,7 @@ Represents patents that a user has added to their profile.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -72,7 +72,7 @@ Accept wildcard characters: False
 allowedAudiences
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -88,7 +88,7 @@ itemPatent
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent
+Type: IMicrosoftGraphItemPatent
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -104,7 +104,7 @@ identitySet
 To construct, see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 Descpription of the patent or filing.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 Title of the patent or filing.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -164,7 +164,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -180,7 +180,7 @@ inferenceData
 To construct, see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
+Type: IMicrosoftGraphInferenceData
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -196,8 +196,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Type: IPeopleIdentity
+Parameter Sets: UpdateViaIdentityExpanded, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 Indicates the patent is pending.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 The date that the patent was granted.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 Authority which granted the patent.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -271,8 +271,8 @@ Accept wildcard characters: False
 key: id of itemPatent
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -287,7 +287,7 @@ identitySet
 To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
+Type: IMicrosoftGraphIdentitySet
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 The patent number.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -348,7 +348,7 @@ personDataSources
 To construct, see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
+Type: IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -363,8 +363,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: String
+Parameter Sets: UpdateExpanded, Update
 Aliases:
 
 Required: True
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 URL referencing the patent or filing.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -393,7 +393,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -409,7 +409,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -426,13 +426,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemPatent
-
 ### Microsoft.Graph.PowerShell.Models.IPeopleIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -528,4 +525,3 @@ SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[Type <String[]>]`: 
 
 ## RELATED LINKS
-
