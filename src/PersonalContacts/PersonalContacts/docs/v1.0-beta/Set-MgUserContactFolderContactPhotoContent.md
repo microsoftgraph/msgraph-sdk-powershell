@@ -1,48 +1,59 @@
 ---
 external help file: Microsoft.Graph.PersonalContacts-help.xml
 Module Name: Microsoft.Graph.PersonalContacts
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/remove-mgusercontactfolderchildfolder
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.personalcontacts/set-mgusercontactfoldercontactphotocontent
 schema: 2.0.0
 ---
 
-# Remove-MgUserContactFolderChildFolder
+# Set-MgUserContactFolderContactPhotoContent
 
 ## SYNOPSIS
-The collection of child folders in the folder.
-Navigation property.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Set (Default)
 ```
-Remove-MgUserContactFolderChildFolder -ContactFolderId <String> -ContactFolderId1 <String> -UserId <String>
- [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-MgUserContactFolderContactPhotoContent -ContactFolderId <String> -ContactId <String> -UserId <String>
+ [-BodyParameter <Stream>] -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### SetViaIdentity
 ```
-Remove-MgUserContactFolderChildFolder -InputObject <IPersonalContactsIdentity> [-IfMatch <String>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-MgUserContactFolderContactPhotoContent -InputObject <IPersonalContactsIdentity> [-BodyParameter <Stream>]
+ -InFile <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of child folders in the folder.
-Navigation property.
+The user's profile photo.
 Read-only.
-Nullable.
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -BodyParameter
+.
+
+```yaml
+Type: Stream
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -ContactFolderId
 key: id of contactFolder
 
 ```yaml
 Type: String
-Parameter Sets: Delete1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -52,12 +63,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ContactFolderId1
-key: id of contactFolder
+### -ContactId
+key: id of contact
 
 ```yaml
 Type: String
-Parameter Sets: Delete1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -67,15 +78,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -InFile
+The path to the file to upload.
+This should include a path and file name.
+If you omit the path, the current location will be used.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -88,7 +101,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: IPersonalContactsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -118,7 +131,7 @@ key: id of user
 
 ```yaml
 Type: String
-Parameter Sets: Delete1
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -165,6 +178,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
+### System.IO.Stream
 ## OUTPUTS
 
 ### System.Boolean
