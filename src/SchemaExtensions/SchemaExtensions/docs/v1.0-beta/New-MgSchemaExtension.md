@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.SchemaExtensions-help.xml
 Module Name: Microsoft.Graph.SchemaExtensions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.schemaextensions/new-mgschemaextension
 schema: 2.0.0
@@ -16,13 +16,12 @@ Add new entity to schemaExtensions
 ```
 New-MgSchemaExtension [-AdditionalProperties <Hashtable>] [-Description <String>] [-Id <String>]
  [-Owner <String>] [-Properties <IMicrosoftGraphExtensionSchemaProperty[]>] [-Status <String>]
- [-TargetTypes <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TargetTypes <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSchemaExtension -BodyParameter <IMicrosoftGraphSchemaExtension> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgSchemaExtension -BodyParameter <IMicrosoftGraphSchemaExtension> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +35,7 @@ Add new entity to schemaExtensions
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -52,7 +51,7 @@ schemaExtension
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
+Type: IMicrosoftGraphSchemaExtension
 Parameter Sets: Create
 Aliases:
 
@@ -67,7 +66,7 @@ Accept wildcard characters: False
 Description for the schema extension.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -82,7 +81,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +101,7 @@ So, for example, if creating a new schema extension definition using Graph Explo
 Once set, this property is read-only and cannot be changed.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -118,7 +117,7 @@ The collection of property names and types that make up the schema extension def
 To construct, see NOTES section for PROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExtensionSchemaProperty[]
+Type: IMicrosoftGraphExtensionSchemaProperty[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -136,7 +135,7 @@ Automatically set to InDevelopment on creation.
 Schema extensions provides more information on the possible state transitions and behaviors.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -152,7 +151,7 @@ Set of Microsoft Graph types (that can support extensions) that the schema exten
 Select from administrativeUnit, contact, device, event, group, message, organization, post, or user.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -167,7 +166,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -183,7 +182,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -200,11 +199,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSchemaExtension
-
 ## NOTES
 
 ALIASES
@@ -230,4 +227,3 @@ PROPERTIES <IMicrosoftGraphExtensionSchemaProperty[]>: The collection of propert
   - `[Type <String>]`: The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String.  See the table below for more details.
 
 ## RELATED LINKS
-
