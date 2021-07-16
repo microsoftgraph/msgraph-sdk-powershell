@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgGroupPlannerPlanTaskDetail
 
 ## SYNOPSIS
-Update the navigation property details in groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ Update-MgGroupPlannerPlanTaskDetail -InputObject <IPlannerIdentity> [-Additional
 ```
 
 ## DESCRIPTION
-Update the navigation property details in groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -313,6 +299,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

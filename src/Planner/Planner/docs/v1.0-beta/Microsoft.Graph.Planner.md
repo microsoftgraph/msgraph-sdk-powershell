@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Planner
-Module Guid: 2e32ec29-c1fe-4c32-a40f-5887ecc3312e
+Module Guid: 4f29a810-656b-4ee8-be40-a9ac9c3ad474
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.planner
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,587 +12,1029 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Planner Cmdlets
 ### [Get-MgGroupPlanner](Get-MgGroupPlanner.md)
-Get planner from groups
+Selective Planner services available to the group.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlan](Get-MgGroupPlannerPlan.md)
-Get plans from groups
+Read-only.
+Nullable.
+Returns the plannerPlans owned by the group.
 
 ### [Get-MgGroupPlannerPlanBucket](Get-MgGroupPlannerPlanBucket.md)
-Get buckets from groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlanBucketTask](Get-MgGroupPlannerPlanBucketTask.md)
-Get tasks from groups
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Get-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat](Get-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgGroupPlannerPlanBucketTaskBoardFormat](Get-MgGroupPlannerPlanBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgGroupPlannerPlanBucketTaskDetail](Get-MgGroupPlannerPlanBucketTaskDetail.md)
-Get details from groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat](Get-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgGroupPlannerPlanDetail](Get-MgGroupPlannerPlanDetail.md)
-Get details from groups
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlanTask](Get-MgGroupPlannerPlanTask.md)
-Get tasks from groups
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat](Get-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgGroupPlannerPlanTaskBucketTaskBoardFormat](Get-MgGroupPlannerPlanTaskBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgGroupPlannerPlanTaskDetail](Get-MgGroupPlannerPlanTaskDetail.md)
-Get details from groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgGroupPlannerPlanTaskProgressTaskBoardFormat](Get-MgGroupPlannerPlanTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgPlanner](Get-MgPlanner.md)
 Get planner
 
 ### [Get-MgPlannerBucket](Get-MgPlannerBucket.md)
-Get buckets from planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ### [Get-MgPlannerBucketTask](Get-MgPlannerBucketTask.md)
-Get tasks from planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Get-MgPlannerBucketTaskAssignedToTaskBoardFormat](Get-MgPlannerBucketTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgPlannerBucketTaskBoardFormat](Get-MgPlannerBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgPlannerBucketTaskDetail](Get-MgPlannerBucketTaskDetail.md)
-Get details from planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgPlannerBucketTaskProgressTaskBoardFormat](Get-MgPlannerBucketTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgPlannerPlan](Get-MgPlannerPlan.md)
-Get plans from planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ### [Get-MgPlannerPlanBucket](Get-MgPlannerPlanBucket.md)
-Get buckets from planner
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerPlanBucketTask](Get-MgPlannerPlanBucketTask.md)
-Get tasks from planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Get-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat](Get-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgPlannerPlanBucketTaskBoardFormat](Get-MgPlannerPlanBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgPlannerPlanBucketTaskDetail](Get-MgPlannerPlanBucketTaskDetail.md)
-Get details from planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgPlannerPlanBucketTaskProgressTaskBoardFormat](Get-MgPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgPlannerPlanDetail](Get-MgPlannerPlanDetail.md)
-Get details from planner
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerPlanTask](Get-MgPlannerPlanTask.md)
-Get tasks from planner
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgPlannerPlanTaskAssignedToTaskBoardFormat](Get-MgPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgPlannerPlanTaskBucketTaskBoardFormat](Get-MgPlannerPlanTaskBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgPlannerPlanTaskDetail](Get-MgPlannerPlanTaskDetail.md)
-Get details from planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgPlannerPlanTaskProgressTaskBoardFormat](Get-MgPlannerPlanTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
+
+### [Get-MgPlannerRoster](Get-MgPlannerRoster.md)
+Read-only.
+Nullable.
+Returns a collection of the specified rosters
+
+### [Get-MgPlannerRosterMember](Get-MgPlannerRosterMember.md)
+Retrieves the members of the plannerRoster.
+
+### [Get-MgPlannerRosterPlan](Get-MgPlannerRosterPlan.md)
+Retrieves the plans contained by the plannerRoster.
+
+### [Get-MgPlannerRosterPlanByRef](Get-MgPlannerRosterPlanByRef.md)
+Retrieves the plans contained by the plannerRoster.
 
 ### [Get-MgPlannerTask](Get-MgPlannerTask.md)
-Get tasks from planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ### [Get-MgPlannerTaskAssignedToTaskBoardFormat](Get-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgPlannerTaskBucketTaskBoardFormat](Get-MgPlannerTaskBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgPlannerTaskDetail](Get-MgPlannerTaskDetail.md)
-Get details from planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgPlannerTaskProgressTaskBoardFormat](Get-MgPlannerTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgUserPlanner](Get-MgUserPlanner.md)
-Get planner from users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPlannerFavoritePlan](Get-MgUserPlannerFavoritePlan.md)
-Get favoritePlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans that the user marked as favorites.
 
 ### [Get-MgUserPlannerFavoritePlanByRef](Get-MgUserPlannerFavoritePlanByRef.md)
-Get ref of favoritePlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans that the user marked as favorites.
 
 ### [Get-MgUserPlannerPlan](Get-MgUserPlannerPlan.md)
-Get plans from users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Get-MgUserPlannerPlanBucket](Get-MgUserPlannerPlanBucket.md)
-Get buckets from users
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPlannerPlanBucketTask](Get-MgUserPlannerPlanBucketTask.md)
-Get tasks from users
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Get-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat](Get-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgUserPlannerPlanBucketTaskBoardFormat](Get-MgUserPlannerPlanBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgUserPlannerPlanBucketTaskDetail](Get-MgUserPlannerPlanBucketTaskDetail.md)
-Get details from users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat](Get-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgUserPlannerPlanDetail](Get-MgUserPlannerPlanDetail.md)
-Get details from users
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPlannerPlanTask](Get-MgUserPlannerPlanTask.md)
-Get tasks from users
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Get-MgUserPlannerPlanTaskAssignedToTaskBoardFormat](Get-MgUserPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgUserPlannerPlanTaskBucketTaskBoardFormat](Get-MgUserPlannerPlanTaskBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgUserPlannerPlanTaskDetail](Get-MgUserPlannerPlanTaskDetail.md)
-Get details from users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgUserPlannerPlanTaskProgressTaskBoardFormat](Get-MgUserPlannerPlanTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Get-MgUserPlannerRecentPlan](Get-MgUserPlannerRecentPlan.md)
-Get recentPlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 
 ### [Get-MgUserPlannerRecentPlanByRef](Get-MgUserPlannerRecentPlanByRef.md)
-Get ref of recentPlans from users
+Read-only.
+Nullable.
+Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+
+### [Get-MgUserPlannerRosterPlan](Get-MgUserPlannerRosterPlan.md)
+Read-only.
+Nullable.
+Returns the plannerPlans contained by the plannerRosters the user is a member.
+
+### [Get-MgUserPlannerRosterPlanByRef](Get-MgUserPlannerRosterPlanByRef.md)
+Read-only.
+Nullable.
+Returns the plannerPlans contained by the plannerRosters the user is a member.
 
 ### [Get-MgUserPlannerTask](Get-MgUserPlannerTask.md)
-Get tasks from users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Get-MgUserPlannerTaskAssignedToTaskBoardFormat](Get-MgUserPlannerTaskAssignedToTaskBoardFormat.md)
-Get assignedToTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Get-MgUserPlannerTaskBucketTaskBoardFormat](Get-MgUserPlannerTaskBucketTaskBoardFormat.md)
-Get bucketTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Get-MgUserPlannerTaskDetail](Get-MgUserPlannerTaskDetail.md)
-Get details from users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Get-MgUserPlannerTaskProgressTaskBoardFormat](Get-MgUserPlannerTaskProgressTaskBoardFormat.md)
-Get progressTaskBoardFormat from users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [New-MgGroupPlannerPlan](New-MgGroupPlannerPlan.md)
-Create new navigation property to plans for groups
+Read-only.
+Nullable.
+Returns the plannerPlans owned by the group.
 
 ### [New-MgGroupPlannerPlanBucket](New-MgGroupPlannerPlanBucket.md)
-Create new navigation property to buckets for groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [New-MgGroupPlannerPlanBucketTask](New-MgGroupPlannerPlanBucketTask.md)
-Create new navigation property to tasks for groups
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [New-MgGroupPlannerPlanTask](New-MgGroupPlannerPlanTask.md)
-Create new navigation property to tasks for groups
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [New-MgPlannerBucket](New-MgPlannerBucket.md)
-Create new navigation property to buckets for planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ### [New-MgPlannerBucketTask](New-MgPlannerBucketTask.md)
-Create new navigation property to tasks for planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [New-MgPlannerPlan](New-MgPlannerPlan.md)
-Create new navigation property to plans for planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ### [New-MgPlannerPlanBucket](New-MgPlannerPlanBucket.md)
-Create new navigation property to buckets for planner
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [New-MgPlannerPlanBucketTask](New-MgPlannerPlanBucketTask.md)
-Create new navigation property to tasks for planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [New-MgPlannerPlanTask](New-MgPlannerPlanTask.md)
-Create new navigation property to tasks for planner
+Collection of tasks in the plan.
+Read-only.
+Nullable.
+
+### [New-MgPlannerRoster](New-MgPlannerRoster.md)
+Read-only.
+Nullable.
+Returns a collection of the specified rosters
+
+### [New-MgPlannerRosterMember](New-MgPlannerRosterMember.md)
+Retrieves the members of the plannerRoster.
+
+### [New-MgPlannerRosterPlanByRef](New-MgPlannerRosterPlanByRef.md)
+Retrieves the plans contained by the plannerRoster.
 
 ### [New-MgPlannerTask](New-MgPlannerTask.md)
-Create new navigation property to tasks for planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ### [New-MgUserPlannerFavoritePlanByRef](New-MgUserPlannerFavoritePlanByRef.md)
-Create new navigation property ref to favoritePlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that the user marked as favorites.
 
 ### [New-MgUserPlannerPlan](New-MgUserPlannerPlan.md)
-Create new navigation property to plans for users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [New-MgUserPlannerPlanBucket](New-MgUserPlannerPlanBucket.md)
-Create new navigation property to buckets for users
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [New-MgUserPlannerPlanBucketTask](New-MgUserPlannerPlanBucketTask.md)
-Create new navigation property to tasks for users
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [New-MgUserPlannerPlanTask](New-MgUserPlannerPlanTask.md)
-Create new navigation property to tasks for users
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [New-MgUserPlannerRecentPlanByRef](New-MgUserPlannerRecentPlanByRef.md)
-Create new navigation property ref to recentPlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+
+### [New-MgUserPlannerRosterPlanByRef](New-MgUserPlannerRosterPlanByRef.md)
+Read-only.
+Nullable.
+Returns the plannerPlans contained by the plannerRosters the user is a member.
 
 ### [New-MgUserPlannerTask](New-MgUserPlannerTask.md)
-Create new navigation property to tasks for users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Remove-MgGroupPlanner](Remove-MgGroupPlanner.md)
-Delete navigation property planner for groups
+Selective Planner services available to the group.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupPlannerPlan](Remove-MgGroupPlannerPlan.md)
-Delete navigation property plans for groups
+Read-only.
+Nullable.
+Returns the plannerPlans owned by the group.
 
 ### [Remove-MgGroupPlannerPlanBucket](Remove-MgGroupPlannerPlanBucket.md)
-Delete navigation property buckets for groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupPlannerPlanBucketTask](Remove-MgGroupPlannerPlanBucketTask.md)
-Delete navigation property tasks for groups
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Remove-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat](Remove-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgGroupPlannerPlanBucketTaskBoardFormat](Remove-MgGroupPlannerPlanBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgGroupPlannerPlanBucketTaskDetail](Remove-MgGroupPlannerPlanBucketTaskDetail.md)
-Delete navigation property details for groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat](Remove-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgGroupPlannerPlanDetail](Remove-MgGroupPlannerPlanDetail.md)
-Delete navigation property details for groups
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupPlannerPlanTask](Remove-MgGroupPlannerPlanTask.md)
-Delete navigation property tasks for groups
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat](Remove-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgGroupPlannerPlanTaskBucketTaskBoardFormat](Remove-MgGroupPlannerPlanTaskBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgGroupPlannerPlanTaskDetail](Remove-MgGroupPlannerPlanTaskDetail.md)
-Delete navigation property details for groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgGroupPlannerPlanTaskProgressTaskBoardFormat](Remove-MgGroupPlannerPlanTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgPlannerBucket](Remove-MgPlannerBucket.md)
-Delete navigation property buckets for planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ### [Remove-MgPlannerBucketTask](Remove-MgPlannerBucketTask.md)
-Delete navigation property tasks for planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Remove-MgPlannerBucketTaskAssignedToTaskBoardFormat](Remove-MgPlannerBucketTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgPlannerBucketTaskBoardFormat](Remove-MgPlannerBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgPlannerBucketTaskDetail](Remove-MgPlannerBucketTaskDetail.md)
-Delete navigation property details for planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgPlannerBucketTaskProgressTaskBoardFormat](Remove-MgPlannerBucketTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgPlannerPlan](Remove-MgPlannerPlan.md)
-Delete navigation property plans for planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ### [Remove-MgPlannerPlanBucket](Remove-MgPlannerPlanBucket.md)
-Delete navigation property buckets for planner
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgPlannerPlanBucketTask](Remove-MgPlannerPlanBucketTask.md)
-Delete navigation property tasks for planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Remove-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat](Remove-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgPlannerPlanBucketTaskBoardFormat](Remove-MgPlannerPlanBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgPlannerPlanBucketTaskDetail](Remove-MgPlannerPlanBucketTaskDetail.md)
-Delete navigation property details for planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgPlannerPlanBucketTaskProgressTaskBoardFormat](Remove-MgPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgPlannerPlanDetail](Remove-MgPlannerPlanDetail.md)
-Delete navigation property details for planner
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgPlannerPlanTask](Remove-MgPlannerPlanTask.md)
-Delete navigation property tasks for planner
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgPlannerPlanTaskAssignedToTaskBoardFormat](Remove-MgPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgPlannerPlanTaskBucketTaskBoardFormat](Remove-MgPlannerPlanTaskBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgPlannerPlanTaskDetail](Remove-MgPlannerPlanTaskDetail.md)
-Delete navigation property details for planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgPlannerPlanTaskProgressTaskBoardFormat](Remove-MgPlannerPlanTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
+
+### [Remove-MgPlannerRoster](Remove-MgPlannerRoster.md)
+Read-only.
+Nullable.
+Returns a collection of the specified rosters
+
+### [Remove-MgPlannerRosterMember](Remove-MgPlannerRosterMember.md)
+Retrieves the members of the plannerRoster.
 
 ### [Remove-MgPlannerTask](Remove-MgPlannerTask.md)
-Delete navigation property tasks for planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ### [Remove-MgPlannerTaskAssignedToTaskBoardFormat](Remove-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgPlannerTaskBucketTaskBoardFormat](Remove-MgPlannerTaskBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgPlannerTaskDetail](Remove-MgPlannerTaskDetail.md)
-Delete navigation property details for planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgPlannerTaskProgressTaskBoardFormat](Remove-MgPlannerTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgUserPlanner](Remove-MgUserPlanner.md)
-Delete navigation property planner for users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserPlannerPlan](Remove-MgUserPlannerPlan.md)
-Delete navigation property plans for users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Remove-MgUserPlannerPlanBucket](Remove-MgUserPlannerPlanBucket.md)
-Delete navigation property buckets for users
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserPlannerPlanBucketTask](Remove-MgUserPlannerPlanBucketTask.md)
-Delete navigation property tasks for users
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Remove-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat](Remove-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgUserPlannerPlanBucketTaskBoardFormat](Remove-MgUserPlannerPlanBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgUserPlannerPlanBucketTaskDetail](Remove-MgUserPlannerPlanBucketTaskDetail.md)
-Delete navigation property details for users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat](Remove-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgUserPlannerPlanDetail](Remove-MgUserPlannerPlanDetail.md)
-Delete navigation property details for users
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserPlannerPlanTask](Remove-MgUserPlannerPlanTask.md)
-Delete navigation property tasks for users
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserPlannerPlanTaskAssignedToTaskBoardFormat](Remove-MgUserPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgUserPlannerPlanTaskBucketTaskBoardFormat](Remove-MgUserPlannerPlanTaskBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgUserPlannerPlanTaskDetail](Remove-MgUserPlannerPlanTaskDetail.md)
-Delete navigation property details for users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgUserPlannerPlanTaskProgressTaskBoardFormat](Remove-MgUserPlannerPlanTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Remove-MgUserPlannerTask](Remove-MgUserPlannerTask.md)
-Delete navigation property tasks for users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Remove-MgUserPlannerTaskAssignedToTaskBoardFormat](Remove-MgUserPlannerTaskAssignedToTaskBoardFormat.md)
-Delete navigation property assignedToTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Remove-MgUserPlannerTaskBucketTaskBoardFormat](Remove-MgUserPlannerTaskBucketTaskBoardFormat.md)
-Delete navigation property bucketTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Remove-MgUserPlannerTaskDetail](Remove-MgUserPlannerTaskDetail.md)
-Delete navigation property details for users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Remove-MgUserPlannerTaskProgressTaskBoardFormat](Remove-MgUserPlannerTaskProgressTaskBoardFormat.md)
-Delete navigation property progressTaskBoardFormat for users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgGroupPlanner](Update-MgGroupPlanner.md)
-Update the navigation property planner in groups
+Selective Planner services available to the group.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupPlannerPlan](Update-MgGroupPlannerPlan.md)
-Update the navigation property plans in groups
+Read-only.
+Nullable.
+Returns the plannerPlans owned by the group.
 
 ### [Update-MgGroupPlannerPlanBucket](Update-MgGroupPlannerPlanBucket.md)
-Update the navigation property buckets in groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupPlannerPlanBucketTask](Update-MgGroupPlannerPlanBucketTask.md)
-Update the navigation property tasks in groups
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Update-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat](Update-MgGroupPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgGroupPlannerPlanBucketTaskBoardFormat](Update-MgGroupPlannerPlanBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgGroupPlannerPlanBucketTaskDetail](Update-MgGroupPlannerPlanBucketTaskDetail.md)
-Update the navigation property details in groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat](Update-MgGroupPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgGroupPlannerPlanDetail](Update-MgGroupPlannerPlanDetail.md)
-Update the navigation property details in groups
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupPlannerPlanTask](Update-MgGroupPlannerPlanTask.md)
-Update the navigation property tasks in groups
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat](Update-MgGroupPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgGroupPlannerPlanTaskBucketTaskBoardFormat](Update-MgGroupPlannerPlanTaskBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgGroupPlannerPlanTaskDetail](Update-MgGroupPlannerPlanTaskDetail.md)
-Update the navigation property details in groups
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgGroupPlannerPlanTaskProgressTaskBoardFormat](Update-MgGroupPlannerPlanTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in groups
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgPlanner](Update-MgPlanner.md)
 Update planner
 
 ### [Update-MgPlannerBucket](Update-MgPlannerBucket.md)
-Update the navigation property buckets in planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ### [Update-MgPlannerBucketTask](Update-MgPlannerBucketTask.md)
-Update the navigation property tasks in planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Update-MgPlannerBucketTaskAssignedToTaskBoardFormat](Update-MgPlannerBucketTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgPlannerBucketTaskBoardFormat](Update-MgPlannerBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgPlannerBucketTaskDetail](Update-MgPlannerBucketTaskDetail.md)
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgPlannerBucketTaskProgressTaskBoardFormat](Update-MgPlannerBucketTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgPlannerPlan](Update-MgPlannerPlan.md)
-Update the navigation property plans in planner
+Read-only.
+Nullable.
+Returns a collection of the specified plans
 
 ### [Update-MgPlannerPlanBucket](Update-MgPlannerPlanBucket.md)
-Update the navigation property buckets in planner
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgPlannerPlanBucketTask](Update-MgPlannerPlanBucketTask.md)
-Update the navigation property tasks in planner
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Update-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat](Update-MgPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgPlannerPlanBucketTaskBoardFormat](Update-MgPlannerPlanBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgPlannerPlanBucketTaskDetail](Update-MgPlannerPlanBucketTaskDetail.md)
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat](Update-MgPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgPlannerPlanDetail](Update-MgPlannerPlanDetail.md)
-Update the navigation property details in planner
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgPlannerPlanTask](Update-MgPlannerPlanTask.md)
-Update the navigation property tasks in planner
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgPlannerPlanTaskAssignedToTaskBoardFormat](Update-MgPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgPlannerPlanTaskBucketTaskBoardFormat](Update-MgPlannerPlanTaskBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgPlannerPlanTaskDetail](Update-MgPlannerPlanTaskDetail.md)
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgPlannerPlanTaskProgressTaskBoardFormat](Update-MgPlannerPlanTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
+
+### [Update-MgPlannerRoster](Update-MgPlannerRoster.md)
+Read-only.
+Nullable.
+Returns a collection of the specified rosters
+
+### [Update-MgPlannerRosterMember](Update-MgPlannerRosterMember.md)
+Retrieves the members of the plannerRoster.
 
 ### [Update-MgPlannerTask](Update-MgPlannerTask.md)
-Update the navigation property tasks in planner
+Read-only.
+Nullable.
+Returns a collection of the specified tasks
 
 ### [Update-MgPlannerTaskAssignedToTaskBoardFormat](Update-MgPlannerTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgPlannerTaskBucketTaskBoardFormat](Update-MgPlannerTaskBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgPlannerTaskDetail](Update-MgPlannerTaskDetail.md)
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgPlannerTaskProgressTaskBoardFormat](Update-MgPlannerTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgUserPlanner](Update-MgUserPlanner.md)
-Update the navigation property planner in users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ### [Update-MgUserPlannerPlan](Update-MgUserPlannerPlan.md)
-Update the navigation property plans in users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Update-MgUserPlannerPlanBucket](Update-MgUserPlannerPlanBucket.md)
-Update the navigation property buckets in users
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgUserPlannerPlanBucketTask](Update-MgUserPlannerPlanBucketTask.md)
-Update the navigation property tasks in users
+Read-only.
+Nullable.
+The collection of tasks in the bucket.
 
 ### [Update-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat](Update-MgUserPlannerPlanBucketTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgUserPlannerPlanBucketTaskBoardFormat](Update-MgUserPlannerPlanBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgUserPlannerPlanBucketTaskDetail](Update-MgUserPlannerPlanBucketTaskDetail.md)
-Update the navigation property details in users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat](Update-MgUserPlannerPlanBucketTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgUserPlannerPlanDetail](Update-MgUserPlannerPlanDetail.md)
-Update the navigation property details in users
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgUserPlannerPlanTask](Update-MgUserPlannerPlanTask.md)
-Update the navigation property tasks in users
+Collection of tasks in the plan.
+Read-only.
+Nullable.
 
 ### [Update-MgUserPlannerPlanTaskAssignedToTaskBoardFormat](Update-MgUserPlannerPlanTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgUserPlannerPlanTaskBucketTaskBoardFormat](Update-MgUserPlannerPlanTaskBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgUserPlannerPlanTaskDetail](Update-MgUserPlannerPlanTaskDetail.md)
-Update the navigation property details in users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgUserPlannerPlanTaskProgressTaskBoardFormat](Update-MgUserPlannerPlanTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 
 ### [Update-MgUserPlannerTask](Update-MgUserPlannerTask.md)
-Update the navigation property tasks in users
+Read-only.
+Nullable.
+Returns the plannerTasks assigned to the user.
 
 ### [Update-MgUserPlannerTaskAssignedToTaskBoardFormat](Update-MgUserPlannerTaskAssignedToTaskBoardFormat.md)
-Update the navigation property assignedToTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ### [Update-MgUserPlannerTaskBucketTaskBoardFormat](Update-MgUserPlannerTaskBucketTaskBoardFormat.md)
-Update the navigation property bucketTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by bucket.
 
 ### [Update-MgUserPlannerTaskDetail](Update-MgUserPlannerTaskDetail.md)
-Update the navigation property details in users
+Read-only.
+Nullable.
+Additional details about the task.
 
 ### [Update-MgUserPlannerTaskProgressTaskBoardFormat](Update-MgUserPlannerTaskProgressTaskBoardFormat.md)
-Update the navigation property progressTaskBoardFormat in users
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by progress.
 

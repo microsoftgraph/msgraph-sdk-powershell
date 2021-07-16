@@ -8,7 +8,9 @@ schema: 2.0.0
 # New-MgUserPlannerRecentPlanByRef
 
 ## SYNOPSIS
-Create new navigation property ref to recentPlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 
 ## SYNTAX
 
@@ -37,27 +39,11 @@ New-MgUserPlannerRecentPlanByRef -InputObject <IPlannerIdentity> [-AdditionalPro
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to recentPlans for users
+Read-only.
+Nullable.
+Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -180,6 +166,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

@@ -8,7 +8,9 @@ schema: 2.0.0
 # Remove-MgPlannerBucket
 
 ## SYNOPSIS
-Delete navigation property buckets for planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ## SYNTAX
 
@@ -25,27 +27,11 @@ Remove-MgPlannerBucket -InputObject <IPlannerIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-Delete navigation property buckets for planner
+Read-only.
+Nullable.
+Returns a collection of the specified buckets
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -166,6 +152,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
