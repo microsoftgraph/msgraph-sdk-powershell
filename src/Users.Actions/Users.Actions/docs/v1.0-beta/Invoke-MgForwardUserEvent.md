@@ -12,28 +12,28 @@ Invoke action forward
 
 ## SYNTAX
 
-### ForwardExpanded (Default)
+### ForwardExpanded1 (Default)
 ```
 Invoke-MgForwardUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Forward
+### Forward1
 ```
 Invoke-MgForwardUserEvent -EventId <String> -UserId <String>
  -BodyParameter <IPathsPg3HzyUsersUserIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ForwardViaIdentity
+### ForwardViaIdentity1
 ```
 Invoke-MgForwardUserEvent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsPg3HzyUsersUserIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ForwardViaIdentityExpanded
+### ForwardViaIdentityExpanded1
 ```
 Invoke-MgForwardUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-ToRecipients <IMicrosoftGraphRecipient[]>] [-PassThru] [-Confirm] [-WhatIf]
@@ -45,24 +45,6 @@ Invoke action forward
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -70,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
+Parameter Sets: ForwardExpanded1, ForwardViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -86,7 +68,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsPg3HzyUsersUserIdEventsEventIdMicrosoftGraphForwardPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Forward, ForwardViaIdentity
+Parameter Sets: Forward1, ForwardViaIdentity1
 Aliases:
 
 Required: True
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
+Parameter Sets: ForwardExpanded1, ForwardViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -116,7 +98,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Forward, ForwardExpanded
+Parameter Sets: Forward1, ForwardExpanded1
 Aliases:
 
 Required: True
@@ -132,7 +114,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ForwardViaIdentity, ForwardViaIdentityExpanded
+Parameter Sets: ForwardViaIdentity1, ForwardViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -163,7 +145,7 @@ To construct, see NOTES section for TORECIPIENTS properties and create a hash ta
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRecipient[]
-Parameter Sets: ForwardExpanded, ForwardViaIdentityExpanded
+Parameter Sets: ForwardExpanded1, ForwardViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -178,7 +160,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Forward, ForwardExpanded
+Parameter Sets: Forward1, ForwardExpanded1
 Aliases:
 
 Required: True
@@ -247,8 +229,8 @@ BODYPARAMETER <IPathsPg3HzyUsersUserIdEventsEventIdMicrosoftGraphForwardPostRequ
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of the person or entity.
-      - `[Name <String>]`: The display name of the person or entity.
+      - `[Address <String>]`: The email address of an entity instance.
+      - `[Name <String>]`: The display name of an entity instance.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
@@ -270,14 +252,16 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of the person or entity.
-    - `[Name <String>]`: The display name of the person or entity.
+    - `[Address <String>]`: The email address of an entity instance.
+    - `[Name <String>]`: The display name of an entity instance.
 
 ## RELATED LINKS
 

@@ -12,12 +12,12 @@ Invoke action revokeSignInSessions
 
 ## SYNTAX
 
-### Revoke (Default)
+### Revoke1 (Default)
 ```
 Revoke-MgUserSign -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RevokeViaIdentity
+### RevokeViaIdentity1
 ```
 Revoke-MgUserSign -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -27,24 +27,6 @@ Invoke action revokeSignInSessions
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -InputObject
@@ -53,7 +35,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RevokeViaIdentity
+Parameter Sets: RevokeViaIdentity1
 Aliases:
 
 Required: True
@@ -68,7 +50,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Revoke
+Parameter Sets: Revoke1
 Aliases:
 
 Required: True
@@ -149,8 +131,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

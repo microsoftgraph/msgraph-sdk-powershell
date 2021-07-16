@@ -12,27 +12,27 @@ Invoke action translateExchangeIds
 
 ## SYNTAX
 
-### TranslateExpanded1 (Default)
+### TranslateExpanded (Default)
 ```
 Invoke-MgTranslateUserExchangeId -UserId <String> [-AdditionalProperties <Hashtable>] [-InputIds <String[]>]
  [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Translate1
+### Translate
 ```
 Invoke-MgTranslateUserExchangeId -UserId <String>
  -BodyParameter <IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### TranslateViaIdentity1
+### TranslateViaIdentity
 ```
 Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### TranslateViaIdentityExpanded1
+### TranslateViaIdentityExpanded
 ```
 Invoke-MgTranslateUserExchangeId -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-InputIds <String[]>] [-SourceIdType <String>] [-TargetIdType <String>] [-Confirm] [-WhatIf]
@@ -44,24 +44,6 @@ Invoke action translateExchangeIds
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -69,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
+Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -85,7 +67,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsHqegrcUsersUserIdMicrosoftGraphTranslateexchangeidsPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Translate1, TranslateViaIdentity1
+Parameter Sets: Translate, TranslateViaIdentity
 Aliases:
 
 Required: True
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
+Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -116,7 +98,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: TranslateViaIdentity1, TranslateViaIdentityExpanded1
+Parameter Sets: TranslateViaIdentity, TranslateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -131,7 +113,7 @@ exchangeIdFormat
 
 ```yaml
 Type: System.String
-Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
+Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -146,7 +128,7 @@ exchangeIdFormat
 
 ```yaml
 Type: System.String
-Parameter Sets: TranslateExpanded1, TranslateViaIdentityExpanded1
+Parameter Sets: TranslateExpanded, TranslateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -161,7 +143,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Translate1, TranslateExpanded1
+Parameter Sets: Translate, TranslateExpanded
 Aliases:
 
 Required: True
@@ -250,8 +232,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 
