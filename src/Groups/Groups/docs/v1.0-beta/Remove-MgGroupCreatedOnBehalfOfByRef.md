@@ -1,107 +1,66 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/new-mggrouprejectedsender
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggroupconversationthreadpostsinglevalueextendedproperty
 schema: 2.0.0
 ---
 
-# New-MgGroupRejectedSender
+# Remove-MgGroupConversationThreadPostSingleValueExtendedProperty
 
 ## SYNOPSIS
-Create new navigation property to rejectedSenders for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Delete1 (Default)
 ```
-New-MgGroupRejectedSender -GroupId <String> [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
- [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-MgGroupRejectedSender -GroupId <String> -BodyParameter <IMicrosoftGraphDirectoryObject> [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgGroupConversationThreadPostSingleValueExtendedProperty -ConversationId <String>
+ -ConversationThreadId <String> -GroupId <String> -PostId <String>
+ -SingleValueLegacyExtendedPropertyId <String> [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### DeleteViaIdentity1
 ```
-New-MgGroupRejectedSender -InputObject <IGroupsIdentity> -BodyParameter <IMicrosoftGraphDirectoryObject>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgGroupRejectedSender -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
- [-DeletedDateTime <DateTime>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgGroupConversationThreadPostSingleValueExtendedProperty -InputObject <IGroupsIdentity>
+ [-IfMatch <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to rejectedSenders for groups
+The collection of single-value extended properties defined for the post.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -ConversationId
+key: id of conversation
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+### -ConversationThreadId
+key: id of conversationThread
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-Parameter Sets: Create, CreateViaIdentity
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DeletedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -112,8 +71,8 @@ Accept wildcard characters: False
 key: id of group
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -123,12 +82,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Id
-Read-only.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Type: String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -143,8 +102,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IGroupsIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -154,11 +113,56 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PostId
+key: id of post
+
+```yaml
+Type: String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SingleValueLegacyExtendedPropertyId
+key: id of singleValueLegacyExtendedProperty
+
+```yaml
+Type: String
+Parameter Sets: Delete1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -174,7 +178,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -191,13 +195,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
+### System.Boolean
 ## NOTES
 
 ALIASES
@@ -207,23 +207,17 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDirectoryObject>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Id <String>]`: Read-only.
-  - `[DeletedDateTime <DateTime?>]`: 
-
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -233,8 +227,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

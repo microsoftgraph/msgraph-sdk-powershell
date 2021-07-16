@@ -1,30 +1,26 @@
 ---
 external help file: Microsoft.Graph.Groups-help.xml
 Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggroupmemberwithlicenseerrorbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/get-mggrouprejectedsenderbyref
 schema: 2.0.0
 ---
 
-# Get-MgGroupMemberWithLicenseErrorByRef
+# Get-MgGroupRejectedSenderByRef
 
 ## SYNOPSIS
-Groups and administrative units that this group is a member of.
-HTTP Methods: GET (supported for all groups).
-Read-only.
-Nullable.
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ## SYNTAX
 
 ```
-Get-MgGroupMemberWithLicenseErrorByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+Get-MgGroupRejectedSenderByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
  [-Sort <String[]>] [-Top <Int32>] [-PageSize <Int32>] [-All] [-CountVariable <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Groups and administrative units that this group is a member of.
-HTTP Methods: GET (supported for all groups).
-Read-only.
-Nullable.
+The list of users or groups that are not allowed to create posts or calendar events in this group.
+Nullable
 
 ## EXAMPLES
 
