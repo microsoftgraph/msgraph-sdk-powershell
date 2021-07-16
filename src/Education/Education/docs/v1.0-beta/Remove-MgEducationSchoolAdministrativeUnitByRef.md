@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationSchoolAdministrativeUnitByRef
 
 ## SYNOPSIS
-Delete ref of navigation property administrativeUnit for education
+The underlying administrativeUnit for this school.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgEducationSchoolAdministrativeUnitByRef -InputObject <IEducationIdentity
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property administrativeUnit for education
+The underlying administrativeUnit for this school.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

@@ -1,58 +1,40 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationmeassignmentresourcefolderurl
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserclassdelta
 schema: 2.0.0
 ---
 
-# Get-MgEducationMeAssignmentResourceFolderUrl
+# Get-MgEducationUserClassDelta
 
 ## SYNOPSIS
-Invoke function getResourcesFolderUrl
+Invoke function delta
 
 ## SYNTAX
 
-### Get (Default)
+### Delta1 (Default)
 ```
-Get-MgEducationMeAssignmentResourceFolderUrl -EducationAssignmentId <String> [<CommonParameters>]
+Get-MgEducationUserClassDelta -EducationUserId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### DeltaViaIdentity1
 ```
-Get-MgEducationMeAssignmentResourceFolderUrl -InputObject <IEducationIdentity> [<CommonParameters>]
+Get-MgEducationUserClassDelta -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getResourcesFolderUrl
+Invoke function delta
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -EducationAssignmentId
-key: id of educationAssignment
+### -EducationUserId
+key: id of educationUser
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Delta1
 Aliases:
 
 Required: True
@@ -68,7 +50,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: DeltaViaIdentity1
 Aliases:
 
 Required: True
@@ -87,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationClass1
 
 ## NOTES
 

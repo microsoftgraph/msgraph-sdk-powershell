@@ -1,50 +1,32 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Education
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/get-mgeducationuserassignmentresourcefolderurl
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/set-mgeducationclassassignmentupresourcefolder
 schema: 2.0.0
 ---
 
-# Get-MgEducationUserAssignmentResourceFolderUrl
+# Set-MgEducationClassAssignmentUpResourceFolder
 
 ## SYNOPSIS
-Invoke function getResourcesFolderUrl
+Invoke function setUpResourcesFolder
 
 ## SYNTAX
 
-### Get (Default)
+### Set (Default)
 ```
-Get-MgEducationUserAssignmentResourceFolderUrl -EducationAssignmentId <String> -EducationUserId <String>
+Set-MgEducationClassAssignmentUpResourceFolder -EducationAssignmentId <String> -EducationClassId <String>
  [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### SetViaIdentity
 ```
-Get-MgEducationUserAssignmentResourceFolderUrl -InputObject <IEducationIdentity> [<CommonParameters>]
+Set-MgEducationClassAssignmentUpResourceFolder -InputObject <IEducationIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function getResourcesFolderUrl
+Invoke function setUpResourcesFolder
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +35,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -63,12 +45,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EducationUserId
-key: id of educationUser
+### -EducationClassId
+key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Set
 Aliases:
 
 Required: True
@@ -84,7 +66,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: SetViaIdentity
 Aliases:
 
 Required: True
@@ -103,7 +85,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationAssignment
 
 ## NOTES
 

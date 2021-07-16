@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgEducationMeAssignmentCategory
 
 ## SYNOPSIS
-Update the navigation property categories in education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -38,27 +40,11 @@ Update-MgEducationMeAssignmentCategory -InputObject <IEducationIdentity> [-Addit
 ```
 
 ## DESCRIPTION
-Update the navigation property categories in education
+When set, enables users to easily find assignments of a given type.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -94,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Unique identifier for the category.
 
 ```yaml
 Type: System.String
@@ -240,7 +226,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationCategory>: educationCategory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: Unique identifier for the category.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment
