@@ -12,27 +12,27 @@ Invoke action instantiate
 
 ## SYNTAX
 
-### InstantiateExpanded (Default)
+### InstantiateExpanded1 (Default)
 ```
 Invoke-MgInstantiateApplicationTemplate -ApplicationTemplateId <String> [-AdditionalProperties <Hashtable>]
  [-DisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Instantiate
+### Instantiate1
 ```
 Invoke-MgInstantiateApplicationTemplate -ApplicationTemplateId <String>
  -BodyParameter <IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### InstantiateViaIdentity
+### InstantiateViaIdentity1
 ```
 Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
  -BodyParameter <IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### InstantiateViaIdentityExpanded
+### InstantiateViaIdentityExpanded1
 ```
 Invoke-MgInstantiateApplicationTemplate -InputObject <IApplicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,24 +43,6 @@ Invoke action instantiate
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -68,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: InstantiateExpanded, InstantiateViaIdentityExpanded
+Parameter Sets: InstantiateExpanded1, InstantiateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -83,7 +65,7 @@ key: id of applicationTemplate
 
 ```yaml
 Type: System.String
-Parameter Sets: Instantiate, InstantiateExpanded
+Parameter Sets: Instantiate1, InstantiateExpanded1
 Aliases:
 
 Required: True
@@ -99,7 +81,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsCuokzfApplicationtemplatesApplicationtemplateIdMicrosoftGraphInstantiatePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Instantiate, InstantiateViaIdentity
+Parameter Sets: Instantiate1, InstantiateViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: InstantiateExpanded, InstantiateViaIdentityExpanded
+Parameter Sets: InstantiateExpanded1, InstantiateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -130,7 +112,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: InstantiateViaIdentity, InstantiateViaIdentityExpanded
+Parameter Sets: InstantiateViaIdentity1, InstantiateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -182,7 +164,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationServicePrincipal
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphApplicationServicePrincipal1
 
 ## NOTES
 
@@ -201,17 +183,14 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -222,8 +201,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

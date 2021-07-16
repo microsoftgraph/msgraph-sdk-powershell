@@ -8,51 +8,65 @@ schema: 2.0.0
 # Get-MgServicePrincipal
 
 ## SYNOPSIS
-Get entity from servicePrincipals by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgServicePrincipal [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>]
- [<CommonParameters>]
+Get-MgServicePrincipal [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get2
 ```
 Get-MgServicePrincipal -ServicePrincipalId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
 Get-MgServicePrincipal -InputObject <IApplicationsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get entity from servicePrincipals by key
+Represents an Azure Active Directory object.
+The directoryObject type is the base type for many other directory entity types.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get all service principals from the directory
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgServicePrincipal
 
-{{ Add output here }}
+Id             : 304ae362-7953-4d08-8e15-aeece4d01017c
+DisplayName    : IC3 Gateway TestClone
+AppId          : 509ab5b8-1380-4906-9765-76d2ace9335d
+SignInAudience : AzureADMultipleOrgs
+
+Id             : 4297089a-3358-4bf5-92b0-a35fbdb2407c
+DisplayName    : Microsoft Forms
+AppId          : 67c93110-694e-4a54-b1af-d6cd2e3b12d7
+SignInAudience : AzureADMultipleOrgs
 ```
 
-{{ Add description here }}
+This example retrieves all service principals from the directory.
 
-### Example 2: {{ Add title here }}
+### Example 2: Get the service principal by display name
 ```powershell
-PS C:\> {{ Add code here }}
+ Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
+  Format-List Id, DisplayName,AppId, SignInAudience
 
-{{ Add output here }}
+Id             : 9518fb8f-8d9e-4aae-be20-d398f9cc59ac
+DisplayName    : Power BI Service
+AppId          : 60dbf324-9702-41cc-a5fa-f8d19804b014
+SignInAudience : AzureADMultipleOrgs
 ```
 
-{{ Add description here }}
+This example gets the service principal by display name.
 
 ## PARAMETERS
 
@@ -71,13 +85,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Type: System.String
+Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
 
 Required: False
 Position: Named
@@ -261,17 +292,14 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -282,8 +310,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
