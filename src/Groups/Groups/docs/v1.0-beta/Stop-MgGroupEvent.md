@@ -12,27 +12,27 @@ Invoke action cancel
 
 ## SYNTAX
 
-### CancelExpanded (Default)
+### CancelExpanded1 (Default)
 ```
 Stop-MgGroupEvent -EventId <String> -GroupId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Cancel
+### Cancel1
 ```
 Stop-MgGroupEvent -EventId <String> -GroupId <String>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentity
+### CancelViaIdentity1
 ```
 Stop-MgGroupEvent -InputObject <IGroupsIdentity>
  -BodyParameter <IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentityExpanded
+### CancelViaIdentityExpanded1
 ```
 Stop-MgGroupEvent -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>] [-Comment <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -43,24 +43,6 @@ Invoke action cancel
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -68,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
+Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -84,7 +66,7 @@ To construct, see NOTES section for BODYPARAMETER properties and create a hash t
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1BptnttGroupsGroupIdEventsEventIdMicrosoftGraphCancelPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Cancel, CancelViaIdentity
+Parameter Sets: Cancel1, CancelViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
+Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -114,7 +96,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Parameter Sets: Cancel1, CancelExpanded1
 Aliases:
 
 Required: True
@@ -129,7 +111,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel, CancelExpanded
+Parameter Sets: Cancel1, CancelExpanded1
 Aliases:
 
 Required: True
@@ -145,7 +127,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
+Parameter Sets: CancelViaIdentity1, CancelViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -231,14 +213,13 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -248,7 +229,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
