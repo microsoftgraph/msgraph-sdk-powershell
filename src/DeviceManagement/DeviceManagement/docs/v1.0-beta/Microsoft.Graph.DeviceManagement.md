@@ -1622,8 +1622,8 @@ User experience analytics metric.
 ### [Set-MgDeviceManagementUserExperienceAnalyticMetricHistoryUserExperienceAnalyticMetricByRef](Set-MgDeviceManagementUserExperienceAnalyticMetricHistoryUserExperienceAnalyticMetricByRef.md)
 User experience analytics metric.
 
-### [Update-MgDeviceManagement](Update-MgDeviceManagement.md)
-Update deviceManagement
+### [Set-MgDeviceManagementUserExperienceAnalyticMetricHistoryUserExperienceAnalyticMetricByRef](Set-MgDeviceManagementUserExperienceAnalyticMetricHistoryUserExperienceAnalyticMetricByRef.md)
+User experience analytics metric.
 
 ### [Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary](Update-MgDeviceManagementAdvancedThreatProtectionOnboardingStateSummary.md)
 The summary state of ATP onboarding state for this account.

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DeviceManagement-help.xml
 Module Name: Microsoft.Graph.DeviceManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/update-mgdevicemanagementuserexperienceanalyticregressionsummary
 schema: 2.0.0
@@ -17,14 +17,14 @@ User experience analytics regression summary
 Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-ManufacturerRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]
  [-ModelRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>]
- [-OperatingSystemRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-OperatingSystemRegression <IMicrosoftGraphUserExperienceAnalyticsMetric[]>] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Update
 ```
 Update-MgDeviceManagementUserExperienceAnalyticRegressionSummary
- -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRegressionSummary> [-PassThru] [-Confirm] [-WhatIf]
+ -BodyParameter <IMicrosoftGraphUserExperienceAnalyticsRegressionSummary> [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -39,7 +39,7 @@ User experience analytics regression summary
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -55,7 +55,7 @@ The user experience analytics Regression Summary.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
+Type: IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
 Parameter Sets: Update
 Aliases:
 
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ The metric values for the user experience analytics Manufacturer regression.
 To construct, see NOTES section for MANUFACTURERREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ The metric values for the user experience analytics model regression.
 To construct, see NOTES section for MODELREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -118,7 +118,7 @@ The metric values for the user experience analytics operating system regression.
 To construct, see NOTES section for OPERATINGSYSTEMREGRESSION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsMetric[]
+Type: IMicrosoftGraphUserExperienceAnalyticsMetric[]
 Parameter Sets: UpdateExpanded
 Aliases:
 
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -164,7 +164,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -181,11 +181,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserExperienceAnalyticsRegressionSummary
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -221,4 +219,3 @@ OPERATINGSYSTEMREGRESSION <IMicrosoftGraphUserExperienceAnalyticsMetric[]>: The 
   - `[Value <Double?>]`: The value of the user experience analytics metric.
 
 ## RELATED LINKS
-
