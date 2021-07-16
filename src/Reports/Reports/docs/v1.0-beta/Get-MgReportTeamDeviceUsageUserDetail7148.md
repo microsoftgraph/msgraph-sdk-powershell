@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportteamdeviceusageuserdetail7148
 schema: 2.0.0
@@ -33,7 +33,7 @@ Invoke function getTeamsDeviceUsageUserDetail
 Usage: date={date}
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: Get
 Aliases:
 
@@ -49,7 +49,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: IReportsIdentity
 Parameter Sets: GetViaIdentity
 Aliases:
 
@@ -66,11 +66,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTeamsDeviceUsageUserDetail
-
 ## NOTES
 
 ALIASES
@@ -108,4 +106,3 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-

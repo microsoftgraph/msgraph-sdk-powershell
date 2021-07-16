@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Reports-help.xml
 Module Name: Microsoft.Graph.Reports
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportmanageddeviceenrollmentabandonmentdetail
 schema: 2.0.0
@@ -35,7 +35,7 @@ Metadata for Enrollment abandonment details report
 Usage: filter={filter}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Managed
 Aliases:
 
@@ -51,7 +51,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
+Type: IReportsIdentity
 Parameter Sets: ManagedViaIdentity
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 Path to write output file to
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: (All)
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -92,26 +92,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Usage: skip={skip}
-
-```yaml
-Type: System.Int32
-Parameter Sets: Managed
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SkipToken
 Usage: skipToken={skipToken}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Managed
 Aliases:
 
@@ -126,9 +111,24 @@ Accept wildcard characters: False
 Usage: top={top}
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: Managed
 Aliases: Limit
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Skip
+Usage: skip={skip}
+
+```yaml
+Type: Int32
+Parameter Sets: Managed
+Aliases:
 
 Required: True
 Position: Named
@@ -143,11 +143,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IReportsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -185,4 +183,3 @@ INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[UserId <String>]`: Usage: userId={userId}
 
 ## RELATED LINKS
-
