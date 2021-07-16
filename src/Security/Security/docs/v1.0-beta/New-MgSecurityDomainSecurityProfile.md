@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityDomainSecurityProfile
 
 ## SYNOPSIS
-Create new navigation property to domainSecurityProfiles for Security
+Create new navigation property to domainSecurityProfiles for security
 
 ## SYNTAX
 
@@ -29,27 +29,9 @@ New-MgSecurityDomainSecurityProfile -BodyParameter <IMicrosoftGraphDomainSecurit
 ```
 
 ## DESCRIPTION
-Create new navigation property to domainSecurityProfiles for Security
+Create new navigation property to domainSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

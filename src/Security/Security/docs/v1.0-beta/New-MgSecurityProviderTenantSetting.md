@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityProviderTenantSetting
 
 ## SYNOPSIS
-Create new navigation property to providerTenantSettings for Security
+Create new navigation property to providerTenantSettings for security
 
 ## SYNTAX
 
@@ -26,27 +26,9 @@ New-MgSecurityProviderTenantSetting -BodyParameter <IMicrosoftGraphProviderTenan
 ```
 
 ## DESCRIPTION
-Create new navigation property to providerTenantSettings for Security
+Create new navigation property to providerTenantSettings for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

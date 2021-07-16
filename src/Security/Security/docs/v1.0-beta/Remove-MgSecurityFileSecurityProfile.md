@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityFileSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property fileSecurityProfiles for Security
+Delete navigation property fileSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgSecurityFileSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete navigation property fileSecurityProfiles for Security
+Delete navigation property fileSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

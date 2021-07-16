@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityAction
 
 ## SYNOPSIS
-Delete navigation property securityActions for Security
+Delete navigation property securityActions for security
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgSecurityAction -InputObject <ISecurityIdentity> [-IfMatch <String>] [-P
 ```
 
 ## DESCRIPTION
-Delete navigation property securityActions for Security
+Delete navigation property securityActions for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

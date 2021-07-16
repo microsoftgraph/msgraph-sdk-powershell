@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityCloudAppSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property cloudAppSecurityProfiles for Security
+Delete navigation property cloudAppSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Delete navigation property cloudAppSecurityProfiles for Security
+Delete navigation property cloudAppSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

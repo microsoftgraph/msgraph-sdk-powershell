@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityHostSecurityProfile
 
 ## SYNOPSIS
-Delete navigation property hostSecurityProfiles for Security
+Delete navigation property hostSecurityProfiles for security
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgSecurityHostSecurityProfile -InputObject <ISecurityIdentity> [-IfMatch 
 ```
 
 ## DESCRIPTION
-Delete navigation property hostSecurityProfiles for Security
+Delete navigation property hostSecurityProfiles for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityIPSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## SYNTAX
 
@@ -47,27 +47,9 @@ Update-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGr
 ```
 
 ## DESCRIPTION
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -429,7 +411,7 @@ BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
     - `[Name <String>]`: 
     - `[Vendor <String>]`: 
   - `[IPReferenceData <IMicrosoftGraphIPReferenceData[]>]`: 
-    - `[Asn <Int32?>]`: 
+    - `[Asn <Int64?>]`: 
     - `[City <String>]`: 
     - `[CountryOrRegionCode <String>]`: 
     - `[Organization <String>]`: 
@@ -465,7 +447,7 @@ IPCATEGORIES <IMicrosoftGraphIPCategory[]>: .
   - `[Vendor <String>]`: 
 
 IPREFERENCEDATA <IMicrosoftGraphIPReferenceData[]>: .
-  - `[Asn <Int32?>]`: 
+  - `[Asn <Int64?>]`: 
   - `[City <String>]`: 
   - `[CountryOrRegionCode <String>]`: 
   - `[Organization <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityUserSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property userSecurityProfiles in Security
+Update the navigation property userSecurityProfiles in security
 
 ## SYNTAX
 
@@ -47,27 +47,9 @@ Update-MgSecurityUserSecurityProfile -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property userSecurityProfiles in Security
+Update the navigation property userSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
