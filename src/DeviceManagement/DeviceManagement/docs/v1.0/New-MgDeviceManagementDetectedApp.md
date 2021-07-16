@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.DeviceManagement-help.xml
 Module Name: Microsoft.Graph.DeviceManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement/new-mgdevicemanagementdetectedapp
 schema: 2.0.0
@@ -16,12 +16,12 @@ The list of detected apps associated with a device.
 ```
 New-MgDeviceManagementDetectedApp [-AdditionalProperties <Hashtable>] [-DeviceCount <Int32>]
  [-DisplayName <String>] [-Id <String>] [-ManagedDevices <IMicrosoftGraphManagedDevice1[]>]
- [-SizeInByte <Int64>] [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SizeInByte <Int64>] [-Version <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgDeviceManagementDetectedApp -BodyParameter <IMicrosoftGraphDetectedApp1> [-Confirm] [-WhatIf]
+New-MgDeviceManagementDetectedApp -BodyParameter <IMicrosoftGraphDetectedApp1> [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ The list of detected apps associated with a device.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -53,7 +53,7 @@ Unmanaged apps will only appear for devices marked as corporate owned.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDetectedApp1
+Type: IMicrosoftGraphDetectedApp1
 Parameter Sets: Create1
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 The number of devices that have installed this application
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -84,7 +84,7 @@ Name of the discovered application.
 Read-only
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -115,7 +115,7 @@ The devices that have the discovered application installed
 To construct, see NOTES section for MANAGEDDEVICES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDevice1[]
+Type: IMicrosoftGraphManagedDevice1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -131,7 +131,7 @@ Discovered application size in bytes.
 Read-only
 
 ```yaml
-Type: System.Int64
+Type: Int64
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -147,7 +147,7 @@ Version of the discovered application.
 Read-only
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -178,7 +178,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -195,11 +195,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDetectedApp1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDetectedApp1
-
 ## NOTES
 
 ALIASES
@@ -508,3 +506,4 @@ MANAGEDDEVICES <IMicrosoftGraphManagedDevice1[]>: The devices that have the disc
 
 ## RELATED LINKS
 
+## RELATED LINKS
