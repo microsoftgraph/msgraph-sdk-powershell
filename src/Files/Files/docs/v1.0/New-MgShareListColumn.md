@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgShareListColumn
 
 ## SYNOPSIS
-Create new navigation property to columns for shares
+The collection of field definitions for this list.
 
 ## SYNTAX
 
@@ -26,13 +26,13 @@ New-MgShareListColumn -SharedDriveItemId <String> [-AdditionalProperties <Hashta
 
 ### Create1
 ```
-New-MgShareListColumn -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphColumnDefinition> [-Confirm]
+New-MgShareListColumn -SharedDriveItemId <String> -BodyParameter <IMicrosoftGraphColumnDefinition1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity1
 ```
-New-MgShareListColumn -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition>
+New-MgShareListColumn -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphColumnDefinition1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -49,27 +49,9 @@ New-MgShareListColumn -InputObject <IFilesIdentity> [-AdditionalProperties <Hash
 ```
 
 ## DESCRIPTION
-Create new navigation property to columns for shares
+The collection of field definitions for this list.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -93,7 +75,7 @@ columnDefinition
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
@@ -499,11 +481,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IFilesIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
 
 ## NOTES
 
@@ -514,7 +496,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphColumnDefinition>: columnDefinition
+BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Boolean <IMicrosoftGraphBooleanColumn>]`: booleanColumn
@@ -609,14 +591,14 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: 
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: 
+  - `[Q <String>]`: Usage: q={q}
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[UserId <String>]`: key: id of user
 

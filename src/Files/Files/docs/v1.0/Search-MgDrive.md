@@ -12,12 +12,12 @@ Invoke function search
 
 ## SYNTAX
 
-### Search (Default)
+### Search1 (Default)
 ```
 Search-MgDrive -DriveId <String> -Q <String> [<CommonParameters>]
 ```
 
-### SearchViaIdentity
+### SearchViaIdentity1
 ```
 Search-MgDrive -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -27,24 +27,6 @@ Invoke function search
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -DriveId
@@ -52,7 +34,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Search
+Parameter Sets: Search1
 Aliases:
 
 Required: True
@@ -68,7 +50,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: SearchViaIdentity
+Parameter Sets: SearchViaIdentity1
 Aliases:
 
 Required: True
@@ -79,11 +61,11 @@ Accept wildcard characters: False
 ```
 
 ### -Q
-.
+Usage: q={q}
 
 ```yaml
 Type: System.String
-Parameter Sets: Search
+Parameter Sets: Search1
 Aliases:
 
 Required: True
@@ -102,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDriveItem1
 
 ## NOTES
 
@@ -119,14 +101,14 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
   - `[DriveItemId <String>]`: key: id of driveItem
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[Interval <String>]`: 
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
-  - `[Q <String>]`: 
+  - `[Q <String>]`: Usage: q={q}
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[UserId <String>]`: key: id of user
 
