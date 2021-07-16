@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgtimeuseroutlook
 schema: 2.0.0
@@ -19,15 +19,15 @@ Invoke-MgTimeUserOutlook -UserId <String> [<CommonParameters>]
 
 ### Time1
 ```
-Invoke-MgTimeUserOutlook -TimeZoneStandard <String> -UserId <String> [<CommonParameters>]
+Invoke-MgTimeUserOutlook -UserId <String> -TimeZoneStandard <String> [<CommonParameters>]
 ```
 
-### TimeViaIdentity
+### TimeViaIdentity1
 ```
 Invoke-MgTimeUserOutlook -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
-### TimeViaIdentity1
+### TimeViaIdentity
 ```
 Invoke-MgTimeUserOutlook -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
@@ -44,8 +44,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: TimeViaIdentity, TimeViaIdentity1
+Type: IUsersFunctionsIdentity
+Parameter Sets: TimeViaIdentity1, TimeViaIdentity
 Aliases:
 
 Required: True
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 Usage: TimeZoneStandard={TimeZoneStandard}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Time1
 Aliases:
 
@@ -74,7 +74,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Time, Time1
 Aliases:
 
@@ -91,11 +91,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeZoneInformation
-
 ## NOTES
 
 ALIASES
@@ -139,4 +137,3 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
-

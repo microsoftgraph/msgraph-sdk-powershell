@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgviewuserinsightusedresourcemicrosoftgraphworkbookrangevisible
 schema: 2.0.0
@@ -14,8 +14,8 @@ Invoke function visibleView
 
 ### View (Default)
 ```
-Invoke-MgViewUserInsightUsedResourceMicrosoftGraphWorkbookRangeVisible -UsedInsightId <String>
- -UserId <String> [<CommonParameters>]
+Invoke-MgViewUserInsightUsedResourceMicrosoftGraphWorkbookRangeVisible -UsedInsightId <String> -UserId <String>
+ [<CommonParameters>]
 ```
 
 ### ViewViaIdentity
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
+Type: IUsersFunctionsIdentity
 Parameter Sets: ViewViaIdentity
 Aliases:
 
@@ -51,7 +51,7 @@ Accept wildcard characters: False
 key: id of usedInsight
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: View
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: View
 Aliases:
 
@@ -83,11 +83,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkbookRangeView
-
 ## NOTES
 
 ALIASES
@@ -131,4 +129,3 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Functions-help.xml
 Module Name: Microsoft.Graph.Users.Functions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgcalendarusercalendarallowedcalendarsharingroles
 schema: 2.0.0
@@ -19,17 +19,17 @@ Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -User <String> -UserId 
 
 ### Calendar2
 ```
-Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -CalendarId <String> -User <String> -UserId <String>
+Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -User <String> -UserId <String> -CalendarId <String>
  [<CommonParameters>]
 ```
 
-### CalendarViaIdentity1
+### CalendarViaIdentity2
 ```
 Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity>
  [<CommonParameters>]
 ```
 
-### CalendarViaIdentity2
+### CalendarViaIdentity1
 ```
 Invoke-MgCalendarUserCalendarAllowedCalendarSharingRoles -InputObject <IUsersFunctionsIdentity>
  [<CommonParameters>]
@@ -46,7 +46,7 @@ Invoke function allowedCalendarSharingRoles
 key: id of calendar
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Calendar2
 Aliases:
 
@@ -62,8 +62,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: CalendarViaIdentity1, CalendarViaIdentity2
+Type: IUsersFunctionsIdentity
+Parameter Sets: CalendarViaIdentity2, CalendarViaIdentity1
 Aliases:
 
 Required: True
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 Usage: User={User}
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Calendar1, Calendar2
 Aliases:
 
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Calendar1, Calendar2
 Aliases:
 
@@ -109,11 +109,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-
 ## OUTPUTS
 
 ### System.String
-
 ## NOTES
 
 ALIASES
@@ -157,4 +155,3 @@ INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[ValuesOnly <Boolean?>]`: Usage: valuesOnly={valuesOnly}
 
 ## RELATED LINKS
-
