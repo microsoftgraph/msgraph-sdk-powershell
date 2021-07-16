@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/new-mguserinsightusedresourcemicrosoftgraphprintdocumentuploadsession
 schema: 2.0.0
@@ -15,29 +15,29 @@ Invoke action createUploadSession
 ### CreateExpanded (Default)
 ```
 New-MgUserInsightUsedResourceMicrosoftGraphPrintDocumentUploadSession -UsedInsightId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 New-MgUserInsightUsedResourceMicrosoftGraphPrintDocumentUploadSession -UsedInsightId <String> -UserId <String>
  -BodyParameter <IPathsWc6128UsersUserIdInsightsUsedUsedinsightIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgUserInsightUsedResourceMicrosoftGraphPrintDocumentUploadSession -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgUserInsightUsedResourceMicrosoftGraphPrintDocumentUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsWc6128UsersUserIdInsightsUsedUsedinsightIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgUserInsightUsedResourceMicrosoftGraphPrintDocumentUploadSession -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Properties <IMicrosoftGraphPrintDocumentUploadProperties>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Invoke action createUploadSession
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsWc6128UsersUserIdInsightsUsedUsedinsightIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
+Type: IPathsWc6128UsersUserIdInsightsUsedUsedinsightIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -83,8 +83,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ printDocumentUploadProperties
 To construct, see NOTES section for PROPERTIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintDocumentUploadProperties
+Type: IMicrosoftGraphPrintDocumentUploadProperties
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -114,8 +114,8 @@ Accept wildcard characters: False
 key: id of usedInsight
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -129,8 +129,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -160,7 +160,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -177,13 +177,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPathsWc6128UsersUserIdInsightsUsedUsedinsightIdResourceMicrosoftGraphPrintdocumentMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUploadSession
-
 ## NOTES
 
 ALIASES
@@ -233,4 +230,3 @@ PROPERTIES <IMicrosoftGraphPrintDocumentUploadProperties>: printDocumentUploadPr
   - `[Size <Int64?>]`: The document's size in bytes.
 
 ## RELATED LINKS
-

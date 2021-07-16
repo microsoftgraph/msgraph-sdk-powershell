@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/send-mgusermail
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action sendMail
 ### SendExpanded1 (Default)
 ```
 Send-MgUserMail -UserId <String> [-AdditionalProperties <Hashtable>] [-Message <IMicrosoftGraphMessage1>]
- [-SaveToSentItems] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SaveToSentItems] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Send1
 ```
 Send-MgUserMail -UserId <String>
  -BodyParameter <IPathsFh5OjtUsersUserIdMicrosoftGraphSendmailPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SendViaIdentityExpanded1
+```
+Send-MgUserMail -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
+ [-Message <IMicrosoftGraphMessage1>] [-SaveToSentItems] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SendViaIdentity1
 ```
 Send-MgUserMail -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsFh5OjtUsersUserIdMicrosoftGraphSendmailPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SendViaIdentityExpanded1
-```
-Send-MgUserMail -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-Message <IMicrosoftGraphMessage1>] [-SaveToSentItems] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Invoke action sendMail
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsFh5OjtUsersUserIdMicrosoftGraphSendmailPostRequestbodyContentApplicationJsonSchema
+Type: IPathsFh5OjtUsersUserIdMicrosoftGraphSendmailPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Send1, SendViaIdentity1
 Aliases:
 
@@ -81,8 +81,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: SendViaIdentity1, SendViaIdentityExpanded1
+Type: IUsersActionsIdentity
+Parameter Sets: SendViaIdentityExpanded1, SendViaIdentity1
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ message
 To construct, see NOTES section for MESSAGE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage1
+Type: IMicrosoftGraphMessage1
 Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: SendExpanded1, SendViaIdentityExpanded1
 Aliases:
 
@@ -142,8 +142,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Send1, SendExpanded1
+Type: String
+Parameter Sets: SendExpanded1, Send1
 Aliases:
 
 Required: True
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -173,7 +173,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -190,13 +190,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPathsFh5OjtUsersUserIdMicrosoftGraphSendmailPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -368,3 +365,4 @@ MESSAGE <IMicrosoftGraphMessage1>: message
 
 ## RELATED LINKS
 
+## RELATED LINKS

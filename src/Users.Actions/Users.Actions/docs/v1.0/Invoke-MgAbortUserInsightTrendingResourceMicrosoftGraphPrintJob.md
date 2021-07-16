@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgabortuserinsighttrendingresourcemicrosoftgraphprintjob
 schema: 2.0.0
@@ -15,27 +15,27 @@ Invoke action abort
 ### AbortExpanded (Default)
 ```
 Invoke-MgAbortUserInsightTrendingResourceMicrosoftGraphPrintJob -TrendingId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Reason <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-Reason <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Abort
 ```
 Invoke-MgAbortUserInsightTrendingResourceMicrosoftGraphPrintJob -TrendingId <String> -UserId <String>
  -BodyParameter <IPathsZhaedlUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintjobMicrosoftGraphAbortPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AbortViaIdentityExpanded
+```
+Invoke-MgAbortUserInsightTrendingResourceMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
+ [-AdditionalProperties <Hashtable>] [-Reason <String>] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AbortViaIdentity
 ```
 Invoke-MgAbortUserInsightTrendingResourceMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsZhaedlUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintjobMicrosoftGraphAbortPostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AbortViaIdentityExpanded
-```
-Invoke-MgAbortUserInsightTrendingResourceMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Reason <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -49,7 +49,7 @@ Invoke action abort
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: AbortExpanded, AbortViaIdentityExpanded
 Aliases:
 
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsZhaedlUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintjobMicrosoftGraphAbortPostRequestbodyContentApplicationJsonSchema
+Type: IPathsZhaedlUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintjobMicrosoftGraphAbortPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Abort, AbortViaIdentity
 Aliases:
 
@@ -81,8 +81,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AbortViaIdentity, AbortViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: AbortViaIdentityExpanded, AbortViaIdentity
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -111,7 +111,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: AbortExpanded, AbortViaIdentityExpanded
 Aliases:
 
@@ -126,8 +126,8 @@ Accept wildcard characters: False
 key: id of trending
 
 ```yaml
-Type: System.String
-Parameter Sets: Abort, AbortExpanded
+Type: String
+Parameter Sets: AbortExpanded, Abort
 Aliases:
 
 Required: True
@@ -141,8 +141,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Abort, AbortExpanded
+Type: String
+Parameter Sets: AbortExpanded, Abort
 Aliases:
 
 Required: True
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -172,7 +172,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -189,13 +189,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPathsZhaedlUsersUserIdInsightsTrendingIdResourceMicrosoftGraphPrintjobMicrosoftGraphAbortPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -235,4 +232,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

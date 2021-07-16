@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgredirectuserinsightsharedlastsharedmethodmicrosoftgraphprintjob
 schema: 2.0.0
@@ -16,7 +16,7 @@ Invoke action redirect
 ```
 Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -SharedInsightId <String>
  -UserId <String> [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
- [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DestinationPrinterId <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Redirect
@@ -24,21 +24,21 @@ Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -Shared
 Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -SharedInsightId <String>
  -UserId <String>
  -BodyParameter <IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### RedirectViaIdentity
-```
-Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RedirectViaIdentityExpanded
 ```
 Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
- [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DestinationPrinterId <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RedirectViaIdentity
+```
+Invoke-MgRedirectUserInsightSharedLastSharedMethodMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,7 +52,7 @@ Invoke action redirect
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: RedirectExpanded, RedirectViaIdentityExpanded
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
+Type: IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Redirect, RedirectViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ printJobConfiguration
 To construct, see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJobConfiguration
+Type: IMicrosoftGraphPrintJobConfiguration
 Parameter Sets: RedirectExpanded, RedirectViaIdentityExpanded
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: RedirectExpanded, RedirectViaIdentityExpanded
 Aliases:
 
@@ -115,8 +115,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RedirectViaIdentity, RedirectViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: RedirectViaIdentityExpanded, RedirectViaIdentity
 Aliases:
 
 Required: True
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 key: id of sharedInsight
 
 ```yaml
-Type: System.String
-Parameter Sets: Redirect, RedirectExpanded
+Type: String
+Parameter Sets: RedirectExpanded, Redirect
 Aliases:
 
 Required: True
@@ -145,8 +145,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Redirect, RedirectExpanded
+Type: String
+Parameter Sets: RedirectExpanded, Redirect
 Aliases:
 
 Required: True
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -176,7 +176,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -193,13 +193,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmethodMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
-
 ## NOTES
 
 ALIASES
@@ -296,4 +293,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-
