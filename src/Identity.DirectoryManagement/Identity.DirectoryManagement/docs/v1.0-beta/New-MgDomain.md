@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdomain
 schema: 2.0.0
@@ -20,12 +20,12 @@ New-MgDomain [-AdditionalProperties <Hashtable>] [-AuthenticationType <String>] 
  [-PasswordValidityPeriodInDays <Int32>] [-ServiceConfigurationRecords <IMicrosoftGraphDomainDnsRecord[]>]
  [-SharedEmailDomainInvitations <IMicrosoftGraphSharedEmailDomainInvitation[]>]
  [-State <IMicrosoftGraphDomainState>] [-SupportedServices <String[]>]
- [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-VerificationDnsRecords <IMicrosoftGraphDomainDnsRecord[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDomain -BodyParameter <IMicrosoftGraphDomain1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDomain -BodyParameter <IMicrosoftGraphDomain1> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,7 +39,7 @@ Add new entity to domains
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -58,7 +58,7 @@ Federated indicates authentication is federated with an identity provider such a
 This property is read-only and is not nullable.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -75,7 +75,7 @@ When the verify action is used, a domain entity is returned in the response.
 The availabilityStatus property of the domain entity in the response is either AvailableImmediately or EmailVerifiedDomainTakeoverScheduled.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -91,7 +91,7 @@ domain
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain1
+Type: IMicrosoftGraphDomain1
 Parameter Sets: Create
 Aliases:
 
@@ -107,7 +107,7 @@ Read-only, Nullable
 To construct, see NOTES section for DOMAINNAMEREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -139,7 +139,7 @@ Otherwise, the value is true.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -156,7 +156,7 @@ There is only one default domain per company.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ There is only one initial domain per company.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ Otherwise, false if the domain is a subdomain or unverified.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -206,7 +206,7 @@ true if the domain has completed domain ownership verification.
 Not nullable
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -222,7 +222,7 @@ Specifies the number of days before a user receives notification that their pass
 If the property is not set, a default value of 14 days will be used.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -238,7 +238,7 @@ Specifies the length of time that a password is valid before it must be changed.
 If the property is not set, a default value of 90 days will be used.
 
 ```yaml
-Type: System.Int32
+Type: Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -255,7 +255,7 @@ Read-only, Nullable
 To construct, see NOTES section for SERVICECONFIGURATIONRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for SHAREDEMAILDOMAININVITATIONS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharedEmailDomainInvitation[]
+Type: IMicrosoftGraphSharedEmailDomainInvitation[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -287,7 +287,7 @@ domainState
 To construct, see NOTES section for STATE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainState
+Type: IMicrosoftGraphDomainState
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -305,7 +305,7 @@ The values which you can add/remove using Graph API include: Email, OfficeCommun
 Not nullable
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -322,7 +322,7 @@ Read-only, Nullable
 To construct, see NOTES section for VERIFICATIONDNSRECORDS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomainDnsRecord[]
+Type: IMicrosoftGraphDomainDnsRecord[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -337,7 +337,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -353,7 +353,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -370,11 +370,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDomain1
-
 ## NOTES
 
 ALIASES
@@ -452,4 +450,3 @@ VERIFICATIONDNSRECORDS <IMicrosoftGraphDomainDnsRecord[]>: DNS records that the 
   - `[Ttl <Int32?>]`: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
 
 ## RELATED LINKS
-

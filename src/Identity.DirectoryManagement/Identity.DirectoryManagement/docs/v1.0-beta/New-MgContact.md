@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/new-mgcontact
 schema: 2.0.0
@@ -23,12 +23,12 @@ New-MgContact [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPh
  [-OnPremisesProvisioningErrors <IMicrosoftGraphOnPremisesProvisioningError[]>] [-OnPremisesSyncEnabled]
  [-Phones <IMicrosoftGraphPhone1[]>] [-ProxyAddresses <String[]>] [-Surname <String>]
  [-TransitiveMemberOf <IMicrosoftGraphDirectoryObject[]>]
- [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-TransitiveReports <IMicrosoftGraphDirectoryObject[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Create1
 ```
-New-MgContact -BodyParameter <IMicrosoftGraphOrgContact1> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgContact -BodyParameter <IMicrosoftGraphOrgContact1> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +42,7 @@ Add new entity to contacts
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -59,7 +59,7 @@ For now a contact can only have one physical address.
 To construct, see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalOfficeAddress[]
+Type: IMicrosoftGraphPhysicalOfficeAddress[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -76,7 +76,7 @@ The directoryObject type is the base type for many other directory entity types.
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
+Type: IMicrosoftGraphOrgContact1
 Parameter Sets: Create1
 Aliases:
 
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 Name of the company that this organizational contact belong to.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -106,7 +106,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -121,7 +121,7 @@ Accept wildcard characters: False
 The name for the department in which the contact works.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -139,7 +139,7 @@ Nullable.
 To construct, see NOTES section for DIRECTREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -154,7 +154,7 @@ Accept wildcard characters: False
 Display name for this organizational contact.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -169,7 +169,7 @@ Accept wildcard characters: False
 First name for this organizational contact.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -184,7 +184,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -199,7 +199,7 @@ Accept wildcard characters: False
 Job title for this organizational contact.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -214,7 +214,7 @@ Accept wildcard characters: False
 The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -229,7 +229,7 @@ Accept wildcard characters: False
 Email alias (portion of email address pre-pending the @ symbol) for this organizational contact.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -246,7 +246,7 @@ The directoryObject type is the base type for many other directory entity types.
 To construct, see NOTES section for MANAGER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
+Type: IMicrosoftGraphDirectoryObject
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -264,7 +264,7 @@ Nullable.
 To construct, see NOTES section for MEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -281,7 +281,7 @@ The Timestamp type represents date and time information using ISO 8601 format an
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -297,7 +297,7 @@ List of any synchronization provisioning errors for this organizational contact.
 To construct, see NOTES section for ONPREMISESPROVISIONINGERRORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnPremisesProvisioningError[]
+Type: IMicrosoftGraphOnPremisesProvisioningError[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -312,7 +312,7 @@ Accept wildcard characters: False
 true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -330,7 +330,7 @@ Only one of each type can ever be present in the collection.
 To construct, see NOTES section for PHONES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhone1[]
+Type: IMicrosoftGraphPhone1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -347,7 +347,7 @@ The any operator is required for filter expressions on multi-valued properties.
 Supports $filter.
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 Last name for this organizational contact.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -378,7 +378,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for TRANSITIVEMEMBEROF properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -395,7 +395,7 @@ Read-only.
 To construct, see NOTES section for TRANSITIVEREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
+Type: IMicrosoftGraphDirectoryObject[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -410,7 +410,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -426,7 +426,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -443,11 +443,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOrgContact1
-
 ## NOTES
 
 ALIASES
@@ -535,4 +533,3 @@ TRANSITIVEREPORTS <IMicrosoftGraphDirectoryObject[]>: The transitive reports for
   - `[DeletedDateTime <DateTime?>]`: 
 
 ## RELATED LINKS
-

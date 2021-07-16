@@ -1,39 +1,56 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevicememberofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdevicememberobject
 schema: 2.0.0
 ---
 
-# Get-MgDeviceMemberOfByRef
+# Get-MgDeviceMemberObject
 
 ## SYNOPSIS
-Groups that this device is a member of.
-Read-only.
-Nullable.
+Invoke action getMemberObjects
 
 ## SYNTAX
 
+### GetExpanded1 (Default)
 ```
-Get-MgDeviceMemberOfByRef -DeviceId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgDeviceMemberObject -DeviceId <String> [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Get1
+```
+Get-MgDeviceMemberObject -DeviceId <String>
+ -BodyParameter <IPaths1QbmtipDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentityExpanded1
+```
+Get-MgDeviceMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+ [-AdditionalProperties <Hashtable>] [-SecurityEnabledOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgDeviceMemberObject -InputObject <IIdentityDirectoryManagementIdentity>
+ -BodyParameter <IPaths1QbmtipDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Groups that this device is a member of.
-Read-only.
-Nullable.
+Invoke action getMemberObjects
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -All
-List all pages.
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: Hashtable
+Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -43,19 +60,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CountVariable
-Specifies a count of the total number of items in a collection.
-By default, this variable will be set in the global scope.
+### -BodyParameter
+.
+To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases: CV
+Type: IPaths1QbmtipDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Get1, GetViaIdentity1
+Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -63,8 +80,8 @@ Accept wildcard characters: False
 key: id of device
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: String
+Parameter Sets: GetExpanded1, Get1
 Aliases:
 
 Required: True
@@ -74,12 +91,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Filter
-Filter items by property values
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: IIdentityDirectoryManagementIdentity
+Parameter Sets: GetViaIdentityExpanded1, GetViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -SecurityEnabledOnly
+.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: GetExpanded1, GetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -89,13 +122,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PageSize
-Sets the page size of results.
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Int32
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
 Required: False
 Position: Named
@@ -104,58 +137,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Search
-Search items by search phrases
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
 
 ```yaml
-Type: System.String
+Type: SwitchParameter
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Skip
-Skip the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Sort
-Order items by property values
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: OrderBy
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Top
-Show only the first n items
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases: Limit
+Aliases: wi
 
 Required: False
 Position: Named
@@ -169,15 +158,46 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
+### Microsoft.Graph.PowerShell.Models.IPaths1QbmtipDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema
 ## OUTPUTS
 
 ### System.String
-
 ## NOTES
 
 ALIASES
 
-### Get-MgDeviceMemberByRef
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+BODYPARAMETER <IPaths1QbmtipDevicesDeviceIdMicrosoftGraphGetmemberobjectsPostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[SecurityEnabledOnly <Boolean?>]`: 
+
+INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
+  - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
+  - `[CommandId <String>]`: key: id of command
+  - `[ContractId <String>]`: key: id of contract
+  - `[DeviceId <String>]`: key: id of device
+  - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[DirectoryRoleId <String>]`: key: id of directoryRole
+  - `[DirectoryRoleTemplateId <String>]`: key: id of directoryRoleTemplate
+  - `[DirectorySettingId <String>]`: key: id of directorySetting
+  - `[DirectorySettingTemplateId <String>]`: key: id of directorySettingTemplate
+  - `[DomainDnsRecordId <String>]`: key: id of domainDnsRecord
+  - `[DomainId <String>]`: key: id of domain
+  - `[ExtensionId <String>]`: key: id of extension
+  - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
+  - `[OrgContactId <String>]`: key: id of orgContact
+  - `[OrganizationId <String>]`: key: id of organization
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
+  - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
+  - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[UsageRightId <String>]`: key: id of usageRight
+  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

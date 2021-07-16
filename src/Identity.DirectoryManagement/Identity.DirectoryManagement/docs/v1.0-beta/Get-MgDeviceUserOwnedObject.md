@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Identity.DirectoryManagement-help.xml
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdeviceuserownedobject
 schema: 2.0.0
@@ -14,15 +14,15 @@ Invoke action getUserOwnedObjects
 
 ### GetExpanded (Default)
 ```
-Get-MgDeviceUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgDeviceUserOwnedObject [-AdditionalProperties <Hashtable>] [-Type <String>] [-UserId <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-MgDeviceUserOwnedObject
  -BodyParameter <IPaths51Hjg8DevicesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,7 @@ Invoke action getUserOwnedObjects
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -52,7 +52,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths51Hjg8DevicesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
+Type: IPaths51Hjg8DevicesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Get
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: GetExpanded
 Aliases:
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -113,7 +113,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -130,11 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths51Hjg8DevicesMicrosoftGraphGetuserownedobjectsPostRequestbodyContentApplicationJsonSchema
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
-
 ## NOTES
 
 ALIASES
@@ -150,4 +148,3 @@ BODYPARAMETER <IPaths51Hjg8DevicesMicrosoftGraphGetuserownedobjectsPostRequestbo
   - `[UserId <String>]`: 
 
 ## RELATED LINKS
-

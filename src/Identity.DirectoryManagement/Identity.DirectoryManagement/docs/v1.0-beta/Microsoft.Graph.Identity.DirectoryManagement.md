@@ -131,21 +131,17 @@ Invoke action getMemberGroups
 ### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgContactMemberOf](Get-MgContactMemberOf.md)
-Groups that this contact is a member of.
-Read-only.
-Nullable.
+### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgContactMemberOfByRef](Get-MgContactMemberOfByRef.md)
-Groups that this contact is a member of.
-Read-only.
-Nullable.
+### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgContactTransitiveMemberOf](Get-MgContactTransitiveMemberOf.md)
-Get transitiveMemberOf from contacts
+### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgContactTransitiveMemberOfByRef](Get-MgContactTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from contacts
+### [Get-MgContactMemberObject](Get-MgContactMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgContactTransitiveReport](Get-MgContactTransitiveReport.md)
 The transitive reports for a contact.
@@ -194,15 +190,11 @@ Invoke action getMemberGroups
 ### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
 Invoke action getMemberObjects
 
-### [Get-MgDeviceMemberOf](Get-MgDeviceMemberOf.md)
-Groups that this device is a member of.
-Read-only.
-Nullable.
+### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
+Invoke action getMemberObjects
 
-### [Get-MgDeviceMemberOfByRef](Get-MgDeviceMemberOfByRef.md)
-Groups that this device is a member of.
-Read-only.
-Nullable.
+### [Get-MgDeviceMemberObject](Get-MgDeviceMemberObject.md)
+Invoke action getMemberObjects
 
 ### [Get-MgDeviceRegisteredOwner](Get-MgDeviceRegisteredOwner.md)
 The user that cloud joined the device or registered their personal device.
@@ -230,13 +222,17 @@ For cloud joined devices and registered personal devices, registered users are s
 Read-only.
 Nullable.
 
-### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
-Groups that this device is a member of.
-This operation is transitive.
+### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
-### [Get-MgDeviceTransitiveMemberOfByRef](Get-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
-This operation is transitive.
+### [Get-MgDeviceRegisteredUserByRef](Get-MgDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
 ### [Get-MgDeviceUsageRights](Get-MgDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
@@ -393,10 +389,8 @@ Invoke action getUserOwnedObjects
 ### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
 Get entity from subscribedSkus by key
 
-### [Get-MgUserScopedRoleMemberOf](Get-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+### [Get-MgSubscribedSku](Get-MgSubscribedSku.md)
+Get entity from subscribedSkus by key
 
 ### [Initialize-MgOrganizationService](Initialize-MgOrganizationService.md)
 Invoke action activateService
@@ -427,13 +421,15 @@ The contact's direct reports.
 (The users and contacts that have their manager property set to this contact.) Read-only.
 Nullable.
 
-### [New-MgContactMemberOfByRef](New-MgContactMemberOfByRef.md)
-Groups that this contact is a member of.
-Read-only.
+### [New-MgContactDirectReportByRef](New-MgContactDirectReportByRef.md)
+The contact's direct reports.
+(The users and contacts that have their manager property set to this contact.) Read-only.
 Nullable.
 
-### [New-MgContactTransitiveMemberOfByRef](New-MgContactTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for contacts
+### [New-MgContactDirectReportByRef](New-MgContactDirectReportByRef.md)
+The contact's direct reports.
+(The users and contacts that have their manager property set to this contact.) Read-only.
+Nullable.
 
 ### [New-MgContactTransitiveReportByRef](New-MgContactTransitiveReportByRef.md)
 The transitive reports for a contact.
@@ -453,8 +449,8 @@ The collection of open extensions defined for the device.
 Read-only.
 Nullable.
 
-### [New-MgDeviceMemberOfByRef](New-MgDeviceMemberOfByRef.md)
-Groups that this device is a member of.
+### [New-MgDeviceExtension](New-MgDeviceExtension.md)
+The collection of open extensions defined for the device.
 Read-only.
 Nullable.
 
@@ -471,9 +467,11 @@ For cloud joined devices and registered personal devices, registered users are s
 Read-only.
 Nullable.
 
-### [New-MgDeviceTransitiveMemberOfByRef](New-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
-This operation is transitive.
+### [New-MgDeviceRegisteredUserByRef](New-MgDeviceRegisteredUserByRef.md)
+Collection of registered users of the device.
+For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration.
+Read-only.
+Nullable.
 
 ### [New-MgDeviceUsageRights](New-MgDeviceUsageRights.md)
 Represents the usage rights a device has been granted.
@@ -550,10 +548,8 @@ Get organization settings returns the properties configured for profile cards fo
 ### [New-MgSubscribedSku](New-MgSubscribedSku.md)
 Add new entity to subscribedSkus
 
-### [New-MgUserScopedRoleMemberOf](New-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+### [New-MgSubscribedSku](New-MgSubscribedSku.md)
+Add new entity to subscribedSkus
 
 ### [Remove-MgAdministrativeUnit](Remove-MgAdministrativeUnit.md)
 Represents an Azure Active Directory object.
@@ -671,10 +667,8 @@ Get organization settings returns the properties configured for profile cards fo
 ### [Remove-MgSubscribedSku](Remove-MgSubscribedSku.md)
 Delete entity from subscribedSkus
 
-### [Remove-MgUserScopedRoleMemberOf](Remove-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+### [Remove-MgSubscribedSku](Remove-MgSubscribedSku.md)
+Delete entity from subscribedSkus
 
 ### [Restore-MgAdministrativeUnit](Restore-MgAdministrativeUnit.md)
 Invoke action restore
@@ -846,8 +840,6 @@ Get organization settings returns the properties configured for profile cards fo
 ### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
 Update entity in subscribedSkus
 
-### [Update-MgUserScopedRoleMemberOf](Update-MgUserScopedRoleMemberOf.md)
-The scoped-role administrative unit memberships for this user.
-Read-only.
-Nullable.
+### [Update-MgSubscribedSku](Update-MgSubscribedSku.md)
+Update entity in subscribedSkus
 
