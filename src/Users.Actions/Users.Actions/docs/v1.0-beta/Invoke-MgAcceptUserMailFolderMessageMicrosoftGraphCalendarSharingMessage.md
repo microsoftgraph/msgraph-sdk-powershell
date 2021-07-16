@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgacceptusermailfoldermessagemicrosoftgraphcalendarsharingmessage
 schema: 2.0.0
@@ -15,13 +15,13 @@ Invoke action accept
 ### Accept1 (Default)
 ```
 Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage -MailFolderId <String>
- -MessageId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -MessageId <String> -UserId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AcceptViaIdentity1
 ```
 Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage -InputObject <IUsersActionsIdentity>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: IUsersActionsIdentity
 Parameter Sets: AcceptViaIdentity1
 Aliases:
 
@@ -51,7 +51,7 @@ Accept wildcard characters: False
 key: id of mailFolder
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Accept1
 Aliases:
 
@@ -66,7 +66,7 @@ Accept wildcard characters: False
 key: id of message
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Accept1
 Aliases:
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Accept1
 Aliases:
 
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -112,7 +112,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -129,11 +129,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCalendar
-
 ## NOTES
 
 ALIASES
@@ -169,4 +167,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

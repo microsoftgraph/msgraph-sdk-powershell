@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgdeclineusermailfoldermessagemicrosoftgrapheventmessagerequest
 schema: 2.0.0
@@ -16,7 +16,7 @@ Invoke action decline
 ```
 Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -MailFolderId <String>
  -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>] [-Comment <String>]
- [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf]
+ [-ProposedNewTime <IMicrosoftGraphTimeSlot>] [-SendResponse] [-PassThru] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -25,21 +25,21 @@ Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -MailFold
 Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -MailFolderId <String>
  -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeclineViaIdentity
-```
-Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeclineViaIdentityExpanded
 ```
 Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
- [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SendResponse] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### DeclineViaIdentity
+```
+Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Invoke action decline
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
+Type: IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Decline, DeclineViaIdentity
 Aliases:
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
 Aliases:
 
@@ -100,8 +100,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: DeclineViaIdentity, DeclineViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: DeclineViaIdentityExpanded, DeclineViaIdentity
 Aliases:
 
 Required: True
@@ -115,8 +115,8 @@ Accept wildcard characters: False
 key: id of mailFolder
 
 ```yaml
-Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Type: String
+Parameter Sets: DeclineExpanded, Decline
 Aliases:
 
 Required: True
@@ -130,8 +130,8 @@ Accept wildcard characters: False
 key: id of message
 
 ```yaml
-Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Type: String
+Parameter Sets: DeclineExpanded, Decline
 Aliases:
 
 Required: True
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -161,7 +161,7 @@ timeSlot
 To construct, see NOTES section for PROPOSEDNEWTIME properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
+Type: IMicrosoftGraphTimeSlot
 Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
 Aliases:
 
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: DeclineExpanded, DeclineViaIdentityExpanded
 Aliases:
 
@@ -191,8 +191,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Decline, DeclineExpanded
+Type: String
+Parameter Sets: DeclineExpanded, Decline
 Aliases:
 
 Required: True
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -222,7 +222,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -239,13 +239,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1LcbhjoUsersUserIdMailfoldersMailfolderIdMessagesMessageIdMicrosoftGraphEventmessagerequestMicrosoftGraphDeclinePostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -301,4 +298,3 @@ PROPOSEDNEWTIME <IMicrosoftGraphTimeSlot>: timeSlot
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
 ## RELATED LINKS
-

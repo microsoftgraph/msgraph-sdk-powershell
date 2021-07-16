@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/copy-mguseronenotesectiontonotebook
 schema: 2.0.0
@@ -16,28 +16,28 @@ Invoke action copyToNotebook
 ```
 Copy-MgUserOnenoteSectionToNotebook -OnenoteSectionId <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-GroupId <String>] [-Id <String>] [-RenameAs <String>]
- [-SiteCollectionId <String>] [-SiteId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SiteCollectionId <String>] [-SiteId <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Copy
 ```
 Copy-MgUserOnenoteSectionToNotebook -OnenoteSectionId <String> -UserId <String>
  -BodyParameter <IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CopyViaIdentity
-```
-Copy-MgUserOnenoteSectionToNotebook -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CopyViaIdentityExpanded
 ```
 Copy-MgUserOnenoteSectionToNotebook -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-GroupId <String>] [-Id <String>] [-RenameAs <String>] [-SiteCollectionId <String>] [-SiteId <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CopyViaIdentity
+```
+Copy-MgUserOnenoteSectionToNotebook -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Invoke action copyToNotebook
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema
+Type: IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
@@ -82,7 +82,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -113,8 +113,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: CopyViaIdentityExpanded, CopyViaIdentity
 Aliases:
 
 Required: True
@@ -128,8 +128,8 @@ Accept wildcard characters: False
 key: id of onenoteSection
 
 ```yaml
-Type: System.String
-Parameter Sets: Copy, CopyExpanded
+Type: String
+Parameter Sets: CopyExpanded, Copy
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
@@ -188,8 +188,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Copy, CopyExpanded
+Type: String
+Parameter Sets: CopyExpanded, Copy
 Aliases:
 
 Required: True
@@ -203,7 +203,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -219,7 +219,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -236,13 +236,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths26Y9CmUsersUserIdOnenoteSectionsOnenotesectionIdMicrosoftGraphCopytonotebookPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenoteOperation
-
 ## NOTES
 
 ALIASES
@@ -286,4 +283,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

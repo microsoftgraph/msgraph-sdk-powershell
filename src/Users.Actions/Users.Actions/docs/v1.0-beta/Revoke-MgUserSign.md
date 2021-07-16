@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/revoke-mgusersign
 schema: 2.0.0
@@ -14,12 +14,12 @@ Invoke action revokeSignInSessions
 
 ### Revoke (Default)
 ```
-Revoke-MgUserSign -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
+Revoke-MgUserSign -UserId <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### RevokeViaIdentity
 ```
-Revoke-MgUserSign -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
+Revoke-MgUserSign -InputObject <IUsersActionsIdentity> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,7 +34,7 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
+Type: IUsersActionsIdentity
 Parameter Sets: RevokeViaIdentity
 Aliases:
 
@@ -49,7 +49,7 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: Revoke
 Aliases:
 
@@ -64,7 +64,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -80,7 +80,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -97,11 +97,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -137,4 +135,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

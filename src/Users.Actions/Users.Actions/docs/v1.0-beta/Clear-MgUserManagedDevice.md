@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/clear-mgusermanageddevice
 schema: 2.0.0
@@ -16,28 +16,28 @@ Wipe a device
 ```
 Clear-MgUserManagedDevice -ManagedDeviceId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>] [-PersistEsimDataPlan] [-UseProtectedWipe]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Wipe1
 ```
 Clear-MgUserManagedDevice -ManagedDeviceId <String> -UserId <String>
  -BodyParameter <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### WipeViaIdentity1
-```
-Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema>
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### WipeViaIdentityExpanded1
 ```
 Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-KeepEnrollmentData] [-KeepUserData] [-MacOSUnlockCode <String>] [-PersistEsimDataPlan] [-UseProtectedWipe]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### WipeViaIdentity1
+```
+Clear-MgUserManagedDevice -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema>
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +51,7 @@ Wipe a device
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema
+Type: IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Wipe1, WipeViaIdentity1
 Aliases:
 
@@ -83,8 +83,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: WipeViaIdentity1, WipeViaIdentityExpanded1
+Type: IUsersActionsIdentity
+Parameter Sets: WipeViaIdentityExpanded1, WipeViaIdentity1
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -143,8 +143,8 @@ Accept wildcard characters: False
 key: id of managedDevice
 
 ```yaml
-Type: System.String
-Parameter Sets: Wipe1, WipeExpanded1
+Type: String
+Parameter Sets: WipeExpanded1, Wipe1
 Aliases:
 
 Required: True
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 Returns true when the command succeeds
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -173,7 +173,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: WipeExpanded1, WipeViaIdentityExpanded1
 Aliases:
 
@@ -203,8 +203,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Wipe1, WipeExpanded1
+Type: String
+Parameter Sets: WipeExpanded1, Wipe1
 Aliases:
 
 Required: True
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -234,7 +234,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -251,13 +251,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths14R8Rr7UsersUserIdManageddevicesManageddeviceIdMicrosoftGraphWipePostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### System.Boolean
-
 ## NOTES
 
 ALIASES
@@ -301,4 +298,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

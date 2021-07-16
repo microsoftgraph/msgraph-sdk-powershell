@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/set-mguserlicense
 schema: 2.0.0
@@ -14,30 +14,28 @@ Invoke action assignLicense
 
 ### AssignExpanded1 (Default)
 ```
-Set-MgUserLicense -UserId <String> [-AdditionalProperties <Hashtable>]
- [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgUserLicense -UserId <String> [-AddLicenses <IMicrosoftGraphAssignedLicense[]>]
+ [-AdditionalProperties <Hashtable>] [-RemoveLicenses <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Assign1
 ```
 Set-MgUserLicense -UserId <String>
  -BodyParameter <IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### AssignViaIdentityExpanded1
+```
+Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AddLicenses <IMicrosoftGraphAssignedLicense[]>]
+ [-AdditionalProperties <Hashtable>] [-RemoveLicenses <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### AssignViaIdentity1
 ```
 Set-MgUserLicense -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### AssignViaIdentityExpanded1
-```
-Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
- [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,7 +49,7 @@ Invoke action assignLicense
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
@@ -67,7 +65,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for ADDLICENSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
+Type: IMicrosoftGraphAssignedLicense[]
 Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
@@ -83,7 +81,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
+Type: IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Assign1, AssignViaIdentity1
 Aliases:
 
@@ -99,8 +97,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AssignViaIdentity1, AssignViaIdentityExpanded1
+Type: IUsersActionsIdentity
+Parameter Sets: AssignViaIdentityExpanded1, AssignViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +112,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
@@ -129,8 +127,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Assign1, AssignExpanded1
+Type: String
+Parameter Sets: AssignExpanded1, Assign1
 Aliases:
 
 Required: True
@@ -144,7 +142,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -160,7 +158,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -177,13 +175,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
-
 ## NOTES
 
 ALIASES
@@ -230,4 +225,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgexecuteusermanageddeviceaction
 schema: 2.0.0
@@ -16,7 +16,7 @@ Invoke action executeAction
 ```
 Invoke-MgExecuteUserManagedDeviceAction -UserId <String> [-ActionName <String>]
  [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
- [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-Confirm] [-WhatIf]
+ [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
@@ -24,22 +24,22 @@ Invoke-MgExecuteUserManagedDeviceAction -UserId <String> [-ActionName <String>]
 ```
 Invoke-MgExecuteUserManagedDeviceAction -UserId <String>
  -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### ExecuteViaIdentity
-```
-Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ExecuteViaIdentityExpanded
 ```
 Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity> [-ActionName <String>]
  [-AdditionalProperties <Hashtable>] [-DeviceIds <String[]>] [-DeviceName <String>] [-KeepEnrollmentData]
- [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-Confirm] [-WhatIf]
+ [-KeepUserData] [-NotificationBody <String>] [-NotificationTitle <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+```
+
+### ExecuteViaIdentity
+```
+Invoke-MgExecuteUserManagedDeviceAction -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Invoke action executeAction
 managedDeviceRemoteAction
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
+Type: IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
 Parameter Sets: Execute, ExecuteViaIdentity
 Aliases:
 
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String[]
+Type: String[]
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -114,7 +114,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -130,8 +130,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ExecuteViaIdentity, ExecuteViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: ExecuteViaIdentityExpanded, ExecuteViaIdentity
 Aliases:
 
 Required: True
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: ExecuteExpanded, ExecuteViaIdentityExpanded
 Aliases:
 
@@ -205,8 +205,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Execute, ExecuteExpanded
+Type: String
+Parameter Sets: ExecuteExpanded, Execute
 Aliases:
 
 Required: True
@@ -220,7 +220,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -236,7 +236,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -253,13 +253,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1V92H65UsersUserIdManageddevicesMicrosoftGraphExecuteactionPostRequestbodyContentApplicationJsonSchema
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBulkManagedDeviceActionResult
-
 ## NOTES
 
 ALIASES
@@ -305,4 +302,3 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
-

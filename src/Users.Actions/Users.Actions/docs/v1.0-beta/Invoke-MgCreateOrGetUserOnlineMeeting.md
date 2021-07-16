@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Users.Actions-help.xml
 Module Name: Microsoft.Graph.Users.Actions
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions/invoke-mgcreateorgetuseronlinemeeting
 schema: 2.0.0
@@ -16,30 +16,30 @@ Invoke action createOrGet
 ```
 Invoke-MgCreateOrGetUserOnlineMeeting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-EndDateTime <DateTime>] [-ExternalId <String>]
- [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### Create
 ```
 Invoke-MgCreateOrGetUserOnlineMeeting -UserId <String>
  -BodyParameter <IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity>
- -BodyParameter <IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-ChatInfo <IMicrosoftGraphChatInfo>] [-EndDateTime <DateTime>] [-ExternalId <String>]
- [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Participants <IMicrosoftGraphMeetingParticipants>] [-StartDateTime <DateTime>] [-Subject <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+Invoke-MgCreateOrGetUserOnlineMeeting -InputObject <IUsersActionsIdentity>
+ -BodyParameter <IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +53,7 @@ Invoke action createOrGet
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
+Type: IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -85,7 +85,7 @@ chatInfo
 To construct, see NOTES section for CHATINFO properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphChatInfo
+Type: IMicrosoftGraphChatInfo
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -131,8 +131,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Type: IUsersActionsIdentity
+Parameter Sets: CreateViaIdentityExpanded, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -147,7 +147,7 @@ meetingParticipants
 To construct, see NOTES section for PARTICIPANTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingParticipants
+Type: IMicrosoftGraphMeetingParticipants
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -192,8 +192,8 @@ Accept wildcard characters: False
 key: id of user
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -223,7 +223,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -240,13 +240,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPostRequestbodyContentApplicationJsonSchema1
-
 ### Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnlineMeeting
-
 ## NOTES
 
 ALIASES
@@ -333,4 +330,3 @@ PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
   - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
 
 ## RELATED LINKS
-
