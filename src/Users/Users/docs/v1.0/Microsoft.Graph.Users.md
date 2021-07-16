@@ -52,15 +52,15 @@ The user or contact that is this user's manager.
 Read-only.
 (HTTP Methods: GET, PUT, DELETE.)
 
-### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
-The groups, directory roles and administrative units that the user is a member of.
+### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
+The user or contact that is this user's manager.
 Read-only.
-Nullable.
+(HTTP Methods: GET, PUT, DELETE.)
 
-### [Get-MgUserMemberOfByRef](Get-MgUserMemberOfByRef.md)
-The groups, directory roles and administrative units that the user is a member of.
+### [Get-MgUserManagerByRef](Get-MgUserManagerByRef.md)
+The user or contact that is this user's manager.
 Read-only.
-Nullable.
+(HTTP Methods: GET, PUT, DELETE.)
 
 ### [Get-MgUserOauth2PermissionGrant](Get-MgUserOauth2PermissionGrant.md)
 Get oauth2PermissionGrants from users
@@ -135,11 +135,11 @@ Nullable.
 ### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
 A collection of resources linked to the task.
 
-### [Get-MgUserTransitiveMemberOf](Get-MgUserTransitiveMemberOf.md)
-Get transitiveMemberOf from users
+### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
+A collection of resources linked to the task.
 
-### [Get-MgUserTransitiveMemberOfByRef](Get-MgUserTransitiveMemberOfByRef.md)
-Get ref of transitiveMemberOf from users
+### [Get-MgUserTodoListTaskLinkedResource](Get-MgUserTodoListTaskLinkedResource.md)
+A collection of resources linked to the task.
 
 ### [New-MgUser](New-MgUser.md)
 Add new entity to users
@@ -158,9 +158,8 @@ Nullable.
 The collection of open extensions defined for the user.
 Nullable.
 
-### [New-MgUserMemberOfByRef](New-MgUserMemberOfByRef.md)
-The groups, directory roles and administrative units that the user is a member of.
-Read-only.
+### [New-MgUserExtension](New-MgUserExtension.md)
+The collection of open extensions defined for the user.
 Nullable.
 
 ### [New-MgUserOauth2PermissionGrantByRef](New-MgUserOauth2PermissionGrantByRef.md)
@@ -207,8 +206,8 @@ Nullable.
 ### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
 A collection of resources linked to the task.
 
-### [New-MgUserTransitiveMemberOfByRef](New-MgUserTransitiveMemberOfByRef.md)
-Create new navigation property ref to transitiveMemberOf for users
+### [New-MgUserTodoListTaskLinkedResource](New-MgUserTodoListTaskLinkedResource.md)
+A collection of resources linked to the task.
 
 ### [Remove-MgUser](Remove-MgUser.md)
 Represents an Azure Active Directory user object.
