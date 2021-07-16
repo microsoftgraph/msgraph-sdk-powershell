@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationsynchronizationprofile
 schema: 2.0.0
@@ -19,14 +19,14 @@ New-MgEducationSynchronizationProfile [-AdditionalProperties <Hashtable>] [-Data
  [-ExpirationDate <DateTime>] [-HandleSpecialCharacterConstraint] [-Id <String>]
  [-IdentitySynchronizationConfiguration <Hashtable>]
  [-LicensesToAssign <IMicrosoftGraphEducationSynchronizationLicenseAssignment[]>]
- [-ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>] [-State <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-ProfileStatus <IMicrosoftGraphEducationSynchronizationProfileStatus>] [-State <String>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgEducationSynchronizationProfile -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile>
- [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationSynchronizationProfile -BodyParameter <IMicrosoftGraphEducationSynchronizationProfile> [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -40,7 +40,7 @@ Create new navigation property to synchronizationProfiles for education
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -56,7 +56,7 @@ educationSynchronizationProfile
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
+Type: IMicrosoftGraphEducationSynchronizationProfile
 Parameter Sets: Create
 Aliases:
 
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 educationSynchronizationDataProvider
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -86,7 +86,7 @@ Accept wildcard characters: False
 Name of the configuration profile for syncing identities.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -102,7 +102,7 @@ All errors associated with this synchronization profile.
 To construct, see NOTES section for ERRORS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationError[]
+Type: IMicrosoftGraphEducationSynchronizationError[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -120,7 +120,7 @@ the profile will never expire.
 (optional)
 
 ```yaml
-Type: System.DateTime
+Type: DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 educationIdentitySynchronizationConfiguration
 
 ```yaml
-Type: System.Collections.Hashtable
+Type: Hashtable
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -181,7 +181,7 @@ License setup configuration.
 To construct, see NOTES section for LICENSESTOASSIGN properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
+Type: IMicrosoftGraphEducationSynchronizationLicenseAssignment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ educationSynchronizationProfileStatus
 To construct, see NOTES section for PROFILESTATUS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
+Type: IMicrosoftGraphEducationSynchronizationProfileStatus
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -212,7 +212,7 @@ Accept wildcard characters: False
 educationSynchronizationProfileState
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -243,7 +243,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -260,11 +260,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfile
-
 ## NOTES
 
 ALIASES
@@ -324,4 +322,3 @@ PROFILESTATUS <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationS
   - `[Status <String>]`: educationSynchronizationStatus
 
 ## RELATED LINKS
-

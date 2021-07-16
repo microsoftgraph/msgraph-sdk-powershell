@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Microsoft.Graph.Education-help.xml
 Module Name: Microsoft.Graph.Education
 online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education/new-mgeducationclassassignmentcategory
 schema: 2.0.0
@@ -17,50 +17,50 @@ Nullable.
 ### CreateExpanded3 (Default)
 ```
 New-MgEducationClassAssignmentCategory -EducationClassId <String> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create3
-```
-New-MgEducationClassAssignmentCategory -EducationClassId <String>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateExpanded
 ```
 New-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
- [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf]
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-Id <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### Create
 ```
-New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity3
-```
-New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
- -BodyParameter <IMicrosoftGraphEducationCategory> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationClassAssignmentCategory -EducationAssignmentId <String> -EducationClassId <String>
+ -BodyParameter <IMicrosoftGraphEducationCategory> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### Create3
 ```
-New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgEducationClassAssignmentCategory -EducationClassId <String>
+ -BodyParameter <IMicrosoftGraphEducationCategory> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded3
 ```
 New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
- [-DisplayName <String>] [-Id <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentityExpanded
+```
+New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity> [-AdditionalProperties <Hashtable>]
+ [-DisplayName <String>] [-Id <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity3
+```
+New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
+ -BodyParameter <IMicrosoftGraphEducationCategory> [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### CreateViaIdentity
+```
+New-MgEducationClassAssignmentCategory -InputObject <IEducationIdentity>
+ -BodyParameter <IMicrosoftGraphEducationCategory> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,8 +76,8 @@ Nullable.
 Additional Parameters
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Type: Hashtable
+Parameter Sets: CreateExpanded3, CreateExpanded, CreateViaIdentityExpanded3, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -92,8 +92,8 @@ educationCategory
 To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
-Parameter Sets: Create, Create3, CreateViaIdentity, CreateViaIdentity3
+Type: IMicrosoftGraphEducationCategory
+Parameter Sets: Create, Create3, CreateViaIdentity3, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -107,8 +107,8 @@ Accept wildcard characters: False
 Unique identifier for the category.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Type: String
+Parameter Sets: CreateExpanded3, CreateExpanded, CreateViaIdentityExpanded3, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -122,8 +122,8 @@ Accept wildcard characters: False
 key: id of educationAssignment
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
+Type: String
+Parameter Sets: CreateExpanded, Create
 Aliases:
 
 Required: True
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 key: id of educationClass
 
 ```yaml
-Type: System.String
-Parameter Sets: Create, Create3, CreateExpanded, CreateExpanded3
+Type: String
+Parameter Sets: CreateExpanded3, CreateExpanded, Create, Create3
 Aliases:
 
 Required: True
@@ -152,8 +152,8 @@ Accept wildcard characters: False
 Read-only.
 
 ```yaml
-Type: System.String
-Parameter Sets: CreateExpanded, CreateExpanded3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Type: String
+Parameter Sets: CreateExpanded3, CreateExpanded, CreateViaIdentityExpanded3, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -168,8 +168,8 @@ Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentity3, CreateViaIdentityExpanded, CreateViaIdentityExpanded3
+Type: IEducationIdentity
+Parameter Sets: CreateViaIdentityExpanded3, CreateViaIdentityExpanded, CreateViaIdentity3, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -183,7 +183,7 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
@@ -199,7 +199,7 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
@@ -216,13 +216,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IEducationIdentity
-
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationCategory
-
 ## NOTES
 
 ALIASES
@@ -252,4 +249,3 @@ INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationUserId <String>]`: key: id of educationUser
 
 ## RELATED LINKS
-
