@@ -2755,8 +2755,16 @@ paths:
                 - id desc
                 - accessLevel
                 - accessLevel desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - attendeeReport
@@ -2816,7 +2824,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -2926,7 +2938,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -3640,8 +3656,16 @@ paths:
                 - id desc
                 - accessLevel
                 - accessLevel desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - attendeeReport
@@ -3701,7 +3725,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -3826,7 +3854,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -4897,8 +4929,22 @@ components:
           properties:
             accessLevel:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowAttendeeToEnableCamera:
+              type: boolean
+              description: Indicates whether attendees can turn on their camera.
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              description: Indicates whether attendees can turn on their microphone.
+              nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowTeamworkReactions:
+              type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
             alternativeRecording:
               type: string
               description: The content stream of the alternative recording of a live event. Read-only.
@@ -4950,14 +4996,14 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates whether this is a live event.
               nullable: true
             isCancelled:
               type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
-              description: Whether or not to announce when callers join or leave.
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -5525,6 +5571,14 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
         - unknownFutureValue
       type: string
     microsoft.graph.audioConferencing:

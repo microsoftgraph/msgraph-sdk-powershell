@@ -206,13 +206,19 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackage$
     remove: true
   - where:
-      verb: Search
+      verb: Search|Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalog$
+      variant: ^(Search.*|Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
       verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
       variant: (Create.*|Delete.*|Update.*|Get.*)
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicy$
+      variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
       verb: Remove
@@ -273,6 +279,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.6.0
+module-version: 1.6.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
