@@ -9,7 +9,7 @@ function Find-MgGraphCommand {
     [CmdletBinding(DefaultParameterSetName = 'FindByUrl', PositionalBinding = $false)]
     param (
         [Parameter(ParameterSetName = "FindByUrl", Mandatory = $true)]
-        [string]$Url,
+        [string]$Uri,
 
         [Parameter(ParameterSetName = "FindByUrl")]
         [ValidateSet("GET", "POST", "PUT", "PATCH", "DELETE")]
@@ -17,6 +17,7 @@ function Find-MgGraphCommand {
 
         [Parameter(ParameterSetName = "FindByUrl")]
         [Parameter(ParameterSetName = "FindByCommand")]
+        [ValidateSet("v1.0", "beta")]
         [Alias("Profile")]
         [string]$ApiVersion,
 
@@ -32,30 +33,33 @@ function Find-MgGraphCommand {
         }
         $MgCommandMetadata = Get-Content -path $MgCommandMetadataFile | ConvertFrom-Json -AsHashtable
 
+        $CurrentAPIVersion = (Get-MgProfile).Name ?? "v1.0"
+        $CurrentGraphEndpoint = ([Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.Environment)?.GraphEndpoint ?? "https://graph.microsoft.com/"
+
         switch ($PSCmdlet.ParameterSetName) {
             "FindByUrl" {
-                if ([System.Uri]::IsWellFormedUriString($url, [System.UriKind]::Absolute)) {
-                    # Create URI.
-                    $Uri = New-Object uri -ArgumentList $Url
-                }
-                else {
-                    $Url = $Url.TrimStart("/")
-                    # Add schema and host.
-                    $UriBuilder = New-Object System.UriBuilder -ArgumentList "https://graph.microsoft.com/"
-                    if ($Url.StartsWith("v1.0") -or $Url.StartsWith("beta")) {
-                        $UriBuilder.Path = $Url
-                    }
-                    else {
-                        $UriBuilder.Path = "v1.0/$Url"
-                    }
-                    $Uri = $UriBuilder.Uri
+                $Uri = $Uri.TrimStart("/").TrimEnd("/")
+                $GraphUri = $null
+                if (![System.Uri]::TryCreate($Uri, "RelativeOrAbsolute", [ref]$GraphUri) -and ($null -eq $GraphUri)) {
+                    Write-Error "The provided URI doesn't match the expected URI format. Please ensure that the URI is formated as https://graph.microsoft.com/{api-version}/{resource}."
                 }
 
-                Write-Host $Uri.ToString()
-                # $Uri = New-Object uri -ArgumentList $Url
-                $SanitizedUri = $Uri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
-                $Uri.Segments | ForEach-Object {
-                    $i = $Uri.Segments.IndexOf($_);
+                if (!$GraphUri.IsAbsoluteUri) {
+                    # Add schema and host.
+                    $UriBuilder = New-Object System.UriBuilder -ArgumentList $CurrentGraphEndpoint
+                    if ($Uri.StartsWith("v1.0") -or $Uri.StartsWith("beta")) {
+                        $UriBuilder.Path = $Uri
+                    }
+                    else {
+                        $UriBuilder.Path = "$CurrentAPIVersion/$Uri"
+                    }
+                    $GraphUri = $UriBuilder.Uri
+                }
+
+                Write-Debug "Resolved URI: $($GraphUri.ToString())"
+                $SanitizedUri = $GraphUri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
+                $GraphUri.Segments | ForEach-Object {
+                    $i = $GraphUri.Segments.IndexOf($_);
                     if ($_ -match "[^v1.0|beta]\d") {
                         # Segment contains an integer and is not API version (v1.0 or beta).
                         # $Uri = New-Object uri -ArgumentList "https://graph.ms/v1.0/users/fe9ee2a5-9450-4837-aa87-6bd8d8e72891/me"
@@ -64,12 +68,12 @@ function Find-MgGraphCommand {
                         $SanitizedUri += "{id}/"
                     }
                     else {
-                        $SanitizedUri += $uri.Segments[$i]
+                        $SanitizedUri += $GraphUri.Segments[$i]
                     }
                 }
                 $SanitizedUri = $SanitizedUri.TrimEnd("/")
-                if ($SanitizedUri -match "https:\/\/graph.microsoft.com\/(v1.0|beta)(\/.*)(\?(.*))?") {
-                    $ApiVersion = $matches[1]
+                if ($SanitizedUri -match "https:\/\/$($GraphUri.Host)\/(v1.0|beta)(\/.*)(\?(.*))?") {
+                    $ApiVersion = $ApiVersion ?? $matches[1]
                     $ResourceSegement = $matches[2]
                     # TODO: Handle query parameters.
                     $QueryParameters = $matches[3]
@@ -80,7 +84,7 @@ function Find-MgGraphCommand {
                 }
             }
             "FindByCommand" {
-
+                $ApiVersion = $ApiVersion ?? $CurrentAPIVersion
             }
         }
     }
@@ -106,7 +110,7 @@ function Find-MgGraphCommand {
                     }
                 }
                 if ($Result.Count -lt 1) {
-                    Write-Error "URL '$Method $Url' in $ApiVersion is not valid or is not currently supported by the SDK. Please file an issue here https://aka.ms/msgraph-ps-bug for this to be added."
+                    Write-Error "URL '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Please file an issue here https://aka.ms/msgraph-ps-bug for this to be added."
                 }
             }
             "FindByCommand" {
@@ -139,13 +143,13 @@ function Find-MgGraphCommand {
 }
 
 # TEST DATA
-# .\FindMgCommand.ps1 -Command "Get-MgUser" -ApiVersion "beta"
+# Find-MgGraphCommand -Command "Get-MgUser" -ApiVersion "beta"
 
-# .\FindMgCommand.ps1 -Url "https://graph.microsoft.com/v1.0/users/{id}/microsoft.graph.exportPersonalData" -Method "POST"
-# .\FindMgCommand.ps1 -Url "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageCatalogs" -Method POST
-# .\FindMgCommand.ps1 -Url "https://graph.microsoft.com/v1.0/users" -Method GET
-# .\FindMgCommand.ps1 -Url https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{id} -Method GET
-# .\FindMgCommand.ps1 -Url https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageCatalogs -Method POST
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/v1.0/users/{id}/microsoft.graph.exportPersonalData" -Method "POST"
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageCatalogs" -Method POST
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/v1.0/users" -Method GET
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageAssignmentResourceRoles/{id}" -Method GET
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/beta/identityGovernance/entitlementManagement/accessPackageCatalogs" -Method POST
 
 
-# .\FindMgCommand.ps1 -Url "https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com' and c/issuer eq 'contoso.onmicrosoft.com')" -Method GET
+# Find-MgGraphCommand -Uri "https://graph.microsoft.com/v1.0/users?$select=displayName,id&$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com' and c/issuer eq 'contoso.onmicrosoft.com')" -Method GET
