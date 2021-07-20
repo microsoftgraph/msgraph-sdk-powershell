@@ -2,13 +2,15 @@
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
 
-$permissionsMsGraphServicePrincipal = $null
+
 $permissionsPulledFromMgGraphRequest = $null
 
 function Permissions_GetPermissionsData {
 
+    $permissionsMsGraphServicePrincipal = $null
+
     # 2. Making a REST request to MS Graph
-    if ($null -eq $script:permissionsMsGraphServicePrincipal){
+    if ($null -eq $permissionsMsGraphServicePrincipal){
         $script:permissionsMsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"

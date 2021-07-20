@@ -15,7 +15,7 @@ Find permissions for authorization against Microsoft Graph
 
 # Import-Module -Force .\Microsoft.Graph.Authentication.psd1
 
-function Find-MgGraphPermission($search) {
+function Find-MgGraphPermission([string]$search) {
     
     # Creating a table specifically for Oauth2permissions data 
     $oauthData = @()
