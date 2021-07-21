@@ -19,7 +19,7 @@ jobs:
     steps:
       - template: ./checkout.yml
 
-      - template: ./install-tools.yml
+      - template: ./install-tools-template.yml
 
       - task: PowerShell@2
         name: "ComputeBranch"
