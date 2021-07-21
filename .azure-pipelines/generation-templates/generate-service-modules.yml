@@ -37,7 +37,7 @@ jobs:
       PublishToFeed: ${{ parameters.PublishToFeed }}
       DocsBranch: ${{ parameters.DocsBranch }}
     steps:
-      - template: ../common-templates/install-tools.yml
+      - template: ../common-templates/install-tools-template.yml
       - template: ../common-templates/security-prechecks-template.yml
       - task: Bash@3
         displayName: "Switch branch to $(Branch)"
