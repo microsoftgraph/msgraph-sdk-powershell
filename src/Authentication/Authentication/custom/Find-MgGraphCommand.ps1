@@ -31,7 +31,23 @@ function Find-MgGraphCommand {
         if (!(Test-Path $MgCommandMetadataFile)) {
             throw "MgCommandMetadata file not found at $MgCommandMetadataFile."
         }
-        $MgCommandMetadata = Get-Content -path $MgCommandMetadataFile | ConvertFrom-Json -AsHashtable
+
+        # Read and cache MgCommandMetadata in session object.
+        if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance?.MgCommandMetadata) {
+            Write-Debug "Reading MgCommandMetadata from session object."
+            $MgCommandMetadata = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata
+        }
+        else {
+            try {
+                Write-Debug "Reading MgCommandMetadata from file path - $MgCommandMetadataFile."
+                $FileProvider = [Microsoft.Graph.PowerShell.Authentication.Common.ProtectedFileProvider]::CreateFileProvider($MgCommandMetadataFile, [Microsoft.Graph.PowerShell.Authentication.Common.FileProtection]::SharedRead)
+                $MgCommandMetadata = $FileProvider.CreateReader().ReadToEnd() | ConvertFrom-Json -AsHashtable
+                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = $MgCommandMetadata
+            }
+            finally {
+                $FileProvider.Dispose()
+            }
+        }
 
         $CurrentAPIVersion = (Get-MgProfile).Name ?? "v1.0"
         $CurrentGraphEndpoint = ([Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.Environment)?.GraphEndpoint ?? "https://graph.microsoft.com/"
