@@ -54,23 +54,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -171,7 +154,6 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -213,18 +195,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -318,18 +288,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -436,7 +394,6 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -597,25 +554,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -765,25 +703,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -920,7 +839,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1239,23 +1157,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -1381,7 +1282,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1884,7 +1784,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2152,7 +2051,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2313,25 +2211,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -2475,25 +2354,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -3196,7 +3056,6 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3357,25 +3216,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3505,25 +3345,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -3668,7 +3489,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3987,23 +3807,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -4129,7 +3932,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4632,7 +4434,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4900,7 +4701,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -5061,25 +4861,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -5223,25 +5004,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -6430,7 +6192,6 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -6591,25 +6352,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -6759,25 +6501,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -6914,7 +6637,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7233,23 +6955,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -7376,7 +7081,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7418,18 +7122,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -7537,18 +7229,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -7664,7 +7344,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -7825,25 +7504,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -7987,25 +7647,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -8171,7 +7812,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -8332,25 +7972,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -8494,25 +8115,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -9221,7 +8823,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -9724,7 +9325,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -9992,7 +9592,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -10153,25 +9752,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -10315,25 +9895,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -11036,7 +10597,6 @@ paths:
           x-ms-docs-key-type: group
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -11197,25 +10757,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -11345,25 +10886,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -11508,7 +11030,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -11827,23 +11348,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -11970,7 +11474,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -12012,18 +11515,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -12131,18 +11622,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -12258,7 +11737,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -12419,25 +11897,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -12581,25 +12040,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -12765,7 +12205,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -12926,25 +12365,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -13088,25 +12508,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -13815,7 +13216,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -14318,7 +13718,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -14586,7 +13985,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -14747,25 +14145,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -14909,25 +14288,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -15869,23 +15229,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -15986,7 +15329,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -16028,18 +15370,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -16133,18 +15463,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -16251,7 +15569,6 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -16412,25 +15729,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -16580,25 +15878,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -16735,7 +16014,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -17054,23 +16332,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -17196,7 +16457,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -17699,7 +16959,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -17967,7 +17226,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -18128,25 +17386,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -18290,25 +17529,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -19011,7 +18231,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -19172,25 +18391,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -19320,25 +18520,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -19483,7 +18664,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -19802,23 +18982,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -19944,7 +19107,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20447,7 +19609,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20715,7 +19876,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -20876,25 +20036,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -21038,25 +20179,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -22233,7 +21355,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -22269,19 +21390,6 @@ paths:
                 - changeKey
                 - classId
                 - name
-                - calendars
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendars
               type: string
       responses:
@@ -22374,19 +21482,6 @@ paths:
                 - changeKey
                 - classId
                 - name
-                - calendars
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendars
               type: string
       responses:
@@ -22495,7 +21590,6 @@ paths:
           x-ms-docs-key-type: calendarGroup
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -22570,23 +21664,6 @@ paths:
                 - isTallyingResponses
                 - name
                 - owner
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendarPermissions
                 - calendarView
                 - events
@@ -22710,23 +21787,6 @@ paths:
                 - isTallyingResponses
                 - name
                 - owner
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendarPermissions
                 - calendarView
                 - events
@@ -22885,7 +21945,6 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -22927,18 +21986,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -23060,18 +22107,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -23208,7 +22243,6 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -23361,25 +22395,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -23545,25 +22560,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -23764,7 +22760,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -24153,23 +23148,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -24347,7 +23325,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -24934,7 +23911,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -25272,7 +24248,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -25425,25 +24400,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -25623,25 +24579,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -26540,7 +25477,6 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -26693,25 +25629,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -26877,25 +25794,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -27096,7 +25994,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -27485,23 +26382,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -27679,7 +26559,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -28266,7 +27145,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -28604,7 +27482,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -28757,25 +27634,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -28955,25 +27813,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -30472,7 +29311,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -30547,23 +29385,6 @@ paths:
                 - isTallyingResponses
                 - name
                 - owner
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendarPermissions
                 - calendarView
                 - events
@@ -30673,23 +29494,6 @@ paths:
                 - isTallyingResponses
                 - name
                 - owner
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - calendarPermissions
                 - calendarView
                 - events
@@ -30822,7 +29626,6 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -30864,18 +29667,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -30983,18 +29774,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -31122,7 +29901,6 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -31275,25 +30053,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -31457,25 +30216,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -31648,7 +30388,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -32002,23 +30741,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -32170,7 +30892,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -32715,7 +31436,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -33018,7 +31738,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -33171,25 +31890,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -33355,25 +32055,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -34174,7 +32855,6 @@ paths:
           x-ms-docs-key-type: calendar
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -34335,25 +33015,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -34497,25 +33158,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -34688,7 +33330,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -35042,23 +33683,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -35210,7 +33834,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -35755,7 +34378,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -36058,7 +34680,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -36211,25 +34832,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -36395,25 +34997,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -37763,7 +36346,6 @@ paths:
             type: string
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -37924,25 +36506,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -38092,25 +36655,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -38247,7 +36791,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -38566,23 +37109,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -38709,7 +37235,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -38751,18 +37276,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -38870,18 +37383,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -38997,7 +37498,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -39158,25 +37658,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -39320,25 +37801,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -39504,7 +37966,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -39665,25 +38126,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -39827,25 +38269,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -40554,7 +38977,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -41057,7 +39479,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -41325,7 +39746,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -41486,25 +39906,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -41648,25 +40049,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -42369,7 +40751,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -42530,25 +40911,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -42678,25 +41040,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -42841,7 +41184,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -43160,23 +41502,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - calendarPermissions
-                - calendarView
-                - events
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -43303,7 +41628,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -43345,18 +41669,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -43464,18 +41776,6 @@ paths:
                 - isInsideOrganization
                 - isRemovable
                 - role
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -43591,7 +41891,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -43752,25 +42051,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -43914,25 +42194,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -44098,7 +42359,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -44259,25 +42519,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -44421,25 +42662,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -45148,7 +43370,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -45651,7 +43872,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -45919,7 +44139,6 @@ paths:
           x-ms-docs-key-type: event
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -46080,25 +44299,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -46242,25 +44442,6 @@ paths:
                 - type
                 - uid
                 - webLink
-                - attachments
-                - calendar
-                - exceptionOccurrences
-                - extensions
-                - instances
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - calendar
                 - exceptionOccurrences
@@ -47934,12 +46115,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -47952,6 +46127,12 @@ components:
       description: Include count of items
       schema:
         type: boolean
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2
