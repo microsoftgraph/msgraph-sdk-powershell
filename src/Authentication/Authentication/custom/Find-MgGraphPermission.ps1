@@ -15,17 +15,21 @@ Find permissions for authorization against Microsoft Graph
 
 # Import-Module -Force .\Microsoft.Graph.Authentication.psd1
 
-function Find-MgGraphPermission([string]$search) {
+function Find-MgGraphPermission {
+    [cmdletbinding()]
+    param (
+        [string] $SearchString
+    )
     
     # Creating a table specifically for Oauth2permissions data 
     $oauthData = @()
-    $oauthData += Permissions_GetOauthData | Where-Object Name -like *$search*
+    $oauthData += Permissions_GetOauthData | Where-Object Name -like *$SearchString*
     # $oauthData += Permissions_GetOauthData | Where-Object Description -like *$search* 
     $oauthData | Sort-Object -Property Name
 
     # Creating a table specifically for appRoles data 
     $appRolesData = @()
-    $appRolesData += Permissions_GetAppRolesData | Where-Object Name -like *$search*
+    $appRolesData += Permissions_GetAppRolesData | Where-Object Name -like *$SearchString*
     # $appRolesData += Permissions_GetAppRolesData | Where-Object Description -like *$search*
     $appRolesData | Sort-Object -Property Name
 
