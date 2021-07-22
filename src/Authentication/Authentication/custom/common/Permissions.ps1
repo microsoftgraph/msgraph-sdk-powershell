@@ -7,11 +7,11 @@ $permissionsPulledFromMgGraphRequest = $null
 
 function Permissions_GetPermissionsData {
 
-    $permissionsMsGraphServicePrincipal = $null
+    $permissions_MsGraphServicePrincipal = $null
 
     # 2. Making a REST request to MS Graph
-    if ($null -eq $permissionsMsGraphServicePrincipal){
-        $script:permissionsMsGraphServicePrincipal = try {
+    if ($null -eq $permissions_MsGraphServicePrincipal){
+        $script:permissions_MsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
             $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' 
@@ -29,8 +29,8 @@ function Permissions_GetPermissionsData {
     }
     
     # 3. Parse the permisions from the serviceprincipal
-    $msOauth = $script:permissionsMsGraphServicePrincipal.oauth2PermissionScopes
-    $msAppRoles = $script:permissionsMsGraphServicePrincipal.appRoles
+    $msOauth = $script:permissions_MsGraphServicePrincipal.oauth2PermissionScopes
+    $msAppRoles = $script:permissions_MsGraphServicePrincipal.appRoles
 
     # make sure the parsed permissions are exported properly
     @{
