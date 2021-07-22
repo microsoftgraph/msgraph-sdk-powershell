@@ -13,7 +13,7 @@ function Find-MgGraphCommand {
 
         [Parameter(ParameterSetName = "FindByUrl")]
         [ValidateSet("GET", "POST", "PUT", "PATCH", "DELETE")]
-        [string]$Method = "GET",
+        [string]$Method,
 
         [Parameter(ParameterSetName = "FindByUrl")]
         [Parameter(ParameterSetName = "FindByCommand")]
@@ -48,6 +48,12 @@ function Find-MgGraphCommand {
                 $FileProvider.Dispose()
             }
         }
+        #TODO: Remove me!!
+        # $MgCommandMetadataFile = (Join-Path $PSScriptRoot "..\..\..\..\assets\MgCommandMetadata.json")
+        # if (!(Test-Path $MgCommandMetadataFile)) {
+        #     Write-Error "MgCommandMetadata file not found."
+        # }
+        # $MgCommandMetadata = Get-Content -path $MgCommandMetadataFile | ConvertFrom-Json -AsHashtable
 
         $CurrentAPIVersion = (Get-MgProfile).Name ?? "v1.0"
         $CurrentGraphEndpoint = ([Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.Environment)?.GraphEndpoint ?? "https://graph.microsoft.com/"
@@ -62,6 +68,11 @@ function Find-MgGraphCommand {
                     throw "The provided URI doesn't match the expected URI format. Please ensure that the URI is formated as https://graph.microsoft.com/{api-version}/{resource}."
                 }
 
+                # Use API version in URI if -ApiVersion is not provided.
+                if ([System.String]::IsNullOrWhiteSpace($ApiVersion) -and ($GraphUri.OriginalString -match "(v1.0|beta)\/")) {
+                    $ApiVersion = $Matches[1]
+                }
+
                 if (!$GraphUri.IsAbsoluteUri) {
                     # Add schema and host.
                     $UriBuilder = New-Object System.UriBuilder -ArgumentList $CurrentGraphEndpoint
@@ -73,7 +84,6 @@ function Find-MgGraphCommand {
                     }
                     $GraphUri = New-Object -TypeName Uri -ArgumentList ([System.Uri]::UnescapeDataString($UriBuilder.Uri))
                 }
-
                 Write-Debug "Resolved URI: $GraphUri."
                 $SanitizedUri = $GraphUri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
                 $GraphUri.Segments | ForEach-Object {
@@ -90,7 +100,6 @@ function Find-MgGraphCommand {
                 $SanitizedUri = $SanitizedUri.TrimEnd("/")
                 Write-Debug "Sanitized URI: $SanitizedUri."
                 if ($SanitizedUri -match "https:\/\/$($GraphUri.Host)\/(v1.0|beta)(\/.*)(\?(.*))?") {
-                    $ApiVersion = [System.String]::IsNullOrWhiteSpace($ApiVersion) ? $matches[1] : $ApiVersion
                     $ResourceSegement = $matches[2]
                     $RegexResourceSegement = "^$($ResourceSegement -Replace '(?<={)(.*?)(?=})', '(\w*-\w*|\w*)')$"
                 }
@@ -99,7 +108,7 @@ function Find-MgGraphCommand {
                 }
             }
             "FindByCommand" {
-                $ApiVersion = [System.String]::IsNullOrWhiteSpace($ApiVersion) ? $CurrentAPIVersion : $ApiVersion
+                #TODO: Do we really need this?
             }
         }
     }
@@ -121,8 +130,8 @@ function Find-MgGraphCommand {
                             APIVersion = $_.Value.ApiVersion
                             OutputType = $_.Value.OutputType
                         }
-                        if ($CommandPath.Method -eq $Method -and
-                            $CommandPath.ApiVersion -eq $ApiVersion -and
+                        if ($CommandPath.Method -match $Method -and
+                            $CommandPath.ApiVersion -match $ApiVersion -and
                             $CommandPath.Url -match $RegexResourceSegement) {
                             $null = $Result.Add($CommandPath)
                         }
@@ -143,7 +152,7 @@ function Find-MgGraphCommand {
                             APIVersion = $_.Value.ApiVersion
                             OutputType = $_.Value.OutputType
                         }
-                        if ($CommandPath.ApiVersion -eq $ApiVersion -and
+                        if ($CommandPath.ApiVersion -match $ApiVersion -and
                             $CommandPath.Command -match "^$Command$") {
                             $null = $Result.Add($CommandPath)
                         }
