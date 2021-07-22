@@ -144,7 +144,7 @@ jobs:
             $Modules = "$(ModulesToGenerate)" -split " "
             . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates
        
-      - template: ./generation-templates/generate-helpdocs-template.yml
+      - template: ./generate-helpdocs-template.yml
         parameters:
             DOCSBRANCH: $(DocsBranch)
             ModulesToGenerate: $(ModulesToGenerate)
