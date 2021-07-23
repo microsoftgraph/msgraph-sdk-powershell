@@ -12,7 +12,11 @@ param (
 
     [Parameter()]
     [string]
-    $OutputPath = (Join-Path $PSScriptRoot "..\..\assets\")
+    $OutputPath = (Join-Path $PSScriptRoot "..\..\assets\"),
+
+    [Parameter()]
+    [switch]
+    $IncludePermissions
 )
 if (!(Test-Path $SourcePath)) {
     Write-Error "SourcePath is not valid or does not exist. Please ensure that $SourcePath exists then try again."
@@ -58,21 +62,18 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
         }
 
         if ($RawFileContent -match $ProfilePattern) {
-            $Version = $Matches.1
-            if ($Matches.1 -eq "v1.0-beta") {
-                $Version = "beta"
-            }
-
-            $MappingValue.ApiVersion = $Version
+            $MappingValue.ApiVersion = ($Matches.1 -eq "v1.0-beta") ? "beta" : $Matches.1
         }
 
         if ($RawFileContent -match $OutputTypePattern) {
             $MappingValue.OutputType = $Matches.1
         }
 
+        # Disambiguate /users (Get-MgUser) and /users/{id} (Get-MgUser) using variant name i.e., List and Get.
         if ($VariantName.StartsWith("List")) {
             $CommandMappingKey = "$($MappingValue.Command)_List_$($MappingValue.ApiVersion)"
-        } else {
+        }
+        else {
             $CommandMappingKey = "$($MappingValue.Command)_$($MappingValue.ApiVersion)"
         }
 
@@ -80,13 +81,15 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             $CommandPathMapping[$CommandMappingKey].Variants.AddRange($MappingValue.Variants)
         }
         else {
-            Write-Host "Fetching permissions for $CommandMappingKey" -ForegroundColor Green
-            try {
-                # $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
-                # $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
-            }
-            catch {
-                Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)"
+            if ($IncludePermissions) {
+                try {
+                    Write-Debug "Fetching permissions for $CommandMappingKey"
+                    $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
+                    $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
+                }
+                catch {
+                    Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)"
+                }
             }
             $CommandPathMapping.Add($CommandMappingKey, $MappingValue)
         }
@@ -98,4 +101,4 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
 
 $CommandPathMapping | ConvertTo-Json -Depth 3 | Out-File -FilePath $MgCommandMetadataFile
 $stopwatch.Stop()
-$stopwatch.Elapsed.TotalSeconds
+Write-Debug "Generated command metadata file in '$($Stopwatch.Elapsed.TotalSeconds)`s."

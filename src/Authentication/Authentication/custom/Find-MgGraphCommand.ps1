@@ -3,9 +3,8 @@
 # ------------------------------------------------------------------------------
 
 Set-StrictMode -Version 2
-
 function Find-MgGraphCommand {
-    [OutputType([System.Management.Automation.PSCustomObject])]
+    [OutputType([Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand])]
     [CmdletBinding(DefaultParameterSetName = 'FindByUrl', PositionalBinding = $false)]
     param (
         [Parameter(ParameterSetName = "FindByUrl", Mandatory = $true)]
@@ -26,6 +25,9 @@ function Find-MgGraphCommand {
     )
 
     begin {
+        # Import ulility scripts.
+        . "$PSScriptRoot/common/Json.ps1" | Out-Null
+
         # Read content of metadata file.
         $MgCommandMetadataFile = (Join-Path $PSScriptRoot "..\..\..\..\assets\MgCommandMetadata.json")
         if (!(Test-Path $MgCommandMetadataFile)) {
@@ -33,31 +35,16 @@ function Find-MgGraphCommand {
         }
 
         # Read and cache MgCommandMetadata in session object.
-        if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance?.MgCommandMetadata) {
+        if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
+            $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata) {
             Write-Debug "Reading MgCommandMetadata from session object."
-            $MgCommandMetadata = [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata
         }
         else {
-            try {
-                Write-Debug "Reading MgCommandMetadata from file path - $MgCommandMetadataFile."
-                $FileProvider = [Microsoft.Graph.PowerShell.Authentication.Common.ProtectedFileProvider]::CreateFileProvider($MgCommandMetadataFile, [Microsoft.Graph.PowerShell.Authentication.Common.FileProtection]::SharedRead)
-                $MgCommandMetadata = $FileProvider.CreateReader().ReadToEnd() | ConvertFrom-Json -AsHashtable
-                [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = $MgCommandMetadata
-            }
-            finally {
-                $FileProvider.Dispose()
-            }
+            Write-Debug "Reading MgCommandMetadata from file path - $MgCommandMetadataFile."
+            [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = Json_ConvertJsonToHashtable $MgCommandMetadataFile
         }
-        #TODO: Remove me!!
-        # $MgCommandMetadataFile = (Join-Path $PSScriptRoot "..\..\..\..\assets\MgCommandMetadata.json")
-        # if (!(Test-Path $MgCommandMetadataFile)) {
-        #     Write-Error "MgCommandMetadata file not found."
-        # }
-        # $MgCommandMetadata = Get-Content -path $MgCommandMetadataFile | ConvertFrom-Json -AsHashtable
 
-        $CurrentAPIVersion = (Get-MgProfile).Name ?? "v1.0"
-        $CurrentGraphEndpoint = ([Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.Environment)?.GraphEndpoint ?? "https://graph.microsoft.com/"
-
+        $CurrentGraphEndpoint = "https://graph.microsoft.com/"
         switch ($PSCmdlet.ParameterSetName) {
             "FindByUrl" {
                 Write-Debug "Received URI: $Uri."
@@ -80,6 +67,7 @@ function Find-MgGraphCommand {
                         $UriBuilder.Path = $Uri
                     }
                     else {
+                        if ([System.String]::IsNullOrWhiteSpace($ApiVersion)) { $CurrentAPIVersion = (Get-MgProfile).Name } else { $CurrentAPIVersion = $ApiVersion }
                         $UriBuilder.Path = "$CurrentAPIVersion/$Uri"
                     }
                     $GraphUri = New-Object -TypeName Uri -ArgumentList ([System.Uri]::UnescapeDataString($UriBuilder.Uri))
@@ -107,33 +95,22 @@ function Find-MgGraphCommand {
                     Write-Error "The provided URL doesn't match the expected URL format. Please ensure that the URL is formated as https://graph.microsoft.com/{api-version}/{resource}."
                 }
             }
-            "FindByCommand" {
-                #TODO: Do we really need this?
-            }
         }
     }
 
     process {
-        $Result = [System.Collections.ArrayList]@()
+        $Result = @()
         try {
             switch ($PSCmdlet.ParameterSetName) {
                 "FindByUrl" {
                     Write-Debug "Matching URI: $RegexResourceSegement"
                     Write-Debug "Matching Method: $Method"
                     Write-Debug "Matching ApiVersion: $ApiVersion"
-                    $MgCommandMetadata.GetEnumerator() | ForEach-Object {
-                        $CommandPath = [PSCustomObject]@{
-                            Command    = $_.Value.Command
-                            Variants   = $_.Value.Variants
-                            URL        = $_.Value.Url
-                            Method     = $_.Value.Method
-                            APIVersion = $_.Value.ApiVersion
-                            OutputType = $_.Value.OutputType
-                        }
-                        if ($CommandPath.Method -match $Method -and
-                            $CommandPath.ApiVersion -match $ApiVersion -and
-                            $CommandPath.Url -match $RegexResourceSegement) {
-                            $null = $Result.Add($CommandPath)
+                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata.GetEnumerator() | ForEach-Object {
+                        if ($_.Value.Method -match $Method -and
+                            $_.Value.ApiVersion -match $ApiVersion -and
+                            $_.Value.Url -match $RegexResourceSegement) {
+                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_.Value
                         }
                     }
                     if ($Result.Count -lt 1) {
@@ -143,21 +120,12 @@ function Find-MgGraphCommand {
                 "FindByCommand" {
                     Write-Debug "Matching Command: $Command"
                     Write-Debug "Matching ApiVersion: $ApiVersion"
-                    $MgCommandMetadata.GetEnumerator() | ForEach-Object {
-                        $CommandPath = [PSCustomObject]@{
-                            Command    = $_.Value.Command
-                            Variants   = $_.Value.Variants
-                            URL        = $_.Value.Url
-                            Method     = $_.Value.Method
-                            APIVersion = $_.Value.ApiVersion
-                            OutputType = $_.Value.OutputType
-                        }
-                        if ($CommandPath.ApiVersion -match $ApiVersion -and
-                            $CommandPath.Command -match "^$Command$") {
-                            $null = $Result.Add($CommandPath)
+                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata.GetEnumerator() | ForEach-Object {
+                        if ($_.Value.ApiVersion -match $ApiVersion -and
+                            $_.Value.Command -match "^$Command$") {
+                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_.Value
                         }
                     }
-
                     if ($Result.Count -lt 1) {
                         Write-Error "'$Command' is not a valid Microsoft Graph PowerShell command. Please check the name and try again."
                     }
@@ -167,7 +135,7 @@ function Find-MgGraphCommand {
         catch {
             Write-Error $_.Exception
         }
-        Write-Output $Result
+        return $Result | Sort-Object @{Expression = "APIVersion"; Descending = $True }, @{Expression = "Command"; Descending = $False }
     }
 
     end {
