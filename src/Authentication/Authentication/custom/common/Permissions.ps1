@@ -25,6 +25,11 @@ function Permissions_GetPermissionsData {
             # Write-Host "Getting data from local file"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
+        } catch [System.Net.Http.HttpRequestException] {
+
+            # Write-Host "Getting data from local file"
+            Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+        
         }
     }
     
