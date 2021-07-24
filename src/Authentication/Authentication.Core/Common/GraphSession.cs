@@ -66,7 +66,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <summary>
         /// Represents a mapping of generated commands to API paths.
         /// </summary>
-        public Hashtable MgCommandMetadata { get; set; }
+        public Hashtable[] MgCommandMetadata { get; set; }
 
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.

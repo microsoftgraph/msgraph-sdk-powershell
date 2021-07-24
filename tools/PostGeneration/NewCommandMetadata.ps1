@@ -51,14 +51,14 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
     if ($RawFileContent -match $OpenApiTagPattern) {
         # "OperationId" = $Matches.1
         $MappingValue = @{
-            "Command"     = $CommandName
-            "Variants"    = [System.Collections.ArrayList]@($VariantName)
-            "Method"      = $Matches.2
-            "Url"         = $Matches.3
-            "ApiVersion"  = $null
-            "OutputType"  = $null
-            "Module"      = $ModuleName
-            "Permissions" = @()
+            Command     = $CommandName
+            Variants    = [System.Collections.ArrayList]@($VariantName)
+            Method      = $Matches.2
+            Url         = $Matches.3
+            ApiVersion  = $null
+            OutputType  = $null
+            Module      = $ModuleName
+            Permissions = @()
         }
 
         if ($RawFileContent -match $ProfilePattern) {
@@ -84,8 +84,16 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             if ($IncludePermissions) {
                 try {
                     Write-Debug "Fetching permissions for $CommandMappingKey"
-                    $Permissions = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
-                    $MappingValue.Permissions = ($Permissions | Sort-Object -Property value -Unique)
+                    $Permissions = @()
+                    Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue | ForEach-Object {
+                        $Permissions += [PSCustomObject]@{
+                            Name            = $_.value
+                            Description     = $_.consentDisplayName
+                            FullDescription = $_.consentDescription
+                            IsAdmin         = $_.IsAdmin
+                        }
+                    }
+                    $MappingValue.Permissions = ($Permissions | Sort-Object -Property Name -Unique)
                 }
                 catch {
                     Write-Warning "Failed to fetch permissions: $($PermissionsUrl)?requesturl=$($MappingValue.Url)&method=$($MappingValue.Method)"
@@ -98,7 +106,7 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
         Write-Error "No match for $OpenApiTagPattern"
     }
 }
-
-$CommandPathMapping | ConvertTo-Json -Depth 3 | Out-File -FilePath $MgCommandMetadataFile
+Write-Debug "Writing metadata to $MgCommandMetadataFile."
+$CommandPathMapping.GetEnumerator() | Sort-Object Name | Select-Object -ExpandProperty Value | ConvertTo-Json -Depth 4 | Out-File -FilePath $MgCommandMetadataFile
 $stopwatch.Stop()
 Write-Debug "Generated command metadata file in '$($Stopwatch.Elapsed.TotalSeconds)`s."

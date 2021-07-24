@@ -106,11 +106,11 @@ function Find-MgGraphCommand {
                     Write-Debug "Matching URI: $RegexResourceSegement"
                     Write-Debug "Matching Method: $Method"
                     Write-Debug "Matching ApiVersion: $ApiVersion"
-                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata.GetEnumerator() | ForEach-Object {
-                        if ($_.Value.Method -match $Method -and
-                            $_.Value.ApiVersion -match $ApiVersion -and
-                            $_.Value.Url -match $RegexResourceSegement) {
-                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_.Value
+                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                        if ($_.Method -match $Method -and
+                            $_.ApiVersion -match $ApiVersion -and
+                            $_.Url -match $RegexResourceSegement) {
+                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
                         }
                     }
                     if ($Result.Count -lt 1) {
@@ -120,10 +120,10 @@ function Find-MgGraphCommand {
                 "FindByCommand" {
                     Write-Debug "Matching Command: $Command"
                     Write-Debug "Matching ApiVersion: $ApiVersion"
-                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata.GetEnumerator() | ForEach-Object {
-                        if ($_.Value.ApiVersion -match $ApiVersion -and
-                            $_.Value.Command -match "^$Command$") {
-                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_.Value
+                    [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
+                        if ($_.ApiVersion -match $ApiVersion -and
+                            $_.Command -match "^$Command$") {
+                            $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
                         }
                     }
                     if ($Result.Count -lt 1) {
