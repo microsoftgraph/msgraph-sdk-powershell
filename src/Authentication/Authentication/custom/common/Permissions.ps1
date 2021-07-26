@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
-
+Update-FormatData -PrependPath .\src\Authentication\Authentication\Microsoft.Graph.Authentication.format.ps1xml
 
 $permissionsPulledFromMgGraphRequest = $null
 
@@ -64,15 +64,15 @@ function Permissions_GetOauthData {
         }
         
         $entry = [ordered] @{
-            
             "Id" = $oauth2grant.id
-            "PermissionType" = $oauth2grant.type
+            "PermissionType" = 'Delegated'
+            "Consent" = $oauth2grant.type
             "Name" = $oauth2grant.value
             "Description" = $description
-        
         }
-
-        [PSCustomObject] $entry
+        $permissions = [PSCustomObject] $entry
+        $permissions.PSTypeNames.Insert(0, 'Microsoft.Graph.Custom.Permission')
+        $permissions
 
     }
 }
@@ -82,15 +82,27 @@ function Permissions_GetAppRolesData {
     $permissions = Permissions_GetPermissionsData
     $msAppRoles = $permissions.appRoles 
     
-    ForEach ($oauth2grant in $msAppRoles) {
+    ForEach ($approle in $msAppRoles) {
+
+        $consent = If ($approle.origin -eq "Application") { 
+        
+            "Admin"
+        
+        } elseif ($approle.origin -eq "Delegated") {
+        
+            "User"
+        
+        }
 
         $entry = [ordered] @{
-            "Id" = $oauth2grant.id
-            "PermissionType" = $oauth2grant.origin
-            "Name" = $oauth2grant.value
-            "Description" = $oauth2grant.description
+            "Id" = $approle.id
+            "PermissionType" = 'Application'
+            "Consent" = $consent
+            "Name" = $approle.value
+            "Description" = $approle.description
         }
-        [PSCustomObject] $entry
-
+        $permissions = [PSCustomObject] $entry
+        $permissions.PSTypeNames.Insert(0, 'Microsoft.Graph.Custom.Permission')
+        $permissions
     }
 }
