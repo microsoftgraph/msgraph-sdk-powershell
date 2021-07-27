@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
-Update-FormatData -PrependPath .\src\Authentication\Authentication\Microsoft.Graph.Authentication.format.ps1xml
+Update-FormatData -PrependPath $PSScriptRoot\..\..\Microsoft.Graph.Authentication.format.ps1xml
 
 # $permissionsPulledFromMgGraphRequest = $null
 
@@ -14,6 +14,7 @@ function Permissions_GetPermissionsData {
 
     # 2. Making a REST request to MS Graph
     if ($online.IsPresent){
+
         $script:permissions_MsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
@@ -25,15 +26,16 @@ function Permissions_GetPermissionsData {
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
-            Write-Host "Error connecting to the latest web version, reverting you back to the static file"
+            Write-Host "You are not connected to MgGraph, reverting you back to the static file"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         } catch [System.Net.Http.HttpRequestException] {
 
-            Write-Host "Inadequate admin access required to view service principals, reverting you back to the static file"
+            Write-Host "Inadequate access required to view MgGraph service principals, reverting you back to the static file"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
-        }#>
+        }
+
     } else {
 
         $script:permissions_MsGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json

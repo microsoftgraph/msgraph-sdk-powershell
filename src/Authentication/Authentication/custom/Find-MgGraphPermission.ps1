@@ -24,31 +24,26 @@ function Find-MgGraphPermission {
 
     if ($online.IsPresent){
 
-        # Creating a table specifically for Oauth2permissions data 
-        $oauthData = @()
-        $oauthData += Permissions_GetOauthData -online | Where-Object Name -like *$SearchString*
-        # $oauthData += Permissions_GetOauthData -online | Where-Object Description -like *$search* 
-        $oauthData | Sort-Object -Property Name
-
-        # Creating a table specifically for appRoles data 
-        $appRolesData = @()
-        $appRolesData += Permissions_GetAppRolesData -online | Where-Object Name -like *$SearchString*
-        # $appRolesData += Permissions_GetAppRolesData -online | Where-Object Description -like *$search*
-        $appRolesData | Sort-Object -Property Name
+        $Permissions_GetOauthData = Permissions_GetOauthData -online
+        $Permissions_GetAppRolesData = Permissions_GetAppRolesData -online
 
     } else {
         
-        # Creating a table specifically for Oauth2permissions data 
-        $oauthData = @()
-        $oauthData += Permissions_GetOauthData | Where-Object Name -like *$SearchString*
-        # $oauthData += Permissions_GetOauthData | Where-Object Description -like *$search* 
-        $oauthData | Sort-Object -Property Name
-
-        # Creating a table specifically for appRoles data 
-        $appRolesData = @()
-        $appRolesData += Permissions_GetAppRolesData | Where-Object Name -like *$SearchString*
-        # $appRolesData += Permissions_GetAppRolesData | Where-Object Description -like *$search*
-        $appRolesData | Sort-Object -Property Name
+        $Permissions_GetOauthData = Permissions_GetOauthData
+        $Permissions_GetAppRolesData = Permissions_GetAppRolesData
 
     }
+
+    # Creating a table specifically for Oauth2permissions data 
+    $oauthData = @()
+    $oauthData += $Permissions_GetOauthData | Where-Object Name -like *$SearchString*
+    # $oauthData += Permissions_GetOauthData | Where-Object Description -like *$search* 
+    $oauthData | Sort-Object -Property Name
+
+    # Creating a table specifically for appRoles data 
+    $appRolesData = @()
+    $appRolesData += $Permissions_GetAppRolesData | Where-Object Name -like *$SearchString*
+    # $appRolesData += Permissions_GetAppRolesData | Where-Object Description -like *$search*
+    $appRolesData | Sort-Object -Property Name
+
 }
