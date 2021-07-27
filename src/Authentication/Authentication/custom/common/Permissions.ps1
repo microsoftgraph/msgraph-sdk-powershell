@@ -3,14 +3,17 @@
 # ------------------------------------------------------------------------------
 Update-FormatData -PrependPath .\src\Authentication\Authentication\Microsoft.Graph.Authentication.format.ps1xml
 
-$permissionsPulledFromMgGraphRequest = $null
+# $permissionsPulledFromMgGraphRequest = $null
 
 function Permissions_GetPermissionsData {
+    param (
+        [switch] $online
+    )
 
     $permissions_MsGraphServicePrincipal = $null
 
     # 2. Making a REST request to MS Graph
-    if ($null -eq $permissions_MsGraphServicePrincipal){
+    if ($online.IsPresent){
         $script:permissions_MsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
@@ -22,15 +25,19 @@ function Permissions_GetPermissionsData {
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
-            # Write-Host "Getting data from local file"
+            Write-Host "Error connecting to the latest web version, reverting you back to the static file"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         } catch [System.Net.Http.HttpRequestException] {
 
-            # Write-Host "Getting data from local file"
+            Write-Host "Inadequate admin access required to view service principals, reverting you back to the static file"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
-        }
+        }#>
+    } else {
+
+        $script:permissions_MsGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+    
     }
     
     # 3. Parse the permisions from the serviceprincipal
@@ -47,9 +54,21 @@ function Permissions_GetPermissionsData {
 
 # Search based on user input
 function Permissions_GetOauthData {
+    param (
+        [switch] $online
+    )
+    
+    if ($online.IsPresent){
 
-    $permissions = Permissions_GetPermissionsData
-    $msOauth = $permissions.oauth2
+        $permissions = Permissions_GetPermissionsData -online
+        $msOauth = $permissions.oauth2
+
+    } else {
+
+        $permissions = Permissions_GetPermissionsData
+        $msOauth = $permissions.oauth2
+        
+    }
     
     ForEach ($oauth2grant in $msOauth) {
 
@@ -78,9 +97,21 @@ function Permissions_GetOauthData {
 }
 
 function Permissions_GetAppRolesData {
+    param (
+        [switch] $online
+    )
     
-    $permissions = Permissions_GetPermissionsData
-    $msAppRoles = $permissions.appRoles 
+    if ($online.IsPresent){
+
+        $permissions = Permissions_GetPermissionsData -online
+        $msAppRoles = $permissions.appRoles
+
+    } else {
+
+        $permissions = Permissions_GetPermissionsData
+        $msAppRoles = $permissions.appRoles
+
+    } 
     
     ForEach ($approle in $msAppRoles) {
 
