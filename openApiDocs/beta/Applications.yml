@@ -1528,7 +1528,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable.
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
       operationId: applications_ListOwners
       parameters:
         - name: application-id
@@ -1611,7 +1611,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Get ref of owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable.
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
       operationId: applications_ListRefOwners
       parameters:
         - name: application-id
@@ -1668,7 +1668,7 @@ paths:
       tags:
         - applications.directoryObject
       summary: Create new navigation property ref to owners for applications
-      description: Directory objects that are owners of the application. Read-only. Nullable.
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
       operationId: applications_CreateRefOwners
       parameters:
         - name: application-id
@@ -3998,7 +3998,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from applications
-      description: The tokenLifetimePolicies assigned to this application.
+      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
       operationId: applications_ListTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4095,7 +4095,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from applications
-      description: The tokenLifetimePolicies assigned to this application.
+      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
       operationId: applications_ListRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4160,7 +4160,7 @@ paths:
       tags:
         - applications.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for applications
-      description: The tokenLifetimePolicies assigned to this application.
+      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
       operationId: applications_CreateRefTokenLifetimePolicies
       parameters:
         - name: application-id
@@ -4580,7 +4580,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
-      description: Represents the app roles a group has been granted for an application.
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_ListAppRoleAssignments
       parameters:
         - name: group-id
@@ -4680,7 +4680,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for groups
-      description: Represents the app roles a group has been granted for an application.
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_CreateAppRoleAssignments
       parameters:
         - name: group-id
@@ -4712,7 +4712,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Get appRoleAssignments from groups
-      description: Represents the app roles a group has been granted for an application.
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_GetAppRoleAssignments
       parameters:
         - name: group-id
@@ -4774,7 +4774,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in groups
-      description: Represents the app roles a group has been granted for an application.
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_UpdateAppRoleAssignments
       parameters:
         - name: group-id
@@ -4808,7 +4808,7 @@ paths:
       tags:
         - groups.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for groups
-      description: Represents the app roles a group has been granted for an application.
+      description: Represents the app roles a group has been granted for an application. Supports $expand.
       operationId: groups_DeleteAppRoleAssignments
       parameters:
         - name: group-id
@@ -12805,7 +12805,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12905,7 +12905,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12937,7 +12937,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -12999,7 +12999,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -13033,7 +13033,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
       operationId: servicePrincipals_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -13066,7 +13066,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal.'
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13166,7 +13166,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal.'
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_CreateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13198,7 +13198,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignments from servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal.'
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13260,7 +13260,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal.'
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_UpdateAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13294,7 +13294,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for servicePrincipals
-      description: 'App role assignment for another app or service, granted to this service principal.'
+      description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
       operationId: servicePrincipals_DeleteAppRoleAssignments
       parameters:
         - name: servicePrincipal-id
@@ -13327,7 +13327,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal.
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13424,7 +13424,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Get ref of claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal.
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13489,7 +13489,7 @@ paths:
       tags:
         - servicePrincipals.claimsMappingPolicy
       summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal.
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_CreateRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
@@ -13701,7 +13701,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_ListDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13789,7 +13789,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Create new navigation property to delegatedPermissionClassifications for servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_CreateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13821,7 +13821,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Get delegatedPermissionClassifications from servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_GetDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13879,7 +13879,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Update the navigation property delegatedPermissionClassifications in servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_UpdateDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -13913,7 +13913,7 @@ paths:
       tags:
         - servicePrincipals.delegatedPermissionClassification
       summary: Delete navigation property delegatedPermissionClassifications for servicePrincipals
-      description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+      description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
       operationId: servicePrincipals_DeleteDelegatedPermissionClassifications
       parameters:
         - name: servicePrincipal-id
@@ -14203,7 +14203,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal.
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14300,7 +14300,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal.
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14365,7 +14365,7 @@ paths:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
       summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal.
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_CreateRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
@@ -14641,7 +14641,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get memberOf from servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_ListMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -14724,7 +14724,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of memberOf from servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_ListRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -14781,7 +14781,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to memberOf for servicePrincipals
-      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
+      description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
       operationId: servicePrincipals_CreateRefMemberOf
       parameters:
         - name: servicePrincipal-id
@@ -15393,7 +15393,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ownedObjects from servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable.
+      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15476,7 +15476,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of ownedObjects from servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable.
+      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15533,7 +15533,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to ownedObjects for servicePrincipals
-      description: Directory objects that are owned by this service principal. Read-only. Nullable.
+      description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_CreateRefOwnedObjects
       parameters:
         - name: servicePrincipal-id
@@ -15569,7 +15569,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListOwners
       parameters:
         - name: servicePrincipal-id
@@ -15652,7 +15652,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Get ref of owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_ListRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -15709,7 +15709,7 @@ paths:
       tags:
         - servicePrincipals.directoryObject
       summary: Create new navigation property ref to owners for servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
       operationId: servicePrincipals_CreateRefOwners
       parameters:
         - name: servicePrincipal-id
@@ -17844,7 +17844,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal.
+      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -17941,7 +17941,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal.
+      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18006,7 +18006,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal.
+      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_CreateRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18042,7 +18042,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal.
+      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18139,7 +18139,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal.
+      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_ListRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18204,7 +18204,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal.
+      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
       operationId: servicePrincipals_CreateRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -18536,7 +18536,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
-      description: Represents the app roles a user has been granted for an application.
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_ListAppRoleAssignments
       parameters:
         - name: user-id
@@ -18636,7 +18636,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Create new navigation property to appRoleAssignments for users
-      description: Represents the app roles a user has been granted for an application.
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_CreateAppRoleAssignments
       parameters:
         - name: user-id
@@ -18668,7 +18668,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Get appRoleAssignments from users
-      description: Represents the app roles a user has been granted for an application.
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_GetAppRoleAssignments
       parameters:
         - name: user-id
@@ -18730,7 +18730,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Update the navigation property appRoleAssignments in users
-      description: Represents the app roles a user has been granted for an application.
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_UpdateAppRoleAssignments
       parameters:
         - name: user-id
@@ -18764,7 +18764,7 @@ paths:
       tags:
         - users.appRoleAssignment
       summary: Delete navigation property appRoleAssignments for users
-      description: Represents the app roles a user has been granted for an application.
+      description: Represents the app roles a user has been granted for an application. Supports $expand.
       operationId: users_DeleteAppRoleAssignments
       parameters:
         - name: user-id
@@ -18814,7 +18814,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, NOT, ge, le, in) and $orderBy.'
               format: date-time
               nullable: true
             defaultRedirectUri:
@@ -18822,14 +18822,15 @@ components:
               nullable: true
             description:
               type: string
+              description: 'An optional description of the application. Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string
-              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).'
               nullable: true
             displayName:
               type: string
-              description: The display name for the application.
+              description: 'The display name for the application. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             groupMembershipClaims:
               type: string
@@ -18839,7 +18840,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable.'
+              description: 'The URIs that identify the application within its Azure AD tenant, or within a verified custom domain if the application is multi-tenant. For more information, see Application Objects and Service Principal Objects. The any operator is required for filter expressions on multi-valued properties. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).'
             info:
               $ref: '#/components/schemas/microsoft.graph.informationalUrl'
             isDeviceOnlyAuthSupported:
@@ -18854,7 +18855,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyCredential'
-              description: The collection of key credentials associated with the application. Not nullable.
+              description: 'The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, NOT, ge, le).'
             logo:
               type: string
               description: The main logo for the application. Not nullable.
@@ -18876,16 +18877,16 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
             publisherDomain:
               type: string
-              description: The verified publisher domain for the application. Read-only.
+              description: 'The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).'
               nullable: true
             requiredResourceAccess:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.requiredResourceAccess'
-              description: Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable.
+              description: 'Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable. Supports $filter (eq, NOT, ge, le).'
             signInAudience:
               type: string
-              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount. See more in the table below.'
+              description: 'Specifies the Microsoft accounts that are supported for the current application. Supported values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, NOT).'
               nullable: true
             spa:
               $ref: '#/components/schemas/microsoft.graph.spaApplication'
@@ -18893,7 +18894,7 @@ components:
               type: array
               items:
                 type: string
-              description: Custom strings that can be used to categorize and identify the application. Not nullable.
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, NOT, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -18923,7 +18924,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of the application. Read-only. Nullable.
+              description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
             tokenIssuancePolicies:
               type: array
               items:
@@ -18932,7 +18933,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: The tokenLifetimePolicies assigned to this application.
+              description: The tokenLifetimePolicies assigned to this application. Supports $expand.
             connectorGroup:
               $ref: '#/components/schemas/microsoft.graph.connectorGroup'
             synchronization:
@@ -19654,7 +19655,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.passwordSingleSignOnSettings'
             accountEnabled:
               type: boolean
-              description: 'true if the service principal account is enabled; otherwise, false.'
+              description: 'true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             addIns:
               type: array
@@ -19665,7 +19666,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities.'
+              description: 'Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, NOT, ge, le, startsWith).'
             appDescription:
               type: string
               description: The description exposed by the associated application.
@@ -19680,17 +19681,17 @@ components:
               nullable: true
             applicationTemplateId:
               type: string
-              description: Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only.
+              description: 'Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.
+              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).'
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
               type: boolean
-              description: Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable.
+              description: 'Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).'
             appRoles:
               type: array
               items:
@@ -19698,15 +19699,15 @@ components:
               description: The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
             description:
               type: string
-              description: Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters.
+              description: 'Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string
-              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).'
+              description: 'Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, NOT).'
               nullable: true
             displayName:
               type: string
-              description: The display name for the service principal.
+              description: 'The display name for the service principal. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             errorUrl:
               type: string
@@ -19722,7 +19723,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyCredential'
-              description: The collection of key credentials associated with the service principal. Not nullable.
+              description: 'The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, NOT, ge, le).'
             loginUrl:
               type: string
               description: 'Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.'
@@ -19782,7 +19783,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.'
+              description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, NOT, ge, le, startsWith).'
             servicePrincipalType:
               type: string
               description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity.
@@ -19795,7 +19796,7 @@ components:
               type: array
               items:
                 type: string
-              description: Custom strings that can be used to categorize and identify the service principal. Not nullable.
+              description: 'Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -19806,17 +19807,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: 'App role assignments for this app or service, granted to users, groups, and other service principals.'
+              description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
             appRoleAssignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: 'App role assignment for another app or service, granted to this service principal.'
+              description: 'App role assignment for another app or service, granted to this service principal. Supports $expand.'
             claimsMappingPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-              description: The claimsMappingPolicies assigned to this service principal.
+              description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
             createdObjects:
               type: array
               items:
@@ -19826,7 +19827,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.delegatedPermissionClassification'
-              description: The permission classifications for delegated permissions exposed by the app that this service principal represents.
+              description: The permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.
             endpoints:
               type: array
               items:
@@ -19836,7 +19837,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-              description: The homeRealmDiscoveryPolicies assigned to this service principal.
+              description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
             licenseDetails:
               type: array
               items:
@@ -19845,7 +19846,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable.'
+              description: 'Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.'
             oauth2PermissionGrants:
               type: array
               items:
@@ -19855,22 +19856,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by this service principal. Read-only. Nullable.
+              description: Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.
             owners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.
+              description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
             tokenIssuancePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              description: The tokenIssuancePolicies assigned to this service principal.
+              description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: The tokenLifetimePolicies assigned to this service principal.
+              description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
             transitiveMemberOf:
               type: array
               items:
