@@ -317,7 +317,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get directReports from contacts
-      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       operationId: contacts_ListDirectReports
       parameters:
         - name: orgContact-id
@@ -400,7 +400,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of directReports from contacts
-      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       operationId: contacts_ListRefDirectReports
       parameters:
         - name: orgContact-id
@@ -457,7 +457,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to directReports for contacts
-      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
+      description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
       operationId: contacts_CreateRefDirectReports
       parameters:
         - name: orgContact-id
@@ -493,7 +493,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get manager from contacts
-      description: The user or contact that is this contact's manager. Read-only.
+      description: The user or contact that is this contact's manager. Read-only. Supports $expand.
       operationId: contacts_GetManager
       parameters:
         - name: orgContact-id
@@ -543,7 +543,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of manager from contacts
-      description: The user or contact that is this contact's manager. Read-only.
+      description: The user or contact that is this contact's manager. Read-only. Supports $expand.
       operationId: contacts_GetRefManager
       parameters:
         - name: orgContact-id
@@ -567,7 +567,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
-      description: The user or contact that is this contact's manager. Read-only.
+      description: The user or contact that is this contact's manager. Read-only. Supports $expand.
       operationId: contacts_SetRefManager
       parameters:
         - name: orgContact-id
@@ -596,7 +596,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Delete ref of navigation property manager for contacts
-      description: The user or contact that is this contact's manager. Read-only.
+      description: The user or contact that is this contact's manager. Read-only. Supports $expand.
       operationId: contacts_DeleteRefManager
       parameters:
         - name: orgContact-id
@@ -622,7 +622,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get memberOf from contacts
-      description: Groups that this contact is a member of. Read-only. Nullable.
+      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       operationId: contacts_ListMemberOf
       parameters:
         - name: orgContact-id
@@ -705,7 +705,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of memberOf from contacts
-      description: Groups that this contact is a member of. Read-only. Nullable.
+      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       operationId: contacts_ListRefMemberOf
       parameters:
         - name: orgContact-id
@@ -762,7 +762,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to memberOf for contacts
-      description: Groups that this contact is a member of. Read-only. Nullable.
+      description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
       operationId: contacts_CreateRefMemberOf
       parameters:
         - name: orgContact-id
@@ -2349,7 +2349,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get memberOf from devices
-      description: Groups that this device is a member of. Read-only. Nullable.
+      description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: devices_ListMemberOf
       parameters:
         - name: device-id
@@ -2432,7 +2432,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of memberOf from devices
-      description: Groups that this device is a member of. Read-only. Nullable.
+      description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: devices_ListRefMemberOf
       parameters:
         - name: device-id
@@ -2489,7 +2489,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to memberOf for devices
-      description: Groups that this device is a member of. Read-only. Nullable.
+      description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
       operationId: devices_CreateRefMemberOf
       parameters:
         - name: device-id
@@ -2709,7 +2709,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredOwners from devices
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRegisteredOwners
       parameters:
         - name: device-id
@@ -2792,7 +2792,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRefRegisteredOwners
       parameters:
         - name: device-id
@@ -2849,7 +2849,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredOwners for devices
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
       operationId: devices_CreateRefRegisteredOwners
       parameters:
         - name: device-id
@@ -2885,7 +2885,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRegisteredUsers
       parameters:
         - name: device-id
@@ -2968,7 +2968,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of registeredUsers from devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: devices_ListRefRegisteredUsers
       parameters:
         - name: device-id
@@ -3025,7 +3025,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredUsers for devices
-      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
       operationId: devices_CreateRefRegisteredUsers
       parameters:
         - name: device-id
@@ -3061,7 +3061,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3144,7 +3144,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3201,7 +3201,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
-      description: Groups that this device is a member of. This operation is transitive.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_CreateRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -8425,43 +8425,43 @@ components:
               description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
-              description: Name of the company that this organizational contact belong to.
+              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             department:
               type: string
-              description: The name for the department in which the contact works.
+              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             displayName:
               type: string
-              description: Display name for this organizational contact.
+              description: 'Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             givenName:
               type: string
-              description: First name for this organizational contact.
+              description: 'First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             jobTitle:
               type: string
-              description: Job title for this organizational contact.
+              description: 'Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''.'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             mailNickname:
               type: string
-              description: Email alias (portion of email address pre-pending the @ symbol) for this organizational contact.
+              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: List of any synchronization provisioning errors for this organizational contact.
+              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, NOT).'
             onPremisesSyncEnabled:
               type: boolean
               description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
@@ -8470,28 +8470,28 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
-              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection.'
+              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, NOT, in).'
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter.'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, NOT, ge, le, startsWith).'
             surname:
               type: string
-              description: Last name for this organizational contact.
+              description: 'Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)'
               nullable: true
             directReports:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable.
+              description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
             manager:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this contact is a member of. Read-only. Nullable.
+              description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
             transitiveMemberOf:
               type: array
               items:
@@ -8576,17 +8576,17 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. default is true.'
+              description: 'true if the account is enabled; otherwise, false. Default is true. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             alternativeSecurityIds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
-              description: For internal use only. Not nullable.
+              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).'
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -8597,7 +8597,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Identifier set by Azure Device Registration Service at the time of registration.
+              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -8612,43 +8612,43 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the device. Required.
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             isCompliant:
               type: boolean
-              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
               nullable: true
             isManaged:
               type: boolean
-              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
               nullable: true
             mdmAppId:
               type: string
-              description: Application identifier used to register device into MDM. Read-only. Supports $filter.
+              description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             operatingSystem:
               type: string
-              description: The type of operating system on the device. Required.
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: Operating system version of the device. Required.
+              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
-              description: For internal use only. Not nullable.
+              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -8666,22 +8666,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this device is a member of. Read-only. Nullable.
+              description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this device is a member of. This operation is transitive.
+              description: Groups that this device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
