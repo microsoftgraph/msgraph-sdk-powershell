@@ -19,20 +19,12 @@ function Find-MgGraphPermission {
     [cmdletbinding()]
     param (
         [string] $SearchString,
-        [switch] $online
+        [switch] $Online
     )
 
-    if ($online.IsPresent){
-
-        $Permissions_GetOauthData = Permissions_GetOauthData -online
-        $Permissions_GetAppRolesData = Permissions_GetAppRolesData -online
-
-    } else {
-        
-        $Permissions_GetOauthData = Permissions_GetOauthData
-        $Permissions_GetAppRolesData = Permissions_GetAppRolesData
-
-    }
+    $Permissions_GetOauthData = Permissions_GetOauthData $Online.IsPresent
+    $Permissions_GetAppRolesData = Permissions_GetAppRolesData $Online.IsPresent
+ 
 
     # Creating a table specifically for Oauth2permissions data 
     $oauthData = @()

@@ -45,7 +45,7 @@
       <TableControl>
         <TableHeaders>
           <TableColumnHeader>
-            <Label>PermissionType</Label>
+            <Label>Id</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>Consent</Label>
@@ -61,7 +61,7 @@
           <TableRowEntry>
             <TableColumnItems>
               <TableColumnItem>
-                <PropertyName>PermissionType</PropertyName>
+                <PropertyName>Id</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Consent</PropertyName>

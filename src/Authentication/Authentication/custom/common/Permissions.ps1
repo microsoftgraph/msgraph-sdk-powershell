@@ -3,18 +3,18 @@
 # ------------------------------------------------------------------------------
 Update-FormatData -PrependPath $PSScriptRoot\..\..\Microsoft.Graph.Authentication.format.ps1xml
 
-# $permissionsPulledFromMgGraphRequest = $null
-
 function Permissions_GetPermissionsData {
     param (
-        [switch] $online
+        [bool] $online
     )
 
     $permissions_MsGraphServicePrincipal = $null
+    $requestError = $null
+    $fromInvokeMgGraphRequest = $false
 
     # 2. Making a REST request to MS Graph
-    if ($online.IsPresent){
 
+    if (($null -eq $permissions_MsGraphServicePrincipal) -or ($null -ne $permissions_MsGraphServicePrincipal -and $fromInvokeMgGraphRequest -eq $false)) {
         $script:permissions_MsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
@@ -22,24 +22,26 @@ function Permissions_GetPermissionsData {
             
             if ($null -ne $result) {
                 $result | select-object -expandproperty value 
+                $fromInvokeMgGraphRequest = $true
             }
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
-            Write-Host "You are not connected to MgGraph, reverting you back to the static file"
+            $requestError = "Connection to MgGraph required. This can be done by using 'Connect-MgGraph'"
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         } catch [System.Net.Http.HttpRequestException] {
 
-            Write-Host "Inadequate access required to view MgGraph service principals, reverting you back to the static file"
+            $requestError = "Administator access to the tenent required."
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         }
+    } elseif ($fromInvokeMgGraphRequest -eq $true) {
+        $permissions_MsGraphServicePrincipal
+    }
 
-    } else {
-
-        $script:permissions_MsGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-    
+    if ($requestError -and $online) {
+        Write-Error $requestError -ErrorAction Stop
     }
     
     # 3. Parse the permisions from the serviceprincipal
@@ -49,7 +51,7 @@ function Permissions_GetPermissionsData {
     # make sure the parsed permissions are exported properly
     @{
         oauth2 = $msOauth;
-        appRoles = $msAppRoles
+        appRoles = $msAppRoles;
     }
 
 }
@@ -57,12 +59,12 @@ function Permissions_GetPermissionsData {
 # Search based on user input
 function Permissions_GetOauthData {
     param (
-        [switch] $online
+        [bool] $online
     )
     
-    if ($online.IsPresent){
+    if ($online){
 
-        $permissions = Permissions_GetPermissionsData -online
+        $permissions = Permissions_GetPermissionsData $online
         $msOauth = $permissions.oauth2
 
     } else {
@@ -100,12 +102,12 @@ function Permissions_GetOauthData {
 
 function Permissions_GetAppRolesData {
     param (
-        [switch] $online
+        [bool] $online
     )
     
-    if ($online.IsPresent){
+    if ($online){
 
-        $permissions = Permissions_GetPermissionsData -online
+        $permissions = Permissions_GetPermissionsData $online
         $msAppRoles = $permissions.appRoles
 
     } else {
