@@ -27,12 +27,12 @@ function Permissions_GetPermissionsData {
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
-            $requestError = "Connection to MgGraph required. This can be done by using 'Connect-MgGraph'"
+            $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         } catch [System.Net.Http.HttpRequestException] {
 
-            $requestError = "Administator access to the tenent required."
+            $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         
         }
@@ -51,7 +51,7 @@ function Permissions_GetPermissionsData {
     # make sure the parsed permissions are exported properly
     @{
         oauth2 = $msOauth;
-        appRoles = $msAppRoles;
+        appRoles = $msAppRoles
     }
 
 }
@@ -120,13 +120,9 @@ function Permissions_GetAppRolesData {
     ForEach ($approle in $msAppRoles) {
 
         $consent = If ($approle.origin -eq "Application") { 
-        
             "Admin"
-        
         } elseif ($approle.origin -eq "Delegated") {
-        
             "User"
-        
         }
 
         $entry = [ordered] @{
