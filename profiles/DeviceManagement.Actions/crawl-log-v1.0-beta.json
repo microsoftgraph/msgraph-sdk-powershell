@@ -1861,6 +1861,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage-id}/microsoft.graph.reupload": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}/microsoft.graph.runHealthChecks": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
