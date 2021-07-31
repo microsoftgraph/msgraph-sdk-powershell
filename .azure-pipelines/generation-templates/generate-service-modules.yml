@@ -281,4 +281,4 @@ jobs:
           publishVstsFeed: "0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57"
           allowPackageConflicts: true
 
-      - template: ../common-templates/security-prechecks-template.yml
+      - template: ../common-templates/security-postchecks-template.yml
