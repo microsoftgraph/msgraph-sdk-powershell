@@ -1,46 +1,49 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
+Set-StrictMode -Version 6.0
 
 $permissions_MsGraphServicePrincipal = $null
-$fromInvokeMgGraphRequest = $false
 
+function isFromMgGraphRequest {
+    $permissions_fromInvokeMgGraphRequest
+}
 function Permissions_GetPermissionsData {
     param (
         [bool] $online
     )
 
-    $permissions_MsGraphServicePrincipal = $null
+    #$permissions_MsGraphServicePrincipal = $null
     $requestError = $null
-    $fromInvokeMgGraphRequest = $false
+    #$permissions_FromInvokeMgGraphRequest = $false
 
     # 2. Making a REST request to MS Graph
 
-    if (($null -eq $permissions_MsGraphServicePrincipal) -or ($null -ne $permissions_MsGraphServicePrincipal -and $fromInvokeMgGraphRequest -eq $false)) {
-        $script:permissions_MsGraphServicePrincipal = try {
+    if (($null -eq $permissions_MsGraphServicePrincipal) -or ($null -ne $permissions_MsGraphServicePrincipal -and $permissions_FromInvokeMgGraphRequest -eq $false)) {
+        $permissions_MsGraphServicePrincipal = try {
 
             # Write-Host "Getting data from web service"
             $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' 
             
             if ($null -ne $result) {
                 $result | select-object -expandproperty value 
-                $script:fromInvokeMgGraphRequest = $true
+                $permissions_FromInvokeMgGraphRequest = $true
             }
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
             $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $script:fromInvokeMgGraphRequest = $false
+            $permissions_FromInvokeMgGraphRequest = $false
         
         } catch [System.Net.Http.HttpRequestException] {
 
             $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $script:fromInvokeMgGraphRequest = $false
+            $permissions_FromInvokeMgGraphRequest = $false
         
         }
-    } elseif ($script:fromInvokeMgGraphRequest -eq $true) {
+    } elseif ($fromInvokeMgGraphRequest -eq $true) {
         $permissions_MsGraphServicePrincipal
     }
 
@@ -49,8 +52,8 @@ function Permissions_GetPermissionsData {
     }
     
     # 3. Parse the permisions from the serviceprincipal
-    $msOauth = $script:permissions_MsGraphServicePrincipal.oauth2PermissionScopes
-    $msAppRoles = $script:permissions_MsGraphServicePrincipal.appRoles
+    $msOauth = $permissions_MsGraphServicePrincipal.oauth2PermissionScopes
+    $msAppRoles = $permissions_MsGraphServicePrincipal.appRoles
 
     # make sure the parsed permissions are exported properly
     @{

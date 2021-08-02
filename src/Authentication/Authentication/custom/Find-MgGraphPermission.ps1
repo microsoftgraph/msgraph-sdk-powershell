@@ -4,17 +4,15 @@
 
 Set-StrictMode -Version 6.0
 
+. "$psscriptroot/common/Permissions.ps1"
+
+# Signing into any AAD organization
+# Import-Module -Force .\Microsoft.Graph.Authentication.psd1
+
 <#
 .SYNOPSIS
 Find permissions for authorization against Microsoft Graph
 #>
-
-. "$psscriptroot/common/Permissions.ps1"
-
-# Signing into any AAD organization
-
-# Import-Module -Force .\Microsoft.Graph.Authentication.psd1
-
 function Find-MgGraphPermission {
     [cmdletbinding()]
     param (
