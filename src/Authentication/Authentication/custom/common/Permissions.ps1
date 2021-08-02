@@ -1,7 +1,9 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
-Set-StrictMode -Version 6.0
+
+$permissions_MsGraphServicePrincipal = $null
+$fromInvokeMgGraphRequest = $false
 
 function Permissions_GetPermissionsData {
     param (
