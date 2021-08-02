@@ -11,12 +11,13 @@ Describe "Find-MgGraphCommand Command" {
         It 'Should find command using only mandatory parameters' {
             {
                 $MgCommand = Find-MgGraphCommand -Uri "/users"
-                $MgCommand | Should -HaveCount 1
-                $MgCommand.Method | Should -Be "GET"
-                $MgCommand.APIVersion | Should -Be "v1.0"
-                $MgCommand.Variants | Should -Contain "List1"
-                $MgCommand.URL | Should -Be "/users"
-                $MgCommand.Command | Should -Be "Get-MgUser"
+                $MgCommand | Should -HaveCount 4
+                $MgCommand.Command | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
+                $MgCommand.Variants | Select-Object -Unique | should -HaveCount 6
+                $MgCommand.URL | Select-Object -Unique | Should -Be "/users"
+                $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUser", "Get-MgUser")
             } | Should -Not -Throw
         }
         It 'Should find beta command using tokenized key segments' {
@@ -61,12 +62,22 @@ Describe "Find-MgGraphCommand Command" {
             {
                 $Uri = "/servicePrincipals/n0t3v@l1d3/endpoints%3F=select=id"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -Method POST
-                $MgCommand | Should -HaveCount 1
-                $MgCommand.Method | Should -Be "POST"
-                $MgCommand.APIVersion | Should -Be "v1.0"
+                $MgCommand | Should -HaveCount 2
+                $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
+                $MgCommand.APIVersion | Should -BeIn @("v1.0", "beta")
                 $MgCommand.Variants | Should -Contain "Create1"
-                $MgCommand.URL | Should -Be "/servicePrincipals/{servicePrincipal-id}/endpoints"
-                $MgCommand.Command | Should -Be "New-MgServicePrincipalEndpoint"
+                $MgCommand.URL | Select-Object -Unique | Should -Be "/servicePrincipals/{servicePrincipal-id}/endpoints"
+                $MgCommand.Command | Select-Object -Unique | Should -Be "New-MgServicePrincipalEndpoint"
+            } | Should -Not -Throw
+        }
+        It 'Should find command using regex' {
+            {
+                $Uri = "/users/{id}/calendars/.*"
+                $MgCommand = Find-MgGraphCommand -Uri $Uri -Method POST -ApiVersion beta
+                $MgCommand.Count | Should -BeGreaterThan 1
+                $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
+                $MgCommand.APIVersion | Select-Object -Unique | Should -Be "beta"
+                $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgUserCalendar*"
             } | Should -Not -Throw
         }
         It 'Should throw an error when URI is inavid' {
@@ -79,10 +90,10 @@ Describe "Find-MgGraphCommand Command" {
         It 'Should find command using only mandatory parameters' {
             {
                 $MgCommand = Find-MgGraphCommand -Command "Get-MgUser"
-                $MgCommand | Should -HaveCount 2 # /users and /users/{id}.
-                $MgCommand[0].Method | Should -Be "GET"
-                $MgCommand[0].APIVersion | Should -Be "v1.0"
-                $MgCommand[0].Command | Should -Be "Get-MgUser"
+                $MgCommand | Should -HaveCount 4 # /users and /users/{id}.
+                $MgCommand[0].Method | Select-Object -Unique | Should -Be "GET"
+                $MgCommand[0].APIVersion | Select-Object -Unique | Should -BeIn @("v1.0", "beta")
+                $MgCommand[0].Command | Select-Object -Unique | Should -Be "Get-MgUser"
             } | Should -Not -Throw
         }
         Context "FindByCommand" {
