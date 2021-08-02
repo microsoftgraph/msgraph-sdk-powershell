@@ -22,21 +22,23 @@ function Permissions_GetPermissionsData {
             
             if ($null -ne $result) {
                 $result | select-object -expandproperty value 
-                $fromInvokeMgGraphRequest = $true
+                $script:fromInvokeMgGraphRequest = $true
             }
 
         } catch [System.Management.Automation.ValidationMetadataException] {
 
             $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+            $script:fromInvokeMgGraphRequest = $false
         
         } catch [System.Net.Http.HttpRequestException] {
 
             $requestError = $_
             Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+            $script:fromInvokeMgGraphRequest = $false
         
         }
-    } elseif ($fromInvokeMgGraphRequest -eq $true) {
+    } elseif ($script:fromInvokeMgGraphRequest -eq $true) {
         $permissions_MsGraphServicePrincipal
     }
 
