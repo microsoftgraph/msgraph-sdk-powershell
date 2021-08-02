@@ -1,7 +1,7 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
-Update-FormatData -PrependPath $PSScriptRoot\..\..\Microsoft.Graph.Authentication.format.ps1xml
+Set-StrictMode -Version 6.0
 
 function Permissions_GetPermissionsData {
     param (
