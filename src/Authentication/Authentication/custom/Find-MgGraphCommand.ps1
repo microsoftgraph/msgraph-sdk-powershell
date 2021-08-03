@@ -48,7 +48,7 @@ function Find-MgGraphCommand {
         switch ($PSCmdlet.ParameterSetName) {
             "FindByUrl" {
                 Write-Debug "Received URI: $Uri."
-                $Uri = $Uri.TrimStart("/").TrimEnd("/")
+                $Uri = $Uri.TrimStart("/", "\").TrimEnd("/", "\")
                 $Uri = [System.Uri]::UnescapeDataString($Uri)
                 $GraphUri = $null
                 if (![System.Uri]::TryCreate($Uri, "RelativeOrAbsolute", [ref]$GraphUri) -and ($null -eq $GraphUri)) {
