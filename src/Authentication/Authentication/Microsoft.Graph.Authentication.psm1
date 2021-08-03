@@ -1,6 +1,10 @@
 
 # Load the module dll
-$null = Import-Module -Name (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.dll')
+$ModulePath = (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentication.dll')
+$null = Import-Module -Name $ModulePath
+
+# Export nothing to clear implicit exports.
+Export-ModuleMember
 
 if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
 {
@@ -8,6 +12,9 @@ if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
         . $_.FullName
     }
 }
+
+# Export binary module cmdlets.
+Export-ModuleMember -Cmdlet (Get-ModuleCmdlet -ModulePath $ModulePath) -Alias (Get-ModuleCmdlet -ModulePath $ModulePath -AsAlias)
 
 $DependencyPath = (Join-Path $PSScriptRoot -ChildPath "Dependencies")
 if (Test-Path $DependencyPath -ErrorAction Ignore)

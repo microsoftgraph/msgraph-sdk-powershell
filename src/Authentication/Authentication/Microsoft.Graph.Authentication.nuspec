@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>1.4.2</version>
+    <version>1.6.0</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>
@@ -23,7 +23,8 @@
     <file src="artifacts\Microsoft.Graph.Authentication.dll" />
     <file src="artifacts\Microsoft.Graph.Authentication.Core.dll" />
     <file src="artifacts\Microsoft.Graph.Core.dll" />
-    <file src="artifacts\StartupScripts\*" target="StartupScripts" />
+    <file src="artifacts\StartupScripts\" target="StartupScripts" />
+    <file src="artifacts\custom\" target="custom" />
     <file src="artifacts\Dependencies\Newtonsoft.Json.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.Graph.Auth.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.JsonWebTokens.dll" target="Dependencies" />
