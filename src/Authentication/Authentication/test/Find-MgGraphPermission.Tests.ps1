@@ -42,11 +42,17 @@ Describe "the Find-MgGraphPermission Command" {
             { Find-MgGraphPermission -Online | Out-Null } | Should -Not -Throw
         }
 
-        It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {
+        It 'Only calls Invoke-MgGraph request once' {
             { Find-MgGraphPermission 'ReadWrite' | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
-            $test = Find-MgGraphPermission 'email'
+            Find-MgGraphPermission 'email'
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
+            Find-MgGraphPermission 'ReadWrite'
+        }
+
+        It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {
+            { Find-MgGraphPermission 'ReadWrite' | Out-Null } | Should -Not -Throw
+            Assert-MockCalled Invoke-MgGraphRequest
             $test = Find-MgGraphPermission 'ReadWrite'
             $test.GetType() | Should -Be 'System.Object[]'
             $test.length | Should -Be 4
