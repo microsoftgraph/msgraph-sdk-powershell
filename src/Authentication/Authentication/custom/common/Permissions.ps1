@@ -1,54 +1,65 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
+Set-StrictMode -Version 6.0
 Update-FormatData -PrependPath $PSScriptRoot\..\..\Microsoft.Graph.Authentication.format.ps1xml
+
+# Models the state of the permissions 'class'. Pester alters runtime behavior
+# so that variables defined at script scope do not actually show up at script
+# scope via 'script:' at runtime (!), so we'll just wrap those variables
+# in one that does not require the modifier. This is actually a better way
+# to encapuslate class (or even instance) state anyway.
+$_permissions = [PSCustomObject] @{
+    msGraphServicePrincipal = $null
+    isFromInvokeMgGraphRequest = $false
+}
+
+# These '_' functions are provided for tests to simulate the initial state of the class
+# as well as providing visibility into its state for deeper validations
+function _Permissions_Initialize {
+    $_permissions.msGraphServicePrincipal = $null
+    $_permissions.isFromInvokeMgGraphRequest = $false
+}
+
+function _Permissions_State {
+    $_permissions
+}
 
 function Permissions_GetPermissionsData {
     param (
         [bool] $online
     )
 
-    $permissions_MsGraphServicePrincipal = $null
     $requestError = $null
-    $fromInvokeMgGraphRequest = $false
-
+    
     # 2. Making a REST request to MS Graph
 
-    if (($null -eq $permissions_MsGraphServicePrincipal) -or ($null -ne $permissions_MsGraphServicePrincipal -and $fromInvokeMgGraphRequest -eq $false)) {
-        $script:permissions_MsGraphServicePrincipal = try {
+    if (($null -eq $_permissions.msGraphServicePrincipal) -or ($null -ne $_permissions.msGraphServicePrincipal -and $_permissions.isFromInvokeMgGraphRequest -eq $false)) {
+        try {
+            $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000'''
 
-            # Write-Host "Getting data from web service"
-            $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000''' 
-            
             if ($null -ne $result) {
-                $result | select-object -expandproperty value 
-                $script:fromInvokeMgGraphRequest = $true
+                $_permissions.msGraphServicePrincipal = $result | select-object -expandproperty value
+                $_permissions.isFromInvokeMgGraphRequest = $true
             }
-
         } catch [System.Management.Automation.ValidationMetadataException] {
-
             $requestError = $_
-            Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $script:fromInvokeMgGraphRequest = $false
-        
+            $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+            $_permissions.isFromInvokeMgGraphRequest = $false
         } catch [System.Net.Http.HttpRequestException] {
-
             $requestError = $_
-            Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $script:fromInvokeMgGraphRequest = $false
-        
+            $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
+            $_permissions.isFromInvokeMgGraphRequest = $false
         }
-    } elseif ($script:fromInvokeMgGraphRequest -eq $true) {
-        $permissions_MsGraphServicePrincipal
-    }
+    } 
 
     if ($requestError -and $online) {
         Write-Error $requestError -ErrorAction Stop
     }
-    
+
     # 3. Parse the permisions from the serviceprincipal
-    $msOauth = $script:permissions_MsGraphServicePrincipal.oauth2PermissionScopes
-    $msAppRoles = $script:permissions_MsGraphServicePrincipal.appRoles
+    $msOauth = $_permissions.msGraphServicePrincipal.oauth2PermissionScopes
+    $msAppRoles = $_permissions.msGraphServicePrincipal.appRoles
 
     # make sure the parsed permissions are exported properly
     @{
@@ -65,27 +76,19 @@ function Permissions_GetOauthData {
     )
     
     if ($online){
-
         $permissions = Permissions_GetPermissionsData $online
         $msOauth = $permissions.oauth2
-
     } else {
-
         $permissions = Permissions_GetPermissionsData
         $msOauth = $permissions.oauth2
-        
     }
     
     ForEach ($oauth2grant in $msOauth) {
 
         $description = If ($oauth2grant.type -eq "Admin") { 
-        
             $oauth2grant.adminConsentDescription
-        
         } elseif ($oauth2grant.type -eq "User") {
-        
             $oauth2grant.userConsentDescription
-        
         }
         
         $entry = [ordered] @{
@@ -108,15 +111,11 @@ function Permissions_GetAppRolesData {
     )
     
     if ($online){
-
         $permissions = Permissions_GetPermissionsData $online
         $msAppRoles = $permissions.appRoles
-
     } else {
-
         $permissions = Permissions_GetPermissionsData
         $msAppRoles = $permissions.appRoles
-
     } 
     
     ForEach ($approle in $msAppRoles) {
