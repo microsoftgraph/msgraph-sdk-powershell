@@ -2,7 +2,6 @@
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
 Set-StrictMode -Version 6.0
-Update-FormatData -PrependPath $PSScriptRoot\..\..\Microsoft.Graph.Authentication.format.ps1xml
 
 # Models the state of the permissions 'class'. Pester alters runtime behavior
 # so that variables defined at script scope do not actually show up at script
@@ -34,11 +33,11 @@ function Permissions_GetPermissionsData {
     
     # 2. Making a REST request to MS Graph
 
-    if (($null -eq $_permissions.msGraphServicePrincipal) -or ($null -ne $_permissions.msGraphServicePrincipal -and $_permissions.isFromInvokeMgGraphRequest -eq $false)) {
+    if (!$_permissions.msGraphServicePrincipal -or !$_permissions.isFromInvokeMgGraphRequest) {
         try {
             $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000'''
 
-            if ($null -ne $result) {
+            if ($result) {
                 $_permissions.msGraphServicePrincipal = $result | select-object -expandproperty value
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
@@ -75,13 +74,8 @@ function Permissions_GetOauthData {
         [bool] $online
     )
     
-    if ($online){
-        $permissions = Permissions_GetPermissionsData $online
-        $msOauth = $permissions.oauth2
-    } else {
-        $permissions = Permissions_GetPermissionsData
-        $msOauth = $permissions.oauth2
-    }
+    $permissions = Permissions_GetPermissionsData $online
+    $msOauth = $permissions.oauth2
     
     ForEach ($oauth2grant in $msOauth) {
 
@@ -110,13 +104,8 @@ function Permissions_GetAppRolesData {
         [bool] $online
     )
     
-    if ($online){
-        $permissions = Permissions_GetPermissionsData $online
-        $msAppRoles = $permissions.appRoles
-    } else {
-        $permissions = Permissions_GetPermissionsData
-        $msAppRoles = $permissions.appRoles
-    } 
+    $permissions = Permissions_GetPermissionsData $online
+    $msAppRoles = $permissions.appRoles
     
     ForEach ($approle in $msAppRoles) {
 
