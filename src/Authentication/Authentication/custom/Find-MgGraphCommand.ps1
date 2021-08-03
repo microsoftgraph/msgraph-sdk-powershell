@@ -28,6 +28,7 @@ function Find-MgGraphCommand {
         # Import ulility scripts.
         . "$PSScriptRoot/common/Json.ps1" | Out-Null
 
+        # TODO: Pack MgCommandMetadata.json with module.
         # Read content of metadata file.
         $MgCommandMetadataFile = (Join-Path $PSScriptRoot "..\..\..\..\assets\MgCommandMetadata.json")
         if (!(Test-Path $MgCommandMetadataFile)) {
