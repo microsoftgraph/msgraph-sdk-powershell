@@ -45,9 +45,8 @@ Describe "the Find-MgGraphPermission Command" {
         It 'Only calls Invoke-MgGraph request once' {
             { Find-MgGraphPermission 'ReadWrite' | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
-            Find-MgGraphPermission 'email'
+            { Find-MgGraphPermission 'Email' | Out-Null }
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
-            Find-MgGraphPermission 'ReadWrite'
         }
 
         It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {
