@@ -289,6 +289,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
     },
+    "/policies/mobileAppManagementPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/mobileAppManagementPolicies/{mobilityManagementPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/mobileDeviceManagementPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
+    "/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
+    },
     "/policies/permissionGrantPolicies": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.SignIns.yml"
