@@ -1,5 +1,3 @@
-#$permissionData = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-
 $permissionData = [PSCustomObject] @{
     Value = [PSCustomObject] @{
         Oauth2PermissionScopes=@(
