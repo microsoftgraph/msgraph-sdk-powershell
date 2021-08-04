@@ -30,7 +30,7 @@ Describe "the Find-MgGraphPermission Command" {
         }
     }
 
-    Context "When executing the command using a constrained set of permissions returned by MS Graph" {
+    Context "When executing the command using a constrained set of permissions returned by MS Graph and there is a connection" {
         BeforeEach {
             _Permissions_Initialize
             Mock Invoke-MgGraphRequest {$permissionData}
@@ -49,6 +49,15 @@ Describe "the Find-MgGraphPermission Command" {
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             { Find-MgGraphPermission 'Email' | Out-Null }
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
+        }
+
+        It 'It calls Invoke-MgGraph request for the first request and then only if the Online parameter is specified' -pending {
+            Find-MgGraphPermission 'role' | Should -Not -Be $null
+            Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
+            Find-MgGraphPermission 'user' | Should -Not -Be $null
+            Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
+            Find-MgGraphPermission 'user' -Online | Should -Not -Be $null
+            Assert-MockCalled Invoke-MgGraphRequest -Exactly 2
         }
 
         It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {
