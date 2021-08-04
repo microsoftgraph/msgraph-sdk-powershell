@@ -57,7 +57,7 @@ Describe "the Find-MgGraphPermission Command" {
             Find-MgGraphPermission 'user' | Should -Not -Be $null
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             Find-MgGraphPermission 'user' -Online | Should -Not -Be $null
-            Assert-MockCalled Invoke-MgGraphRequest -Exactly 3
+            Assert-MockCalled Invoke-MgGraphRequest -Exactly 2
         }
 
         It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {

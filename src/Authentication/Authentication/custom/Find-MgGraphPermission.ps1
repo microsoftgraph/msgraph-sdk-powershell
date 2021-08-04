@@ -20,8 +20,10 @@ function Find-MgGraphPermission {
         [switch] $Online
     )
 
-    $Permissions_GetOauthData = Permissions_GetOauthData $Online.IsPresent
-    $Permissions_GetAppRolesData = Permissions_GetAppRolesData $Online.IsPresent
+    $permissionsData = Permissions_GetPermissionsData $online
+
+    $Permissions_GetOauthData = Permissions_GetOauthData $permissionsData
+    $Permissions_GetAppRolesData = Permissions_GetAppRolesData $permissionsData
  
 
     # Creating a table specifically for Oauth2permissions data 

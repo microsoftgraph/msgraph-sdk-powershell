@@ -71,11 +71,11 @@ function Permissions_GetPermissionsData {
 # Search based on user input
 function Permissions_GetOauthData {
     param (
-        [bool] $online
+        $permissionsData
     )
-    
-    $permissions = Permissions_GetPermissionsData $online
-    $msOauth = $permissions.oauth2
+
+    #$permissions = Permissions_GetPermissionsData $online
+    $msOauth = $permissionsData.oauth2
     
     ForEach ($oauth2grant in $msOauth) {
 
@@ -101,11 +101,11 @@ function Permissions_GetOauthData {
 
 function Permissions_GetAppRolesData {
     param (
-        [bool] $online
+        $permissionsData
     )
     
-    $permissions = Permissions_GetPermissionsData $online
-    $msAppRoles = $permissions.appRoles
+    #$permissions = Permissions_GetPermissionsData $online
+    $msAppRoles = $permissionsData.appRoles
     
     ForEach ($approle in $msAppRoles) {
 
