@@ -33,7 +33,7 @@ function Permissions_GetPermissionsData {
     
     # 2. Making a REST request to MS Graph
 
-    if (!$_permissions.msGraphServicePrincipal -or !$_permissions.isFromInvokeMgGraphRequest) {
+    if ($online -or !$_permissions.msGraphServicePrincipal -or !$_permissions.isFromInvokeMgGraphRequest) {
         try {
             $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000'''
 
@@ -50,7 +50,7 @@ function Permissions_GetPermissionsData {
             $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
             $_permissions.isFromInvokeMgGraphRequest = $false
         }
-    } 
+    }
 
     if ($requestError -and $online) {
         Write-Error $requestError -ErrorAction Stop

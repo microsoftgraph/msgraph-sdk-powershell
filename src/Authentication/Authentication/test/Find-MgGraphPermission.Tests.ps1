@@ -51,13 +51,13 @@ Describe "the Find-MgGraphPermission Command" {
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
         }
 
-        It 'It calls Invoke-MgGraph request for the first request and then only if the Online parameter is specified' -pending {
+        It 'Calls Invoke-MgGraph request for the first request and then only if the Online parameter is specified' {
             Find-MgGraphPermission 'role' | Should -Not -Be $null
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             Find-MgGraphPermission 'user' | Should -Not -Be $null
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             Find-MgGraphPermission 'user' -Online | Should -Not -Be $null
-            Assert-MockCalled Invoke-MgGraphRequest -Exactly 2
+            Assert-MockCalled Invoke-MgGraphRequest -Exactly 3
         }
 
         It "Retrieves the expected set of delegated and app-only permissions when a search string is specified" {
