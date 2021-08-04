@@ -1,12 +1,14 @@
 # ------------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
 # ------------------------------------------------------------------------------
-. (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
-. (Join-Path $PSScriptRoot  .\Find-MgGraphPermissionTestfile.ps1)
 
 Describe "the Find-MgGraphPermission Command" {
 
-    function isFromMgGraphRequest { }
+    BeforeAll {
+        . (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
+        . (Join-Path $PSScriptRoot  .\Find-MgGraphPermissionTestfile.ps1)
+    }
+
     Context "When executing the command with empty service principal results from MS Graph"  {
         BeforeAll {
 
