@@ -1,6 +1,7 @@
 # ------------------------------------------------------------------------------
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
+
 Set-StrictMode -Version 6.0
 
 # Models the state of the permissions 'class'. Pester alters runtime behavior
@@ -74,17 +75,16 @@ function Permissions_GetOauthData {
         $permissionsData
     )
 
-    #$permissions = Permissions_GetPermissionsData $online
     $msOauth = $permissionsData.oauth2
-    
+
     ForEach ($oauth2grant in $msOauth) {
 
-        $description = If ($oauth2grant.type -eq "Admin") { 
+        $description = If ($oauth2grant.type -eq "Admin") {
             $oauth2grant.adminConsentDescription
         } elseif ($oauth2grant.type -eq "User") {
             $oauth2grant.userConsentDescription
         }
-        
+
         $entry = [ordered] @{
             "Id" = $oauth2grant.id
             "PermissionType" = 'Delegated'
@@ -103,13 +103,11 @@ function Permissions_GetAppRolesData {
     param (
         $permissionsData
     )
-    
-    #$permissions = Permissions_GetPermissionsData $online
     $msAppRoles = $permissionsData.appRoles
-    
+
     ForEach ($approle in $msAppRoles) {
 
-        $consent = If ($approle.origin -eq "Application") { 
+        $consent = If ($approle.origin -eq "Application") {
             "Admin"
         } elseif ($approle.origin -eq "Delegated") {
             "User"
