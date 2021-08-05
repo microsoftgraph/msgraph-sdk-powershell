@@ -4,124 +4,99 @@
 
 Set-StrictMode -Version 6.0
 
-# Models the state of the permissions 'class'. Pester alters runtime behavior
-# so that variables defined at script scope do not actually show up at script
-# scope via 'script:' at runtime (!), so we'll just wrap those variables
-# in one that does not require the modifier. This is actually a better way
-# to encapuslate class (or even instance) state anyway.
-$_permissions = [PSCustomObject] @{
-    msGraphServicePrincipal = $null
-    isFromInvokeMgGraphRequest = $false
-}
+$Permissions_msGraphApplicationId = '00000003-0000-0000-c000-000000000000'
 
-# These '_' functions are provided for tests to simulate the initial state of the class
+# Entry point to the state of the Permissions 'class'
+$_permissions = $null
+
+# These '_'-prefixed functions are provided for tests to simulate the initial state of the class
 # as well as providing visibility into its state for deeper validations
+
 function _Permissions_Initialize {
-    $_permissions.msGraphServicePrincipal = $null
-    $_permissions.isFromInvokeMgGraphRequest = $false
+    # Testing note: Pester alters runtime behavior so that variables defined at script
+    # scope do not actually show up at script scope via 'script:' at runtime (!), so
+    # we'll just use the Get-Variable command to explicitly obtain the variable object for it
+    $permissionsVariable = Get-Variable _permissions
+
+    # This structure models the state of the permissions class
+    $permissionsVariable.Value = [PSCustomObject] @{
+        msGraphPermissionsRequestUri = "https://graph.microsoft.com/v1.0/servicePrincipals?`$filter=appId eq '$Permissions_msGraphApplicationId'"
+        msGraphServicePrincipal = $null
+        isFromInvokeMgGraphRequest = $false
+    }
 }
 
 function _Permissions_State {
     $_permissions
 }
 
-function Permissions_GetPermissionsData {
-    param (
-        [bool] $online
-    )
-
-    $requestError = $null
-    
-    # 2. Making a REST request to MS Graph
-
-    if ($online -or !$_permissions.msGraphServicePrincipal -or !$_permissions.isFromInvokeMgGraphRequest) {
+function Permissions_GetPermissionsData([bool] $online) {
+    # Make a REST request to MS Graph to get the permissions data from the Microsoft Graph service principal
+    if ( $online -or ! $_permissions.msGraphServicePrincipal -or ! $_permissions.isFromInvokeMgGraphRequest ) {
         try {
-            $result = Invoke-MgGraphRequest -method GET 'https://graph.microsoft.com/v1.0/servicePrincipals?filter=appId eq ''00000003-0000-0000-c000-000000000000'''
+            $restResult = Invoke-MgGraphRequest -method GET $_permissions.msGraphPermissionsRequestUri
 
-            if ($result) {
-                $_permissions.msGraphServicePrincipal = $result | select-object -expandproperty value
+            if ( $restResult ) {
+                $_permissions.msGraphServicePrincipal = $restResult | Select-Object -ExpandProperty value
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
-        } catch [System.Management.Automation.ValidationMetadataException] {
-            $requestError = $_
+        } catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException] {
+            # We can't get the data from MS Graph, so just use a local static (possibly stale) copy
             $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $_permissions.isFromInvokeMgGraphRequest = $false
-        } catch [System.Net.Http.HttpRequestException] {
-            $requestError = $_
-            $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
-            $_permissions.isFromInvokeMgGraphRequest = $false
+            if ( $online ) {
+                throw
+            }
         }
     }
 
-    if ($requestError -and $online) {
-        Write-Error $requestError -ErrorAction Stop
-    }
-
-    # 3. Parse the permisions from the serviceprincipal
-    $msOauth = $_permissions.msGraphServicePrincipal.oauth2PermissionScopes
-    $msAppRoles = $_permissions.msGraphServicePrincipal.appRoles
-
-    # make sure the parsed permissions are exported properly
-    @{
-        oauth2 = $msOauth;
-        appRoles = $msAppRoles
-    }
-
+    # Filter out the unwanted fields and leave only the appRoleAssignments and
+    # oauth2PermissionScope objects
+    $_permissions.msGraphServicePrincipal | Select-Object oauth2PermissionScopes, appRoles
 }
 
-# Search based on user input
-function Permissions_GetOauthData {
-    param (
-        $permissionsData
-    )
-
-    $msOauth = $permissionsData.oauth2
-
-    ForEach ($oauth2grant in $msOauth) {
-
-        $description = If ($oauth2grant.type -eq "Admin") {
+function Permissions_GetOauthData( [PSCustomObject] $permissionsData ) {
+    foreach ( $oauth2grant in $permissionsData.oauth2PermissionScopes ) {
+        $description = If ($oauth2grant.type -eq 'Admin') {
             $oauth2grant.adminConsentDescription
-        } elseif ($oauth2grant.type -eq "User") {
+        } elseif ($oauth2grant.type -eq 'User') {
             $oauth2grant.userConsentDescription
         }
 
         $entry = [ordered] @{
-            "Id" = $oauth2grant.id
-            "PermissionType" = 'Delegated'
-            "Consent" = $oauth2grant.type
-            "Name" = $oauth2grant.value
-            "Description" = $description
+            Id = $oauth2grant.id
+            PermissionType = 'Delegated'
+            Consent = $oauth2grant.type
+            Name = $oauth2grant.value
+            Description = $description
         }
+
         $permissions = [PSCustomObject] $entry
         $permissions.PSTypeNames.Insert(0, 'Microsoft.Graph.Custom.Permission')
         $permissions
-
     }
 }
 
-function Permissions_GetAppRolesData {
-    param (
-        $permissionsData
-    )
-    $msAppRoles = $permissionsData.appRoles
+function Permissions_GetAppRolesData( [PSCustomObject] $permissionsData ) {
+    foreach ( $appRole in $permissionsData.appRoles ) {
 
-    ForEach ($approle in $msAppRoles) {
-
-        $consent = If ($approle.origin -eq "Application") {
-            "Admin"
-        } elseif ($approle.origin -eq "Delegated") {
-            "User"
+        $consent = if ($appRole.origin -eq 'Application') {
+            'Admin'
+        } elseif ($appRole.origin -eq 'Delegated') {
+            'User'
         }
 
         $entry = [ordered] @{
-            "Id" = $approle.id
-            "PermissionType" = 'Application'
-            "Consent" = $consent
-            "Name" = $approle.value
-            "Description" = $approle.description
+            Id = $appRole.id
+            PermissionType = 'Application'
+            Consent = $consent
+            Name = $appRole.value
+            Description = $appRole.description
         }
+
         $permissions = [PSCustomObject] $entry
         $permissions.PSTypeNames.Insert(0, 'Microsoft.Graph.Custom.Permission')
         $permissions
     }
 }
+
+_Permissions_Initialize

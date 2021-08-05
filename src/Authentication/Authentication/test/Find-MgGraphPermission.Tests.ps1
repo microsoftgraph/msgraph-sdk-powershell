@@ -3,10 +3,6 @@
 # ------------------------------------------------------------------------------
 
 Describe "The Find-MgGraphPermission Command" {
-    BeforeAll{
-        . (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
-        . (Join-Path $PSScriptRoot  .\Find-MgGraphPermissionTestfile.ps1)
-    }
 
     BeforeAll {
         . (join-path $PSScriptRoot  ..\custom\Find-MgGraphPermission.ps1)
