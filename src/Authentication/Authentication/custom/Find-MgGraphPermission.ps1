@@ -12,6 +12,7 @@ Find permissions for authorization against Microsoft Graph
 #>
 function Find-MgGraphPermission {
     [cmdletbinding()]
+    [OutputType('Microsoft.Graph.Custom.Permission')]
     param (
         [string] $SearchString,
         [switch] $Online
@@ -19,20 +20,13 @@ function Find-MgGraphPermission {
 
     $permissionsData = Permissions_GetPermissionsData $online
 
-    $Permissions_GetOauthData = Permissions_GetOauthData $permissionsData
-    $Permissions_GetAppRolesData = Permissions_GetAppRolesData $permissionsData
- 
-
-    # Creating a table specifically for Oauth2permissions data 
+    # Creating a table specifically for Oauth2permissions data
     $oauthData = @()
-    $oauthData += $Permissions_GetOauthData | Where-Object Name -like *$SearchString*
-    # $oauthData += Permissions_GetOauthData | Where-Object Description -like *$search* 
+    $oauthData += Permissions_GetOauthData $permissionsData | Where-Object Name -like *$SearchString*
     $oauthData | Sort-Object -Property Name
 
-    # Creating a table specifically for appRoles data 
+    # Creating a table specifically for appRoles data
     $appRolesData = @()
-    $appRolesData += $Permissions_GetAppRolesData | Where-Object Name -like *$SearchString*
-    # $appRolesData += Permissions_GetAppRolesData | Where-Object Description -like *$search*
+    $appRolesData += Permissions_GetAppRolesData $permissionsData | Where-Object Name -like *$SearchString*
     $appRolesData | Sort-Object -Property Name
-
 }
