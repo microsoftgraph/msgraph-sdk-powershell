@@ -22,11 +22,11 @@ Describe "The Find-MgGraphPermission Command" {
             }
         }
 
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+        It 'Executes successfully with the All parameter' {
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $true
             Assert-MockCalled Invoke-MgGraphRequest
-            { Find-MgGraphPermission -Online | Out-Null } | Should -Not -Throw
+            { Find-MgGraphPermission -All -Online | Out-Null } | Should -Not -Throw
         }
     }
 
@@ -36,15 +36,31 @@ Describe "The Find-MgGraphPermission Command" {
             Mock Invoke-MgGraphRequest {$permissionData}
         }
 
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+        It 'Executes successfully with the All parameter' {
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $true
             { Find-MgGraphPermission -Online | Out-Null } | Should -Not -Throw
         }
 
-        It 'Only calls Invoke-MgGraph request once' {
+        It 'Executes successfully when the Any parameter is specified for some search criteria' {
+            $result = Find-MgGraphPermission ReadWrite -PermissionType Any
+
+            $result.length | Should -Be 4
+        }
+
+        It 'Should accept input from the pipeline as the SearchString parameter and find matches for each element in the pipeline' -Tag testing {
+            { 'People.Read.All' | Find-MgGraphPermission -ErrorAction Stop } | Should -Not -Throw
+
+            $pipelineMatches = 'People.Read.All', 'User.Read.Basic' | Find-MgGraphPermission
+
+            $pipelineMatches.length | Should -Be 2
+            $pipelineMatches[0].Name | Should -Be 'People.Read.All'
+            $pipelineMatches[1].Name | Should -Be 'User.Read.Basic'
+        }
+
+        It 'Only calls Invoke-MgGraph request for the first invocation of Find-MgGraphPermission and is not called for subsequent invocations' {
             { Find-MgGraphPermission 'ReadWrite' | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             { Find-MgGraphPermission 'Email' | Out-Null }
@@ -74,6 +90,121 @@ Describe "The Find-MgGraphPermission Command" {
             $testOnline.length | Should -Be 4
         }
 
+        It "Retrieves only delegated permissions even the PermissionType parameter is specified as Delegated when application permissions would also match the search string" {
+            $allMatches = Find-MgGraphPermission ReadWrite
+
+            $index = 0
+
+            $delegatedPermissions = , 'RoleAssignmentSchedule.ReadWrite.Directory'
+            $applicationPermissions = 'Directory.ReadWrite.All', 'Group.ReadWrite.All', 'WorkforceIntegration.ReadWrite.All'
+
+            $allPermissions = @()
+            $allPermissions += $delegatedPermissions
+            $allPermissions += $applicationPermissions
+
+            $allPermissions | foreach {
+                $allMatches[$index++].Name | Should -Be $_
+            }
+
+            $delegatedMatches = Find-MgGraphPermission ReadWrite -PermissionType Delegated
+
+            $delegatedIndex = 0
+
+            $delegatedPermissions | foreach {
+                $delegatedMatches[$delegatedIndex++].Name | Should -Be $_
+            }
+        }
+
+        It "Should throw an exception if ExactMatch is specified and the specified SearchString cannot be found even when there is a partial match" -Tag Testing {
+            $result = Find-MgGraphPermission Group
+
+            $result.length | Should -Be 2
+
+            $result | foreach {
+                $_.Name | Should -BeLike '*group*'
+            }
+
+            { Find-MgGraphPermission -ExactMatch user | out-null } | Should -Throw
+
+        }
+
+        It "Should return exactly the permission specified" -Tag testing {
+            Find-MgGraphPermission Group.read.basic |
+              Select-Object -ExpandProperty Name |
+              Should -Be 'Group.Read.Basic'
+        }
+
+        It "It allows the PermissionType to be specified when the All parameter is specified and returns the filtered results" -Tag testing {
+
+            $delegatedPermissions = 'Group.Read.Basic', 'RoleAssignmentSchedule.ReadWrite.Directory', 'User.Read.Basic'
+
+            $applicationPermissions = 'Directory.ReadWrite.All', 'Group.ReadWrite.All', 'People.Read.All', 'WorkforceIntegration.ReadWrite.All'
+
+            $allPermissions = @()
+            $allPermissions += $delegatedPermissions
+            $allPermissions += $applicationPermissions
+
+            $delegatedCount = $delegatedPermissions.Length
+            $applicationCount = $applicationPermissions.Length
+
+            $totalCount = $delegatedCount + $applicationCount
+
+            $allMatches = Find-MgGraphPermission -All
+
+            $allMatchesFromAny = Find-MgGraphPermission -All -PermissionType Any
+
+            $delegatedMatches = Find-MgGraphPermission -All -PermissionType Delegated
+
+            $applicationMatches = Find-MgGraphPermission -All -PermissionType Application
+
+            $allMatches.Length | Should -Be $totalCount
+            $allMatchesFromAny.Length | Should -Be $totalCount
+
+            $index = 0
+
+            $allPermissions | foreach {
+                $allMatches[$index].Name | Should -Be $_
+                $allMatchesFromAny[$index++].Name | Should -Be $_
+            }
+
+            $delegatedIndex = 0
+
+            $delegatedPermissions | foreach {
+                $delegatedMatches[$delegatedIndex++].Name | Should -Be $_
+            }
+
+            $applicationIndex = 0
+
+            $applicationPermissions | foreach {
+                $applicationMatches[$applicationIndex++].Name | Should -Be $_
+            }
+        }
+
+        It "Retrieves only application  permissions even the PermissionType parameter is specified as Application when delegated permissions would also match the search string" {
+            $allMatches = Find-MgGraphPermission ReadWrite
+
+            $index = 0
+
+            $delegatedPermissions = , 'RoleAssignmentSchedule.ReadWrite.Directory'
+            $applicationPermissions = 'Directory.ReadWrite.All', 'Group.ReadWrite.All', 'WorkforceIntegration.ReadWrite.All'
+
+            $allPermissions = @()
+            $allPermissions += $delegatedPermissions
+            $allPermissions += $applicationPermissions
+
+            $allPermissions | foreach {
+                $allMatches[$index++].Name | Should -Be $_
+            }
+
+            $applicationMatches = Find-MgGraphPermission ReadWrite -PermissionType Application
+
+            $applicationIndex = 0
+
+            $applicationPermissions | foreach {
+                $applicationMatches[$applicationIndex++].Name | Should -Be $_
+            }
+        }
+
         It "Returns nothing and throws no exception if a search string is specified and there is no match" {
             { Find-MgGraphPermission 'Nigeria has the best jollof' | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
@@ -93,8 +224,8 @@ Describe "The Find-MgGraphPermission Command" {
             }
         }
 
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+        It 'Executes successfully with the All parameter' {
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $false
@@ -134,8 +265,8 @@ Describe "The Find-MgGraphPermission Command" {
             }
         }
 
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+        It 'Executes successfully with the All parameter' {
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $false
@@ -146,7 +277,7 @@ Describe "The Find-MgGraphPermission Command" {
                 $permissionData
             }
 
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $true
@@ -209,23 +340,23 @@ Describe "The Find-MgGraphPermission Command" {
             }
         }
 
-        It 'Executes successfully with no parameters' {
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+        It 'Executes successfully with the All parameter' {
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $false
-            { Find-MgGraphPermission -Online | Out-Null } | Should -Throw 'mock authentication error message'
+            { Find-MgGraphPermission -All -Online | Out-Null } | Should -Throw 'mock authentication error message'
 
             # Restoring the connection that was set to fail in the BeforeEach
             Mock Invoke-MgGraphRequest{
                 $permissionData
             }
 
-            { Find-MgGraphPermission | Out-Null } | Should -Not -Throw
+            { Find-MgGraphPermission -All | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest
             (_Permissions_State).msGraphServicePrincipal | Should -Not -Be $null
             (_Permissions_State).isFromInvokeMgGraphRequest | Should -Be $true
-            { Find-MgGraphPermission -Online | Out-Null } | Should -Not -Throw
+            { Find-MgGraphPermission -All -Online | Out-Null } | Should -Not -Throw
 
         }
 

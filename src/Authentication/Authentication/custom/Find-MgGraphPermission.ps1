@@ -116,22 +116,59 @@ New-MgGraphApplication
 New-MgServicePrinicipal
 #>
 function Find-MgGraphPermission {
-    [cmdletbinding()]
+    [cmdletbinding(positionalbinding=$false)]
     [OutputType('Microsoft.Graph.Custom.Permission')]
     param (
-        [string] $SearchString,
-        [switch] $Online
+        [parameter(ParameterSetName='Search', position=0, ValueFromPipeline=$true, Mandatory=$true)]
+        [String] $SearchString,
+
+        [parameter(ParameterSetName='Search')]
+        [Switch] $ExactMatch,
+
+        [ValidateSet('Any', 'Delegated', 'Application')]
+        [String] $PermissionType = 'Any',
+
+        [Switch] $Online,
+
+        [parameter(ParameterSetname='All')]
+        [Switch] $All
     )
 
-    $permissionsData = Permissions_GetPermissionsData $online
+    begin {
 
-    # Creating a table specifically for Oauth2permissions data
-    $oauthData = @()
-    $oauthData += Permissions_GetOauthData $permissionsData | Where-Object Name -like *$SearchString*
-    $oauthData | Sort-Object -Property Name
+        $filter = if ( $All.IsPresent ) {
+            { $true }
+        } elseif ( $ExactMatch.IsPresent ) {
+            { $_.Name -eq $SearchString }
+        } else {
+            { $_.Name -like "*$SearchString*" }
+        }
 
-    # Creating a table specifically for appRoles data
-    $appRolesData = @()
-    $appRolesData += Permissions_GetAppRolesData $permissionsData | Where-Object Name -like *$SearchString*
-    $appRolesData | Sort-Object -Property Name
+        $permissionsData = Permissions_GetPermissionsData $online
+    }
+
+    process {
+        $permissions = @()
+
+        if ( $PermissionType -in 'Any', 'Delegated' ) {
+            $permissions += Permissions_GetOauthData $permissionsData |
+              Where-Object $filter |
+              Sort-Object Name
+        }
+
+        if ( $PermissionType -in 'Any', 'Application' ) {
+            $permissions += Permissions_GetAppRolesData $permissionsData |
+              Where-Object $filter |
+              Sort-Object Name
+        }
+
+        if ( ! $permissions -and $ExactMatch.IsPresent ) {
+            Write-Error "No results were found that exactly matched the specified permission '$SearchString'" -ErrorAction Stop
+        }
+
+        $permissions
+    }
+
+    end {
+    }
 }
