@@ -897,6 +897,8 @@ paths:
                 - authenticationRequirement desc
                 - authenticationRequirementPolicies
                 - authenticationRequirementPolicies desc
+                - autonomousSystemNumber
+                - autonomousSystemNumber desc
                 - clientAppUsed
                 - clientAppUsed desc
                 - conditionalAccessStatus
@@ -905,6 +907,8 @@ paths:
                 - correlationId desc
                 - createdDateTime
                 - createdDateTime desc
+                - crossTenantAccessType
+                - crossTenantAccessType desc
                 - deviceDetail
                 - deviceDetail desc
                 - flaggedForReview
@@ -917,6 +921,8 @@ paths:
                 - ipAddressFromResourceProvider desc
                 - isInteractive
                 - isInteractive desc
+                - isTenantRestricted
+                - isTenantRestricted desc
                 - location
                 - location desc
                 - mfaDetail
@@ -925,6 +931,8 @@ paths:
                 - networkLocationDetails desc
                 - originalRequestId
                 - originalRequestId desc
+                - privateLinkDetails
+                - privateLinkDetails desc
                 - processingTimeInMilliseconds
                 - processingTimeInMilliseconds desc
                 - resourceDisplayName
@@ -945,6 +953,10 @@ paths:
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialKeyId desc
+                - servicePrincipalCredentialThumbprint
+                - servicePrincipalCredentialThumbprint desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
@@ -994,20 +1006,24 @@ paths:
                 - authenticationProcessingDetails
                 - authenticationRequirement
                 - authenticationRequirementPolicies
+                - autonomousSystemNumber
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
+                - crossTenantAccessType
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
+                - isTenantRestricted
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
@@ -1018,6 +1034,8 @@ paths:
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1124,20 +1142,24 @@ paths:
                 - authenticationProcessingDetails
                 - authenticationRequirement
                 - authenticationRequirementPolicies
+                - autonomousSystemNumber
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
+                - crossTenantAccessType
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
+                - isTenantRestricted
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
@@ -1148,6 +1170,8 @@ paths:
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1278,6 +1302,8 @@ paths:
                 - authenticationRequirement desc
                 - authenticationRequirementPolicies
                 - authenticationRequirementPolicies desc
+                - autonomousSystemNumber
+                - autonomousSystemNumber desc
                 - clientAppUsed
                 - clientAppUsed desc
                 - conditionalAccessStatus
@@ -1286,6 +1312,8 @@ paths:
                 - correlationId desc
                 - createdDateTime
                 - createdDateTime desc
+                - crossTenantAccessType
+                - crossTenantAccessType desc
                 - deviceDetail
                 - deviceDetail desc
                 - flaggedForReview
@@ -1298,6 +1326,8 @@ paths:
                 - ipAddressFromResourceProvider desc
                 - isInteractive
                 - isInteractive desc
+                - isTenantRestricted
+                - isTenantRestricted desc
                 - location
                 - location desc
                 - mfaDetail
@@ -1306,6 +1336,8 @@ paths:
                 - networkLocationDetails desc
                 - originalRequestId
                 - originalRequestId desc
+                - privateLinkDetails
+                - privateLinkDetails desc
                 - processingTimeInMilliseconds
                 - processingTimeInMilliseconds desc
                 - resourceDisplayName
@@ -1326,6 +1358,10 @@ paths:
                 - riskLevelDuringSignIn desc
                 - riskState
                 - riskState desc
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialKeyId desc
+                - servicePrincipalCredentialThumbprint
+                - servicePrincipalCredentialThumbprint desc
                 - servicePrincipalId
                 - servicePrincipalId desc
                 - servicePrincipalName
@@ -1373,20 +1409,24 @@ paths:
                 - authenticationProcessingDetails
                 - authenticationRequirement
                 - authenticationRequirementPolicies
+                - autonomousSystemNumber
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
+                - crossTenantAccessType
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
+                - isTenantRestricted
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
@@ -1397,6 +1437,8 @@ paths:
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -1504,20 +1546,24 @@ paths:
                 - authenticationProcessingDetails
                 - authenticationRequirement
                 - authenticationRequirementPolicies
+                - autonomousSystemNumber
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
+                - crossTenantAccessType
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
+                - isTenantRestricted
                 - location
                 - mfaDetail
                 - networkLocationDetails
                 - originalRequestId
+                - privateLinkDetails
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
@@ -1528,6 +1574,8 @@ paths:
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
                 - riskState
+                - servicePrincipalCredentialKeyId
+                - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
                 - signInEventTypes
@@ -8157,6 +8205,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationRequirementPolicy'
+            autonomousSystemNumber:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
             clientAppUsed:
               type: string
               description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).'
@@ -8172,6 +8226,8 @@ components:
               type: string
               description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
+            crossTenantAccessType:
+              $ref: '#/components/schemas/microsoft.graph.signInAccessType'
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             flaggedForReview:
@@ -8191,6 +8247,9 @@ components:
               type: boolean
               description: Indicates whether a sign-in is interactive or not.
               nullable: true
+            isTenantRestricted:
+              type: boolean
+              nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             mfaDetail:
@@ -8204,6 +8263,8 @@ components:
               type: string
               description: The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
               nullable: true
+            privateLinkDetails:
+              $ref: '#/components/schemas/microsoft.graph.privateLinkDetails'
             processingTimeInMilliseconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -8241,6 +8302,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskState:
               $ref: '#/components/schemas/microsoft.graph.riskState'
+            servicePrincipalCredentialKeyId:
+              type: string
+              nullable: true
+            servicePrincipalCredentialThumbprint:
+              type: string
+              nullable: true
             servicePrincipalId:
               type: string
               description: The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
@@ -12379,6 +12446,16 @@ components:
         - notApplied
         - unknownFutureValue
       type: string
+    microsoft.graph.signInAccessType:
+      title: signInAccessType
+      enum:
+        - none
+        - b2bCollaboration
+        - b2bDirectConnect
+        - microsoftSupport
+        - serviceProvider
+        - unknownFutureValue
+      type: string
     microsoft.graph.deviceDetail:
       title: deviceDetail
       type: object
@@ -12462,6 +12539,24 @@ components:
           description: Provides the name of the network used when signing in.
         networkType:
           $ref: '#/components/schemas/microsoft.graph.networkType'
+      additionalProperties:
+        type: object
+    microsoft.graph.privateLinkDetails:
+      title: privateLinkDetails
+      type: object
+      properties:
+        policyId:
+          type: string
+          nullable: true
+        policyName:
+          type: string
+          nullable: true
+        policyTenantId:
+          type: string
+          nullable: true
+        resourceId:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.riskDetail:
@@ -13045,8 +13140,8 @@ components:
         - extranet
         - namedNetwork
         - trusted
-        - unknownFutureValue
         - trustedNamedLocation
+        - unknownFutureValue
       type: string
     microsoft.graph.authenticationMethodFeature:
       title: authenticationMethodFeature
@@ -13121,6 +13216,8 @@ components:
         - deviceFilter
         - deviceState
         - unknownFutureValue
+        - deviceFilterIncludeRuleNotMatched
+        - allDeviceStates
       type: string
     odata.error.detail:
       required:
