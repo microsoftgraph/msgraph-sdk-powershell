@@ -60,14 +60,14 @@ Describe "The Find-MgGraphPermission Command" {
             $pipelineMatches[1].Name | Should -Be 'User.Read.Basic'
         }
 
-        It 'Only calls Invoke-MgGraph request for the first invocation of Find-MgGraphPermission and is not called for subsequent invocations' {
+        It 'Only calls Invoke-MgGraphRequest for the first invocation of Find-MgGraphPermission and is not called for subsequent invocations' {
             { Find-MgGraphPermission 'ReadWrite' | Out-Null } | Should -Not -Throw
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             { Find-MgGraphPermission 'Email' | Out-Null }
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
         }
 
-        It 'Calls Invoke-MgGraph request for the first request and then only if the Online parameter is specified' {
+        It 'Calls Invoke-MgGraphRequest for the first request and then only if the Online parameter is specified' {
             Find-MgGraphPermission 'role' | Should -Not -Be $null
             Assert-MockCalled Invoke-MgGraphRequest -Exactly 1
             Find-MgGraphPermission 'user' | Should -Not -Be $null
@@ -115,7 +115,13 @@ Describe "The Find-MgGraphPermission Command" {
             }
         }
 
-        It "Should throw an exception if ExactMatch is specified and the specified SearchString cannot be found even when there is a partial match" -Tag Testing {
+        It "Should return null and not throw an exception if ExactMatch is specified and there is no match" {
+            { Find-MgGraphPermission -ExactMatch IDontExist 2>&1 | out-null } | Should -Not -Throw
+
+            Find-MgGraphPermission -ExactMatch IDontExistuser -ErrorAction Ignore | Should -Be $null
+        }
+
+        It "Should throw an exception if ExactMatch is specified and the specified SearchString cannot be found even when there is a partial match and the ErrorAction is stop" {
             $result = Find-MgGraphPermission Group
 
             $result.length | Should -Be 2
@@ -124,17 +130,17 @@ Describe "The Find-MgGraphPermission Command" {
                 $_.Name | Should -BeLike '*group*'
             }
 
-            { Find-MgGraphPermission -ExactMatch user | out-null } | Should -Throw
+            { Find-MgGraphPermission -ExactMatch user -ErrorAction Stop 2>&1 | out-null } | Should -Throw
 
         }
 
-        It "Should return exactly the permission specified" -Tag testing {
+        It "Should return exactly the permission specified" {
             Find-MgGraphPermission Group.read.basic |
               Select-Object -ExpandProperty Name |
               Should -Be 'Group.Read.Basic'
         }
 
-        It "It allows the PermissionType to be specified when the All parameter is specified and returns the filtered results" -Tag testing {
+        It "It allows the PermissionType to be specified when the All parameter is specified and returns the filtered results" {
 
             $delegatedPermissions = 'Group.Read.Basic', 'RoleAssignmentSchedule.ReadWrite.Directory', 'User.Read.Basic'
 

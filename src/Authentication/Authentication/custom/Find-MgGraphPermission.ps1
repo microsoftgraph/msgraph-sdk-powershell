@@ -44,6 +44,14 @@ of the permission you're searching for. Since permissions usually have names suc
 command uses the SearchString parameter to return all permissions that contain the value specified for SearchString in the
 name of the permission.
 
+.PARAMETER ExactMatch
+Specify the ExactMatch parameter to restrict the permissions emitted to those that exactly match the value specified for SearchString.
+
+.PARAMETER PermissionType
+Specify the PermissionType to determine whether application permissions, delegated permisisons, or both are returned by
+Find-MgGraphPermission. By default, the value of this parameter is Any, which includes both delegated and application permissions.
+Other valid values for PermissionType are Application and Delegated to return those specify types of permissions.
+
 .PARAMETER Online
 Specify the Online parameter in addition to SearchString to force Find-MgGraphPermission to update its set of permissions
 by requesting the latest permissions data from Microsoft Graph itself before searching for the permissions specified the
@@ -53,6 +61,10 @@ invocation of the Connect-MgGraph command to issue the request for updated permi
 already have access to read this data from Microsoft Graph or if there is no network connectivity to Microsoft Graph, the command will fail.
 If the command is successful in updating the set of permissions prior to searching for permissions, Find-MgGraphPermission will
 continue to use the updated list for all future invocations of the command even if they do not specify the Online parameter.
+
+.PARAMETER All
+To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The
+All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.
 
 .OUTPUTS
 This command returns a collection of items with the following fields:
@@ -97,6 +109,32 @@ Subsequent PowerShell commands issued in the session that access Microsoft Graph
 if the sign-in was successful.
 
 .EXAMPLE
+PS> Find-MgGraphPermission User.Read -ExactMatch -PermissionType Delegated
+
+   PermissionType: Delegated
+
+Id                                   Consent Name      Description
+--                                   ------- ----      -----------
+e1fe6dd8-ba31-4d61-89e7-88639da4683d User    User.Read Allows you to sign in to the app with your organizational accou…
+
+In this example the PermissionType parameter restricts the output to only delegated permissions, and by specifying the ExactMatch
+parameter only permissions that exactly match the specified name are emitted.
+
+.EXAMPLE
+PS> 'User.Read.All', 'Group.Read.All' | Find-MgGraphPermission -ExactMatch -PermissionType Application | Select-Object Id
+
+Id
+--
+df021288-bdef-4463-88db-98f22de89214
+5b567255-7703-4780-807c-7be8301ae99b
+
+This example demonstrates that ability to pass the SearchString parameter as pipeline input. In this case, the issued command
+returns the unique identifiers of the two permissions listed in the pipeline, 'User.Read.All' and 'Group.Read.All'. The
+PermissionType parameter was included with a value of Application to ensure that only application permissions were emitted,
+and ExactMatch ensures that the intent of emitting output just for these specific permissions and not some that might match
+their names partially is honored.
+
+.EXAMPLE
 Find-MgGraphPermission mailbox | Where-Object PermissionType -eq Delegated | Format-List Name, Description
 
 Name        : MailboxSettings.Read
@@ -111,9 +149,7 @@ result is piped to the Format-List command so that the output of the Description
 in the default table view.
 
 .LINK
-Connect-MgGraph
-New-MgGraphApplication
-New-MgServicePrinicipal
+https://docs.microsoft.com/en-us/graph/permissions-reference.
 #>
 function Find-MgGraphPermission {
     [cmdletbinding(positionalbinding=$false)]
@@ -163,7 +199,7 @@ function Find-MgGraphPermission {
         }
 
         if ( ! $permissions -and $ExactMatch.IsPresent ) {
-            Write-Error "No results were found that exactly matched the specified permission '$SearchString'" -ErrorAction Stop
+            Write-Error "No results were found that exactly matched the specified permission '$SearchString'"
         }
 
         $permissions
