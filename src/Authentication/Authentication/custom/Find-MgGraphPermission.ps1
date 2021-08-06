@@ -6,6 +6,19 @@ Set-StrictMode -Version 6.0
 
 . "$psscriptroot/common/Permissions.ps1"
 
+# Register the output type of Find-MgGraphPermission so that
+# auto-completion works for commands such as Select-Object
+'Id', 'Consent', 'Name', 'Description', 'PermissionType' | foreach {
+    $typeParameters = @{
+        TypeName = 'Microsoft.Graph.Custom.Permission'
+        MemberType = 'NoteProperty'
+        MemberName = $_
+        Value = $null
+    }
+
+    Update-typedata @typeParameters -force
+}
+
 <#
 .SYNOPSIS
 Finds Microsoft Graph permissions based on search criteria.
