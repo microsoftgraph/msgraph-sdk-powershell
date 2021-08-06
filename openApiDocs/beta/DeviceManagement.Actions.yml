@@ -17102,6 +17102,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage-id}/microsoft.graph.reupload':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reupload
+      operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
+      parameters:
+        - name: cloudPcDeviceImage-id
+          in: path
+          description: 'key: id of cloudPcDeviceImage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcDeviceImage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}/microsoft.graph.runHealthChecks':
     post:
       tags:
