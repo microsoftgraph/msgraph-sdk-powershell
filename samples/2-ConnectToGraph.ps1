@@ -6,6 +6,9 @@ Connect-Graph
 # Try to Get-User
 Get-MgUser
 
+# Search for delegated permissions related to sites
+Find-MgGraphPermission sites
+
 # Grant more permissions
 Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
             "Directory.Read.All","Chat.ReadWrite", "People.Read", `
@@ -17,3 +20,7 @@ Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
 
 # Forget all access tokens
 Disconnect-Graph
+
+# Launch detailed permissions documentation
+Get-Help Find-MgGraphPermission -Online
+

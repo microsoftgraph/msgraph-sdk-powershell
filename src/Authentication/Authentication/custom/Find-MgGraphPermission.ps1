@@ -66,6 +66,9 @@ continue to use the updated list for all future invocations of the command even 
 To return all possible permissions rather than just those that match the SearchString parameter, specify the All parameter. The
 All parameter may also be used with the PermissionType to enumerate all applicaition permissions or all delegated permissions.
 
+.INPUTS
+You can pipe permission names in the form of strings to Find-MgGraphPermission.
+
 .OUTPUTS
 This command returns a collection of items with the following fields:
 * Name: The name of the permission as found in Microsoft Graph permissions reference documentation. Names will typically
@@ -149,7 +152,7 @@ result is piped to the Format-List command so that the output of the Description
 in the default table view.
 
 .LINK
-https://docs.microsoft.com/en-us/graph/permissions-reference.
+https://docs.microsoft.com/en-us/graph/permissions-reference
 #>
 function Find-MgGraphPermission {
     [cmdletbinding(positionalbinding=$false)]
