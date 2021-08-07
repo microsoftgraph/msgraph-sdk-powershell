@@ -1196,6 +1196,12 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.modality'
+                participantCapacity:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -2330,8 +2336,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - audioConferencing
                 - audioConferencing desc
                 - chatInfo
@@ -2370,7 +2384,11 @@ paths:
             items:
               enum:
                 - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
@@ -2467,7 +2485,11 @@ paths:
             items:
               enum:
                 - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
@@ -2830,8 +2852,16 @@ paths:
               enum:
                 - id
                 - id desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - audioConferencing
                 - audioConferencing desc
                 - chatInfo
@@ -2870,7 +2900,11 @@ paths:
             items:
               enum:
                 - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
@@ -2982,7 +3016,11 @@ paths:
             items:
               enum:
                 - id
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - audioConferencing
                 - chatInfo
                 - creationDateTime
@@ -3627,8 +3665,22 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            allowAttendeeToEnableCamera:
+              type: boolean
+              description: Indicates whether attendees can turn on their camera.
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              description: Indicates whether attendees can turn on their microphone.
+              nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowTeamworkReactions:
+              type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -4098,6 +4150,14 @@ components:
         - organization
         - roleIsPresenter
         - organizer
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
         - unknownFutureValue
       type: string
     microsoft.graph.audioConferencing:
