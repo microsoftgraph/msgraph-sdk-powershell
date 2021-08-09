@@ -117,7 +117,7 @@ Describe "The Find-MgGraphPermission Command" {
 
         It "Should return null and not throw an exception if ExactMatch is specified and there is no match" {
             { Find-MgGraphPermission -ExactMatch IDontExist 2>&1 | out-null } | Should -Not -Throw
-            $ErrorActionPreference = 'stop'
+            $ErrorActionPreference = 'continue'
 
             Find-MgGraphPermission -ExactMatch IDontExistuser -ErrorAction Ignore | Should -Be $null
         }
