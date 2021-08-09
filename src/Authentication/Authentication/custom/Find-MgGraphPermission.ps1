@@ -8,7 +8,7 @@ Set-StrictMode -Version 6.0
 
 # Register the output type of Find-MgGraphPermission so that
 # auto-completion works for commands such as Select-Object
-'Id', 'Consent', 'Name', 'Description', 'PermissionType' | foreach {
+'Id', 'Consent', 'Name', 'Description', 'PermissionType' | ForEach-Object {
     $typeParameters = @{
         TypeName = 'Microsoft.Graph.Custom.Permission'
         MemberType = 'NoteProperty'
@@ -48,7 +48,7 @@ then uses its most recent copy of the information as the source of data.
 
 Note that the results of Find-MgGraphPermission grouped by Delegated and Application permission types, and then sorted
 by permission name. They are not sorted by least-privileged access, so when multiple permissions appear to satisfy your
-script or application's requirements, consult the Microsoft Graph Permissions Reference documenation to identify the
+script or application's requirements, consult the Microsoft Graph Permissions Reference documentation to identify the
 least-privileged permission for your use case.
 
 .PARAMETER SearchString
