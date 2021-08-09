@@ -102,7 +102,7 @@ Describe "The Find-MgGraphPermission Command" {
             $allPermissions += $delegatedPermissions
             $allPermissions += $applicationPermissions
 
-            $allPermissions | foreach {
+            $allPermissions | ForEach-Object {
                 $allMatches[$index++].Name | Should -Be $_
             }
 
@@ -110,13 +110,14 @@ Describe "The Find-MgGraphPermission Command" {
 
             $delegatedIndex = 0
 
-            $delegatedPermissions | foreach {
+            $delegatedPermissions | ForEach-Object {
                 $delegatedMatches[$delegatedIndex++].Name | Should -Be $_
             }
         }
 
         It "Should return null and not throw an exception if ExactMatch is specified and there is no match" {
             { Find-MgGraphPermission -ExactMatch IDontExist 2>&1 | out-null } | Should -Not -Throw
+            $ErrorActionPreference = 'stop'
 
             Find-MgGraphPermission -ExactMatch IDontExistuser -ErrorAction Ignore | Should -Be $null
         }
@@ -126,7 +127,7 @@ Describe "The Find-MgGraphPermission Command" {
 
             $result.length | Should -Be 2
 
-            $result | foreach {
+            $result | ForEach-Object {
                 $_.Name | Should -BeLike '*group*'
             }
 
@@ -168,20 +169,20 @@ Describe "The Find-MgGraphPermission Command" {
 
             $index = 0
 
-            $allPermissions | foreach {
+            $allPermissions | ForEach-Object {
                 $allMatches[$index].Name | Should -Be $_
                 $allMatchesFromAny[$index++].Name | Should -Be $_
             }
 
             $delegatedIndex = 0
 
-            $delegatedPermissions | foreach {
+            $delegatedPermissions | ForEach-Object {
                 $delegatedMatches[$delegatedIndex++].Name | Should -Be $_
             }
 
             $applicationIndex = 0
 
-            $applicationPermissions | foreach {
+            $applicationPermissions | ForEach-Object {
                 $applicationMatches[$applicationIndex++].Name | Should -Be $_
             }
         }
@@ -198,7 +199,7 @@ Describe "The Find-MgGraphPermission Command" {
             $allPermissions += $delegatedPermissions
             $allPermissions += $applicationPermissions
 
-            $allPermissions | foreach {
+            $allPermissions | ForEach-Object {
                 $allMatches[$index++].Name | Should -Be $_
             }
 
@@ -206,7 +207,7 @@ Describe "The Find-MgGraphPermission Command" {
 
             $applicationIndex = 0
 
-            $applicationPermissions | foreach {
+            $applicationPermissions | ForEach-Object {
                 $applicationMatches[$applicationIndex++].Name | Should -Be $_
             }
         }
