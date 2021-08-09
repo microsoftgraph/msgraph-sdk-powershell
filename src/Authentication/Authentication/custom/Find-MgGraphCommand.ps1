@@ -5,16 +5,16 @@
 Set-StrictMode -Version 2
 function Find-MgGraphCommand {
     [OutputType([Microsoft.Graph.PowerShell.Authentication.Models.IGraphCommand])]
-    [CmdletBinding(DefaultParameterSetName = 'FindByUrl', PositionalBinding = $false)]
+    [CmdletBinding(DefaultParameterSetName = 'FindByUri', PositionalBinding = $false)]
     param (
-        [Parameter(ParameterSetName = "FindByUrl", Mandatory = $true)]
+        [Parameter(ParameterSetName = "FindByUri", Mandatory = $true)]
         [string]$Uri,
 
-        [Parameter(ParameterSetName = "FindByUrl")]
+        [Parameter(ParameterSetName = "FindByUri")]
         [ValidateSet("GET", "POST", "PUT", "PATCH", "DELETE")]
         [string]$Method,
 
-        [Parameter(ParameterSetName = "FindByUrl")]
+        [Parameter(ParameterSetName = "FindByUri")]
         [Parameter(ParameterSetName = "FindByCommand")]
         [ValidateSet("v1.0", "beta")]
         [Alias("Profile")]
@@ -28,14 +28,12 @@ function Find-MgGraphCommand {
         # Import ulility scripts.
         . "$PSScriptRoot/common/Json.ps1" | Out-Null
 
-        # TODO: Pack MgCommandMetadata.json with module.
-        # Read content of metadata file.
-        $MgCommandMetadataFile = (Join-Path $PSScriptRoot "..\..\..\..\assets\MgCommandMetadata.json")
+        $MgCommandMetadataFile = (Join-Path $PSScriptRoot "./common/MgCommandMetadata.json")
         if (!(Test-Path $MgCommandMetadataFile)) {
             throw "MgCommandMetadata file not found at $MgCommandMetadataFile."
         }
 
-        # Read and cache MgCommandMetadata in session object.
+        # Read content of metadata file and cache in session object.
         if ($null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance -and
             $null -ne [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata) {
             Write-Debug "Reading MgCommandMetadata from session object."
@@ -45,15 +43,15 @@ function Find-MgGraphCommand {
             [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata = Json_ConvertJsonToHashtable $MgCommandMetadataFile
         }
 
-        $CurrentGraphEndpoint = "https://graph.microsoft.com/"
+        $GraphHostURL = "https://graph.microsoft.com/"
         switch ($PSCmdlet.ParameterSetName) {
-            "FindByUrl" {
+            "FindByUri" {
                 Write-Debug "Received URI: $Uri."
                 $Uri = $Uri.TrimStart("/", "\").TrimEnd("/", "\")
                 $Uri = [System.Uri]::UnescapeDataString($Uri)
                 $GraphUri = $null
                 if (![System.Uri]::TryCreate($Uri, "RelativeOrAbsolute", [ref]$GraphUri) -and ($null -eq $GraphUri)) {
-                    throw "The provided URI doesn't match the expected URI format. Please ensure that the URI is formated as https://graph.microsoft.com/{api-version}/{resource}."
+                    throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formated as 'https://graph.microsoft.com/{api-version}/{resource}'."
                 }
 
                 # Use API version in URI if -ApiVersion is not provided.
@@ -63,7 +61,7 @@ function Find-MgGraphCommand {
 
                 if (!$GraphUri.IsAbsoluteUri) {
                     # Add schema and host.
-                    $UriBuilder = New-Object System.UriBuilder -ArgumentList $CurrentGraphEndpoint
+                    $UriBuilder = New-Object System.UriBuilder -ArgumentList $GraphHostURL
                     if ($Uri.StartsWith("v1.0") -or $Uri.StartsWith("beta")) {
                         $UriBuilder.Path = $Uri
                     }
@@ -74,11 +72,11 @@ function Find-MgGraphCommand {
                     $GraphUri = New-Object -TypeName Uri -ArgumentList ([System.Uri]::UnescapeDataString($UriBuilder.Uri))
                 }
                 Write-Debug "Resolved URI: $GraphUri."
+
                 $SanitizedUri = $GraphUri.GetComponents([System.UriComponents]::SchemeAndServer, [System.UriFormat]::SafeUnescaped)
-                $GraphUri.Segments | ForEach-Object {
-                    $i = $GraphUri.Segments.IndexOf($_)
+                for ($i = 0 ; $i -lt $GraphUri.Segments.length; $i++) {
                     # Segment contains an integer/id and is not API version.
-                    if ($_ -match "[^v1.0|beta]\d") {
+                    if ($GraphUri.Segments[$i] -match "[^v1.0|beta]\d") {
                         # Substitute integers/ids with {id} tokens, e.g, /users/289ee2a5-9450-4837-aa87-6bd8d8e72891 -> users/{id}.
                         $SanitizedUri += "{id}/"
                     }
@@ -88,12 +86,13 @@ function Find-MgGraphCommand {
                 }
                 $SanitizedUri = $SanitizedUri.TrimEnd("/")
                 Write-Debug "Sanitized URI: $SanitizedUri."
+
                 if ($SanitizedUri -match "https:\/\/$($GraphUri.Host)\/(v1.0|beta)(\/.*)(\?(.*))?") {
                     $ResourceSegement = $matches[2]
                     $RegexResourceSegement = "^$($ResourceSegement -Replace '(?<={)(.*?)(?=})', '(\w*-\w*|\w*)')$"
                 }
                 else {
-                    Write-Error "The provided URL doesn't match the expected URL format. Please ensure that the URL is formated as https://graph.microsoft.com/{api-version}/{resource}."
+                    throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formated as 'https://graph.microsoft.com/{api-version}/{resource}'."
                 }
             }
         }
@@ -103,19 +102,19 @@ function Find-MgGraphCommand {
         $Result = @()
         try {
             switch ($PSCmdlet.ParameterSetName) {
-                "FindByUrl" {
+                "FindByUri" {
                     Write-Debug "Matching URI: $RegexResourceSegement"
                     Write-Debug "Matching Method: $Method"
                     Write-Debug "Matching ApiVersion: $ApiVersion"
                     [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
                         if ($_.Method -match $Method -and
                             $_.ApiVersion -match $ApiVersion -and
-                            $_.Url -match $RegexResourceSegement) {
+                            $_.Uri -match $RegexResourceSegement) {
                             $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
                         }
                     }
                     if ($Result.Count -lt 1) {
-                        Write-Error "URL '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formated correctly and try again."
+                        Write-Error "URI '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formated correctly and try again."
                     }
                 }
                 "FindByCommand" {
@@ -137,9 +136,5 @@ function Find-MgGraphCommand {
             Write-Error $_.Exception
         }
         return $Result | Sort-Object @{Expression = "APIVersion"; Descending = $True }, @{Expression = "Command"; Descending = $False }
-    }
-
-    end {
-
     }
 }

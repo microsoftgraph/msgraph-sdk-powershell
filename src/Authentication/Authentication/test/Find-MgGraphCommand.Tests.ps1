@@ -16,7 +16,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Select-Object -Unique | should -HaveCount 2
                 $MgCommand.APIVersion | Select-Object -Unique | should -HaveCount 2
                 $MgCommand.Variants | Select-Object -Unique | should -HaveCount 6
-                $MgCommand.URL | Select-Object -Unique | Should -Be "/users"
+                $MgCommand.URI | Select-Object -Unique | Should -Be "/users"
                 $MgCommand.Command | Select-Object -Unique | Should -BeIn @("New-MgUser", "Get-MgUser")
             } | Should -Not -Throw
         }
@@ -29,7 +29,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta" # -APIVersion takes precedence.
                 $MgCommand.Variants | Should -Contain "Export1"
-                $MgCommand.URL | Should -Be $ResourceUri
+                $MgCommand.URI | Should -Be $ResourceUri
                 $MgCommand.Command | Should -Be "Export-MgUserPersonalData"
             } | Should -Not -Throw
         }
@@ -42,11 +42,11 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Should -Be "GET"
                 $MgCommand.APIVersion | Should -Be "beta"
                 $MgCommand.Variants | Should -Contain "Get"
-                $MgCommand.URL | Should -Be $ExpectedResourceUri
+                $MgCommand.URI | Should -Be $ExpectedResourceUri
                 $MgCommand.Command | Should -Be "Get-MgEntitlementManagementAccessPackageAssignmentResourceRole"
             } | Should -Not -Throw
         }
-        It 'Should find command using URL with query parameters' {
+        It 'Should find command using URI with query parameters' {
             {
                 $Uri = "beta/users?`$select=displayName&`$filter=identities/any(c:c/issuerAssignedId eq 'j.smith@yahoo.com')"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -Method GET
@@ -54,11 +54,11 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Should -Be "GET"
                 $MgCommand.APIVersion | Should -Be "beta"
                 $MgCommand.Variants | Should -Contain "List"
-                $MgCommand.URL | Should -Be "/users"
+                $MgCommand.URI | Should -Be "/users"
                 $MgCommand.Command | Should -Be "Get-MgUser"
             } | Should -Not -Throw
         }
-        It 'Should find command using escaped URL' {
+        It 'Should find command using escaped URI' {
             {
                 $Uri = "/servicePrincipals/n0t3v@l1d3/endpoints%3F=select=id"
                 $MgCommand = Find-MgGraphCommand -Uri $Uri -Method POST
@@ -66,7 +66,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Select-Object -Unique | Should -Be "POST"
                 $MgCommand.APIVersion | Should -BeIn @("v1.0", "beta")
                 $MgCommand.Variants | Should -Contain "Create1"
-                $MgCommand.URL | Select-Object -Unique | Should -Be "/servicePrincipals/{servicePrincipal-id}/endpoints"
+                $MgCommand.URI | Select-Object -Unique | Should -Be "/servicePrincipals/{servicePrincipal-id}/endpoints"
                 $MgCommand.Command | Select-Object -Unique | Should -Be "New-MgServicePrincipalEndpoint"
             } | Should -Not -Throw
         }
@@ -82,7 +82,7 @@ Describe "Find-MgGraphCommand Command" {
         }
         It 'Should throw an error when URI is inavid' {
             $ExpectedErrorMessage = "*is not valid or is not currently supported by the SDK*"
-            { Find-MgGraphCommand -Uri "invalidURL" -Method GET -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage
+            { Find-MgGraphCommand -Uri "invalidURI" -Method GET -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage
         }
     }
 
@@ -104,7 +104,7 @@ Describe "Find-MgGraphCommand Command" {
                     $MgCommand.Method | Should -Be "POST"
                     $MgCommand.APIVersion | Should -Be "beta"
                     $MgCommand.Command | Should -Be "Invoke-MgAcceptGroupCalendarEvent"
-                    $MgCommand.URL | Should -Be "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.accept"
+                    $MgCommand.URI | Should -Be "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.accept"
                 } | Should -Not -Throw
             }
             It 'Should find command using regex' {

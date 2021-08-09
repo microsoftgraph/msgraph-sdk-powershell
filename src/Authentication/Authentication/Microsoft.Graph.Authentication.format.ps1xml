@@ -56,7 +56,7 @@
                 <PropertyName>Method</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>URL</PropertyName>
+                <PropertyName>URI</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>OutputType</PropertyName>

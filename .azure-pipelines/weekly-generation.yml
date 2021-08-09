@@ -40,10 +40,11 @@ stages:
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
-          ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
           Branch: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['ComputeBranch.WeeklyBranch'] ]
           AuthModulePath: "src/Authentication/Authentication"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
           EnableSigning: false
           PublishToFeed: false
+          GenerateCommandMetadata: true
+          GenerateHelpDocs: true

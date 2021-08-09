@@ -10,7 +10,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         string Module { get; set; }
         string APIVersion { get; set; }
         string Method { get; set; }
-        string URL { get; set; }
+        string URI { get; set; }
         string OutputType { get; set; }
         string[] Variants { get; set; }
         GraphPermission[] Permissions { get; set; }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// <summary>
         /// The API path the command calls.
         /// </summary>
-        public string URL { get; set; }
+        public string URI { get; set; }
         /// <summary>
         /// The response type of the command.
         /// </summary>

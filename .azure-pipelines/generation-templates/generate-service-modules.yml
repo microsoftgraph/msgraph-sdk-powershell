@@ -18,6 +18,12 @@ parameters:
   - name: PublishToFeed
     type: boolean
     default: false
+  - name: GenerateCommandMetadata
+    type: boolean
+    default: false
+  - name: GenerateHelpDocs
+    type: boolean
+    default: false
   - name: DOCSBRANCH
     type: string
     default: "DocsGeneration"
@@ -35,20 +41,16 @@ jobs:
       ModulePrefix: ${{ parameters.ModulePrefix }}
       EnableSigning: ${{ parameters.EnableSigning }}
       PublishToFeed: ${{ parameters.PublishToFeed }}
+      GenerateCommandMetadata: ${{ parameters.GenerateCommandMetadata }}
+      GenerateHelpDocs: ${{ parameters.GenerateHelpDocs }}
       DocsBranch: ${{ parameters.DocsBranch }}
     steps:
+      - template: ../common-templates/checkout.yml
+        parameters:
+          TargetBranch: $(Branch)
+
       - template: ../common-templates/install-tools-template.yml
       - template: ../common-templates/security-prechecks-template.yml
-      - task: Bash@3
-        displayName: "Switch branch to $(Branch)"
-        inputs:
-          targetType: inline
-          script: |
-            git status
-            git fetch --all
-            git checkout $(Branch)
-            git pull
-            git status
 
       - task: PowerShell@2
         displayName: Build auth module
@@ -143,11 +145,9 @@ jobs:
             [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
             $Modules = "$(ModulesToGenerate)" -split " "
             . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates
-       
-      - template: ./generate-helpdocs-template.yml
-        parameters:
-            DOCSBRANCH: $(DocsBranch)
-            ModulesToGenerate: $(ModulesToGenerate)
+
+      - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
+        - template: ./generate-command-metadata-template.yml
 
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
         displayName: ESRP DLL strong name (Service Modules)
@@ -280,5 +280,11 @@ jobs:
           packagesToPush: "$(Build.ArtifactStagingDirectory)/**/Microsoft.Graph.*.nupkg"
           publishVstsFeed: "0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57"
           allowPackageConflicts: true
+
+      - ${{ if eq(parameters.GenerateHelpDocs, true) }}:
+        - template: ./generate-helpdocs-template.yml
+          parameters:
+              DOCSBRANCH: $(DocsBranch)
+              ModulesToGenerate: $(ModulesToGenerate)
 
       - template: ../common-templates/security-postchecks-template.yml
