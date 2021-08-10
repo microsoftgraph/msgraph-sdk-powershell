@@ -37,6 +37,10 @@
       <ViewSelectedBy>
         <TypeName>Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand</TypeName>
       </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>APIVersion</PropertyName>
+        <Label>APIVersion</Label>
+      </GroupBy>
       <TableControl>
         <TableHeaders>
         </TableHeaders>
@@ -48,9 +52,6 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Module</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>APIVersion</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Method</PropertyName>

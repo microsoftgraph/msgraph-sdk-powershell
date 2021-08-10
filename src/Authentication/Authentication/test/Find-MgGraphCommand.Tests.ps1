@@ -80,7 +80,17 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgUserCalendar*"
             } | Should -Not -Throw
         }
-        It 'Should throw an error when URI is inavid' {
+        It 'Should support pipeline input' {
+            {
+                $MgCommand = "users", "users/788282" | Find-MgGraphCommand -Method GET
+                $MgCommand.Count | Should -BeGreaterThan 1
+                $MgCommand.Method | Select-Object -Unique | Should -Be "GET"
+                $MgCommand.APIVersion | Select-Object -Unique | Should -BeIn @("v1.0", "beta")
+                $MgCommand.Command | Select-Object -Unique | Should -Be "Get-MgUser"
+                $MgCommand.Uri | Select-Object -Unique | Should -BeIn @("/users", "/users/{user-id}")
+            } | Should -Not -Throw
+        }
+        It 'Should throw error when URI is inavid' {
             $ExpectedErrorMessage = "*is not valid or is not currently supported by the SDK*"
             { Find-MgGraphCommand -Uri "invalidURI" -Method GET -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage
         }
@@ -116,7 +126,7 @@ Describe "Find-MgGraphCommand Command" {
                     $MgCommand[0].Command | Should -BeLike "New-MgApplication*"
                 } | Should -Not -Throw
             }
-            It 'Should throw an error when command name is inavid' {
+            It 'Should throw error when command name is inavid' {
                 $ExpectedErrorMessage = "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
                 { Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage }
         }

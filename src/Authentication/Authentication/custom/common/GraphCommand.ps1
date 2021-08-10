@@ -4,25 +4,31 @@
 
 Set-StrictMode -Version 2
 
-function Json_ConvertJsonToHashtable {
+function GraphCommand_ReadGraphCommandMetadata {
+    [CmdletBinding()]
     param(
-        [Parameter(Mandatory = $true, Position = 1)]
-        [string]$Path
+        [Parameter(Position = 0)]
+        [string]$Path = (Join-Path $PSScriptRoot "MgCommandMetadata.json")
     )
-    $Hashtable = @{}
+    if (!(Test-Path $Path)) {
+        throw "MgCommandMetadata file not found at $Path."
+    }
+
+    $Result = @{}
     try {
+        Write-Debug "Reading MgCommandMetadata from file path - $Path."
         $FileProvider = [Microsoft.Graph.PowerShell.Authentication.Common.ProtectedFileProvider]::CreateFileProvider($Path, [Microsoft.Graph.PowerShell.Authentication.Common.FileProtection]::SharedRead)
         if ($PSEdition -eq "Core") {
-            $Hashtable = $FileProvider.CreateReader().ReadToEnd() | ConvertFrom-Json -AsHashtable
+            $Result = $FileProvider.CreateReader().ReadToEnd() | ConvertFrom-Json -AsHashtable
         }
         else {
             $DeserializationError = $null
-            $Hashtable = [Microsoft.Graph.PowerShell.Authentication.Helpers.StringUtil]::ConvertFromJson($FileProvider.CreateReader().ReadToEnd(), $true, 4, [ref] $DeserializationError)
+            $Result = [Microsoft.Graph.PowerShell.Authentication.Helpers.StringUtil]::ConvertFromJson($FileProvider.CreateReader().ReadToEnd(), $true, 4, [ref] $DeserializationError)
             if ($null -ne $DeserializationError) { throw $DeserializationError }
         }
     }
     finally {
         $FileProvider.Dispose()
     }
-    return $Hashtable
+    return $Result
 }

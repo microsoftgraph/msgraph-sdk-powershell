@@ -4,15 +4,42 @@
 
 namespace Microsoft.Graph.PowerShell.Authentication.Models
 {
+    /// <summary>
+    /// Represents a Microsoft Graph powershell command metainfo.
+    /// </summary>
     public interface IGraphCommand
     {
+        /// <summary>
+        /// Name of command.
+        /// </summary>
         string Command { get; set; }
+        /// <summary>
+        /// The module in which the command is found.
+        /// </summary>
         string Module { get; set; }
+        /// <summary>
+        /// The service API version the command uses.
+        /// </summary>
         string APIVersion { get; set; }
+        /// <summary>
+        /// HTTP method the command makes.
+        /// </summary>
         string Method { get; set; }
+        /// <summary>
+        /// The response type of the command.
+        /// </summary>
         string URI { get; set; }
+        /// <summary>
+        /// The response type of the command.
+        /// </summary>
         string OutputType { get; set; }
+        /// <summary>
+        /// The parameter sets of the command.
+        /// </summary>
         string[] Variants { get; set; }
+        /// <summary>
+        /// The permissions needed to use the command.
+        /// </summary>
         GraphPermission[] Permissions { get; set; }
     }
 
@@ -22,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
     public class GraphCommand : IGraphCommand
     {
         /// <summary>
-        /// Name of the command.
+        /// Name of command.
         /// </summary>
         public string Command { get; set; }
         /// <summary>
@@ -49,6 +76,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Models
         /// The parameter sets of the command.
         /// </summary>
         public string[] Variants { get; set; }
+        /// <summary>
+        /// The permissions needed to use the command.
+        /// </summary>
         public GraphPermission[] Permissions { get; set; }
     }
 
