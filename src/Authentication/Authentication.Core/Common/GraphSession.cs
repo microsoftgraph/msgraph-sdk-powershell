@@ -64,7 +64,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         public IGraphEnvironment Environment { get; set; }
 
         /// <summary>
-        /// Represents a mapping of generated commands to API paths.
+        /// Represents a collection of Microsoft Graph PowerShell meta-info.
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }
 

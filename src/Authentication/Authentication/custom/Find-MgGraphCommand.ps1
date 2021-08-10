@@ -115,7 +115,7 @@ Function Find-MgGraphCommand {
                         Write-Debug "Resolved URI: $GraphUri."
 
                         $TokenizedUri = GraphUri_TokenizeIds $GraphUri
-                        Write-Debug "Sanitized URI: $TokenizedUri."
+                        Write-Debug "Tokenized URI: $TokenizedUri."
 
                         $ResourceSegementRegex = GraphUri_GetResourceSegmentRegex $TokenizedUri
                         Write-Debug "Matching URI: $ResourceSegementRegex"
