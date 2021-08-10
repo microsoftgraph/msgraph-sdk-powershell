@@ -41,11 +41,11 @@ function Permissions_GetPermissionsData([bool] $online) {
                 $_permissions.isFromInvokeMgGraphRequest = $true
             }
         } catch [System.Management.Automation.ValidationMetadataException], [System.Net.Http.HttpRequestException] {
-            # We can't get the data from MS Graph, so just use a local static (possibly stale) copy
-            $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
             if ( $online ) {
                 throw
             }
+            # We can't get the data from MS Graph, so just use a local static (possibly stale) copy
+            $_permissions.msGraphServicePrincipal = Get-Content $PSScriptRoot/MSGraphServicePrincipalPermissions.json | Out-String | ConvertFrom-Json
         }
     }
 
