@@ -7,7 +7,7 @@ Connect-Graph
 Get-MgUser
 
 # Search for delegated permissions related to sites
-Find-MgGraphPermission sites
+Find-MgGraphPermission sites -PermissionType Delegated
 
 # Grant more permissions
 Connect-Graph -Scopes "User.Read","User.ReadWrite.All","Mail.ReadWrite",`
@@ -23,4 +23,3 @@ Disconnect-Graph
 
 # Launch detailed permissions documentation
 Get-Help Find-MgGraphPermission -Online
-
