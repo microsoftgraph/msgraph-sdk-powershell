@@ -14,7 +14,7 @@ function GraphUri_ConvertStringToUri {
 
     $GraphUri = $null
     if (![System.Uri]::TryCreate($Value, "RelativeOrAbsolute", [ref]$GraphUri) -and ($null -eq $GraphUri)) {
-        throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formated as 'https://graph.microsoft.com/{api-version}/{resource}'."
+        throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formatted as 'https://graph.microsoft.com/{api-version}/{resource}'."
     }
     return $GraphUri
 }
@@ -68,11 +68,11 @@ function GraphUri_GetResourceSegmentRegex {
     )
 
     if ($TokenizedUri -match "https:\/\/$($Uri.Host)\/(v1.0|beta)(\/.*)(\?(.*))?") {
-        $ResourceSegementRegex = "^$($matches[2] -Replace '(?<={)(.*?)(?=})', '(\w*-\w*|\w*)')$"
+        $ResourceSegmentRegex = "^$($matches[2] -Replace '(?<={)(.*?)(?=})', '(\w*-\w*|\w*)')$"
     }
     else {
-        throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formated as 'https://graph.microsoft.com/{api-version}/{resource}'."
+        throw "The provided URI doesn't match the expected URI format. Please ensure the URI is formatted as 'https://graph.microsoft.com/{api-version}/{resource}'."
     }
 
-    return $ResourceSegementRegex
+    return $ResourceSegmentRegex
 }

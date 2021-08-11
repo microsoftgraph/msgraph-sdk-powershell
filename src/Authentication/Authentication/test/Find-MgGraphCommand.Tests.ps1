@@ -90,7 +90,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Uri | Select-Object -Unique | Should -BeIn @("/users", "/users/{user-id}")
             } | Should -Not -Throw
         }
-        It 'Should throw error when URI is inavid' {
+        It 'Should throw error when URI is invalid' {
             $ExpectedErrorMessage = "*is not valid or is not currently supported by the SDK*"
             { Find-MgGraphCommand -Uri "invalidURI" -Method GET -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage
         }
@@ -126,7 +126,7 @@ Describe "Find-MgGraphCommand Command" {
                     $MgCommand[0].Command | Should -BeLike "New-MgApplication*"
                 } | Should -Not -Throw
             }
-            It 'Should throw error when command name is inavid' {
+            It 'Should throw error when command name is invalid' {
                 $ExpectedErrorMessage = "*'New-MgInvalid' is not a valid Microsoft Graph PowerShell command.*"
                 { Find-MgGraphCommand -Command "New-MgInvalid" -ErrorAction Stop | Out-Null } | Should -Throw -ExpectedMessage $ExpectedErrorMessage }
         }

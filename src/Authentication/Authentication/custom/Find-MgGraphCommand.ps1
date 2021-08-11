@@ -81,7 +81,7 @@ Function Find-MgGraphCommand {
     )
 
     begin {
-        # Import ulility scripts.
+        # Import utility scripts.
         . "$PSScriptRoot/common/GraphCommand.ps1" | Out-Null
         . "$PSScriptRoot/common/GraphUri.ps1" | Out-Null
 
@@ -117,14 +117,14 @@ Function Find-MgGraphCommand {
                         $TokenizedUri = GraphUri_TokenizeIds $GraphUri
                         Write-Debug "Tokenized URI: $TokenizedUri."
 
-                        $ResourceSegementRegex = GraphUri_GetResourceSegmentRegex $TokenizedUri
-                        Write-Debug "Matching URI: $ResourceSegementRegex"
+                        $ResourceSegmentRegex = GraphUri_GetResourceSegmentRegex $TokenizedUri
+                        Write-Debug "Matching URI: $ResourceSegmentRegex"
                         Write-Debug "Matching Method: $Method"
                         Write-Debug "Matching ApiVersion: $ApiVersion"
                         [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.MgCommandMetadata | ForEach-Object {
                             if ($_.Method -match $Method -and
                                 $_.ApiVersion -match $ApiVersion -and
-                                $_.Uri -match $ResourceSegementRegex) {
+                                $_.Uri -match $ResourceSegmentRegex) {
                                 $Result += [Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand]$_
                             }
                         }
