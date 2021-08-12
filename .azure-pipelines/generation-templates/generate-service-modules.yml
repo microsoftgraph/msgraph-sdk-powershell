@@ -142,7 +142,7 @@ jobs:
           script: |
             [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
             $Modules = "$(ModulesToGenerate)" -split " "
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates
+            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
        
       - template: ./generate-helpdocs-template.yml
         parameters:

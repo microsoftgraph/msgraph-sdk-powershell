@@ -13,7 +13,8 @@ Param(
     [switch] $Publish,
     [switch] $EnableSigning,
     [switch] $SkipVersionCheck,
-    [switch] $ExcludeExampleTemplates
+    [switch] $ExcludeExampleTemplates,
+    [switch] $ExcludeNotesSection
 )
 enum VersionState {
     Invalid
@@ -157,10 +158,10 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $ModulesToGenerate.Count -Par
                 # Build generated module.
                 if ($Using:EnableSigning) {
                     # Sign generated module.
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -EnableSigning -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
                 }
                 else {
-                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates
+                    & $Using:BuildModulePS1 -Module $ModuleName -ModulePrefix $Using:ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $Using:ModulePreviewNumber -RequiredModules $Using:RequiredGraphModules -ReleaseNotes $ModuleReleaseNotes -ExcludeExampleTemplates:$Using:ExcludeExampleTemplates -ExcludeNotesSection:$Using:ExcludeNotesSection
                 }
 
                 # Get profiles for generated modules.
