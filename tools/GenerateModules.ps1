@@ -32,7 +32,7 @@ Import-Module PowerShellGet
 
 # Install Powershell-yaml
 if (!(Get-Module -Name powershell-yaml -ListAvailable)) {
-    Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser
+    Install-Module powershell-yaml -Repository PSGallery -Scope CurrentUser -Force
 }
 
 # Set NODE max memory to 8 Gb.

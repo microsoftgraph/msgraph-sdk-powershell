@@ -5,7 +5,7 @@ BeforeAll {
     $RandomClientId = (New-Guid).Guid
 
     if (!(Get-Module Az.Accounts -ListAvailable)) {
-        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser
+        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
     }
 }
 Describe 'Connect-MgGraph In Delegated Mode' {
