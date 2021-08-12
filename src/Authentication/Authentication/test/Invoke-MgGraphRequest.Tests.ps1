@@ -8,49 +8,44 @@
     $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
     $PSDefaultParameterValues=@{"Connect-MgGraph:TenantId"=${env:TENANTIDENTIFIER}; "Connect-MgGraph:ClientId"=${env:CLIENTIDENTIFIER}; "Connect-MgGraph:CertificateThumbprint"=${env:CERTIFICATETHUMBPRINT}}
+    Connect-MgGraph
 }
-Describe 'Invoke-MgGraphRequest Collection Results' {
-    BeforeAll {
-         Connect-MgGraph
-    }
+Describe 'Invoke-MgGraphRequest Collection Results'{
     It 'ShouldReturnPsObject' {
          Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Management.Automation.PSObject]
     }
 
     It 'ShouldReturnHashTable' {
-         $hashTable = Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Collections.Hashtable]
+         Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Collections.Hashtable]
     }
 
     It 'ShouldReturnJsonString' {
-         $jsonString = Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.String]
+         Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.String]
     }
 
     It 'ShouldReturnHttpResponseMessage' {
-        $httpResponseMessage = Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
+        Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
     }
 
     It 'ShouldReturnPsObjectBeta' {
-         $psObject = Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Management.Automation.PSObject]
+         Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Management.Automation.PSObject]
     }
 
     It 'ShouldReturnHashTableBeta' {
-         $hashTable = Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Collections.Hashtable]
+         Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Collections.Hashtable]
     }
 
     It 'ShouldReturnJsonStringBeta' {
-         $jsonString = Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.String]
+         Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.String]
     }
 
     It 'ShouldReturnHttpResponseMessageBeta' {
-        $httpResponseMessage = Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
+        Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
     }
 }
-Describe 'Invoke-MgGraphRequest Single Entity' {
-    BeforeAll {
-         Connect-MgGraph
-    }
+Describe 'Invoke-MgGraphRequest Single Entity'{
     It 'ShouldReturnPsObject' {
-         $psObject = Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Management.Automation.PSObject]
+         Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Management.Automation.PSObject]
     }
 
     It 'ShouldReturnHashTable' {
@@ -83,16 +78,17 @@ Describe 'Invoke-MgGraphRequest Single Entity' {
 }
 
 Describe 'Invoke-MgGraphRequest Non-Json Responses'{
-    BeforeAll {
-        Connect-MgGraph
-    }
-    It 'Should Throw when -OutputFilePath is not Specified and Request Returns a Non-Json Response' { 
+    It 'Should Throw when -OutputFilePath is not Specified and Request Returns a Non-Json Response' {
         { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" } | Should -Throw
     }
-    It 'Should Not Throw when -OutputFilePath is Specified' { 
+    It 'Should Not Throw when -OutputFilePath is Specified' {
         { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -OutputFilePath ./data.csv } | Should -Not -Throw
     }
-    It 'Should Not Throw when -InferOutputFilePath is Specified' { 
+    It 'Should Not Throw when -InferOutputFilePath is Specified' {
         { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -InferOutputFileName } | Should -Not -Throw
     }
+}
+
+AfterAll {
+     Disconnect-MgGraph
 }
