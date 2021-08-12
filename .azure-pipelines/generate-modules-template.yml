@@ -142,7 +142,7 @@ jobs:
       pwsh: true
       script: |
          Write-Host $(BUILDNUMBER)
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed" -ExcludeExampleTemplates
+         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed" -ExcludeExampleTemplates -ExcludeNotesSection
 
   - template: ./generation-templates/generate-helpdocs-template.yml
 
