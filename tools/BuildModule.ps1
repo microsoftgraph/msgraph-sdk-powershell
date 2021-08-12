@@ -8,7 +8,8 @@ Param(
     [int] $ModulePreviewNumber = -1,
     [hashtable[]] $RequiredModules,
     [switch] $EnableSigning,
-    [switch] $ExcludeExampleTemplates
+    [switch] $ExcludeExampleTemplates,
+    [switch] $ExcludeNotesSection
 )
 $ErrorActionPreference = "Stop"
 $LASTEXITCODE = $null
@@ -43,7 +44,7 @@ else {
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
-& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates
+& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
 if ($LASTEXITCODE) {
     Write-Error "Failed to build '$Module' module."
 }
