@@ -4,7 +4,7 @@ $null = Import-Module -Name (Join-Path $PSScriptRoot 'Microsoft.Graph.Authentica
 
 if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
 {
-    Get-ChildItem "$PSScriptRoot\StartupScripts" -ErrorAction Stop | ForEach-Object {
+    Get-ChildItem "$PSScriptRoot\StartupScripts" -Filter *.ps1 -ErrorAction Stop | ForEach-Object {
         . $_.FullName
     }
 }
