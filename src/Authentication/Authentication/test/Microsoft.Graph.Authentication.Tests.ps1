@@ -10,7 +10,7 @@ Describe "Microsoft.Graph.Authentication module" {
     }
 
     AfterAll {
-        Remove-Module $ModuleName -Force
+        Remove-Module $ModuleName -Force -ErrorAction Ignore
     }
 
     Context "On module import" {
@@ -48,7 +48,8 @@ Describe "Microsoft.Graph.Authentication module" {
                     "Find-MgGraphCommand",
                     "Connect-Graph",
                     "Disconnect-Graph",
-                    "Invoke-GraphRequest"
+                    "Invoke-GraphRequest",
+                    "Find-MgGraphPermission"
                 )
 
                 $PSModuleInfo.ExportedCommands.Keys | Should -BeIn $ExpectedCommands

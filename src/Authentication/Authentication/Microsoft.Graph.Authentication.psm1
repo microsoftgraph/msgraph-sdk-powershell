@@ -8,7 +8,7 @@ Export-ModuleMember
 
 if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
 {
-    Get-ChildItem "$PSScriptRoot\StartupScripts" -ErrorAction Stop | ForEach-Object {
+    Get-ChildItem "$PSScriptRoot\StartupScripts" -Filter *.ps1 -ErrorAction Stop | ForEach-Object {
         . $_.FullName
     }
 }

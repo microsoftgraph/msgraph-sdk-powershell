@@ -32,6 +32,7 @@
         </TableRowEntries>
       </TableControl>
     </View>
+
     <View>
       <Name>Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand</Name>
       <ViewSelectedBy>
@@ -73,6 +74,7 @@
         </TableRowEntries>
       </TableControl>
     </View>
+
     <View>
       <Name>Microsoft.Graph.PowerShell.Authentication.Models.GraphPermission</Name>
       <ViewSelectedBy>
@@ -95,6 +97,51 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>FullDescription</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>Permission</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Graph.Custom.Permission</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>PermissionType</PropertyName>
+        <Label>PermissionType</Label>
+      </GroupBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Consent</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Description</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Consent</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Description</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
