@@ -49,18 +49,18 @@ Describe "Microsoft.Graph.Teams module" {
 
         It 'Should export expected commands' {
             {
-                $ExpectedAliases = @(
+                $ExpectedCommands = @(
                     "Get-MgChatMessage",
-                    "New-MgTeamChannelMessage",
-                    "Update-MgTeamPrimaryChannelMessage",
                     "Get-MgTeamChannelMessageReply",
-                    "New-MgTeamPrimaryChannelMessageReply",
-                    "Update-MgChatMessageReply",
                     "Get-MgTeamChannelMessageHostedContent",
-                    "New-MgTeamChannelMessageHostedContent"
+                    "New-MgTeamChannelMessage",
+                    "New-MgTeamPrimaryChannelMessageReply",
+                    "New-MgTeamChannelMessageHostedContent",
+                    "Update-MgTeamPrimaryChannelMessage",
+                    "Update-MgChatMessageReply"
                 )
 
-                $PSModuleInfo.ExportedAliases.Keys | Should -BeIn $ExpectedAliases
+                $ExpectedCommands | Should -BeIn $PSModuleInfo.ExportedCommands.Keys
             } | Should -Not -Throw
         }
     }
