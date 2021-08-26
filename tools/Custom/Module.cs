@@ -28,13 +28,13 @@ namespace Microsoft.Graph.PowerShell
         partial void BeforeCreatePipeline(System.Management.Automation.InvocationInfo invocationInfo, ref Runtime.HttpPipeline pipeline)
         {
             // Call Init to trigger any custom initialization needed after
-            // module load and before pipeline is setup and used. 
+            // module load and before pipeline is setup and used.
             Init();
             pipeline = new Runtime.HttpPipeline(new Runtime.HttpClientFactory(HttpHelpers.GetGraphHttpClient()));
         }
 
         /// <summary>
-        /// Any needed Custom Initialization. 
+        /// Any needed Custom Initialization.
         /// </summary>
         partial void CustomInit()
         {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell
                     await Finally(id, cancellationToken, getEventData, signal);
                     break;
                 default:
-                    getEventData.Print(signal, cancellationToken, Events.Information, id);
+                    getEventData.Print(signal, cancellationToken, Events.Verbose, id);
                     break;
             }
         }
