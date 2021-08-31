@@ -99,7 +99,7 @@ if ($ModulesToGenerate.Count -eq 0) {
     $ModulesToGenerate = $ModuleMapping.Keys
 }
 
-$NumberOfCores = (Get-ComputerInfo -Property CsProcessors).CsProcessors.NumberOfCores
+$NumberOfCores = ((Get-ComputerInfo -Property CsProcessors).CsProcessors.NumberOfCores)[0]
 Write-Host -ForegroundColor Green "Using '$NumberOfCores' cores in parallel."
 
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
