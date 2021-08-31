@@ -29,8 +29,8 @@ In this example, the first command creates the `$appRoleAssignment` variable tha
 
 -`resourceId`: The id of the resource servicePrincipal which has defined the app role.
 
--`appRoleId`: The id of the appRole (defined on the resource service principal) to assign to the group. 
+-`appRoleId`: The id of the appRole (defined on the resource service principal) to assign to the group.
 
-Learn more about the [AppRoleAssignment resource](/graph/api/resources/approleassignment?view=graph-rest-1.0). 
+Learn more about the [AppRoleAssignment resource](/graph/api/resources/approleassignment?view=graph-rest-1.0).
 
-The second command adds the role to the specified group. 
+The second command adds the role to the specified group.
