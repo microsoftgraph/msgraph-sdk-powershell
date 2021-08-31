@@ -23,7 +23,7 @@ AdditionalProperties : {[@odata.context, https://graph.microsoft.com/v1.0/$metad
                        b10d-14f1195d665f/directoryObjects/$/Microsoft.DirectoryServices.Group('f07a8d78-f18c-4c02-b339-9ebace025122')/appRoleAssignments/eI168IzxAkyzOZ66zgJRIqVVeeA1CVFKmaBn-MGn0Bw]}
 ```
 
-In this example, the first command creates the `$appRoleAssignment` variable that defines the following:
+In this example, the first command defines the `$appRoleAssignment` variable that defines the following:
 
 -`principalId`: The id of the group to which you are assigning the app role.
 
