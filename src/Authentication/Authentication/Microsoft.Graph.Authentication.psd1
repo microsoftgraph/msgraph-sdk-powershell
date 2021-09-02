@@ -72,9 +72,9 @@ FormatsToProcess = 'Microsoft.Graph.Authentication.format.ps1xml'
 FunctionsToExport = 'Find-MgGraphPermission'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Connect-MgGraph', 'Disconnect-MgGraph', 'Get-MgContext', 
-               'Get-MgProfile', 'Select-MgProfile', 'Invoke-MgGraphRequest', 
-               'Add-MgEnvironment', 'Get-MgEnvironment', 'Remove-MgEnvironment', 
+CmdletsToExport = 'Connect-MgGraph', 'Disconnect-MgGraph', 'Get-MgContext',
+               'Get-MgProfile', 'Select-MgProfile', 'Invoke-MgGraphRequest',
+               'Add-MgEnvironment', 'Get-MgEnvironment', 'Remove-MgEnvironment',
                'Set-MgEnvironment'
 
 # Variables to export from this module
