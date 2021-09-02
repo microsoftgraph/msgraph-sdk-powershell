@@ -53,7 +53,7 @@ Describe "Microsoft.Graph.Planner module" {
             {
                 $ExpectedCommands = @(
                     "Get-MgUserPlannerTask",
-                    "Get-MgUserPlannerFavoritePlan"
+                    "Get-MgUserPlannerPlan"
                 )
 
                 $ExpectedCommands | Should -BeIn $PSModuleInfo.ExportedCommands.Keys
