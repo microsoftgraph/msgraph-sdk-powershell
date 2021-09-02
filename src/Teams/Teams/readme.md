@@ -40,6 +40,19 @@ subject-prefix: ''
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: teams_GetGroup|team_ListTeam
+# Remove cmdlets
+  - where:
+      verb: Remove
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)Message$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageReply$
+    remove: true
+  - where:
+      verb: Remove|Update
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
+    remove: true
 ```
 ### Versioning
 
