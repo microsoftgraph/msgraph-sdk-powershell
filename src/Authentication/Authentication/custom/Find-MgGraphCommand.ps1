@@ -129,7 +129,7 @@ Function Find-MgGraphCommand {
                             }
                         }
                         if ($Result.Count -lt 1) {
-                            Write-Error "URI '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formated correctly and try again."
+                            Write-Error "URI '$Method $GraphUri' in $ApiVersion is not valid or is not currently supported by the SDK. Ensure the URI is formatted correctly and try again."
                         }
                     }
                 }

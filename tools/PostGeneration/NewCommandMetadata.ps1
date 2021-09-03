@@ -34,6 +34,7 @@ $CmdletPathPattern = Join-Path $SourcePath "\*\*\generated\cmdlets"
 $OpenApiTagPattern = '\[OpenAPI\].s*(.*)=>(.*):\"(.*)\"'
 $ProfilePattern = 'Profile\("(v1\.0|v1\.0-beta)"\)'
 $OutputTypePattern = 'OutputType\(typeof\(Microsoft\.Graph\.PowerShell\.Models\.(.*)\)\)'
+$ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
 $PermissionsUrl = "https://graphexplorerapi.azurewebsites.net/permissions"
 
 Write-Debug "Crawling cmdlets in $CmdletPathPattern."
@@ -49,12 +50,22 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
 
     $RawFileContent = (Get-Content -Path $_.FullName -Raw)
     if ($RawFileContent -match $OpenApiTagPattern) {
-        # "OperationId" = $Matches.1
+        $Method = $Matches.2
+        $Uri = $Matches.3
+
+        # Remove FQN in action/function names.
+        if ($Uri -match $ActionFunctionFQNPattern) {
+            $MatchedUriSegment = $Matches.0
+            # Trim nested namespace segments.
+            $NestedNamespaceSegments = $Matches.1 -split "\."
+            $Uri = $Uri -replace $MatchedUriSegment, "/$($NestedNamespaceSegments[-1])"
+        }
+
         $MappingValue = @{
             Command     = $CommandName
             Variants    = [System.Collections.ArrayList]@($VariantName)
-            Method      = $Matches.2
-            Uri         = $Matches.3
+            Method      = $Method
+            Uri         = $Uri
             ApiVersion  = $null
             OutputType  = $null
             Module      = $ModuleName
@@ -85,7 +96,8 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
                 try {
                     Write-Debug "Fetching permissions for $CommandMappingKey"
                     $Permissions = @()
-                    Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Uri)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue | ForEach-Object {
+                    $PermissionsResponse = Invoke-RestMethod -Uri "$($PermissionsUrl)?requesturl=$($MappingValue.Uri)&method=$($MappingValue.Method)" -ErrorAction SilentlyContinue
+                    $PermissionsResponse | ForEach-Object {
                         $Permissions += [PSCustomObject]@{
                             Name            = $_.value
                             Description     = $_.consentDisplayName
