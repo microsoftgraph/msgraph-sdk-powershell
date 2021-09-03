@@ -29,7 +29,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta" # -APIVersion takes precedence.
                 $MgCommand.Variants | Should -Contain "Export1"
-                $MgCommand.URI | Should -Be $ResourceUri
+                $MgCommand.URI | Should -Be "/users/{user-id}/exportPersonalData"
                 $MgCommand.Command | Should -Be "Export-MgUserPersonalData"
             } | Should -Not -Throw
         }
@@ -80,6 +80,36 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand.Command | Select-Object -Unique | Should -BeLike "*-MgUserCalendar*"
             } | Should -Not -Throw
         }
+        It 'Should find command using action with FQNamespace.' {
+            {
+                $Uri = "/sites/{site-id}/onenote/pages/{onenotePage-id}/microsoft.graph.onenotePatchContent"
+                $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
+                $MgCommand.Method | Should -Be "POST"
+                $MgCommand.APIVersion | Should -Be "beta"
+                $MgCommand.Command | Should -Be "Update-MgSiteOnenotePageContent"
+                $MgCommand.Uri | Should -Be "/sites/{site-id}/onenote/pages/{onenotePage-id}/onenotePatchContent"
+            } | Should -Not -Throw
+        }
+        It 'Should find command using action with nested FQNamespace.' {
+            {
+                $Uri = "/admin/windows/updates/deployments/{deployment-id}/audience/microsoft.graph.windowsUpdates.updateAudience"
+                $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
+                $MgCommand.Method | Should -Be "POST"
+                $MgCommand.APIVersion | Should -Be "beta"
+                $MgCommand.Command | Should -Be "Update-MgWindowsUpdatesDeploymentAudience"
+                $MgCommand.Uri | Should -Be "/admin/windows/updates/deployments/{deployment-id}/audience/updateAudience"
+            } | Should -Not -Throw
+        }
+        It 'Should find command using function without FQNamespace.' {
+            {
+                $Uri = "/deviceManagement/assignmentFilters/getState"
+                $MgCommand = Find-MgGraphCommand -Uri $Uri -ApiVersion beta
+                $MgCommand.Method | Should -Be "GET"
+                $MgCommand.APIVersion | Should -Be "beta"
+                $MgCommand.Command | Should -Be "Get-MgDeviceManagementAssignmentFilterState"
+                $MgCommand.Uri | Should -Be "/deviceManagement/assignmentFilters/getState"
+            } | Should -Not -Throw
+        }
         It 'Should support pipeline input' {
             {
                 $MgCommand = "users", "users/788282" | Find-MgGraphCommand -Method GET
@@ -114,7 +144,7 @@ Describe "Find-MgGraphCommand Command" {
                     $MgCommand.Method | Should -Be "POST"
                     $MgCommand.APIVersion | Should -Be "beta"
                     $MgCommand.Command | Should -Be "Invoke-MgAcceptGroupCalendarEvent"
-                    $MgCommand.URI | Should -Be "/groups/{group-id}/calendar/events/{event-id}/microsoft.graph.accept"
+                    $MgCommand.URI | Should -Be "/groups/{group-id}/calendar/events/{event-id}/accept"
                 } | Should -Not -Throw
             }
             It 'Should find command using regex' {

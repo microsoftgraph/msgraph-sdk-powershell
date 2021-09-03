@@ -102,6 +102,7 @@ Function Find-MgGraphCommand {
                 "FindByUri" {
                     foreach ($u in $Uri) {
                         Write-Debug "Received URI: $u."
+                        $u = GraphUri_RemoveNamespaceFromActionFunction $u
                         $GraphUri = GraphUri_ConvertStringToUri $u
 
                         # Use API version in URI if -ApiVersion is not provided.

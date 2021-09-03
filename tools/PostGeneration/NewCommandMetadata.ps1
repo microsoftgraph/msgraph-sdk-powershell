@@ -58,7 +58,9 @@ Get-ChildItem -path $CmdletPathPattern -Filter "*.cs" -Recurse | Where-Object { 
             $MatchedUriSegment = $Matches.0
             # Trim nested namespace segments.
             $NestedNamespaceSegments = $Matches.1 -split "\."
-            $Uri = $Uri -replace $MatchedUriSegment, "/$($NestedNamespaceSegments[-1])"
+            # Remove trailing '()' from functions.
+            $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
+            $Uri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
         }
 
         $MappingValue = @{

@@ -76,3 +76,24 @@ function GraphUri_GetResourceSegmentRegex {
 
     return $ResourceSegmentRegex
 }
+
+function GraphUri_RemoveNamespaceFromActionFunction {
+    param(
+        [Parameter(Mandatory = $true, Position = 0)]
+        [System.Uri]$Uri
+    )
+    $ActionFunctionFQNPattern = "\/Microsoft.Graph.(.*)$"
+
+    $NewUri = $Uri
+    # Remove FQN in action/function names.
+    if ($Uri -match $ActionFunctionFQNPattern) {
+        $MatchedUriSegment = $Matches.0
+        # Trim nested namespace segments.
+        $NestedNamespaceSegments = $Matches.1 -split "\."
+        # Remove trailing '()' from functions.
+        $LastSegment = $NestedNamespaceSegments[-1] -replace "\(\)", ""
+        $NewUri = $Uri -replace [Regex]::Escape($MatchedUriSegment), "/$LastSegment"
+    }
+
+    return $NewUri
+}
