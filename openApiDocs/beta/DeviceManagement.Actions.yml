@@ -255,6 +255,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action createGooglePlayWebToken
+      description: Generates a web token that is used in an embeddable component.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_createGooglePlayWebToken
       requestBody:
         description: Action parameters
@@ -315,6 +316,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setAndroidDeviceOwnerFullyManagedEnrollmentState
+      description: Sets the AndroidManagedStoreAccountEnterpriseSettings AndroidDeviceOwnerFullyManagedEnrollmentEnabled to the given value.
       operationId: deviceManagement.androidManagedStoreAccountEnterpriseSettings_setAndroidDeviceOwnerFullyManagedEnrollmentState
       requestBody:
         description: Action parameters
@@ -364,6 +366,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateApplePushNotificationCertificateSigningRequest
+      description: Download Apple push notification certificate signing request
       operationId: deviceManagement.applePushNotificationCertificate_generateApplePushNotificationCertificateSigningRequest
       responses:
         '200':
@@ -528,11 +531,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.comanagedDevices_activateDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.comanagedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -553,6 +591,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.comanagedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -622,6 +661,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.comanagedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -655,6 +695,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.comanagedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -675,6 +716,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.comanagedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
@@ -714,6 +756,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.comanagedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -734,6 +777,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.comanagedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -789,6 +833,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.comanagedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -809,6 +854,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.comanagedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -829,6 +875,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.comanagedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -849,7 +896,28 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.comanagedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.comanagedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -869,6 +937,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.comanagedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -889,6 +958,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.comanagedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -904,11 +974,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.comanagedDevices_resizeCloudPc
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.comanagedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -929,6 +1033,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.comanagedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
@@ -949,6 +1054,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.comanagedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
@@ -1023,6 +1129,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.comanagedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
@@ -1056,6 +1163,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.comanagedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -1096,6 +1204,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.comanagedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
@@ -1213,6 +1322,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.comanagedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -1240,10 +1350,41 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/comanagedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.comanagedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1340,6 +1481,46 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/configurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createCopy
+      operationId: deviceManagement.configurationPolicies_createCopy
+      parameters:
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1484,6 +1665,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action generateEncryptionPublicKey
+      description: Generate a public key to use to encrypt the Apple device enrollment program token
       operationId: deviceManagement.depOnboardingSettings_generateEncryptionPublicKey
       parameters:
         - name: depOnboardingSetting-id
@@ -1529,6 +1711,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncWithAppleDeviceEnrollmentProgram
+      description: Synchronizes between Apple Device Enrollment Program and Intune
       operationId: deviceManagement.depOnboardingSettings_syncWithAppleDeviceEnrollmentProgram
       parameters:
         - name: depOnboardingSetting-id
@@ -1569,6 +1752,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action uploadDepToken
+      description: Uploads a new Device Enrollment Program token
       operationId: deviceManagement.depOnboardingSettings_uploadDepToken
       parameters:
         - name: depOnboardingSetting-id
@@ -1591,6 +1775,41 @@ paths:
                 depToken:
                   type: string
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/microsoft.graph.bulkReprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.detectedApps.managedDevices_bulkReprovisionCloudPc
+      parameters:
+        - name: detectedApp-id
+          in: path
+          description: 'key: id of detectedApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: detectedApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -1852,11 +2071,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceComplianceScript-id
@@ -1884,6 +2145,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceComplianceScript-id
@@ -1967,6 +2229,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceComplianceScript-id
@@ -2007,6 +2270,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceComplianceScript-id
@@ -2034,6 +2298,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceComplianceScript-id
@@ -2080,6 +2345,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceComplianceScript-id
@@ -2107,6 +2373,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceComplianceScript-id
@@ -2176,6 +2443,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceComplianceScript-id
@@ -2203,6 +2471,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceComplianceScript-id
@@ -2230,6 +2499,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceComplianceScript-id
@@ -2257,7 +2527,35 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceComplianceScript-id
           in: path
@@ -2284,6 +2582,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceComplianceScript-id
@@ -2311,6 +2610,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceComplianceScript-id
@@ -2333,11 +2633,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceComplianceScript-id
@@ -2365,6 +2706,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceComplianceScript-id
@@ -2392,6 +2734,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceComplianceScript-id
@@ -2487,6 +2830,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceComplianceScript-id
@@ -2527,6 +2871,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceComplianceScript-id
@@ -2581,6 +2926,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceComplianceScript-id
@@ -2726,6 +3072,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceComplianceScript-id
@@ -2759,6 +3106,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -2945,6 +3296,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
+      description: Extend Feature Updates Pause for a Windows Update for Business ring.
       operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
@@ -2972,6 +3324,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
+      description: Extend Quality Updates Pause for a Windows Update for Business ring.
       operationId: deviceManagement.deviceConfigurations.groupAssignments.deviceConfiguration.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
@@ -3111,6 +3464,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendFeatureUpdatesPause
+      description: Extend Feature Updates Pause for a Windows Update for Business ring.
       operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendFeatureUpdatesPause
       parameters:
         - name: deviceConfiguration-id
@@ -3131,6 +3485,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action extendQualityUpdatesPause
+      description: Extend Quality Updates Pause for a Windows Update for Business ring.
       operationId: deviceManagement.deviceConfigurations.microsoft.graph.windowsUpdateForBusinessConfiguration_extendQualityUpdatesPause
       parameters:
         - name: deviceConfiguration-id
@@ -3212,11 +3567,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3244,6 +3641,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3327,6 +3725,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3367,6 +3766,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3394,6 +3794,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3440,6 +3841,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3467,6 +3869,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3536,6 +3939,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3563,6 +3967,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3590,6 +3995,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3617,7 +4023,35 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -3644,6 +4078,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3671,6 +4106,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3693,11 +4129,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3725,6 +4202,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3752,6 +4230,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3847,6 +4326,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3887,6 +4367,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -3941,6 +4422,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4086,6 +4568,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4119,6 +4602,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -4171,11 +4658,60 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4210,6 +4746,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4307,6 +4844,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4354,6 +4892,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4388,6 +4927,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4441,6 +4981,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4475,6 +5016,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4558,6 +5100,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4592,6 +5135,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4626,6 +5170,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4660,7 +5205,42 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceCustomAttributeShellScript-id
           in: path
@@ -4694,6 +5274,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4728,6 +5309,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4757,11 +5339,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4796,6 +5426,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4830,6 +5461,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4946,6 +5578,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4993,6 +5626,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -5061,6 +5695,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -5234,6 +5869,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -5274,6 +5910,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -5390,11 +6030,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceHealthScript-id
@@ -5422,6 +6104,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceHealthScript-id
@@ -5505,6 +6188,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceHealthScript-id
@@ -5545,6 +6229,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceHealthScript-id
@@ -5572,6 +6257,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceHealthScript-id
@@ -5618,6 +6304,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceHealthScript-id
@@ -5645,6 +6332,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceHealthScript-id
@@ -5714,6 +6402,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceHealthScript-id
@@ -5741,6 +6430,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceHealthScript-id
@@ -5768,6 +6458,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceHealthScript-id
@@ -5795,7 +6486,35 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceHealthScript-id
           in: path
@@ -5822,6 +6541,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceHealthScript-id
@@ -5849,6 +6569,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceHealthScript-id
@@ -5871,11 +6592,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceHealthScript-id
@@ -5903,6 +6665,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceHealthScript-id
@@ -5930,6 +6693,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceHealthScript-id
@@ -6025,6 +6789,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceHealthScript-id
@@ -6065,6 +6830,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceHealthScript-id
@@ -6119,6 +6885,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceHealthScript-id
@@ -6264,6 +7031,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceHealthScript-id
@@ -6297,6 +7065,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -6350,6 +7122,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getGlobalScriptHighestAvailableVersion
+      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_getGlobalScriptHighestAvailableVersion
       parameters:
         - name: deviceHealthScript-id
@@ -6375,6 +7148,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateGlobalScript
+      description: Update the Proprietary Device Health Script
       operationId: deviceManagement.deviceHealthScripts_updateGlobalScript
       parameters:
         - name: deviceHealthScript-id
@@ -6420,11 +7194,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceManagementScript-id
@@ -6452,6 +7268,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceManagementScript-id
@@ -6535,6 +7352,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceManagementScript-id
@@ -6575,6 +7393,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceManagementScript-id
@@ -6602,6 +7421,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceManagementScript-id
@@ -6648,6 +7468,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceManagementScript-id
@@ -6675,6 +7496,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceManagementScript-id
@@ -6744,6 +7566,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
@@ -6771,6 +7594,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceManagementScript-id
@@ -6798,6 +7622,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceManagementScript-id
@@ -6825,7 +7650,35 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -6852,6 +7705,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceManagementScript-id
@@ -6879,6 +7733,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceManagementScript-id
@@ -6901,11 +7756,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceManagementScript-id
@@ -6933,6 +7829,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceManagementScript-id
@@ -6960,6 +7857,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceManagementScript-id
@@ -7055,6 +7953,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceManagementScript-id
@@ -7095,6 +7994,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceManagementScript-id
@@ -7149,6 +8049,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceManagementScript-id
@@ -7294,6 +8195,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceManagementScript-id
@@ -7327,6 +8229,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -7379,11 +8285,60 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceManagementScript-id
@@ -7418,6 +8373,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceManagementScript-id
@@ -7515,6 +8471,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceManagementScript-id
@@ -7562,6 +8519,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceManagementScript-id
@@ -7596,6 +8554,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceManagementScript-id
@@ -7649,6 +8608,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceManagementScript-id
@@ -7683,6 +8643,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceManagementScript-id
@@ -7766,6 +8727,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
@@ -7800,6 +8762,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceManagementScript-id
@@ -7834,6 +8797,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceManagementScript-id
@@ -7868,7 +8832,42 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceManagementScript-id
           in: path
@@ -7902,6 +8901,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceManagementScript-id
@@ -7936,6 +8936,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceManagementScript-id
@@ -7965,11 +8966,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceManagementScript-id
@@ -8004,6 +9053,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceManagementScript-id
@@ -8038,6 +9088,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceManagementScript-id
@@ -8154,6 +9205,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceManagementScript-id
@@ -8201,6 +9253,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceManagementScript-id
@@ -8269,6 +9322,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceManagementScript-id
@@ -8442,6 +9496,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceManagementScript-id
@@ -8482,6 +9537,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -8529,11 +9588,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceShellScript-id
@@ -8561,6 +9662,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceShellScript-id
@@ -8644,6 +9746,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceShellScript-id
@@ -8684,6 +9787,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceShellScript-id
@@ -8711,6 +9815,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceShellScript-id
@@ -8757,6 +9862,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceShellScript-id
@@ -8784,6 +9890,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceShellScript-id
@@ -8853,6 +9960,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
@@ -8880,6 +9988,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceShellScript-id
@@ -8907,6 +10016,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceShellScript-id
@@ -8934,7 +10044,35 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -8961,6 +10099,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceShellScript-id
@@ -8988,6 +10127,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceShellScript-id
@@ -9010,11 +10150,52 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceShellScript-id
@@ -9042,6 +10223,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceShellScript-id
@@ -9069,6 +10251,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceShellScript-id
@@ -9164,6 +10347,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceShellScript-id
@@ -9204,6 +10388,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceShellScript-id
@@ -9258,6 +10443,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceShellScript-id
@@ -9403,6 +10589,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceShellScript-id
@@ -9436,6 +10623,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -9488,11 +10679,60 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_activateDeviceEsim
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_bypassActivationLock
       parameters:
         - name: deviceShellScript-id
@@ -9527,6 +10767,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_cleanWindowsDevice
       parameters:
         - name: deviceShellScript-id
@@ -9624,6 +10865,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_deleteUserFromSharedAppleDevice
       parameters:
         - name: deviceShellScript-id
@@ -9671,6 +10913,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_disableLostMode
       parameters:
         - name: deviceShellScript-id
@@ -9705,6 +10948,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_enableLostMode
       parameters:
         - name: deviceShellScript-id
@@ -9758,6 +11002,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_locateDevice
       parameters:
         - name: deviceShellScript-id
@@ -9792,6 +11037,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: deviceShellScript-id
@@ -9875,6 +11121,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
@@ -9909,6 +11156,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_rebootNow
       parameters:
         - name: deviceShellScript-id
@@ -9943,6 +11191,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_recoverPasscode
       parameters:
         - name: deviceShellScript-id
@@ -9977,7 +11226,42 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_remoteLock
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_reprovisionCloudPc
       parameters:
         - name: deviceShellScript-id
           in: path
@@ -10011,6 +11295,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_requestRemoteAssistance
       parameters:
         - name: deviceShellScript-id
@@ -10045,6 +11330,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_resetPasscode
       parameters:
         - name: deviceShellScript-id
@@ -10074,11 +11360,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_resizeCloudPc
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_retire
       parameters:
         - name: deviceShellScript-id
@@ -10113,6 +11447,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_revokeAppleVppLicenses
       parameters:
         - name: deviceShellScript-id
@@ -10147,6 +11482,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_rotateBitLockerKeys
       parameters:
         - name: deviceShellScript-id
@@ -10263,6 +11599,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_setDeviceName
       parameters:
         - name: deviceShellScript-id
@@ -10310,6 +11647,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_shutDown
       parameters:
         - name: deviceShellScript-id
@@ -10378,6 +11716,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_triggerConfigurationManagerAction
       parameters:
         - name: deviceShellScript-id
@@ -10551,6 +11890,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_wipe
       parameters:
         - name: deviceShellScript-id
@@ -10591,6 +11931,10 @@ paths:
                   nullable: true
                 macOsUnlockCode:
                   type: string
+                  nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
                   nullable: true
                 useProtectedWipe:
                   type: boolean
@@ -11254,11 +12598,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.activateDeviceEsim':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action activateDeviceEsim
+      description: Activate eSIM on the device.
+      operationId: deviceManagement.managedDevices_activateDeviceEsim
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                carrierUrl:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.bypassActivationLock':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
+      description: Bypass activation lock
       operationId: deviceManagement.managedDevices_bypassActivationLock
       parameters:
         - name: managedDevice-id
@@ -11279,6 +12658,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
+      description: Clean Windows device
       operationId: deviceManagement.managedDevices_cleanWindowsDevice
       parameters:
         - name: managedDevice-id
@@ -11348,6 +12728,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
+      description: Delete user from shared Apple device
       operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
       parameters:
         - name: managedDevice-id
@@ -11381,6 +12762,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
+      description: Disable lost mode
       operationId: deviceManagement.managedDevices_disableLostMode
       parameters:
         - name: managedDevice-id
@@ -11401,6 +12783,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableLostMode
+      description: Enable lost mode
       operationId: deviceManagement.managedDevices_enableLostMode
       parameters:
         - name: managedDevice-id
@@ -11440,6 +12823,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
+      description: Locate a device
       operationId: deviceManagement.managedDevices_locateDevice
       parameters:
         - name: managedDevice-id
@@ -11460,6 +12844,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
+      description: Logout shared Apple device active user
       operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
       parameters:
         - name: managedDevice-id
@@ -11515,6 +12900,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
+      description: Remote lock
       operationId: deviceManagement.managedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -11535,6 +12921,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
+      description: Reboot device
       operationId: deviceManagement.managedDevices_rebootNow
       parameters:
         - name: managedDevice-id
@@ -11555,6 +12942,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
+      description: Recover passcode
       operationId: deviceManagement.managedDevices_recoverPasscode
       parameters:
         - name: managedDevice-id
@@ -11575,7 +12963,28 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
+      description: Remote lock
       operationId: deviceManagement.managedDevices_remoteLock
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.reprovisionCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reprovisionCloudPc
+      operationId: deviceManagement.managedDevices_reprovisionCloudPc
       parameters:
         - name: managedDevice-id
           in: path
@@ -11595,6 +13004,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
+      description: Request remote assistance
       operationId: deviceManagement.managedDevices_requestRemoteAssistance
       parameters:
         - name: managedDevice-id
@@ -11615,6 +13025,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
+      description: Reset passcode
       operationId: deviceManagement.managedDevices_resetPasscode
       parameters:
         - name: managedDevice-id
@@ -11630,11 +13041,45 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.resizeCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action resizeCloudPc
+      operationId: deviceManagement.managedDevices_resizeCloudPc
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retire':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action retire
+      description: Retire a device
       operationId: deviceManagement.managedDevices_retire
       parameters:
         - name: managedDevice-id
@@ -11655,6 +13100,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action revokeAppleVppLicenses
+      description: Revoke all Apple Vpp licenses for a device
       operationId: deviceManagement.managedDevices_revokeAppleVppLicenses
       parameters:
         - name: managedDevice-id
@@ -11675,6 +13121,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action rotateBitLockerKeys
+      description: Rotate BitLockerKeys
       operationId: deviceManagement.managedDevices_rotateBitLockerKeys
       parameters:
         - name: managedDevice-id
@@ -11749,6 +13196,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setDeviceName
+      description: Set device name of the device.
       operationId: deviceManagement.managedDevices_setDeviceName
       parameters:
         - name: managedDevice-id
@@ -11782,6 +13230,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action shutDown
+      description: Shut down device
       operationId: deviceManagement.managedDevices_shutDown
       parameters:
         - name: managedDevice-id
@@ -11822,6 +13271,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action triggerConfigurationManagerAction
+      description: Trigger action on ConfigurationManager client
       operationId: deviceManagement.managedDevices_triggerConfigurationManagerAction
       parameters:
         - name: managedDevice-id
@@ -11939,6 +13389,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action wipe
+      description: Wipe a device
       operationId: deviceManagement.managedDevices_wipe
       parameters:
         - name: managedDevice-id
@@ -11966,10 +13417,41 @@ paths:
                 macOsUnlockCode:
                   type: string
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 useProtectedWipe:
                   type: boolean
                   default: false
                   nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/managedDevices/microsoft.graph.bulkReprovisionCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkReprovisionCloudPc
+      operationId: deviceManagement.managedDevices_bulkReprovisionCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -12058,6 +13540,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action enableUnlicensedAdminstrators
+      description: 'Upon enabling, users assigned as administrators via Role Assignment Memberships will no longer require an assigned Intune license. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators will continue to function as-is in that transitive memberships apply and are not subject to the 350 member limit.'
       operationId: deviceManagement_enableUnlicensedAdminstrators
       responses:
         '204':
@@ -12172,6 +13655,26 @@ paths:
               schema:
                 type: string
                 nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/microsoftTunnelSites/{microsoftTunnelSite-id}/microsoft.graph.requestUpgrade':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action requestUpgrade
+      operationId: deviceManagement.microsoftTunnelSites_requestUpgrade
+      parameters:
+        - name: microsoftTunnelSite-id
+          in: path
+          description: 'key: id of microsoftTunnelSite'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: microsoftTunnelSite
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -12362,6 +13865,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
+      description: Sends test message using the specified notificationMessageTemplate in the default locale
       operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
       parameters:
         - name: notificationMessageTemplate-id
@@ -12382,6 +13886,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
+      description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
       operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
       parameters:
         - name: remoteAssistancePartner-id
@@ -12402,6 +13907,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action disconnect
+      description: A request to remove the active TeamViewer connector
       operationId: deviceManagement.remoteAssistancePartners_disconnect
       parameters:
         - name: remoteAssistancePartner-id
@@ -12490,6 +13996,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getActiveMalwareSummaryReport
       operationId: deviceManagement.reports_getActiveMalwareSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getAllCertificatesReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getAllCertificatesReport
+      operationId: deviceManagement.reports_getAllCertificatesReport
       requestBody:
         description: Action parameters
         content:
@@ -13014,6 +14587,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigManagerDevicePolicyStatusReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getConfigManagerDevicePolicyStatusReport
+      operationId: deviceManagement.reports_getConfigManagerDevicePolicyStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getConfigurationPoliciesReportForDevice:
     post:
       tags:
@@ -13349,6 +14989,73 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getConfigurationPolicySettingsDeviceSummaryReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getConfigurationPolicySettingsDeviceSummaryReport
+      operationId: deviceManagement.reports_getConfigurationPolicySettingsDeviceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getConfigurationSettingDetailsReport:
     post:
       tags:
@@ -13556,6 +15263,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getDeviceInstallStatusReport
       operationId: deviceManagement.reports_getDeviceInstallStatusReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceManagementIntentSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceManagementIntentSettingsReport
+      operationId: deviceManagement.reports_getDeviceManagementIntentSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -14089,6 +15863,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getPolicyNonComplianceSummaryReport
       operationId: deviceManagement.reports_getPolicyNonComplianceSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getRelatedAppsStatusReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getRelatedAppsStatusReport
+      operationId: deviceManagement.reports_getRelatedAppsStatusReport
       requestBody:
         description: Action parameters
         content:
@@ -14860,6 +16701,124 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/microsoft.graph.clone':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action clone
+      operationId: deviceManagement.reusablePolicySettings_clone
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementReusablePolicySetting'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_assign
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/reusablePolicySettings/{deviceManagementReusablePolicySetting-id}/referencingConfigurationPolicies/{deviceManagementConfigurationPolicy-id}/microsoft.graph.createCopy':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action createCopy
+      operationId: deviceManagement.reusablePolicySettings.referencingConfigurationPolicies_createCopy
+      parameters:
+        - name: deviceManagementReusablePolicySetting-id
+          in: path
+          description: 'key: id of deviceManagementReusablePolicySetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementReusablePolicySetting
+        - name: deviceManagementConfigurationPolicy-id
+          in: path
+          description: 'key: id of deviceManagementConfigurationPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementConfigurationPolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                description:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment-id}/roleScopeTags/microsoft.graph.getRoleScopeTagsById':
     post:
       tags:
@@ -15143,6 +17102,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/deviceImages/{cloudPcDeviceImage-id}/microsoft.graph.reupload':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reupload
+      operationId: deviceManagement.virtualEndpoint.deviceImages_reupload
+      parameters:
+        - name: cloudPcDeviceImage-id
+          in: path
+          description: 'key: id of cloudPcDeviceImage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcDeviceImage
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection-id}/microsoft.graph.runHealthChecks':
     post:
       tags:
@@ -15221,6 +17200,40 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.virtualEndpoint.userSettings_assign
+      parameters:
+        - name: cloudPcUserSetting-id
+          in: path
+          description: 'key: id of cloudPcUserSetting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcUserSetting
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.cloudPcUserSettingAssignment'
               additionalProperties:
                 type: object
         required: true
@@ -15319,6 +17332,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -15365,6 +17379,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -15408,6 +17423,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -15435,6 +17451,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -15462,6 +17479,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
@@ -15503,47 +17521,6 @@ paths:
       responses:
         '204':
           description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
-  '/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile-id}/assignedDevices/microsoft.graph.deleteDevices':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action deleteDevices
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_deleteDevices
-      parameters:
-        - name: windowsAutopilotDeploymentProfile-id
-          in: path
-          description: 'key: id of windowsAutopilotDeploymentProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsAutopilotDeploymentProfile
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                serialNumbers:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -15690,6 +17667,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignResourceAccountToDevice
+      description: Assigns resource account to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignResourceAccountToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -15729,6 +17707,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
+      description: Assigns user to Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -15765,6 +17744,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignResourceAccountFromDevice
+      description: Unassigns the resource account from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignResourceAccountFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -15785,6 +17765,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
+      description: Unassigns the user from an Autopilot device.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -15805,6 +17786,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
+      description: Updates properties on Autopilot devices.
       operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
@@ -15842,44 +17824,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /deviceManagement/windowsAutopilotDeviceIdentities/microsoft.graph.deleteDevices:
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action deleteDevices
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_deleteDevices
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                serialNumbers:
-                  type: array
-                  items:
-                    type: string
-                    nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deletedWindowsAutopilotDeviceState'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/windowsAutopilotSettings/microsoft.graph.sync:
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
+      description: 'Initiates a sync of all AutoPilot registered devices from Store for Business and other portals. If the sync successful, this action returns a 204 No Content response code. If a sync is already in progress, the action returns a 409 Conflict response code.  If this sync action is called within 10 minutes of the previous sync, the action returns a 429 Too Many Requests response code.'
       operationId: deviceManagement.windowsAutopilotSettings_sync
       responses:
         '204':
@@ -16171,6 +18121,68 @@ components:
           additionalProperties:
             type: object
           description: The DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
+    microsoft.graph.deviceManagementConfigurationPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationPolicy
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy creation date and time. This property is read-only.
+              format: date-time
+            creationSource:
+              type: string
+              description: Policy creation source
+              nullable: true
+            description:
+              type: string
+              description: Policy description
+              nullable: true
+            isAssigned:
+              type: boolean
+              description: Policy assignment status. This property is read-only.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Policy last modification date and time. This property is read-only.
+              format: date-time
+            name:
+              type: string
+              description: Policy name
+              nullable: true
+            platforms:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+            roleScopeTagIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of Scope Tags for this Entity instance.
+            settingCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of settings. This property is read-only.
+              format: int32
+            technologies:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+            templateReference:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyTemplateReference'
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              description: Policy assignments
+            settings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSetting'
+              description: Policy settings
+          additionalProperties:
+            type: object
+          description: Device Management Configuration Policy
     microsoft.graph.dataSharingConsent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16229,7 +18241,7 @@ components:
               nullable: true
             isSupervised:
               type: boolean
-              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/HT202837'
+              description: 'Indicates if the Apple device is supervised. More information is at: https://support.apple.com/en-us/HT202837'
             lastContactedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16998,10 +19010,10 @@ components:
       properties:
         name:
           type: string
-          description: Name for this key-value pair
+          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
         value:
           type: string
-          description: Value for this key-value pair
+          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
           nullable: true
       additionalProperties:
         type: object
@@ -17038,6 +19050,55 @@ components:
           additionalProperties:
             type: object
           description: Entity that describes tenant level settings for derived credentials
+    microsoft.graph.deviceManagementReusablePolicySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementReusablePolicySetting
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: reusable setting creation date and time. This property is read-only.
+              format: date-time
+            description:
+              type: string
+              description: reusable setting description supplied by user.
+              nullable: true
+            displayName:
+              type: string
+              description: reusable setting display name supplied by user.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: date and time when reusable setting was last modified. This property is read-only.
+              format: date-time
+            referencingConfigurationPolicyCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: count of configuration policies referencing the current reusable setting. Valid values 0 to 2147483647. This property is read-only.
+              format: int32
+            settingDefinitionId:
+              type: string
+              description: setting definition id associated with this reusable setting.
+              nullable: true
+            settingInstance:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstance'
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: version number for reusable setting. Valid values 0 to 2147483647. This property is read-only.
+              format: int32
+            referencingConfigurationPolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
+              description: configuration policies referencing the current reusable setting
+          additionalProperties:
+            type: object
+          description: Graph model for a reusable setting
     microsoft.graph.roleScopeTag:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17084,26 +19145,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
-    microsoft.graph.deletedWindowsAutopilotDeviceState:
-      title: deletedWindowsAutopilotDeviceState
-      type: object
-      properties:
-        deletionState:
-          $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceDeletionState'
-        deviceRegistrationId:
-          type: string
-          description: ZTD Device Registration ID .
-          nullable: true
-        errorMessage:
-          type: string
-          description: Device deletion error message.
-          nullable: true
-        serialNumber:
-          type: string
-          description: Autopilot Device Serial Number
-          nullable: true
-      additionalProperties:
-        type: object
+    microsoft.graph.cloudPcUserSettingAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcUserSettingAssignment
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: ''2014-01-01T00:00:00Z''.'
+              format: date-time
+              nullable: true
+            target:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
+          additionalProperties:
+            type: object
     microsoft.graph.windowsFeatureUpdateProfileAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17147,6 +19204,7 @@ components:
         - windows10AndLater
         - androidWorkProfile
         - unknown
+        - androidAOSP
       type: string
     microsoft.graph.deviceLogCollectionTemplateType:
       title: deviceLogCollectionTemplateType
@@ -17184,6 +19242,60 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.deviceManagementConfigurationPlatforms:
+      title: deviceManagementConfigurationPlatforms
+      enum:
+        - none
+        - macOS
+        - windows10X
+        - windows10
+      type: string
+    microsoft.graph.deviceManagementConfigurationTechnologies:
+      title: deviceManagementConfigurationTechnologies
+      enum:
+        - none
+        - mdm
+        - windows10XManagement
+        - configManager
+        - microsoftSense
+      type: string
+    microsoft.graph.deviceManagementConfigurationPolicyTemplateReference:
+      title: deviceManagementConfigurationPolicyTemplateReference
+      type: object
+      properties:
+        templateDisplayName:
+          type: string
+          description: Template Display Name of the referenced template. This property is read-only.
+          nullable: true
+        templateDisplayVersion:
+          type: string
+          description: Template Display Version of the referenced Template. This property is read-only.
+          nullable: true
+        templateFamily:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTemplateFamily'
+        templateId:
+          type: string
+          description: Template id
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Policy template reference information
+    microsoft.graph.deviceManagementConfigurationSetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSetting
+          type: object
+          properties:
+            settingInstance:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstance'
+            settingDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
+              description: List of related Setting Definitions
+          additionalProperties:
+            type: object
+          description: Setting instance within policy
     microsoft.graph.discoverySource:
       title: discoverySource
       enum:
@@ -17303,6 +19415,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - windowsManagementCloudApi
+        - intuneAosp
       type: string
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
@@ -17848,19 +19961,23 @@ components:
         - apply
         - remove
       type: string
+    microsoft.graph.deviceManagementConfigurationSettingInstance:
+      title: deviceManagementConfigurationSettingInstance
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting Definition Id
+        settingInstanceTemplateReference:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference'
+      additionalProperties:
+        type: object
+      description: Setting instance within policy
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.windowsAutopilotDeviceDeletionState:
-      title: windowsAutopilotDeviceDeletionState
-      enum:
-        - unknown
-        - failed
-        - accepted
-        - error
-      type: string
     odata.error:
       required:
         - error
@@ -17877,6 +19994,91 @@ components:
         - include
         - exclude
       type: string
+    microsoft.graph.deviceManagementConfigurationTemplateFamily:
+      title: deviceManagementConfigurationTemplateFamily
+      enum:
+        - none
+        - endpointSecurityAntivirus
+        - endpointSecurityDiskEncryption
+        - endpointSecurityFirewall
+        - endpointSecurityEndpointDetectionAndResponse
+        - endpointSecurityAttackSurfaceReduction
+        - endpointSecurityAccountProtection
+        - endpointSecurityApplicationControl
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementConfigurationSettingDefinition
+          type: object
+          properties:
+            accessTypes:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingAccessTypes'
+            applicability:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingApplicability'
+            baseUri:
+              type: string
+              description: Base CSP Path
+              nullable: true
+            categoryId:
+              type: string
+              description: Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+              nullable: true
+            description:
+              type: string
+              description: Description of the item
+              nullable: true
+            displayName:
+              type: string
+              description: Display name of the item
+              nullable: true
+            helpText:
+              type: string
+              description: Help text of the item
+              nullable: true
+            infoUrls:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of links more info for the setting can be found at
+            keywords:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Tokens which to search settings on
+            name:
+              type: string
+              description: Name of the item
+              nullable: true
+            occurrence:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingOccurrence'
+            offsetUri:
+              type: string
+              description: Offset CSP Path from Base
+              nullable: true
+            referredSettingInformationList:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationReferredSettingInformation'
+              description: List of referred setting information.
+            rootDefinitionId:
+              type: string
+              description: Root setting definition if the setting is a child setting.
+              nullable: true
+            settingUsage:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingUsage'
+            uxBehavior:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationControlType'
+            version:
+              type: string
+              description: Item Version
+              nullable: true
+            visibility:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingVisibility'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceComplianceActionType:
       title: deviceComplianceActionType
       enum:
@@ -18520,6 +20722,16 @@ components:
         - failure
         - notEvaluated
       type: string
+    microsoft.graph.deviceManagementConfigurationSettingInstanceTemplateReference:
+      title: deviceManagementConfigurationSettingInstanceTemplateReference
+      type: object
+      properties:
+        settingInstanceTemplateId:
+          type: string
+          description: Setting instance template id
+      additionalProperties:
+        type: object
+      description: Setting instance template reference information
     odata.error.main:
       required:
         - code
@@ -18543,6 +20755,88 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
+    microsoft.graph.deviceManagementConfigurationSettingAccessTypes:
+      title: deviceManagementConfigurationSettingAccessTypes
+      enum:
+        - none
+        - add
+        - copy
+        - delete
+        - get
+        - replace
+        - execute
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingApplicability:
+      title: deviceManagementConfigurationSettingApplicability
+      type: object
+      properties:
+        description:
+          type: string
+          description: description of the setting
+          nullable: true
+        deviceMode:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationDeviceMode'
+        platform:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPlatforms'
+        technologies:
+          $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationSettingOccurrence:
+      title: deviceManagementConfigurationSettingOccurrence
+      type: object
+      properties:
+        maxDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Maximum times setting can be set on device.
+          format: int32
+          nullable: true
+        minDeviceOccurrence:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementConfigurationReferredSettingInformation:
+      title: deviceManagementConfigurationReferredSettingInformation
+      type: object
+      properties:
+        settingDefinitionId:
+          type: string
+          description: Setting definition id that is being referred to a setting. Applicable for reusable setting
+          nullable: true
+      additionalProperties:
+        type: object
+      description: Referred setting information about reusable setting
+    microsoft.graph.deviceManagementConfigurationSettingUsage:
+      title: deviceManagementConfigurationSettingUsage
+      enum:
+        - none
+        - configuration
+      type: string
+    microsoft.graph.deviceManagementConfigurationControlType:
+      title: deviceManagementConfigurationControlType
+      enum:
+        - default
+        - dropdown
+        - smallTextBox
+        - largeTextBox
+        - toggle
+        - multiheaderGrid
+        - contextPane
+      type: string
+    microsoft.graph.deviceManagementConfigurationSettingVisibility:
+      title: deviceManagementConfigurationSettingVisibility
+      enum:
+        - none
+        - settingsCatalog
+        - template
+      type: string
     microsoft.graph.windows10DeviceModeType:
       title: windows10DeviceModeType
       enum:
@@ -18646,6 +20940,12 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.deviceManagementConfigurationDeviceMode:
+      title: deviceManagementConfigurationDeviceMode
+      enum:
+        - none
+        - kiosk
+      type: string
     microsoft.graph.deviceManagementConstraint:
       title: deviceManagementConstraint
       type: object

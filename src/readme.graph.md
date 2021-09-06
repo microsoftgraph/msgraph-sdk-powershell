@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@2.1.401"
+use: "./assets/autorest-powershell-2.1.402.tgz"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -401,7 +401,7 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Check(.*)
+      variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
 # Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
@@ -409,6 +409,12 @@ directive:
       subject: ^(\w*[a-z])Ref([A-Z]\w*)$
     set:
       subject: $1$2ByRef
+# Remove *ByRef commands
+  - where:
+      verb: Get|Remove|New
+      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+    remove: true
+# Rename *ByRef commands
   - where:
       verb: Get|New
       subject: ^GroupMemberByRef$

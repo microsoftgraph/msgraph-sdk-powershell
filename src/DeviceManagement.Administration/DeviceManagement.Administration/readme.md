@@ -38,6 +38,11 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Pluralize
+  - where:
+      subject: (.*)OnPremisConnection(.*)
+    set:
+      subject: $1OnPremisesConnection$2
 # Remove cmdlets.
   - where:
       verb: New
@@ -47,10 +52,18 @@ directive:
       verb: Remove
       subject: ^DeviceManagementGroupPolicyUploadedDefinitionFile$
     remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^DeviceManagementVirtualEndpoint(AuditEvent|CloudPC|AuditEventAuditActivityType|DeviceImageSourceImage)$
+    remove: true
+  - where:
+      verb: New|Remove|Update
+      subject: ^DeviceManagementVirtualEndpoint$
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.7.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

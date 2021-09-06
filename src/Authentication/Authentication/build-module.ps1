@@ -80,16 +80,21 @@ if ($LastExitCode -ne 0) {
 
 # Ensure out directory exists and is clean.
 Remove-Item -Path $outDir -Recurse -ErrorAction Ignore
-New-Item -Path $outDir -ItemType Directory
-New-Item -Path $outDeps -ItemType Directory
-New-Item -Path $outCore -ItemType Directory
-New-Item -Path $outDesktop -ItemType Directory
+New-Item -Path $outDir -ItemType Directory | out-null
+New-Item -Path $outDeps -ItemType Directory | out-null
+New-Item -Path $outCore -ItemType Directory | out-null
+New-Item -Path $outDesktop -ItemType Directory | out-null
 
 # Copy manifest.
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.format.ps1xml" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
-Copy-Item -Path "$cmdletsSrc/StartupScripts" -Recurse -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
+
+# Copy custom commands
+
+Copy-Item -Path "$cmdletsSrc/custom" -Filter *.ps1 -Recurse -Destination $outDir
+Copy-Item -Path "$cmdletsSrc/custom" -Filter *.json -Recurse -Destination $outDir -Force
 
 # Core assemblies to include with cmdlets (Let PowerShell load them).
 $CoreAssemblies = @('Microsoft.Graph.Authentication.Core', 'Microsoft.Graph.Core')

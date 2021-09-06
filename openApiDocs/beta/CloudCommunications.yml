@@ -324,6 +324,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
         - name: callRecord-id
@@ -422,6 +423,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_CreateSessions
       parameters:
         - name: callRecord-id
@@ -453,6 +455,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get sessions from communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
         - name: callRecord-id
@@ -521,6 +524,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_UpdateSessions
       parameters:
         - name: callRecord-id
@@ -554,6 +558,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
+      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_DeleteSessions
       parameters:
         - name: callRecord-id
@@ -586,6 +591,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
         - name: callRecord-id
@@ -689,6 +695,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_CreateSegments
       parameters:
         - name: callRecord-id
@@ -727,6 +734,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Get segments from communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
         - name: callRecord-id
@@ -794,6 +802,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_UpdateSegments
       parameters:
         - name: callRecord-id
@@ -834,6 +843,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
+      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_DeleteSegments
       parameters:
         - name: callRecord-id
@@ -1194,6 +1204,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1281,6 +1292,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to audioRoutingGroups for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1312,6 +1324,7 @@ paths:
       tags:
         - communications.call
       summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1369,6 +1382,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateAudioRoutingGroups
       parameters:
         - name: call-id
@@ -1402,6 +1416,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteAudioRoutingGroups
       parameters:
         - name: call-id
@@ -2034,6 +2049,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
         - name: call-id
@@ -2121,6 +2137,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateOperations
       parameters:
         - name: call-id
@@ -2152,6 +2169,7 @@ paths:
       tags:
         - communications.call
       summary: Get operations from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
         - name: call-id
@@ -2209,6 +2227,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateOperations
       parameters:
         - name: call-id
@@ -2242,6 +2261,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteOperations
       parameters:
         - name: call-id
@@ -2274,6 +2294,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
         - name: call-id
@@ -2370,6 +2391,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_CreateParticipants
       parameters:
         - name: call-id
@@ -2401,6 +2423,7 @@ paths:
       tags:
         - communications.call
       summary: Get participants from communications
+      description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
         - name: call-id
@@ -2461,6 +2484,7 @@ paths:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
+      description: Read-only. Nullable.
       operationId: communications.calls_UpdateParticipants
       parameters:
         - name: call-id
@@ -2494,6 +2518,7 @@ paths:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
+      description: Read-only. Nullable.
       operationId: communications.calls_DeleteParticipants
       parameters:
         - name: call-id
@@ -2730,8 +2755,16 @@ paths:
                 - id desc
                 - accessLevel
                 - accessLevel desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - attendeeReport
@@ -2791,7 +2824,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -2901,7 +2938,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -3568,6 +3609,11 @@ paths:
                   type: string
                 activity:
                   type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3610,8 +3656,16 @@ paths:
                 - id desc
                 - accessLevel
                 - accessLevel desc
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableCamera desc
+                - allowAttendeeToEnableMic
+                - allowAttendeeToEnableMic desc
                 - allowedPresenters
                 - allowedPresenters desc
+                - allowMeetingChat
+                - allowMeetingChat desc
+                - allowTeamworkReactions
+                - allowTeamworkReactions desc
                 - alternativeRecording
                 - alternativeRecording desc
                 - attendeeReport
@@ -3671,7 +3725,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -3796,7 +3854,11 @@ paths:
               enum:
                 - id
                 - accessLevel
+                - allowAttendeeToEnableCamera
+                - allowAttendeeToEnableMic
                 - allowedPresenters
+                - allowMeetingChat
+                - allowTeamworkReactions
                 - alternativeRecording
                 - attendeeReport
                 - audioConferencing
@@ -4867,8 +4929,22 @@ components:
           properties:
             accessLevel:
               $ref: '#/components/schemas/microsoft.graph.accessLevel'
+            allowAttendeeToEnableCamera:
+              type: boolean
+              description: Indicates whether attendees can turn on their camera.
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              description: Indicates whether attendees can turn on their microphone.
+              nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowTeamworkReactions:
+              type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
             alternativeRecording:
               type: string
               description: The content stream of the alternative recording of a live event. Read-only.
@@ -4892,7 +4968,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingCapabilities'
-              description: 'The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -4921,14 +4996,14 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates whether this is a live event.
               nullable: true
             isCancelled:
               type: boolean
               nullable: true
             isEntryExitAnnounced:
               type: boolean
-              description: Whether or not to announce when callers join or leave.
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -4972,6 +5047,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: The list of attendance records.
           additionalProperties:
             type: object
     microsoft.graph.chatInfo:
@@ -5000,18 +5076,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         contributors:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
         producers:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
-          description: For broadcast meeting only.
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -5498,6 +5573,14 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -5514,10 +5597,22 @@ components:
           type: string
           description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
           description: The toll number that connects to the Audio Conference Provider.
           nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
       additionalProperties:
         type: object
     microsoft.graph.broadcastMeetingSettings:
@@ -5582,18 +5677,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+          description: List of time periods between joining and leaving.
         emailAddress:
           type: string
+          description: Email address.
           nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identity'
         role:
           type: string
+          description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
           nullable: true
         totalAttendanceInSeconds:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Total duration of the attendances in seconds.
           format: int32
           nullable: true
       additionalProperties:
@@ -6113,16 +6212,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
           format: int32
           nullable: true
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:

@@ -481,7 +481,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
@@ -496,6 +496,8 @@ components:
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        resultTemplateOptions:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -520,9 +522,11 @@ components:
       properties:
         enableModification:
           type: boolean
+          description: 'Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.'
           nullable: true
         enableSuggestion:
           type: boolean
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -536,6 +540,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchResultSet'
+          description: 'Represents results from a search query, and the terms used for the query.'
       additionalProperties:
         type: object
     microsoft.graph.entity:
@@ -656,7 +661,8 @@ components:
         - list
         - listItem
         - drive
-        - unknownfuturevalue
+        - unknownFutureValue
+        - person
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery
@@ -668,6 +674,16 @@ components:
           nullable: true
         query_string:
           $ref: '#/components/schemas/microsoft.graph.searchQueryString'
+      additionalProperties:
+        type: object
+    microsoft.graph.resultTemplateOption:
+      title: resultTemplateOption
+      type: object
+      properties:
+        enableResultTemplate:
+          type: boolean
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.sortProperty:
@@ -689,6 +705,7 @@ components:
       properties:
         originalQueryString:
           type: string
+          description: Defines the original user query string.
           nullable: true
         queryAlteration:
           $ref: '#/components/schemas/microsoft.graph.searchAlteration'
@@ -704,11 +721,15 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
+        resultTemplates:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateDictionary'
         searchTerms:
           type: array
           items:
             type: string
             nullable: true
+          description: Contains the search terms sent in the initial search query.
       additionalProperties:
         type: object
     odata.error:
@@ -870,14 +891,17 @@ components:
       properties:
         alteredHighlightedQueryString:
           type: string
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)'
           nullable: true
         alteredQueryString:
           type: string
+          description: Defines the altered query string with spelling correction.
           nullable: true
         alteredQueryTokens:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
+          description: Represents changed segments with respect to original query.
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationType:
@@ -913,6 +937,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.resultTemplateDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: resultTemplateDictionary
+          type: object
+          additionalProperties:
+            type: object
     odata.error.main:
       required:
         - code
@@ -964,6 +995,7 @@ components:
         - group
         - everyone
         - everyoneExceptGuests
+        - externalGroup
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.externalItemContentType:
@@ -1027,6 +1059,9 @@ components:
         - fileName
         - fileExtension
         - unknownFutureValue
+        - iconUrl
+        - containerName
+        - containerUrl
       type: string
     microsoft.graph.externalConnectors.propertyType:
       title: propertyType
@@ -1069,16 +1104,19 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Defines the length of a changed segment.
           format: int32
           nullable: true
         offset:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Defines the offset of a changed segment.
           format: int32
           nullable: true
         suggestion:
           type: string
+          description: Represents the corrected segment string.
           nullable: true
       additionalProperties:
         type: object
@@ -1116,6 +1154,10 @@ components:
           description: The rank or the order of the result.
           format: int32
           nullable: true
+        resultTemplateId:
+          type: string
+          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
+          nullable: true
         summary:
           type: string
           description: 'A summary of the result, if a summary is available.'
@@ -1136,6 +1178,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.entity'
         _source:
           $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     odata.error.detail:

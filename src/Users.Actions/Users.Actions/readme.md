@@ -51,6 +51,10 @@ directive:
       verb: Get
       subject: ^(UserOnlineMeeting)$
     remove: true
+  - where:
+      verb: Get
+      subject: (User)AvailableExtensionProperty
+    remove: true
 # Rename
   - where:
       verb: Clear
@@ -82,7 +86,7 @@ directive:
       verb: Rename
       subject: ^(UserPassword)$
     set:
-      verb: Reset
+      verb: Update
       subject: $1
   - where:
       verb: Get
@@ -124,6 +128,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.7.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

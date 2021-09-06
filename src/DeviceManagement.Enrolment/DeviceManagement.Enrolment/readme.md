@@ -41,10 +41,9 @@ directive:
 # Remove invalid paths.
   - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.7.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

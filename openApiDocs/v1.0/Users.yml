@@ -15,10 +15,9 @@ paths:
       parameters:
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -304,6 +303,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - chats
                 - joinedTeams
                 - teamwork
                 - todo
@@ -361,6 +361,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - chats
                 - joinedTeams
                 - teamwork
                 - todo
@@ -415,6 +416,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_GetUser
       parameters:
         - name: user-id
@@ -426,10 +428,9 @@ paths:
           x-ms-docs-key-type: user
         - name: ConsistencyLevel
           in: header
-          description: Indicates the requested consistency level.
+          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
           schema:
             type: string
-          example: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
           examples:
             example-1:
               description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
@@ -557,6 +558,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - chats
                 - joinedTeams
                 - teamwork
                 - todo
@@ -614,6 +616,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - chats
                 - joinedTeams
                 - teamwork
                 - todo
@@ -794,6 +797,10 @@ paths:
               operationId: users.GetAuthentication
               parameters:
                 user-id: $request.path.user-id
+            chats:
+              operationId: users.ListChats
+              parameters:
+                user-id: $request.path.user-id
             joinedTeams:
               operationId: users.ListJoinedTeams
               parameters:
@@ -813,6 +820,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_UpdateUser
       parameters:
         - name: user-id
@@ -839,6 +847,7 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
+      description: Represents an Azure Active Directory user object.
       operationId: users.user_DeleteUser
       parameters:
         - name: user-id
@@ -864,6 +873,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
         - name: user-id
@@ -946,6 +956,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of createdObjects from users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListRefCreatedObjects
       parameters:
         - name: user-id
@@ -1002,6 +1013,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to createdObjects for users
+      description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_CreateRefCreatedObjects
       parameters:
         - name: user-id
@@ -1037,6 +1049,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_ListDirectReports
       parameters:
         - name: user-id
@@ -1119,6 +1132,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of directReports from users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_ListRefDirectReports
       parameters:
         - name: user-id
@@ -1175,6 +1189,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to directReports for users
+      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_CreateRefDirectReports
       parameters:
         - name: user-id
@@ -1210,6 +1225,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_ListExtensions
       parameters:
         - name: user-id
@@ -1288,6 +1304,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_CreateExtensions
       parameters:
         - name: user-id
@@ -1319,6 +1336,7 @@ paths:
       tags:
         - users.extension
       summary: Get extensions from users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_GetExtensions
       parameters:
         - name: user-id
@@ -1373,6 +1391,7 @@ paths:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_UpdateExtensions
       parameters:
         - name: user-id
@@ -1406,6 +1425,7 @@ paths:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the user. Nullable.
       operationId: users_DeleteExtensions
       parameters:
         - name: user-id
@@ -1438,6 +1458,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_ListLicenseDetails
       parameters:
         - name: user-id
@@ -1525,6 +1546,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_CreateLicenseDetails
       parameters:
         - name: user-id
@@ -1556,6 +1578,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Get licenseDetails from users
+      description: A collection of this user's license details. Read-only.
       operationId: users_GetLicenseDetails
       parameters:
         - name: user-id
@@ -1613,6 +1636,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
+      description: A collection of this user's license details. Read-only.
       operationId: users_UpdateLicenseDetails
       parameters:
         - name: user-id
@@ -1646,6 +1670,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
+      description: A collection of this user's license details. Read-only.
       operationId: users_DeleteLicenseDetails
       parameters:
         - name: user-id
@@ -1678,6 +1703,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetManager
       parameters:
         - name: user-id
@@ -1727,6 +1753,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetRefManager
       parameters:
         - name: user-id
@@ -1750,6 +1777,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Update the ref of navigation property manager in users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_SetRefManager
       parameters:
         - name: user-id
@@ -1778,6 +1806,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Delete ref of navigation property manager for users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_DeleteRefManager
       parameters:
         - name: user-id
@@ -1803,6 +1832,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       operationId: users_ListMemberOf
       parameters:
         - name: user-id
@@ -1885,6 +1915,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of memberOf from users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       operationId: users_ListRefMemberOf
       parameters:
         - name: user-id
@@ -1941,6 +1972,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to memberOf for users
+      description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
       operationId: users_CreateRefMemberOf
       parameters:
         - name: user-id
@@ -2169,6 +2201,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get outlook from users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_GetOutlook
       parameters:
         - name: user-id
@@ -2223,6 +2256,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property outlook in users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_UpdateOutlook
       parameters:
         - name: user-id
@@ -2249,6 +2283,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property outlook for users
+      description: Selective Outlook services available to the user. Read-only. Nullable.
       operationId: users_DeleteOutlook
       parameters:
         - name: user-id
@@ -2274,6 +2309,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
         - name: user-id
@@ -2358,6 +2394,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_CreateMasterCategories
       parameters:
         - name: user-id
@@ -2389,6 +2426,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Get masterCategories from users
+      description: A list of categories defined for the user.
       operationId: users.outlook_GetMasterCategories
       parameters:
         - name: user-id
@@ -2445,6 +2483,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
+      description: A list of categories defined for the user.
       operationId: users.outlook_UpdateMasterCategories
       parameters:
         - name: user-id
@@ -2478,6 +2517,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
+      description: A list of categories defined for the user.
       operationId: users.outlook_DeleteMasterCategories
       parameters:
         - name: user-id
@@ -2510,6 +2550,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedDevices
       parameters:
         - name: user-id
@@ -2592,6 +2633,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedDevices from users
+      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRefOwnedDevices
       parameters:
         - name: user-id
@@ -2648,6 +2690,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedDevices for users
+      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_CreateRefOwnedDevices
       parameters:
         - name: user-id
@@ -2683,6 +2726,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedObjects
       parameters:
         - name: user-id
@@ -2765,6 +2809,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of ownedObjects from users
+      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRefOwnedObjects
       parameters:
         - name: user-id
@@ -2821,6 +2866,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to ownedObjects for users
+      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_CreateRefOwnedObjects
       parameters:
         - name: user-id
@@ -2856,6 +2902,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhoto
       parameters:
         - name: user-id
@@ -2905,6 +2952,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_UpdatePhoto
       parameters:
         - name: user-id
@@ -2931,6 +2979,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photo for users
+      description: The user's profile photo. Read-only.
       operationId: users_DeletePhoto
       parameters:
         - name: user-id
@@ -2956,6 +3005,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
+      description: The user's profile photo. Read-only.
       operationId: users_GetPhotoContent
       parameters:
         - name: user-id
@@ -2980,6 +3030,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users_SetPhotoContent
       parameters:
         - name: user-id
@@ -3008,6 +3059,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_ListPhotos
       parameters:
         - name: user-id
@@ -3092,6 +3144,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Create new navigation property to photos for users
+      description: Read-only. Nullable.
       operationId: users_CreatePhotos
       parameters:
         - name: user-id
@@ -3123,6 +3176,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get photos from users
+      description: Read-only. Nullable.
       operationId: users_GetPhotos
       parameters:
         - name: user-id
@@ -3179,6 +3233,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photos in users
+      description: Read-only. Nullable.
       operationId: users_UpdatePhotos
       parameters:
         - name: user-id
@@ -3212,6 +3267,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photos for users
+      description: Read-only. Nullable.
       operationId: users_DeletePhotos
       parameters:
         - name: user-id
@@ -3310,6 +3366,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRegisteredDevices
       parameters:
         - name: user-id
@@ -3392,6 +3449,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Get ref of registeredDevices from users
+      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRefRegisteredDevices
       parameters:
         - name: user-id
@@ -3448,6 +3506,7 @@ paths:
       tags:
         - users.directoryObject
       summary: Create new navigation property ref to registeredDevices for users
+      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_CreateRefRegisteredDevices
       parameters:
         - name: user-id
@@ -3483,6 +3542,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get settings from users
+      description: Read-only. Nullable.
       operationId: users_GetSettings
       parameters:
         - name: user-id
@@ -3539,6 +3599,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
+      description: Read-only. Nullable.
       operationId: users_UpdateSettings
       parameters:
         - name: user-id
@@ -3565,6 +3626,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
+      description: Read-only. Nullable.
       operationId: users_DeleteSettings
       parameters:
         - name: user-id
@@ -3590,6 +3652,7 @@ paths:
       tags:
         - users.userSettings
       summary: Get shiftPreferences from users
+      description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
         - name: user-id
@@ -3641,6 +3704,7 @@ paths:
       tags:
         - users.userSettings
       summary: Update the navigation property shiftPreferences in users
+      description: The shift preferences for the user.
       operationId: users.settings_UpdateShiftPreferences
       parameters:
         - name: user-id
@@ -3667,6 +3731,7 @@ paths:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
+      description: The shift preferences for the user.
       operationId: users.settings_DeleteShiftPreferences
       parameters:
         - name: user-id
@@ -3692,6 +3757,7 @@ paths:
       tags:
         - users.todo
       summary: Get todo from users
+      description: Represents the To Do services available to a user.
       operationId: users_GetTodo
       parameters:
         - name: user-id
@@ -3746,6 +3812,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
+      description: Represents the To Do services available to a user.
       operationId: users_UpdateTodo
       parameters:
         - name: user-id
@@ -3772,6 +3839,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
+      description: Represents the To Do services available to a user.
       operationId: users_DeleteTodo
       parameters:
         - name: user-id
@@ -3797,6 +3865,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
         - name: user-id
@@ -3891,6 +3960,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_CreateLists
       parameters:
         - name: user-id
@@ -3922,6 +3992,7 @@ paths:
       tags:
         - users.todo
       summary: Get lists from users
+      description: The task lists in the users mailbox.
       operationId: users.todo_GetLists
       parameters:
         - name: user-id
@@ -3995,6 +4066,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
+      description: The task lists in the users mailbox.
       operationId: users.todo_UpdateLists
       parameters:
         - name: user-id
@@ -4028,6 +4100,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
+      description: The task lists in the users mailbox.
       operationId: users.todo_DeleteLists
       parameters:
         - name: user-id
@@ -4060,6 +4133,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_ListExtensions
       parameters:
         - name: user-id
@@ -4145,6 +4219,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_CreateExtensions
       parameters:
         - name: user-id
@@ -4183,6 +4258,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_GetExtensions
       parameters:
         - name: user-id
@@ -4244,6 +4320,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_UpdateExtensions
       parameters:
         - name: user-id
@@ -4284,6 +4361,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_DeleteExtensions
       parameters:
         - name: user-id
@@ -4323,6 +4401,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
         - name: user-id
@@ -4448,6 +4527,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_CreateTasks
       parameters:
         - name: user-id
@@ -4486,6 +4566,7 @@ paths:
       tags:
         - users.todo
       summary: Get tasks from users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_GetTasks
       parameters:
         - name: user-id
@@ -4576,6 +4657,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_UpdateTasks
       parameters:
         - name: user-id
@@ -4616,6 +4698,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
+      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_DeleteTasks
       parameters:
         - name: user-id
@@ -4655,6 +4738,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_ListExtensions
       parameters:
         - name: user-id
@@ -4747,6 +4831,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_CreateExtensions
       parameters:
         - name: user-id
@@ -4792,6 +4877,7 @@ paths:
       tags:
         - users.todo
       summary: Get extensions from users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_GetExtensions
       parameters:
         - name: user-id
@@ -4860,6 +4946,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_UpdateExtensions
       parameters:
         - name: user-id
@@ -4907,6 +4994,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_DeleteExtensions
       parameters:
         - name: user-id
@@ -4953,6 +5041,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
         - name: user-id
@@ -5057,6 +5146,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_CreateLinkedResources
       parameters:
         - name: user-id
@@ -5102,6 +5192,7 @@ paths:
       tags:
         - users.todo
       summary: Get linkedResources from users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_GetLinkedResources
       parameters:
         - name: user-id
@@ -5174,6 +5265,7 @@ paths:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_UpdateLinkedResources
       parameters:
         - name: user-id
@@ -5221,6 +5313,7 @@ paths:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
+      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_DeleteLinkedResources
       parameters:
         - name: user-id
@@ -5445,118 +5538,118 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.'
+              description: 'true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             assignedLicenses:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the user. Not nullable. Supports $filter.
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq and NOT).'
             assignedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedPlan'
-              description: The plans that are assigned to the user. Returned only on $select. Read-only. Not nullable.
+              description: The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and NOT).
             businessPhones:
               type: array
               items:
                 type: string
-              description: The telephone numbers for the user. Only one number can be set for this property. Returned by default. Read-only for users synced from on-premises directory.
+              description: The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq and NOT).
             city:
               type: string
-              description: The city in which the user is located. Returned only on $select. Supports $filter.
+              description: 'The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             companyName:
               type: string
-              description: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select.
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, ''US'' or ''UK''. Returned only on $select. Supports $filter.'
+              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn't be determined for the user. Returned only on $select. Read-only. Supports $filter.
+              description: 'The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn''t be determined for the user. Read-only. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Returned only on $select. Read-only.'
+              description: 'Indicates whether the user account was created as a regular school or work account (null), an external account (Invitation), a local account for an Azure Active Directory B2C tenant (LocalAccount) or self-service sign-up using email verification (EmailVerified). Read-only. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
             department:
               type: string
-              description: The name for the department in which the user works. Returned only on $select. Supports $filter.
+              description: 'The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, NOT , ge, le, and in operators).'
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.'
+              description: 'The name displayed in the address book for the user. This value is usually the combination of the user''s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter.
+              description: 'The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, NOT , ge, le, in).'
               format: date-time
               nullable: true
             employeeId:
               type: string
-              description: The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
+              description: 'The employee identifier assigned to the user by the organization. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
             employeeType:
               type: string
-              description: 'Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.'
+              description: 'Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             externalUserState:
               type: string
-              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter with the supported values. For example: $filter=externalUserState eq ''PendingAcceptance''.'
+              description: 'For an external user invited to the tenant using the invitation API, this property represents the invited user''s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, NOT , in).'
               nullable: true
             externalUserStateChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Shows the timestamp for the latest change to the externalUserState property. Returned only on $select.
+              description: 'Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, NOT , in).'
               format: date-time
               nullable: true
             faxNumber:
               type: string
-              description: The fax number of the user. Returned only on $select.
+              description: 'The fax number of the user. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             givenName:
               type: string
-              description: The given name (first name) of the user. Returned by default. Supports $filter.
+              description: 'The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
                 type: string
                 nullable: true
-              description: The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only.
+              description: 'The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, NOT, ge, le, startsWith).'
             isResourceAccount:
               type: boolean
               description: Do not use – reserved for future use.
               nullable: true
             jobTitle:
               type: string
-              description: The user's job title. Returned by default. Supports $filter.
+              description: 'The user''s job title. Maximum length is 128 characters. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select. Read-only.'
+              description: 'The time when this Azure AD user last changed their password. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.'
               format: date-time
               nullable: true
             legalAgeGroupClassification:
@@ -5567,126 +5660,126 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.licenseAssignmentState'
-              description: State of license assignments for this user. Returned only on $select. Read-only.
+              description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, ''jeff@contoso.onmicrosoft.com''. Returned by default. Supports $filter and endsWith.'
+              description: 'The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. While this property can contain accent characters, using them can cause access issues with other Microsoft applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).'
               nullable: true
             mailNickname:
               type: string
-              description: The mail alias for the user. This property must be specified when a user is created. Returned only on $select. Supports $filter.
+              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             mobilePhone:
               type: string
-              description: The primary cellular telephone number for the user. Returned by default. Read-only for users synced from on-premises directory.
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             officeLocation:
               type: string
-              description: The office location in the user's place of business. Returned by default.
+              description: 'The office location in the user''s place of business. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             onPremisesDistinguishedName:
               type: string
-              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.
               nullable: true
             onPremisesDomainName:
               type: string
-              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.'
+              description: 'Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.'
               nullable: true
             onPremisesExtensionAttributes:
               $ref: '#/components/schemas/microsoft.graph.onPremisesExtensionAttributes'
             onPremisesImmutableId:
               type: string
-              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter.'
+              description: 'This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user''s userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, NOT, ge, le, in).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select. Read-only.'
+              description: 'Indicates the last time at which the object was synced with the on-premises directory; for example: ''2013-02-16T03:04:54Z''. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: Errors when using Microsoft synchronization product during provisioning. Returned only on $select.
+              description: 'Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, NOT, ge, le).'
             onPremisesSamAccountName:
               type: string
-              description: Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: 'Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Returned only on $select. Read-only.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned only on $select. Read-only.
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
-              description: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Returned only on $select. Read-only.
+              description: 'Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             otherMails:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].Returned only on $select.  Supports$filter.'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user.Supports $filter (eq, NOT, ge, le, in, startsWith).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being ''DisableStrongPassword'', which allows weaker passwords than the default policy to be specified. ''DisablePasswordExpiration'' can also be specified. The two may be specified together; for example: ''DisablePasswordExpiration, DisableStrongPassword''.Returned only on $select.'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.Supports $filter (ne, NOT).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Returned only on $select.'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             provisionedPlans:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.provisionedPlan'
-              description: The plans that are provisioned for the user. Returned only on $select. Read-only. Not nullable.
+              description: 'The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, NOT, ge, le).'
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''] The any operator is required for filter expressions on multi-valued properties. Returned only on $select. Read-only, Not nullable. Supports $filter.'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Read-only, Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             showInAddressList:
               type: boolean
-              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select.'
+              description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             signInSessionsValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Returned only on $select. Read-only. Use revokeSignInSessions to reset.'
+              description: 'Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.'
               format: date-time
               nullable: true
             state:
               type: string
-              description: The state or province in the user's address. Returned only on $select. Supports $filter.
+              description: 'The state or province in the user''s address. Maximum length is 128 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             streetAddress:
               type: string
-              description: The street address of the user's place of business. Returned only on $select.
+              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             surname:
               type: string
-              description: The user's surname (family name or last name). Returned by default. Supports $filter.
+              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: ''US'', ''JP'', and ''GB''. Not nullable. Returned only on $select. Supports $filter.'
+              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: While this property can contain accent characters, they can cause access issues to first-party applications for the user. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as ''Member'' and ''Guest''. Returned only on $select. Supports $filter.'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, NOT, in,).'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -5708,7 +5801,7 @@ components:
             hireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
+              description: 'The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.'
               format: date-time
             interests:
               type: array
@@ -5752,7 +5845,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a user has been granted for an application.
+              description: Represents the app roles a user has been granted for an application. Supports $expand.
             createdObjects:
               type: array
               items:
@@ -5762,7 +5855,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable.
+              description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
             licenseDetails:
               type: array
               items:
@@ -5774,7 +5867,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable.'
+              description: 'The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.'
             oauth2PermissionGrants:
               type: array
               items:
@@ -5783,17 +5876,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are owned by the user. Read-only. Nullable.
+              description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
             ownedObjects:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Directory objects that are owned by the user. Read-only. Nullable.
+              description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
             registeredDevices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Devices that are registered for the user. Read-only. Nullable.
+              description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
             scopedRoleMemberOf:
               type: array
               items:
@@ -5918,6 +6011,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
+            chats:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chat'
             joinedTeams:
               type: array
               items:
@@ -5985,7 +6082,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -6057,10 +6154,10 @@ components:
           properties:
             contributionToContentDiscoveryAsOrganizationDisabled:
               type: boolean
-              description: 'Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn''t have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
+              description: 'Reflects the Office Delve organization level setting. When set to true, the organization doesn''t have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.'
             contributionToContentDiscoveryDisabled:
               type: boolean
-              description: 'When set to true, the delegate access to the user''s trending API is disabled. When set to true, documents in the user''s Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.'
+              description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
           additionalProperties:
@@ -6268,7 +6365,7 @@ components:
           nullable: true
         issuerAssignedId:
           type: string
-          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 512 character limit.'
+          description: 'Specifies the unique identifier assigned to the user by the issuer. The combination of issuer and issuerAssignedId must be unique within the organization. Represents the sign-in name for the user, when signInType is set to emailAddress or userName (also known as local accounts).When signInType is set to: emailAddress, (or a custom string that starts with emailAddress like emailAddress1) issuerAssignedId must be a valid email addressuserName, issuerAssignedId must be a valid local part of an email addressSupports $filter. 100 character limit.'
           nullable: true
         signInType:
           type: string
@@ -6404,7 +6501,7 @@ components:
       properties:
         forceChangePasswordNextSignIn:
           type: boolean
-          description: 'If true, at next sign-in, the user must change their password. After a password change, this property will be automatically reset to false. If not set, default is false.'
+          description: 'true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.'
           nullable: true
         forceChangePasswordNextSignInWithMfa:
           type: boolean
@@ -7019,6 +7116,10 @@ components:
               type: string
               description: The mailFolder's display name.
               nullable: true
+            isHidden:
+              type: boolean
+              description: Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.
+              nullable: true
             parentFolderId:
               type: string
               description: The unique identifier for the mailFolder's parent mailFolder.
@@ -7511,6 +7612,10 @@ components:
               type: string
               description: Enrollment time of the device. This property is read-only.
               format: date-time
+            ethernetMacAddress:
+              type: string
+              description: Ethernet MAC. This property is read-only.
+              nullable: true
             exchangeAccessState:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementExchangeAccessState'
             exchangeAccessStateReason:
@@ -7524,6 +7629,10 @@ components:
               type: integer
               description: Free Storage in Bytes. This property is read-only.
               format: int64
+            iccid:
+              type: string
+              description: 'Integrated Circuit Card Identifier, it is A SIM card''s unique identification number. This property is read-only.'
+              nullable: true
             imei:
               type: string
               description: IMEI. This property is read-only.
@@ -7563,6 +7672,10 @@ components:
               type: string
               description: Model of the device. This property is read-only.
               nullable: true
+            notes:
+              type: string
+              description: Notes on the device created by IT Admin
+              nullable: true
             operatingSystem:
               type: string
               description: 'Operating system of the device. Windows, iOS, etc. This property is read-only.'
@@ -7577,6 +7690,10 @@ components:
               type: string
               description: Phone number of the device. This property is read-only.
               nullable: true
+            physicalMemoryInBytes:
+              type: integer
+              description: Total Memory in Bytes. This property is read-only.
+              format: int64
             remoteAssistanceSessionErrorDetails:
               type: string
               description: An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
@@ -7597,6 +7714,10 @@ components:
               type: integer
               description: Total Storage in Bytes. This property is read-only.
               format: int64
+            udid:
+              type: string
+              description: Unique Device Identifier for iOS and macOS devices. This property is read-only.
+              nullable: true
             userDisplayName:
               type: string
               description: User display name. This property is read-only.
@@ -7866,8 +7987,22 @@ components:
         - title: onlineMeeting
           type: object
           properties:
+            allowAttendeeToEnableCamera:
+              type: boolean
+              description: Indicates whether attendees can turn on their camera.
+              nullable: true
+            allowAttendeeToEnableMic:
+              type: boolean
+              description: Indicates whether attendees can turn on their microphone.
+              nullable: true
             allowedPresenters:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingPresenters'
+            allowMeetingChat:
+              $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
+            allowTeamworkReactions:
+              type: boolean
+              description: Indicates if Teams reactions are enabled for the meeting.
+              nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
             chatInfo:
@@ -7890,7 +8025,7 @@ components:
               nullable: true
             isEntryExitAnnounced:
               type: boolean
-              description: Whether or not to announce when callers join or leave.
+              description: Indicates whether to announce when callers join or leave.
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
@@ -7958,6 +8093,51 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
+    microsoft.graph.chat:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chat
+          type: object
+          properties:
+            chatType:
+              $ref: '#/components/schemas/microsoft.graph.chatType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was created. Read-only.
+              format: date-time
+              nullable: true
+            lastUpdatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
+              format: date-time
+              nullable: true
+            topic:
+              type: string
+              description: (Optional) Subject or topic for the chat. Only available for group chats.
+              nullable: true
+            installedApps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
+              description: A collection of all the apps in the chat. Nullable.
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+              description: A collection of all the members in the chat. Nullable.
+            messages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              description: A collection of all the messages in the chat. Nullable.
+            tabs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsTab'
+          additionalProperties:
+            type: object
     microsoft.graph.team:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7976,7 +8156,7 @@ components:
               nullable: true
             description:
               type: string
-              description: An optional description for the team.
+              description: 'An optional description for the team. Maximum length: 1024 characters.'
               nullable: true
             displayName:
               type: string
@@ -9303,6 +9483,9 @@ components:
         - windowsAutoEnrollment
         - windowsBulkAzureDomainJoin
         - windowsCoManagement
+        - windowsAzureADJoinUsingDeviceAuth
+        - appleUserEnrollment
+        - appleUserEnrollmentWithServiceAccount
       type: string
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
@@ -10154,6 +10337,14 @@ components:
         - organizer
         - unknownFutureValue
       type: string
+    microsoft.graph.meetingChatMode:
+      title: meetingChatMode
+      enum:
+        - enabled
+        - disabled
+        - limited
+        - unknownFutureValue
+      type: string
     microsoft.graph.audioConferencing:
       title: audioConferencing
       type: object
@@ -10214,6 +10405,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
+          description: Information of the meeting attendees.
         organizer:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
@@ -10307,6 +10499,166 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatType:
+      title: chatType
+      enum:
+        - oneOnOne
+        - group
+        - meeting
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppInstallation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppInstallation
+          type: object
+          properties:
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
+            teamsAppDefinition:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.conversationMember:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: conversationMember
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the user.
+              nullable: true
+            roles:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The roles for that user.
+            visibleHistoryStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: chatMessage
+          type: object
+          properties:
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
+              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            channelIdentity:
+              $ref: '#/components/schemas/microsoft.graph.channelIdentity'
+            chatId:
+              type: string
+              description: 'If the message was sent in a chat, represents the identity of the chat.'
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Timestamp of when the chat message was created.
+              format: date-time
+              nullable: true
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
+              format: date-time
+              nullable: true
+            etag:
+              type: string
+              description: Read-only. Version number of the chat message.
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
+            lastEditedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
+              format: date-time
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
+              format: date-time
+              nullable: true
+            locale:
+              type: string
+              description: Locale of the chat message set by the client. Always set to en-us.
+            mentions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
+              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
+            messageType:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+            policyViolation:
+              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
+            reactions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
+              description: 'Reactions for this chat message (for example, Like).'
+            replyToId:
+              type: string
+              description: 'Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)'
+              nullable: true
+            subject:
+              type: string
+              description: 'The subject of the chat message, in plaintext.'
+              nullable: true
+            summary:
+              type: string
+              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
+              nullable: true
+            webUrl:
+              type: string
+              description: Read-only. Link to the message in Microsoft Teams.
+              nullable: true
+            hostedContents:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
+              description: 'Content in a message hosted by Microsoft Teams - for example, images or code snippets.'
+            replies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.chatMessage'
+              description: Replies for a specified message.
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsTab:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsTab
+          type: object
+          properties:
+            configuration:
+              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
+            displayName:
+              type: string
+              description: Name of the tab.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link URL of the tab instance. Read only.
+              nullable: true
+            teamsApp:
+              $ref: '#/components/schemas/microsoft.graph.teamsApp'
           additionalProperties:
             type: object
     microsoft.graph.teamFunSettings:
@@ -10573,61 +10925,65 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: The licenses that are assigned to the group. Returned only on $select. Read-only.
+              description: The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.
             classification:
               type: string
-              description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default.'
+              description: 'Describes a classification for the group (such as low, medium or high business impact). Valid values for this property are defined by creating a ClassificationList setting value, based on the template definition.Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             description:
               type: string
-              description: An optional description for the group. Returned by default.
+              description: 'An optional description for the group. Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith) and $search.'
               nullable: true
             displayName:
               type: string
-              description: The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
+              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             groupTypes:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter.'
+              description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, NOT).'
             hasMembersWithLicenseErrors:
               type: boolean
-              description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).'
+              description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true).  Supports $filter (eq).'
+              nullable: true
+            isAssignableToRole:
+              type: boolean
+              description: 'Indicates whether this group can be assigned to an Azure Active Directory role.This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global administrator and Privileged role administrator roles can set this property. The caller must also be assigned the Directory.AccessAsUser.All permission to set this property. For more, see Using a group to manage Azure AD role assignmentsReturned by default. Supports $filter (eq, ne, NOT).'
               nullable: true
             licenseProcessingState:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
             mail:
               type: string
-              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter.'
+              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             mailEnabled:
               type: boolean
-              description: Specifies whether the group is mail-enabled. Returned by default.
+              description: 'Specifies whether the group is mail-enabled. Returned by default. Supports $filter (eq, ne, NOT).'
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]'';:.<>,SPACE. Returned by default. Supports $filter.'
+              description: 'The mail alias for the group, unique in the organization. This property must be specified when a group is created. These characters cannot be used in the mailNickName: @()/[]'';:.<>,SPACE. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             membershipRule:
               type: string
-              description: 'The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default.'
+              description: 'The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             membershipRuleProcessingState:
               type: string
-              description: Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default.
+              description: 'Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             onPremisesDomainName:
               type: string
@@ -10636,7 +10992,7 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter.'
+              description: 'Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesNetBiosName:
@@ -10647,18 +11003,18 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: Errors when using Microsoft synchronization product during provisioning. Returned by default.
+              description: 'Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, NOT).'
             onPremisesSamAccountName:
               type: string
-              description: Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Read-only.
+              description: 'Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith). Read-only.'
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Read-only.
+              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter.
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             preferredDataLocation:
               type: string
@@ -10666,22 +11022,22 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example ''en-US''. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
               nullable: true
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter.'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.'
+              description: 'Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in). Read-only.'
               format: date-time
               nullable: true
             securityEnabled:
               type: boolean
-              description: Specifies whether the group is a security group. Returned by default. Supports $filter.
+              description: 'Specifies whether the group is a security group. Returned by default. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             securityIdentifier:
               type: string
@@ -10729,19 +11085,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: Represents the app roles a group has been granted for an application.
+              description: Represents the app roles a group has been granted for an application. Supports $expand.
             createdOnBehalfOf:
               $ref: '#/components/schemas/microsoft.graph.directoryObject'
             memberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: 'Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.'
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
+              description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable. Supports $expand.'
             membersWithLicenseErrors:
               type: array
               items:
@@ -10751,11 +11107,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.'
+              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable. Supports $expand.'
             permissionGrants:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
+              description: The permissions that have been granted for a group to a specific application. Supports $expand.
             settings:
               type: array
               items:
@@ -10839,42 +11196,6 @@ components:
           additionalProperties:
             type: object
           description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
-    microsoft.graph.teamsAppInstallation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsAppInstallation
-          type: object
-          properties:
-            teamsApp:
-              $ref: '#/components/schemas/microsoft.graph.teamsApp'
-            teamsAppDefinition:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
-          additionalProperties:
-            type: object
-    microsoft.graph.conversationMember:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: conversationMember
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The display name of the user.
-              nullable: true
-            roles:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The roles for that user.
-            visibleHistoryStartDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.teamsAsyncOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11907,7 +12228,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workbookNamedItem'
-              description: Represents a collection of workbook scoped named items (named ranges and constants). Read-only.
+              description: Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
             operations:
               type: array
               items:
@@ -12934,17 +13255,17 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. default is true.'
+              description: 'true if the account is enabled; otherwise, false. Default is true. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             alternativeSecurityIds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
-              description: For internal use only. Not nullable.
+              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).'
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -12955,7 +13276,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: Identifier set by Azure Device Registration Service at the time of registration.
+              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -12970,43 +13291,43 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the device. Required.
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
               nullable: true
             isCompliant:
               type: boolean
-              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
               nullable: true
             isManaged:
               type: boolean
-              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices.'
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
               nullable: true
             mdmAppId:
               type: string
-              description: Application identifier used to register device into MDM. Read-only. Supports $filter.
+              description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only.'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only.
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             operatingSystem:
               type: string
-              description: The type of operating system on the device. Required.
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: Operating system version of the device. Required.
+              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
-              description: For internal use only. Not nullable.
+              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -13024,21 +13345,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Groups that this device is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable.'
+              description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
             registeredOwners:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable.'
+              description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
             registeredUsers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable.'
+              description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
             transitiveMemberOf:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Groups that this device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
@@ -13054,6 +13376,217 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.teamsApp:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsApp
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            distributionMethod:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
+            externalId:
+              type: string
+              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
+              nullable: true
+            appDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
+              description: The details for each version of the app.
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsAppDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamsAppDefinition
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.identitySet'
+            description:
+              type: string
+              description: Verbose description of the application.
+              nullable: true
+            displayName:
+              type: string
+              description: The name of the app provided by the app developer.
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            publishingState:
+              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
+            shortDescription:
+              type: string
+              description: Short description of the application.
+              nullable: true
+            teamsAppId:
+              type: string
+              description: The ID from the Teams app manifest.
+              nullable: true
+            version:
+              type: string
+              description: The version number of the application.
+              nullable: true
+            bot:
+              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageAttachment:
+      title: chatMessageAttachment
+      type: object
+      properties:
+        content:
+          type: string
+          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
+          nullable: true
+        contentType:
+          type: string
+          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
+          nullable: true
+        contentUrl:
+          type: string
+          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
+          nullable: true
+        id:
+          type: string
+          description: Read-only. Unique id of the attachment.
+          nullable: true
+        name:
+          type: string
+          description: Name of the attachment.
+          nullable: true
+        thumbnailUrl:
+          type: string
+          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.channelIdentity:
+      title: channelIdentity
+      type: object
+      properties:
+        channelId:
+          type: string
+          description: The identity of the channel in which the message was posted.
+          nullable: true
+        teamId:
+          type: string
+          description: The identity of the team in which the message was posted.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageFromIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageFromIdentitySet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageImportance:
+      title: chatMessageImportance
+      enum:
+        - normal
+        - high
+        - urgent
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessageMention:
+      title: chatMessageMention
+      type: object
+      properties:
+        id:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
+          format: int32
+          nullable: true
+        mentioned:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageMentionedIdentitySet'
+        mentionText:
+          type: string
+          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageType:
+      title: chatMessageType
+      enum:
+        - message
+        - chatEvent
+        - typing
+        - unknownFutureValue
+      type: string
+    microsoft.graph.chatMessagePolicyViolation:
+      title: chatMessagePolicyViolation
+      type: object
+      properties:
+        dlpAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
+        justificationText:
+          type: string
+          description: Justification text provided by the sender of the message when overriding a policy violation.
+          nullable: true
+        policyTip:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
+        userAction:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
+        verdictDetails:
+          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageReaction:
+      title: chatMessageReaction
+      type: object
+      properties:
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          format: date-time
+        reactionType:
+          type: string
+          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.chatMessageReactionIdentitySet'
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessageHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
+        - title: chatMessageHostedContent
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamsTabConfiguration:
+      title: teamsTabConfiguration
+      type: object
+      properties:
+        contentUrl:
+          type: string
+          description: Url used for rendering tab contents in Teams. Required.
+          nullable: true
+        entityId:
+          type: string
+          description: Identifier for the entity hosted by the tab provider.
+          nullable: true
+        removeUrl:
+          type: string
+          description: Url called by Teams client when a Tab is removed using the Teams Client.
+          nullable: true
+        websiteUrl:
+          type: string
+          description: Url for showing tab contents outside of Teams.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.giphyRatingType:
       title: giphyRatingType
       enum:
@@ -13242,122 +13775,6 @@ components:
         - private
         - unknownFutureValue
       type: string
-    microsoft.graph.chatMessage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: chatMessage
-          type: object
-          properties:
-            attachments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageAttachment'
-              description: Attached files. Attachments are currently read-only – sending attachments is not supported.
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            channelIdentity:
-              $ref: '#/components/schemas/microsoft.graph.channelIdentity'
-            chatId:
-              type: string
-              description: 'If the message was sent in a chat, represents the identity of the chat.'
-              nullable: true
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Timestamp of when the chat message was created.
-              format: date-time
-              nullable: true
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read only. Timestamp at which the chat message was deleted, or null if not deleted.'
-              format: date-time
-              nullable: true
-            etag:
-              type: string
-              description: Read-only. Version number of the chat message.
-              nullable: true
-            from:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            importance:
-              $ref: '#/components/schemas/microsoft.graph.chatMessageImportance'
-            lastEditedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
-              format: date-time
-              nullable: true
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.'
-              format: date-time
-              nullable: true
-            locale:
-              type: string
-              description: Locale of the chat message set by the client. Always set to en-us.
-            mentions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageMention'
-              description: 'List of entities mentioned in the chat message. Currently supports user, bot, team, channel.'
-            messageType:
-              $ref: '#/components/schemas/microsoft.graph.chatMessageType'
-            policyViolation:
-              $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
-            reactions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageReaction'
-              description: 'Reactions for this chat message (for example, Like).'
-            replyToId:
-              type: string
-              description: 'Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)'
-              nullable: true
-            subject:
-              type: string
-              description: 'The subject of the chat message, in plaintext.'
-              nullable: true
-            summary:
-              type: string
-              description: 'Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.'
-              nullable: true
-            webUrl:
-              type: string
-              description: Read-only. Link to the message in Microsoft Teams.
-              nullable: true
-            hostedContents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessageHostedContent'
-              description: 'Content in a message hosted by Microsoft Teams e.g., images, code snippets etc.'
-            replies:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsTab:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsTab
-          type: object
-          properties:
-            configuration:
-              $ref: '#/components/schemas/microsoft.graph.teamsTabConfiguration'
-            displayName:
-              type: string
-              description: Name of the tab.
-              nullable: true
-            webUrl:
-              type: string
-              description: Deep link URL of the tab instance. Read only.
-              nullable: true
-            teamsApp:
-              $ref: '#/components/schemas/microsoft.graph.teamsApp'
-          additionalProperties:
-            type: object
     microsoft.graph.assignedLabel:
       title: assignedLabel
       type: object
@@ -13397,11 +13814,11 @@ components:
               nullable: true
             permission:
               type: string
-              description: The name of the permission. Read-only.
+              description: The name of the resource-specific permission. Read-only.
               nullable: true
             permissionType:
               type: string
-              description: 'The type of permission. Possible values are: Application,Delegated. Read-only.'
+              description: 'The type of permission. Possible values are: Application, Delegated. Read-only.'
               nullable: true
             resourceAppId:
               type: string
@@ -13544,68 +13961,6 @@ components:
               description: Read-only. Nullable. Returns the plannerPlans owned by the group.
           additionalProperties:
             type: object
-    microsoft.graph.teamsApp:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsApp
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-              nullable: true
-            distributionMethod:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppDistributionMethod'
-            externalId:
-              type: string
-              description: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-              nullable: true
-            appDefinitions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppDefinition'
-              description: The details for each version of the app.
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsAppDefinition:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsAppDefinition
-          type: object
-          properties:
-            createdBy:
-              $ref: '#/components/schemas/microsoft.graph.identitySet'
-            description:
-              type: string
-              description: Verbose description of the application.
-              nullable: true
-            displayName:
-              type: string
-              description: The name of the app provided by the app developer.
-              nullable: true
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            publishingState:
-              $ref: '#/components/schemas/microsoft.graph.teamsAppPublishingState'
-            shortDescription:
-              type: string
-              description: Short description of the application.
-              nullable: true
-            teamsAppId:
-              type: string
-              description: The id from the Teams App manifest.
-              nullable: true
-            version:
-              type: string
-              description: The version number of the application.
-              nullable: true
-            bot:
-              $ref: '#/components/schemas/microsoft.graph.teamworkBot'
-          additionalProperties:
-            type: object
     microsoft.graph.operationError:
       title: operationError
       type: object
@@ -13640,51 +13995,6 @@ components:
         - failed
         - unknownFutureValue
       type: string
-    microsoft.graph.chat:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: chat
-          type: object
-          properties:
-            chatType:
-              $ref: '#/components/schemas/microsoft.graph.chatType'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time at which the chat was created. Read-only.
-              format: date-time
-              nullable: true
-            lastUpdatedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
-              format: date-time
-              nullable: true
-            topic:
-              type: string
-              description: (Optional) Subject or topic for the chat. Only available for group chats.
-              nullable: true
-            installedApps:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
-              description: A collection of all the apps in the chat. Nullable.
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.conversationMember'
-              description: A collection of all the members in the chat. Nullable.
-            messages:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: A collection of all the messages in the chat. Nullable.
-            tabs:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.teamsTab'
-          additionalProperties:
-            type: object
     microsoft.graph.weekIndex:
       title: weekIndex
       enum:
@@ -14260,6 +14570,106 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamsAppDistributionMethod:
+      title: teamsAppDistributionMethod
+      enum:
+        - store
+        - organization
+        - sideloaded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamsAppPublishingState:
+      title: teamsAppPublishingState
+      enum:
+        - submitted
+        - rejected
+        - published
+        - unknownFutureValue
+      type: string
+    microsoft.graph.teamworkBot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkBot
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessageMentionedIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageMentionedIdentitySet
+          type: object
+          properties:
+            conversation:
+              $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentity'
+          additionalProperties:
+            type: object
+    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
+      title: chatMessagePolicyViolationDlpActionTypes
+      enum:
+        - none
+        - notifySender
+        - blockAccess
+        - blockAccessExternal
+      type: string
+    microsoft.graph.chatMessagePolicyViolationPolicyTip:
+      title: chatMessagePolicyViolationPolicyTip
+      type: object
+      properties:
+        complianceUrl:
+          type: string
+          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
+          nullable: true
+        generalText:
+          type: string
+          description: Explanatory text shown to the sender of the message.
+          nullable: true
+        matchedConditionDescriptions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
+      additionalProperties:
+        type: object
+    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
+      title: chatMessagePolicyViolationUserActionTypes
+      enum:
+        - none
+        - override
+        - reportFalsePositive
+      type: string
+    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
+      title: chatMessagePolicyViolationVerdictDetailsTypes
+      enum:
+        - none
+        - allowFalsePositiveOverride
+        - allowOverrideWithoutJustification
+        - allowOverrideWithJustification
+      type: string
+    microsoft.graph.chatMessageReactionIdentitySet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identitySet'
+        - title: chatMessageReactionIdentitySet
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.teamworkHostedContent:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamworkHostedContent
+          type: object
+          properties:
+            contentBytes:
+              type: string
+              description: Write only. Bytes for the hosted content (such as images).
+              format: base64url
+              nullable: true
+            contentType:
+              type: string
+              description: 'Write only. Content type, such as image/png, image/jpg.'
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -14367,148 +14777,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.chatMessageAttachment:
-      title: chatMessageAttachment
-      type: object
-      properties:
-        content:
-          type: string
-          description: 'The content of the attachment. If the attachment is a rich card, set the property to the rich card object. This property and contentUrl are mutually exclusive.'
-          nullable: true
-        contentType:
-          type: string
-          description: 'The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework''s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.'
-          nullable: true
-        contentUrl:
-          type: string
-          description: 'URL for the content of the attachment. Supported protocols: http, https, file and data.'
-          nullable: true
-        id:
-          type: string
-          description: Read-only. Unique id of the attachment.
-          nullable: true
-        name:
-          type: string
-          description: Name of the attachment.
-          nullable: true
-        thumbnailUrl:
-          type: string
-          description: 'URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.channelIdentity:
-      title: channelIdentity
-      type: object
-      properties:
-        channelId:
-          type: string
-          description: The identity of the channel in which the message was posted.
-          nullable: true
-        teamId:
-          type: string
-          description: The identity of the team in which the message was posted.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageImportance:
-      title: chatMessageImportance
-      enum:
-        - normal
-        - high
-        - urgent
-        - unknownFutureValue
-      type: string
-    microsoft.graph.chatMessageMention:
-      title: chatMessageMention
-      type: object
-      properties:
-        id:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id=''{index}''> tag in the message body.'
-          format: int32
-          nullable: true
-        mentioned:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        mentionText:
-          type: string
-          description: 'String used to represent the mention. For example, a user''s display name, a team name.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageType:
-      title: chatMessageType
-      enum:
-        - message
-        - chatEvent
-        - typing
-        - unknownFutureValue
-      type: string
-    microsoft.graph.chatMessagePolicyViolation:
-      title: chatMessagePolicyViolation
-      type: object
-      properties:
-        dlpAction:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationDlpActionTypes'
-        justificationText:
-          type: string
-          description: Justification text provided by the sender of the message when overriding a policy violation.
-          nullable: true
-        policyTip:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationPolicyTip'
-        userAction:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationUserActionTypes'
-        verdictDetails:
-          $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes'
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageReaction:
-      title: chatMessageReaction
-      type: object
-      properties:
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-          format: date-time
-        reactionType:
-          type: string
-          description: 'Supported values are like, angry, sad, laugh, heart, surprised.'
-        user:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessageHostedContent:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.teamworkHostedContent'
-        - title: chatMessageHostedContent
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsTabConfiguration:
-      title: teamsTabConfiguration
-      type: object
-      properties:
-        contentUrl:
-          type: string
-          description: Url used for rendering tab contents in Teams. Required.
-          nullable: true
-        entityId:
-          type: string
-          description: Identifier for the entity hosted by the tab provider.
-          nullable: true
-        removeUrl:
-          type: string
-          description: Url called by Teams client when a Tab is removed using the Teams Client.
-          nullable: true
-        websiteUrl:
-          type: string
-          description: Url for showing tab contents outside of Teams.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.settingValue:
       title: settingValue
       type: object
@@ -14580,37 +14848,6 @@ components:
               description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
           additionalProperties:
             type: object
-    microsoft.graph.teamsAppDistributionMethod:
-      title: teamsAppDistributionMethod
-      enum:
-        - store
-        - organization
-        - sideloaded
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamsAppPublishingState:
-      title: teamsAppPublishingState
-      enum:
-        - submitted
-        - rejected
-        - published
-        - unknownFutureValue
-      type: string
-    microsoft.graph.teamworkBot:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkBot
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.chatType:
-      title: chatType
-      enum:
-        - oneOnOne
-        - group
-        - meeting
-        - unknownFutureValue
-      type: string
     microsoft.graph.workbookCommentReply:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14784,6 +15021,16 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.teamworkConversationIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkConversationIdentity
+          type: object
+          properties:
+            conversationIdentityType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkConversationIdentityType'
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequestActor:
       title: scheduleChangeRequestActor
       enum:
@@ -14851,66 +15098,6 @@ components:
           $ref: '#/components/schemas/microsoft.graph.scheduleEntityTheme'
       additionalProperties:
         type: object
-    microsoft.graph.chatMessagePolicyViolationDlpActionTypes:
-      title: chatMessagePolicyViolationDlpActionTypes
-      enum:
-        - none
-        - notifySender
-        - blockAccess
-        - blockAccessExternal
-      type: string
-    microsoft.graph.chatMessagePolicyViolationPolicyTip:
-      title: chatMessagePolicyViolationPolicyTip
-      type: object
-      properties:
-        complianceUrl:
-          type: string
-          description: 'The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn''t say in chats)'
-          nullable: true
-        generalText:
-          type: string
-          description: Explanatory text shown to the sender of the message.
-          nullable: true
-        matchedConditionDescriptions:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: 'The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include ''Credit Card Number'' and ''Social Security Number''.'
-      additionalProperties:
-        type: object
-    microsoft.graph.chatMessagePolicyViolationUserActionTypes:
-      title: chatMessagePolicyViolationUserActionTypes
-      enum:
-        - none
-        - override
-        - reportFalsePositive
-      type: string
-    microsoft.graph.chatMessagePolicyViolationVerdictDetailsTypes:
-      title: chatMessagePolicyViolationVerdictDetailsTypes
-      enum:
-        - none
-        - allowFalsePositiveOverride
-        - allowOverrideWithoutJustification
-        - allowOverrideWithJustification
-      type: string
-    microsoft.graph.teamworkHostedContent:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamworkHostedContent
-          type: object
-          properties:
-            contentBytes:
-              type: string
-              description: Write only. Bytes for the hosted content (such as images).
-              format: base64url
-              nullable: true
-            contentType:
-              type: string
-              description: 'Write only. Content type, such as image/png, image/jpg.'
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.workbookFilter:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15116,6 +15303,14 @@ components:
           description: Represents the worksheet protection option of allowing using sort feature.
       additionalProperties:
         type: object
+    microsoft.graph.teamworkConversationIdentityType:
+      title: teamworkConversationIdentityType
+      enum:
+        - team
+        - channel
+        - chat
+        - unknownFutureValue
+      type: string
     microsoft.graph.scheduleEntityTheme:
       title: scheduleEntityTheme
       enum:

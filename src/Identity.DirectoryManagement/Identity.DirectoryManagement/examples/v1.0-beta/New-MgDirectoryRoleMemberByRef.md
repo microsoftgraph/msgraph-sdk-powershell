@@ -1,13 +1,11 @@
-### Example 1: Add an administrative unit member
+### Example 1: Add a member to a diretory role
 
 ```powershell
-$member = @{
-  "@odata.id"="https://graph.microsoft.com/v1.0/users/{8a7c50d3-fcbd-4727-a889-8ab232dfea01}"
+$DirObject = @{
+  "@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/3d939dc2-d0a0-4d4d-b3f4-6bb75ce6ff6e"
   }
 
-New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId 'd924fbd3-69c5-4cdf-b9ea-9b0badcf9c4d'-BodyParameter $member
+New-MgDirectoryRoleMemberByRef -DirectoryRoleId 'c6bb44c1-73cc-48a1-a73c-b6a977084948' -BodyParameter $DirObject
 ```
 
-The first command defines the member to be added to the administrative unit.
-
-The second command adds the member to the specified administrative unit.
+The first command sets the value for the directory object variable $DirObject. The second command assigns the defined directory object the directory role defined by the DirectoryRoleId

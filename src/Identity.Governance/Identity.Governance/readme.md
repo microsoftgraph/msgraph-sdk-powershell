@@ -180,16 +180,18 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignment$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Invoke|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentResourceRole$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceRole$
+      variant: (Create.*|Delete.*|Update.*|Get.*) # Removes all variants except List.*
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResourceScope$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
     remove: true
   - where:
       verb: New|Remove|Update
@@ -204,16 +206,43 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackage$
     remove: true
   - where:
-      verb: Search
+      verb: Search|Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalog$
+      variant: ^(Search.*|Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
-      verb: New|Remove|Update
+      verb: New|Remove|Update|Get
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackageResource$
+      variant: (Create.*|Delete.*|Update.*|Get.*)
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update
+      subject: (.*)(EntitlementManagement)AccessPackageAssignmentPolicy$
+      variant: ^(Get1|List1|GetViaIdentity1|Create1|CreateExpanded1|CreateViaIdentity|CreateViaIdentityExpanded|Update1|UpdateExpanded1|UpdateViaIdentity1|UpdateViaIdentityExpanded1|Delete1|DeleteViaIdentity1)$
     remove: true
   - where:
       verb: Remove
       subject: (.*)(EntitlementManagement)Setting$
+    remove: true
+  - where:
+      verb: Get|Update
+      subject: (.*)(IdentityGovernance)$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(IdentityGovernance)AccessReview$
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get|Add|Invoke|Reset|Send|Set|Stop
+      subject: (.*)(IdentityGovernance)(AccessReviewDefinition|AccessReviewHistoryDefinition|AccessReviewPolicy)(.*)$
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get
+      subject: (.*)(IdentityGovernance)Term
+    remove: true
+  - where:
+      verb: New|Remove|Update|Get|Invoke
+      subject: (.*)(IdentityGovernance)AppConsent
     remove: true
 # Rename cmdlets with duplicates in their name.
   - where:
@@ -250,6 +279,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.5.0
+module-version: 1.7.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
