@@ -7,6 +7,10 @@ BeforeAll {
     $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
     $RandomClientId = (New-Guid).Guid
+
+    if (!(Get-Module Az.Accounts -ListAvailable)) {
+        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
+    }
 }
 Describe 'Connect-MgGraph In Delegated Mode' {
     It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' {
@@ -29,10 +33,6 @@ Describe 'Connect-MgGraph In App Mode' {
 
 }
 Describe 'Connect-MgGraph Dependency Resolution' {
-    BeforeAll {
-        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser
-    }
-
     It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
         { Connect-MgGraph -Scopes "invalid.scope" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS70011:*"

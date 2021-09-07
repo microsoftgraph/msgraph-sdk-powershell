@@ -2,9 +2,9 @@
 # Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
 # ------------------------------------------------------------------------------
 
-Describe "Microsoft.Graph.Teams module" {
+Describe "Microsoft.Graph.Planner module" {
     BeforeAll {
-        $ModuleName = "Microsoft.Graph.Teams"
+        $ModuleName = "Microsoft.Graph.Planner"
         $ModulePath = Join-Path $PSScriptRoot "..\$ModuleName.psd1"
         $PSModuleInfo = Import-Module $ModulePath -Force -PassThru
     }
@@ -53,7 +53,7 @@ Describe "Microsoft.Graph.Teams module" {
             {
                 $ExpectedCommands = @(
                     "Get-MgUserPlannerTask",
-                    "Get-MgUserPlannerFavoritePlan"
+                    "Get-MgUserPlannerPlan"
                 )
 
                 $ExpectedCommands | Should -BeIn $PSModuleInfo.ExportedCommands.Keys
