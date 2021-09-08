@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Delete an application
 
-{{ Add output here }}
+```powershell
+Remove-MgApplication -ApplicationId '1bc44759-ef10-46de-b199-40c077768fff'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example deletes the specified application.

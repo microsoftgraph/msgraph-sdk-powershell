@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove a group
 
-{{ Add output here }}
+```powershell
+Remove-MgGroup -GroupId 'f6b9791b-dfc1-40d6-9ab6-7b29126c534a'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example deletes the specified group.
