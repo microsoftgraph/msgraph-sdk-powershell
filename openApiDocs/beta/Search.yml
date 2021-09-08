@@ -481,7 +481,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
@@ -662,6 +662,7 @@ components:
         - listItem
         - drive
         - unknownFutureValue
+        - person
       type: string
     microsoft.graph.searchQuery:
       title: searchQuery

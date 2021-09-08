@@ -1,8 +1,16 @@
+# ------------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
+# ------------------------------------------------------------------------------
+
 BeforeAll {
     $ModuleName = "Microsoft.Graph.Authentication"
     $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
     Import-Module $ModulePath -Force
     $RandomClientId = (New-Guid).Guid
+
+    if (!(Get-Module Az.Accounts -ListAvailable)) {
+        Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
+    }
 }
 Describe 'Connect-MgGraph In Delegated Mode' {
     It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' {
@@ -25,12 +33,8 @@ Describe 'Connect-MgGraph In App Mode' {
 
 }
 Describe 'Connect-MgGraph Dependency Resolution' {
-    BeforeAll {
-        Install-Module Az.Accounts -Repository PSGallery -Force -AllowClobber
-    }
-
     It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -Scopes "inavid.scope" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
+        { Connect-MgGraph -Scopes "invalid.scope" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
     }
 }

@@ -16880,6 +16880,7 @@ components:
         - permissionCheckNoSubscriptionReaderRole
         - permissionCheckNoResourceGroupOwnerRole
         - permissionCheckNoVNetContributorRole
+        - permissionCheckNoResourceGroupNetworkContributorRole
         - permissionCheckUnknownError
         - internalServerErrorDeploymentCanceled
         - internalServerErrorAllocateResourceFailed

@@ -29,6 +29,10 @@ parameters:
       displayName: 'Build Number'
       type: string
       default: $[format('{0:yyMMddHH}', pipeline.startTime)]
+    - name: DOCSBRANCH
+      displayName: 'Docs Generation Branch'
+      type: string
+      default: "DocsGeneration"
 
 jobs:
 - job: MsGraphPSSDKServiceModulesGeneration
@@ -36,8 +40,8 @@ jobs:
   timeoutInMinutes: 600
 
   steps:
-  - template: ./install-tools-template.yml
-
+  - template: ./common-templates/install-tools-template.yml
+  - template: ./common-templates/checkout.yml
   - task: PowerShell@2
     displayName: 'Generate Profiles'
     continueOnError: false
@@ -54,7 +58,7 @@ jobs:
       pwsh: true
       script: |
         Write-Host $(BUILDNUMBER)
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -BuildWhenEqual -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed"
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -BuildWhenEqual -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed"
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
@@ -82,7 +86,7 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
     enabled: true
@@ -130,7 +134,7 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: PowerShell@2
     displayName: 'Generate and Build Graph Resource Modules'
     inputs:
@@ -138,8 +142,10 @@ jobs:
       pwsh: true
       script: |
          Write-Host $(BUILDNUMBER)
-         pwsh $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -UpdateAutoRest -RepositoryName "LocalNugetFeed"
-  
+         . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory)\ -Build -Test -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed" -ExcludeExampleTemplates -ExcludeNotesSection
+
+  - template: ./generation-templates/generate-helpdocs-template.yml
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Resource Modules)'
     enabled: true
@@ -166,7 +172,7 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Resource Module)'
     enabled: true
@@ -214,7 +220,7 @@ jobs:
            }
        ]
       SessionTimeout: 160
-  
+
   - task: PowerShell@2
     displayName: 'Pack Modules'
     inputs:

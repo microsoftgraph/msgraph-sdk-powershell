@@ -1,18 +1,8 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Update an administrative unit
 
-{{ Add output here }}
+```powershell
+Update-MgDirectoryAdministrativeUnit -AdministrativeUnitId 'd924fbd3-69c5-4cdf-b9ea-9b0badcf9c4d' -Description 'East wing unit members'
+
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example updates the description of the specified administrative unit.
