@@ -4,6 +4,7 @@
 parameters:
   - name: ModulesToGenerate
     type: string
+    default: ""
   - name: AuthModulePath
     type: string
   - name: ServiceModulePath
