@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: List the owners of a service principal
 
-{{ Add output here }}
+```powershell
+Get-MgServicePrincipalOwner -ServicePrincipalId '1c48f923-4fbb-4d37-b772-4d577eefec9e'
+
+Id                                   DeletedDateTime
+--                                   ---------------
+8a7c50d3-fcbd-4727-a889-8ab232dfea01
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command lists the owners of the specified service principal.
