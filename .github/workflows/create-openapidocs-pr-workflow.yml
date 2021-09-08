@@ -7,13 +7,13 @@ name: "Create Weekly OpenAPIDocs Download PR"
 # events but only for the master branch
 on:
   push:
-    branches: 
+    branches:
       - 'WeeklyOpenApiDocsDownload/*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   createOpenApiDocsPR:
-    if: github.event_name == 'push' && !contains(toJson(github.event.commits), 'NO_CI') && !contains(toJson(github.event.commits), '[ci skip]') && !contains(toJson(github.event.commits), '[skip ci]')
+    if: github.event_name == 'push' && contains(toJson(github.event.commits), '[run ci]') && !contains(toJson(github.event.commits), 'NO_CI') && !contains(toJson(github.event.commits), '[ci skip]') && !contains(toJson(github.event.commits), '[skip ci]')
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -22,17 +22,17 @@ jobs:
       run: |
          git config --global user.email "GraphTooling@service.microsoft.com"
          git config --global user.name "Microsoft Graph DevX Tooling"
-      
+
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
-      
+
     - name: List Directory
-      run: | 
+      run: |
         echo $GITHUB_WORKSPACE
         ls -lsa $GITHUB_WORKSPACE
         ls -lsa $GITHUB_WORKSPACE/tools
-                
+
     # Create a pull request [1]
     - name: Create PR using the GitHub REST API via hub
       shell: bash

@@ -10,6 +10,7 @@ namespace Microsoft.Graph.PowerShell
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Linq.Expressions;
     using System.Management.Automation;
     public static class PSCmdletExtensions
@@ -119,5 +120,14 @@ namespace Microsoft.Graph.PowerShell
         {
             return new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
         }
+
+        internal static IEnumerable<T> RunScript<T>(string script)
+            => PowerShell.Create().AddScript(script).Invoke<T>();
+
+        internal static IEnumerable<T> RunScript<T>(this PSCmdlet cmdlet, string script)
+          => cmdlet?.InvokeCommand.RunScript<T>(script) ?? RunScript<T>(script);
+
+        internal static IEnumerable<T> RunScript<T>(this CommandInvocationIntrinsics cii, string script)
+            => cii.InvokeScript(script).Select(o => o?.BaseObject).Where(o => o != null).OfType<T>();
     }
 }

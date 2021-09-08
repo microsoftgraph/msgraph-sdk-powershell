@@ -1,22 +1,12 @@
-# ------------------------------------------------------------------------------
-#  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+﻿# ------------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License in the project root for license information.
 # ------------------------------------------------------------------------------
 
-# Load custom commands
-$customScriptCommandDirItem = Get-Item $PSScriptRoot -ErrorAction Ignore
-if ( $customScriptCommandDirItem ) {
-    $customScriptCommandDir = join-path $customScriptCommandDirItem.FullName ../custom
+# Export custom script cmdlets.
+$CustomScriptPath = Join-Path $PSScriptRoot "../custom"
+if (Test-Path $CustomScriptPath) {
+    Get-ChildItem -Path $CustomScriptPath -Filter '*.ps1' -File -ErrorAction Stop | ForEach-Object { . $_.FullName }
 
-    Get-ChildItem $customScriptCommandDir -Filter *.ps1 -ErrorAction Stop | ForEach-Object {
-        . $_.FullName
-    }
+    # Export script cmdlets.
+    Export-ModuleMember -Function (Get-ScriptCmdlet -ScriptFolder $CustomScriptPath) -Alias (Get-ScriptCmdlet -ScriptFolder $CustomScriptPath -AsAlias)
 }
-
-# Export custom script commands without removing the
-# binary cmdlets. Custom script commands are functions,
-# the cmdlets are.. cmdlets. We must explicitly specify
-# both functions and cmdlets at export; if only one of
-# these classes is specified, nothing of the other
-# class will be exported.
-Export-ModuleMember -Function * -Cmdlet *
-
