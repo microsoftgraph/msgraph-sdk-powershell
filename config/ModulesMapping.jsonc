@@ -1,5 +1,5 @@
 {
-  // "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
+  "Applications": "^applicationTemplates\\.|^applications\\.|^servicePrincipals\\.|^onPremisesPublishingProfiles\\.|^users.appRoleAssignment$|^groups.appRoleAssignment$",
   // "Bookings": "^bookingBusinesses\\.|^bookingCurrencies\\.",
   // "Calendar": "^places\\.|^users.calendar$|^users.calendarGroup$|^users.event$|^groups.calendar$|^groups.event$",
   // "ChangeNotifications": "^subscriptions\\.",
@@ -13,7 +13,7 @@
   // "DeviceManagement.Enrolment": "^deviceManagement.(.*Enrollment.*|.*Autopilot.*|.*depOnboarding.*|importedDeviceIdentity|onPremisesConditionalAccessSettings|windowsFeatureUpdateProfile)$|^roleManagement\\.",
   // "DeviceManagement.Actions": "^deviceManagement.Actions$",
   // "DeviceManagement.Functions": "^deviceManagement.Functions$",
-  "DirectoryObjects": "^directoryObjects\\.",
+  // "DirectoryObjects": "^directoryObjects\\.",
   // "Education": "^education\\.",
   // "Files": "^drives\\.|^shares\\.|^users.drive$|^groups.drive$",
   // "Financials": "^financials\\.",
@@ -35,6 +35,6 @@
   // "Users": "^users.user$|^users.directoryObject$|^users.licenseDetails$|^users.notification$|^users.outlookUser$|^users.profilePhoto$|^users.userSettings$|^users.extension$|^users.oAuth2PermissionGrant$|^users.todo$",
   // "Users.Actions": "^users.Actions$",
   // "Users.Functions": "^users.Functions$",
-  "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$"
+  // "WindowsUpdates": "^admin.windows$|^admin.Actions$|^admin.Functions$"
   // "WorkBooks": "^workbooks\\.",// Max limit.
 }
