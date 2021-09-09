@@ -36,7 +36,7 @@ stages:
 
   - stage: GenerateServiceModules
     displayName: Generate service modules
-    condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
+    condition: and(succeeded(), ne($[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges']], ''))
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
