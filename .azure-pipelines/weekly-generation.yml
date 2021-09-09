@@ -36,11 +36,12 @@ stages:
 
   - stage: GenerateServiceModules
     displayName: Generate service modules
-    condition: and(succeeded(), ne($[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges']], ''))
+    condition: succeeded()
     jobs:
       - template: generation-templates/generate-service-modules.yml
         parameters:
           Branch: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['ComputeBranch.WeeklyBranch'] ]
+          ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
           AuthModulePath: "src/Authentication/Authentication"
           ServiceModulePath: "src/"
           ModulePrefix: "Microsoft.Graph"
