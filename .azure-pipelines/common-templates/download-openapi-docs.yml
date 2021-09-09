@@ -19,7 +19,7 @@ jobs:
     steps:
       - template: ./checkout.yml
         parameters:
-          TargetBranch: $(BaseBranch)
+          TargetBranch: ${{ parameters.BaseBranch }}
 
       - template: ./install-tools-template.yml
 
