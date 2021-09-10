@@ -27,7 +27,7 @@ namespace Microsoft.Graph.PowerShell
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
             stringBuilder.AppendLine(string.Format("HTTP Method:{0}{1}{0}", Environment.NewLine, request.Method.ToString()));
             stringBuilder.AppendLine(string.Format("Absolute Uri:{0}{1}{0}", Environment.NewLine, request.RequestUri.ToString()));
-            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(request.Headers))}");
+            stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(request.Headers))}{Environment.NewLine}");
             stringBuilder.AppendLine(string.Format("Body:{0}{1}{0}", Environment.NewLine, SanitizeBody(body)));
             return stringBuilder.ToString();
         }
