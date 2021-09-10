@@ -7,7 +7,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     using System.IO;
     public static class Constants
     {
-        public const string SDKHeaderValue = "Graph-powershell-{0}-{1}.{2}.{3}";
+        public const string SDKHeaderValue = "Graph-powershell-{0}.{1}.{2}";
         internal const string UserParameterSet = "UserParameterSet";
         internal const string AppParameterSet = "AppParameterSet";
         internal const string AccessTokenParameterSet = "AccessTokenParameterSet";

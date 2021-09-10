@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell
                     await OnCmdletBeginProcessing(id, cancellationToken, getEventData, signal, invocationInfo);
                     break;
                 case Events.BeforeCall:
-                    await OnBeforeCall(id, cancellationToken, getEventData, signal);
+                    // await OnBeforeCall(id, cancellationToken, getEventData, signal);
                     break;
                 case Events.CmdletException:
                     await OnCmdletException(id, cancellationToken, getEventData, signal, exception);
