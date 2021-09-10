@@ -19,7 +19,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    internal static class StringUtil
+    public static class StringUtil
     {
         /// <summary>
         ///     Formats the specified string, using the current culture.
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <param name="error">An error record if the conversion failed.</param>
         /// <returns>A <see cref="System.Management.Automation.PSObject"/> or a <see cref="System.Collections.Hashtable"/>
         /// if the <paramref name="returnHashtable"/> parameter is true.</returns>
-        internal static object ConvertFromJson(this string jsonString, bool returnHashtable, int? maxDepth, out ErrorRecord error)
+        public static object ConvertFromJson(this string jsonString, bool returnHashtable, int? maxDepth, out ErrorRecord error)
         {
             if (jsonString == null)
             {

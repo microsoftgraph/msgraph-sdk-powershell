@@ -409,6 +409,12 @@ directive:
       subject: ^(\w*[a-z])Ref([A-Z]\w*)$
     set:
       subject: $1$2ByRef
+# Remove *ByRef commands
+  - where:
+      verb: Get|Remove|New
+      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+    remove: true
+# Rename *ByRef commands
   - where:
       verb: Get|New
       subject: ^GroupMemberByRef$

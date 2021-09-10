@@ -2,7 +2,7 @@
 #  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 # ------------------------------------------------------------------------------
 
-Set-StrictMode -Version 6.0
+Set-StrictMode -Version 2
 
 $Permissions_msGraphApplicationId = '00000003-0000-0000-c000-000000000000'
 
@@ -34,7 +34,7 @@ function Permissions_GetPermissionsData([bool] $online) {
     # Make a REST request to MS Graph to get the permissions data from the Microsoft Graph service principal
     if ( $online -or ! $_permissions.msGraphServicePrincipal -or ! $_permissions.isFromInvokeMgGraphRequest ) {
         try {
-            $restResult = Invoke-MgGraphRequest -method GET $_permissions.msGraphPermissionsRequestUri
+            $restResult = Invoke-MgGraphRequest -method GET -OutputType PSObject $_permissions.msGraphPermissionsRequestUri
 
             if ( $restResult ) {
                 $_permissions.msGraphServicePrincipal = $restResult | Select-Object -ExpandProperty value

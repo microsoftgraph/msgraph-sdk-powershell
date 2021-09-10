@@ -43,7 +43,7 @@ jobs:
      KeyVaultName: $(KEYVAULT)
      SecretsFilter: '*'
      RunAsPreJob: true
-    
+
   - task: PowerShell@2
     displayName: 'Install Test Certificate'
     inputs:
@@ -64,7 +64,7 @@ jobs:
       pwsh: true
       script: |
         Write-Host $(BUILDNUMBER)
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -ModulePreviewNumber $(BUILDNUMBER) -Test
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -ModulePreviewNumber $(BUILDNUMBER) -Test
 
   - task: DotNetCoreCLI@2
     displayName: 'Run: Enabled Tests'
@@ -94,7 +94,7 @@ jobs:
       pwsh: true
       script: |
         Write-Host $(BUILDNUMBER)
-        pwsh $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed"
+        . $(System.DefaultWorkingDirectory)/tools/GenerateAuthenticationModule.ps1 -ArtifactsLocation $(Build.ArtifactStagingDirectory) -Build -EnableSigning -ModulePreviewNumber $(BUILDNUMBER) -RepositoryName "LocalNugetFeed"
 
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL Strong Name (Graph Auth Module)'
@@ -123,7 +123,7 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP DLL CodeSigning (Graph Auth Module)'
     enabled: true
@@ -131,7 +131,7 @@ jobs:
       ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
       FolderPath: $(AUTH_MODULE_PATH)
       # Recursively finds files matching these patterns:
-      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, InitializeAssemblyResolver.ps1'
+      Pattern: 'Microsoft.Graph.Authentication.dll, Microsoft.Graph.Authentication.Core.dll, *.ps1'
       signConfigType: inlineSignParams
       inlineOperation: |
        [
@@ -172,15 +172,15 @@ jobs:
            }
        ]
       SessionTimeout: 20
-  
+
   - task: PowerShell@2
     displayName: 'Pack Auth Module'
     inputs:
       targetType: 'inline'
       pwsh: true
       script: |
-        pwsh $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
-  
+        . $(System.DefaultWorkingDirectory)/tools/PackModule.ps1 -Module $(AUTH_MODULE_NAME) -ArtifactsLocation $(Build.ArtifactStagingDirectory)
+
   - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
     displayName: 'ESRP NuGet CodeSigning'
     enabled: true
@@ -215,7 +215,7 @@ jobs:
       packagesToPush: '$(Build.ArtifactStagingDirectory)\$(AUTH_MODULE_NAME)\Microsoft.Graph.$(AUTH_MODULE_NAME)*.nupkg'
       publishVstsFeed: '0985d294-5762-4bc2-a565-161ef349ca3e/edc337b9-e5ea-49dd-a2cb-e8d66668ca57'
       allowPackageConflicts: true
-    
+
   - task: PublishTestResults@2
     inputs:
       testResultsFormat: 'NUnit'

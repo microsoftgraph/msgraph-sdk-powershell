@@ -91,10 +91,8 @@ Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psm1" -Destination $outDi
 Copy-Item -Path "$cmdletsSrc/$ModulePrefix.$ModuleName.psd1" -Destination $outDir
 Copy-Item -Path "$cmdletsSrc/StartupScripts" -Filter *.ps1 -Recurse -Destination $outDir
 
-# Copy custom commands
-
-Copy-Item -Path "$cmdletsSrc/custom" -Filter *.ps1 -Recurse -Destination $outDir
-Copy-Item -Path "$cmdletsSrc/custom" -Filter *.json -Recurse -Destination $outDir -Force
+# Copy custom commands.
+Copy-Item -Path "$cmdletsSrc/custom" -Recurse -Destination $outDir
 
 # Core assemblies to include with cmdlets (Let PowerShell load them).
 $CoreAssemblies = @('Microsoft.Graph.Authentication.Core', 'Microsoft.Graph.Core')
