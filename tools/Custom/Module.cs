@@ -87,7 +87,12 @@ namespace Microsoft.Graph.PowerShell
                 {
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[{id}]: - {invocationInfo.MyCommand.Name} begin processing."));
                 }
-                // TODO: Log auth context info here.
+                IAuthContext authContext = Microsoft.Graph.PowerShell.Authentication.GraphSession.Instance.AuthContext;
+                if (authContext != null)
+                {
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - AuthType: '{authContext.AuthType}', AuthProviderType: '{authContext.AuthProviderType}', ContextScope: '{authContext.ContextScope}', AppName: '{authContext.AppName}'."));
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - Scopes: [{string.Join(", ", authContext.Scopes)}]."));
+                }
             }
         }
 
