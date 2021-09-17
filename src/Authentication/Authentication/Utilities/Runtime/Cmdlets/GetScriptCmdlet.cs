@@ -49,7 +49,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities.Runtime.Cmdlets
                         .Distinct();
 
                     output = aliases.DefaultIfEmpty("''").ToArray();
-                } else
+                }
+                else
                 {
                     var names = functionInfos.Select(fi => fi.Name).Distinct();
                     output = names.DefaultIfEmpty("''").ToArray();
