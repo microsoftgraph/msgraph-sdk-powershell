@@ -144,12 +144,14 @@ jobs:
           pwsh: true
           script: |
             [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
-            if ("$(GenerateCommandMetadata)" -eq "false") {
+            if ("${{ parameters.GenerateCommandMetadata }}" -eq "false") {
               $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
+              Write-Host "With ModulesToGenerate"
               $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
+              # . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
             } else {
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
+              Write-Host "Without ModulesToGenerate"
+              # . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
             }
 
       - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
