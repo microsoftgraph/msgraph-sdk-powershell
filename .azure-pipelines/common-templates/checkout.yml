@@ -21,14 +21,14 @@ steps:
         git config --global user.name "Microsoft Graph DevX Tooling"
 
   - task: Bash@3
-    displayName: "Switch branch to target branch: $(TargetBranch)"
-    condition: and(succeeded(), eq('${{ parameters.TargetBranch }}', ''))
+    displayName: "Switch to target branch: ${{ parameters.TargetBranch }}"
+    condition: and(succeeded(), ne('${{ parameters.TargetBranch }}', ''))
     inputs:
       targetType: inline
       script: |
         git status
         git fetch --all
-        git checkout $(TargetBranch)
+        git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
 
