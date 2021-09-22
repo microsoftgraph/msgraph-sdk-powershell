@@ -77,7 +77,6 @@ jobs:
 
       - task: PowerShell@2
         displayName: Generate profiles
-        enabled: false
         condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
         continueOnError: false
         inputs:
