@@ -25,10 +25,10 @@ namespace Microsoft.Graph.PowerShell
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
-            stringBuilder.AppendLine(string.Format("HTTP Method:{0}{1}{0}", Environment.NewLine, request.Method.ToString()));
-            stringBuilder.AppendLine(string.Format("Absolute Uri:{0}{1}{0}", Environment.NewLine, request.RequestUri.ToString()));
+            stringBuilder.AppendLine($"HTTP Method:{Environment.NewLine}{request.Method.ToString()}{Environment.NewLine}");
+            stringBuilder.AppendLine($"Absolute Uri:{Environment.NewLine}{request.RequestUri.ToString()}{Environment.NewLine}");
             stringBuilder.AppendLine($"Headers:{Environment.NewLine}{HeadersToString(ConvertHttpHeadersToCollection(request.Headers))}{Environment.NewLine}");
-            stringBuilder.AppendLine(string.Format("Body:{0}{1}{0}", Environment.NewLine, SanitizeBody(body)));
+            stringBuilder.AppendLine($"Body:{Environment.NewLine}{SanitizeBody(body)}{Environment.NewLine}");
             return stringBuilder.ToString();
         }
 
