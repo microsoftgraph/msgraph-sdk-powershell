@@ -91,7 +91,8 @@ namespace Microsoft.Graph.PowerShell
                 if (authContext != null)
                 {
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - AuthType: '{authContext.AuthType}', AuthProviderType: '{authContext.AuthProviderType}', ContextScope: '{authContext.ContextScope}', AppName: '{authContext.AppName}'."));
-                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - Scopes: [{string.Join(", ", authContext.Scopes)}]."));
+                    var scopes = authContext.Scopes == null ? string.Empty : string.Join(", ", authContext.Scopes);
+                    await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[Authentication]: - Scopes: [{scopes}]."));
                 }
             }
         }
