@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell
                 var response = eventData?.ResponseMessage as HttpResponseMessage;
                 if (response != null)
                 {
-                    // Log resquest after response since all our request header are set via middleware pipeline.
+                    // Log request after response since all our request header are set via middleware pipeline.
                     var request = response?.RequestMessage;
                     if (request != null)
                     {
