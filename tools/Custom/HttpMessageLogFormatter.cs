@@ -96,9 +96,9 @@ namespace Microsoft.Graph.PowerShell
                 return content;
             }
 
-            if (content.Length > 10240)
+            if (content.Length > Authentication.Constants.MaxContentLength)
             {
-                return content.Substring(0, 10240) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
+                return content.Substring(0, Authentication.Constants.MaxContentLength) + "\r\nDATA TRUNCATED DUE TO SIZE\r\n";
             }
 
             return content;
