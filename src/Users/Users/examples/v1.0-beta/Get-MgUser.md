@@ -46,7 +46,7 @@ Id                                   DisplayName              Mail              
 185190a7-54f0-4892-add3-211c21327570 Debra Berger             DebraB@Contoso.com             DebraB@Contoso.com
 ```
 
-The example gets a list of all users. $userCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count parameter is in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+The example gets a list of all users. The $userCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 4: Use -Filter and -Top to get one user with a display name that starts with 'a' including a count of returned objects
 
@@ -58,7 +58,7 @@ Id                                   DisplayName   Mail                         
 577a8b8a-ab84-4f90-a6cc-a62cd56010be Allan Deyoung AllanD@M365x814237.OnMicrosoft.com AllanD@M365x814237.OnMicrosoft.com Member
 ```
 
-This example returns the top 1 users with the display name starting with 'a'. $userCount will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count parameter is in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns the top 1 users with the display name starting with 'a'. The $userCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 5: Use -Search to get all the users whose display name contains 'Conf' including a count of the returned users
 
@@ -74,7 +74,7 @@ Id                                   DisplayName       Mail                UserP
 a7afe08d-55b9-4c44-be94-05d17c6513f3 Conf Room Rainier Rainier@Contoso.com Rainier@Contoso.com
 ```
 
-This example returns all users whose display name contains 'Conf'. $userCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count and Search parameters are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all users whose display name contains 'Conf'. The $userCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 6: Use -Filter to get all the users with a display name that starts with 'Conf' including a count of the returned users, with the results ordered by UserPrincipalName
 
@@ -90,4 +90,4 @@ a7afe08d-55b9-4c44-be94-05d17c6513f3 Conf Room Rainier Rainier@Contoso.com Raini
 1e34292e-e5a3-46fd-9cac-8d37f2d3ab4a Conf Room Stevens Stevens@Contoso.com Stevens@Contoso.com
 ```
 
-This commands filters all users whose display name starts with 'Conf' and orders the results by the user principal name. $userCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count and OrderBy parameters are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example filters all users whose display name starts with 'Conf' and orders the results by the user principal name. The $userCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).

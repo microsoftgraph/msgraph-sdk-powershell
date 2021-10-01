@@ -47,7 +47,7 @@ Id                                   DisplayName          Description           
 4d5f57a1-85e0-41dd-8282-ff995ad5e1c3 Business Development Welcome to the BizDev team.                                            {Unified}
 ```
 
-The example gets a list of all groups. $groupCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count parameter is in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+The example gets a list of all groups. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 4: Use -Search to get all the groups whose display name contains 'Market' including a count of the returned users
 
@@ -61,7 +61,7 @@ Id                                   DisplayName         Description            
 74a7bfca-7fbc-4a67-b4bb-3ef115b114f1 Sales & Marketing   This is the sales and marketing team                                   {}
 ```
 
-This example returns all groups whose display name contains 'Market'. $groupCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count and Search parameters are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all groups whose display name contains 'Market'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'A' including a count of the returned users, with the results ordered by display name
 
@@ -75,4 +75,4 @@ f07a8d78-f18c-4c02-b339-9ebace025122 All Employees                              
 bbfa9226-a965-47e1-9db2-bcfcb2c202e6 All Users
 ```
 
-This example returns all groups whose display name starts with 'A'. $groupCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count parameter are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all groups whose display name starts with 'A'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).

@@ -67,4 +67,4 @@ fe4caed6-6182-4aca-b70b-b114c5334a8a New app     641992e9-d176-4aff-a3b6-a867b3b
 0672d487-4c0c-475a-bf22-0e714f015597 New apps    ced14895-14ac-4dcf-8b93-0779f60c000d AzureADandPersonalMicrosoftAccount Contoso.com
 ```
 
-This example returns all applications whose display name starts with 'New'. $appCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count parameter are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all applications whose display name starts with 'New'. The $appCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
