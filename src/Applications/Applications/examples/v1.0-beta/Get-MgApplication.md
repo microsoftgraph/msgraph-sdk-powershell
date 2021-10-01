@@ -41,7 +41,7 @@ f6b30057-7095-4e2c-89f8-224149f591b7 Testing App        00e80963-9bc0-4147-b9e0-
 fe4caed6-6182-4aca-b70b-b114c5334a8a New app            641992e9-d176-4aff-a3b6-a867b3ba48c4 AzureADandPersonalMicrosoftAccount Contoso.com
 ```
 
-This example gets a list of all applications. $appCount will contain the result set count. This example requires the ConsistencyLevel parameter set to eventual because the Count parameter is in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example gets a list of all applications. The $appCount variable contains the count of objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned users
 
@@ -54,7 +54,7 @@ dcaa0c3a-8dfa-4b47-bc04-0edbab42043a Principal-Test App bd38ad43-6c46-4cc6-b65c-
 f6b30057-7095-4e2c-89f8-224149f591b7 Testing App        00e80963-9bc0-4147-b9e0-2ba56093e7e6 AzureADandPersonalMicrosoftAccount Contoso.com
 ```
 
-This example returns all applications whose display name contains 'Test'. $appCount variable will contain the result-set count. This example requires the ConsistencyLevel parameter set to `eventual` because the Count and Search parameters are in the command. For more information on the use of *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all applications whose display name contains 'Test'. The $appCount variable contains the count of objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and Count parameters in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned users, with the results ordered by display name
 
