@@ -22,6 +22,8 @@ One of the following permissions is required to run this cmdlet;
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
 ### Example 2: Get a user by Id
 
 ```powershell
@@ -41,6 +43,8 @@ One of the following permissions is required to run this cmdlet;
 |-----|------|
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 
 ### Example 3: Get a count of all users
 
@@ -66,6 +70,8 @@ One of the following permissions is required to run this cmdlet;
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
 ### Example 4: Use -Filter and -Top to get one user with a display name that starts with 'a' including a count of returned objects
 
 ```powershell
@@ -83,6 +89,8 @@ One of the following permissions is required to run this cmdlet;
 |-----|------|
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 
 ### Example 5: Use -Search to get all the users whose display name contains 'Conf' including a count of the returned users
 
@@ -106,6 +114,8 @@ One of the following permissions is required to run this cmdlet;
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
 
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
 ### Example 6: Use -Filter to get all the users with a display name that starts with 'Conf' including a count of the returned users, with the results ordered by UserPrincipalName
 
 ```powershell
@@ -127,3 +137,5 @@ One of the following permissions is required to run this cmdlet;
 |-----|------|
 |Delegated (work or school account)|User.ReadBasic.All, User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All, Directory.AccessAsUser.All|
 |Application|User.Read.All, User.ReadWrite.All, Directory.Read.All, Directory.ReadWrite.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
