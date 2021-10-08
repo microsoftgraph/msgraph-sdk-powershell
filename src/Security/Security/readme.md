@@ -44,6 +44,10 @@ directive:
       verb: Get|Update
       subject: ^Security$
     remove: true
+  - where:
+      verb: Update
+      subject: ^SecurityAttackSimulation$
+    remove: true
 # Rename cmdlets
   - where:
       verb: Remove
