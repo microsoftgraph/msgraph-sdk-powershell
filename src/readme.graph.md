@@ -90,7 +90,8 @@ directive:
     - microsoft.graph.ediscovery.sourceCollection
     - microsoft.graph.contentType
     - microsoft.graph.columnDefinition
-
+    - microsoft.graph.groupPolicyDefinition
+    - microsoft.graph.groupPolicyDefinitionValue
   # Set parameter alias
   - where:
       parameter-name: OrderBy
