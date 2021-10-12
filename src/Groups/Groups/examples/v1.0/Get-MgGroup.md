@@ -17,6 +17,15 @@ GroupTypes  : {Unified}
 
 This examples retrieves a list of groups.
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|GroupMember.Read.All, Group.Read.All| Group.ReadWrite.All, Directory.Read.All|
+|Application|GroupMember.Read.All, Group.Read.All|Group.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+
 ### Example 2: Get a group by the display name
 
 ```powershell
@@ -30,6 +39,15 @@ GroupTypes  : {Unified}
 ```
 
 This example gets a group by the specified display name.
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|GroupMember.Read.All, Group.Read.All| Group.ReadWrite.All, Directory.Read.All|
+|Application|GroupMember.Read.All, Group.Read.All|Group.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
 
 ### Example 3: Get a count of all groups
 
@@ -49,6 +67,15 @@ Id                                   DisplayName          Description           
 
 The example gets a list of all groups. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|GroupMember.Read.All, Group.Read.All| Group.ReadWrite.All, Directory.Read.All|
+|Application|GroupMember.Read.All, Group.Read.All|Group.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+
 ### Example 4: Use -Search to get all the groups whose display name contains 'Market' including a count of the returned users
 
 ```powershell
@@ -63,6 +90,15 @@ Id                                   DisplayName         Description            
 
 This example returns all groups whose display name contains 'Market'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|GroupMember.Read.All, Group.Read.All| Group.ReadWrite.All, Directory.Read.All|
+|Application|GroupMember.Read.All, Group.Read.All|Group.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.
+
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'A' including a count of the returned users, with the results ordered by display name
 
 ```powershell
@@ -76,3 +112,12 @@ bbfa9226-a965-47e1-9db2-bcfcb2c202e6 All Users
 ```
 
 This example returns all groups whose display name starts with 'A'. The $groupCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|GroupMember.Read.All, Group.Read.All| Group.ReadWrite.All, Directory.Read.All|
+|Application|GroupMember.Read.All, Group.Read.All|Group.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes GroupMember.Read.All, Group.Read.All`.

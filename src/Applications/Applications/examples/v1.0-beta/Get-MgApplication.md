@@ -13,6 +13,16 @@ PublisherDomain : Contoso.com
 
 This examples gets a list of all the applications.
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Delegated (personal Microsoft account)|Application.Read.All and User.Read|Application.ReadWrite.All and User.Read|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+
 ### Example 2: Get an application by Id
 
 ```powershell
@@ -26,6 +36,16 @@ PublisherDomain : Contoso.com
 ```
 
 This examples gets the application by the specified Id.
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Delegated (personal Microsoft account)|Application.Read.All and User.Read|Application.ReadWrite.All and User.Read|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of all applications
 
@@ -41,7 +61,17 @@ f6b30057-7095-4e2c-89f8-224149f591b7 Testing App        00e80963-9bc0-4147-b9e0-
 fe4caed6-6182-4aca-b70b-b114c5334a8a New app            641992e9-d176-4aff-a3b6-a867b3ba48c4 AzureADandPersonalMicrosoftAccount Contoso.com
 ```
 
-This example gets a list of all applications. The $appCount variable contains the count of objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example gets a list of all applications. The $appCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Delegated (personal Microsoft account)|Application.Read.All and User.Read|Application.ReadWrite.All and User.Read|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned users
 
@@ -54,7 +84,17 @@ dcaa0c3a-8dfa-4b47-bc04-0edbab42043a Principal-Test App bd38ad43-6c46-4cc6-b65c-
 f6b30057-7095-4e2c-89f8-224149f591b7 Testing App        00e80963-9bc0-4147-b9e0-2ba56093e7e6 AzureADandPersonalMicrosoftAccount Contoso.com
 ```
 
-This example returns all applications whose display name contains 'Test'. The $appCount variable contains the count of objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and Count parameters in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+This example returns all applications whose display name contains 'Test'. The $appCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Delegated (personal Microsoft account)|Application.Read.All and User.Read|Application.ReadWrite.All and User.Read|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned users, with the results ordered by display name
 
@@ -68,3 +108,13 @@ fe4caed6-6182-4aca-b70b-b114c5334a8a New app     641992e9-d176-4aff-a3b6-a867b3b
 ```
 
 This example returns all applications whose display name starts with 'New'. The $appCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Delegated (personal Microsoft account)|Application.Read.All and User.Read|Application.ReadWrite.All and User.Read|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.

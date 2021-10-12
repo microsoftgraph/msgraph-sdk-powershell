@@ -16,6 +16,15 @@ SignInAudience : AzureADMultipleOrgs
 
 This example retrieves all service principals from the directory.
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+
 ### Example 2: Get the service principal by display name
 
 ```powershell
@@ -29,6 +38,15 @@ SignInAudience : AzureADMultipleOrgs
 ```
 
 This example gets the service principal by display name.
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 3: Get a count of the service principals
 
@@ -45,6 +63,15 @@ Id                                   DisplayName                                
 
 This example returns a list of all the service principals. $spCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
 
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
+
 ### Example 4: Use -Filter and -Top to get five service principals with a display name that starts with 'a' including a count of returned objects
 
 ```powershell
@@ -60,6 +87,15 @@ Id                                   DisplayName                       AppId    
 ```
 
 This example filters service principals whose display name starts with 'a' and continues to return  the top 5. $spCount variable contains the count of the objects in the result before the *Top* filter. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
 ### Example 5: Use -Search to get service principals with display names that contain the letters 'Team' including a count of returned objects
 
@@ -78,3 +114,12 @@ Id                                   DisplayName                                
 ```
 
 This example returns all service principals whose display name contains the word 'team'. $spCount variable contains the count of the objects in the result. Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command. For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+|Application|Application.Read.All|Application.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
