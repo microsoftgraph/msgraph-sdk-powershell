@@ -533,6 +533,10 @@ directive:
         let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
 
+        // Remove noisy log messages.
+        let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
+        $ = $.replace(duplicateDebugRegex, "");
+
         return $;
       }
 
