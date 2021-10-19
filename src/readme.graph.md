@@ -393,14 +393,6 @@ directive:
           - Body
           - DueDateTime
           - Importance
-# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
-  - from: 'openapi-document'
-    where: $.paths..operationId
-    transform: 'return $.replace("ByRef", "0Ref0")'
-  - where:
-      subject: ^(\w*[a-z])0Ref0$
-    set:
-      subject: $1ByRef
 # Rename cmdlets
   - where:
       verb: Invoke
@@ -413,6 +405,15 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
+# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
+  - from: 'openapi-document'
+    where: $.paths..operationId
+    transform: |
+      return ($.endsWith("ByRef")) ? $.replace("_", "Ref_") : $
+  - where:
+      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+    set:
+      subject: $1$2ByRef
 # Remove *ByRef commands
   - where:
       verb: Get|Remove|New
