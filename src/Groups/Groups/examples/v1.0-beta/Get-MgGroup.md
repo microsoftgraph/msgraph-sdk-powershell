@@ -1,6 +1,7 @@
 ### Example 1: Get a list of groups
 
 ```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup | 
   Format-List Id, DisplayName, Description, GroupTypes
 
@@ -29,6 +30,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 2: Get a group by the display name
 
 ```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup -Filter "DisplayName eq 'Business Development'" | 
   Format-List Id, DisplayName, Description, GroupTypes
 
@@ -52,6 +54,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 3: Get a count of all groups
 
 ```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup -ConsistencyLevel eventual -Count groupCount
 
 Id                                   DisplayName          Description                                                            GroupTypes          AccessType
@@ -79,6 +82,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 4: Use -Search to get all the groups whose display name contains 'Market' including a count of the returned users
 
 ```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Search '"DisplayName:Market"'
 
 Id                                   DisplayName         Description                                                            GroupTypes AccessType
@@ -102,6 +106,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'A' including a count of the returned users, with the results ordered by display name
 
 ```powershell
+Connect-MgGraph -Scopes 'Group.Read.All'
 Get-MgGroup -ConsistencyLevel eventual -Count groupCount -Filter "startsWith(DisplayName, 'A')" -OrderBy DisplayName
 
 Id                                   DisplayName   Description                                           GroupTypes          AccessType

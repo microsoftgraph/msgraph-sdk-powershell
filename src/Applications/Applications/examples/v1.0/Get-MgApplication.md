@@ -1,6 +1,7 @@
 ### Example 1: Get a list of applications
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgApplication | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
@@ -26,6 +27,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 2: Get an application by Id
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgApplication -Filter "AppId eq '39b09640-ec3e-44c9-b3de-f52db4e1cf66'" | 
   Format-List Id, DisplayName, AppId, SignInAudience, PublisherDomain
 
@@ -50,6 +52,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 3: Get a count of all applications
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgApplication -ConsistencyLevel eventual -Count appCount
 
 Id                                   DisplayName        AppId                                SignInAudience                     PublisherDomain
@@ -76,6 +79,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned users
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgApplication -ConsistencyLevel eventual -Count appCount -Search '"DisplayName:Test"'
 
 Id                                   DisplayName        AppId                                SignInAudience                     PublisherDomain
@@ -99,6 +103,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned users, with the results ordered by display name
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgApplication -ConsistencyLevel eventual -Count appCount -Filter "startsWith(DisplayName, 'New')" -OrderBy DisplayName
 
 Id                                   DisplayName AppId                                SignInAudience                     PublisherDomain

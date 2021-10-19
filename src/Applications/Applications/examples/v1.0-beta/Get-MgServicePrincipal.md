@@ -1,6 +1,7 @@
 ### Example 1: Get all service principals from the directory
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgServicePrincipal
 
 Id             : 304ae362-7953-4d08-8e15-aeece4d01017c
@@ -28,7 +29,8 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 2: Get the service principal by display name
 
 ```powershell
- Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
+Connect-MgGraph -Scopes 'Application.Read.All'
+Get-MgServicePrincipal -Filter "DisplayName eq 'Power BI Service'" | 
   Format-List Id, DisplayName,AppId, SignInAudience
 
 Id             : 9518fb8f-8d9e-4aae-be20-d398f9cc59ac
@@ -51,6 +53,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 3: Get a count of the service principals
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount
 
 Id                                   DisplayName                                                    AppId                                SignInAudience                     PublisherName
@@ -75,6 +78,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 4: Use -Filter and -Top to get five service principals with a display name that starts with 'a' including a count of returned objects
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Filter "startsWith(DisplayName, 'a')" -Top 5
 
 Id                                   DisplayName                       AppId                                SignInAudience      PublisherName
@@ -100,6 +104,7 @@ To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
 ### Example 5: Use -Search to get service principals with display names that contain the letters 'Team' including a count of returned objects
 
 ```powershell
+Connect-MgGraph -Scopes 'Application.Read.All'
 Get-MgServicePrincipal -ConsistencyLevel eventual -Count spCount -Search '"DisplayName:Team"'
 
 Id                                   DisplayName                                                 AppId                                SignInAudience                     PublisherName
