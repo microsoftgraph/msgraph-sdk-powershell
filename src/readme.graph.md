@@ -409,9 +409,9 @@ directive:
   - from: 'openapi-document'
     where: $.paths..operationId
     transform: |
-      return ($.endsWith("ByRef")) ? $.replace("_", "Ref_") : $
+      return ($.endsWith("ByRef")) ? $.replace("_", "GraphRef_") : $
   - where:
-      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
     set:
       subject: $1$2ByRef
 # Remove *ByRef commands
