@@ -29,23 +29,23 @@ if (-not (Test-Path $ModuleMappingConfigPath)) {
 }
 $Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-# $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
-#     $ModuleName = $_
-#     $ForceRefresh = $false
-#     # Check whether ForceRefresh is required, Only required for the First Request.
-#     if ($RequestCount -eq 0) {
-#         $ForceRefresh = $true
-#     }
+$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
+    $ModuleName = $_
+    $ForceRefresh = $false
+    # Check whether ForceRefresh is required, Only required for the First Request.
+    if ($RequestCount -eq 0) {
+        $ForceRefresh = $true
+    }
 
-#     try {
-#         # Download OpenAPI document for module.
-#         & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount
-#     }
-#     catch {
-#         Write-Error $_.Exception
-#     }
-#     $RequestCount++
-# }
+    try {
+        # Download OpenAPI document for module.
+        & $DownloadOpenApiDocPS1 -ModuleName $ModuleName -ModuleRegex $ModuleMapping[$ModuleName] -OpenApiDocOutput $OpenApiDocOutput -GraphVersion $GraphVersion -ForceRefresh:$ForceRefresh -RequestCount $RequestCount
+    }
+    catch {
+        Write-Error $_.Exception
+    }
+    $RequestCount++
+}
 $stopwatch.Stop()
 Write-Host -ForegroundColor Green "Downloaded $GraphVersion OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
 
