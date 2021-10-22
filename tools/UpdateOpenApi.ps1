@@ -13,7 +13,7 @@ if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
 
-if (!(Get-Module powershell-yaml)){
+if (!(Get-Module powershell-yaml -ListAvailable)){
     # Install Powershell-yaml
     Install-Module powershell-yaml -Force
 }
