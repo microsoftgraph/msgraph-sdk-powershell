@@ -35,4 +35,4 @@ Get-ChildItem -Path $OpenAPIFilesPath | ForEach-Object {
     if ($modified) { $updatedContent | Out-File $filePath -Force }
 }
 $stopwatch.Stop()
-Write-Debug "Tweaked '$OpenAPIFilesPath' OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
+Write-Debug "Tweaked '$OpenAPIFilesPath' OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)' minutes."
