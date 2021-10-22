@@ -554,7 +554,9 @@ directive:
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref this._top, ref this._count); }\n$1');
+          let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
+          let countPlaceholder = (!$.includes("SwitchParameter _count;")) ? 'global::System.Management.Automation.SwitchParameter _count;': ''
+          $ = $.replace(beginProcessingRegex, `$1$2\n$1 ${countPlaceholder} ${topPlaceholder} if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref _top, ref _count); }\n$1`);
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
