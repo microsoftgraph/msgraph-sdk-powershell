@@ -405,11 +405,7 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
-  - from: 'openapi-document'
-    where: $.paths..operationId
-    transform: |
-      return ($.endsWith("ByRef")) ? $.replace("_", "GraphRef_") : $
+# Add ByRef suffix to /$ref cmdlets
   - where:
       subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
     set:
