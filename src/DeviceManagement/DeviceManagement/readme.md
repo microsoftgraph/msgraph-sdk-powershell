@@ -61,8 +61,17 @@ directive:
       subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$
       variant: ^Create2$|^CreateExpanded2$|^Get2$|^GetViaIdentity2$|^List2$|^Delete2$|^DeleteViaIdentity2$|^Update2$|^UpdateExpanded2$|^UpdateViaIdentity2$|^UpdateViaIdentityExpanded2$
     set:
+      subject: $1ByAppVersionDetail
+  - where:
+      subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$
+      variant: ^Create3$|^CreateExpanded3$|^Get3$|^GetViaIdentity3$|^List3$|^Delete3$|^DeleteViaIdentity3$|^Update3$|^UpdateExpanded3$|^UpdateViaIdentity3$|^UpdateViaIdentityExpanded3$
+    set:
+      subject: $1ByAppVersionDeviceId
+  - where:
+      subject: ^(DeviceManagementUserExperienceAnalyticAppHealthApplicationPerformance)$
+      variant: ^Create4$|^CreateExpanded4$|^Get4$|^GetViaIdentity4$|^List4$|^Delete4$|^DeleteViaIdentity4$|^Update4$|^UpdateExpanded4$|^UpdateViaIdentity4$|^UpdateViaIdentityExpanded4$
+    set:
       subject: $1ByOSVersion
-
   - where:
       subject: ^(DeviceManagementAndroid)$
       variant: ^Create$|^CreateExpanded$|^Get$|^GetViaIdentity$|^List$|^Delete$|^DeleteViaIdentity$|^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$
