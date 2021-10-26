@@ -147,9 +147,9 @@ jobs:
             if ("${{ parameters.GenerateCommandMetadata }}" -eq "false") {
               $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
               $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
+              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
             } else {
-              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
+              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
             }
 
       - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:

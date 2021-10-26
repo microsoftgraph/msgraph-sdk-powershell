@@ -90,6 +90,11 @@ directive:
       subject: (^OnPremisePublishingProfileConnectorMember$)
     set:
       subject: $1Of
+# Singularize credentials.
+  - where:
+      subject: (.*)(FederatedIdentityCredential)s(.*)
+    set:
+      subject: $1$2$3
 ```
 ### Versioning
 
