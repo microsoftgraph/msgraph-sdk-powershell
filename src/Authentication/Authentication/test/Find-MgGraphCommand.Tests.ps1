@@ -28,7 +28,7 @@ Describe "Find-MgGraphCommand Command" {
                 $MgCommand | Should -HaveCount 1
                 $MgCommand.Method | Should -Be "POST"
                 $MgCommand.APIVersion | Should -Be "beta" # -APIVersion takes precedence.
-                $MgCommand.Variants | Should -Contain "Export1"
+                $MgCommand.Variants | Should -Contain "Export"
                 $MgCommand.URI | Should -Be "/users/{user-id}/exportPersonalData"
                 $MgCommand.Command | Should -Be "Export-MgUserPersonalData"
             } | Should -Not -Throw
