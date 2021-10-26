@@ -879,8 +879,6 @@ paths:
               enum:
                 - id
                 - id desc
-                - alternateSignInName
-                - alternateSignInName desc
                 - appDisplayName
                 - appDisplayName desc
                 - appId
@@ -893,6 +891,8 @@ paths:
                 - authenticationMethodsUsed desc
                 - authenticationProcessingDetails
                 - authenticationProcessingDetails desc
+                - authenticationProtocol
+                - authenticationProtocol desc
                 - authenticationRequirement
                 - authenticationRequirement desc
                 - authenticationRequirementPolicies
@@ -915,6 +915,10 @@ paths:
                 - flaggedForReview desc
                 - homeTenantId
                 - homeTenantId desc
+                - homeTenantName
+                - homeTenantName desc
+                - incomingTokenType
+                - incomingTokenType desc
                 - ipAddress
                 - ipAddress desc
                 - ipAddressFromResourceProvider
@@ -943,8 +947,6 @@ paths:
                 - resourceTenantId desc
                 - riskDetail
                 - riskDetail desc
-                - riskEventTypes
-                - riskEventTypes desc
                 - riskEventTypes_v2
                 - riskEventTypes_v2 desc
                 - riskLevelAggregated
@@ -973,6 +975,8 @@ paths:
                 - tokenIssuerName desc
                 - tokenIssuerType
                 - tokenIssuerType desc
+                - uniqueTokenIdentifier
+                - uniqueTokenIdentifier desc
                 - userAgent
                 - userAgent desc
                 - userDisplayName
@@ -997,13 +1001,13 @@ paths:
             items:
               enum:
                 - id
-                - alternateSignInName
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
+                - authenticationProtocol
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
@@ -1015,6 +1019,8 @@ paths:
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
+                - homeTenantName
+                - incomingTokenType
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
@@ -1029,7 +1035,6 @@ paths:
                 - resourceId
                 - resourceTenantId
                 - riskDetail
-                - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
@@ -1044,6 +1049,7 @@ paths:
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
+                - uniqueTokenIdentifier
                 - userAgent
                 - userDisplayName
                 - userId
@@ -1133,13 +1139,13 @@ paths:
             items:
               enum:
                 - id
-                - alternateSignInName
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
+                - authenticationProtocol
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
@@ -1151,6 +1157,8 @@ paths:
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
+                - homeTenantName
+                - incomingTokenType
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
@@ -1165,7 +1173,6 @@ paths:
                 - resourceId
                 - resourceTenantId
                 - riskDetail
-                - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
@@ -1180,6 +1187,7 @@ paths:
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
+                - uniqueTokenIdentifier
                 - userAgent
                 - userDisplayName
                 - userId
@@ -1284,8 +1292,6 @@ paths:
               enum:
                 - id
                 - id desc
-                - alternateSignInName
-                - alternateSignInName desc
                 - appDisplayName
                 - appDisplayName desc
                 - appId
@@ -1298,6 +1304,8 @@ paths:
                 - authenticationMethodsUsed desc
                 - authenticationProcessingDetails
                 - authenticationProcessingDetails desc
+                - authenticationProtocol
+                - authenticationProtocol desc
                 - authenticationRequirement
                 - authenticationRequirement desc
                 - authenticationRequirementPolicies
@@ -1320,6 +1328,10 @@ paths:
                 - flaggedForReview desc
                 - homeTenantId
                 - homeTenantId desc
+                - homeTenantName
+                - homeTenantName desc
+                - incomingTokenType
+                - incomingTokenType desc
                 - ipAddress
                 - ipAddress desc
                 - ipAddressFromResourceProvider
@@ -1348,8 +1360,6 @@ paths:
                 - resourceTenantId desc
                 - riskDetail
                 - riskDetail desc
-                - riskEventTypes
-                - riskEventTypes desc
                 - riskEventTypes_v2
                 - riskEventTypes_v2 desc
                 - riskLevelAggregated
@@ -1378,6 +1388,8 @@ paths:
                 - tokenIssuerName desc
                 - tokenIssuerType
                 - tokenIssuerType desc
+                - uniqueTokenIdentifier
+                - uniqueTokenIdentifier desc
                 - userAgent
                 - userAgent desc
                 - userDisplayName
@@ -1400,13 +1412,13 @@ paths:
             items:
               enum:
                 - id
-                - alternateSignInName
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
+                - authenticationProtocol
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
@@ -1418,6 +1430,8 @@ paths:
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
+                - homeTenantName
+                - incomingTokenType
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
@@ -1432,7 +1446,6 @@ paths:
                 - resourceId
                 - resourceTenantId
                 - riskDetail
-                - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
@@ -1447,6 +1460,7 @@ paths:
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
+                - uniqueTokenIdentifier
                 - userAgent
                 - userDisplayName
                 - userId
@@ -1537,13 +1551,13 @@ paths:
             items:
               enum:
                 - id
-                - alternateSignInName
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
+                - authenticationProtocol
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
@@ -1555,6 +1569,8 @@ paths:
                 - deviceDetail
                 - flaggedForReview
                 - homeTenantId
+                - homeTenantName
+                - incomingTokenType
                 - ipAddress
                 - ipAddressFromResourceProvider
                 - isInteractive
@@ -1569,7 +1585,6 @@ paths:
                 - resourceId
                 - resourceTenantId
                 - riskDetail
-                - riskEventTypes
                 - riskEventTypes_v2
                 - riskLevelAggregated
                 - riskLevelDuringSignIn
@@ -1584,6 +1599,7 @@ paths:
                 - status
                 - tokenIssuerName
                 - tokenIssuerType
+                - uniqueTokenIdentifier
                 - userAgent
                 - userDisplayName
                 - userId
@@ -4052,6 +4068,60 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.report'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getAttackSimulationRepeatOffenders():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationRepeatOffenders
+      operationId: reports_getAttackSimulationRepeatOffenders
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getAttackSimulationSimulationUserCoverage():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationSimulationUserCoverage
+      operationId: reports_getAttackSimulationSimulationUserCoverage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /reports/microsoft.graph.getAttackSimulationTrainingUserCoverage():
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getAttackSimulationTrainingUserCoverage
+      operationId: reports_getAttackSimulationTrainingUserCoverage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8043,7 +8113,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
             additionalDetails:
               type: array
               items:
@@ -8164,17 +8234,13 @@ components:
         - title: signIn
           type: object
           properties:
-            alternateSignInName:
-              type: string
-              description: The alternate sign-in identity whenever you use phone number to sign-in. Supports $filter (eq and startsWith operators only).
-              nullable: true
             appDisplayName:
               type: string
-              description: The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+              description: App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
               nullable: true
             appId:
               type: string
-              description: The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+              description: Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
@@ -8197,6 +8263,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValue'
               description: 'Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.'
+            authenticationProtocol:
+              $ref: '#/components/schemas/microsoft.graph.protocolType'
             authenticationRequirement:
               type: string
               description: 'This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).'
@@ -8213,18 +8281,18 @@ components:
               nullable: true
             clientAppUsed:
               type: string
-              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).'
+              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
+              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
             crossTenantAccessType:
               $ref: '#/components/schemas/microsoft.graph.signInAccessType'
@@ -8236,16 +8304,21 @@ components:
             homeTenantId:
               type: string
               nullable: true
+            homeTenantName:
+              type: string
+              nullable: true
+            incomingTokenType:
+              $ref: '#/components/schemas/microsoft.graph.incomingTokenType'
             ipAddress:
               type: string
-              description: The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+              description: IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
               nullable: true
             ipAddressFromResourceProvider:
               type: string
               nullable: true
             isInteractive:
               type: boolean
-              description: Indicates whether a sign-in is interactive or not.
+              description: Indicates if a sign-in is interactive or not.
               nullable: true
             isTenantRestricted:
               type: boolean
@@ -8274,22 +8347,17 @@ components:
               nullable: true
             resourceDisplayName:
               type: string
-              description: The name of the resource that the user signed in to. Supports $filter (eq operator only).
+              description: Name of the resource the user signed into. Supports $filter (eq operator only).
               nullable: true
             resourceId:
               type: string
-              description: The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+              description: ID of the resource that the user signed into. Supports $filter (eq operator only).
               nullable: true
             resourceTenantId:
               type: string
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
-            riskEventTypes:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq operator only).'
             riskEventTypes_v2:
               type: array
               items:
@@ -8333,20 +8401,23 @@ components:
               nullable: true
             tokenIssuerType:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
+            uniqueTokenIdentifier:
+              type: string
+              nullable: true
             userAgent:
               type: string
               description: The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
             userDisplayName:
               type: string
-              description: The display name of the user. Supports $filter (eq and startsWith operators only).
+              description: Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
             userId:
               type: string
-              description: The identifier of the user. Supports $filter (eq operator only).
+              description: ID of the user that initiated the sign-in. Supports $filter (eq operator only).
             userPrincipalName:
               type: string
-              description: The UPN of the user. Supports $filter (eq and startsWith operators only).
+              description: User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
             userType:
               $ref: '#/components/schemas/microsoft.graph.signInUserType'
@@ -8578,7 +8649,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
           additionalProperties:
             type: object
-          description: The resource that represents an instance of History Reports.
     microsoft.graph.applicationSignInDetailedSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8728,12 +8798,75 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: Not yet documented
           format: base64url
           nullable: true
       additionalProperties:
         type: object
       description: Device Configuration profile History reports.
+    microsoft.graph.attackSimulationRepeatOffender:
+      title: attackSimulationRepeatOffender
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        repeatOffenceCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of repeat offences of the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attackSimulationSimulationUserCoverage:
+      title: attackSimulationSimulationUserCoverage
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        clickCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+        compromisedCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of compromising actions by the user in attack simulation and training campaigns.
+          format: int32
+          nullable: true
+        latestSimulationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of latest attack simulation and training campaign that the user was included in.
+          format: date-time
+          nullable: true
+        simulationCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of attack simulation and training campaigns that the user was included in.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.attackSimulationTrainingUserCoverage:
+      title: attackSimulationTrainingUserCoverage
+      type: object
+      properties:
+        attackSimulationUser:
+          $ref: '#/components/schemas/microsoft.graph.attackSimulationUser'
+        userTrainings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userTrainingStatusInfo'
+          description: List of assigned trainings' and their statuses for the user.
+      additionalProperties:
+        type: object
     microsoft.graph.applicationSignInSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -12159,7 +12292,7 @@ components:
             eventDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             failureReason:
               type: string
@@ -12192,11 +12325,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Key for the key-value pair.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Value for the key-value pair.
           nullable: true
       additionalProperties:
         type: object
@@ -12207,7 +12340,7 @@ components:
         app:
           $ref: '#/components/schemas/microsoft.graph.appIdentity'
         user:
-          $ref: '#/components/schemas/microsoft.graph.userIdentity'
+          $ref: '#/components/schemas/microsoft.graph.auditUserIdentity'
       additionalProperties:
         type: object
     microsoft.graph.operationResult:
@@ -12263,15 +12396,15 @@ components:
       properties:
         displayName:
           type: string
-          description: Name of property that was modified.
+          description: Indicates the property name of the target attribute that was changed.
           nullable: true
         newValue:
           type: string
-          description: New property value.
+          description: Indicates the updated value for the propery.
           nullable: true
         oldValue:
           type: string
-          description: Old property value.
+          description: Indicates the previous value (before the update) for the property.
           nullable: true
       additionalProperties:
         type: object
@@ -12359,6 +12492,8 @@ components:
       title: appliedConditionalAccessPolicy
       type: object
       properties:
+        authenticationStrength:
+          $ref: '#/components/schemas/microsoft.graph.authenticationStrength'
         conditionsNotSatisfied:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessConditions'
         conditionsSatisfied:
@@ -12385,7 +12520,7 @@ components:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessRuleSatisfied'
         id:
           type: string
-          description: Identifier of the conditional access policy.
+          description: An identifier of the conditional access policy.
           nullable: true
         includeRulesSatisfied:
           type: array
@@ -12427,6 +12562,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.protocolType:
+      title: protocolType
+      enum:
+        - none
+        - oAuth2
+        - ropc
+        - wsFederation
+        - saml20
+        - deviceCode
+        - unknownFutureValue
+      type: string
     microsoft.graph.authenticationRequirementPolicy:
       title: authenticationRequirementPolicy
       type: object
@@ -12462,37 +12608,46 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing-in.
+          description: Indicates the browser information of the used for signing in.
           nullable: true
         browserId:
           type: string
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing-in.
+          description: Refers to the UniqueID of the device used for signing in.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing-in.
+          description: Refers to the name of the device used for signing in.
           nullable: true
         isCompliant:
           type: boolean
-          description: Indicates whether the device is compliant or not.
+          description: Indicates whether the device is compliant.
           nullable: true
         isManaged:
           type: boolean
-          description: Indicates if the device is managed or not.
+          description: Indicates whether the device is managed.
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the OS name and version used for signing-in.
+          description: Indicates the operating system name and version used for signing in.
           nullable: true
         trustType:
           type: string
-          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.incomingTokenType:
+      title: incomingTokenType
+      enum:
+        - none
+        - primaryRefreshToken
+        - saml11
+        - saml20
+        - unknownFutureValue
+      type: string
     microsoft.graph.signInLocation:
       title: signInLocation
       type: object
@@ -12575,25 +12730,6 @@ components:
         - adminConfirmedUserCompromised
         - unknownFutureValue
       type: string
-    microsoft.graph.riskEventType:
-      title: riskEventType
-      enum:
-        - unlikelyTravel
-        - anonymizedIPAddress
-        - maliciousIPAddress
-        - unfamiliarFeatures
-        - malwareInfectedIPAddress
-        - suspiciousIPAddress
-        - leakedCredentials
-        - investigationsThreatIntelligence
-        - generic
-        - adminConfirmedUserCompromised
-        - mcasImpossibleTravel
-        - mcasSuspiciousInboxManipulationRules
-        - investigationsThreatIntelligenceSigninLinked
-        - maliciousIPAddressValidCredentialsBlockedIP
-        - unknownFutureValue
-      type: string
     microsoft.graph.riskLevel:
       title: riskLevel
       enum:
@@ -12652,6 +12788,7 @@ components:
         - AzureAD
         - ADFederationServices
         - UnknownFutureValue
+        - AzureADBackupAuth
       type: string
     microsoft.graph.signInUserType:
       title: signInUserType
@@ -12669,18 +12806,21 @@ components:
         - completed
         - failed
       type: string
+      description: Possible statuses associated with a generated report
     microsoft.graph.deviceManagementReportFileFormat:
       title: deviceManagementReportFileFormat
       enum:
         - csv
         - pdf
       type: string
+      description: Possible values for the file format of a report
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
         - localizedValuesAsAdditionalColumn
         - replaceLocalizableValues
       type: string
+      description: Configures how the requested export job is localized
     microsoft.graph.deviceManagementScheduledReportRecurrence:
       title: deviceManagementScheduledReportRecurrence
       enum:
@@ -12689,6 +12829,7 @@ components:
         - weekly
         - monthly
       type: string
+      description: Possible values for the recurrence of a scheduled report
     microsoft.graph.userRegistrationFeatureCount:
       title: userRegistrationFeatureCount
       type: object
@@ -12749,6 +12890,48 @@ components:
               format: date
           additionalProperties:
             type: object
+    microsoft.graph.attackSimulationUser:
+      title: attackSimulationUser
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Display name of the user.
+          nullable: true
+        email:
+          type: string
+          description: Email address of the user.
+          nullable: true
+        userId:
+          type: string
+          description: This is the id property value of the user resource that represents the user in the Azure AD tenant.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.userTrainingStatusInfo:
+      title: userTrainingStatusInfo
+      type: object
+      properties:
+        assignedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of assignment of the training to the user.
+          format: date-time
+          nullable: true
+        completionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time of completion of the training by the user.
+          format: date-time
+          nullable: true
+        displayName:
+          type: string
+          description: Display name of the assigned training.
+          nullable: true
+        trainingStatus:
+          $ref: '#/components/schemas/microsoft.graph.trainingStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.licenseInfoDetail:
       title: licenseInfoDetail
       type: object
@@ -12929,10 +13112,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -12967,6 +13150,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.auditUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.userIdentity'
+        - title: auditUserIdentity
+          type: object
+          properties:
+            homeTenantId:
+              type: string
+              nullable: true
+            homeTenantName:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.groupType:
       title: groupType
       enum:
@@ -13045,6 +13242,18 @@ components:
         - export
         - unknownFutureValue
       type: string
+    microsoft.graph.authenticationStrength:
+      title: authenticationStrength
+      type: object
+      properties:
+        authenticationStrengthId:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessConditions:
       title: conditionalAccessConditions
       enum:
@@ -13062,6 +13271,8 @@ components:
         - ipAddressSeenByAzureAD
         - ipAddressSeenByResourceProvider
         - unknownFutureValue
+        - servicePrincipals
+        - servicePrincipalRisk
       type: string
     microsoft.graph.conditionalAccessRuleSatisfied:
       title: conditionalAccessRuleSatisfied
@@ -13123,12 +13334,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:
@@ -13151,6 +13362,17 @@ components:
         - ssprCapable
         - passwordlessCapable
         - mfaCapable
+      type: string
+    microsoft.graph.trainingStatus:
+      title: trainingStatus
+      enum:
+        - unknown
+        - assigned
+        - inProgress
+        - completed
+        - overdue
+        - notCompleted
+        - unknownFutureValue
       type: string
     microsoft.graph.registrationStatusType:
       title: registrationStatusType

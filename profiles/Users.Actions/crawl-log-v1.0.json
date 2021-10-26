@@ -685,6 +685,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
@@ -770,6 +774,10 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
     "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
@@ -861,6 +869,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
+    "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
     "/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
@@ -946,6 +958,10 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
     "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
@@ -1622,6 +1638,14 @@
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },
     "/users/{user-id}/onlineMeetings/microsoft.graph.createOrGet": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/presence/microsoft.graph.clearPresence": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
+    },
+    "/users/{user-id}/presence/microsoft.graph.setPresence": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Users.Actions.yml"
     },

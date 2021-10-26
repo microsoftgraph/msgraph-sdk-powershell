@@ -117,7 +117,6 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entity from directoryObjects by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -175,7 +174,6 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryObjects.directoryObject_UpdateDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -202,7 +200,6 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete entity from directoryObjects
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -527,7 +524,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -555,7 +551,6 @@ components:
               description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.entity:
       title: entity
       type: object

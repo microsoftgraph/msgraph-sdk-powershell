@@ -113,6 +113,70 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/reports/microsoft.graph.getCachedReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getCompliancePolicyNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getCompliancePolicyNonComplianceSummaryReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getConfigurationPolicyNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getConfigurationPolicyNonComplianceSummaryReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getConfigurationSettingNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getDeviceManagementIntentPerSettingContributingProfiles": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getDeviceManagementIntentSettingsReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getDeviceNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getHistoricalReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getPolicyNonComplianceMetadata": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getPolicyNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getPolicyNonComplianceSummaryReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getReportFilters": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getSettingNonComplianceReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}/microsoft.graph.assignUserToDevice": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Actions.yml"

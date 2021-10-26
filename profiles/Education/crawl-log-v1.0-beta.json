@@ -45,7 +45,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -69,11 +69,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -185,7 +189,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/me/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -209,11 +213,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
+    "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -413,7 +421,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
@@ -437,11 +445,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.reassign": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Education.yml"
+    },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.return": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },
-    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Education.yml"
     },

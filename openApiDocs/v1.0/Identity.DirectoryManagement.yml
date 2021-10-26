@@ -167,7 +167,6 @@ paths:
       tags:
         - contacts.orgContact
       summary: Get entity from contacts by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_GetOrgContact
       parameters:
         - name: orgContact-id
@@ -264,7 +263,6 @@ paths:
       tags:
         - contacts.orgContact
       summary: Update entity in contacts
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_UpdateOrgContact
       parameters:
         - name: orgContact-id
@@ -291,7 +289,6 @@ paths:
       tags:
         - contacts.orgContact
       summary: Delete entity from contacts
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contacts.orgContact_DeleteOrgContact
       parameters:
         - name: orgContact-id
@@ -401,7 +398,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of directReports from contacts
       description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-      operationId: contacts_ListRefDirectReports
+      operationId: contacts_ListGraphRefDirectReports
       parameters:
         - name: orgContact-id
           in: path
@@ -458,7 +455,7 @@ paths:
         - contacts.directoryObject
       summary: Create new navigation property ref to directReports for contacts
       description: The contact's direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
-      operationId: contacts_CreateRefDirectReports
+      operationId: contacts_CreateGraphRefDirectReports
       parameters:
         - name: orgContact-id
           in: path
@@ -544,7 +541,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of manager from contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_GetRefManager
+      operationId: contacts_GetGraphRefManager
       parameters:
         - name: orgContact-id
           in: path
@@ -568,7 +565,7 @@ paths:
         - contacts.directoryObject
       summary: Update the ref of navigation property manager in contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_SetRefManager
+      operationId: contacts_SetGraphRefManager
       parameters:
         - name: orgContact-id
           in: path
@@ -597,7 +594,7 @@ paths:
         - contacts.directoryObject
       summary: Delete ref of navigation property manager for contacts
       description: The user or contact that is this contact's manager. Read-only. Supports $expand.
-      operationId: contacts_DeleteRefManager
+      operationId: contacts_DeleteGraphRefManager
       parameters:
         - name: orgContact-id
           in: path
@@ -706,7 +703,7 @@ paths:
         - contacts.directoryObject
       summary: Get ref of memberOf from contacts
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-      operationId: contacts_ListRefMemberOf
+      operationId: contacts_ListGraphRefMemberOf
       parameters:
         - name: orgContact-id
           in: path
@@ -763,7 +760,7 @@ paths:
         - contacts.directoryObject
       summary: Create new navigation property ref to memberOf for contacts
       description: Groups that this contact is a member of. Read-only. Nullable. Supports $expand.
-      operationId: contacts_CreateRefMemberOf
+      operationId: contacts_CreateGraphRefMemberOf
       parameters:
         - name: orgContact-id
           in: path
@@ -1064,7 +1061,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Get ref of transitiveMemberOf from contacts
-      operationId: contacts_ListRefTransitiveMemberOf
+      operationId: contacts_ListGraphRefTransitiveMemberOf
       parameters:
         - name: orgContact-id
           in: path
@@ -1120,7 +1117,7 @@ paths:
       tags:
         - contacts.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for contacts
-      operationId: contacts_CreateRefTransitiveMemberOf
+      operationId: contacts_CreateGraphRefTransitiveMemberOf
       parameters:
         - name: orgContact-id
           in: path
@@ -1387,7 +1384,6 @@ paths:
       tags:
         - contracts.contract
       summary: Get entity from contracts by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_GetContract
       parameters:
         - name: contract-id
@@ -1440,7 +1436,6 @@ paths:
       tags:
         - contracts.contract
       summary: Update entity in contracts
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_UpdateContract
       parameters:
         - name: contract-id
@@ -1467,7 +1462,6 @@ paths:
       tags:
         - contracts.contract
       summary: Delete entity from contracts
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: contracts.contract_DeleteContract
       parameters:
         - name: contract-id
@@ -1955,7 +1949,6 @@ paths:
       tags:
         - devices.device
       summary: Get entity from devices by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_GetDevice
       parameters:
         - name: device-id
@@ -2063,7 +2056,6 @@ paths:
       tags:
         - devices.device
       summary: Update entity in devices
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_UpdateDevice
       parameters:
         - name: device-id
@@ -2090,7 +2082,6 @@ paths:
       tags:
         - devices.device
       summary: Delete entity from devices
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: devices.device_DeleteDevice
       parameters:
         - name: device-id
@@ -2433,7 +2424,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of memberOf from devices
       description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: devices_ListRefMemberOf
+      operationId: devices_ListGraphRefMemberOf
       parameters:
         - name: device-id
           in: path
@@ -2490,7 +2481,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to memberOf for devices
       description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
-      operationId: devices_CreateRefMemberOf
+      operationId: devices_CreateGraphRefMemberOf
       parameters:
         - name: device-id
           in: path
@@ -2793,7 +2784,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of registeredOwners from devices
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: devices_ListRefRegisteredOwners
+      operationId: devices_ListGraphRefRegisteredOwners
       parameters:
         - name: device-id
           in: path
@@ -2850,7 +2841,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredOwners for devices
       description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: devices_CreateRefRegisteredOwners
+      operationId: devices_CreateGraphRefRegisteredOwners
       parameters:
         - name: device-id
           in: path
@@ -2969,7 +2960,7 @@ paths:
         - devices.directoryObject
       summary: Get ref of registeredUsers from devices
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: devices_ListRefRegisteredUsers
+      operationId: devices_ListGraphRefRegisteredUsers
       parameters:
         - name: device-id
           in: path
@@ -3026,7 +3017,7 @@ paths:
         - devices.directoryObject
       summary: Create new navigation property ref to registeredUsers for devices
       description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
-      operationId: devices_CreateRefRegisteredUsers
+      operationId: devices_CreateGraphRefRegisteredUsers
       parameters:
         - name: device-id
           in: path
@@ -3061,7 +3052,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3144,8 +3135,8 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
-      operationId: devices_ListRefTransitiveMemberOf
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+      operationId: devices_ListGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
           in: path
@@ -3201,8 +3192,8 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
-      operationId: devices_CreateRefTransitiveMemberOf
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+      operationId: devices_CreateGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
           in: path
@@ -3410,6 +3401,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnits from directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_ListAdministrativeUnits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3499,6 +3491,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to administrativeUnits for directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_CreateAdministrativeUnits
       requestBody:
         description: New navigation property
@@ -3522,6 +3515,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get administrativeUnits from directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_GetAdministrativeUnits
       parameters:
         - name: administrativeUnit-id
@@ -3592,6 +3586,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property administrativeUnits in directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_UpdateAdministrativeUnits
       parameters:
         - name: administrativeUnit-id
@@ -3618,6 +3613,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property administrativeUnits for directory
+      description: Conceptual container for user and group directory objects.
       operationId: directory_DeleteAdministrativeUnits
       parameters:
         - name: administrativeUnit-id
@@ -3960,7 +3956,7 @@ paths:
         - directory.administrativeUnit
       summary: Get ref of members from directory
       description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
-      operationId: directory.administrativeUnits_ListRefMembers
+      operationId: directory.administrativeUnits_ListGraphRefMembers
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -4017,7 +4013,7 @@ paths:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
       description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
-      operationId: directory.administrativeUnits_CreateRefMembers
+      operationId: directory.administrativeUnits_CreateGraphRefMembers
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -4518,7 +4514,6 @@ paths:
       summary: Get entities from directoryRoles
       operationId: directoryRoles.directoryRole_ListDirectoryRole
       parameters:
-        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -4626,7 +4621,6 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get entity from directoryRoles by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_GetDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4691,7 +4685,6 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Update entity in directoryRoles
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_UpdateDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4718,7 +4711,6 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Delete entity from directoryRoles
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoles.directoryRole_DeleteDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4828,7 +4820,7 @@ paths:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
-      operationId: directoryRoles_ListRefMembers
+      operationId: directoryRoles_ListGraphRefMembers
       parameters:
         - name: directoryRole-id
           in: path
@@ -4885,7 +4877,7 @@ paths:
         - directoryRoles.directoryObject
       summary: Create new navigation property ref to members for directoryRoles
       description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
-      operationId: directoryRoles_CreateRefMembers
+      operationId: directoryRoles_CreateGraphRefMembers
       parameters:
         - name: directoryRole-id
           in: path
@@ -5474,7 +5466,6 @@ paths:
       summary: Get entities from directoryRoleTemplates
       operationId: directoryRoleTemplates.directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
-        - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
@@ -5575,7 +5566,6 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Get entity from directoryRoleTemplates by key
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_GetDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -5626,7 +5616,6 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Update entity in directoryRoleTemplates
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_UpdateDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -5653,7 +5642,6 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Delete entity from directoryRoleTemplates
-      description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
       operationId: directoryRoleTemplates.directoryRoleTemplate_DeleteDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -6321,7 +6309,7 @@ paths:
         - domains.directoryObject
       summary: Get ref of domainNameReferences from domains
       description: 'Read-only, Nullable'
-      operationId: domains_ListRefDomainNameReferences
+      operationId: domains_ListGraphRefDomainNameReferences
       parameters:
         - name: domain-id
           in: path
@@ -6378,7 +6366,7 @@ paths:
         - domains.directoryObject
       summary: Create new navigation property ref to domainNameReferences for domains
       description: 'Read-only, Nullable'
-      operationId: domains_CreateRefDomainNameReferences
+      operationId: domains_CreateGraphRefDomainNameReferences
       parameters:
         - name: domain-id
           in: path
@@ -7146,7 +7134,6 @@ paths:
       tags:
         - organization.organization
       summary: Get entity from organization by key
-      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_GetOrganization
       parameters:
         - name: organization-id
@@ -7236,7 +7223,6 @@ paths:
       tags:
         - organization.organization
       summary: Update entity in organization
-      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -7263,7 +7249,6 @@ paths:
       tags:
         - organization.organization
       summary: Delete entity from organization
-      description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
       operationId: organization.organization_DeleteOrganization
       parameters:
         - name: organization-id
@@ -7400,7 +7385,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_ListExtensions
       parameters:
         - name: organization-id
@@ -7479,7 +7464,7 @@ paths:
       tags:
         - organization.extension
       summary: Create new navigation property to extensions for organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_CreateExtensions
       parameters:
         - name: organization-id
@@ -7511,7 +7496,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_GetExtensions
       parameters:
         - name: organization-id
@@ -7566,7 +7551,7 @@ paths:
       tags:
         - organization.extension
       summary: Update the navigation property extensions in organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_UpdateExtensions
       parameters:
         - name: organization-id
@@ -7600,7 +7585,7 @@ paths:
       tags:
         - organization.extension
       summary: Delete navigation property extensions for organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_DeleteExtensions
       parameters:
         - name: organization-id
@@ -7952,11 +7937,7 @@ paths:
       summary: Get entities from subscribedSkus
       operationId: subscribedSkus.subscribedSku_ListSubscribedSku
       parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
         - name: $orderby
           in: query
           description: Order items by property values
@@ -8002,18 +7983,6 @@ paths:
                 - servicePlans
                 - skuId
                 - skuPartNumber
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -8092,18 +8061,6 @@ paths:
                 - servicePlans
                 - skuId
                 - skuPartNumber
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -8498,7 +8455,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.directoryObject:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8512,7 +8468,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8540,7 +8495,6 @@ components:
               description: Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.contract:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8567,7 +8521,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.device:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8576,7 +8529,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Default is true. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, NOT, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -8597,7 +8550,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -8642,7 +8595,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
               nullable: true
             physicalIds:
               type: array
@@ -8660,7 +8613,7 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             memberOf:
               type: array
@@ -8681,7 +8634,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+              description: Groups that the device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
@@ -8689,7 +8642,6 @@ components:
               description: The collection of open extensions defined for the device. Read-only. Nullable.
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.extension:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8707,6 +8659,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
+              description: Conceptual container for user and group directory objects.
             deletedItems:
               type: array
               items:
@@ -8749,7 +8702,6 @@ components:
               description: The collection of open extensions defined for this Administrative Unit. Nullable.
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.scopedRoleMembership:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8796,7 +8748,6 @@ components:
               description: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.directoryRoleTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -8813,7 +8764,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.domain:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8868,7 +8818,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
+              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
             domainNameReferences:
               type: array
               items:
@@ -8939,7 +8889,7 @@ components:
               nullable: true
             countryLetterCode:
               type: string
-              description: Country/region abbreviation for the organization.
+              description: Country or region abbreviation for the organization in ISO 3166-2 format.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -8959,12 +8909,12 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
             postalCode:
               type: string
@@ -8972,7 +8922,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+              description: 'The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.'
               nullable: true
             privacyProfile:
               $ref: '#/components/schemas/microsoft.graph.privacyProfile'
@@ -9018,15 +8968,14 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.certificateBasedAuthConfiguration'
-              description: Navigation property to manage  certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+              description: Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the organization resource. Nullable.
+              description: The collection of open extensions defined for the organization. Read-only. Nullable.
           additionalProperties:
             type: object
-          description: The organization resource represents an instance of global settings and resources which operate and are provisioned at the tenant-level.
     microsoft.graph.organizationalBranding:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.organizationalBrandingProperties'
@@ -9037,6 +8986,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.organizationalBrandingLocalization'
+              description: Add different branding based on a locale.
           additionalProperties:
             type: object
     microsoft.graph.subscribedSku:
@@ -9223,12 +9173,12 @@ components:
         assignedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         capabilityStatus:
           type: string
-          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         service:
           type: string
@@ -9308,6 +9258,7 @@ components:
         - sccm
         - office365
       type: string
+      description: Mobile device management authority.
     microsoft.graph.certificateBasedAuthConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9329,16 +9280,16 @@ components:
           properties:
             backgroundColor:
               type: string
-              description: 'Color that will appear in place of the background image in low-bandwidth connections. The primary color of your banner logo or your organization color is recommended to be used here. Specify this in hexadecimal (for example, white is #FFFFFF).'
+              description: 'Color that will appear in place of the background image in low-bandwidth connections. We recommend that you use the primary color of your banner logo or your organization color. Specify this in hexadecimal format, for example, white is #FFFFFF.'
               nullable: true
             backgroundImage:
               type: string
-              description: Image that appears as the background of the sign in page. .png or .jpg not larger than 1920x1080 and smaller than 300kb. A smaller image will reduce bandwidth requirements and make page loads more performant.
+              description: Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
               format: base64url
               nullable: true
             bannerLogo:
               type: string
-              description: A banner version of your company logo which appears appears on the sign-in page. .png or .jpg no larger than 36x245px. We recommend using a transparent image with no padding around the logo.
+              description: A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
               format: base64url
               nullable: true
             signInPageText:
@@ -9347,12 +9298,12 @@ components:
               nullable: true
             squareLogo:
               type: string
-              description: Square version of your company logo. This appears in Windows 10 out-of-box (OOBE) experiences and when Windows Autopilot is enabled for deployment. .png or .jpg no larger than 240x240px and no more than 10kb in size. We recommend using a transparent image with no padding around the logo.
+              description: A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
               format: base64url
               nullable: true
             usernameHintText:
               type: string
-              description: 'String that shows as the hint in the username textbox on the sign in screen. This text must be Unicode, without links or code, and can''t exceed 64 characters.'
+              description: 'String that shows as the hint in the username textbox on the sign-in screen. This text must be a Unicode, without links or code, and can''t exceed 64 characters.'
               nullable: true
           additionalProperties:
             type: object
@@ -9400,7 +9351,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
