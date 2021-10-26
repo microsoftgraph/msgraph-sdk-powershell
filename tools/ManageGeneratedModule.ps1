@@ -12,7 +12,8 @@ Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ModulePrefix
 )
 $LASTEXITCODE = $null
-$NugetPackagesToRemove = "Microsoft.CSharp"
+$NugetPackagesToAdd = @("hyak.common")
+$NugetPackagesToRemove = @("Microsoft.CSharp")
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
 $GeneratedModuleSlnDir = Join-Path $PSScriptRoot "..\src\$Module"
 $GeneratedModuleProj = Join-Path $GeneratedModuleSlnDir "$Module\$ModulePrefix.$Module.csproj"
@@ -59,6 +60,16 @@ foreach($Package in $NugetPackagesToRemove)
     dotnet remove $GeneratedModuleProj package $Package
     if($LASTEXITCODE){
         Write-Warning "Failed to execute: dotnet remove $GeneratedModuleProj package $Package"
+    }
+}
+
+# Add nuget packages from generate modules.
+foreach($Package in $NugetPackagesToAdd)
+{
+    Write-Host -ForegroundColor Green "Executing: dotnet add $GeneratedModuleProj package $Package"
+    dotnet add $GeneratedModuleProj package $Package
+    if($LASTEXITCODE){
+        Write-Warning "Failed to execute: dotnet add $GeneratedModuleProj package $Package"
     }
 }
 

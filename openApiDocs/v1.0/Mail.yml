@@ -34,19 +34,6 @@ paths:
                 - id
                 - overrides
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - overrides
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -131,7 +118,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -164,18 +150,6 @@ paths:
                 - id
                 - classifyAs
                 - senderEmailAddress
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -266,18 +240,6 @@ paths:
                 - id
                 - classifyAs
                 - senderEmailAddress
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -372,7 +334,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -417,23 +378,6 @@ paths:
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - childFolders
                 - messageRules
                 - messages
@@ -533,23 +477,6 @@ paths:
                 - parentFolderId
                 - totalItemCount
                 - unreadItemCount
-                - childFolders
-                - messageRules
-                - messages
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - childFolders
                 - messageRules
                 - messages
@@ -682,7 +609,6 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1025,7 +951,6 @@ paths:
           x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1076,18 +1001,6 @@ paths:
                 - isEnabled
                 - isReadOnly
                 - sequence
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -1198,18 +1111,6 @@ paths:
                 - isEnabled
                 - isReadOnly
                 - sequence
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -1841,7 +1742,6 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -2164,7 +2064,6 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3733,22 +3632,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3866,22 +3749,6 @@ paths:
                 - toRecipients
                 - uniqueBody
                 - webLink
-                - attachments
-                - extensions
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - attachments
                 - extensions
                 - multiValueExtendedProperties
@@ -4074,7 +3941,6 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -4362,7 +4228,6 @@ paths:
           x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -5295,7 +5160,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyPreview:
               type: string
-              description: 'The first 255 characters of the message body. It is in text format. If the message contains instances of mention, this property would contain a concatenation of these mentions as well.'
+              description: The first 255 characters of the message body. It is in text format.
               nullable: true
             ccRecipients:
               type: array
@@ -5327,64 +5192,51 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.internetMessageHeader'
-              description: A collection of message headers defined by RFC5322. The set includes message headers indicating the network path taken by a message from the sender to the recipient. It can also contain custom message headers that hold app data for the message.  Returned only on applying a $select query option. Read-only.
             internetMessageId:
               type: string
-              description: The message ID in the format specified by RFC2822.
               nullable: true
             isDeliveryReceiptRequested:
               type: boolean
-              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             isDraft:
               type: boolean
-              description: Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.
               nullable: true
             isRead:
               type: boolean
-              description: Indicates whether the message has been read.
               nullable: true
             isReadReceiptRequested:
               type: boolean
-              description: Indicates whether a read receipt is requested for the message.
               nullable: true
             parentFolderId:
               type: string
-              description: The unique identifier for the message's parent mailFolder.
               nullable: true
             receivedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the message was received.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             replyTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: The email addresses to use when replying.
             sender:
               $ref: '#/components/schemas/microsoft.graph.recipient'
             sentDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the message was sent.  The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             subject:
               type: string
-              description: The subject of the message.
               nullable: true
             toRecipients:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: 'The To: recipients for the message.'
             uniqueBody:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
             webLink:
               type: string
-              description: 'The URL to open the message in Outlook on the web.You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook on the web review pane.The message will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.'
               nullable: true
             attachments:
               type: array
@@ -5429,7 +5281,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The display name of the attachment. This does not need to be the actual file name.
+              description: The attachment's file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -5493,11 +5345,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -5547,7 +5399,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.recipient'
-          description: The email address to which a message should be redirected.
+          description: The email addresses to which a message should be redirected.
         stopProcessingRules:
           type: boolean
           description: Indicates whether subsequent rules should be evaluated.
@@ -5837,10 +5689,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -5911,12 +5763,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -5929,6 +5775,12 @@ components:
       description: Include count of items
       schema:
         type: boolean
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2

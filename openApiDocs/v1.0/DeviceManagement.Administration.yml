@@ -2451,7 +2451,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get ref of roleDefinition from deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2488,7 +2488,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Update the ref of navigation property roleDefinition in deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_SetRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -2524,7 +2524,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Delete ref of navigation property roleDefinition for deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -3358,7 +3358,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get ref of termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3400,7 +3400,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Update the ref of navigation property termsAndConditions in deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -3436,7 +3436,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Delete ref of navigation property termsAndConditions for deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -4217,6 +4217,7 @@ components:
         - rejected
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.deviceManagementPartnerAppType:
       title: deviceManagementPartnerAppType
       enum:
@@ -4224,6 +4225,7 @@ components:
         - singleTenantApp
         - multiTenantApp
       type: string
+      description: Partner App Type.
     microsoft.graph.deviceManagementExchangeConnectorType:
       title: deviceManagementExchangeConnectorType
       enum:
@@ -4232,6 +4234,7 @@ components:
         - serviceToService
         - dedicated
       type: string
+      description: The type of Exchange Connector.
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -4240,6 +4243,7 @@ components:
         - connected
         - disconnected
       type: string
+      description: The current status of the Exchange Connector.
     microsoft.graph.iosUpdatesInstallStatus:
       title: iosUpdatesInstallStatus
       enum:
@@ -4282,6 +4286,7 @@ components:
         - enabled
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.remoteAssistanceOnboardingStatus:
       title: remoteAssistanceOnboardingStatus
       enum:
@@ -4289,6 +4294,7 @@ components:
         - onboarding
         - onboarded
       type: string
+      description: The current TeamViewer connector status
     microsoft.graph.rolePermission:
       title: rolePermission
       type: object

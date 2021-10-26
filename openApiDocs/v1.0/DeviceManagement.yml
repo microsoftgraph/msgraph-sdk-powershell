@@ -54,6 +54,7 @@ paths:
                 - roleAssignments
                 - roleDefinitions
                 - remoteAssistancePartners
+                - reports
                 - telecomExpenseManagementPartners
                 - troubleshootingEvents
                 - windowsInformationProtectionAppLearningSummaries
@@ -96,6 +97,7 @@ paths:
                 - roleAssignments
                 - roleDefinitions
                 - remoteAssistancePartners
+                - reports
                 - telecomExpenseManagementPartners
                 - troubleshootingEvents
                 - windowsInformationProtectionAppLearningSummaries
@@ -161,6 +163,8 @@ paths:
               operationId: deviceManagement.ListRoleDefinitions
             remoteAssistancePartners:
               operationId: deviceManagement.ListRemoteAssistancePartners
+            reports:
+              operationId: deviceManagement.GetReports
             telecomExpenseManagementPartners:
               operationId: deviceManagement.ListTelecomExpenseManagementPartners
             troubleshootingEvents:
@@ -657,7 +661,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Get ref of managedDevices from deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_ListRefManagedDevices
+      operationId: deviceManagement.detectedApps_ListGraphRefManagedDevices
       parameters:
         - name: detectedApp-id
           in: path
@@ -814,7 +818,7 @@ paths:
         - deviceManagement.detectedApp
       summary: Create new navigation property ref to managedDevices for deviceManagement
       description: The devices that have the discovered application installed
-      operationId: deviceManagement.detectedApps_CreateRefManagedDevices
+      operationId: deviceManagement.detectedApps_CreateGraphRefManagedDevices
       parameters:
         - name: detectedApp-id
           in: path
@@ -2203,7 +2207,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2287,7 +2291,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2319,7 +2323,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2383,7 +2387,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2417,7 +2421,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2450,7 +2454,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy.
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_ListScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2548,7 +2552,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionConfigurations for deviceManagement
-      description: The list of scheduled action configurations for this compliance policy.
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_CreateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2587,7 +2591,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionConfigurations from deviceManagement
-      description: The list of scheduled action configurations for this compliance policy.
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_GetScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2653,7 +2657,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionConfigurations in deviceManagement
-      description: The list of scheduled action configurations for this compliance policy.
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_UpdateScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2694,7 +2698,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionConfigurations for deviceManagement
-      description: The list of scheduled action configurations for this compliance policy.
+      description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
       operationId: deviceManagement.deviceCompliancePolicies.scheduledActionsForRule_DeleteScheduledActionConfigurations
       parameters:
         - name: deviceCompliancePolicy-id
@@ -5342,7 +5346,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Get ref of managedDeviceOverview from deviceManagement
       description: Device overview
-      operationId: deviceManagement_GetRefManagedDeviceOverview
+      operationId: deviceManagement_GetGraphRefManagedDeviceOverview
       responses:
         '200':
           description: Retrieved navigation property link
@@ -5358,7 +5362,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Update the ref of navigation property managedDeviceOverview in deviceManagement
       description: Device overview
-      operationId: deviceManagement_SetRefManagedDeviceOverview
+      operationId: deviceManagement_SetGraphRefManagedDeviceOverview
       requestBody:
         description: New navigation property ref values
         content:
@@ -5379,7 +5383,7 @@ paths:
         - deviceManagement.managedDeviceOverview
       summary: Delete ref of navigation property managedDeviceOverview for deviceManagement
       description: Device overview
-      operationId: deviceManagement_DeleteRefManagedDeviceOverview
+      operationId: deviceManagement_DeleteGraphRefManagedDeviceOverview
       parameters:
         - name: If-Match
           in: header
@@ -6973,7 +6977,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Get ref of softwareUpdateStatusSummary from deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_GetRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_GetGraphRefSoftwareUpdateStatusSummary
       responses:
         '200':
           description: Retrieved navigation property link
@@ -6989,7 +6993,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Update the ref of navigation property softwareUpdateStatusSummary in deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_SetRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_SetGraphRefSoftwareUpdateStatusSummary
       requestBody:
         description: New navigation property ref values
         content:
@@ -7010,7 +7014,7 @@ paths:
         - deviceManagement.softwareUpdateStatusSummary
       summary: Delete ref of navigation property softwareUpdateStatusSummary for deviceManagement
       description: The software update status summary.
-      operationId: deviceManagement_DeleteRefSoftwareUpdateStatusSummary
+      operationId: deviceManagement_DeleteGraphRefSoftwareUpdateStatusSummary
       parameters:
         - name: If-Match
           in: header
@@ -7653,7 +7657,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account ID for given tenant
+              description: Intune Account Id for given tenant
               format: uuid
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -7773,6 +7777,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.remoteAssistancePartner'
               description: The remote assist partners.
+            reports:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
             telecomExpenseManagementPartners:
               type: array
               items:
@@ -8052,7 +8058,7 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
+          description: 'Device categories provides a way to organize your devices. Using device categories, company administrators can define their own categories that make sense to their company. These categories can then be applied to a device in the Intune Azure console or selected by a user during device enrollment. You can filter reports and create dynamic Azure Active Directory device groups based on device categories.'
     microsoft.graph.deviceCompliancePolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8103,7 +8109,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action for this rule
+              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
             userStatuses:
               type: array
               items:
@@ -8277,13 +8283,13 @@ components:
           properties:
             ruleName:
               type: string
-              description: Name of the rule which this scheduled action applies to.
+              description: 'Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.'
               nullable: true
             scheduledActionConfigurations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceActionItem'
-              description: The list of scheduled action configurations for this compliance policy.
+              description: The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
           additionalProperties:
             type: object
           description: Scheduled Action for Rule
@@ -9249,6 +9255,7 @@ components:
         - blocked
         - lockedOut
       type: string
+      description: Tenant mobile device management subscription state.
     microsoft.graph.termsAndConditions:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9823,6 +9830,20 @@ components:
           additionalProperties:
             type: object
           description: RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
+    microsoft.graph.deviceManagementReports:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementReports
+          type: object
+          properties:
+            exportJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+              description: Entity representing a job to export a report
+          additionalProperties:
+            type: object
+          description: Singleton entity that acts as a container for all reports functionality.
     microsoft.graph.telecomExpenseManagementPartner:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9862,6 +9883,7 @@ components:
         - inGracePeriod
         - configManager
       type: string
+      description: Compliance state.
     microsoft.graph.configurationManagerClientEnabledFeatures:
       title: configurationManagerClientEnabledFeatures
       type: object
@@ -9927,6 +9949,7 @@ components:
         - appleUserEnrollment
         - appleUserEnrollmentWithServiceAccount
       type: string
+      description: Possible ways of adding a mobile device to management.
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -10074,6 +10097,7 @@ components:
         - notRegisteredPendingEnrollment
         - unknown
       type: string
+      description: Device registration status.
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
       enum:
@@ -10083,6 +10107,7 @@ components:
         - blocked
         - quarantined
       type: string
+      description: Device Exchange Access State.
     microsoft.graph.deviceManagementExchangeAccessStateReason:
       title: deviceManagementExchangeAccessStateReason
       enum:
@@ -10103,6 +10128,7 @@ components:
         - compromisedPassword
         - deviceNotKnownWithManagedApp
       type: string
+      description: Device Exchange Access State Reason.
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:
@@ -10110,6 +10136,7 @@ components:
         - company
         - personal
       type: string
+      description: Owner type of device.
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -10124,6 +10151,8 @@ components:
         - unknown
         - jamf
         - googleCloudDevicePolicyController
+        - microsoft365ManagedMdm
+        - msSense
       type: string
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
@@ -10139,6 +10168,7 @@ components:
         - compromised
         - misconfigured
       type: string
+      description: Available health states for the Device Health API
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -10168,18 +10198,20 @@ components:
         - removeResourceAccessProfiles
         - pushNotification
       type: string
+      description: Scheduled Action Type Enum
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
         - android
+        - androidForWork
         - iOS
         - macOS
         - windowsPhone81
         - windows81AndLater
         - windows10AndLater
-        - androidWorkProfile
         - all
       type: string
+      description: Supported platform types for policies.
     microsoft.graph.deviceExchangeAccessStateSummary:
       title: deviceExchangeAccessStateSummary
       type: object
@@ -10376,12 +10408,14 @@ components:
         - includeCompanyName
         - includeContactInformation
       type: string
+      description: Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
     microsoft.graph.applicationType:
       title: applicationType
       enum:
         - universal
         - desktop
       type: string
+      description: Possible types of Application
     odata.error:
       required:
         - error
@@ -10508,6 +10542,7 @@ components:
         - rejected
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10526,6 +10561,7 @@ components:
         - singleTenantApp
         - multiTenantApp
       type: string
+      description: Partner App Type.
     microsoft.graph.deviceManagementExchangeConnectorType:
       title: deviceManagementExchangeConnectorType
       enum:
@@ -10534,6 +10570,7 @@ components:
         - serviceToService
         - dedicated
       type: string
+      description: The type of Exchange Connector.
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -10542,6 +10579,7 @@ components:
         - connected
         - disconnected
       type: string
+      description: The current status of the Exchange Connector.
     microsoft.graph.mobileThreatPartnerTenantState:
       title: mobileThreatPartnerTenantState
       enum:
@@ -10550,6 +10588,7 @@ components:
         - enabled
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
       title: importedWindowsAutopilotDeviceIdentityState
       type: object
@@ -10625,6 +10664,53 @@ components:
         - onboarding
         - onboarded
       type: string
+      description: The current TeamViewer connector status
+    microsoft.graph.deviceManagementExportJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementExportJob
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time that the exported report expires
+              format: date-time
+            filter:
+              type: string
+              description: Filters applied on the report
+              nullable: true
+            format:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
+            localizationType:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobLocalizationType'
+            reportName:
+              type: string
+              description: Name of the report
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time that the exported report was requested
+              format: date-time
+            select:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Columns selected from the report
+            snapshotId:
+              type: string
+              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
+            url:
+              type: string
+              description: Temporary location of the exported report
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Entity representing a job to export a report
     microsoft.graph.actionState:
       title: actionState
       enum:
@@ -10636,6 +10722,7 @@ components:
         - failed
         - notSupported
       type: string
+      description: State of the action on the device
     microsoft.graph.settingSource:
       title: settingSource
       type: object
@@ -10648,6 +10735,8 @@ components:
           type: string
           description: Not yet documented
           nullable: true
+        sourceType:
+          $ref: '#/components/schemas/microsoft.graph.settingSourceType'
       additionalProperties:
         type: object
     odata.error.main:
@@ -10701,6 +10790,36 @@ components:
       additionalProperties:
         type: object
       description: Set of allowed and not allowed actions for a resource.
+    microsoft.graph.deviceManagementReportFileFormat:
+      title: deviceManagementReportFileFormat
+      enum:
+        - csv
+        - pdf
+      type: string
+      description: Possible values for the file format of a report
+    microsoft.graph.deviceManagementExportJobLocalizationType:
+      title: deviceManagementExportJobLocalizationType
+      enum:
+        - localizedValuesAsAdditionalColumn
+        - replaceLocalizableValues
+      type: string
+      description: Configures how the requested export job is localized
+    microsoft.graph.deviceManagementReportStatus:
+      title: deviceManagementReportStatus
+      enum:
+        - unknown
+        - notStarted
+        - inProgress
+        - completed
+        - failed
+      type: string
+      description: Possible statuses associated with a generated report
+    microsoft.graph.settingSourceType:
+      title: settingSourceType
+      enum:
+        - deviceConfiguration
+        - deviceIntent
+      type: string
     odata.error.detail:
       required:
         - code

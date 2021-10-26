@@ -9,6 +9,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/drives/{drive-id}/bundles": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/bundles/{driveItem-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/bundles/{driveItem-id}/content": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/drives/{drive-id}/following": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -45,6 +57,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/drives/{drive-id}/list/contentTypes": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -53,11 +73,99 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/drives/{drive-id}/list/contentTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -209,6 +317,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/shares/{sharedDriveItem-id}/list/contentTypes": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
@@ -217,11 +333,99 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.publish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/base/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopy": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
     "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
     "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnLinks/{columnLink-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columnPositions/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/columns/{columnDefinition-id}/sourceColumn/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.associateWithHubSites": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.copyToDefaultContentLocation": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.isPublished()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/{contentType-id}/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Files.yml"
+    },
+    "/shares/{sharedDriveItem-id}/list/contentTypes/microsoft.graph.addCopy": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },

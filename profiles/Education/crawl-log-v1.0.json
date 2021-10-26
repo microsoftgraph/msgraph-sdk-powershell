@@ -45,7 +45,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -73,7 +73,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
-    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder()": {
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/microsoft.graph.setUpResourcesFolder": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },

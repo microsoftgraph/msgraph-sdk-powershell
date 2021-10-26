@@ -85,6 +85,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
+    "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/managedAppPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
@@ -117,6 +121,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/appliedPolicies/{managedAppPolicy-id}/microsoft.graph.windowsInformationProtection/microsoft.graph.assign": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
@@ -138,6 +146,10 @@
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },
     "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.assign": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
+    },
+    "/deviceAppManagement/managedAppRegistrations/{managedAppRegistration-id}/intendedPolicies/{managedAppPolicy-id}/microsoft.graph.targetedManagedAppProtection/microsoft.graph.targetApps": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CorporateManagement.yml"
     },

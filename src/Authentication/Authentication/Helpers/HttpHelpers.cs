@@ -22,7 +22,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// The value for the Auth module version header.
         private static string AuthModuleVersionHeaderValue =
             string.Format(Constants.SDKHeaderValue,
-                AssemblyInfo.Name,
                 AssemblyInfo.Version.Major,
                 AssemblyInfo.Version.Minor,
                 AssemblyInfo.Version.Build);

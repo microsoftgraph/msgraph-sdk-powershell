@@ -45,6 +45,8 @@ paths:
                 - enrollmentMode desc
                 - enrollmentTokenType
                 - enrollmentTokenType desc
+                - enrollmentTokenUsageCount
+                - enrollmentTokenUsageCount desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - qrCodeContent
@@ -59,6 +61,14 @@ paths:
                 - tokenExpirationDateTime desc
                 - tokenValue
                 - tokenValue desc
+                - wifiHidden
+                - wifiHidden desc
+                - wifiPassword
+                - wifiPassword desc
+                - wifiSecurityType
+                - wifiSecurityType desc
+                - wifiSsid
+                - wifiSsid desc
               type: string
         - name: $select
           in: query
@@ -78,6 +88,7 @@ paths:
                 - enrolledDeviceCount
                 - enrollmentMode
                 - enrollmentTokenType
+                - enrollmentTokenUsageCount
                 - lastModifiedDateTime
                 - qrCodeContent
                 - qrCodeImage
@@ -85,6 +96,10 @@ paths:
                 - tokenCreationDateTime
                 - tokenExpirationDateTime
                 - tokenValue
+                - wifiHidden
+                - wifiPassword
+                - wifiSecurityType
+                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -177,6 +192,7 @@ paths:
                 - enrolledDeviceCount
                 - enrollmentMode
                 - enrollmentTokenType
+                - enrollmentTokenUsageCount
                 - lastModifiedDateTime
                 - qrCodeContent
                 - qrCodeImage
@@ -184,6 +200,10 @@ paths:
                 - tokenCreationDateTime
                 - tokenExpirationDateTime
                 - tokenValue
+                - wifiHidden
+                - wifiPassword
+                - wifiSecurityType
+                - wifiSsid
               type: string
         - name: $expand
           in: query
@@ -1952,24 +1972,29 @@ paths:
                 - touchIdDisabled
                 - appearanceScreenDisabled
                 - awaitDeviceConfiguredConfirmation
+                - carrierActivationUrl
                 - companyPortalVppTokenId
                 - deviceToDeviceMigrationDisabled
                 - enableSharedIPad
                 - enableSingleAppEnrollmentMode
                 - expressLanguageScreenDisabled
+                - forceTemporarySession
                 - homeButtonScreenDisabled
                 - iMessageAndFaceTimeScreenDisabled
                 - iTunesPairingMode
                 - managementCertificates
                 - onBoardingScreenDisabled
                 - passCodeDisabled
+                - passcodeLockGracePeriodInSeconds
                 - preferredLanguageScreenDisabled
                 - restoreCompletedScreenDisabled
                 - restoreFromAndroidDisabled
                 - sharedIPadMaximumUserCount
                 - simSetupScreenDisabled
                 - softwareUpdateScreenDisabled
+                - temporarySessionTimeoutInSeconds
                 - updateCompleteScreenDisabled
+                - userSessionTimeoutInSeconds
                 - watchMigrationScreenDisabled
                 - welcomeScreenDisabled
                 - zoomDisabled
@@ -2002,7 +2027,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get ref of defaultIosEnrollmentProfile from deviceManagement
       description: Default iOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_GetRefDefaultIosEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_GetGraphRefDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2026,7 +2051,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Update the ref of navigation property defaultIosEnrollmentProfile in deviceManagement
       description: Default iOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_SetRefDefaultIosEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_SetGraphRefDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2055,7 +2080,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Delete ref of navigation property defaultIosEnrollmentProfile for deviceManagement
       description: Default iOS Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_DeleteRefDefaultIosEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_DeleteGraphRefDefaultIosEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2163,7 +2188,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Get ref of defaultMacOsEnrollmentProfile from deviceManagement
       description: Default MacOs Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_GetRefDefaultMacOsEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_GetGraphRefDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2187,7 +2212,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Update the ref of navigation property defaultMacOsEnrollmentProfile in deviceManagement
       description: Default MacOs Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_SetRefDefaultMacOsEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_SetGraphRefDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -2216,7 +2241,7 @@ paths:
         - deviceManagement.depOnboardingSetting
       summary: Delete ref of navigation property defaultMacOsEnrollmentProfile for deviceManagement
       description: Default MacOs Enrollment Profile
-      operationId: deviceManagement.depOnboardingSettings_DeleteRefDefaultMacOsEnrollmentProfile
+      operationId: deviceManagement.depOnboardingSettings_DeleteGraphRefDefaultMacOsEnrollmentProfile
       parameters:
         - name: depOnboardingSetting-id
           in: path
@@ -3981,6 +4006,8 @@ paths:
                 - language desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - managementServiceAppId
+                - managementServiceAppId desc
                 - outOfBoxExperienceSettings
                 - outOfBoxExperienceSettings desc
                 - roleScopeTagIds
@@ -4007,6 +4034,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -4108,6 +4136,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -4573,6 +4602,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -4619,7 +4649,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get ref of deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4661,7 +4691,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the ref of navigation property deploymentProfile in deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_SetRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_SetGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4697,7 +4727,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete ref of navigation property deploymentProfile for deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_DeleteRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_DeleteGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4767,6 +4797,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -4813,7 +4844,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Get ref of intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_GetGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4855,7 +4886,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Update the ref of navigation property intendedDeploymentProfile in deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_SetRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_SetGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -4891,7 +4922,7 @@ paths:
         - deviceManagement.windowsAutopilotDeploymentProfile
       summary: Delete ref of navigation property intendedDeploymentProfile for deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_DeleteRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeploymentProfiles.assignedDevices_DeleteGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeploymentProfile-id
           in: path
@@ -5493,6 +5524,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -5537,7 +5569,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get ref of deploymentProfile from deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5570,7 +5602,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Update the ref of navigation property deploymentProfile in deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_SetRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_SetGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5599,7 +5631,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Delete ref of navigation property deploymentProfile for deviceManagement
       description: Deployment profile currently assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_DeleteRefDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_DeleteGraphRefDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5655,6 +5687,7 @@ paths:
                 - extractHardwareHash
                 - language
                 - lastModifiedDateTime
+                - managementServiceAppId
                 - outOfBoxExperienceSettings
                 - roleScopeTagIds
                 - assignedDevices
@@ -5699,7 +5732,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Get ref of intendedDeploymentProfile from deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_GetGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5732,7 +5765,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Update the ref of navigation property intendedDeploymentProfile in deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_SetRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_SetGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5761,7 +5794,7 @@ paths:
         - deviceManagement.windowsAutopilotDeviceIdentity
       summary: Delete ref of navigation property intendedDeploymentProfile for deviceManagement
       description: Deployment profile intended to be assigned to the Windows autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_DeleteRefIntendedDeploymentProfile
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities_DeleteGraphRefIntendedDeploymentProfile
       parameters:
         - name: windowsAutopilotDeviceIdentity-id
           in: path
@@ -5904,6 +5937,8 @@ paths:
                 - lastModifiedDateTime desc
                 - roleScopeTagIds
                 - roleScopeTagIds desc
+                - rolloutSettings
+                - rolloutSettings desc
               type: string
         - name: $select
           in: query
@@ -5924,8 +5959,8 @@ paths:
                 - featureUpdateVersion
                 - lastModifiedDateTime
                 - roleScopeTagIds
+                - rolloutSettings
                 - assignments
-                - deviceUpdateStates
               type: string
         - name: $expand
           in: query
@@ -5939,7 +5974,6 @@ paths:
               enum:
                 - '*'
                 - assignments
-                - deviceUpdateStates
               type: string
       responses:
         '200':
@@ -6021,8 +6055,8 @@ paths:
                 - featureUpdateVersion
                 - lastModifiedDateTime
                 - roleScopeTagIds
+                - rolloutSettings
                 - assignments
-                - deviceUpdateStates
               type: string
         - name: $expand
           in: query
@@ -6036,7 +6070,6 @@ paths:
               enum:
                 - '*'
                 - assignments
-                - deviceUpdateStates
               type: string
       responses:
         '200':
@@ -6048,10 +6081,6 @@ paths:
           links:
             assignments:
               operationId: deviceManagement.WindowsFeatureUpdateProfiles.ListAssignments
-              parameters:
-                windowsFeatureUpdateProfile-id: $request.path.windowsFeatureUpdateProfile-id
-            deviceUpdateStates:
-              operationId: deviceManagement.WindowsFeatureUpdateProfiles.ListDeviceUpdateStates
               parameters:
                 windowsFeatureUpdateProfile-id: $request.path.windowsFeatureUpdateProfile-id
         default:
@@ -6335,275 +6364,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: windowsFeatureUpdateProfileAssignment
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/deviceUpdateStates':
-    get:
-      tags:
-        - deviceManagement.windowsFeatureUpdateProfile
-      summary: Get deviceUpdateStates from deviceManagement
-      description: The list of device states this profile targeted to
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_ListDeviceUpdateStates
-      parameters:
-        - name: windowsFeatureUpdateProfile-id
-          in: path
-          description: 'key: id of windowsFeatureUpdateProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsFeatureUpdateProfile
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deviceDisplayName
-                - deviceDisplayName desc
-                - deviceId
-                - deviceId desc
-                - featureUpdateVersion
-                - featureUpdateVersion desc
-                - lastScanDateTime
-                - lastScanDateTime desc
-                - lastSyncDateTime
-                - lastSyncDateTime desc
-                - qualityUpdateVersion
-                - qualityUpdateVersion desc
-                - status
-                - status desc
-                - userId
-                - userId desc
-                - userPrincipalName
-                - userPrincipalName desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceDisplayName
-                - deviceId
-                - featureUpdateVersion
-                - lastScanDateTime
-                - lastSyncDateTime
-                - qualityUpdateVersion
-                - status
-                - userId
-                - userPrincipalName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of windowsUpdateState
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - deviceManagement.windowsFeatureUpdateProfile
-      summary: Create new navigation property to deviceUpdateStates for deviceManagement
-      description: The list of device states this profile targeted to
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_CreateDeviceUpdateStates
-      parameters:
-        - name: windowsFeatureUpdateProfile-id
-          in: path
-          description: 'key: id of windowsFeatureUpdateProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsFeatureUpdateProfile
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/deviceUpdateStates/{windowsUpdateState-id}':
-    get:
-      tags:
-        - deviceManagement.windowsFeatureUpdateProfile
-      summary: Get deviceUpdateStates from deviceManagement
-      description: The list of device states this profile targeted to
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_GetDeviceUpdateStates
-      parameters:
-        - name: windowsFeatureUpdateProfile-id
-          in: path
-          description: 'key: id of windowsFeatureUpdateProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsFeatureUpdateProfile
-        - name: windowsUpdateState-id
-          in: path
-          description: 'key: id of windowsUpdateState'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsUpdateState
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deviceDisplayName
-                - deviceId
-                - featureUpdateVersion
-                - lastScanDateTime
-                - lastSyncDateTime
-                - qualityUpdateVersion
-                - status
-                - userId
-                - userPrincipalName
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - deviceManagement.windowsFeatureUpdateProfile
-      summary: Update the navigation property deviceUpdateStates in deviceManagement
-      description: The list of device states this profile targeted to
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_UpdateDeviceUpdateStates
-      parameters:
-        - name: windowsFeatureUpdateProfile-id
-          in: path
-          description: 'key: id of windowsFeatureUpdateProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsFeatureUpdateProfile
-        - name: windowsUpdateState-id
-          in: path
-          description: 'key: id of windowsUpdateState'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsUpdateState
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.windowsFeatureUpdateProfile
-      summary: Delete navigation property deviceUpdateStates for deviceManagement
-      description: The list of device states this profile targeted to
-      operationId: deviceManagement.windowsFeatureUpdateProfiles_DeleteDeviceUpdateStates
-      parameters:
-        - name: windowsFeatureUpdateProfile-id
-          in: path
-          description: 'key: id of windowsFeatureUpdateProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsFeatureUpdateProfile
-        - name: windowsUpdateState-id
-          in: path
-          description: 'key: id of windowsUpdateState'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsUpdateState
         - name: If-Match
           in: header
           description: ETag
@@ -7984,7 +7744,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_ListRefDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignments_ListGraphRefDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8041,7 +7801,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property ref to directoryScopes for roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_CreateRefDirectoryScopes
+      operationId: roleManagement.cloudPC.roleAssignments_CreateGraphRefDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8160,7 +7920,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_ListRefPrincipals
+      operationId: roleManagement.cloudPC.roleAssignments_ListGraphRefPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8217,7 +7977,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property ref to principals for roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.cloudPC.roleAssignments_CreateRefPrincipals
+      operationId: roleManagement.cloudPC.roleAssignments_CreateGraphRefPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8317,7 +8077,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.cloudPC.roleAssignments_GetRefRoleDefinition
+      operationId: roleManagement.cloudPC.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8346,7 +8106,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.cloudPC.roleAssignments_SetRefRoleDefinition
+      operationId: roleManagement.cloudPC.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8375,7 +8135,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.cloudPC.roleAssignments_DeleteRefRoleDefinition
+      operationId: roleManagement.cloudPC.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -8633,7 +8393,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.cloudPC.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8738,7 +8498,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.cloudPC.roleDefinitions_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8770,7 +8530,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.cloudPC.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8841,7 +8601,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.cloudPC.roleDefinitions_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -8875,7 +8635,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.cloudPC.roleDefinitions_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10200,7 +9960,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of directoryScopes from roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_ListRefDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignments_ListGraphRefDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10257,7 +10017,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property ref to directoryScopes for roleManagement
       description: Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_CreateRefDirectoryScopes
+      operationId: roleManagement.deviceManagement.roleAssignments_CreateGraphRefDirectoryScopes
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10376,7 +10136,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of principals from roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_ListRefPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignments_ListGraphRefPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10433,7 +10193,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property ref to principals for roleManagement
       description: Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
-      operationId: roleManagement.deviceManagement.roleAssignments_CreateRefPrincipals
+      operationId: roleManagement.deviceManagement.roleAssignments_CreateGraphRefPrincipals
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10533,7 +10293,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Get ref of roleDefinition from roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.deviceManagement.roleAssignments_GetRefRoleDefinition
+      operationId: roleManagement.deviceManagement.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10562,7 +10322,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.deviceManagement.roleAssignments_SetRefRoleDefinition
+      operationId: roleManagement.deviceManagement.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10591,7 +10351,7 @@ paths:
         - roleManagement.rbacApplicationMultiple
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: 'Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.'
-      operationId: roleManagement.deviceManagement.roleAssignments_DeleteRefRoleDefinition
+      operationId: roleManagement.deviceManagement.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentMultiple-id
           in: path
@@ -10849,7 +10609,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.deviceManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10954,7 +10714,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.deviceManagement.roleDefinitions_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -10986,7 +10746,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.deviceManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11057,7 +10817,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.deviceManagement.roleDefinitions_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11091,7 +10851,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.deviceManagement.roleDefinitions_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -11124,6 +10884,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directory from roleManagement
+      description: Read-only. Nullable.
       operationId: roleManagement_GetDirectory
       parameters:
         - name: $select
@@ -11205,6 +10966,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property directory in roleManagement
+      description: Read-only. Nullable.
       operationId: roleManagement_UpdateDirectory
       requestBody:
         description: New navigation property values
@@ -11223,6 +10985,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property directory for roleManagement
+      description: Read-only. Nullable.
       operationId: roleManagement_DeleteDirectory
       parameters:
         - name: If-Match
@@ -12439,6 +12202,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12466,6 +12230,8 @@ paths:
                 - directoryScopeId desc
                 - principalId
                 - principalId desc
+                - principalOrganizationId
+                - principalOrganizationId desc
                 - resourceScope
                 - resourceScope desc
                 - roleDefinitionId
@@ -12486,6 +12252,7 @@ paths:
                 - condition
                 - directoryScopeId
                 - principalId
+                - principalOrganizationId
                 - resourceScope
                 - roleDefinitionId
                 - appScope
@@ -12536,6 +12303,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -12559,6 +12327,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12583,6 +12352,7 @@ paths:
                 - condition
                 - directoryScopeId
                 - principalId
+                - principalOrganizationId
                 - resourceScope
                 - roleDefinitionId
                 - appScope
@@ -12637,6 +12407,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property roleAssignments in roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_UpdateRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12663,6 +12434,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.directory_DeleteRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12688,7 +12460,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12738,7 +12510,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property appScope in roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_UpdateAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12765,7 +12537,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property appScope for roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_DeleteAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12791,7 +12563,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12841,8 +12613,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -12865,8 +12637,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_SetRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -12894,8 +12666,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_DeleteRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -12920,7 +12692,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.directory.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -12970,8 +12742,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -12994,8 +12766,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_SetRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -13023,8 +12795,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_DeleteRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -13049,7 +12821,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -13113,8 +12885,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_GetRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -13142,8 +12914,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_SetRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -13171,8 +12943,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.directory.roleAssignments_DeleteRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -13553,7 +13325,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleInstances_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -13594,7 +13366,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_SetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleInstances_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -13623,7 +13395,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.directory.roleAssignmentScheduleInstances_DeleteRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleInstances_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -14063,7 +13835,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14104,7 +13876,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14133,7 +13905,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14210,7 +13982,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefAppScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14234,7 +14006,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property appScope in roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefAppScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14263,7 +14035,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property appScope for roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefAppScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14339,7 +14111,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14363,7 +14135,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14392,7 +14164,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefDirectoryScope
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14488,7 +14260,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefPrincipal
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14512,7 +14284,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefPrincipal
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14541,7 +14313,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefPrincipal
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14631,7 +14403,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14660,7 +14432,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14689,7 +14461,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefRoleDefinition
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14714,6 +14486,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -14804,7 +14577,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of targetSchedule from roleManagement
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_GetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14848,7 +14622,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property targetSchedule in roleManagement
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_SetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -14876,7 +14651,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property targetSchedule for roleManagement
-      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleAssignmentScheduleRequests_DeleteGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -15288,7 +15064,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.directory.roleAssignmentSchedules_GetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentSchedules_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -15329,7 +15105,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.directory.roleAssignmentSchedules_SetRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentSchedules_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -15358,7 +15134,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.directory.roleAssignmentSchedules_DeleteRefActivatedUsing
+      operationId: roleManagement.directory.roleAssignmentSchedules_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -15408,6 +15184,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -15505,6 +15282,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -15528,6 +15306,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15590,6 +15369,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property roleDefinitions in roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_UpdateRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15616,6 +15396,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.directory_DeleteRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15641,7 +15422,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15746,7 +15527,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15778,7 +15559,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15849,7 +15630,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -15883,7 +15664,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.directory.roleDefinitions_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -16495,7 +16276,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -16546,8 +16327,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16570,8 +16351,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property appScope in roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16599,8 +16380,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property appScope for roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16676,7 +16457,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRefDirectoryScope
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16700,7 +16481,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetRefDirectoryScope
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16729,7 +16510,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteRefDirectoryScope
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16825,7 +16606,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRefPrincipal
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16849,7 +16630,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetRefPrincipal
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16878,7 +16659,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteRefPrincipal
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16903,7 +16684,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -16967,8 +16748,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -16996,8 +16777,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -17025,8 +16806,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -17051,6 +16832,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -17134,7 +16916,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of targetSchedule from roleManagement
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_GetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -17174,7 +16957,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property targetSchedule in roleManagement
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_SetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -17202,7 +16986,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property targetSchedule for roleManagement
-      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.directory.roleEligibilityScheduleRequests_DeleteGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -18860,6 +18645,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_ListRoleAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18887,6 +18673,8 @@ paths:
                 - directoryScopeId desc
                 - principalId
                 - principalId desc
+                - principalOrganizationId
+                - principalOrganizationId desc
                 - resourceScope
                 - resourceScope desc
                 - roleDefinitionId
@@ -18907,6 +18695,7 @@ paths:
                 - condition
                 - directoryScopeId
                 - principalId
+                - principalOrganizationId
                 - resourceScope
                 - roleDefinitionId
                 - appScope
@@ -18957,6 +18746,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_CreateRoleAssignments
       requestBody:
         description: New navigation property
@@ -18980,6 +18770,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_GetRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19004,6 +18795,7 @@ paths:
                 - condition
                 - directoryScopeId
                 - principalId
+                - principalOrganizationId
                 - resourceScope
                 - roleDefinitionId
                 - appScope
@@ -19058,6 +18850,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property roleAssignments in roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_UpdateRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19084,6 +18877,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
       operationId: roleManagement.entitlementManagement_DeleteRoleAssignments
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19109,7 +18903,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19159,7 +18953,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property appScope in roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_UpdateAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19186,7 +18980,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property appScope for roleManagement
-      description: Details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_DeleteAppScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19212,7 +19006,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19262,8 +19056,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19286,8 +19080,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19315,8 +19109,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
-      description: The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteRefDirectoryScope
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19341,7 +19135,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+      description: Referencing the assigned principal. Read-only. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19391,8 +19185,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19415,8 +19209,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19444,8 +19238,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
-      description: The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteRefPrincipal
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19470,7 +19264,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleAssignments_GetRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
@@ -19534,8 +19328,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_GetRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19563,8 +19357,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_SetRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19592,8 +19386,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
-      description: The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
-      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteRefRoleDefinition
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignment-id
           in: path
@@ -19974,7 +19768,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -20015,7 +19809,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_SetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -20044,7 +19838,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the roleAssignmentScheduleInstance is activated by a roleEligibilityScheduleRequest, this is the link to the related schedule instance.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_DeleteRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleInstances_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleInstance-id
           in: path
@@ -20484,7 +20278,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20525,7 +20319,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20554,7 +20348,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20631,7 +20425,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of appScope from roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20655,7 +20449,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property appScope in roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20684,7 +20478,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property appScope for roleManagement
       description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefAppScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefAppScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20760,7 +20554,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20784,7 +20578,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20813,7 +20607,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20909,7 +20703,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20933,7 +20727,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -20962,7 +20756,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21052,7 +20846,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21081,7 +20875,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21110,7 +20904,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
       description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefRoleDefinition
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21135,6 +20929,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
@@ -21225,7 +21020,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of targetSchedule from roleManagement
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_GetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21269,7 +21065,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property targetSchedule in roleManagement
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_SetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21297,7 +21094,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property targetSchedule for roleManagement
-      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleAssignmentScheduleRequests_DeleteGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleAssignmentScheduleRequest-id
           in: path
@@ -21709,7 +21507,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of activatedUsing from roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_GetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -21750,7 +21548,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property activatedUsing in roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_SetRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_SetGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -21779,7 +21577,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property activatedUsing for roleManagement
       description: 'If the roleAssignmentSchedule is activated by a roleEligibilitySchedule, this is the link to that schedule.'
-      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_DeleteRefActivatedUsing
+      operationId: roleManagement.entitlementManagement.roleAssignmentSchedules_DeleteGraphRefActivatedUsing
       parameters:
         - name: unifiedRoleAssignmentSchedule-id
           in: path
@@ -21829,6 +21627,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_ListRoleDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -21926,6 +21725,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_CreateRoleDefinitions
       requestBody:
         description: New navigation property
@@ -21949,6 +21749,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_GetRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22011,6 +21812,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property roleDefinitions in roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_UpdateRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22037,6 +21839,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
       operationId: roleManagement.entitlementManagement_DeleteRoleDefinitions
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22062,7 +21865,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_ListInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22167,7 +21970,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_CreateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22199,7 +22002,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get inheritsPermissionsFrom from roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_GetInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22270,7 +22073,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property inheritsPermissionsFrom in roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_UpdateInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22304,7 +22107,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property inheritsPermissionsFrom for roleManagement
-      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
       operationId: roleManagement.entitlementManagement.roleDefinitions_DeleteInheritsPermissionsFrom
       parameters:
         - name: unifiedRoleDefinition-id
@@ -22916,7 +22719,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -22967,8 +22770,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of appScope from roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -22991,8 +22794,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property appScope in roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23020,8 +22823,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property appScope for roleManagement
-      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteRefAppScope
+      description: Read-only property with details of the app-specific scope when the assignment scope is app-specific. Containment entity.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteGraphRefAppScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23097,7 +22900,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of directoryScope from roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23121,7 +22924,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property directoryScope in roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23150,7 +22953,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property directoryScope for roleManagement
       description: Property referencing the directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteRefDirectoryScope
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteGraphRefDirectoryScope
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23246,7 +23049,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Get ref of principal from roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23270,7 +23073,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property principal in roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23299,7 +23102,7 @@ paths:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property principal for roleManagement
       description: Property referencing the principal that is getting a role assignment through the request. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only.
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteRefPrincipal
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteGraphRefPrincipal
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23324,7 +23127,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -23388,8 +23191,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of roleDefinition from roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23417,8 +23220,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property roleDefinition in roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23446,8 +23249,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property roleDefinition for roleManagement
-      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteRefRoleDefinition
+      description: Property indicating the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteGraphRefRoleDefinition
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23472,6 +23275,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get targetSchedule from roleManagement
+      description: Property indicating the schedule for an eligible role assignment.
       operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
@@ -23555,7 +23359,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get ref of targetSchedule from roleManagement
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_GetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23595,7 +23400,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the ref of navigation property targetSchedule in roleManagement
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_SetGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23623,7 +23429,8 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete ref of navigation property targetSchedule for roleManagement
-      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteRefTargetSchedule
+      description: Property indicating the schedule for an eligible role assignment.
+      operationId: roleManagement.entitlementManagement.roleEligibilityScheduleRequests_DeleteGraphRefTargetSchedule
       parameters:
         - name: unifiedRoleEligibilityScheduleRequest-id
           in: path
@@ -23993,6 +23800,12 @@ components:
               $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentMode'
             enrollmentTokenType:
               $ref: '#/components/schemas/microsoft.graph.androidDeviceOwnerEnrollmentTokenType'
+            enrollmentTokenUsageCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total number of AOSP devices that have enrolled using the current token.
+              format: int32
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -24023,6 +23836,19 @@ components:
             tokenValue:
               type: string
               description: Value of the most recently created token for this enrollment profile.
+              nullable: true
+            wifiHidden:
+              type: boolean
+              description: Boolean that indicates if hidden wifi networks are enabled
+            wifiPassword:
+              type: string
+              description: String that contains the wi-fi login password
+              nullable: true
+            wifiSecurityType:
+              $ref: '#/components/schemas/microsoft.graph.aospWifiSecurityType'
+            wifiSsid:
+              type: string
+              description: String that contains the wi-fi login ssid
               nullable: true
           additionalProperties:
             type: object
@@ -24408,6 +24234,10 @@ components:
             awaitDeviceConfiguredConfirmation:
               type: boolean
               description: Indicates if the device will need to wait for configured confirmation
+            carrierActivationUrl:
+              type: string
+              description: Carrier URL for activating device eSIM.
+              nullable: true
             companyPortalVppTokenId:
               type: string
               description: 'If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. ''enableAuthenticationViaCompanyPortal'' must be set in order for this property to be set.'
@@ -24424,6 +24254,9 @@ components:
             expressLanguageScreenDisabled:
               type: boolean
               description: Indicates if Express Language screen is disabled
+            forceTemporarySession:
+              type: boolean
+              description: Indicates if temporary sessions is enabled
             homeButtonScreenDisabled:
               type: boolean
               description: Indicates if home button sensitivity screen is disabled
@@ -24443,6 +24276,13 @@ components:
             passCodeDisabled:
               type: boolean
               description: Indicates if Passcode setup pane is disabled
+            passcodeLockGracePeriodInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Indicates timeout before locked screen requires the user to enter the device passocde to unlock it
+              format: int32
+              nullable: true
             preferredLanguageScreenDisabled:
               type: boolean
               description: Indicates if Preferred language screen is disabled
@@ -24464,9 +24304,21 @@ components:
             softwareUpdateScreenDisabled:
               type: boolean
               description: Indicates if the mandatory sofware update screen is disabled
+            temporarySessionTimeoutInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Indicates timeout of temporary session
+              format: int32
             updateCompleteScreenDisabled:
               type: boolean
               description: Indicates if Weclome screen is disabled
+            userSessionTimeoutInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Indicates timeout of temporary session
+              format: int32
             watchMigrationScreenDisabled:
               type: boolean
               description: Indicates if the watch migration screen is disabled
@@ -24818,6 +24670,10 @@ components:
               type: string
               description: Profile last modified time
               format: date-time
+            managementServiceAppId:
+              type: string
+              description: AzureAD management app ID used during client device-based enrollment discovery
+              nullable: true
             outOfBoxExperienceSettings:
               $ref: '#/components/schemas/microsoft.graph.outOfBoxExperienceSettings'
             roleScopeTagIds:
@@ -25008,16 +24864,13 @@ components:
                 type: string
                 nullable: true
               description: List of Scope Tags for this Feature Update entity.
+            rolloutSettings:
+              $ref: '#/components/schemas/microsoft.graph.windowsUpdateRolloutSettings'
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsFeatureUpdateProfileAssignment'
               description: The list of group assignments of the profile.
-            deviceUpdateStates:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.windowsUpdateState'
-              description: The list of device states this profile targeted to
           additionalProperties:
             type: object
           description: Windows Feature Update Profile
@@ -25032,50 +24885,6 @@ components:
           additionalProperties:
             type: object
           description: This entity contains the properties used to assign a windows feature update profile to a group.
-    microsoft.graph.windowsUpdateState:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: windowsUpdateState
-          type: object
-          properties:
-            deviceDisplayName:
-              type: string
-              description: Device display name.
-              nullable: true
-            deviceId:
-              type: string
-              description: The id of the device.
-              nullable: true
-            featureUpdateVersion:
-              type: string
-              description: The current feature update version of the device.
-              nullable: true
-            lastScanDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: The date time that the Windows Update Agent did a successful scan.
-              format: date-time
-            lastSyncDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last date time that the device sync with with Microsoft Intune.
-              format: date-time
-            qualityUpdateVersion:
-              type: string
-              description: The Quality Update Version of the device.
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.windowsUpdateStatus'
-            userId:
-              type: string
-              description: The id of the user.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: User principal name.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.roleManagement:
       title: roleManagement
       type: object
@@ -25226,11 +25035,11 @@ components:
           properties:
             displayName:
               type: string
-              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. This property is read only.'
+              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.'
               nullable: true
             type:
               type: string
-              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. This property is read only.'
+              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -25247,7 +25056,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-          description: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
     microsoft.graph.unifiedRoleDefinition:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25260,21 +25068,21 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
               nullable: true
             isBuiltIn:
               type: boolean
-              description: Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+              description: 'Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).'
               nullable: true
             isEnabled:
               type: boolean
-              description: Flag indicating if the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
               nullable: true
             resourceScopes:
               type: array
               items:
                 type: string
-              description: List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
             rolePermissions:
               type: array
               items:
@@ -25282,17 +25090,17 @@ components:
               description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
             templateId:
               type: string
-              description: Custom template identifier that can be set when isBuiltIn is false. This identifier is typically used if one needs an identifier to be the same across different directories. Read-only when isBuiltIn is true.
+              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
               nullable: true
             version:
               type: string
-              description: Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
               nullable: true
             inheritsPermissionsFrom:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
-              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.rbacApplication:
@@ -25309,10 +25117,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              description: Resource to grant access to users or groups.
             roleDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
             roleAssignmentApprovals:
               type: array
               items:
@@ -25351,19 +25161,19 @@ components:
           properties:
             appScopeId:
               type: string
-              description: Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
               nullable: true
             directoryScopeId:
               type: string
-              description: Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             principalId:
               type: string
-              description: Objectid of the principal to which the assignment is being granted to.
+              description: Identifier of the principal to which the assignment is being granted to. Can be a group or a user.
               nullable: true
             roleDefinitionId:
               type: string
-              description: ID of the unifiedRoleDefinition the assignment is for. Read only.
+              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.  Supports $filter (eq).
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -25383,7 +25193,7 @@ components:
           properties:
             appScopeId:
               type: string
-              description: Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units or all users.'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25393,11 +25203,11 @@ components:
               nullable: true
             createdUsing:
               type: string
-              description: ID of the roleAssignmentScheduleRequest that created this schedule.
+              description: Identifier of the roleAssignmentScheduleRequest that created this schedule.
               nullable: true
             directoryScopeId:
               type: string
-              description: Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25407,15 +25217,15 @@ components:
               nullable: true
             principalId:
               type: string
-              description: Objectid of the principal to which the assignment is being granted to.
+              description: Identifier of the principal to which the assignment is being granted to. Supports $filter (eq).
               nullable: true
             roleDefinitionId:
               type: string
-              description: ID of the unifiedRoleDefinition the assignment is for. Read only.
+              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only. Supports $filter (eq).
               nullable: true
             status:
               type: string
-              description: 'Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval.'
+              description: 'Status for the roleAssignmentSchedule. It can include state related messages like Provisioned, Revoked, Pending Provisioning, and Pending Approval. Supports $filter (eq).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -25491,18 +25301,21 @@ components:
           properties:
             appScopeId:
               type: string
-              description: 'Identifier of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.  For the entitlement management provider, use app scopes to specify a catalog, for example /AccessPackageCatalog/beedadfe-01d5-4025-910b-84abb9369997.'
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
               nullable: true
             condition:
               type: string
               nullable: true
             directoryScopeId:
               type: string
-              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
               nullable: true
             principalId:
               type: string
-              description: Identifier of the principal to which the assignment is granted. Supports $filter (eq operator only).
+              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
+              nullable: true
+            principalOrganizationId:
+              type: string
               nullable: true
             resourceScope:
               type: string
@@ -25510,7 +25323,7 @@ components:
               nullable: true
             roleDefinitionId:
               type: string
-              description: Identifier of the unifiedRoleDefinition the assignment is for. Read-only. Supports $filter (eq operator only).
+              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
               nullable: true
             appScope:
               $ref: '#/components/schemas/microsoft.graph.appScope'
@@ -25569,7 +25382,7 @@ components:
             endDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will expire
+              description: Time that the roleEligibilityScheduleInstance will expire.
               format: date-time
               nullable: true
             memberType:
@@ -25578,12 +25391,12 @@ components:
               nullable: true
             roleEligibilityScheduleId:
               type: string
-              description: ID of the parent roleEligibilitySchedule for this instance
+              description: Identifier of the parent roleEligibilitySchedule for this instance.
               nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time that the roleEligibilityScheduleInstance will start
+              description: Time that the roleEligibilityScheduleInstance will start.
               format: date-time
               nullable: true
           additionalProperties:
@@ -25602,15 +25415,15 @@ components:
           properties:
             action:
               type: string
-              description: 'Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.'
+              description: 'Represents the type of the operation on the role assignment. The possible values are: AdminAssign: For administrators to assign roles to users or groups.AdminRemove: For administrators to remove users or groups from roles. AdminUpdate: For administrators to change existing role assignments.AdminExtend: For administrators to extend expiring assignments.AdminRenew: For administrators to renew expired assignments.SelfActivate: For users to activate their assignments.SelfDeactivate: For users to deactivate their active assignments.SelfExtend: For users to request to extend their expiring assignments.SelfRenew: For users to request to renew their expired assignments.'
               nullable: true
             appScopeId:
               type: string
-              description: Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
               nullable: true
             directoryScopeId:
               type: string
-              description: Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             isValidationOnly:
               type: boolean
@@ -25622,17 +25435,17 @@ components:
               nullable: true
             principalId:
               type: string
-              description: Objectid of the principal to which the assignment is being granted to.
+              description: Identifier of the principal to which the assignment is being granted to.
               nullable: true
             roleDefinitionId:
               type: string
-              description: ID of the unifiedRoleDefinition the assignment is for. Read only.
+              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetScheduleId:
               type: string
-              description: ID of the schedule object attached to the assignment.
+              description: Identifier of the schedule object attached to the assignment.
               nullable: true
             ticketInfo:
               $ref: '#/components/schemas/microsoft.graph.ticketInfo'
@@ -25712,15 +25525,15 @@ components:
           properties:
             action:
               type: string
-              description: 'Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators assign users/groups to roles;UserAdd: Users activate eligible assignments; AdminUpdate: Administrators change existing role assignmentsAdminRemove: Administrators remove users/groups from roles;UserRemove: Users deactivate active assignments;UserExtend: Users request to extend their expiring assignments;AdminExtend: Administrators extend expiring assignments.UserRenew: Users request to renew their expired assignments;AdminRenew: Administrators extend expiring assignments.'
+              description: 'Represents the type of the operation on the role eligibility assignment. The possible values are: AdminAssign: For administrators to assign role eligibility to users or groups to roles.AdminExtend: For administrators to extend expiring assignments.AdminUpdate: For administrators to change existing role assignments.AdminRenew: For administrators to renew expired assignments.AdminRemove: For administrators to remove users or groups from eligible roles.UserAdd: For users to activate their eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.'
               nullable: true
             appScopeId:
               type: string
-              description: Id of the app specific scope when the assignment scope is app specific. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use '/' for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific. The scope of an assignment determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.'
               nullable: true
             directoryScopeId:
               type: string
-              description: Id of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.
+              description: Identifier of the directory object representing the scope of the assignment. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
               nullable: true
             isValidationOnly:
               type: boolean
@@ -25732,17 +25545,17 @@ components:
               nullable: true
             principalId:
               type: string
-              description: Objectid of the principal to which the assignment is being granted to.
+              description: 'Identifier of the principal to which the assignment is being granted to. For example, a user or a group. For groups, they must be assignable to roles, that is, the isAssignableToRole of the group property set to true.'
               nullable: true
             roleDefinitionId:
               type: string
-              description: ID of the unifiedRoleDefinition the assignment is for. Read only.
+              description: Identifier of the unifiedRoleDefinition the assignment is for. Read only.
               nullable: true
             scheduleInfo:
               $ref: '#/components/schemas/microsoft.graph.requestSchedule'
             targetScheduleId:
               type: string
-              description: ID of the schedule object attached to the assignment.
+              description: The time period for which the eligibility assignment is valid.
               nullable: true
             ticketInfo:
               $ref: '#/components/schemas/microsoft.graph.ticketInfo'
@@ -25787,13 +25600,17 @@ components:
         - corporateOwnedDedicatedDevice
         - corporateOwnedFullyManaged
         - corporateOwnedWorkProfile
+        - corporateOwnedAOSPUserlessDevice
+        - corporateOwnedAOSPUserAssociatedDevice
       type: string
+      description: The enrollment mode for an enrollment profile.
     microsoft.graph.androidDeviceOwnerEnrollmentTokenType:
       title: androidDeviceOwnerEnrollmentTokenType
       enum:
         - default
         - corporateOwnedDedicatedDeviceWithAzureADSharedMode
       type: string
+      description: The enrollment token type for an enrollment profile.
     microsoft.graph.mimeContent:
       title: mimeContent
       type: object
@@ -25810,6 +25627,14 @@ components:
       additionalProperties:
         type: object
       description: Contains properties for a generic mime content.
+    microsoft.graph.aospWifiSecurityType:
+      title: aospWifiSecurityType
+      enum:
+        - none
+        - wpa
+        - wep
+      type: string
+      description: This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
     microsoft.graph.appleOwnerTypeEnrollmentType:
       title: appleOwnerTypeEnrollmentType
       type: object
@@ -25841,6 +25666,7 @@ components:
         - unknown
         - androidAOSP
       type: string
+      description: Supported platform types.
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
@@ -26026,6 +25852,7 @@ components:
         - direct
         - policySets
       type: string
+      description: Represents source of assignment.
     microsoft.graph.importedDeviceIdentityType:
       title: importedDeviceIdentityType
       enum:
@@ -26061,6 +25888,9 @@ components:
         - windowsPc
         - surfaceHub2
         - holoLens
+        - surfaceHub2S
+        - virtualMachine
+        - unknownFutureValue
       type: string
     microsoft.graph.windowsEnrollmentStatusScreenSettings:
       title: windowsEnrollmentStatusScreenSettings
@@ -26126,6 +25956,8 @@ components:
         - surfaceHubProfileNotSupported
         - holoLensProfileNotSupported
         - windowsPcProfileNotSupported
+        - surfaceHub2SProfileNotSupported
+        - unknownFutureValue
       type: string
     microsoft.graph.windowsAutopilotProfileAssignmentStatus:
       title: windowsAutopilotProfileAssignmentStatus
@@ -26146,14 +25978,32 @@ components:
         - completed
         - failed
       type: string
-    microsoft.graph.windowsUpdateStatus:
-      title: windowsUpdateStatus
-      enum:
-        - upToDate
-        - pendingInstallation
-        - pendingReboot
-        - failed
-      type: string
+    microsoft.graph.windowsUpdateRolloutSettings:
+      title: windowsUpdateRolloutSettings
+      type: object
+      properties:
+        offerEndDateTimeInUTC:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The feature update''s ending  of release date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.'
+          format: date-time
+          nullable: true
+        offerIntervalInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The number of day(s) between each set of offers to be set, updated, and displayed for a feature update profile, for example: if OfferStartDateTimeInUTC is 2020-06-09T10:00:00Z, and OfferIntervalInDays is 1, then the next two sets of offers will be made consecutively on 2020-06-10T10:00:00Z (next day at the same specified time) and 2020-06-11T10:00:00Z (next next day at the same specified time) with 1 day in between each set of offers.'
+          format: int32
+          nullable: true
+        offerStartDateTimeInUTC:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The feature update''s starting date and time to be set, update, and displayed for a feature Update profile for example: 2020-06-09T10:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+      description: 'A complex type to store the windows update rollout settings including offer start date time, offer end date time, and days between each set of offers.'
     microsoft.graph.unifiedRolePermission:
       title: unifiedRolePermission
       type: object
@@ -26162,7 +26012,7 @@ components:
           type: array
           items:
             type: string
-          description: Set of tasks that can be performed on a resource.
+          description: Set of tasks that can be performed on a resource. Required.
         condition:
           type: string
           description: Optional constraints that must be met for the permission to be effective.
@@ -26172,6 +26022,7 @@ components:
           items:
             type: string
             nullable: true
+          description: Set of tasks that may not be performed on a resource. Not yet supported.
       additionalProperties:
         type: object
     microsoft.graph.identity:
@@ -26196,10 +26047,12 @@ components:
           properties:
             approvalId:
               type: string
+              description: The identifier of the approval of the request.
               nullable: true
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The request completion date time.
               format: date-time
               nullable: true
             createdBy:
@@ -26207,13 +26060,16 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The request creation date time.
               format: date-time
               nullable: true
             customData:
               type: string
+              description: Free text field to define any custom data for the request. Not used.
               nullable: true
             status:
               type: string
+              description: 'The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.'
           additionalProperties:
             type: object
     microsoft.graph.requestSchedule:
@@ -26262,6 +26118,7 @@ components:
         - company
         - personal
       type: string
+      description: Owner type of device.
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -26269,6 +26126,7 @@ components:
         - include
         - exclude
       type: string
+      description: Represents type of the assignment filter.
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
       title: importedWindowsAutopilotDeviceIdentityImportStatus
       enum:
@@ -26309,13 +26167,13 @@ components:
         duration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'The requestor''s desired duration of access. If specified in a request, endDateTime should not be present.'
+          description: 'The requestor''s desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.'
           format: duration
           nullable: true
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         type:
@@ -26377,7 +26235,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
-          description: 'A collection of the days of the week on which the event occurs. Possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
+          description: 'A collection of the days of the week on which the event occurs. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday. If type is relativeMonthly or relativeYearly, and daysOfWeek specifies more than one day, the event falls on the first day that satisfies the pattern.  Required if type is weekly, relativeMonthly, or relativeYearly.'
         firstDayOfWeek:
           $ref: '#/components/schemas/microsoft.graph.dayOfWeek'
         index:
