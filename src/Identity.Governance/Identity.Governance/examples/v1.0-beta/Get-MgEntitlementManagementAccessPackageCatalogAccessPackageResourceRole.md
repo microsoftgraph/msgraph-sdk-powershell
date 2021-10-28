@@ -1,18 +1,24 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get catalog resource roles
 
-{{ Add output here }}
+```powershell
+Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8'"
+
+Id                                   Description DisplayName OriginId                                    OriginSystem
+--                                   ----------- ----------- --------                                    ------------
+00000000-0000-0000-0000-000000000000             Owner       Owner_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad  AadGroup
+00000000-0000-0000-0000-000000000000             Member      Member_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad AadGroup
 ```
 
-{{ Add description here }}
+This example get the resource roles for the specified catalog id and filtering the results for the specified access package resource id.
 
-### Example 2: {{ Add title here }}
+### Example 2: Extend the -Filter to get the resource roles with the display name 'Member'
+
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -AccessPackageCatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -Filter "originSystem eq 'AadGroup' and accessPackageResource/id eq '36d8d18f-b081-4867-acf5-4a8b893761e8' and DisplayName eq 'Member'"
 
-{{ Add output here }}
+Id                                   Description DisplayName OriginId                                    OriginSystem
+--                                   ----------- ----------- --------                                    ------------
+00000000-0000-0000-0000-000000000000             Member      Member_b5cd9d19-91c0-4622-93e2-537ad8a0b3ad AadGroup
 ```
 
-{{ Add description here }}
-
+This example extends the filter in example 1 to return access roles whose display name is 'Member'.
