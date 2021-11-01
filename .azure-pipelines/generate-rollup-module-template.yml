@@ -33,11 +33,10 @@ parameters:
 jobs:
 - job: MsGraphPSSDKRollUpModuleGeneration
   displayName: Microsoft Graph PowerShell SDK Roll-Up Module Generation
-  pool: MsGraphDevXAzureAgents
   timeoutInMinutes: 600
     
   steps:
-  - template: ./install-tools-template.yml
+  - template: ./common-templates/install-tools-template.yml
 
   - task: PowerShell@2
     displayName: 'Generate and Build Roll-Up Module'

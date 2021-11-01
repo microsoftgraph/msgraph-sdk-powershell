@@ -45,11 +45,15 @@ directive:
   - where:
       verb: Clear
       subject: ^UserManagedAppRegistration$
-      variant: ^Wipe1$|^WipeExpanded1$|^WipeViaIdentity1$|^WipeViaIdentityExpanded1$
+      variant: ^Wipe(1|2)$|^WipeExpanded(1|2)$|^WipeViaIdentity(1|2)$|^WipeViaIdentityExpanded(1|2)$
     remove: true
   - where:
       verb: Get
       subject: ^(UserOnlineMeeting)$
+    remove: true
+  - where:
+      verb: Get
+      subject: (User)AvailableExtensionProperty
     remove: true
 # Rename
   - where:
@@ -82,7 +86,7 @@ directive:
       verb: Rename
       subject: ^(UserPassword)$
     set:
-      verb: Reset
+      verb: Update
       subject: $1
   - where:
       verb: Get
@@ -124,6 +128,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.8.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

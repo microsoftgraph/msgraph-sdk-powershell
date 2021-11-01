@@ -11,6 +11,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_ListContactFolders
       parameters:
         - name: user-id
@@ -22,7 +23,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -60,22 +60,6 @@ paths:
                 - multiValueExtendedProperties
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -103,6 +87,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contactFolders for users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_CreateContactFolders
       parameters:
         - name: user-id
@@ -134,6 +119,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contactFolders from users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_GetContactFolders
       parameters:
         - name: user-id
@@ -163,22 +149,6 @@ paths:
                 - id
                 - displayName
                 - parentFolderId
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - childFolders
                 - contacts
                 - multiValueExtendedProperties
@@ -219,6 +189,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contactFolders in users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_UpdateContactFolders
       parameters:
         - name: user-id
@@ -252,6 +223,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contactFolders for users
+      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_DeleteContactFolders
       parameters:
         - name: user-id
@@ -284,6 +256,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListChildFolders
       parameters:
         - name: user-id
@@ -302,7 +275,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -383,6 +355,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to childFolders for users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_CreateChildFolders
       parameters:
         - name: user-id
@@ -421,6 +394,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get childFolders from users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetChildFolders
       parameters:
         - name: user-id
@@ -517,6 +491,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property childFolders in users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_UpdateChildFolders
       parameters:
         - name: user-id
@@ -557,6 +532,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property childFolders for users
+      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_DeleteChildFolders
       parameters:
         - name: user-id
@@ -596,6 +572,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListContacts
       parameters:
         - name: user-id
@@ -614,7 +591,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -800,6 +776,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contacts for users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_CreateContacts
       parameters:
         - name: user-id
@@ -838,6 +815,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetContacts
       parameters:
         - name: user-id
@@ -969,6 +947,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_UpdateContacts
       parameters:
         - name: user-id
@@ -1009,6 +988,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_DeleteContacts
       parameters:
         - name: user-id
@@ -1048,6 +1028,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -1073,7 +1054,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1140,6 +1120,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -1185,6 +1166,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -1253,6 +1235,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -1300,6 +1283,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -1346,6 +1330,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1441,6 +1426,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1486,6 +1472,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1555,6 +1542,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1602,6 +1590,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -1648,6 +1637,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_GetPhoto
       parameters:
         - name: user-id
@@ -1685,18 +1675,6 @@ paths:
                 - height
                 - width
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -1711,6 +1689,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_UpdatePhoto
       parameters:
         - name: user-id
@@ -1751,6 +1730,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property photo for users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_DeletePhoto
       parameters:
         - name: user-id
@@ -1790,6 +1770,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
+      description: The user's profile photo. Read-only.
       operationId: users.contactFolders.contacts_GetPhotoContent
       parameters:
         - name: user-id
@@ -1828,6 +1809,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users.contactFolders.contacts_SetPhotoContent
       parameters:
         - name: user-id
@@ -1870,6 +1852,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -1965,6 +1948,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2010,6 +1994,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2079,6 +2064,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2126,6 +2112,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2172,6 +2159,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2260,6 +2248,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2298,6 +2287,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2360,6 +2350,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2400,6 +2391,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -2439,6 +2431,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2527,6 +2520,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2565,6 +2559,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2627,6 +2622,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2667,6 +2663,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -2706,6 +2703,7 @@ paths:
       tags:
         - users.contact
       summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_ListContacts
       parameters:
         - name: user-id
@@ -2860,22 +2858,6 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -2903,6 +2885,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to contacts for users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_CreateContacts
       parameters:
         - name: user-id
@@ -2934,6 +2917,7 @@ paths:
       tags:
         - users.contact
       summary: Get contacts from users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_GetContacts
       parameters:
         - name: user-id
@@ -3003,22 +2987,6 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3054,6 +3022,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property contacts in users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_UpdateContacts
       parameters:
         - name: user-id
@@ -3087,6 +3056,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property contacts for users
+      description: The user's contacts. Read-only. Nullable.
       operationId: users_DeleteContacts
       parameters:
         - name: user-id
@@ -3119,6 +3089,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -3137,7 +3108,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3204,6 +3174,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -3242,6 +3213,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -3303,6 +3275,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -3343,6 +3316,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -3382,6 +3356,7 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3470,6 +3445,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3508,6 +3484,7 @@ paths:
       tags:
         - users.contact
       summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3570,6 +3547,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property multiValueExtendedProperties in users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3610,6 +3588,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property multiValueExtendedProperties for users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteMultiValueExtendedProperties
       parameters:
         - name: user-id
@@ -3649,6 +3628,7 @@ paths:
       tags:
         - users.contact
       summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_GetPhoto
       parameters:
         - name: user-id
@@ -3679,18 +3659,6 @@ paths:
                 - height
                 - width
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3705,6 +3673,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property photo in users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_UpdatePhoto
       parameters:
         - name: user-id
@@ -3738,6 +3707,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property photo for users
+      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_DeletePhoto
       parameters:
         - name: user-id
@@ -3770,6 +3740,7 @@ paths:
       tags:
         - users.contact
       summary: Get media content for the navigation property photo from users
+      description: The user's profile photo. Read-only.
       operationId: users.contacts_GetPhotoContent
       parameters:
         - name: user-id
@@ -3801,6 +3772,7 @@ paths:
       tags:
         - users.contact
       summary: Update media content for the navigation property photo in users
+      description: The user's profile photo. Read-only.
       operationId: users.contacts_SetPhotoContent
       parameters:
         - name: user-id
@@ -3836,6 +3808,7 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3924,6 +3897,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -3962,6 +3936,7 @@ paths:
       tags:
         - users.contact
       summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4024,6 +3999,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property singleValueExtendedProperties in users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4064,6 +4040,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property singleValueExtendedProperties for users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteSingleValueExtendedProperties
       parameters:
         - name: user-id
@@ -4149,7 +4126,7 @@ components:
             birthday:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The contact''s birthday. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             businessAddress:
@@ -4212,72 +4189,55 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
-              description: The contact's initials.
               nullable: true
             jobTitle:
               type: string
-              description: The contact’s job title.
               nullable: true
             manager:
               type: string
-              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
-              description: The contact's middle name.
               nullable: true
             mobilePhone:
               type: string
-              description: The contact's mobile phone number.
               nullable: true
             nickName:
               type: string
-              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
-              description: The location of the contact's office.
               nullable: true
             otherAddress:
               $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             parentFolderId:
               type: string
-              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
-              description: The user's notes about the contact.
               nullable: true
             profession:
               type: string
-              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
-              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
-              description: The contact's surname.
               nullable: true
             title:
               type: string
-              description: The contact's title.
               nullable: true
             yomiCompanyName:
               type: string
-              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
-              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
-              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
@@ -4381,13 +4341,13 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
           additionalProperties:
@@ -4501,12 +4461,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -4519,6 +4473,12 @@ components:
       description: Include count of items
       schema:
         type: boolean
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2

@@ -117,6 +117,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
         - name: user-id
@@ -210,6 +211,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Create new navigation property to activityStatistics for users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_CreateActivityStatistics
       parameters:
         - name: user-id
@@ -241,6 +243,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Get activityStatistics from users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
         - name: user-id
@@ -300,6 +303,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Update the navigation property activityStatistics in users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_UpdateActivityStatistics
       parameters:
         - name: user-id
@@ -333,6 +337,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Delete navigation property activityStatistics for users
+      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_DeleteActivityStatistics
       parameters:
         - name: user-id
@@ -365,6 +370,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -464,18 +470,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -503,6 +497,7 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
       parameters:
         - name: user-id
@@ -534,6 +529,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -582,18 +578,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -608,6 +592,7 @@ paths:
       tags:
         - users.person
       summary: Update the navigation property people in users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
       parameters:
         - name: user-id
@@ -641,6 +626,7 @@ paths:
       tags:
         - users.person
       summary: Delete navigation property people for users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
         - name: user-id
@@ -673,6 +659,7 @@ paths:
       tags:
         - users.profile
       summary: Get profile from users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
         - name: user-id
@@ -835,6 +822,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property profile in users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_UpdateProfile
       parameters:
         - name: user-id
@@ -861,6 +849,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property profile for users
+      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_DeleteProfile
       parameters:
         - name: user-id
@@ -920,6 +909,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -950,6 +941,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1059,6 +1051,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1158,6 +1151,7 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
         - name: user-id
@@ -1192,6 +1186,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1220,6 +1216,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1266,6 +1263,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to addresses for users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_CreateAddresses
       parameters:
         - name: user-id
@@ -1297,6 +1295,7 @@ paths:
       tags:
         - users.profile
       summary: Get addresses from users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
         - name: user-id
@@ -1328,6 +1327,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1361,6 +1361,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property addresses in users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_UpdateAddresses
       parameters:
         - name: user-id
@@ -1394,6 +1395,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property addresses for users
+      description: Represents details of addresses associated with the user.
       operationId: users.profile_DeleteAddresses
       parameters:
         - name: user-id
@@ -1426,6 +1428,7 @@ paths:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
         - name: user-id
@@ -1460,6 +1463,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1468,6 +1473,8 @@ paths:
                 - source desc
                 - date
                 - date desc
+                - displayName
+                - displayName desc
                 - type
                 - type desc
               type: string
@@ -1486,10 +1493,12 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - date
+                - displayName
                 - type
               type: string
         - name: $expand
@@ -1510,13 +1519,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of personAnniversary
+                title: Collection of personAnnualEvent
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                      $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -1531,6 +1540,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to anniversaries for users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_CreateAnniversaries
       parameters:
         - name: user-id
@@ -1545,7 +1555,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         required: true
       responses:
         '201':
@@ -1553,15 +1563,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/profile/anniversaries/{personAnniversary-id}':
+  '/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}':
     get:
       tags:
         - users.profile
       summary: Get anniversaries from users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
         - name: user-id
@@ -1571,13 +1582,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1593,10 +1604,12 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - date
+                - displayName
                 - type
               type: string
         - name: $expand
@@ -1617,7 +1630,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1625,6 +1638,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property anniversaries in users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_UpdateAnniversaries
       parameters:
         - name: user-id
@@ -1634,19 +1648,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
         required: true
       responses:
         '204':
@@ -1658,6 +1672,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property anniversaries for users
+      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_DeleteAnniversaries
       parameters:
         - name: user-id
@@ -1667,13 +1682,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: personAnniversary-id
+        - name: personAnnualEvent-id
           in: path
-          description: 'key: id of personAnniversary'
+          description: 'key: id of personAnnualEvent'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: personAnniversary
+          x-ms-docs-key-type: personAnnualEvent
         - name: If-Match
           in: header
           description: ETag
@@ -1690,6 +1705,7 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
         - name: user-id
@@ -1724,6 +1740,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -1758,6 +1776,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1807,6 +1826,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to awards for users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_CreateAwards
       parameters:
         - name: user-id
@@ -1838,6 +1858,7 @@ paths:
       tags:
         - users.profile
       summary: Get awards from users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
         - name: user-id
@@ -1869,6 +1890,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -1905,6 +1927,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property awards in users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_UpdateAwards
       parameters:
         - name: user-id
@@ -1938,6 +1961,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property awards for users
+      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_DeleteAwards
       parameters:
         - name: user-id
@@ -1970,6 +1994,7 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
         - name: user-id
@@ -2004,6 +2029,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2046,6 +2073,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2099,6 +2127,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to certifications for users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_CreateCertifications
       parameters:
         - name: user-id
@@ -2130,6 +2159,7 @@ paths:
       tags:
         - users.profile
       summary: Get certifications from users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
         - name: user-id
@@ -2161,6 +2191,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2201,6 +2232,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property certifications in users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_UpdateCertifications
       parameters:
         - name: user-id
@@ -2234,6 +2266,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property certifications for users
+      description: Represents the details of certifications associated with a person.
       operationId: users.profile_DeleteCertifications
       parameters:
         - name: user-id
@@ -2266,6 +2299,7 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
         - name: user-id
@@ -2300,6 +2334,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2332,6 +2368,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2380,6 +2417,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to educationalActivities for users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_CreateEducationalActivities
       parameters:
         - name: user-id
@@ -2411,6 +2449,7 @@ paths:
       tags:
         - users.profile
       summary: Get educationalActivities from users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
         - name: user-id
@@ -2442,6 +2481,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2477,6 +2517,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property educationalActivities in users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_UpdateEducationalActivities
       parameters:
         - name: user-id
@@ -2510,6 +2551,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property educationalActivities for users
+      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_DeleteEducationalActivities
       parameters:
         - name: user-id
@@ -2542,6 +2584,7 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
         - name: user-id
@@ -2576,6 +2619,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2604,6 +2649,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2650,6 +2696,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to emails for users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_CreateEmails
       parameters:
         - name: user-id
@@ -2681,6 +2728,7 @@ paths:
       tags:
         - users.profile
       summary: Get emails from users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
         - name: user-id
@@ -2712,6 +2760,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2745,6 +2794,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property emails in users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_UpdateEmails
       parameters:
         - name: user-id
@@ -2778,6 +2828,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property emails for users
+      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_DeleteEmails
       parameters:
         - name: user-id
@@ -2810,6 +2861,7 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
         - name: user-id
@@ -2844,6 +2896,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -2858,6 +2912,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -2876,6 +2932,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2883,6 +2940,7 @@ paths:
                 - collaborationTags
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -2924,6 +2982,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to interests for users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_CreateInterests
       parameters:
         - name: user-id
@@ -2955,6 +3014,7 @@ paths:
       tags:
         - users.profile
       summary: Get interests from users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
         - name: user-id
@@ -2986,6 +3046,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -2993,6 +3054,7 @@ paths:
                 - collaborationTags
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -3021,6 +3083,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property interests in users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_UpdateInterests
       parameters:
         - name: user-id
@@ -3054,6 +3117,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property interests for users
+      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_DeleteInterests
       parameters:
         - name: user-id
@@ -3086,6 +3150,7 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
         - name: user-id
@@ -3120,6 +3185,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3136,6 +3203,8 @@ paths:
                 - spoken desc
                 - tag
                 - tag desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - written
                 - written desc
               type: string
@@ -3154,6 +3223,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3162,6 +3232,7 @@ paths:
                 - reading
                 - spoken
                 - tag
+                - thumbnailUrl
                 - written
               type: string
         - name: $expand
@@ -3203,6 +3274,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to languages for users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_CreateLanguages
       parameters:
         - name: user-id
@@ -3234,6 +3306,7 @@ paths:
       tags:
         - users.profile
       summary: Get languages from users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
         - name: user-id
@@ -3265,6 +3338,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3273,6 +3347,7 @@ paths:
                 - reading
                 - spoken
                 - tag
+                - thumbnailUrl
                 - written
               type: string
         - name: $expand
@@ -3301,6 +3376,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property languages in users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_UpdateLanguages
       parameters:
         - name: user-id
@@ -3334,6 +3410,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property languages for users
+      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_DeleteLanguages
       parameters:
         - name: user-id
@@ -3366,6 +3443,7 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
         - name: user-id
@@ -3400,6 +3478,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3444,6 +3524,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3498,6 +3579,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to names for users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_CreateNames
       parameters:
         - name: user-id
@@ -3529,6 +3611,7 @@ paths:
       tags:
         - users.profile
       summary: Get names from users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
         - name: user-id
@@ -3560,6 +3643,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -3601,6 +3685,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property names in users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_UpdateNames
       parameters:
         - name: user-id
@@ -3634,6 +3719,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property names for users
+      description: Represents the names a user has added to their profile.
       operationId: users.profile_DeleteNames
       parameters:
         - name: user-id
@@ -3666,6 +3752,7 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
         - name: user-id
@@ -3700,6 +3787,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -3710,6 +3799,8 @@ paths:
                 - detail desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -3726,11 +3817,13 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - detail
                 - displayName
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -3771,6 +3864,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to notes for users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_CreateNotes
       parameters:
         - name: user-id
@@ -3802,6 +3896,7 @@ paths:
       tags:
         - users.profile
       summary: Get notes from users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
         - name: user-id
@@ -3833,11 +3928,13 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - detail
                 - displayName
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -3865,6 +3962,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property notes in users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_UpdateNotes
       parameters:
         - name: user-id
@@ -3898,6 +3996,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property notes for users
+      description: Represents notes that a user has added to their profile.
       operationId: users.profile_DeleteNotes
       parameters:
         - name: user-id
@@ -3930,6 +4029,7 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
         - name: user-id
@@ -3964,6 +4064,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4000,6 +4102,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4050,6 +4153,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to patents for users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_CreatePatents
       parameters:
         - name: user-id
@@ -4081,6 +4185,7 @@ paths:
       tags:
         - users.profile
       summary: Get patents from users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
         - name: user-id
@@ -4112,6 +4217,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4149,6 +4255,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property patents in users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_UpdatePatents
       parameters:
         - name: user-id
@@ -4182,6 +4289,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property patents for users
+      description: Represents patents that a user has added to their profile.
       operationId: users.profile_DeletePatents
       parameters:
         - name: user-id
@@ -4214,6 +4322,7 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
         - name: user-id
@@ -4248,6 +4357,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4276,6 +4387,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4322,6 +4434,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to phones for users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_CreatePhones
       parameters:
         - name: user-id
@@ -4353,6 +4466,7 @@ paths:
       tags:
         - users.profile
       summary: Get phones from users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
         - name: user-id
@@ -4384,6 +4498,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4417,6 +4532,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property phones in users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_UpdatePhones
       parameters:
         - name: user-id
@@ -4450,6 +4566,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property phones for users
+      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_DeletePhones
       parameters:
         - name: user-id
@@ -4482,6 +4599,7 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
         - name: user-id
@@ -4516,6 +4634,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4548,6 +4668,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4596,6 +4717,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to positions for users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_CreatePositions
       parameters:
         - name: user-id
@@ -4627,6 +4749,7 @@ paths:
       tags:
         - users.profile
       summary: Get positions from users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
         - name: user-id
@@ -4658,6 +4781,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4693,6 +4817,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property positions in users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_UpdatePositions
       parameters:
         - name: user-id
@@ -4726,6 +4851,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property positions for users
+      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_DeletePositions
       parameters:
         - name: user-id
@@ -4758,6 +4884,7 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
         - name: user-id
@@ -4792,6 +4919,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -4812,6 +4941,8 @@ paths:
                 - displayName desc
                 - sponsors
                 - sponsors desc
+                - thumbnailUrl
+                - thumbnailUrl desc
               type: string
         - name: $select
           in: query
@@ -4828,6 +4959,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4838,6 +4970,7 @@ paths:
                 - detail
                 - displayName
                 - sponsors
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4878,6 +5011,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to projects for users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_CreateProjects
       parameters:
         - name: user-id
@@ -4909,6 +5043,7 @@ paths:
       tags:
         - users.profile
       summary: Get projects from users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
         - name: user-id
@@ -4940,6 +5075,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -4950,6 +5086,7 @@ paths:
                 - detail
                 - displayName
                 - sponsors
+                - thumbnailUrl
               type: string
         - name: $expand
           in: query
@@ -4977,6 +5114,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property projects in users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_UpdateProjects
       parameters:
         - name: user-id
@@ -5010,6 +5148,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property projects for users
+      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_DeleteProjects
       parameters:
         - name: user-id
@@ -5042,6 +5181,7 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
         - name: user-id
@@ -5076,6 +5216,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5110,6 +5252,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5159,6 +5302,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to publications for users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_CreatePublications
       parameters:
         - name: user-id
@@ -5190,6 +5334,7 @@ paths:
       tags:
         - users.profile
       summary: Get publications from users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
         - name: user-id
@@ -5221,6 +5366,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5257,6 +5403,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property publications in users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_UpdatePublications
       parameters:
         - name: user-id
@@ -5290,6 +5437,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property publications for users
+      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_DeletePublications
       parameters:
         - name: user-id
@@ -5322,6 +5470,7 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
         - name: user-id
@@ -5356,6 +5505,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5370,6 +5521,8 @@ paths:
                 - displayName desc
                 - proficiency
                 - proficiency desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -5388,6 +5541,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5395,6 +5549,7 @@ paths:
                 - collaborationTags
                 - displayName
                 - proficiency
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -5436,6 +5591,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to skills for users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_CreateSkills
       parameters:
         - name: user-id
@@ -5467,6 +5623,7 @@ paths:
       tags:
         - users.profile
       summary: Get skills from users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
         - name: user-id
@@ -5498,6 +5655,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
@@ -5505,6 +5663,7 @@ paths:
                 - collaborationTags
                 - displayName
                 - proficiency
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -5533,6 +5692,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property skills in users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_UpdateSkills
       parameters:
         - name: user-id
@@ -5566,6 +5726,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property skills for users
+      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_DeleteSkills
       parameters:
         - name: user-id
@@ -5598,6 +5759,7 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
         - name: user-id
@@ -5632,6 +5794,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5644,6 +5808,8 @@ paths:
                 - service desc
                 - statusMessage
                 - statusMessage desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - userId
                 - userId desc
                 - webUrl
@@ -5664,12 +5830,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - description
                 - service
                 - statusMessage
+                - thumbnailUrl
                 - userId
                 - webUrl
               type: string
@@ -5712,6 +5880,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to webAccounts for users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_CreateWebAccounts
       parameters:
         - name: user-id
@@ -5743,6 +5912,7 @@ paths:
       tags:
         - users.profile
       summary: Get webAccounts from users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
         - name: user-id
@@ -5774,12 +5944,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - description
                 - service
                 - statusMessage
+                - thumbnailUrl
                 - userId
                 - webUrl
               type: string
@@ -5809,6 +5981,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property webAccounts in users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_UpdateWebAccounts
       parameters:
         - name: user-id
@@ -5842,6 +6015,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property webAccounts for users
+      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_DeleteWebAccounts
       parameters:
         - name: user-id
@@ -5874,6 +6048,7 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
         - name: user-id
@@ -5908,6 +6083,8 @@ paths:
                 - createdDateTime desc
                 - inference
                 - inference desc
+                - isSearchable
+                - isSearchable desc
                 - lastModifiedBy
                 - lastModifiedBy desc
                 - lastModifiedDateTime
@@ -5920,6 +6097,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - thumbnailUrl
+                - thumbnailUrl desc
                 - webUrl
                 - webUrl desc
               type: string
@@ -5938,12 +6117,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - categories
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -5985,6 +6166,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to websites for users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_CreateWebsites
       parameters:
         - name: user-id
@@ -6016,6 +6198,7 @@ paths:
       tags:
         - users.profile
       summary: Get websites from users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
         - name: user-id
@@ -6047,12 +6230,14 @@ paths:
                 - createdBy
                 - createdDateTime
                 - inference
+                - isSearchable
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - source
                 - categories
                 - description
                 - displayName
+                - thumbnailUrl
                 - webUrl
               type: string
         - name: $expand
@@ -6081,6 +6266,7 @@ paths:
       tags:
         - users.profile
       summary: Update the navigation property websites in users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_UpdateWebsites
       parameters:
         - name: user-id
@@ -6114,6 +6300,7 @@ paths:
       tags:
         - users.profile
       summary: Delete navigation property websites for users
+      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_DeleteWebsites
       parameters:
         - name: user-id
@@ -6236,7 +6423,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: 'The type of person, for example distribution list.'
+              description: The type of person.
               nullable: true
             phones:
               type: array
@@ -6298,7 +6485,7 @@ components:
             anniversaries:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.personAnniversary'
+                $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
               description: Represents the details of meaningful dates associated with a person.
             awards:
               type: array
@@ -6417,20 +6604,22 @@ components:
               $ref: '#/components/schemas/microsoft.graph.geoCoordinates'
           additionalProperties:
             type: object
-    microsoft.graph.personAnniversary:
+    microsoft.graph.personAnnualEvent:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.itemFacet'
-        - title: personAnniversary
+        - title: personAnnualEvent
           type: object
           properties:
             date:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
-              description: Contains the date associated with the anniversary type.
               format: date
               nullable: true
+            displayName:
+              type: string
+              nullable: true
             type:
-              $ref: '#/components/schemas/microsoft.graph.anniversaryType'
+              $ref: '#/components/schemas/microsoft.graph.personAnnualEventType'
           additionalProperties:
             type: object
     microsoft.graph.personAward:
@@ -6591,6 +6780,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the interest.
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to a web page or resource about the interest.
@@ -6615,6 +6807,10 @@ components:
             tag:
               type: string
               description: 'Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).'
+              nullable: true
+            thumbnailUrl:
+              type: string
+              nullable: true
             written:
               $ref: '#/components/schemas/microsoft.graph.languageProficiencyLevel'
           additionalProperties:
@@ -6628,9 +6824,11 @@ components:
             displayName:
               type: string
               description: Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.
+              nullable: true
             first:
               type: string
               description: First name of the user.
+              nullable: true
             initials:
               type: string
               description: Initials of the user.
@@ -6642,6 +6840,7 @@ components:
             last:
               type: string
               description: Last name of the user.
+              nullable: true
             maiden:
               type: string
               description: Maiden name of the user.
@@ -6655,7 +6854,7 @@ components:
               description: Nickname of the user.
               nullable: true
             pronunciation:
-              $ref: '#/components/schemas/microsoft.graph.yomiPersonName'
+              $ref: '#/components/schemas/microsoft.graph.personNamePronounciation'
             suffix:
               type: string
               description: 'Designators used after the users name (eg: PhD.)'
@@ -6677,6 +6876,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the note.
+              nullable: true
+            thumbnailUrl:
+              type: string
               nullable: true
           additionalProperties:
             type: object
@@ -6796,6 +6998,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.relatedPerson'
               description: The Person or people who sponsored the project.
+            thumbnailUrl:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.itemPublication:
@@ -6854,6 +7059,9 @@ components:
               description: Contains a friendly name for the skill.
             proficiency:
               $ref: '#/components/schemas/microsoft.graph.skillProficiencyLevel'
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to an information source about the skill.
@@ -6875,6 +7083,9 @@ components:
             statusMessage:
               type: string
               description: Contains a status message from the cloud service if provided or synchronized.
+              nullable: true
+            thumbnailUrl:
+              type: string
               nullable: true
             userId:
               type: string
@@ -6904,6 +7115,9 @@ components:
             displayName:
               type: string
               description: Contains a friendly name for the website.
+            thumbnailUrl:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: Contains a link to the website itself.
@@ -7042,6 +7256,9 @@ components:
               format: date-time
             inference:
               $ref: '#/components/schemas/microsoft.graph.inferenceData'
+            isSearchable:
+              type: boolean
+              nullable: true
             lastModifiedBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             lastModifiedDateTime:
@@ -7110,21 +7327,23 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.anniversaryType:
-      title: anniversaryType
+    microsoft.graph.personAnnualEventType:
+      title: personAnnualEventType
       enum:
         - birthday
         - wedding
+        - work
+        - other
         - unknownFutureValue
       type: string
     microsoft.graph.institutionData:
@@ -7213,29 +7432,24 @@ components:
         - nativeOrBilingual
         - unknownFutureValue
       type: string
-    microsoft.graph.yomiPersonName:
-      title: yomiPersonName
+    microsoft.graph.personNamePronounciation:
+      title: personNamePronounciation
       type: object
       properties:
         displayName:
           type: string
-          description: Composite of first and last name pronunciation guides.
           nullable: true
         first:
           type: string
-          description: Pronunciation guide for the first name of the user.
           nullable: true
         last:
           type: string
-          description: Pronunciation guide for the last name of the user.
           nullable: true
         maiden:
           type: string
-          description: Pronunciation guide for the maiden name of the user.
           nullable: true
         middle:
           type: string
-          description: Pronunciation guide for the middle name of the user.
           nullable: true
       additionalProperties:
         type: object
@@ -7300,6 +7514,7 @@ components:
         jobTitle:
           type: string
           description: The title held when in that position.
+          nullable: true
         role:
           type: string
           description: The role the position entailed.

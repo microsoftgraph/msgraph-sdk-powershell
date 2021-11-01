@@ -22,7 +22,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// The value for the Auth module version header.
         private static string AuthModuleVersionHeaderValue =
             string.Format(Constants.SDKHeaderValue,
-                AssemblyInfo.Name,
                 AssemblyInfo.Version.Major,
                 AssemblyInfo.Version.Minor,
                 AssemblyInfo.Version.Build);
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             authContext = authContext ?? GraphSession.Instance.AuthContext;
             if (authContext is null)
             {
-                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+                throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);

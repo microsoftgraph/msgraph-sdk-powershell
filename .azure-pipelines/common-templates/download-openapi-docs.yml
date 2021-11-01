@@ -1,0 +1,140 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+parameters:
+  - name: Branch
+    type: string
+    default: "WeeklyOpenApiDocsDownload"
+  - name: BaseBranch
+    type: string
+    default: "dev"
+  - name: BuildAgent
+    default: MsGraphBuildAgentsWindows
+    displayName: Build Agent
+
+jobs:
+  - job: GetLatestDocs
+    displayName: Download OpenApiDocs
+    pool: $(BuildAgent)
+    steps:
+      - template: ./checkout.yml
+        parameters:
+          TargetBranch: ${{ parameters.BaseBranch }}
+
+      - template: ./install-tools-template.yml
+
+      - task: PowerShell@2
+        name: "ComputeBranch"
+        displayName: "Compute weekly branch name"
+        inputs:
+          targetType: inline
+          script: |
+            $branch = "{0}/{1}" -f "$(Branch)", (Get-Date -Format yyyyMMddHHmm)
+            Write-Host "##vso[task.setvariable variable=WeeklyBranch;isOutput=true]$branch"
+
+      - task: Bash@3
+        displayName: "Create weekly branch"
+        inputs:
+          targetType: inline
+          script: |
+            git status
+            git branch $(ComputeBranch.WeeklyBranch)
+            git checkout $(ComputeBranch.WeeklyBranch)
+            git status
+
+      - task: PowerShell@2
+        displayName: Download v1.0 OpenApi docs
+        continueOnError: false
+        inputs:
+          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+          pwsh: true
+
+      - task: PowerShell@2
+        displayName: Download beta OpenApi docs
+        continueOnError: false
+        inputs:
+          filePath: "$(System.DefaultWorkingDirectory)/tools/UpdateOpenApi.ps1"
+          arguments: "-BetaGraphVersion"
+          pwsh: true
+
+      - task: PowerShell@2
+        name: OpenAPIDocDiff
+        displayName: Get OpenAPI docs diff
+        inputs:
+          pwsh: true
+          targetType: "inline"
+          script: |
+            $diff = git diff --name-only
+            $ModulesWithChanges = @{}
+            $diff | %{
+              if (($_ -match 'openApiDocs\/(v1.0|beta)\/(.*).yml') -and !$ModulesWithChanges.ContainsKey($matches.2))
+              {
+                $ModulesWithChanges.Add($matches.2, $matches.1)
+              }
+            }
+            $ModuleNames = $ModulesWithChanges.Keys
+            Write-Host "##vso[task.setvariable variable=ModulesWithChanges;isOutput=true]$ModuleNames"
+
+      - task: PowerShell@2
+        displayName: Generate profiles
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        continueOnError: false
+        inputs:
+          targetType: filePath
+          pwsh: true
+          filePath: $(System.DefaultWorkingDirectory)/tools/GenerateProfiles.ps1
+
+      - task: PowerShell@2
+        name: CalculateAndBumpModuleVersion
+        displayName: Calculate and bump module version
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        inputs:
+          pwsh: true
+          targetType: inline
+          script: |
+            # Calculate meta-module version
+            $MetaModule = Find-Module "Microsoft.Graph" -Repository PSGallery
+            $MetaModuleVersion = [System.Version]($MetaModule.Version)
+            $NewMetaModuleVersion = "$($MetaModuleVersion.Major).$($MetaModuleVersion.Minor).$($MetaModuleVersion.Build + 1)"
+            # Bump meta-module minor version
+            Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
+            & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
+
+            # Calculate existing service module version
+            "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
+              try {
+                $Module = Find-Module "Microsoft.Graph.$_" -Repository PSGallery -ErrorAction Stop
+                $ModuleVersion = [System.Version]($Module.Version)
+                $NewModuleVersion = "$($ModuleVersion.Major).$($ModuleVersion.Minor).$($ModuleVersion.Build + 1)"
+                Write-Host "Bumping $_ to $NewModuleVersion."
+                . "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -Modules $_
+              } catch {
+                if ($_.Exception.Message -like "No match*") {
+                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."
+                }
+              }
+            }
+
+            # Calculate new service module version
+            $NewModuleReadMePath = Join-Path $(System.DefaultWorkingDirectory) "/tools/Templates/readme.md"
+            . "$(System.DefaultWorkingDirectory)\tools\WriteToModuleReadMe.ps1" -ReadMePath $NewModuleReadMePath -FieldName "module-version" -NewFieldValue $NewMetaModuleVersion
+
+      - task: Bash@3
+        displayName: Commit downloaded files
+        condition: and(succeeded(), ne(variables['OpenAPIDocDiff.ModulesWithChanges'], ''))
+        env:
+          GITHUB_TOKEN: $(GITHUB_TOKEN)
+        inputs:
+          targetType: inline
+          script: |
+            git status
+            git add .
+            git commit -m 'Weekly OpenApiDocs Download'
+            git status
+            git push --set-upstream origin $(ComputeBranch.WeeklyBranch)
+            git status
+
+# References
+# [0] https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+# [1] https://hub.github.com/hub-pull-request.1.html
+# https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token

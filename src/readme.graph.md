@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@2.1.401"
+use: "./assets/autorest-powershell-2.1.402.tgz"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -86,7 +86,12 @@ directive:
     - microsoft.graph.governanceRoleDefinition
     - microsoft.graph.workbookOperationError
     - microsoft.graph.parentLabelDetails
-
+    - microsoft.graph.ediscovery.tag
+    - microsoft.graph.ediscovery.sourceCollection
+    - microsoft.graph.contentType
+    - microsoft.graph.columnDefinition
+    - microsoft.graph.groupPolicyDefinition
+    - microsoft.graph.groupPolicyDefinitionValue
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -397,32 +402,55 @@ directive:
       subject: $2$1
   - where:
       verb: Test
-      variant: ^Check(.*)
+      variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
+# Add ByRef suffix to /$ref cmdlets
   - where:
-      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
     set:
       subject: $1$2ByRef
+# Remove *ByRef commands
   - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^List3$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
-    set:
-      subject: GroupMemberOfByRef
+      verb: Get|Remove|New
+      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+    remove: true
+# Rename *ByRef commands
   - where:
       verb: Get|New
       subject: ^GroupMemberByRef$
       variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
     set:
+      subject: GroupMemberOfByRef
+  - where:
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List1$|^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^List4$|^Create4$|^CreateExpanded4$|^CreateViaIdentity4$|^CreateViaIdentityExpanded4$
+    set:
       subject: GroupMemberWithLicenseErrorByRef
   - where:
-      verb: Get
+      verb: Get|New
       subject: ^GroupTransitiveMemberByRef$
-      variant: ^List$|^List2$
+      variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
     set:
       subject: GroupTransitiveMemberOfByRef
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
+    set:
+      subject: $1$2OfByRef
+  - where:
+      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Application|Group)(CreatedOnBehalf)ByRef$
+    set:
+      subject: $1$2OfByRef
 # Modify generated .json.cs model classes.
   - from: source-file-csharp
     where: $
@@ -454,6 +482,20 @@ directive:
 
         return $;
       }
+# Modify generated .dictionary.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%5C\w*\d*.dictionary.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
+        let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
+        $ = $.replace(propertiesToRemoveRegex, '');
+
+        return $;
+      }
 # Modify generated .cs model classes.
   - from: source-file-csharp
     where: $
@@ -462,44 +504,12 @@ directive:
       {
         return $;
       } else {
-        // Add new modifier to 'values' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let valuesPropertiesRegex = /(SerializedName\s*=\s*@"values".*\s*.*)(\s*)(.*Values\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(valuesPropertiesRegex)) {
-          $ = $.replace(valuesPropertiesRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'additionalProperties' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
+        // Add new modifier to 'additionalProperties' properties of classes that implement IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
         let additionalPropertiesRegex = /(SerializedName\s*=\s*@"additionalProperties".*\s*.*)(\s*)(.*AdditionalProperties\s*{\s*get;\s*set;\s*})/gmi
         if($.match(additionalPropertiesRegex)) {
           $ = $.replace(additionalPropertiesRegex, '$1$2 new $3');
         }
 
-        // Add new modifier to 'keys' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let keysRegex = /(SerializedName\s*=\s*@"keys".*\s*.*)(\s*)(.*Keys\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(keysRegex)) {
-          $ = $.replace(keysRegex, '$1$2 new $3');
-        }
-
-        // Add new modifier to 'count' properties of classes that derive from an IAssociativeArray. See example https://regex101.com/r/hnX7xO/2.
-        let countRegex = /(SerializedName\s*=\s*@"count".*\s*.*)(\s*)(.*Count\s*{\s*get;\s*set;\s*})/gmi
-        if($.match(countRegex)) {
-          $ = $.replace(countRegex, '$1$2 new $3');
-        }
-
-        let regexPattern = /^\s*public\s*partial\s*class\s*MicrosoftGraph(?<EntityName>.*):$/gm;
-        let regexArray;
-        while ((regexArray = regexPattern.exec($)) !== null) {
-          if (regexArray['groups'] != null)
-          {
-            let EntityName = regexArray['groups'].EntityName.trim();
-            let newEntityId = EntityName + 'Id';
-            let newEntityIdPropRegex = new RegExp("^\\s*public\\s*string\\s*"+newEntityId+"\\.*","gm");
-            let existingIdPropRegex = /(^\s*)(public\s*string\s*Id\s.*)/gm;
-            if ((!$.match(newEntityIdPropRegex)) && $.match(existingIdPropRegex) && (newEntityId != "EntityId") && (newEntityId != "BaseItemId")) {
-              $ = $.replace(existingIdPropRegex, '$1$2\n\n$1partial void AfterToJson(ref Microsoft.Graph.PowerShell.Runtime.Json.JsonObject container, Microsoft.Graph.PowerShell.Runtime.SerializationMode serializationMode)\n$1{\n$1\tif (serializationMode == Microsoft.Graph.PowerShell.Runtime.SerializationMode.IncludeAll) {\n$1\t\tAddIf(null != this.Id ? (Microsoft.Graph.PowerShell.Runtime.Json.JsonNode)new Microsoft.Graph.PowerShell.Runtime.Json.JsonString(this.Id) : null, "'+ EntityName.toLowerCase() +'-id", container.Add);\n$1\t}\n$1}');
-            }
-          }
-        }
         return $;
       }
 # Modify generated .cs cmdlets.
@@ -519,6 +529,10 @@ directive:
         let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
         let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
+
+        // Remove noisy log messages.
+        let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
+        $ = $.replace(duplicateDebugRegex, "");
 
         return $;
       }
@@ -540,7 +554,9 @@ directive:
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref this._top, ref this._count); }\n$1');
+          let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
+          let countPlaceholder = (!$.includes("SwitchParameter _count;")) ? 'global::System.Management.Automation.SwitchParameter _count;': ''
+          $ = $.replace(beginProcessingRegex, `$1$2\n$1 ${countPlaceholder} ${topPlaceholder} if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref _top, ref _count); }\n$1`);
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
@@ -620,7 +636,7 @@ directive:
         return $;
       }
 
-# Modify generated runtime IJsonSerializable class.
+# Modify generated runtime IJsonSerializable interface.
   - from: source-file-csharp
     where: $
     transform: >
@@ -631,6 +647,29 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+        return $;
+      }
+
+# Modify generated runtime IAssociativeArray interface.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Cruntime%5CIAssociativeArray.cs/gm))
+      {
+        return $;
+      } else {
+        // Remove Count from IAssociativeArray interface.
+        let countRegex = /int\s*Count\s*{\s*get;\s*}/gm
+        $ = $.replace(countRegex, '');
+
+        // Remove Keys from IAssociativeArray interface.
+        let keysRegex = /System\.Collections\.Generic\.IEnumerable<string>\s*Keys\s*{\s*get;\s*}/gm
+        $ = $.replace(keysRegex, '');
+
+        // Remove Values from IAssociativeArray interface.
+        let valuesRegex = /System\.Collections\.Generic\.IEnumerable<T>\s*Values\s*{\s*get;\s*}/gm
+        $ = $.replace(valuesRegex, '');
+
         return $;
       }
 

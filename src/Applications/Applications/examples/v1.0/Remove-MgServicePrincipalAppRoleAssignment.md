@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove the application role assignment for a service principal
 
-{{ Add output here }}
+```powershell
+Remove-MgServicePrincipalAppRoleAssignment -AppRoleAssignmentId  'PRLbC6e4yUyMwr0XutBvYZsr7FiAW3pIqP4F9944yBc' -ServicePrincipalId '0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example removed the assignment of the specified service principal to the specified application role id.

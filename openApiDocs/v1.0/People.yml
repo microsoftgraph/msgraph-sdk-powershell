@@ -11,6 +11,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get insights from users
+      description: Read-only. Nullable.
       operationId: users_GetInsights
       parameters:
         - name: user-id
@@ -77,6 +78,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property insights in users
+      description: Read-only. Nullable.
       operationId: users_UpdateInsights
       parameters:
         - name: user-id
@@ -103,6 +105,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property insights for users
+      description: Read-only. Nullable.
       operationId: users_DeleteInsights
       parameters:
         - name: user-id
@@ -128,6 +131,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
@@ -222,6 +226,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to shared for users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_CreateShared
       parameters:
         - name: user-id
@@ -253,6 +258,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
@@ -326,6 +332,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property shared in users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_UpdateShared
       parameters:
         - name: user-id
@@ -359,6 +366,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property shared for users
+      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_DeleteShared
       parameters:
         - name: user-id
@@ -446,7 +454,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get ref of lastSharedMethod from users
-      operationId: users.insights.shared_GetRefLastSharedMethod
+      operationId: users.insights.shared_GetGraphRefLastSharedMethod
       parameters:
         - name: user-id
           in: path
@@ -476,7 +484,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property lastSharedMethod in users
-      operationId: users.insights.shared_SetRefLastSharedMethod
+      operationId: users.insights.shared_SetGraphRefLastSharedMethod
       parameters:
         - name: user-id
           in: path
@@ -511,7 +519,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete ref of navigation property lastSharedMethod for users
-      operationId: users.insights.shared_DeleteRefLastSharedMethod
+      operationId: users.insights.shared_DeleteGraphRefLastSharedMethod
       parameters:
         - name: user-id
           in: path
@@ -543,6 +551,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.shared_GetResource
       parameters:
         - name: user-id
@@ -598,7 +607,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get ref of resource from users
-      operationId: users.insights.shared_GetRefResource
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.shared_GetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -628,7 +638,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.shared_SetRefResource
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.shared_SetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -663,7 +674,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete ref of navigation property resource for users
-      operationId: users.insights.shared_DeleteRefResource
+      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.shared_DeleteGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -695,6 +707,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
@@ -787,6 +800,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to trending for users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_CreateTrending
       parameters:
         - name: user-id
@@ -818,6 +832,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
@@ -884,6 +899,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property trending in users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_UpdateTrending
       parameters:
         - name: user-id
@@ -917,6 +933,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property trending for users
+      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_DeleteTrending
       parameters:
         - name: user-id
@@ -949,6 +966,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: Used for navigating to the trending document.
       operationId: users.insights.trending_GetResource
       parameters:
         - name: user-id
@@ -1004,7 +1022,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get ref of resource from users
-      operationId: users.insights.trending_GetRefResource
+      description: Used for navigating to the trending document.
+      operationId: users.insights.trending_GetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1034,7 +1053,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.trending_SetRefResource
+      description: Used for navigating to the trending document.
+      operationId: users.insights.trending_SetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1069,7 +1089,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete ref of navigation property resource for users
-      operationId: users.insights.trending_DeleteRefResource
+      description: Used for navigating to the trending document.
+      operationId: users.insights.trending_DeleteGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1101,6 +1122,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -1190,6 +1212,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to used for users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_CreateUsed
       parameters:
         - name: user-id
@@ -1221,6 +1244,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
@@ -1286,6 +1310,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property used in users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_UpdateUsed
       parameters:
         - name: user-id
@@ -1319,6 +1344,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property used for users
+      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_DeleteUsed
       parameters:
         - name: user-id
@@ -1351,6 +1377,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get resource from users
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
       operationId: users.insights.used_GetResource
       parameters:
         - name: user-id
@@ -1406,7 +1433,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get ref of resource from users
-      operationId: users.insights.used_GetRefResource
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.used_GetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1436,7 +1464,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the ref of navigation property resource in users
-      operationId: users.insights.used_SetRefResource
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.used_SetGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1471,7 +1500,8 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete ref of navigation property resource for users
-      operationId: users.insights.used_DeleteRefResource
+      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
+      operationId: users.insights.used_DeleteGraphRefResource
       parameters:
         - name: user-id
           in: path
@@ -1503,6 +1533,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1599,18 +1630,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -1638,6 +1657,7 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
       parameters:
         - name: user-id
@@ -1669,6 +1689,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -1716,18 +1737,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -1742,6 +1751,7 @@ paths:
       tags:
         - users.person
       summary: Update the navigation property people in users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
       parameters:
         - name: user-id
@@ -1775,6 +1785,7 @@ paths:
       tags:
         - users.person
       summary: Delete navigation property people for users
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
         - name: user-id
@@ -1992,7 +2003,7 @@ components:
         sharedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         sharingReference:
@@ -2070,13 +2081,13 @@ components:
         lastAccessedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last accessed by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:

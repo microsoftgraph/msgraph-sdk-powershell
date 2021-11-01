@@ -1,0 +1,330 @@
+openapi: 3.0.1
+info:
+  title: WindowsUpdates
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  '/admin/serviceAnnouncement/healthOverviews/{serviceHealth-id}/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function incidentReport
+      operationId: admin.serviceAnnouncement.healthOverviews.issues_incidentReport
+      parameters:
+        - name: serviceHealth-id
+          in: path
+          description: 'key: id of serviceHealth'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealth
+        - name: serviceHealthIssue-id
+          in: path
+          description: 'key: id of serviceHealthIssue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/admin/serviceAnnouncement/issues/{serviceHealthIssue-id}/microsoft.graph.incidentReport()':
+    get:
+      tags:
+        - admin.Functions
+      summary: Invoke function incidentReport
+      operationId: admin.serviceAnnouncement.issues_incidentReport
+      parameters:
+        - name: serviceHealthIssue-id
+          in: path
+          description: 'key: id of serviceHealthIssue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: serviceHealthIssue
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /admin/serviceAnnouncement/messages/microsoft.graph.archive:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action archive
+      operationId: admin.serviceAnnouncement.messages_archive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.favorite:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action favorite
+      operationId: admin.serviceAnnouncement.messages_favorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markRead:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action markRead
+      operationId: admin.serviceAnnouncement.messages_markRead
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.markUnread:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action markUnread
+      operationId: admin.serviceAnnouncement.messages_markUnread
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unarchive:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unarchive
+      operationId: admin.serviceAnnouncement.messages_unarchive
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /admin/serviceAnnouncement/messages/microsoft.graph.unfavorite:
+    post:
+      tags:
+        - admin.Actions
+      summary: Invoke action unfavorite
+      operationId: admin.serviceAnnouncement.messages_unfavorite
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messageIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: boolean
+                default: false
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+components:
+  schemas:
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]

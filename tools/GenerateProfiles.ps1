@@ -19,7 +19,7 @@ try {
     }
     $GetNationalCloudPS1 = Join-Path $PSScriptRoot ".\GetNationalCloud.ps1" -Resolve
 
-    $openApiFiles = @{}
+    $openApiFiles = [ordered]@{}
     foreach ($api in (Get-ChildItem -Path $OpenApiDocsDirectory)) {
         $openApiDocs = Get-ChildItem -File -Filter "*.yml" -Path $api.FullName
         Write-Host "Parsing $($api.Name) openAPI docs..." -ForegroundColor Yellow
@@ -51,20 +51,20 @@ try {
                 }
                 # Get crawl data.
                 Write-Host "Crawling '$moduleName' paths for resources and operations ..." -ForegroundColor Green
-                $crawlResult = @{resources= @(); operations = @{}}
-                foreach ($path in $allPaths) {
-                    $crawlResult.operations[$path.endpoint] = (@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
+                $crawlResult = [ordered]@{resources= @(); operations = [ordered]@{}}
+                foreach ($path in ($allPaths | Sort-Object -Property endpoint)) {
+                    $crawlResult.operations[$path.endpoint] = ([ordered]@{apiVersion = $path.apiVersion; originalLocation = $path.originalLocation})
                 }
                 $telemetryDir = Join-Path $ModuleProfilesDirectory "crawl-log-$profileName.json"
                 Set-Content -Path $telemetryDir -Value ($crawlResult | ConvertTo-Json)
                 Write-Host "Telemetry written at $telemetryDir" -ForegroundColor Blue
 
                 # Get profile.
-                $profile =  @{resources = @{}; operations = @{}}
+                $profile =  [ordered]@{resources = [ordered]@{}; operations = [ordered]@{}}
                 foreach ($operation in $crawlResult.operations.keys) {
                     $profile.operations[$operation] = $crawlResult.operations[$operation].apiVersion
                 }
-                $profilesNode = @{profiles = @{ $profileName = $profile}}
+                $profilesNode = [ordered]@{profiles = [ordered]@{ $profileName = $profile}}
                 $profilesInYaml = $profilesNode | ConvertTo-Yaml
                 $profileReadMeContent = @"
 # Microsoft Graph $profileName Profile
@@ -85,12 +85,12 @@ $profilesInYaml
     # Get all profile defintions of a module and generate a single readme.
     foreach ($moduleItem in (Get-ChildItem $ProfilesDirectory)) {
         $definitionsRelativePaths = @{ require = @()}
-        foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions")) {
+        foreach ($moduleDefinition in (Get-ChildItem -Filter *.md -Path "$($moduleItem.FullName)/definitions" | Sort-Object -Property name -desc)) {
             $definitionsRelativePaths.require += '$(this-folder)/definitions/'+ $moduleDefinition.Name
         }
-        $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | ConvertTo-Yaml)
+        $definitionsRelativePathsAsYaml = ($definitionsRelativePaths | Sort-Object -Property require | ConvertTo-Yaml)
 
-        $inputFiles = @{}
+        $inputFiles = [ordered]@{}
         $inputFiles["input-file"] = $openApiFiles[$moduleItem.Name]
 
         $moduleReadMeContent = @"

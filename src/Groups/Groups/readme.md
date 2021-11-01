@@ -50,6 +50,10 @@ directive:
       subject: ^GroupDynamicMembership$
       variant: Evaluate1|EvaluateExpanded1
     remove: true
+  - where:
+      verb: Get
+      subject: (Group)AvailableExtensionProperty
+    remove: true
 # Rename cmdlets
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
@@ -124,11 +128,19 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
-
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Group)(CreatedOnBehalf)$
+    set:
+      subject: $1$2Of
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.8.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

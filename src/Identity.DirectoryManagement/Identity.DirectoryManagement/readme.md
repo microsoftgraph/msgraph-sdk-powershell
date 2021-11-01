@@ -38,6 +38,29 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove cmdlets.
+  - where:
+      verb: Get
+      subject: (Contact|Contract|Device|DirectoryRole|DirectoryRoleTemplate|Organization)AvailableExtensionProperty
+    remove: true
+# Alias then rename cmdlets to avoid breaking change.
+  - where:
+      subject: ^UserScopedRoleMember$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^UserScopedRoleMember$
+    set:
+      subject: UserScopedRoleMemberOf
+  - where:
+      subject: ^(Contact|Device)(Member|TransitiveMember)$
+    set:
+      alias: ${verb}-Mg${subject}
+  - where:
+      subject: ^(Contact|Device)(Member|TransitiveMember)$
+    set:
+      subject: $1$2Of
+# Rename cmdlets
   - where:
       verb: Get
       subject: (^DirectorySettingTemplate$)
@@ -109,6 +132,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.8.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -11,6 +11,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_ListActivities
       parameters:
         - name: user-id
@@ -130,6 +131,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_CreateActivities
       parameters:
         - name: user-id
@@ -161,6 +163,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activities from users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_GetActivities
       parameters:
         - name: user-id
@@ -236,6 +239,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_UpdateActivities
       parameters:
         - name: user-id
@@ -269,6 +273,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
+      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_DeleteActivities
       parameters:
         - name: user-id
@@ -301,6 +306,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_ListHistoryItems
       parameters:
         - name: user-id
@@ -412,6 +418,7 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_CreateHistoryItems
       parameters:
         - name: user-id
@@ -450,6 +457,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get historyItems from users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_GetHistoryItems
       parameters:
         - name: user-id
@@ -528,6 +536,7 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_UpdateHistoryItems
       parameters:
         - name: user-id
@@ -568,6 +577,7 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
+      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_DeleteHistoryItems
       parameters:
         - name: user-id
@@ -607,6 +617,7 @@ paths:
       tags:
         - users.userActivity
       summary: Get activity from users
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
       operationId: users.activities.historyItems_GetActivity
       parameters:
         - name: user-id
@@ -691,7 +702,8 @@ paths:
       tags:
         - users.userActivity
       summary: Get ref of activity from users
-      operationId: users.activities.historyItems_GetRefActivity
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
+      operationId: users.activities.historyItems_GetGraphRefActivity
       parameters:
         - name: user-id
           in: path
@@ -735,7 +747,8 @@ paths:
       tags:
         - users.userActivity
       summary: Update the ref of navigation property activity in users
-      operationId: users.activities.historyItems_SetRefActivity
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
+      operationId: users.activities.historyItems_SetGraphRefActivity
       parameters:
         - name: user-id
           in: path
@@ -777,7 +790,8 @@ paths:
       tags:
         - users.userActivity
       summary: Delete ref of navigation property activity for users
-      operationId: users.activities.historyItems_DeleteRefActivity
+      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
+      operationId: users.activities.historyItems_DeleteGraphRefActivity
       parameters:
         - name: user-id
           in: path

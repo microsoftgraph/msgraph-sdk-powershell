@@ -144,9 +144,6 @@
   <data name="GraphRequestSessionConflict" xml:space="preserve">
     <value>The cmdlet cannot run because the following conflicting parameters are specified: GraphRequestSession and SessionVariable. Specify either GraphRequestSession or SessionVariable, then retry.</value>
   </data>
-  <data name="InferredFileNameErrorMessage" xml:space="preserve">
-    <value>Could not Infer File Name</value>
-  </data>
   <data name="InferredFileNameVerboseMessage" xml:space="preserve">
     <value>Inferred File Name {0} Saving to {1}</value>
   </data>
@@ -197,12 +194,39 @@
     <value>The cmdlet cannot run because the following conflicting parameters are specified: {0} and {1}. Specify either {0} or {1} then retry.</value>
   </data>
   <data name="NotConnectedToGraphException" xml:space="preserve">
-    <value>The cmdlet cannot run because Authentication is set to {0} and Connect-Graph was not called. Invoke 'Connect-Graph' or specify Authentication to be 'UserProvidedToken' and Provide a Token then retry</value>
+    <value>The cmdlet cannot run because Authentication is set to {0} and Connect-MgGraph was not called. Invoke 'Connect-MgGraph' or specify Authentication to be 'UserProvidedToken' and Provide a Token then retry</value>
+  </data>
+  <data name="MissingAuthenticationContext" xml:space="preserve">
+    <value>The cmdlet cannot run because {0} is missing and 'Authentication' is set to 'Default'. Please call 'Connect-MgGraph' then try again.</value>
+  </data>
+  <data name="JsonDeserializationFailed" xml:space="preserve">
+    <value>Conversion from JSON failed with error: {0}</value>
+  </data>
+  <data name="EmptyKeyInJsonString" xml:space="preserve">
+    <value>The provided JSON includes a property whose name is an empty string, this is only supported using the -OutputType HashTable switch.</value>
   </data>
   <data name="DuplicateKeysInJsonString" xml:space="preserve">
     <value>Cannot convert the JSON string because a dictionary that was converted from the string contains the duplicated key '{0}'.</value>
   </data>
-  <data name="MissingAuthenticationContext" xml:space="preserve">
-    <value>The cmdlet cannot run because {0} is missing and 'Authentication' is set to 'Default'. Please call 'Connect-Graph' then try again.</value>
+  <data name="KeysWithDifferentCasingInJsonString" xml:space="preserve">
+    <value>Cannot convert the JSON string because it contains keys with different casing. Please use the -OutputType HashTable switch instead. The key that was attempted to be added to the existing key '{0}' was '{1}'.</value>
+  </data>
+  <data name="InferredFileNameErrorMessage" xml:space="preserve">
+    <value>Could not Infer File Name. Content Disposition Header is Not Present</value>
+  </data>
+  <data name="InferredFileNameIncorrect" xml:space="preserve">
+    <value>Inferred File Name {0} is incorrect and cannot be saved. Please specify -OutputFilePath Explicitly</value>
+  </data>
+  <data name="NonJsonResponseWithoutInfer" xml:space="preserve">
+    <value>Request returned Non-Json response of {0} with Content-Disposition {1}, Please specify '-OutputFilePath' or '-InferOutputFileName' </value>
+  </data>
+  <data name="NonJsonResponseWithoutOutputFilePath" xml:space="preserve">
+    <value>Request returned Non-Json response of {0}, Please specify '-OutputFilePath'</value>
+  </data>
+  <data name="InteractiveAuthNotSupported" xml:space="preserve">
+    <value>Interactive authentication is not supported in this session, please run cmdlet 'Connect-MgGraph -UseDeviceAuthentication'.</value>
+  </data>
+  <data name="DeviceCodeFallback" xml:space="preserve">
+    <value>Interactive authentication is not supported in this session, falling back to DeviceCode. Future versions will not automatically fallback to DeviceCode.</value>
   </data>
 </root>

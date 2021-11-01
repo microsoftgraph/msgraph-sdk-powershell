@@ -48,12 +48,76 @@
         }
 
         [Fact]
-        public void ShouldUseDeviceCodeProviderWhenDelegatedContextIsProvided()
+        public void ShouldUseDeviceCodeWhenSpecifiedByUser()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                AuthProviderType = AuthProviderType.DeviceCodeProvider
+            };
+
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+
+            // Assert
+            Assert.IsType<DeviceCodeProvider>(authProvider);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+        [Fact]
+        public void ShouldUseDeviceCodeWhenFallback()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process,
+                AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack
+            };
+
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+
+            // Assert
+            Assert.IsType<DeviceCodeProvider>(authProvider);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+        [Fact]
+        public void ShouldUseInteractiveProviderWhenDelegated()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                Scopes = new[] { "User.Read" },
+                ContextScope = ContextScope.Process
+            };
+
+            // Act
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+
+            // Assert
+            Assert.IsType<InteractiveAuthenticationProvider>(authProvider);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvided()
+        {
+            // Arrange
+            AuthContext delegatedAuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.Delegated,
+                ClientId = Guid.NewGuid().ToString(),
                 Scopes = new string[] { "User.Read" },
                 ContextScope = ContextScope.Process
             };
@@ -62,7 +126,7 @@
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
 
             // Assert
-            Assert.IsType<DeviceCodeProvider>(authProvider);
+            Assert.IsType<InteractiveAuthenticationProvider>(authProvider);
 
             // reset static instance.
             GraphSession.Reset();

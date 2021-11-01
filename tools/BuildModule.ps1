@@ -7,7 +7,9 @@ Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string[]] $ReleaseNotes,
     [int] $ModulePreviewNumber = -1,
     [hashtable[]] $RequiredModules,
-    [switch] $EnableSigning
+    [switch] $EnableSigning,
+    [switch] $ExcludeExampleTemplates,
+    [switch] $ExcludeNotesSection
 )
 $ErrorActionPreference = "Stop"
 $LASTEXITCODE = $null
@@ -16,6 +18,7 @@ if ($PSEdition -ne "Core") {
 }
 
 $NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
+$CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
 $BuildModulePS1 = Join-Path $ModuleProjLocation "/build-module.ps1"
 $ModuleCsProj = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.csproj"
@@ -25,40 +28,32 @@ $ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 
 # Import scripts
 . $NuspecHelperPS1
+. $CSProjHelperPS1
 
 if (-not (Test-Path -Path $BuildModulePS1)) {
     Write-Error "Build script file '$BuildModulePS1' not found for '$Module' module."
 }
 
 # Set delay sign to true.
-
-$ModuleProjDoc = New-Object System.Xml.XmlDocument
-$ModuleProjDoc.Load($ModuleCsProj)
-$ModuleProjElement = [System.Xml.XmlElement] $ModuleProjDoc.DocumentElement.FirstChild
 if ($EnableSigning) {
-    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "AssemblyOriginatorKeyFile" -ElementValue (Join-Path $PSScriptRoot $NuspecMetadata["assemblyOriginatorKeyFile"])
-    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "DelaySign" -ElementValue "true"
-    Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "SignAssembly" -ElementValue "true"
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $NuspecMetadata["assemblyOriginatorKeyFile"]
 }
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Copyright" -ElementValue $NuspecMetadata["copyright"]
-Set-ElementValue -XmlDocument $ModuleProjDoc -MetadataElement $ModuleProjElement -ElementName "Version" -ElementValue $ModuleVersion
-
-$ModuleProjDoc.Save($ModuleCsProj)
-Write-Host "Updated the .csproj."
-
+else {
+    Set-CSProjValues -ModuleCsProj $ModuleCsProj -ModuleVersion $ModuleVersion -Copyright $NuspecMetadata["copyright"]
+}
 
 # Build module
 Write-Host -ForegroundColor Green "Building '$Module' module..."
-& $BuildModulePS1 -Docs -Release
+& $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
 if ($LASTEXITCODE) {
     Write-Error "Failed to build '$Module' module."
 }
 
 [HashTable]$ModuleManifestSettings = @{
-    Path              = $ModuleManifest
-    ModuleVersion     = $ModuleVersion
-    IconUri           = $NuspecMetadata["iconUri"]
-    ReleaseNotes      = $ReleaseNotes
+    Path          = $ModuleManifest
+    ModuleVersion = $ModuleVersion
+    IconUri       = $NuspecMetadata["iconUri"]
+    ReleaseNotes  = $ReleaseNotes
 }
 $FullVersionNumber = $ModuleVersion
 

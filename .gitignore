@@ -226,6 +226,8 @@ _pkginfo.txt
 ClientBin/
 ~$*
 *~
+.#*
+*#
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
@@ -354,3 +356,6 @@ MigrationBackup/
 
 # Visual Studio Code
 .vscode/
+
+#Custom Environment Files
+localenv.json

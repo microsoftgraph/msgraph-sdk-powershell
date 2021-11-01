@@ -1,0 +1,51 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+
+parameters:
+  - name: BuildAgent
+    default: MsGraphBuildAgentsWindows
+    displayName: Build Agent
+
+variables:
+  Branch: "WeeklyOpenApiDocsDownload"
+  BaseBranch: "dev"
+  BUILDAGENT: ${{ parameters.BuildAgent }}
+
+pool: $(BUILDAGENT)
+
+trigger: none
+pr: none
+schedules:
+  - cron: "0 12 * * WED" # Run every wednesday at noon UTC
+    displayName: "Weekly PS SDK generation"
+    branches:
+      include:
+        - dev
+    always: true
+
+stages:
+  - stage: DownloadOpenAPIDocs
+    displayName: Download OpenAPI docs
+    jobs:
+      - template: common-templates/download-openapi-docs.yml
+        parameters:
+          Branch: $(Branch)
+          BaseBranch: $(BaseBranch)
+
+  - stage: GenerateServiceModules
+    displayName: Generate service modules
+    condition: succeeded()
+    jobs:
+      - template: generation-templates/generate-service-modules.yml
+        parameters:
+          Branch: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['ComputeBranch.WeeklyBranch'] ]
+          ModulesToGenerate: $[ stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'] ]
+          AuthModulePath: "src/Authentication/Authentication"
+          ServiceModulePath: "src/"
+          ModulePrefix: "Microsoft.Graph"
+          EnableSigning: false
+          PublishToFeed: false
+          GenerateCommandMetadata: true
+          GenerateHelpDocs: true

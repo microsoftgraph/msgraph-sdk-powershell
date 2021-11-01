@@ -40,10 +40,23 @@ subject-prefix: ''
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: teams_GetGroup|team_ListTeam
+# Remove cmdlets
+  - where:
+      verb: Remove
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)Message$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageReply$
+    remove: true
+  - where:
+      verb: Remove|Update
+      subject: ^(Chat|TeamChannel|TeamPrimaryChannel)MessageHostedContent$
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.8.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

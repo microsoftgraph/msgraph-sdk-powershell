@@ -13,48 +13,7 @@ paths:
       summary: Get entities from subscriptions
       operationId: subscriptions.subscription_ListSubscription
       parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - applicationId
-                - applicationId desc
-                - changeType
-                - changeType desc
-                - clientState
-                - clientState desc
-                - creatorId
-                - creatorId desc
-                - encryptionCertificate
-                - encryptionCertificate desc
-                - encryptionCertificateId
-                - encryptionCertificateId desc
-                - expirationDateTime
-                - expirationDateTime desc
-                - includeResourceData
-                - includeResourceData desc
-                - latestSupportedTlsVersion
-                - latestSupportedTlsVersion desc
-                - lifecycleNotificationUrl
-                - lifecycleNotificationUrl desc
-                - notificationUrl
-                - notificationUrl desc
-                - resource
-                - resource desc
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -76,20 +35,10 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
+                - notificationUrlAppId
                 - resource
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -171,20 +120,10 @@ paths:
                 - includeResourceData
                 - latestSupportedTlsVersion
                 - lifecycleNotificationUrl
+                - notificationQueryOptions
                 - notificationUrl
+                - notificationUrlAppId
                 - resource
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -294,9 +233,16 @@ components:
               type: string
               description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
               nullable: true
+            notificationQueryOptions:
+              type: string
+              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
+              nullable: true
             notificationUrl:
               type: string
               description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
+            notificationUrlAppId:
+              type: string
+              nullable: true
             resource:
               type: string
               description: Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/v1.0/). See the possible resource path values for each supported resource.
@@ -365,39 +311,12 @@ components:
           schema:
             $ref: '#/components/schemas/odata.error'
   parameters:
-    top:
-      name: $top
-      in: query
-      description: Show only the first n items
-      schema:
-        minimum: 0
-        type: integer
-      example: 50
-    skip:
-      name: $skip
-      in: query
-      description: Skip the first n items
-      schema:
-        minimum: 0
-        type: integer
     search:
       name: $search
       in: query
       description: Search items by search phrases
       schema:
         type: string
-    filter:
-      name: $filter
-      in: query
-      description: Filter items by property values
-      schema:
-        type: string
-    count:
-      name: $count
-      in: query
-      description: Include count of items
-      schema:
-        type: boolean
   securitySchemes:
     azureaadv2:
       type: oauth2

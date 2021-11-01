@@ -2,31 +2,44 @@
 # Licensed under the MIT License.
 Param(
     [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $Module,
-    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation
+    [Parameter(Mandatory = $true)] [ValidateNotNullOrEmpty()][string] $ArtifactsLocation,
+    [string] $ModulePrefix = "Microsoft.Graph",
+    [switch] $ExcludeMarkdownDocsFromNugetPackage
 )
+$NuspecHelperPS1 = Join-Path $PSScriptRoot "./NuspecHelper.ps1"
+# Import scripts
+. $NuspecHelperPS1
+
 $LASTEXITCODE = $null
 $ErrorActionPreference = "Stop"
-if($PSEdition -ne "Core") {
-  Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
+if ($PSEdition -ne "Core") {
+    Write-Error "This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell."
 }
 
 $ModuleProjLocation = Join-Path $PSScriptRoot "../src/$Module/$Module"
+$ModuleNuspec = Join-Path $ModuleProjLocation "$ModulePrefix.$Module.nuspec"
 $PackModulePS1 = Join-Path $ModuleProjLocation "/pack-module.ps1"
 
 if (Test-Path $PackModulePS1) {
+    #Remove MarkDown Docs From Nuget Package
+    if ($ExcludeMarkdownDocsFromNugetPackage) {
+        Write-Information "Removing MarkDownDocs from Nuget Package..."
+        Remove-MarkdownDocsElement -NuSpecFilePath $ModuleNuspec
+    }
     # Pack module
     & $PackModulePS1
-    if($LASTEXITCODE) {
+    if ($LASTEXITCODE) {
         Write-Error "Failed to pack '$Module' module."
     }
 
     # Get generated .nupkg
-    $NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") | Where-Object Name -Match ".nupkg").FullName
+    $NuGetPackage = (Get-ChildItem (Join-Path $ModuleProjLocation "./bin") -Recurse | Where-Object Name -Match ".nupkg").FullName
 
     $ModuleArtifactLocation = "$ArtifactsLocation\$Module"
-    if(-not (Test-Path $ModuleArtifactLocation)) {
+    if (-not (Test-Path $ModuleArtifactLocation)) {
         New-Item -Path $ModuleArtifactLocation -Type Directory
-    } else {
+    }
+    else {
         Remove-Item -Path "$ModuleArtifactLocation\*" -Recurse -Force
     }
 

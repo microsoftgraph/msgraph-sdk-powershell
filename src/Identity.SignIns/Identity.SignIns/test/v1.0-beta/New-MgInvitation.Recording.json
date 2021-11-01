@@ -1,0 +1,62 @@
+{
+  "New-MgInvitation+[NoContext]+ShouldCreateInvite+$POST+https://graph.microsoft.com/beta/invitations+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/beta/invitations",
+      "Content": "{\r\n  \"inviteRedirectUrl\": \"https://myapp.contoso.com\",\r\n  \"invitedUserDisplayName\": \"John Doe\",\r\n  \"invitedUserEmailAddress\": \"johndoe@testtenant.onmicrosoft.com\"\r\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "165" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Date": [ "Wed, 17 Feb 2021 23:05:50 GMT" ],
+        "Cache-Control": [ "no-store, must-revalidate, no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Location": [ "https://graph.microsoft.com/" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "7927b734-7f49-4704-8be9-2a802aeb76f8" ],
+        "client-request-id": [ "7927b734-7f49-4704-8be9-2a802aeb76f8" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"002\",\"RoleInstance\":\"MWH0EPF00032E05\"}}" ],
+        "OData-Version": [ "4.0" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\"@odata.context\":\"https://graph.microsoft.com/beta/$metadata#invitations/$entity\",\"id\":\"0c9899a1-2e79-4b05-8285-7df46eda1e75\",\"inviteRedeemUrl\":\"https://login.microsoftonline.com/redeem?rd=NotValid\",\"invitedUserDisplayName\":\"John Doe\",\"invitedUserType\":\"Guest\",\"invitedUserEmailAddress\":\"johndoe@testtenant.onmicrosoft.com\",\"sendInvitationMessage\":false,\"resetRedemption\":false,\"inviteRedirectUrl\":\"https://myapp.contoso.com/\",\"status\":\"PendingAcceptance\",\"invitedUserMessageInfo\":{\"messageLanguage\":null,\"customizedMessageBody\":null,\"ccRecipients\":[{\"emailAddress\":{\"name\":null,\"address\":null}}]},\"invitedUser\":{\"id\":\"ebb12722-9cb6-4c90-ab39-bf1bb658bae7\"}}"
+    }
+  },
+  "New-MgInvitation+[NoContext]+ShouldThrowInvalidEmailError+$POST+https://graph.microsoft.com/beta/invitations+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/beta/invitations",
+      "Content": "{\r\n  \"invitedUser\": {\r\n    \"id\": \"\",\r\n    \"displayName\": \"John Doe\",\r\n    \"mail\": \"johndoe@testtenant.onmicrosoft.com\",\r\n    \"userPrincipalName\": \"johndoe@testtenant.onmicrosoft.com\"\r\n  }\r\n}",
+      "Headers": {
+      },
+      "ContentHeaders": {
+        "Content-Type": [ "application/json" ],
+        "Content-Length": [ "190" ]
+      }
+    },
+    "Response": {
+      "StatusCode": 400,
+      "Headers": {
+        "Date": [ "Wed, 17 Feb 2021 23:05:50 GMT" ],
+        "Cache-Control": [ "no-store, must-revalidate, no-cache" ],
+        "Transfer-Encoding": [ "chunked" ],
+        "Vary": [ "Accept-Encoding" ],
+        "Strict-Transport-Security": [ "max-age=31536000" ],
+        "request-id": [ "e71de23d-cfb6-416a-b03e-416e493ba6ea" ],
+        "client-request-id": [ "e71de23d-cfb6-416a-b03e-416e493ba6ea" ],
+        "x-ms-ags-diagnostic": [ "{\"ServerInfo\":{\"DataCenter\":\"West US 2\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"002\",\"RoleInstance\":\"MWH0EPF00033720\"}}" ]
+      },
+      "ContentHeaders": {
+      },
+      "Content": "{\r\n  \"error\": {\r\n    \"code\": \"BadRequest\",\r\n    \"message\": \"Invalid Email Address\",\r\n    \"innerError\": {\r\n      \"request-id\": \"e71de23d-cfb6-416a-b03e-416e493ba6ea\",\r\n      \"date\": \"2021-02-17T23:05:51\",\r\n      \"client-request-id\": \"e71de23d-cfb6-416a-b03e-416e493ba6ea\"\r\n    }\r\n  }\r\n}"
+    }
+  }
+}

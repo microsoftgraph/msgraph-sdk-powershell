@@ -25,6 +25,7 @@ paths:
               enum:
                 - id
                 - directoryAudits
+                - provisioning
                 - restrictedSignIns
                 - signIns
               type: string
@@ -40,6 +41,7 @@ paths:
               enum:
                 - '*'
                 - directoryAudits
+                - provisioning
                 - restrictedSignIns
                 - signIns
               type: string
@@ -53,6 +55,8 @@ paths:
           links:
             directoryAudits:
               operationId: auditLogs.ListDirectoryAudits
+            provisioning:
+              operationId: auditLogs.ListProvisioning
             restrictedSignIns:
               operationId: auditLogs.ListRestrictedSignIns
             signIns:
@@ -83,6 +87,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListDirectoryAudits
       parameters:
         - $ref: '#/components/parameters/top'
@@ -187,6 +192,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateDirectoryAudits
       requestBody:
         description: New navigation property
@@ -210,6 +216,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Get directoryAudits from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -268,6 +275,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -294,6 +302,7 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteDirectoryAudits
       parameters:
         - name: directoryAudit-id
@@ -303,6 +312,262 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryAudit
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /auditLogs/provisioning:
+    get:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Get provisioning from auditLogs
+      operationId: auditLogs_ListProvisioning
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - activityDateTime
+                - activityDateTime desc
+                - changeId
+                - changeId desc
+                - cycleId
+                - cycleId desc
+                - durationInMilliseconds
+                - durationInMilliseconds desc
+                - initiatedBy
+                - initiatedBy desc
+                - jobId
+                - jobId desc
+                - modifiedProperties
+                - modifiedProperties desc
+                - provisioningAction
+                - provisioningAction desc
+                - provisioningStatusInfo
+                - provisioningStatusInfo desc
+                - provisioningSteps
+                - provisioningSteps desc
+                - servicePrincipal
+                - servicePrincipal desc
+                - sourceIdentity
+                - sourceIdentity desc
+                - sourceSystem
+                - sourceSystem desc
+                - targetIdentity
+                - targetIdentity desc
+                - targetSystem
+                - targetSystem desc
+                - tenantId
+                - tenantId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityDateTime
+                - changeId
+                - cycleId
+                - durationInMilliseconds
+                - initiatedBy
+                - jobId
+                - modifiedProperties
+                - provisioningAction
+                - provisioningStatusInfo
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - targetIdentity
+                - targetSystem
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of provisioningObjectSummary
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Create new navigation property to provisioning for auditLogs
+      operationId: auditLogs_CreateProvisioning
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/auditLogs/provisioning/{provisioningObjectSummary-id}':
+    get:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Get provisioning from auditLogs
+      operationId: auditLogs_GetProvisioning
+      parameters:
+        - name: provisioningObjectSummary-id
+          in: path
+          description: 'key: id of provisioningObjectSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningObjectSummary
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - activityDateTime
+                - changeId
+                - cycleId
+                - durationInMilliseconds
+                - initiatedBy
+                - jobId
+                - modifiedProperties
+                - provisioningAction
+                - provisioningStatusInfo
+                - provisioningSteps
+                - servicePrincipal
+                - sourceIdentity
+                - sourceSystem
+                - targetIdentity
+                - targetSystem
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Update the navigation property provisioning in auditLogs
+      operationId: auditLogs_UpdateProvisioning
+      parameters:
+        - name: provisioningObjectSummary-id
+          in: path
+          description: 'key: id of provisioningObjectSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningObjectSummary
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - auditLogs.provisioningObjectSummary
+      summary: Delete navigation property provisioning for auditLogs
+      operationId: auditLogs_DeleteProvisioning
+      parameters:
+        - name: provisioningObjectSummary-id
+          in: path
+          description: 'key: id of provisioningObjectSummary'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: provisioningObjectSummary
         - name: If-Match
           in: header
           description: ETag
@@ -607,6 +872,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_ListSignIns
       parameters:
         - $ref: '#/components/parameters/top'
@@ -747,6 +1013,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_CreateSignIns
       requestBody:
         description: New navigation property
@@ -770,6 +1037,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Get signIns from auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
         - name: signIn-id
@@ -840,6 +1108,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_UpdateSignIns
       parameters:
         - name: signIn-id
@@ -866,6 +1135,7 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
+      description: Read-only. Nullable.
       operationId: auditLogs_DeleteSignIns
       parameters:
         - name: signIn-id
@@ -875,6 +1145,327 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: signIn
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/reports:
+    get:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Get reports from deviceManagement
+      description: Reports singleton
+      operationId: deviceManagement_GetReports
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - exportJobs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - exportJobs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
+          links:
+            exportJobs:
+              operationId: deviceManagement.Reports.ListExportJobs
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Update the navigation property reports in deviceManagement
+      description: Reports singleton
+      operationId: deviceManagement_UpdateReports
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Delete navigation property reports for deviceManagement
+      description: Reports singleton
+      operationId: deviceManagement_DeleteReports
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/reports/exportJobs:
+    get:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
+      operationId: deviceManagement.reports_ListExportJobs
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - expirationDateTime
+                - expirationDateTime desc
+                - filter
+                - filter desc
+                - format
+                - format desc
+                - localizationType
+                - localizationType desc
+                - reportName
+                - reportName desc
+                - requestDateTime
+                - requestDateTime desc
+                - select
+                - select desc
+                - snapshotId
+                - snapshotId desc
+                - status
+                - status desc
+                - url
+                - url desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - filter
+                - format
+                - localizationType
+                - reportName
+                - requestDateTime
+                - select
+                - snapshotId
+                - status
+                - url
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceManagementExportJob
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Create new navigation property to exportJobs for deviceManagement
+      description: Entity representing a job to export a report
+      operationId: deviceManagement.reports_CreateExportJobs
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}':
+    get:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Get exportJobs from deviceManagement
+      description: Entity representing a job to export a report
+      operationId: deviceManagement.reports_GetExportJobs
+      parameters:
+        - name: deviceManagementExportJob-id
+          in: path
+          description: 'key: id of deviceManagementExportJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExportJob
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expirationDateTime
+                - filter
+                - format
+                - localizationType
+                - reportName
+                - requestDateTime
+                - select
+                - snapshotId
+                - status
+                - url
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Update the navigation property exportJobs in deviceManagement
+      description: Entity representing a job to export a report
+      operationId: deviceManagement.reports_UpdateExportJobs
+      parameters:
+        - name: deviceManagementExportJob-id
+          in: path
+          description: 'key: id of deviceManagementExportJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExportJob
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceManagementReports
+      summary: Delete navigation property exportJobs for deviceManagement
+      description: Entity representing a job to export a report
+      operationId: deviceManagement.reports_DeleteExportJobs
+      parameters:
+        - name: deviceManagementExportJob-id
+          in: path
+          description: 'key: id of deviceManagementExportJob'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementExportJob
         - name: If-Match
           in: header
           description: ETag
@@ -904,6 +1495,10 @@ paths:
             items:
               enum:
                 - id
+                - dailyPrintUsageByPrinter
+                - dailyPrintUsageByUser
+                - monthlyPrintUsageByPrinter
+                - monthlyPrintUsageByUser
               type: string
         - name: $expand
           in: query
@@ -916,6 +1511,10 @@ paths:
             items:
               enum:
                 - '*'
+                - dailyPrintUsageByPrinter
+                - dailyPrintUsageByUser
+                - monthlyPrintUsageByPrinter
+                - monthlyPrintUsageByUser
               type: string
       responses:
         '200':
@@ -924,6 +1523,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
+          links:
+            dailyPrintUsageByPrinter:
+              operationId: reports.ListDailyPrintUsageByPrinter
+            dailyPrintUsageByUser:
+              operationId: reports.ListDailyPrintUsageByUser
+            monthlyPrintUsageByPrinter:
+              operationId: reports.ListMonthlyPrintUsageByPrinter
+            monthlyPrintUsageByUser:
+              operationId: reports.ListMonthlyPrintUsageByUser
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -945,11 +1553,436 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByPrinter:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get dailyPrintUsageByPrinter from reports
+      operationId: reports_ListDailyPrintUsageByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - printerId
+                - printerId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Create new navigation property to dailyPrintUsageByPrinter for reports
+      operationId: reports_CreateDailyPrintUsageByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}':
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get dailyPrintUsageByPrinter from reports
+      operationId: reports_GetDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Update the navigation property dailyPrintUsageByPrinter in reports
+      operationId: reports_UpdateDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Delete navigation property dailyPrintUsageByPrinter for reports
+      operationId: reports_DeleteDailyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/dailyPrintUsageByUser:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get dailyPrintUsageByUser from reports
+      operationId: reports_ListDailyPrintUsageByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByUser
+      summary: Create new navigation property to dailyPrintUsageByUser for reports
+      operationId: reports_CreateDailyPrintUsageByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/dailyPrintUsageByUser/{printUsageByUser-id}':
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get dailyPrintUsageByUser from reports
+      operationId: reports_GetDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByUser
+      summary: Update the navigation property dailyPrintUsageByUser in reports
+      operationId: reports_UpdateDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByUser
+      summary: Delete navigation property dailyPrintUsageByUser for reports
+      operationId: reports_DeleteDailyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/microsoft.graph.deviceConfigurationDeviceActivity():
     get:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationDeviceActivity
+      description: Metadata for the device configuration device activity report
       operationId: reports_deviceConfigurationDeviceActivity
       responses:
         '200':
@@ -966,6 +1999,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function deviceConfigurationUserActivity
+      description: Metadata for the device configuration user activity report
       operationId: reports_deviceConfigurationUserActivity
       responses:
         '200':
@@ -986,6 +2020,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1008,6 +2043,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1030,6 +2066,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1054,6 +2091,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1076,6 +2114,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1098,6 +2137,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1120,6 +2160,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1144,6 +2185,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1166,6 +2208,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1179,6 +2222,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getGroupArchivedPrintJobs
+      operationId: reports_getGroupArchivedPrintJobs
+      parameters:
+        - name: groupId
+          in: path
+          description: 'Usage: groupId={groupId}'
+          required: true
+          schema:
+            type: string
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getMailboxUsageDetail(period=''{period}'')':
     get:
       tags:
@@ -1188,6 +2274,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1210,6 +2297,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1232,6 +2320,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1254,6 +2343,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1324,6 +2414,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1346,6 +2437,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1370,6 +2462,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1392,6 +2485,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1414,6 +2508,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1438,6 +2533,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1460,6 +2556,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1482,6 +2579,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1504,6 +2602,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1526,6 +2625,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1548,6 +2648,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1570,6 +2671,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1592,6 +2694,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1616,6 +2719,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1638,6 +2742,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1660,6 +2765,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1684,6 +2790,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1706,6 +2813,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1728,6 +2836,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1741,6 +2850,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getPrinterArchivedPrintJobs
+      operationId: reports_getPrinterArchivedPrintJobs
+      parameters:
+        - name: printerId
+          in: path
+          description: 'Usage: printerId={printerId}'
+          required: true
+          schema:
+            type: string
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getSharePointActivityFileCounts(period=''{period}'')':
     get:
       tags:
@@ -1750,6 +2902,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1772,6 +2925,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1794,6 +2948,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1816,6 +2971,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1840,6 +2996,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1862,6 +3019,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -1886,6 +3044,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1908,6 +3067,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1930,6 +3090,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1952,6 +3113,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1974,6 +3136,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -1996,6 +3159,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2018,6 +3182,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2040,6 +3205,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2064,6 +3230,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2086,6 +3253,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2108,6 +3276,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2130,6 +3299,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2154,6 +3324,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2176,6 +3347,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2198,6 +3370,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2220,6 +3393,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2242,6 +3416,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2264,6 +3439,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2286,6 +3462,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2308,6 +3485,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2330,6 +3508,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2352,6 +3531,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2374,6 +3554,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2396,6 +3577,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2418,6 +3600,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2442,6 +3625,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2464,6 +3648,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2486,6 +3671,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2508,6 +3694,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2532,6 +3719,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2545,6 +3733,49 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getUserArchivedPrintJobs
+      operationId: reports_getUserArchivedPrintJobs
+      parameters:
+        - name: userId
+          in: path
+          description: 'Usage: userId={userId}'
+          required: true
+          schema:
+            type: string
+        - name: startDateTime
+          in: path
+          description: 'Usage: startDateTime={startDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+        - name: endDateTime
+          in: path
+          description: 'Usage: endDateTime={endDateTime}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+            type: string
+            format: date-time
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getYammerActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -2554,6 +3785,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2576,6 +3808,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2598,6 +3831,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2622,6 +3856,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2644,6 +3879,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2666,6 +3902,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2688,6 +3925,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2712,6 +3950,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2734,6 +3973,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2756,6 +3996,7 @@ paths:
       parameters:
         - name: date
           in: path
+          description: 'Usage: date={date}'
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
@@ -2780,6 +4021,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2802,6 +4044,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2840,6 +4083,7 @@ paths:
       parameters:
         - name: skip
           in: path
+          description: 'Usage: skip={skip}'
           required: true
           schema:
             maximum: 2147483647
@@ -2849,6 +4093,7 @@ paths:
             nullable: true
         - name: top
           in: path
+          description: 'Usage: top={top}'
           required: true
           schema:
             maximum: 2147483647
@@ -2858,12 +4103,14 @@ paths:
             nullable: true
         - name: filter
           in: path
+          description: 'Usage: filter={filter}'
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
+          description: 'Usage: skipToken={skipToken}'
           required: true
           schema:
             type: string
@@ -2903,6 +4150,7 @@ paths:
       parameters:
         - name: period
           in: path
+          description: 'Usage: period={period}'
           required: true
           schema:
             type: string
@@ -2917,6 +4165,430 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /reports/monthlyPrintUsageByPrinter:
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get monthlyPrintUsageByPrinter from reports
+      operationId: reports_ListMonthlyPrintUsageByPrinter
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - printerId
+                - printerId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByPrinter
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Create new navigation property to monthlyPrintUsageByPrinter for reports
+      operationId: reports_CreateMonthlyPrintUsageByPrinter
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}':
+    get:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Get monthlyPrintUsageByPrinter from reports
+      operationId: reports_GetMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - printerId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Update the navigation property monthlyPrintUsageByPrinter in reports
+      operationId: reports_UpdateMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByPrinter
+      summary: Delete navigation property monthlyPrintUsageByPrinter for reports
+      operationId: reports_DeleteMonthlyPrintUsageByPrinter
+      parameters:
+        - name: printUsageByPrinter-id
+          in: path
+          description: 'key: id of printUsageByPrinter'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByPrinter
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /reports/monthlyPrintUsageByUser:
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get monthlyPrintUsageByUser from reports
+      operationId: reports_ListMonthlyPrintUsageByUser
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedBlackAndWhiteJobCount
+                - completedBlackAndWhiteJobCount desc
+                - completedColorJobCount
+                - completedColorJobCount desc
+                - incompleteJobCount
+                - incompleteJobCount desc
+                - usageDate
+                - usageDate desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of printUsageByUser
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.printUsageByUser
+      summary: Create new navigation property to monthlyPrintUsageByUser for reports
+      operationId: reports_CreateMonthlyPrintUsageByUser
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/monthlyPrintUsageByUser/{printUsageByUser-id}':
+    get:
+      tags:
+        - reports.printUsageByUser
+      summary: Get monthlyPrintUsageByUser from reports
+      operationId: reports_GetMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedBlackAndWhiteJobCount
+                - completedColorJobCount
+                - incompleteJobCount
+                - usageDate
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.printUsageByUser
+      summary: Update the navigation property monthlyPrintUsageByUser in reports
+      operationId: reports_UpdateMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.printUsageByUser
+      summary: Delete navigation property monthlyPrintUsageByUser for reports
+      operationId: reports_DeleteMonthlyPrintUsageByUser
+      parameters:
+        - name: printUsageByUser-id
+          in: path
+          description: 'key: id of printUsageByUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: printUsageByUser
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.auditLogRoot:
@@ -2930,6 +4602,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
               description: Read-only. Nullable.
+            provisioning:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
             restrictedSignIns:
               type: array
               items:
@@ -2950,7 +4626,7 @@ components:
             activityDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: ''2014-01-01T00:00:00Z'''
+              description: 'Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             activityDisplayName:
               type: string
@@ -2980,13 +4656,75 @@ components:
               $ref: '#/components/schemas/microsoft.graph.operationResult'
             resultReason:
               type: string
-              description: Describes cause of 'failure' or 'timeout' results.
+              description: Indicates the reason for failure if the result is failure or timeout.
               nullable: true
             targetResources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
               description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
+          additionalProperties:
+            type: object
+    microsoft.graph.provisioningObjectSummary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: provisioningObjectSummary
+          type: object
+          properties:
+            activityDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+            changeId:
+              type: string
+              description: Unique ID of this change in this cycle.
+              nullable: true
+            cycleId:
+              type: string
+              description: Unique ID per job iteration.
+              nullable: true
+            durationInMilliseconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Indicates how long this provisioning action took to finish. Measured in milliseconds.
+              format: int32
+              nullable: true
+            initiatedBy:
+              $ref: '#/components/schemas/microsoft.graph.initiator'
+            jobId:
+              type: string
+              description: The unique ID for the whole provisioning job.
+              nullable: true
+            modifiedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.modifiedProperty'
+              description: Details of each property that was modified in this provisioning action on this object.
+            provisioningAction:
+              $ref: '#/components/schemas/microsoft.graph.provisioningAction'
+            provisioningStatusInfo:
+              $ref: '#/components/schemas/microsoft.graph.provisioningStatusInfo'
+            provisioningSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.provisioningStep'
+              description: Details of each step in provisioning.
+            servicePrincipal:
+              $ref: '#/components/schemas/microsoft.graph.provisioningServicePrincipal'
+            sourceIdentity:
+              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
+            sourceSystem:
+              $ref: '#/components/schemas/microsoft.graph.provisioningSystem'
+            targetIdentity:
+              $ref: '#/components/schemas/microsoft.graph.provisionedIdentity'
+            targetSystem:
+              $ref: '#/components/schemas/microsoft.graph.provisioningSystem'
+            tenantId:
+              type: string
+              description: Unique Azure AD tenant ID.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.restrictedSignIn:
@@ -3010,36 +4748,37 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: App name displayed in the Azure Portal.
+              description: App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
               nullable: true
             appId:
               type: string
-              description: Unique GUID representing the app ID in the Azure Active Directory.
+              description: Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
+              description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
             clientAppUsed:
               type: string
-              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP.'
+              description: 'Identifies the legacy client used for sign-in activity.  Includes Browser, Exchange Active Sync, modern clients, IMAP, MAPI, SMTP, and POP. Supports $filter (eq operator only).'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity.
+              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as ''2014-01-01T00:00:00Z''.'
+              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
-              description: IP address of the client used to sign in.
+              description: IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
               nullable: true
             isInteractive:
               type: boolean
@@ -3049,11 +4788,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             resourceDisplayName:
               type: string
-              description: Name of the resource the user signed into.
+              description: Name of the resource the user signed into. Supports $filter (eq operator only).
               nullable: true
             resourceId:
               type: string
-              description: ID of the resource that the user signed into.
+              description: ID of the resource that the user signed into. Supports $filter (eq operator only).
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -3061,13 +4800,13 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.riskEventType'
-              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue.'
+              description: 'Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).'
             riskEventTypes_v2:
               type: array
               items:
                 type: string
                 nullable: true
-              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.'
+              description: 'The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).'
             riskLevelAggregated:
               $ref: '#/components/schemas/microsoft.graph.riskLevel'
             riskLevelDuringSignIn:
@@ -3078,25 +4817,123 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             userDisplayName:
               type: string
-              description: Display name of the user that initiated the sign-in.
+              description: Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
             userId:
               type: string
-              description: ID of the user that initiated the sign-in.
+              description: ID of the user that initiated the sign-in. Supports $filter (eq operator only).
             userPrincipalName:
               type: string
-              description: User principal name of the user that initiated the sign-in.
+              description: User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.deviceManagementReports:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementReports
+          type: object
+          properties:
+            exportJobs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+              description: Entity representing a job to export a report
+          additionalProperties:
+            type: object
+          description: Singleton entity that acts as a container for all reports functionality.
+    microsoft.graph.deviceManagementExportJob:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementExportJob
+          type: object
+          properties:
+            expirationDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time that the exported report expires
+              format: date-time
+            filter:
+              type: string
+              description: Filters applied on the report
+              nullable: true
+            format:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
+            localizationType:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobLocalizationType'
+            reportName:
+              type: string
+              description: Name of the report
+            requestDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Time that the exported report was requested
+              format: date-time
+            select:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: Columns selected from the report
+            snapshotId:
+              type: string
+              description: 'A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.'
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementReportStatus'
+            url:
+              type: string
+              description: Temporary location of the exported report
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Entity representing a job to export a report
     microsoft.graph.reportRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: reportRoot
           type: object
+          properties:
+            dailyPrintUsageByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+            dailyPrintUsageByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+            monthlyPrintUsageByPrinter:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+            monthlyPrintUsageByUser:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
           additionalProperties:
             type: object
-          description: The resource that represents an instance of History Reports.
+          description: The resource that represents an instance of Enrollment Failure Reports.
+    microsoft.graph.printUsageByPrinter:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printUsage'
+        - title: printUsageByPrinter
+          type: object
+          properties:
+            printerId:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.printUsageByUser:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.printUsage'
+        - title: printUsageByUser
+          type: object
+          properties:
+            userPrincipalName:
+              type: string
+              description: The UPN of the user represented by these statistics.
+          additionalProperties:
+            type: object
     microsoft.graph.report:
       title: report
       type: object
@@ -3109,6 +4946,49 @@ components:
       additionalProperties:
         type: object
       description: Device Configuration profile History reports.
+    microsoft.graph.archivedPrintJob:
+      title: archivedPrintJob
+      type: object
+      properties:
+        acquiredByPrinter:
+          type: boolean
+          description: True if the job was acquired by a printer; false otherwise. Read-only.
+        acquiredDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The dateTimeOffset when the job was acquired by the printer, if any. Read-only.'
+          format: date-time
+          nullable: true
+        completionDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The dateTimeOffset when the job was completed, canceled or aborted. Read-only.'
+          format: date-time
+          nullable: true
+        copiesPrinted:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of copies that were printed. Read-only.
+          format: int32
+        createdBy:
+          $ref: '#/components/schemas/microsoft.graph.userIdentity'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The dateTimeOffset when the job was created. Read-only.
+          format: date-time
+        id:
+          type: string
+          description: The archived print job's GUID. Read-only.
+        printerId:
+          type: string
+          description: The printer ID that the job was queued for. Read-only.
+          nullable: true
+        processingState:
+          $ref: '#/components/schemas/microsoft.graph.printJobProcessingState'
+      additionalProperties:
+        type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -3179,6 +5059,106 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.initiator:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: initiator
+          type: object
+          properties:
+            initiatorType:
+              $ref: '#/components/schemas/microsoft.graph.initiatorType'
+          additionalProperties:
+            type: object
+    microsoft.graph.modifiedProperty:
+      title: modifiedProperty
+      type: object
+      properties:
+        displayName:
+          type: string
+          description: Indicates the property name of the target attribute that was changed.
+          nullable: true
+        newValue:
+          type: string
+          description: Indicates the updated value for the propery.
+          nullable: true
+        oldValue:
+          type: string
+          description: Indicates the previous value (before the update) for the property.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningAction:
+      title: provisioningAction
+      enum:
+        - other
+        - create
+        - delete
+        - disable
+        - update
+        - stagedDelete
+        - unknownFutureValue
+      type: string
+    microsoft.graph.provisioningStatusInfo:
+      title: provisioningStatusInfo
+      type: object
+      properties:
+        errorInformation:
+          $ref: '#/components/schemas/microsoft.graph.provisioningErrorInfo'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningStep:
+      title: provisioningStep
+      type: object
+      properties:
+        description:
+          type: string
+          description: Summary of what occurred during the step.
+          nullable: true
+        details:
+          $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+        name:
+          type: string
+          description: Name of the step.
+          nullable: true
+        provisioningStepType:
+          $ref: '#/components/schemas/microsoft.graph.provisioningStepType'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.provisioningResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningServicePrincipal:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: provisioningServicePrincipal
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.provisionedIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: provisionedIdentity
+          type: object
+          properties:
+            details:
+              $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+            identityType:
+              type: string
+              description: 'Type of identity that has been provisioned, such as ''user'' or ''group''.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.provisioningSystem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: provisioningSystem
+          type: object
+          properties:
+            details:
+              $ref: '#/components/schemas/microsoft.graph.detailsInfo'
+          additionalProperties:
+            type: object
     microsoft.graph.appliedConditionalAccessPolicy:
       title: appliedConditionalAccessPolicy
       type: object
@@ -3201,7 +5181,7 @@ components:
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
         id:
           type: string
-          description: Unique GUID of the conditional access policy.
+          description: An identifier of the conditional access policy.
           nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
@@ -3346,6 +5326,80 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.deviceManagementReportFileFormat:
+      title: deviceManagementReportFileFormat
+      enum:
+        - csv
+        - pdf
+      type: string
+      description: Possible values for the file format of a report
+    microsoft.graph.deviceManagementExportJobLocalizationType:
+      title: deviceManagementExportJobLocalizationType
+      enum:
+        - localizedValuesAsAdditionalColumn
+        - replaceLocalizableValues
+      type: string
+      description: Configures how the requested export job is localized
+    microsoft.graph.deviceManagementReportStatus:
+      title: deviceManagementReportStatus
+      enum:
+        - unknown
+        - notStarted
+        - inProgress
+        - completed
+        - failed
+      type: string
+      description: Possible statuses associated with a generated report
+    microsoft.graph.printUsage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: printUsage
+          type: object
+          properties:
+            completedBlackAndWhiteJobCount:
+              type: integer
+              format: int64
+            completedColorJobCount:
+              type: integer
+              format: int64
+            incompleteJobCount:
+              type: integer
+              format: int64
+            usageDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+          additionalProperties:
+            type: object
+    microsoft.graph.userIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: userIdentity
+          type: object
+          properties:
+            ipAddress:
+              type: string
+              description: Indicates the client IP address used by user performing the activity (audit log only).
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: The userPrincipalName attribute of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.printJobProcessingState:
+      title: printJobProcessingState
+      enum:
+        - unknown
+        - pending
+        - processing
+        - paused
+        - stopped
+        - completed
+        - canceled
+        - aborted
+        - unknownFutureValue
+      type: string
     odata.error:
       required:
         - error
@@ -3377,28 +5431,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.userIdentity:
-      title: userIdentity
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: The identity's display name. Note that this may not always be available or up-to-date.
-          nullable: true
-        id:
-          type: string
-          description: Unique identifier for the identity.
-          nullable: true
-        ipAddress:
-          type: string
-          description: Indicates the client IP address used by user performing the activity (audit log only).
-          nullable: true
-        userPrincipalName:
-          type: string
-          description: The userPrincipalName attribute of the user.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.groupType:
       title: groupType
       enum:
@@ -3406,24 +5438,77 @@ components:
         - azureAD
         - unknownFutureValue
       type: string
-    microsoft.graph.modifiedProperty:
-      title: modifiedProperty
+    microsoft.graph.identity:
+      title: identity
       type: object
       properties:
         displayName:
           type: string
-          description: Indicates the property name of the target attribute that was changed.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
-        newValue:
+        id:
           type: string
-          description: Indicates the updated value for the propery.
-          nullable: true
-        oldValue:
-          type: string
-          description: Indicates the previous value (before the update) for the property.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.initiatorType:
+      title: initiatorType
+      enum:
+        - user
+        - application
+        - system
+        - unknownFutureValue
+      type: string
+    microsoft.graph.provisioningErrorInfo:
+      title: provisioningErrorInfo
+      type: object
+      properties:
+        additionalDetails:
+          type: string
+          description: Additional details in case of error.
+          nullable: true
+        errorCategory:
+          $ref: '#/components/schemas/microsoft.graph.provisioningStatusErrorCategory'
+        errorCode:
+          type: string
+          description: Unique error code if any occurred. Learn more
+          nullable: true
+        reason:
+          type: string
+          description: Summarizes the status and describes why the status happened.
+          nullable: true
+        recommendedAction:
+          type: string
+          description: Provides the resolution for the corresponding error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningResult:
+      title: provisioningResult
+      enum:
+        - success
+        - failure
+        - skipped
+        - warning
+        - unknownFutureValue
+      type: string
+    microsoft.graph.detailsInfo:
+      title: detailsInfo
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningStepType:
+      title: provisioningStepType
+      enum:
+        - import
+        - scoping
+        - matching
+        - processing
+        - referenceResolution
+        - export
+        - unknownFutureValue
+      type: string
     microsoft.graph.appliedConditionalAccessPolicyResult:
       title: appliedConditionalAccessPolicyResult
       enum:
@@ -3478,6 +5563,14 @@ components:
           description: The structure of this object is service-specific
       additionalProperties:
         type: object
+    microsoft.graph.provisioningStatusErrorCategory:
+      title: provisioningStatusErrorCategory
+      enum:
+        - failure
+        - nonServiceFailure
+        - success
+        - unknownFutureValue
+      type: string
     odata.error.detail:
       required:
         - code

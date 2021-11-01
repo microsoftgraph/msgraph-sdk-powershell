@@ -48,10 +48,21 @@ directive:
       subject: ^(DataPolicyOperation)(\1)+
     set:
       subject: $1
+# Remove cmdlets
+  - where:
+      subject: ^UserAuthentication$
+    remove: true
+  - where:
+      subject: ^InformationProtectionSensitivity(Label|LabelSublabel)$
+    remove: true
+  - where:
+      verb: New|Update
+      subject: ^UserAuthenticationPasswordMethod$
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.2.0
+module-version: 1.8.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

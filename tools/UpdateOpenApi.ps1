@@ -1,5 +1,6 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
+[CmdletBinding()]
 Param(
     [string] $ModuleMappingConfigPath = (Join-Path $PSScriptRoot "..\config\ModulesMapping.jsonc"),
     [string] $OpenApiDocOutput = (Join-Path $PSScriptRoot "..\openApiDocs"),
@@ -11,8 +12,11 @@ $LASTEXITCODE = $null
 if ($PSEdition -ne 'Core') {
     Write-Error 'This script requires PowerShell Core to execute. [Note] Generated cmdlets will work in both PowerShell Core or Windows PowerShell.'
 }
-# Install Powershell-yaml
-Install-Module powershell-yaml -Force
+
+if (!(Get-Module powershell-yaml -ListAvailable)){
+    # Install Powershell-yaml
+    Install-Module powershell-yaml -Force
+}
 
 $GraphVersion = "v1.0"
 if ($BetaGraphVersion) {
@@ -21,19 +25,20 @@ if ($BetaGraphVersion) {
 
 $OpenApiDocOutput = Join-Path $OpenApiDocOutput $GraphVersion
 
-# PS Scripts
+# Load PS Scripts
 $DownloadOpenApiDocPS1 = Join-Path $PSScriptRoot ".\DownloadOpenApiDoc.ps1" -Resolve
+$TweakOpenApiPs1 = Join-Path $PSScriptRoot ".\TweakOpenApi.ps1" -Resolve
 
 if (-not (Test-Path $ModuleMappingConfigPath)) {
     Write-Error "Module mapping file not be found: $ModuleMappingConfigPath."
 }
-
+$Stopwatch = [system.diagnostics.stopwatch]::StartNew()
 [HashTable] $ModuleMapping = Get-Content $ModuleMappingConfigPath | ConvertFrom-Json -AsHashTable
-$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Host -ForeGroundColor Green "Requests: $RequestCount" } -Process {
+$ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-Debug "Requests: $RequestCount" } -Process {
     $ModuleName = $_
     $ForceRefresh = $false
     # Check whether ForceRefresh is required, Only required for the First Request.
-    if ($RequestCount -eq 0){
+    if ($RequestCount -eq 0) {
         $ForceRefresh = $true
     }
 
@@ -46,6 +51,9 @@ $ModuleMapping.Keys | ForEach-Object -Begin { $RequestCount = 0 } -End { Write-H
     }
     $RequestCount++
 }
+$stopwatch.Stop()
+Write-Debug "Downloaded $GraphVersion OpenAPI files in '$($Stopwatch.Elapsed.TotalMinutes)` minutes."
 
-
+# Tweak OperationIds to address known AutoREST.PowerShell limitations.
+. $TweakOpenApiPs1 -OpenAPIFilesPath $OpenApiDocOutput
 Write-Host -ForegroundColor Green "-------------Done-------------"

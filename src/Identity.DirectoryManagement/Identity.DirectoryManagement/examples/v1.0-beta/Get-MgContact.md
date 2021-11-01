@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Retrieve contact objects in the directory 
 
-{{ Add output here }}
+```powershell
+Get-MgContact | Format-List Id, DisplayName, Mail, MailNickname
+
+Id           : 5d58402b-3cb2-4b17-b913-299a72c84204
+DisplayName  : Bob Kelly (TAILSPIN)
+Mail         : bobk@tailspintoys.com
+MailNickname : BobKTAILSPIN
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example retrieves all contact objects in the directory.

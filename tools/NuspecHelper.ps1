@@ -85,3 +85,19 @@ function Set-Dependencies(
         $MetadataElement["dependencies"].AppendChild($NewDependencyElement)
     }
 }
+
+<#
+    Remove Markdown Docs Element from the Nuspec File.
+    This is fixed in autorest code generator
+    https://github.com/Azure/autorest.powershell/blob/4e5e47e874747ce9cfbf88981538654dd2bafe4f/powershell/generators/nuspec.ts#L42
+#>
+function Remove-MarkdownDocsElement(
+    [parameter(Position=1, Mandatory=$true)]
+    [ValidateScript({Test-Path $_ -PathType Leaf})][string] $NuSpecFilePath){
+
+    $XmlDocument = New-Object System.Xml.XmlDocument
+    $XmlDocument.Load($NuSpecFilePath)
+    $docsNode = $XmlDocument.DocumentElement.Files.ChildNodes | Where-Object { $_.target -eq 'docs'}
+    $XmlDocument.DocumentElement.Files.RemoveChild($docsNode) | Out-Null
+    $XmlDocument.Save($NuSpecFilePath)
+}

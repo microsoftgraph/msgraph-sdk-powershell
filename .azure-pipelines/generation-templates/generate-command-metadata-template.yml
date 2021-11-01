@@ -1,0 +1,25 @@
+﻿# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+steps:
+- task: PowerShell@2
+  displayName: Generate command metadata
+  inputs:
+    targetType: inline
+    pwsh: true
+    script: |
+      . $(System.DefaultWorkingDirectory)/tools/PostGeneration/NewCommandMetadata.ps1 -SourcePath "$(System.DefaultWorkingDirectory)/src/" -IncludePermissions -Debug
+
+- task: Bash@3
+  displayName: Push command metadata
+  enabled: true
+  env:
+    GITHUB_TOKEN: $(GITHUB_TOKEN)
+  inputs:
+    targetType: inline
+    script: |
+      git status
+      git add "$(System.DefaultWorkingDirectory)/src/Authentication/Authentication/custom/common/MgCommandMetadata.json"
+      git commit -m 'Add generated MgCommandMetadata.json. [run ci]'
+      git push
+      git status

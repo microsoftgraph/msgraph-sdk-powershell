@@ -1,0 +1,2971 @@
+openapi: 3.0.1
+info:
+  title: DeviceManagement.Enrolment
+  version: v1.0
+servers:
+  - url: https://graph.microsoft.com/v1.0/
+    description: Core
+paths:
+  /deviceManagement/conditionalAccessSettings:
+    get:
+      tags:
+        - deviceManagement.onPremisesConditionalAccessSettings
+      summary: Get conditionalAccessSettings from deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+      operationId: deviceManagement_GetConditionalAccessSettings
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - enabled
+                - excludedGroups
+                - includedGroups
+                - overrideDefaultRule
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.onPremisesConditionalAccessSettings
+      summary: Update the navigation property conditionalAccessSettings in deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+      operationId: deviceManagement_UpdateConditionalAccessSettings
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.onPremisesConditionalAccessSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.onPremisesConditionalAccessSettings
+      summary: Delete navigation property conditionalAccessSettings for deviceManagement
+      description: The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+      operationId: deviceManagement_DeleteConditionalAccessSettings
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/deviceEnrollmentConfigurations:
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
+      operationId: deviceManagement_ListDeviceEnrollmentConfigurations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - priority
+                - priority desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - priority
+                - version
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of deviceEnrollmentConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
+      description: The list of device enrollment configurations
+      operationId: deviceManagement_CreateDeviceEnrollmentConfigurations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}':
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get deviceEnrollmentConfigurations from deviceManagement
+      description: The list of device enrollment configurations
+      operationId: deviceManagement_GetDeviceEnrollmentConfigurations
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedDateTime
+                - priority
+                - version
+                - assignments
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - assignments
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+          links:
+            assignments:
+              operationId: deviceManagement.DeviceEnrollmentConfigurations.ListAssignments
+              parameters:
+                deviceEnrollmentConfiguration-id: $request.path.deviceEnrollmentConfiguration-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Update the navigation property deviceEnrollmentConfigurations in deviceManagement
+      description: The list of device enrollment configurations
+      operationId: deviceManagement_UpdateDeviceEnrollmentConfigurations
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfiguration'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Delete navigation property deviceEnrollmentConfigurations for deviceManagement
+      description: The list of device enrollment configurations
+      operationId: deviceManagement_DeleteDeviceEnrollmentConfigurations
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments':
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
+      operationId: deviceManagement.deviceEnrollmentConfigurations_ListAssignments
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - target
+                - target desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of enrollmentConfigurationAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Create new navigation property to assignments for deviceManagement
+      description: The list of group assignments for the device configuration profile
+      operationId: deviceManagement.deviceEnrollmentConfigurations_CreateAssignments
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/assignments/{enrollmentConfigurationAssignment-id}':
+    get:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Get assignments from deviceManagement
+      description: The list of group assignments for the device configuration profile
+      operationId: deviceManagement.deviceEnrollmentConfigurations_GetAssignments
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - name: enrollmentConfigurationAssignment-id
+          in: path
+          description: 'key: id of enrollmentConfigurationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentConfigurationAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Update the navigation property assignments in deviceManagement
+      description: The list of group assignments for the device configuration profile
+      operationId: deviceManagement.deviceEnrollmentConfigurations_UpdateAssignments
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - name: enrollmentConfigurationAssignment-id
+          in: path
+          description: 'key: id of enrollmentConfigurationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentConfigurationAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.deviceEnrollmentConfiguration
+      summary: Delete navigation property assignments for deviceManagement
+      description: The list of group assignments for the device configuration profile
+      operationId: deviceManagement.deviceEnrollmentConfigurations_DeleteAssignments
+      parameters:
+        - name: deviceEnrollmentConfiguration-id
+          in: path
+          description: 'key: id of deviceEnrollmentConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceEnrollmentConfiguration
+        - name: enrollmentConfigurationAssignment-id
+          in: path
+          description: 'key: id of enrollmentConfigurationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: enrollmentConfigurationAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/importedWindowsAutopilotDeviceIdentities:
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
+      operationId: deviceManagement_ListImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - assignedUserPrincipalName
+                - assignedUserPrincipalName desc
+                - groupTag
+                - groupTag desc
+                - hardwareIdentifier
+                - hardwareIdentifier desc
+                - importId
+                - importId desc
+                - productKey
+                - productKey desc
+                - serialNumber
+                - serialNumber desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedUserPrincipalName
+                - groupTag
+                - hardwareIdentifier
+                - importId
+                - productKey
+                - serialNumber
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of importedWindowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+      description: Collection of imported Windows autopilot devices.
+      operationId: deviceManagement_CreateImportedWindowsAutopilotDeviceIdentities
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/importedWindowsAutopilotDeviceIdentities/{importedWindowsAutopilotDeviceIdentity-id}':
+    get:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Get importedWindowsAutopilotDeviceIdentities from deviceManagement
+      description: Collection of imported Windows autopilot devices.
+      operationId: deviceManagement_GetImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - assignedUserPrincipalName
+                - groupTag
+                - hardwareIdentifier
+                - importId
+                - productKey
+                - serialNumber
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Update the navigation property importedWindowsAutopilotDeviceIdentities in deviceManagement
+      description: Collection of imported Windows autopilot devices.
+      operationId: deviceManagement_UpdateImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.importedWindowsAutopilotDeviceIdentity
+      summary: Delete navigation property importedWindowsAutopilotDeviceIdentities for deviceManagement
+      description: Collection of imported Windows autopilot devices.
+      operationId: deviceManagement_DeleteImportedWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: importedWindowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of importedWindowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: importedWindowsAutopilotDeviceIdentity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/windowsAutopilotDeviceIdentities:
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
+      operationId: deviceManagement_ListWindowsAutopilotDeviceIdentities
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - addressableUserName
+                - addressableUserName desc
+                - azureActiveDirectoryDeviceId
+                - azureActiveDirectoryDeviceId desc
+                - displayName
+                - displayName desc
+                - enrollmentState
+                - enrollmentState desc
+                - groupTag
+                - groupTag desc
+                - lastContactedDateTime
+                - lastContactedDateTime desc
+                - managedDeviceId
+                - managedDeviceId desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - productKey
+                - productKey desc
+                - purchaseOrderIdentifier
+                - purchaseOrderIdentifier desc
+                - resourceName
+                - resourceName desc
+                - serialNumber
+                - serialNumber desc
+                - skuNumber
+                - skuNumber desc
+                - systemFamily
+                - systemFamily desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addressableUserName
+                - azureActiveDirectoryDeviceId
+                - displayName
+                - enrollmentState
+                - groupTag
+                - lastContactedDateTime
+                - managedDeviceId
+                - manufacturer
+                - model
+                - productKey
+                - purchaseOrderIdentifier
+                - resourceName
+                - serialNumber
+                - skuNumber
+                - systemFamily
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of windowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Create new navigation property to windowsAutopilotDeviceIdentities for deviceManagement
+      description: The Windows autopilot device identities contained collection.
+      operationId: deviceManagement_CreateWindowsAutopilotDeviceIdentities
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity-id}':
+    get:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Get windowsAutopilotDeviceIdentities from deviceManagement
+      description: The Windows autopilot device identities contained collection.
+      operationId: deviceManagement_GetWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addressableUserName
+                - azureActiveDirectoryDeviceId
+                - displayName
+                - enrollmentState
+                - groupTag
+                - lastContactedDateTime
+                - managedDeviceId
+                - manufacturer
+                - model
+                - productKey
+                - purchaseOrderIdentifier
+                - resourceName
+                - serialNumber
+                - skuNumber
+                - systemFamily
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Update the navigation property windowsAutopilotDeviceIdentities in deviceManagement
+      description: The Windows autopilot device identities contained collection.
+      operationId: deviceManagement_UpdateWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.windowsAutopilotDeviceIdentity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.windowsAutopilotDeviceIdentity
+      summary: Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+      description: The Windows autopilot device identities contained collection.
+      operationId: deviceManagement_DeleteWindowsAutopilotDeviceIdentities
+      parameters:
+        - name: windowsAutopilotDeviceIdentity-id
+          in: path
+          description: 'key: id of windowsAutopilotDeviceIdentity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement:
+    get:
+      tags:
+        - roleManagement.roleManagement
+      summary: Get roleManagement
+      operationId: roleManagement.roleManagement_GetRoleManagement
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - directory
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - directory
+              type: string
+      responses:
+        '200':
+          description: Retrieved entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.roleManagement'
+          links:
+            directory:
+              operationId: roleManagement.GetDirectory
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.roleManagement
+      summary: Update roleManagement
+      operationId: roleManagement.roleManagement_UpdateRoleManagement
+      requestBody:
+        description: New property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.roleManagement'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directory from roleManagement
+      description: Read-only. Nullable.
+      operationId: roleManagement_GetDirectory
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - roleAssignments
+                - roleDefinitions
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - roleAssignments
+                - roleDefinitions
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+          links:
+            roleAssignments:
+              operationId: roleManagement.Directory.ListRoleAssignments
+            roleDefinitions:
+              operationId: roleManagement.Directory.ListRoleDefinitions
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property directory in roleManagement
+      description: Read-only. Nullable.
+      operationId: roleManagement_UpdateDirectory
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property directory for roleManagement
+      description: Read-only. Nullable.
+      operationId: roleManagement_DeleteDirectory
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory/roleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
+      operationId: roleManagement.directory_ListRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - condition
+                - condition desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
+      operationId: roleManagement.directory_CreateRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleAssignments from roleManagement
+      description: Resource to grant access to users or groups.
+      operationId: roleManagement.directory_GetRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          links:
+            appScope:
+              operationId: roleManagement.directory.RoleAssignments.GetAppScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            directoryScope:
+              operationId: roleManagement.directory.RoleAssignments.GetDirectoryScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            principal:
+              operationId: roleManagement.directory.RoleAssignments.GetPrincipal
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            roleDefinition:
+              operationId: roleManagement.directory.RoleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleAssignments in roleManagement
+      description: Resource to grant access to users or groups.
+      operationId: roleManagement.directory_UpdateRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property roleAssignments for roleManagement
+      description: Resource to grant access to users or groups.
+      operationId: roleManagement.directory_DeleteRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/appScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property appScope in roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_UpdateAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property appScope for roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_DeleteAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property directoryScope in roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property directoryScope for roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property principal in roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property principal for roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_GetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.roleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property roleDefinition in roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_SetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property roleDefinition for roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.roleAssignments_DeleteGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /roleManagement/directory/roleDefinitions:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+      operationId: roleManagement.directory_ListRoleDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+      operationId: roleManagement.directory_CreateRoleDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinitions from roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+      operationId: roleManagement.directory_GetRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.RoleDefinitions.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property roleDefinitions in roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+      operationId: roleManagement.directory_UpdateRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property roleDefinitions for roleManagement
+      description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+      operationId: roleManagement.directory_DeleteRoleDefinitions
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      operationId: roleManagement.directory.roleDefinitions_ListInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isBuiltIn
+                - isBuiltIn desc
+                - isEnabled
+                - isEnabled desc
+                - resourceScopes
+                - resourceScopes desc
+                - rolePermissions
+                - rolePermissions desc
+                - templateId
+                - templateId desc
+                - version
+                - version desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to inheritsPermissionsFrom for roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      operationId: roleManagement.directory.roleDefinitions_CreateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition-id}/inheritsPermissionsFrom/{unifiedRoleDefinition-id1}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get inheritsPermissionsFrom from roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      operationId: roleManagement.directory.roleDefinitions_GetInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.roleDefinitions.InheritsPermissionsFrom.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleDefinition-id: $request.path.unifiedRoleDefinition-id
+                unifiedRoleDefinition-id1: $request.path.unifiedRoleDefinition-id1
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property inheritsPermissionsFrom in roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      operationId: roleManagement.directory.roleDefinitions_UpdateInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property inheritsPermissionsFrom for roleManagement
+      description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+      operationId: roleManagement.directory.roleDefinitions_DeleteInheritsPermissionsFrom
+      parameters:
+        - name: unifiedRoleDefinition-id
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: unifiedRoleDefinition-id1
+          in: path
+          description: 'key: id of unifiedRoleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+components:
+  schemas:
+    microsoft.graph.onPremisesConditionalAccessSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: onPremisesConditionalAccessSettings
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Indicates if on premises conditional access is enabled for this organization
+            excludedGroups:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
+            includedGroups:
+              type: array
+              items:
+                pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+                type: string
+                format: uuid
+              description: User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
+            overrideDefaultRule:
+              type: boolean
+              description: Override the default access rule when allowing a device to ensure access is granted.
+          additionalProperties:
+            type: object
+          description: Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
+    microsoft.graph.deviceEnrollmentConfiguration:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceEnrollmentConfiguration
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Created date time in UTC of the device enrollment configuration
+              format: date-time
+            description:
+              type: string
+              description: The description of the device enrollment configuration
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the device enrollment configuration
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last modified date time in UTC of the device enrollment configuration
+              format: date-time
+            priority:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.
+              format: int32
+            version:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The version of the device enrollment configuration
+              format: int32
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.enrollmentConfigurationAssignment'
+              description: The list of group assignments for the device configuration profile
+          additionalProperties:
+            type: object
+          description: The Base Class of Device Enrollment Configuration
+    microsoft.graph.enrollmentConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: enrollmentConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Enrollment Configuration Assignment
+    microsoft.graph.importedWindowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: importedWindowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            assignedUserPrincipalName:
+              type: string
+              description: UPN of the user the device will be assigned
+              nullable: true
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            hardwareIdentifier:
+              type: string
+              description: Hardware Blob of the Windows autopilot device.
+              format: base64url
+              nullable: true
+            importId:
+              type: string
+              description: The Import Id of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityState'
+          additionalProperties:
+            type: object
+          description: Imported windows autopilot devices.
+    microsoft.graph.windowsAutopilotDeviceIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: windowsAutopilotDeviceIdentity
+          type: object
+          properties:
+            addressableUserName:
+              type: string
+              description: Addressable user name.
+              nullable: true
+            azureActiveDirectoryDeviceId:
+              type: string
+              description: AAD Device ID - to be deprecated
+              nullable: true
+            displayName:
+              type: string
+              description: Display Name
+              nullable: true
+            enrollmentState:
+              $ref: '#/components/schemas/microsoft.graph.enrollmentState'
+            groupTag:
+              type: string
+              description: Group Tag of the Windows autopilot device.
+              nullable: true
+            lastContactedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Intune Last Contacted Date Time of the Windows autopilot device.
+              format: date-time
+            managedDeviceId:
+              type: string
+              description: Managed Device ID
+              nullable: true
+            manufacturer:
+              type: string
+              description: Oem manufacturer of the Windows autopilot device.
+              nullable: true
+            model:
+              type: string
+              description: Model name of the Windows autopilot device.
+              nullable: true
+            productKey:
+              type: string
+              description: Product Key of the Windows autopilot device.
+              nullable: true
+            purchaseOrderIdentifier:
+              type: string
+              description: Purchase Order Identifier of the Windows autopilot device.
+              nullable: true
+            resourceName:
+              type: string
+              description: Resource Name.
+              nullable: true
+            serialNumber:
+              type: string
+              description: Serial number of the Windows autopilot device.
+              nullable: true
+            skuNumber:
+              type: string
+              description: SKU Number
+              nullable: true
+            systemFamily:
+              type: string
+              description: System Family
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: User Principal Name.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
+    microsoft.graph.roleManagement:
+      title: roleManagement
+      type: object
+      properties:
+        directory:
+          $ref: '#/components/schemas/microsoft.graph.rbacApplication'
+      additionalProperties:
+        type: object
+    microsoft.graph.rbacApplication:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: rbacApplication
+          type: object
+          properties:
+            roleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+              description: Resource to grant access to users or groups.
+            roleDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRoleAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleAssignment
+          type: object
+          properties:
+            appScopeId:
+              type: string
+              description: 'Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).'
+              nullable: true
+            condition:
+              type: string
+              nullable: true
+            directoryScopeId:
+              type: string
+              description: 'Identifier of the directory object representing the scope of the assignment.  Either this property or appScopeId is required. The scope of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, in).'
+              nullable: true
+            principalId:
+              type: string
+              description: 'Identifier of the principal to which the assignment is granted. Supports $filter (eq, in).'
+              nullable: true
+            roleDefinitionId:
+              type: string
+              description: 'Identifier of the role definition the assignment is for. Read only. Supports $filter (eq, in).'
+              nullable: true
+            appScope:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+            directoryScope:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            principal:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+            roleDefinition:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          additionalProperties:
+            type: object
+    microsoft.graph.appScope:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: appScope
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: 'Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable id. Read-only.'
+              nullable: true
+            type:
+              type: string
+              description: 'Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.unifiedRoleDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: unifiedRoleDefinition
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+              nullable: true
+            displayName:
+              type: string
+              description: 'The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).'
+              nullable: true
+            isBuiltIn:
+              type: boolean
+              description: 'Flag indicating whether the role definition is part of the default set included in Azure Active Directory (Azure AD) or a custom definition. Read-only. Supports $filter (eq, in).'
+              nullable: true
+            isEnabled:
+              type: boolean
+              description: Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.
+              nullable: true
+            resourceScopes:
+              type: array
+              items:
+                type: string
+              description: List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
+            rolePermissions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRolePermission'
+              description: List of permissions included in the role. Read-only when isBuiltIn is true. Required.
+            templateId:
+              type: string
+              description: Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.
+              nullable: true
+            version:
+              type: string
+              description: Indicates version of the role definition. Read-only when isBuiltIn is true.
+              nullable: true
+            inheritsPermissionsFrom:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+              description: Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles (isBuiltIn is true) support this attribute. Supports $expand.
+          additionalProperties:
+            type: object
+    microsoft.graph.entity:
+      title: entity
+      type: object
+      properties:
+        id:
+          type: string
+          description: Read-only.
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceAndAppManagementAssignmentTarget:
+      title: deviceAndAppManagementAssignmentTarget
+      type: object
+      additionalProperties:
+        type: object
+      description: Base type for assignment targets.
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityState:
+      title: importedWindowsAutopilotDeviceIdentityState
+      type: object
+      properties:
+        deviceErrorCode:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Device error code reported by Device Directory Service(DDS).
+          format: int32
+        deviceErrorName:
+          type: string
+          description: Device error name reported by Device Directory Service(DDS).
+          nullable: true
+        deviceImportStatus:
+          $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus'
+        deviceRegistrationId:
+          type: string
+          description: Device Registration ID for successfully added device reported by Device Directory Service(DDS).
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.enrollmentState:
+      title: enrollmentState
+      enum:
+        - unknown
+        - enrolled
+        - pendingReset
+        - failed
+        - notContacted
+      type: string
+    microsoft.graph.unifiedRolePermission:
+      title: unifiedRolePermission
+      type: object
+      properties:
+        allowedResourceActions:
+          type: array
+          items:
+            type: string
+          description: Set of tasks that can be performed on a resource. Required.
+        condition:
+          type: string
+          description: Optional constraints that must be met for the permission to be effective.
+          nullable: true
+        excludedResourceActions:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Set of tasks that may not be performed on a resource. Not yet supported.
+      additionalProperties:
+        type: object
+    odata.error:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/odata.error.main'
+      additionalProperties:
+        type: object
+    microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
+      title: importedWindowsAutopilotDeviceIdentityImportStatus
+      enum:
+        - unknown
+        - pending
+        - partial
+        - complete
+        - error
+      type: string
+    odata.error.main:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/odata.error.detail'
+        innererror:
+          type: object
+          additionalProperties:
+            type: object
+          description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    odata.error.detail:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+      additionalProperties:
+        type: object
+  responses:
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/odata.error'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      schema:
+        type: boolean
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes: { }
+security:
+  - azureaadv2: [ ]
