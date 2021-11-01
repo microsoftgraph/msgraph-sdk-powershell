@@ -27,8 +27,8 @@ There is a set of samples in the `samples` folder to help in getting started wit
 ## Usage
 
 1. Authentication
-    
-    The SDK supports two types of authentication: delegated access, and app-only access.
+
+    The SDK supports two types of authentication: delegated access and app-only access.
     - Delegated access via Device Code Flow.
 
         ```ps
@@ -38,7 +38,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
     - App-only access via Client Credential with a certificate.
 
         The certificate will be loaded from `Cert:\CurrentUser\My\` store. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
-        
+
         You can pass either `-CertificateThumbprint` or `-CertificateName` to `Connect-MgGraph`.
 
         ```ps
@@ -89,15 +89,18 @@ Select-MgProfile -Name "beta"
 
 When working with various operations in the Graph, you may encounter an error such as "Insufficient privileges to complete the operation." For example, this particular error can occur when using the `New-MgApplication` command if the appropriate permissions are not granted.
 
-If permission related errors occur and the user you authenticated with in the popup has the appropriate permissions to perform the operation try these steps.
+If permission-related errors occur and the user you authenticated within the popup has the appropriate permissions to perform the operation try these steps.
 
 - You can try running `Disconnect-MgGraph`, then `Connect-MgGraph`.  Then, run the code that encountered the permission issues to see if it works.
 - You can try running `Connect-MgGraph -ForceRefresh`.  This will trigger a refresh of the access token in your cache. MSAL will only refresh the access token in your cache if it has expired (usually an hour), or if you explicitly refresh it via `-ForceRefresh`. Then, run the code that encountered the permission issues to see if it works.
 
 ## Known Issues
-- If you attempt to run `Connect-Graph` from the PowerShell ISE (integrated scripting environment) the command fails with an error "Device code terminal timed-out after {X} seconds".  This is a known issue and it is recommended to use a PowerShell host other than the ISE. 
+
+- If you attempt to run `Connect-MgGraph` from the PowerShell ISE (integrated scripting environment), the command fails with an error "Device code terminal timed-out after {X} seconds".  This is a known issue, and it is recommended to use a PowerShell host other than the ISE.
+- Using `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
 
 ## Issues
+
 If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue in our GitHub issues page.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
