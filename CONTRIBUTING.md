@@ -25,4 +25,4 @@ When it comes to modifying existing cmdlets, we recommend you use [AutoREST dire
 
 ## SDK generation
 
-See our [generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
+See our [SDK generation steps wiki](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/Generation-Process) for more information.
