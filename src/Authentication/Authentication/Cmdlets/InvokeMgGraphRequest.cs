@@ -31,13 +31,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     public class InvokeMgGraphRequest : PSCmdlet
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-        private readonly InvokeGraphRequestUserAgent _graphRequestUserAgent;
+        private RequestUserAgent _graphRequestUserAgent;
         private IGraphEnvironment _originalEnvironment;
         private string _originalFilePath;
 
         public InvokeMgGraphRequest()
         {
-            _graphRequestUserAgent = new InvokeGraphRequestUserAgent(this);
             Authentication = GraphRequestAuthenticationType.Default;
         }
 
@@ -1121,7 +1120,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 this.Break();
             }
-
+            _graphRequestUserAgent = new RequestUserAgent(this.Host.Version, this.MyInvocation);
             ValidateParameters();
             base.BeginProcessing();
         }
