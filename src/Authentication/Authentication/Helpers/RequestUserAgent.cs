@@ -11,14 +11,16 @@ using System.Text.RegularExpressions;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    internal class InvokeGraphRequestUserAgent
+    internal class RequestUserAgent
     {
-        private readonly PSCmdlet _cmdLet;
+        private readonly InvocationInfo _invocationInfo;
+        private readonly Version _psHostVersion;
         private string _windowsUserAgent;
 
-        internal InvokeGraphRequestUserAgent(PSCmdlet cmdLet)
+        internal RequestUserAgent(Version psHostVersion, InvocationInfo invocationInfo)
         {
-            _cmdLet = cmdLet;
+            _invocationInfo = invocationInfo;
+            _psHostVersion = psHostVersion;
         }
         /// <summary>
         /// Full UserAgent which Includes the Operating System, Current Culture
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             get
             {
                 var app = string.Format(CultureInfo.InvariantCulture,
-                    "PowerShell/{0} {1}", this._cmdLet.Host.Version, this._cmdLet.MyInvocation.MyCommand.Name);
+                    "PowerShell/{0} {1}", _psHostVersion, _invocationInfo.MyCommand.Name);
                 return app;
             }
         }
