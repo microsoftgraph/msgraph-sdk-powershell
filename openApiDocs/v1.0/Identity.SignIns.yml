@@ -7861,15 +7861,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
+              description: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
               format: date-time
             deviceId:
               type: string
-              description: ID of the device the BitLocker key is originally backed up from.
+              description: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
               nullable: true
             key:
               type: string
-              description: The BitLocker recovery key.
+              description: The BitLocker recovery key. Returned only on $select. Not nullable.
             volumeType:
               $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
@@ -10998,7 +10998,7 @@ components:
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -11025,7 +11025,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -11170,8 +11170,6 @@ components:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
-            schedule:
-              $ref: '#/components/schemas/microsoft.graph.schedule'
             channels:
               type: array
               items:
@@ -11198,6 +11196,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -13059,9 +13059,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - msSense
-        - intuneAosp
       type: string
-      description: Management agent type.
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -13777,19 +13775,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -14106,93 +14104,6 @@ components:
         - hiddenMembership
         - unknownFutureValue
       type: string
-    microsoft.graph.schedule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: schedule
-          type: object
-          properties:
-            enabled:
-              type: boolean
-              description: Indicates whether the schedule is enabled for the team. Required.
-              nullable: true
-            offerShiftRequestsEnabled:
-              type: boolean
-              description: Indicates whether offer shift requests are enabled for the schedule.
-              nullable: true
-            openShiftsEnabled:
-              type: boolean
-              description: Indicates whether open shifts are enabled for the schedule.
-              nullable: true
-            provisionStatus:
-              $ref: '#/components/schemas/microsoft.graph.operationStatus'
-            provisionStatusCode:
-              type: string
-              description: Additional information about why schedule provisioning failed.
-              nullable: true
-            swapShiftsRequestsEnabled:
-              type: boolean
-              description: Indicates whether swap shifts requests are enabled for the schedule.
-              nullable: true
-            timeClockEnabled:
-              type: boolean
-              description: Indicates whether time clock is enabled for the schedule.
-              nullable: true
-            timeOffRequestsEnabled:
-              type: boolean
-              description: Indicates whether time off requests are enabled for the schedule.
-              nullable: true
-            timeZone:
-              type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
-              nullable: true
-            workforceIntegrationIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-            offerShiftRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-            openShiftChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-            openShifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShift'
-            schedulingGroups:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
-              description: The logical grouping of users in the schedule (usually by role).
-            shifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.shift'
-              description: The shifts in the schedule.
-            swapShiftsChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-            timeOffReasons:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
-              description: The set of reasons for a time off in the schedule.
-            timeOffRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-            timesOff:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOff'
-              description: The instances of times off in the schedule.
-          additionalProperties:
-            type: object
     microsoft.graph.channel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -14573,6 +14484,93 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: teamsTemplate
           type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.schedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schedule
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            offerShiftRequestsEnabled:
+              type: boolean
+              description: Indicates whether offer shift requests are enabled for the schedule.
+              nullable: true
+            openShiftsEnabled:
+              type: boolean
+              description: Indicates whether open shifts are enabled for the schedule.
+              nullable: true
+            provisionStatus:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            provisionStatusCode:
+              type: string
+              description: Additional information about why schedule provisioning failed.
+              nullable: true
+            swapShiftsRequestsEnabled:
+              type: boolean
+              description: Indicates whether swap shifts requests are enabled for the schedule.
+              nullable: true
+            timeClockEnabled:
+              type: boolean
+              description: Indicates whether time clock is enabled for the schedule.
+              nullable: true
+            timeOffRequestsEnabled:
+              type: boolean
+              description: Indicates whether time off requests are enabled for the schedule.
+              nullable: true
+            timeZone:
+              type: string
+              description: Indicates the time zone of the schedule team using tz database format. Required.
+              nullable: true
+            workforceIntegrationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            offerShiftRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+            openShiftChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+            openShifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+            schedulingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+              description: The logical grouping of users in the schedule (usually by role).
+            shifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+              description: The shifts in the schedule.
+            swapShiftsChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            timeOffReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+              description: The set of reasons for a time off in the schedule.
+            timeOffRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+            timesOff:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+              description: The instances of times off in the schedule.
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -17194,180 +17192,6 @@ components:
         - moderate
         - unknownFutureValue
       type: string
-    microsoft.graph.operationStatus:
-      title: operationStatus
-      enum:
-        - NotStarted
-        - Running
-        - Completed
-        - Failed
-      type: string
-    microsoft.graph.offerShiftRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: offerShiftRequest
-          type: object
-          properties:
-            recipientActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            recipientActionMessage:
-              type: string
-              description: Custom message sent by recipient of the offer shift request.
-              nullable: true
-            recipientUserId:
-              type: string
-              description: User ID of the recipient of the offer shift request.
-              nullable: true
-            senderShiftId:
-              type: string
-              description: User ID of the sender of the offer shift request.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShiftChangeRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: openShiftChangeRequest
-          type: object
-          properties:
-            openShiftId:
-              type: string
-              description: ID for the open shift.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: openShift
-          type: object
-          properties:
-            draftOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            schedulingGroupId:
-              type: string
-              description: ID for the scheduling group that the open shift belongs to.
-              nullable: true
-            sharedOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-          additionalProperties:
-            type: object
-    microsoft.graph.schedulingGroup:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: schedulingGroup
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The display name for the schedulingGroup. Required.
-              nullable: true
-            isActive:
-              type: boolean
-              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-              nullable: true
-            userIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The list of user IDs that are a member of the schedulingGroup. Required.
-          additionalProperties:
-            type: object
-    microsoft.graph.shift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: shift
-          type: object
-          properties:
-            draftShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            schedulingGroupId:
-              type: string
-              description: ID of the scheduling group the shift is part of. Required.
-              nullable: true
-            sharedShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            userId:
-              type: string
-              description: ID of the user assigned to the shift. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.swapShiftsChangeRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-        - title: swapShiftsChangeRequest
-          type: object
-          properties:
-            recipientShiftId:
-              type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOffReason:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOffReason
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the timeOffReason. Required.
-              nullable: true
-            iconType:
-              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
-            isActive:
-              type: boolean
-              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOffRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: timeOffRequest
-          type: object
-          properties:
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            timeOffReasonId:
-              type: string
-              description: The reason for the time off.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOff:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOff
-          type: object
-          properties:
-            draftTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
-            sharedTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
-            userId:
-              type: string
-              description: ID of the user assigned to the timeOff. Required.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.channelMembershipType:
       title: channelMembershipType
       enum:
@@ -17594,6 +17418,180 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.operationStatus:
+      title: operationStatus
+      enum:
+        - NotStarted
+        - Running
+        - Completed
+        - Failed
+      type: string
+    microsoft.graph.offerShiftRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: offerShiftRequest
+          type: object
+          properties:
+            recipientActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            recipientActionMessage:
+              type: string
+              description: Custom message sent by recipient of the offer shift request.
+              nullable: true
+            recipientUserId:
+              type: string
+              description: User ID of the recipient of the offer shift request.
+              nullable: true
+            senderShiftId:
+              type: string
+              description: User ID of the sender of the offer shift request.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.openShiftChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: openShiftChangeRequest
+          type: object
+          properties:
+            openShiftId:
+              type: string
+              description: ID for the open shift.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.openShift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: openShift
+          type: object
+          properties:
+            draftOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            schedulingGroupId:
+              type: string
+              description: ID for the scheduling group that the open shift belongs to.
+              nullable: true
+            sharedOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+          additionalProperties:
+            type: object
+    microsoft.graph.schedulingGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: schedulingGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name for the schedulingGroup. Required.
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+              nullable: true
+            userIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of user IDs that are a member of the schedulingGroup. Required.
+          additionalProperties:
+            type: object
+    microsoft.graph.shift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: shift
+          type: object
+          properties:
+            draftShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            schedulingGroupId:
+              type: string
+              description: ID of the scheduling group the shift is part of. Required.
+              nullable: true
+            sharedShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            userId:
+              type: string
+              description: ID of the user assigned to the shift. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.swapShiftsChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        - title: swapShiftsChangeRequest
+          type: object
+          properties:
+            recipientShiftId:
+              type: string
+              description: ShiftId for the recipient user with whom the request is to swap.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOffReason:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOffReason
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the timeOffReason. Required.
+              nullable: true
+            iconType:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
+            isActive:
+              type: boolean
+              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOffRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: timeOffRequest
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            timeOffReasonId:
+              type: string
+              description: The reason for the time off.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOff:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOff
+          type: object
+          properties:
+            draftTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            sharedTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            userId:
+              type: string
+              description: ID of the user assigned to the timeOff. Required.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -18470,6 +18468,77 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.settingValue:
+      title: settingValue
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the setting (as defined by the groupSettingTemplate).
+          nullable: true
+        value:
+          type: string
+          description: Value of the setting.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.post:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: post
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            conversationId:
+              type: string
+              description: Unique ID of the conversation. Read-only.
+              nullable: true
+            conversationThreadId:
+              type: string
+              description: Unique ID of the conversation thread. Read-only.
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the post has at least one attachment. This is a default property.
+            newParticipants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: Conversation participants that were added to the thread as part of this post.
+            receivedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+            sender:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: Read-only. Nullable. Supports $expand.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+            inReplyTo:
+              $ref: '#/components/schemas/microsoft.graph.post'
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -18575,77 +18644,6 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.settingValue:
-      title: settingValue
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the setting (as defined by the groupSettingTemplate).
-          nullable: true
-        value:
-          type: string
-          description: Value of the setting.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.post:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
-        - title: post
-          type: object
-          properties:
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            conversationId:
-              type: string
-              description: Unique ID of the conversation. Read-only.
-              nullable: true
-            conversationThreadId:
-              type: string
-              description: Unique ID of the conversation thread. Read-only.
-              nullable: true
-            from:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            hasAttachments:
-              type: boolean
-              description: Indicates whether the post has at least one attachment. This is a default property.
-            newParticipants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: Conversation participants that were added to the thread as part of this post.
-            receivedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-            sender:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            attachments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: Read-only. Nullable. Supports $expand.
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-            inReplyTo:
-              $ref: '#/components/schemas/microsoft.graph.post'
-            multiValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.taskStatus:

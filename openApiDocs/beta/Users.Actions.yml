@@ -13332,6 +13332,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 deviceIds:
                   type: array
                   items:
@@ -21654,6 +21658,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -21686,6 +21691,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
                 availability:
                   type: string
                 activity:
@@ -21815,6 +21821,34 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /users/microsoft.graph.validatePassword:
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action validatePassword
+      operationId: users_validatePassword
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.passwordValidationInformation'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -22534,6 +22568,8 @@ components:
               type: string
               description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
               description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
@@ -23388,12 +23424,12 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a live event. Read-only.
+              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -23437,7 +23473,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isCancelled:
               type: boolean
@@ -23461,7 +23497,7 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a live event. Read-only.
+              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -23583,6 +23619,21 @@ components:
           type: string
           description: Value for this key-value pair
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.passwordValidationInformation:
+      title: passwordValidationInformation
+      type: object
+      properties:
+        isValid:
+          type: boolean
+          description: Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.
+          nullable: true
+        validationResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.validationResult'
+          description: The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.
       additionalProperties:
         type: object
     microsoft.graph.attachmentType:
@@ -24212,6 +24263,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.customSecurityAttributeValue:
+      title: customSecurityAttributeValue
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceKey:
       title: deviceKey
       type: object
@@ -24281,6 +24337,12 @@ components:
         error:
           type: string
           description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the state of the license assignment was last updated.
+          format: date-time
           nullable: true
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -27251,19 +27313,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -27400,6 +27462,24 @@ components:
         - text
         - html
       type: string
+    microsoft.graph.validationResult:
+      title: validationResult
+      type: object
+      properties:
+        message:
+          type: string
+          description: The string containing the reason for why the rule passed or not. Read-only. Not nullable.
+          nullable: true
+        ruleName:
+          type: string
+          description: The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.
+          nullable: true
+        validationPassed:
+          type: boolean
+          description: Whether the password passed or failed the validation rule. Read-only. Not nullable.
+          nullable: true
+      additionalProperties:
+        type: object
     odata.error:
       required:
         - error
@@ -32847,15 +32927,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
+              description: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
               format: date-time
             deviceId:
               type: string
-              description: ID of the device the BitLocker key is originally backed up from.
+              description: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
               nullable: true
             key:
               type: string
-              description: The BitLocker recovery key.
+              description: The BitLocker recovery key. Returned only on $select. Not nullable.
             volumeType:
               $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
@@ -34550,7 +34630,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
         notificationTemplateType:
           type: string
-          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
           nullable: true
       additionalProperties:
         type: object
@@ -34588,7 +34668,7 @@ components:
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.'
+          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.'
           format: duration
           nullable: true
         recommendationsEnabled:

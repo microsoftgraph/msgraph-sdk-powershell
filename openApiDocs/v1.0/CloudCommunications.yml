@@ -3008,6 +3008,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3040,6 +3041,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
                 availability:
                   type: string
                 activity:
