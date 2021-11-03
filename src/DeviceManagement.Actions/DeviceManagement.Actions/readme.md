@@ -54,6 +54,11 @@ directive:
       verb: Update
       subject: ^DeviceManagementComanagedDevice.*
     remove: true
+  - where:
+      verb: Test
+      subject: ^DeviceManagementAssignmentFilter$
+      variant: ^Evaluate.*
+    remove: true
 
 # Rename cmdlets.
   - where:
