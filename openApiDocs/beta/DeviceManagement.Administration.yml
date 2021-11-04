@@ -14104,6 +14104,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_ListServicePlans
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14193,6 +14194,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to servicePlans for deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_CreateServicePlans
       requestBody:
         description: New navigation property
@@ -14216,6 +14218,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_GetServicePlans
       parameters:
         - name: cloudPcServicePlan-id
@@ -14269,6 +14272,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property servicePlans in deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_UpdateServicePlans
       parameters:
         - name: cloudPcServicePlan-id
@@ -14295,6 +14299,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property servicePlans for deviceManagement
+      description: Cloud PC service plans.
       operationId: deviceManagement.virtualEndpoint_DeleteServicePlans
       parameters:
         - name: cloudPcServicePlan-id
@@ -16692,6 +16697,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+              description: Cloud PC service plans.
             supportedRegions:
               type: array
               items:
@@ -17008,15 +17014,18 @@ components:
           properties:
             displayName:
               type: string
+              description: The name for the service plan. Read-only.
             ramInGB:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The size of the RAM in GB. Read-only.
               format: int32
             storageInGB:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The size of the OS Disk in GB. Read-only.
               format: int32
             type:
               $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
@@ -17024,11 +17033,13 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The size of the user profile disk in GB. Read-only.
               format: int32
             vCpuCount:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The number of vCPUs. Read-only.
               format: int32
           additionalProperties:
             type: object

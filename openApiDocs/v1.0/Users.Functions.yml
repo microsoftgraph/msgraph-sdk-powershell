@@ -1309,6 +1309,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getDownloadUrl
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.ediscovery.caseExportOperation_getDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange=''{anotherRange}'')':
     get:
       tags:
@@ -2183,6 +2215,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.workbookRange'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/insights/shared/{sharedInsight-id}/resource/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getDownloadUrl
+      operationId: users.insights.shared.resource.microsoft.graph.ediscovery.caseExportOperation_getDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: sharedInsight-id
+          in: path
+          description: 'key: id of sharedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedInsight
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3063,6 +3127,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getDownloadUrl
+      operationId: users.insights.trending.resource.microsoft.graph.ediscovery.caseExportOperation_getDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: trending-id
+          in: path
+          description: 'key: id of trending'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: trending
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/users/{user-id}/insights/trending/{trending-id}/resource/microsoft.graph.workbookRange/microsoft.graph.boundingRect(anotherRange=''{anotherRange}'')':
     get:
       tags:
@@ -3937,6 +4033,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.workbookRange'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/users/{user-id}/insights/used/{usedInsight-id}/resource/microsoft.graph.ediscovery.caseExportOperation/microsoft.graph.ediscovery.getDownloadUrl()':
+    get:
+      tags:
+        - users.Functions
+      summary: Invoke function getDownloadUrl
+      operationId: users.insights.used.resource.microsoft.graph.ediscovery.caseExportOperation_getDownloadUrl
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: usedInsight-id
+          in: path
+          description: 'key: id of usedInsight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usedInsight
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8926,7 +9054,7 @@ components:
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -8953,7 +9081,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -11497,19 +11625,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
