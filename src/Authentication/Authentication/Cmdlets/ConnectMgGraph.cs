@@ -191,10 +191,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
-                            // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
-                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            // Use process scope when on WSL. WSL does not have secret service  that the we use to cache tokens on Linux. https://github.com/microsoft/WSL/issues/4254
-                            authContext.ContextScope = RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture) ? ContextScope.Process : authContext.ContextScope;
+                            if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
+                            {
+                                // Use process scope when on WSL. WSL does not have secret service  that the we use to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
+                                authContext.ContextScope = ContextScope.Process;
+                            }
+                            else
+                            {
+                                // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
+                                authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            }
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
                             if (!string.IsNullOrWhiteSpace(ClientId))
                             {
