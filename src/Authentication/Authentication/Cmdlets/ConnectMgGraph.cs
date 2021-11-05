@@ -12,12 +12,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Linq;
     using System.Management.Automation;
     using System.Net;
+    using System.Runtime.InteropServices;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
 
     using Microsoft.Graph.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Models;
@@ -191,6 +193,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
                             // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            // Use process scope when on WSL. WSL does not have secret service  that the we use to cache tokens on Linux. https://github.com/microsoft/WSL/issues/4254
+                            authContext.ContextScope = RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture) ? ContextScope.Process : authContext.ContextScope;
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
                             if (!string.IsNullOrWhiteSpace(ClientId))
                             {
