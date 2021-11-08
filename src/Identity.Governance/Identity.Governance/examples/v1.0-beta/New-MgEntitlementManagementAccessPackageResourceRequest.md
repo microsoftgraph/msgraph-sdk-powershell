@@ -8,9 +8,18 @@ $accessPackageResource = @{
   }
 New-MgEntitlementManagementAccessPackageResourceRequest -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b' -RequestType "AdminAdd" -AccessPackageResource $accessPackageResource
 
-Id                                   CatalogId                            ExecuteImmediately ExpirationDateTime IsValidationOnly Justification RequestState RequestStatus RequestType
---                                   ---------                            ------------------ ------------------ ---------------- ------------- ------------ ------------- -----------
-dce7a865-ba5d-4c86-af92-5daaa44c4b1a 54152ecb-c65d-47f2-8a4d-ba2732de0a7b False                                                                Delivered    Fulfilled     AdminAdd
+AccessPackageResource : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageResource
+CatalogId             : 54152ecb-c65d-47f2-8a4d-ba2732de0a7b
+ExecuteImmediately    : False
+ExpirationDateTime    :
+Id                    : 88098a60-489a-4c28-bfe7-9fecd4713b81
+IsValidationOnly      :
+Justification         :
+RequestState          : Delivered
+RequestStatus         : Fulfilled
+RequestType           : AdminAdd
+Requestor             : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+AdditionalProperties  : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageResourceRequests/$entity]}                                                            
 ```
 
 This example create a new resource request for addition of a resource to an access package catalog, or removal of a resource from a catalog.

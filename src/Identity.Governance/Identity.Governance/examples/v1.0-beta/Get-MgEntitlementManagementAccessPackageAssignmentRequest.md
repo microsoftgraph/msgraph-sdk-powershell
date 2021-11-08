@@ -6,18 +6,18 @@ Get-MgEntitlementManagementAccessPackageAssignmentRequest | Format-List
 AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
 AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
 Answers                 : {}
-CompletedDate           :
-CreatedDateTime         : 10/28/2021 3:04:35 PM
+CompletedDate           : 11/8/2021 10:21:35 AM
+CreatedDateTime         : 11/8/2021 7:21:09 AM
 ExpirationDateTime      :
-Id                      : dff2f012-b65a-4b52-bd21-e48a4d876238
+Id                      : c82bc0cd-4fbc-4492-8c75-54c41dc74803
 IsValidationOnly        : False
 Justification           :
-RequestState            : Scheduled
-RequestStatus           : PendingNotBefore
-RequestType             : AdminAdd
+RequestState            : Delivered
+RequestStatus           : FulfilledNotificationTriggered
+RequestType             : UserAdd
 Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
 Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
-AdditionalProperties    : {}
+AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
 This example retrieves all access package assignment requests.
@@ -25,11 +25,23 @@ This example retrieves all access package assignment requests.
 ### Example 2: Get  access package assignment request using the request id
 
 ```powershell
-Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'e89ee9a5-670e-4306-95fa-8a5b58024f5b'
+Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'c82bc0cd-4fbc-4492-8c75-54c41dc74803'| Format-List
 
-Id                                   CompletedDate CreatedDateTime       ExpirationDateTime IsValidationOnly Justification RequestState RequestStatus    RequestType
---                                   ------------- ---------------       ------------------ ---------------- ------------- ------------ -------------    -----------
-e89ee9a5-670e-4306-95fa-8a5b58024f5b               10/28/2021 3:35:30 PM                    False                          Scheduled    PendingNotBefore UserAdd
+AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage
+AccessPackageAssignment : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageAssignment
+Answers                 : {}
+CompletedDate           : 11/8/2021 10:21:35 AM
+CreatedDateTime         : 11/8/2021 7:21:09 AM
+ExpirationDateTime      :
+Id                      : c82bc0cd-4fbc-4492-8c75-54c41dc74803
+IsValidationOnly        : False
+Justification           :
+RequestState            : Delivered
+RequestStatus           : FulfilledNotificationTriggered
+RequestType             : UserAdd
+Requestor               : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackageSubject
+Schedule                : Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
+AdditionalProperties    : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackageAssignmentRequests/$entity]}
 ```
 
-This example returns the acess package assignment request for the specified id.
+This example returns the access package assignment request for the specified id.

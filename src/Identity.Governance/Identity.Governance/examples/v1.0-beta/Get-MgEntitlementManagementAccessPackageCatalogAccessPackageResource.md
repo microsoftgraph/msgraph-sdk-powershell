@@ -60,4 +60,4 @@ Url                              : https://account.activedirectory.windowsazure.
 AdditionalProperties             : {}
 ```
 
-This example returns the resources in the specified catalog whose display name equal 'marketing resources'.
+This example returns the resources in the specified catalog whose display name is `marketing resources`.

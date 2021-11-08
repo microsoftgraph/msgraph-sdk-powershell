@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove an access package assignment policy
 
-{{ Add output here }}
+```powershell
+Remove-MgEntitlementManagementAccessPackageAssignmentPolicy -AccessPackageAssignmentPolicyId 'f134999f-8a59-49bb-b3a9-e8365d6fff94
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example removes the specified assignment policy.
