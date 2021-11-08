@@ -1,6 +1,7 @@
 ### Example 1: Get all access package policy assignment policies
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackageAssignmentPolicy | Format-List
 
 AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage

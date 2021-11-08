@@ -1,6 +1,7 @@
 ### Example 1: Get a list of all access packages
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackage | Format-List
 
 AccessPackageAssignmentPolicies :
@@ -45,6 +46,7 @@ This examples returns all access packages.
 ### Example 2: Get access package by Id
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackage -AccessPackageId 'bc041fda-b3ba-41fc-b911-ca95f7aac656'| Format-List
 
 

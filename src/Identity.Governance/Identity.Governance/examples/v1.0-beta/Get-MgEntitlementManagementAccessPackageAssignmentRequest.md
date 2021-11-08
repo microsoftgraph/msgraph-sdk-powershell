@@ -25,6 +25,7 @@ This example retrieves all access package assignment requests.
 ### Example 2: Get  access package assignment request using the request id
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackageAssignmentRequest -AccessPackageAssignmentRequestId 'c82bc0cd-4fbc-4492-8c75-54c41dc74803'| Format-List
 
 AccessPackage           : Microsoft.Graph.PowerShell.Models.MicrosoftGraphAccessPackage

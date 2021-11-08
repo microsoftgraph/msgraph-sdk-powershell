@@ -1,6 +1,7 @@
 ### Example 1: Create an access package policy
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 $allowedRequestors = @(@{
   "@odata.type" = '#microsoft.graph.singleUser'
   "isBackup" = $false

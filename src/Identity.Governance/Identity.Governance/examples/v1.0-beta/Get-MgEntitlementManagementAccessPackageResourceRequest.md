@@ -1,6 +1,7 @@
 ### Example 1: Get all access package resource requests
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackageResourceRequest
 
 Id                                   CatalogId                            ExecuteImmediately ExpirationDateTime IsValidationOnly Justification RequestState   RequestStatus RequestType
@@ -14,11 +15,12 @@ ec74bc22-8d36-44a2-b294-82c538a48c4c 54152ecb-c65d-47f2-8a4d-ba2732de0a7b False 
 
 ```
 
-This example all access package resource requests.
+This example gets all access package resource requests.
 
 ### Example 2: Get all access package resource requests
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 Get-MgEntitlementManagementAccessPackageResourceRequest -AccessPackageResourceRequestId '88098a60-489a-4c28-bfe7-9fecd4713b81'
 ```
 

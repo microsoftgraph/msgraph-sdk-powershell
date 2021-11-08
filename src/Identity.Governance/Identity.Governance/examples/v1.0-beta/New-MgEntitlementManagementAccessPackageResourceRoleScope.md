@@ -1,6 +1,7 @@
 ### Example 1: Create a new access package resource role scope
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 $accessPackageResource = @{
   "id"= '4f5dac35-b025-4131-a27f-6e0e46d48dd1'
   "resourceType" ='Security Group'
@@ -36,7 +37,7 @@ AdditionalProperties       : {[@odata.context, https://graph.microsoft.com/beta/
 ```
 
 This example, the commands;
-1. Defines a resource variable. **Id** in the accesspackageresource variable is the identifier of the group catalog resource.
+1. Defines a resource variable. **Id** in the $accesspackageresource variable is the identifier of the group catalog resource.
 1. Defines the resource role variable
 1. Defines the resource scope variable
 1. Create a new access package resource role scope.

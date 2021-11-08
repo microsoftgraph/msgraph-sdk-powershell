@@ -1,6 +1,7 @@
 ### Example 1: Create an access package
 
 ```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
 New-MgEntitlementManagementAccessPackage -CatalogId '54152ecb-c65d-47f2-8a4d-ba2732de0a7b'  -DisplayName 'Marketing Campaign' | Format-list
 
 AccessPackageAssignmentPolicies :
@@ -22,4 +23,4 @@ ModifiedDateTime                : 10/13/2021 9:08:02 AM
 AdditionalProperties            : {[@odata.context, https://graph.microsoft.com/beta/$metadata#identityGovernance/entitlementManagement/accessPackages/$entity]}
 ```
 
-This command creates an access package with he defined display name under the specified catalog.
+This example creates an access package with he defined display name under the specified catalog. The $allowedRequestors variable should contain the **id** of the requestor.
