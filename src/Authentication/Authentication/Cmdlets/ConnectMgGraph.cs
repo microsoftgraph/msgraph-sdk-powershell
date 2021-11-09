@@ -175,7 +175,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             using (NoSynchronizationContext)
             {
-                IAuthContext authContext = new AuthContext { TenantId = TenantId };
+                IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
                 switch (ParameterSetName)

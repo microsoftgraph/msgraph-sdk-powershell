@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove paths that are not valid.
-  - remove-path-by-operation: ^users.planner_(Create|Update|Delete)All$
+  - remove-path-by-operation: ^users.planner_(Create|Update|Delete)All|planner.buckets_(Get|Create|Update|Delete)Tasks|planner.buckets.tasks.*|planner.plans_(Get|Create|Update|Delete)Buckets|planner.plans.buckets.*|planner.plans_(Get|Create|Update|Delete)Tasks|planner.plans.tasks.*$
 # Remove cmdlets
   - where:
       verb: Remove
@@ -49,6 +49,10 @@ directive:
   - where:
       verb: Remove|New|Update
       subject: ^(User|Group)Planner(Task|Plan)$
+    remove: true
+  - where:
+      verb: Remove
+      subject: ^Planner(Plan|Task)Detail$
     remove: true
     # Only list is supported.
   - where:
@@ -71,6 +75,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.7.0
+module-version: 1.8.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

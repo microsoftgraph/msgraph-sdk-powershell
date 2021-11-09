@@ -153,6 +153,18 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"
     },
+    "/reports/microsoft.graph.getAttackSimulationRepeatOffenders()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getAttackSimulationSimulationUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
+    "/reports/microsoft.graph.getAttackSimulationTrainingUserCoverage()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Reports.yml"
+    },
     "/reports/microsoft.graph.getAzureADApplicationSignInSummary(period='{period}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Reports.yml"

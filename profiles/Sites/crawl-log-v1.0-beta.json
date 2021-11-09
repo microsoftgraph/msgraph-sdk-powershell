@@ -937,6 +937,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
+    "/sites/{site-id}/termStore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
     "/sites/microsoft.graph.add": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"

@@ -40,10 +40,15 @@ subject-prefix: ''
 directive:
 # Remove invalid paths.
   - remove-path-by-operation: ^deviceManagement_.*UserExperienceAnalytics.*$
+# Remove cmdlets.
+  - where:
+      verb: Update
+      subject: ^DeviceManagementWindowAutopilotDeviceIdentity$
+    remove: true
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.7.0
+module-version: 1.8.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

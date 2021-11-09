@@ -1588,6 +1588,8 @@ paths:
               properties:
                 transferTarget:
                   $ref: '#/components/schemas/microsoft.graph.invitationParticipantInfo'
+                transferee:
+                  $ref: '#/components/schemas/microsoft.graph.participantInfo'
               additionalProperties:
                 type: object
         required: true
@@ -1958,6 +1960,8 @@ paths:
                 - isMuted desc
                 - mediaStreams
                 - mediaStreams desc
+                - metadata
+                - metadata desc
                 - recordingInfo
                 - recordingInfo desc
               type: string
@@ -1976,6 +1980,7 @@ paths:
                 - isInLobby
                 - isMuted
                 - mediaStreams
+                - metadata
                 - recordingInfo
               type: string
         - name: $expand
@@ -2081,6 +2086,7 @@ paths:
                 - isInLobby
                 - isMuted
                 - mediaStreams
+                - metadata
                 - recordingInfo
               type: string
         - name: $expand
@@ -2215,6 +2221,96 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.startHoldMusic':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action startHoldMusic
+      operationId: communications.calls.participants_startHoldMusic
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customPrompt:
+                  $ref: '#/components/schemas/microsoft.graph.prompt'
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.startHoldMusicOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.stopHoldMusic':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action stopHoldMusic
+      operationId: communications.calls.participants_stopHoldMusic
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: participant-id
+          in: path
+          description: 'key: id of participant'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: participant
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.stopHoldMusicOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/participants/microsoft.graph.invite':
     post:
       tags:
@@ -2346,8 +2442,12 @@ paths:
                 - allowMeetingChat desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
+                - attendeeReport
+                - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
+                - broadcastSettings
+                - broadcastSettings desc
                 - chatInfo
                 - chatInfo desc
                 - creationDateTime
@@ -2356,6 +2456,8 @@ paths:
                 - endDateTime desc
                 - externalId
                 - externalId desc
+                - isBroadcast
+                - isBroadcast desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -2366,6 +2468,8 @@ paths:
                 - lobbyBypassSettings desc
                 - participants
                 - participants desc
+                - recordAutomatically
+                - recordAutomatically desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -2389,16 +2493,20 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
+                - recordAutomatically
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -2490,16 +2598,20 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
+                - recordAutomatically
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -2570,6 +2682,58 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from communications
+      operationId: communications_GetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in communications
+      operationId: communications_SetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -2821,6 +2985,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/presences/{presence-id}/microsoft.graph.clearPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action clearPresence
+      operationId: communications.presences_clearPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setPresence
+      operationId: communications.presences_setPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                  nullable: true
+                availability:
+                  type: string
+                activity:
+                  type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/onlineMeetings':
     get:
       tags:
@@ -2862,8 +3101,12 @@ paths:
                 - allowMeetingChat desc
                 - allowTeamworkReactions
                 - allowTeamworkReactions desc
+                - attendeeReport
+                - attendeeReport desc
                 - audioConferencing
                 - audioConferencing desc
+                - broadcastSettings
+                - broadcastSettings desc
                 - chatInfo
                 - chatInfo desc
                 - creationDateTime
@@ -2872,6 +3115,8 @@ paths:
                 - endDateTime desc
                 - externalId
                 - externalId desc
+                - isBroadcast
+                - isBroadcast desc
                 - isEntryExitAnnounced
                 - isEntryExitAnnounced desc
                 - joinInformation
@@ -2882,6 +3127,8 @@ paths:
                 - lobbyBypassSettings desc
                 - participants
                 - participants desc
+                - recordAutomatically
+                - recordAutomatically desc
                 - startDateTime
                 - startDateTime desc
                 - subject
@@ -2905,16 +3152,20 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
+                - recordAutomatically
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -3021,16 +3272,20 @@ paths:
                 - allowedPresenters
                 - allowMeetingChat
                 - allowTeamworkReactions
+                - attendeeReport
                 - audioConferencing
+                - broadcastSettings
                 - chatInfo
                 - creationDateTime
                 - endDateTime
                 - externalId
+                - isBroadcast
                 - isEntryExitAnnounced
                 - joinInformation
                 - joinWebUrl
                 - lobbyBypassSettings
                 - participants
+                - recordAutomatically
                 - startDateTime
                 - subject
                 - videoTeleconferenceId
@@ -3115,6 +3370,72 @@ paths:
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get media content for the navigation property onlineMeetings from users
+      operationId: users_GetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update media content for the navigation property onlineMeetings in users
+      operationId: users_SetOnlineMeetingsAttendeeReport
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -3282,13 +3603,13 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             type:
               $ref: '#/components/schemas/microsoft.graph.callRecords.callType'
             version:
               type: integer
-              description: Monotonically increasing version of the call record. Higher version call records with the same ID includes additional data compared to the lower version.
+              description: Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
               format: int64
             sessions:
               type: array
@@ -3322,7 +3643,7 @@ components:
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
             segments:
               type: array
@@ -3501,7 +3822,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         replacesCallId:
           type: string
-          description: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+          description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
           nullable: true
       additionalProperties:
         type: object
@@ -3520,6 +3841,32 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.participantInfo:
+      title: participantInfo
+      type: object
+      properties:
+        countryCode:
+          type: string
+          description: The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
+          nullable: true
+        endpointType:
+          $ref: '#/components/schemas/microsoft.graph.endpointType'
+        identity:
+          $ref: '#/components/schemas/microsoft.graph.identitySet'
+        languageId:
+          type: string
+          description: The language culture string. Read-only.
+          nullable: true
+        participantId:
+          type: string
+          description: The participant ID of the participant. Read-only.
+          nullable: true
+        region:
+          type: string
+          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location. Read-only.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.unmuteParticipantOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'
@@ -3578,8 +3925,26 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mediaStream'
               description: The list of media streams.
+            metadata:
+              type: string
+              description: A blob of data provided by the participant in the roster.
+              nullable: true
             recordingInfo:
               $ref: '#/components/schemas/microsoft.graph.recordingInfo'
+          additionalProperties:
+            type: object
+    microsoft.graph.startHoldMusicOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: startHoldMusicOperation
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.stopHoldMusicOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: stopHoldMusicOperation
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.inviteParticipantsOperation:
@@ -3651,7 +4016,7 @@ components:
           properties:
             activity:
               type: string
-              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.'
+              description: 'The supplemental information to a user''s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.'
               nullable: true
             availability:
               type: string
@@ -3679,10 +4044,17 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingChatMode'
             allowTeamworkReactions:
               type: boolean
-              description: Indicates if Teams reactions are enabled for the meeting.
+              description: Indicates whether Teams reactions are enabled for the meeting.
+              nullable: true
+            attendeeReport:
+              type: string
+              description: The content stream of the attendee report of a live event. Read-only.
+              format: base64url
               nullable: true
             audioConferencing:
               $ref: '#/components/schemas/microsoft.graph.audioConferencing'
+            broadcastSettings:
+              $ref: '#/components/schemas/microsoft.graph.broadcastMeetingSettings'
             chatInfo:
               $ref: '#/components/schemas/microsoft.graph.chatInfo'
             creationDateTime:
@@ -3701,6 +4073,10 @@ components:
               type: string
               description: The external ID. A custom ID. Optional.
               nullable: true
+            isBroadcast:
+              type: boolean
+              description: Indicates if this is a live event.
+              nullable: true
             isEntryExitAnnounced:
               type: boolean
               description: Indicates whether to announce when callers join or leave.
@@ -3715,6 +4091,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.lobbyBypassSettings'
             participants:
               $ref: '#/components/schemas/microsoft.graph.meetingParticipants'
+            recordAutomatically:
+              type: boolean
+              description: Indicates whether to record the meeting automatically.
+              nullable: true
             startDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -3737,7 +4117,7 @@ components:
       properties:
         messageId:
           type: string
-          description: The unique identifier for a message in a Microsoft Teams channel.
+          description: The unique identifier of a message in a Microsoft Teams channel.
           nullable: true
         replyChainMessageId:
           type: string
@@ -3873,13 +4253,13 @@ components:
       properties:
         observedParticipantId:
           type: string
-          description: The id of the participant that is under observation. Read-only.
+          description: The ID of the participant that is under observation. Read-only.
           nullable: true
         onBehalfOf:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         sourceParticipantId:
           type: string
-          description: The id of the participant that triggered the incoming call. Read-only.
+          description: The ID of the participant that triggered the incoming call. Read-only.
           nullable: true
         transferor:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -3918,28 +4298,6 @@ components:
           type: integer
           description: The result sub-code.
           format: int32
-      additionalProperties:
-        type: object
-    microsoft.graph.participantInfo:
-      title: participantInfo
-      type: object
-      properties:
-        countryCode:
-          type: string
-          description: The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
-          nullable: true
-        endpointType:
-          $ref: '#/components/schemas/microsoft.graph.endpointType'
-        identity:
-          $ref: '#/components/schemas/microsoft.graph.identitySet'
-        languageId:
-          type: string
-          description: The language culture string. Read-only.
-          nullable: true
-        region:
-          type: string
-          description: 'The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant''s current physical location, unlike countryCode. Read-only.'
-          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callState:
@@ -3982,6 +4340,15 @@ components:
           $ref: '#/components/schemas/microsoft.graph.callTranscriptionState'
       additionalProperties:
         type: object
+    microsoft.graph.endpointType:
+      title: endpointType
+      enum:
+        - default
+        - voicemail
+        - skypeForBusiness
+        - skypeForBusinessVoipPhone
+        - unknownFutureValue
+      type: string
     microsoft.graph.operationStatus:
       title: operationStatus
       enum:
@@ -4004,7 +4371,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.modality'
         serverMuted:
           type: boolean
-          description: Indicates whether the media is muted by the server.
+          description: If the media is muted by the server.
         sourceId:
           type: string
           description: The source ID.
@@ -4174,11 +4541,45 @@ components:
           nullable: true
         tollFreeNumber:
           type: string
-          description: The toll-free number that connects to the Audio Conference Provider.
           nullable: true
+        tollFreeNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll-free numbers that are displayed in the meeting invite.
         tollNumber:
           type: string
-          description: The toll number that connects to the Audio Conference Provider.
+          nullable: true
+        tollNumbers:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: List of toll numbers that are displayed in the meeting invite.
+      additionalProperties:
+        type: object
+    microsoft.graph.broadcastMeetingSettings:
+      title: broadcastMeetingSettings
+      type: object
+      properties:
+        allowedAudience:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        isAttendeeReportEnabled:
+          type: boolean
+          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          nullable: true
+        isQuestionAndAnswerEnabled:
+          type: boolean
+          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          nullable: true
+        isRecordingEnabled:
+          type: boolean
+          description: Indicates whether recording is enabled for this live event. Default value is false.
+          nullable: true
+        isVideoOnDemandEnabled:
+          type: boolean
+          description: Indicates whether video on demand is enabled for this live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -4647,15 +5048,6 @@ components:
         - inactive
         - unknownFutureValue
       type: string
-    microsoft.graph.endpointType:
-      title: endpointType
-      enum:
-        - default
-        - voicemail
-        - skypeForBusiness
-        - skypeForBusinessVoipPhone
-        - unknownFutureValue
-      type: string
     microsoft.graph.tone:
       title: tone
       enum:
@@ -4693,6 +5085,14 @@ components:
         - receiveOnly
         - sendReceive
       type: string
+    microsoft.graph.broadcastMeetingAudience:
+      title: broadcastMeetingAudience
+      enum:
+        - roleIsAttendee
+        - organization
+        - everyone
+        - unknownFutureValue
+      type: string
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -4714,6 +5114,7 @@ components:
         - attendee
         - presenter
         - unknownFutureValue
+        - producer
       type: string
     odata.error.main:
       required:

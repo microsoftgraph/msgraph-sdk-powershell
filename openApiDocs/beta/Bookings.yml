@@ -332,6 +332,8 @@ paths:
                 - customerNotes desc
                 - customerPhone
                 - customerPhone desc
+                - customerTimeZone
+                - customerTimeZone desc
                 - duration
                 - duration desc
                 - end
@@ -348,6 +350,8 @@ paths:
                 - invoiceUrl desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - joinWebUrl
+                - joinWebUrl desc
                 - onlineMeetingUrl
                 - onlineMeetingUrl desc
                 - optOutOfCustomerEmail
@@ -372,6 +376,8 @@ paths:
                 - serviceName desc
                 - serviceNotes
                 - serviceNotes desc
+                - smsNotificationsEnabled
+                - smsNotificationsEnabled desc
                 - staffMemberIds
                 - staffMemberIds desc
                 - start
@@ -395,6 +401,7 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customerTimeZone
                 - duration
                 - end
                 - invoiceAmount
@@ -403,6 +410,7 @@ paths:
                 - invoiceStatus
                 - invoiceUrl
                 - isLocationOnline
+                - joinWebUrl
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -415,6 +423,7 @@ paths:
                 - serviceLocation
                 - serviceName
                 - serviceNotes
+                - smsNotificationsEnabled
                 - staffMemberIds
                 - start
               type: string
@@ -524,6 +533,7 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customerTimeZone
                 - duration
                 - end
                 - invoiceAmount
@@ -532,6 +542,7 @@ paths:
                 - invoiceStatus
                 - invoiceUrl
                 - isLocationOnline
+                - joinWebUrl
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -544,6 +555,7 @@ paths:
                 - serviceLocation
                 - serviceName
                 - serviceNotes
+                - smsNotificationsEnabled
                 - staffMemberIds
                 - start
               type: string
@@ -734,6 +746,8 @@ paths:
                 - customerNotes desc
                 - customerPhone
                 - customerPhone desc
+                - customerTimeZone
+                - customerTimeZone desc
                 - duration
                 - duration desc
                 - end
@@ -750,6 +764,8 @@ paths:
                 - invoiceUrl desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - joinWebUrl
+                - joinWebUrl desc
                 - onlineMeetingUrl
                 - onlineMeetingUrl desc
                 - optOutOfCustomerEmail
@@ -774,6 +790,8 @@ paths:
                 - serviceName desc
                 - serviceNotes
                 - serviceNotes desc
+                - smsNotificationsEnabled
+                - smsNotificationsEnabled desc
                 - staffMemberIds
                 - staffMemberIds desc
                 - start
@@ -797,6 +815,7 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customerTimeZone
                 - duration
                 - end
                 - invoiceAmount
@@ -805,6 +824,7 @@ paths:
                 - invoiceStatus
                 - invoiceUrl
                 - isLocationOnline
+                - joinWebUrl
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -817,6 +837,7 @@ paths:
                 - serviceLocation
                 - serviceName
                 - serviceNotes
+                - smsNotificationsEnabled
                 - staffMemberIds
                 - start
               type: string
@@ -938,6 +959,7 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customerTimeZone
                 - duration
                 - end
                 - invoiceAmount
@@ -946,6 +968,7 @@ paths:
                 - invoiceStatus
                 - invoiceUrl
                 - isLocationOnline
+                - joinWebUrl
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -958,6 +981,7 @@ paths:
                 - serviceLocation
                 - serviceName
                 - serviceNotes
+                - smsNotificationsEnabled
                 - staffMemberIds
                 - start
               type: string
@@ -1126,6 +1150,10 @@ paths:
                 - displayName desc
                 - emailAddress
                 - emailAddress desc
+                - addresses
+                - addresses desc
+                - phones
+                - phones desc
               type: string
         - name: $select
           in: query
@@ -1140,6 +1168,8 @@ paths:
                 - id
                 - displayName
                 - emailAddress
+                - addresses
+                - phones
               type: string
         - name: $expand
           in: query
@@ -1242,6 +1272,8 @@ paths:
                 - id
                 - displayName
                 - emailAddress
+                - addresses
+                - phones
               type: string
         - name: $expand
           in: query
@@ -1433,8 +1465,12 @@ paths:
                 - preBuffer desc
                 - schedulingPolicy
                 - schedulingPolicy desc
+                - smsNotificationsEnabled
+                - smsNotificationsEnabled desc
                 - staffMemberIds
                 - staffMemberIds desc
+                - webUrl
+                - webUrl desc
               type: string
         - name: $select
           in: query
@@ -1461,7 +1497,9 @@ paths:
                 - postBuffer
                 - preBuffer
                 - schedulingPolicy
+                - smsNotificationsEnabled
                 - staffMemberIds
+                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1576,7 +1614,9 @@ paths:
                 - postBuffer
                 - preBuffer
                 - schedulingPolicy
+                - smsNotificationsEnabled
                 - staffMemberIds
+                - webUrl
               type: string
         - name: $expand
           in: query
@@ -1708,6 +1748,8 @@ paths:
                 - colorIndex desc
                 - role
                 - role desc
+                - timeZone
+                - timeZone desc
                 - useBusinessHours
                 - useBusinessHours desc
                 - workingHours
@@ -1729,6 +1771,7 @@ paths:
                 - availabilityIsAffectedByPersonalCalendar
                 - colorIndex
                 - role
+                - timeZone
                 - useBusinessHours
                 - workingHours
               type: string
@@ -1836,6 +1879,7 @@ paths:
                 - availabilityIsAffectedByPersonalCalendar
                 - colorIndex
                 - role
+                - timeZone
                 - useBusinessHours
                 - workingHours
               type: string
@@ -2227,6 +2271,10 @@ components:
               type: string
               description: The customer's phone number.
               nullable: true
+            customerTimeZone:
+              type: string
+              description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
+              nullable: true
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2252,6 +2300,11 @@ components:
               nullable: true
             isLocationOnline:
               type: boolean
+              description: True indicates that the appointment will be held online. Default value is false.
+            joinWebUrl:
+              type: string
+              description: The URL of the online meeting for the appointment.
+              nullable: true
             onlineMeetingUrl:
               type: string
               nullable: true
@@ -2296,6 +2349,9 @@ components:
               type: string
               description: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
               nullable: true
+            smsNotificationsEnabled:
+              type: boolean
+              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
             staffMemberIds:
               type: array
               items:
@@ -2312,6 +2368,17 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.bookingPerson'
         - title: bookingCustomer
           type: object
+          properties:
+            addresses:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+              description: 'Addresses associated with the customer, including home, business and other addresses.'
+            phones:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'Phone numbers associated with the customer, including home, business and mobile numbers.'
           additionalProperties:
             type: object
           description: Represents a customer of the business.
@@ -2351,6 +2418,7 @@ components:
               description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
+              description: True indicates that the appointments for the service will be held online. Default value is false.
             notes:
               type: string
               description: Additional information about this service.
@@ -2367,12 +2435,19 @@ components:
               format: duration
             schedulingPolicy:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
+            smsNotificationsEnabled:
+              type: boolean
+              description: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
             staffMemberIds:
               type: array
               items:
                 type: string
                 nullable: true
               description: Represents those staff members who provide this service.
+            webUrl:
+              type: string
+              description: The URL a customer uses to access the service.
+              nullable: true
           additionalProperties:
             type: object
           description: Represents a particular service offered by a booking business.
@@ -2394,6 +2469,10 @@ components:
               nullable: true
             role:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
+            timeZone:
+              type: string
+              description: 'The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.'
+              nullable: true
             useBusinessHours:
               type: boolean
               description: True means the staff member's availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member's workingHours property setting.
@@ -2547,10 +2626,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -2576,6 +2655,7 @@ components:
         - callUs
         - notSet
       type: string
+      description: Represents the type of pricing of a booking service.
     microsoft.graph.bookingReminder:
       title: bookingReminder
       type: object
@@ -2606,6 +2686,18 @@ components:
           additionalProperties:
             type: object
           description: Represents a booking customer or staff member.
+    microsoft.graph.phone:
+      title: phone
+      type: object
+      properties:
+        number:
+          type: string
+          description: The phone number.
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.phoneType'
+      additionalProperties:
+        type: object
     microsoft.graph.bookingStaffRole:
       title: bookingStaffRole
       enum:
@@ -2649,12 +2741,12 @@ components:
         end:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
-          description: 'The time of the day that work starts. For example, 08:00:00.0000000.'
+          description: 'The time of the day when work stops. For example, 17:00:00.0000000.'
           format: time
         start:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
-          description: 'The time of the day that work stops. For example, 17:00:00.0000000.'
+          description: 'The time of the day when work starts. For example, 08:00:00.0000000.'
           format: time
       additionalProperties:
         type: object
@@ -2718,6 +2810,20 @@ components:
         - allAttendees
         - staff
         - customer
+      type: string
+    microsoft.graph.phoneType:
+      title: phoneType
+      enum:
+        - home
+        - business
+        - mobile
+        - other
+        - assistant
+        - homeFax
+        - businessFax
+        - otherFax
+        - pager
+        - radio
       type: string
     odata.error.main:
       required:

@@ -54,6 +54,11 @@ directive:
       verb: Update
       subject: ^DeviceManagementComanagedDevice.*
     remove: true
+  - where:
+      verb: Test
+      subject: ^DeviceManagementAssignmentFilter$
+      variant: ^Evaluate.*
+    remove: true
 
 # Rename cmdlets.
   - where:
@@ -95,6 +100,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.7.0
+module-version: 1.8.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -1,3 +1,4 @@
+[CmdletBinding()]
 Param(
     [string] $ModuleName,
     [string] $ModuleRegex,
@@ -10,13 +11,13 @@ Param(
 if (-not (Test-Path $OpenApiDocOutput)) {
     New-Item -Path $OpenApiDocOutput -Type Directory
 }
-  
+
 $OpenApiBaseUrl = "https://graphexplorerapi.azurewebsites.net"
 $OpenApiServiceUrl = ("$OpenApiBaseUrl/`$openapi?tags={0}&title=$ModuleName&openapiversion=3&style=Powershell&graphVersion=$GraphVersion" -f $ModuleRegex)
 if ($ForceRefresh.IsPresent) {
     $OpenApiServiceUrl = "$OpenApiServiceUrl&forceRefresh=true"
 }
-Write-Host -ForegroundColor Green "[$RequestCount] Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
+Write-Debug "[$RequestCount] Downloading OpenAPI doc for '$ModuleName' module: $OpenApiServiceUrl"
 $Retries = 3
 $Delay = 3
 $Retrycount = 0
@@ -45,7 +46,7 @@ while (-not $Completed) {
                         $mPow = [math]::Pow(2, $Retrycount)
                         $DelayInSeconds = $mPow * $Delay
                     }
-    
+
                     Write-Warning "Request to $OpenApiServiceUrl failed. Retrying in $DelayInSeconds seconds."
                     Start-Sleep $DelayInSeconds
                     $Retrycount++

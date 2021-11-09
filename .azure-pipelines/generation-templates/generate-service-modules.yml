@@ -32,7 +32,7 @@ parameters:
 jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
-    timeoutInMinutes: 360
+    timeoutInMinutes: 600
     condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     variables:
       Branch: ${{ parameters.Branch }}
@@ -144,8 +144,13 @@ jobs:
           pwsh: true
           script: |
             [bool]$EnableSigning = if ("$(EnableSigning)" -eq "true") { $true } else { $false }
-            $Modules = "$(ModulesToGenerate)" -split " "
-            . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -Test -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
+            if ("${{ parameters.GenerateCommandMetadata }}" -eq "false") {
+              $ModulesToGenerate = "${{ parameters.ModulesToGenerate }}"
+              $Modules = $ModulesToGenerate.Split(" ", [System.StringSplitOptions]::RemoveEmptyEntries)
+              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -UpdateAutoRest -EnableSigning:$EnableSigning -ModulesToGenerate $Modules -ExcludeExampleTemplates -ExcludeNotesSection
+            } else {
+              . $(System.DefaultWorkingDirectory)/tools/GenerateModules.ps1 -Build -UpdateAutoRest -EnableSigning:$EnableSigning -ExcludeExampleTemplates -ExcludeNotesSection
+            }
 
       - ${{ if eq(parameters.GenerateCommandMetadata, true) }}:
         - template: ./generate-command-metadata-template.yml

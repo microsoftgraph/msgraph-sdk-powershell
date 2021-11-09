@@ -703,7 +703,7 @@ paths:
         - users.userActivity
       summary: Get ref of activity from users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_GetRefActivity
+      operationId: users.activities.historyItems_GetGraphRefActivity
       parameters:
         - name: user-id
           in: path
@@ -748,7 +748,7 @@ paths:
         - users.userActivity
       summary: Update the ref of navigation property activity in users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_SetRefActivity
+      operationId: users.activities.historyItems_SetGraphRefActivity
       parameters:
         - name: user-id
           in: path
@@ -791,7 +791,7 @@ paths:
         - users.userActivity
       summary: Delete ref of navigation property activity for users
       description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_DeleteRefActivity
+      operationId: users.activities.historyItems_DeleteGraphRefActivity
       parameters:
         - name: user-id
           in: path

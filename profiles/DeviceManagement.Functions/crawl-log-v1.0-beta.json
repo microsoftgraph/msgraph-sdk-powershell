@@ -5,6 +5,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/assignmentFilters/{deviceAndAppManagementAssignmentFilter-id}/microsoft.graph.getSupportedProperties()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
+    "/deviceManagement/assignmentFilters/microsoft.graph.getPlatformSupportedProperties(platform={platform})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/assignmentFilters/microsoft.graph.getState()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"

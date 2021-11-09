@@ -3081,7 +3081,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get ref of children from deviceManagement
       description: The children categories
-      operationId: deviceManagement.groupPolicyCategories_ListRefChildren
+      operationId: deviceManagement.groupPolicyCategories_ListGraphRefChildren
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3142,7 +3142,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Create new navigation property ref to children for deviceManagement
       description: The children categories
-      operationId: deviceManagement.groupPolicyCategories_CreateRefChildren
+      operationId: deviceManagement.groupPolicyCategories_CreateGraphRefChildren
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3242,7 +3242,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get ref of definitionFile from deviceManagement
       description: The id of the definition file the category came from
-      operationId: deviceManagement.groupPolicyCategories_GetRefDefinitionFile
+      operationId: deviceManagement.groupPolicyCategories_GetGraphRefDefinitionFile
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3271,7 +3271,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Update the ref of navigation property definitionFile in deviceManagement
       description: The id of the definition file the category came from
-      operationId: deviceManagement.groupPolicyCategories_SetRefDefinitionFile
+      operationId: deviceManagement.groupPolicyCategories_SetGraphRefDefinitionFile
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3300,7 +3300,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Delete ref of navigation property definitionFile for deviceManagement
       description: The id of the definition file the category came from
-      operationId: deviceManagement.groupPolicyCategories_DeleteRefDefinitionFile
+      operationId: deviceManagement.groupPolicyCategories_DeleteGraphRefDefinitionFile
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3362,12 +3362,20 @@ paths:
                 - explainText desc
                 - groupPolicyCategoryId
                 - groupPolicyCategoryId desc
+                - hasRelatedDefinitions
+                - hasRelatedDefinitions desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - minDeviceCspVersion
+                - minDeviceCspVersion desc
+                - minUserCspVersion
+                - minUserCspVersion desc
                 - policyType
                 - policyType desc
                 - supportedOn
                 - supportedOn desc
+                - version
+                - version desc
               type: string
         - name: $select
           in: query
@@ -3385,12 +3393,18 @@ paths:
                 - displayName
                 - explainText
                 - groupPolicyCategoryId
+                - hasRelatedDefinitions
                 - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
                 - policyType
                 - supportedOn
+                - version
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
         - name: $expand
           in: query
@@ -3405,7 +3419,9 @@ paths:
                 - '*'
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
       responses:
         '200':
@@ -3436,7 +3452,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get ref of definitions from deviceManagement
       description: The immediate GroupPolicyDefinition children of the category
-      operationId: deviceManagement.groupPolicyCategories_ListRefDefinitions
+      operationId: deviceManagement.groupPolicyCategories_ListGraphRefDefinitions
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3472,12 +3488,20 @@ paths:
                 - explainText desc
                 - groupPolicyCategoryId
                 - groupPolicyCategoryId desc
+                - hasRelatedDefinitions
+                - hasRelatedDefinitions desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - minDeviceCspVersion
+                - minDeviceCspVersion desc
+                - minUserCspVersion
+                - minUserCspVersion desc
                 - policyType
                 - policyType desc
                 - supportedOn
                 - supportedOn desc
+                - version
+                - version desc
               type: string
       responses:
         '200':
@@ -3507,7 +3531,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Create new navigation property ref to definitions for deviceManagement
       description: The immediate GroupPolicyDefinition children of the category
-      operationId: deviceManagement.groupPolicyCategories_CreateRefDefinitions
+      operationId: deviceManagement.groupPolicyCategories_CreateGraphRefDefinitions
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3620,7 +3644,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Get ref of parent from deviceManagement
       description: The parent category
-      operationId: deviceManagement.groupPolicyCategories_GetRefParent
+      operationId: deviceManagement.groupPolicyCategories_GetGraphRefParent
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3661,7 +3685,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Update the ref of navigation property parent in deviceManagement
       description: The parent category
-      operationId: deviceManagement.groupPolicyCategories_SetRefParent
+      operationId: deviceManagement.groupPolicyCategories_SetGraphRefParent
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3690,7 +3714,7 @@ paths:
         - deviceManagement.groupPolicyCategory
       summary: Delete ref of navigation property parent for deviceManagement
       description: The parent category
-      operationId: deviceManagement.groupPolicyCategories_DeleteRefParent
+      operationId: deviceManagement.groupPolicyCategories_DeleteGraphRefParent
       parameters:
         - name: groupPolicyCategory-id
           in: path
@@ -3990,12 +4014,20 @@ paths:
                 - explainText desc
                 - groupPolicyCategoryId
                 - groupPolicyCategoryId desc
+                - hasRelatedDefinitions
+                - hasRelatedDefinitions desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - minDeviceCspVersion
+                - minDeviceCspVersion desc
+                - minUserCspVersion
+                - minUserCspVersion desc
                 - policyType
                 - policyType desc
                 - supportedOn
                 - supportedOn desc
+                - version
+                - version desc
               type: string
         - name: $select
           in: query
@@ -4013,12 +4045,18 @@ paths:
                 - displayName
                 - explainText
                 - groupPolicyCategoryId
+                - hasRelatedDefinitions
                 - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
                 - policyType
                 - supportedOn
+                - version
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
         - name: $expand
           in: query
@@ -4033,7 +4071,9 @@ paths:
                 - '*'
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
       responses:
         '200':
@@ -4064,7 +4104,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Get ref of definitions from deviceManagement
       description: The group policy definitions associated with the file.
-      operationId: deviceManagement.groupPolicyDefinitionFiles_ListRefDefinitions
+      operationId: deviceManagement.groupPolicyDefinitionFiles_ListGraphRefDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -4100,12 +4140,20 @@ paths:
                 - explainText desc
                 - groupPolicyCategoryId
                 - groupPolicyCategoryId desc
+                - hasRelatedDefinitions
+                - hasRelatedDefinitions desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - minDeviceCspVersion
+                - minDeviceCspVersion desc
+                - minUserCspVersion
+                - minUserCspVersion desc
                 - policyType
                 - policyType desc
                 - supportedOn
                 - supportedOn desc
+                - version
+                - version desc
               type: string
       responses:
         '200':
@@ -4135,7 +4183,7 @@ paths:
         - deviceManagement.groupPolicyDefinitionFile
       summary: Create new navigation property ref to definitions for deviceManagement
       description: The group policy definitions associated with the file.
-      operationId: deviceManagement.groupPolicyDefinitionFiles_CreateRefDefinitions
+      operationId: deviceManagement.groupPolicyDefinitionFiles_CreateGraphRefDefinitions
       parameters:
         - name: groupPolicyDefinitionFile-id
           in: path
@@ -4200,12 +4248,20 @@ paths:
                 - explainText desc
                 - groupPolicyCategoryId
                 - groupPolicyCategoryId desc
+                - hasRelatedDefinitions
+                - hasRelatedDefinitions desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - minDeviceCspVersion
+                - minDeviceCspVersion desc
+                - minUserCspVersion
+                - minUserCspVersion desc
                 - policyType
                 - policyType desc
                 - supportedOn
                 - supportedOn desc
+                - version
+                - version desc
               type: string
         - name: $select
           in: query
@@ -4223,12 +4279,18 @@ paths:
                 - displayName
                 - explainText
                 - groupPolicyCategoryId
+                - hasRelatedDefinitions
                 - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
                 - policyType
                 - supportedOn
+                - version
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
         - name: $expand
           in: query
@@ -4243,7 +4305,9 @@ paths:
                 - '*'
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
       responses:
         '200':
@@ -4322,12 +4386,18 @@ paths:
                 - displayName
                 - explainText
                 - groupPolicyCategoryId
+                - hasRelatedDefinitions
                 - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
                 - policyType
                 - supportedOn
+                - version
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
         - name: $expand
           in: query
@@ -4342,7 +4412,9 @@ paths:
                 - '*'
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
       responses:
         '200':
@@ -4360,8 +4432,16 @@ paths:
               operationId: deviceManagement.GroupPolicyDefinitions.GetDefinitionFile
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            nextVersionDefinition:
+              operationId: deviceManagement.GroupPolicyDefinitions.GetNextVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
             presentations:
               operationId: deviceManagement.GroupPolicyDefinitions.ListPresentations
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            previousVersionDefinition:
+              operationId: deviceManagement.GroupPolicyDefinitions.GetPreviousVersionDefinition
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
         default:
@@ -4502,7 +4582,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get ref of category from deviceManagement
       description: The group policy category associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_GetRefCategory
+      operationId: deviceManagement.groupPolicyDefinitions_GetGraphRefCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4543,7 +4623,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Update the ref of navigation property category in deviceManagement
       description: The group policy category associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_SetRefCategory
+      operationId: deviceManagement.groupPolicyDefinitions_SetGraphRefCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4572,7 +4652,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Delete ref of navigation property category for deviceManagement
       description: The group policy category associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_DeleteRefCategory
+      operationId: deviceManagement.groupPolicyDefinitions_DeleteGraphRefCategory
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4662,7 +4742,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get ref of definitionFile from deviceManagement
       description: The group policy file associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_GetRefDefinitionFile
+      operationId: deviceManagement.groupPolicyDefinitions_GetGraphRefDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4691,7 +4771,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Update the ref of navigation property definitionFile in deviceManagement
       description: The group policy file associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_SetRefDefinitionFile
+      operationId: deviceManagement.groupPolicyDefinitions_SetGraphRefDefinitionFile
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -4720,7 +4800,151 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Delete ref of navigation property definitionFile for deviceManagement
       description: The group policy file associated with the definition.
-      operationId: deviceManagement.groupPolicyDefinitions_DeleteRefDefinitionFile
+      operationId: deviceManagement.groupPolicyDefinitions_DeleteGraphRefDefinitionFile
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/nextVersionDefinition':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get nextVersionDefinition from deviceManagement
+      description: Definition of the next version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_GetNextVersionDefinition
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categoryPath
+                - classType
+                - displayName
+                - explainText
+                - groupPolicyCategoryId
+                - hasRelatedDefinitions
+                - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
+                - policyType
+                - supportedOn
+                - version
+                - category
+                - definitionFile
+                - nextVersionDefinition
+                - presentations
+                - previousVersionDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - category
+                - definitionFile
+                - nextVersionDefinition
+                - presentations
+                - previousVersionDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
+          links:
+            category:
+              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetCategory
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            definitionFile:
+              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetDefinitionFile
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            nextVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetNextVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            presentations:
+              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.ListPresentations
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            previousVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.NextVersionDefinition.GetPreviousVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Update the navigation property nextVersionDefinition in deviceManagement
+      description: Definition of the next version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_UpdateNextVersionDefinition
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Delete navigation property nextVersionDefinition for deviceManagement
+      description: Definition of the next version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_DeleteNextVersionDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5029,12 +5253,18 @@ paths:
                 - displayName
                 - explainText
                 - groupPolicyCategoryId
+                - hasRelatedDefinitions
                 - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
                 - policyType
                 - supportedOn
+                - version
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
         - name: $expand
           in: query
@@ -5049,7 +5279,9 @@ paths:
                 - '*'
                 - category
                 - definitionFile
+                - nextVersionDefinition
                 - presentations
+                - previousVersionDefinition
               type: string
       responses:
         '200':
@@ -5069,8 +5301,18 @@ paths:
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
                 groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
+            nextVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetNextVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
             presentations:
               operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.ListPresentations
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
+            previousVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetPreviousVersionDefinition
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
                 groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
@@ -5083,7 +5325,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Get ref of definition from deviceManagement
       description: The group policy definition associated with the presentation.
-      operationId: deviceManagement.groupPolicyDefinitions.presentations_GetRefDefinition
+      operationId: deviceManagement.groupPolicyDefinitions.presentations_GetGraphRefDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5117,8 +5359,18 @@ paths:
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
                 groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
+            nextVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetNextVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
             presentations:
               operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.ListPresentations
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+                groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
+            previousVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.presentations.Definition.GetPreviousVersionDefinition
               parameters:
                 groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
                 groupPolicyPresentation-id: $request.path.groupPolicyPresentation-id
@@ -5130,7 +5382,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Update the ref of navigation property definition in deviceManagement
       description: The group policy definition associated with the presentation.
-      operationId: deviceManagement.groupPolicyDefinitions.presentations_SetRefDefinition
+      operationId: deviceManagement.groupPolicyDefinitions.presentations_SetGraphRefDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5166,7 +5418,7 @@ paths:
         - deviceManagement.groupPolicyDefinition
       summary: Delete ref of navigation property definition for deviceManagement
       description: The group policy definition associated with the presentation.
-      operationId: deviceManagement.groupPolicyDefinitions.presentations_DeleteRefDefinition
+      operationId: deviceManagement.groupPolicyDefinitions.presentations_DeleteGraphRefDefinition
       parameters:
         - name: groupPolicyDefinition-id
           in: path
@@ -5182,6 +5434,150 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: groupPolicyPresentation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/groupPolicyDefinitions/{groupPolicyDefinition-id}/previousVersionDefinition':
+    get:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Get previousVersionDefinition from deviceManagement
+      description: Definition of the previous version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_GetPreviousVersionDefinition
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categoryPath
+                - classType
+                - displayName
+                - explainText
+                - groupPolicyCategoryId
+                - hasRelatedDefinitions
+                - lastModifiedDateTime
+                - minDeviceCspVersion
+                - minUserCspVersion
+                - policyType
+                - supportedOn
+                - version
+                - category
+                - definitionFile
+                - nextVersionDefinition
+                - presentations
+                - previousVersionDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - category
+                - definitionFile
+                - nextVersionDefinition
+                - presentations
+                - previousVersionDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
+          links:
+            category:
+              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetCategory
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            definitionFile:
+              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetDefinitionFile
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            nextVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetNextVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            presentations:
+              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.ListPresentations
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+            previousVersionDefinition:
+              operationId: deviceManagement.groupPolicyDefinitions.PreviousVersionDefinition.GetPreviousVersionDefinition
+              parameters:
+                groupPolicyDefinition-id: $request.path.groupPolicyDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Update the navigation property previousVersionDefinition in deviceManagement
+      description: Definition of the previous version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_UpdatePreviousVersionDefinition
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.groupPolicyDefinition
+      summary: Delete navigation property previousVersionDefinition for deviceManagement
+      description: Definition of the previous version of this definition
+      operationId: deviceManagement.groupPolicyDefinitions_DeletePreviousVersionDefinition
+      parameters:
+        - name: groupPolicyDefinition-id
+          in: path
+          description: 'key: id of groupPolicyDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: groupPolicyDefinition
         - name: If-Match
           in: header
           description: ETag
@@ -7610,6 +8006,8 @@ paths:
                 - macDeviceBlockedOnMissingPartnerData desc
                 - macEnabled
                 - macEnabled desc
+                - microsoftDefenderForEndpointAttachEnabled
+                - microsoftDefenderForEndpointAttachEnabled desc
                 - partnerState
                 - partnerState desc
                 - partnerUnresponsivenessThresholdInDays
@@ -7642,6 +8040,7 @@ paths:
                 - lastHeartbeatDateTime
                 - macDeviceBlockedOnMissingPartnerData
                 - macEnabled
+                - microsoftDefenderForEndpointAttachEnabled
                 - partnerState
                 - partnerUnresponsivenessThresholdInDays
                 - partnerUnsupportedOsVersionBlocked
@@ -7742,6 +8141,7 @@ paths:
                 - lastHeartbeatDateTime
                 - macDeviceBlockedOnMissingPartnerData
                 - macEnabled
+                - microsoftDefenderForEndpointAttachEnabled
                 - partnerState
                 - partnerUnresponsivenessThresholdInDays
                 - partnerUnsupportedOsVersionBlocked
@@ -8800,7 +9200,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Get ref of roleScopeTags from deviceManagement
       description: The set of Role Scope Tags defined on the Role Assignment.
-      operationId: deviceManagement.roleAssignments_ListRefRoleScopeTags
+      operationId: deviceManagement.roleAssignments_ListGraphRefRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -8861,7 +9261,7 @@ paths:
         - deviceManagement.deviceAndAppManagementRoleAssignment
       summary: Create new navigation property ref to roleScopeTags for deviceManagement
       description: The set of Role Scope Tags defined on the Role Assignment.
-      operationId: deviceManagement.roleAssignments_CreateRefRoleScopeTags
+      operationId: deviceManagement.roleAssignments_CreateGraphRefRoleScopeTags
       parameters:
         - name: deviceAndAppManagementRoleAssignment-id
           in: path
@@ -9465,7 +9865,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Get ref of roleDefinition from deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_GetRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_GetGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -9502,7 +9902,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Update the ref of navigation property roleDefinition in deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_SetRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_SetGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -9538,7 +9938,7 @@ paths:
         - deviceManagement.roleDefinition
       summary: Delete ref of navigation property roleDefinition for deviceManagement
       description: Role definition this assignment is part of.
-      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteRefRoleDefinition
+      operationId: deviceManagement.roleDefinitions.roleAssignments_DeleteGraphRefRoleDefinition
       parameters:
         - name: roleDefinition-id
           in: path
@@ -10852,7 +11252,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get ref of termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_GetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -10899,7 +11299,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Update the ref of navigation property termsAndConditions in deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_SetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -10935,7 +11335,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Delete ref of navigation property termsAndConditions for deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.acceptanceStatuses_DeleteGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -11540,7 +11940,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Get ref of termsAndConditions from deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.groupAssignments_GetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.groupAssignments_GetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -11587,7 +11987,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Update the ref of navigation property termsAndConditions in deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.groupAssignments_SetRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.groupAssignments_SetGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -11623,7 +12023,7 @@ paths:
         - deviceManagement.termsAndConditions
       summary: Delete ref of navigation property termsAndConditions for deviceManagement
       description: Navigation link to the terms and conditions that are assigned.
-      operationId: deviceManagement.termsAndConditions.groupAssignments_DeleteRefTermsAndConditions
+      operationId: deviceManagement.termsAndConditions.groupAssignments_DeleteGraphRefTermsAndConditions
       parameters:
         - name: termsAndConditions-id
           in: path
@@ -11916,8 +12316,11 @@ paths:
                 - auditEvents
                 - cloudPCs
                 - deviceImages
+                - galleryImages
                 - onPremisesConnections
                 - provisioningPolicies
+                - servicePlans
+                - supportedRegions
                 - userSettings
               type: string
         - name: $expand
@@ -11934,8 +12337,11 @@ paths:
                 - auditEvents
                 - cloudPCs
                 - deviceImages
+                - galleryImages
                 - onPremisesConnections
                 - provisioningPolicies
+                - servicePlans
+                - supportedRegions
                 - userSettings
               type: string
       responses:
@@ -11952,10 +12358,16 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.ListCloudPCs
             deviceImages:
               operationId: deviceManagement.VirtualEndpoint.ListDeviceImages
+            galleryImages:
+              operationId: deviceManagement.VirtualEndpoint.ListGalleryImages
             onPremisesConnections:
               operationId: deviceManagement.VirtualEndpoint.ListOnPremisesConnections
             provisioningPolicies:
               operationId: deviceManagement.VirtualEndpoint.ListProvisioningPolicies
+            servicePlans:
+              operationId: deviceManagement.VirtualEndpoint.ListServicePlans
+            supportedRegions:
+              operationId: deviceManagement.VirtualEndpoint.ListSupportedRegions
             userSettings:
               operationId: deviceManagement.VirtualEndpoint.ListUserSettings
         default:
@@ -12495,7 +12907,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
-      description: The image resource on cloud PC.
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListDeviceImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12591,7 +13003,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to deviceImages for deviceManagement
-      description: The image resource on cloud PC.
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_CreateDeviceImages
       requestBody:
         description: New navigation property
@@ -12615,7 +13027,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get deviceImages from deviceManagement
-      description: The image resource on cloud PC.
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetDeviceImages
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12671,7 +13083,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property deviceImages in deviceManagement
-      description: The image resource on cloud PC.
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_UpdateDeviceImages
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12698,7 +13110,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property deviceImages for deviceManagement
-      description: The image resource on cloud PC.
+      description: The image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_DeleteDeviceImages
       parameters:
         - name: cloudPcDeviceImage-id
@@ -12719,12 +13131,252 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/galleryImages:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get galleryImages from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_ListGalleryImages
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - endDate
+                - endDate desc
+                - expirationDate
+                - expirationDate desc
+                - offer
+                - offer desc
+                - offerDisplayName
+                - offerDisplayName desc
+                - publisher
+                - publisher desc
+                - recommendedSku
+                - recommendedSku desc
+                - sizeInGB
+                - sizeInGB desc
+                - sku
+                - sku desc
+                - skuDisplayName
+                - skuDisplayName desc
+                - startDate
+                - startDate desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - endDate
+                - expirationDate
+                - offer
+                - offerDisplayName
+                - publisher
+                - recommendedSku
+                - sizeInGB
+                - sku
+                - skuDisplayName
+                - startDate
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcGalleryImage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to galleryImages for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_CreateGalleryImages
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/galleryImages/{cloudPcGalleryImage-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get galleryImages from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_GetGalleryImages
+      parameters:
+        - name: cloudPcGalleryImage-id
+          in: path
+          description: 'key: id of cloudPcGalleryImage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcGalleryImage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - endDate
+                - expirationDate
+                - offer
+                - offerDisplayName
+                - publisher
+                - recommendedSku
+                - sizeInGB
+                - sku
+                - skuDisplayName
+                - startDate
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property galleryImages in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateGalleryImages
+      parameters:
+        - name: cloudPcGalleryImage-id
+          in: path
+          description: 'key: id of cloudPcGalleryImage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcGalleryImage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property galleryImages for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteGalleryImages
+      parameters:
+        - name: cloudPcGalleryImage-id
+          in: path
+          description: 'key: id of cloudPcGalleryImage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcGalleryImage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/virtualEndpoint/onPremisesConnections:
     get:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_ListOnPremisesConnections
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12768,6 +13420,8 @@ paths:
                 - subscriptionId desc
                 - subscriptionName
                 - subscriptionName desc
+                - type
+                - type desc
                 - virtualNetworkId
                 - virtualNetworkId desc
               type: string
@@ -12794,6 +13448,7 @@ paths:
                 - subnetId
                 - subscriptionId
                 - subscriptionName
+                - type
                 - virtualNetworkId
               type: string
         - name: $expand
@@ -12835,7 +13490,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to onPremisesConnections for deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_CreateOnPremisesConnections
       requestBody:
         description: New navigation property
@@ -12859,7 +13514,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get onPremisesConnections from deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_GetOnPremisesConnections
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12892,6 +13547,7 @@ paths:
                 - subnetId
                 - subscriptionId
                 - subscriptionName
+                - type
                 - virtualNetworkId
               type: string
         - name: $expand
@@ -12920,7 +13576,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property onPremisesConnections in deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_UpdateOnPremisesConnections
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12947,7 +13603,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property onPremisesConnections for deviceManagement
-      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+      description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
       operationId: deviceManagement.virtualEndpoint_DeleteOnPremisesConnections
       parameters:
         - name: cloudPcOnPremisesConnection-id
@@ -12997,12 +13653,16 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - domainJoinConfiguration
+                - domainJoinConfiguration desc
                 - imageDisplayName
                 - imageDisplayName desc
                 - imageId
                 - imageId desc
                 - imageType
                 - imageType desc
+                - microsoftManagedDesktop
+                - microsoftManagedDesktop desc
                 - onPremisesConnectionId
                 - onPremisesConnectionId desc
               type: string
@@ -13019,9 +13679,11 @@ paths:
                 - id
                 - description
                 - displayName
+                - domainJoinConfiguration
                 - imageDisplayName
                 - imageId
                 - imageType
+                - microsoftManagedDesktop
                 - onPremisesConnectionId
                 - assignments
               type: string
@@ -13112,9 +13774,11 @@ paths:
                 - id
                 - description
                 - displayName
+                - domainJoinConfiguration
                 - imageDisplayName
                 - imageId
                 - imageType
+                - microsoftManagedDesktop
                 - onPremisesConnectionId
                 - assignments
               type: string
@@ -13424,6 +14088,428 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPcProvisioningPolicyAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/servicePlans:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
+      operationId: deviceManagement.virtualEndpoint_ListServicePlans
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - ramInGB
+                - ramInGB desc
+                - storageInGB
+                - storageInGB desc
+                - type
+                - type desc
+                - userProfileInGB
+                - userProfileInGB desc
+                - vCpuCount
+                - vCpuCount desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - ramInGB
+                - storageInGB
+                - type
+                - userProfileInGB
+                - vCpuCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcServicePlan
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to servicePlans for deviceManagement
+      description: Cloud PC service plans.
+      operationId: deviceManagement.virtualEndpoint_CreateServicePlans
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get servicePlans from deviceManagement
+      description: Cloud PC service plans.
+      operationId: deviceManagement.virtualEndpoint_GetServicePlans
+      parameters:
+        - name: cloudPcServicePlan-id
+          in: path
+          description: 'key: id of cloudPcServicePlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcServicePlan
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - ramInGB
+                - storageInGB
+                - type
+                - userProfileInGB
+                - vCpuCount
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property servicePlans in deviceManagement
+      description: Cloud PC service plans.
+      operationId: deviceManagement.virtualEndpoint_UpdateServicePlans
+      parameters:
+        - name: cloudPcServicePlan-id
+          in: path
+          description: 'key: id of cloudPcServicePlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcServicePlan
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property servicePlans for deviceManagement
+      description: Cloud PC service plans.
+      operationId: deviceManagement.virtualEndpoint_DeleteServicePlans
+      parameters:
+        - name: cloudPcServicePlan-id
+          in: path
+          description: 'key: id of cloudPcServicePlan'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcServicePlan
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/supportedRegions:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
+      operationId: deviceManagement.virtualEndpoint_ListSupportedRegions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcSupportedRegion
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to supportedRegions for deviceManagement
+      description: Cloud PC supported regions.
+      operationId: deviceManagement.virtualEndpoint_CreateSupportedRegions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/supportedRegions/{cloudPcSupportedRegion-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get supportedRegions from deviceManagement
+      description: Cloud PC supported regions.
+      operationId: deviceManagement.virtualEndpoint_GetSupportedRegions
+      parameters:
+        - name: cloudPcSupportedRegion-id
+          in: path
+          description: 'key: id of cloudPcSupportedRegion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSupportedRegion
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property supportedRegions in deviceManagement
+      description: Cloud PC supported regions.
+      operationId: deviceManagement.virtualEndpoint_UpdateSupportedRegions
+      parameters:
+        - name: cloudPcSupportedRegion-id
+          in: path
+          description: 'key: id of cloudPcSupportedRegion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSupportedRegion
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property supportedRegions for deviceManagement
+      description: Cloud PC supported regions.
+      operationId: deviceManagement.virtualEndpoint_DeleteSupportedRegions
+      parameters:
+        - name: cloudPcSupportedRegion-id
+          in: path
+          description: 'key: id of cloudPcSupportedRegion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSupportedRegion
         - name: If-Match
           in: header
           description: ETag
@@ -14559,26 +15645,45 @@ components:
               type: string
               description: The category id of the parent category
               format: uuid
+            hasRelatedDefinitions:
+              type: boolean
+              description: Signifies whether or not there are related definitions to this definition
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: The date and time the entity was last modified.
               format: date-time
+            minDeviceCspVersion:
+              type: string
+              description: Minimum required CSP version for device configuration in this definition
+              nullable: true
+            minUserCspVersion:
+              type: string
+              description: Minimum required CSP version for user configuration in this definition
+              nullable: true
             policyType:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyType'
             supportedOn:
               type: string
               description: Localized string used to specify what operating system or application version is affected by the policy.
               nullable: true
+            version:
+              type: string
+              description: Setting definition version
+              nullable: true
             category:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyCategory'
             definitionFile:
               $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinitionFile'
+            nextVersionDefinition:
+              $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
             presentations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.groupPolicyPresentation'
               description: The group policy presentations associated with the definition.
+            previousVersionDefinition:
+              $ref: '#/components/schemas/microsoft.graph.groupPolicyDefinition'
           additionalProperties:
             type: object
           description: The entity describes all of the information about a single group policy.
@@ -15108,6 +16213,9 @@ components:
             macEnabled:
               type: boolean
               description: 'For Mac, get or set whether data from the data sync partner should be used during compliance evaluations'
+            microsoftDefenderForEndpointAttachEnabled:
+              type: boolean
+              description: 'When TRUE, configuration profile management via Microsoft Defender for Endpoint is enabled. When FALSE, configuration profile management via Microsoft Defender for Endpoint is disabled.'
             partnerState:
               $ref: '#/components/schemas/microsoft.graph.mobileThreatPartnerTenantState'
             partnerUnresponsivenessThresholdInDays:
@@ -15193,10 +16301,10 @@ components:
               nullable: true
             enabledForScopeValidation:
               type: boolean
-              description: Determines whether the Permission is validated for Scopes defined per Role Assignment.
+              description: Determines whether the Permission is validated for Scopes defined per Role Assignment. This property is read-only.
             resource:
               type: string
-              description: Resource category to which this Operation belongs.
+              description: Resource category to which this Operation belongs. This property is read-only.
               nullable: true
             resourceName:
               type: string
@@ -15241,7 +16349,7 @@ components:
               nullable: true
             isBuiltIn:
               type: boolean
-              description: Description of the Role Scope Tag.
+              description: Description of the Role Scope Tag. This property is read-only.
             assignments:
               type: array
               items:
@@ -15570,17 +16678,31 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImage'
-              description: The image resource on cloud PC.
+              description: The image resource on Cloud PC.
+            galleryImages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
             onPremisesConnections:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
-              description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for cloud PCs.
+              description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
             provisioningPolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicy'
               description: Cloud PC provisioning policy.
+            servicePlans:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
+              description: Cloud PC service plans.
+            supportedRegions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSupportedRegion'
+              description: Cloud PC supported regions.
             userSettings:
               type: array
               items:
@@ -15638,7 +16760,7 @@ components:
           properties:
             displayName:
               type: string
-              description: The cloud PC display name.
+              description: The Cloud PC display name.
               nullable: true
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -15648,40 +16770,40 @@ components:
               nullable: true
             imageDisplayName:
               type: string
-              description: Name of the OS image that's on the cloud PC.
+              description: Name of the OS image that's on the Cloud PC.
               nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The cloud PC''s last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The Cloud PC''s last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             managedDeviceId:
               type: string
-              description: The cloud PC’s Intune device ID.
+              description: The Cloud PC’s Intune device ID.
               nullable: true
             managedDeviceName:
               type: string
-              description: The cloud PC’s Intune device name.
+              description: The Cloud PC’s Intune device name.
               nullable: true
             onPremisesConnectionName:
               type: string
-              description: The on-premises connection that is applied during provisioning of cloud PCs.
+              description: The on-premises connection that is applied during provisioning of Cloud PCs.
               nullable: true
             provisioningPolicyId:
               type: string
-              description: The cloud PC's provisioning policy ID.
+              description: The Cloud PC's provisioning policy ID.
               nullable: true
             provisioningPolicyName:
               type: string
-              description: The provisioning policy that is applied during provisioning of cloud PCs.
+              description: The provisioning policy that is applied during provisioning of Cloud PCs.
               nullable: true
             servicePlanId:
               type: string
-              description: The cloud PC's service plan ID.
+              description: The Cloud PC's service plan ID.
               nullable: true
             servicePlanName:
               type: string
-              description: The cloud PC's service plan name.
+              description: The Cloud PC's service plan name.
               nullable: true
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
@@ -15689,7 +16811,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
             userPrincipalName:
               type: string
-              description: The user principal name (UPN) of the user assigned to the cloud PC.
+              description: The user principal name (UPN) of the user assigned to the Cloud PC.
               nullable: true
           additionalProperties:
             type: object
@@ -15731,6 +16853,58 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcGalleryImage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcGalleryImage
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            endDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            expirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            offer:
+              type: string
+              nullable: true
+            offerDisplayName:
+              type: string
+              nullable: true
+            publisher:
+              type: string
+              nullable: true
+            recommendedSku:
+              type: string
+              nullable: true
+            sizeInGB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            sku:
+              type: string
+              nullable: true
+            skuDisplayName:
+              type: string
+              nullable: true
+            startDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImageStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcOnPremisesConnection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -15740,6 +16914,7 @@ components:
             adDomainName:
               type: string
               description: The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+              nullable: true
             adDomainPassword:
               type: string
               description: The password associated with adDomainUsername.
@@ -15747,6 +16922,7 @@ components:
             adDomainUsername:
               type: string
               description: 'The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.'
+              nullable: true
             displayName:
               type: string
               description: The display name for the on-premises connection.
@@ -15774,6 +16950,8 @@ components:
               type: string
               description: The name of the target Azure subscription. Read-only.
               nullable: true
+            type:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionType'
             virtualNetworkId:
               type: string
               description: 'The ID of the target virtual network. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}''.'
@@ -15793,19 +16971,23 @@ components:
               type: string
               description: The display name for the provisioning policy.
               nullable: true
+            domainJoinConfiguration:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinConfiguration'
             imageDisplayName:
               type: string
               description: The display name for the OS image you’re provisioning.
               nullable: true
             imageId:
               type: string
-              description: 'The ID of the OS image you want to provision on cloud PCs. The format for a gallery type image is: {publisher_offer_sku}.'
+              description: 'The ID of the OS image you want to provision on Cloud PCs. The format for a gallery type image is: {publisher_offer_sku}. Supported values for each of the parameters are as follows:publisher: Microsoftwindowsdesktop. offer: windows-ent-cpc. sku: 21h1-ent-cpc-m365, 21h1-ent-cpc-os, 20h2-ent-cpc-m365, 20h2-ent-cpc-os, 20h1-ent-cpc-m365, 20h1-ent-cpc-os, 19h2-ent-cpc-m365 and 19h2-ent-cpc-os.'
               nullable: true
             imageType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcProvisioningPolicyImageType'
+            microsoftManagedDesktop:
+              $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktop'
             onPremisesConnectionId:
               type: string
-              description: 'The ID of the cloudPcOnPremisesConnection. To ensure that cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the cloud PC service.'
+              description: 'The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.'
               nullable: true
             assignments:
               type: array
@@ -15822,6 +17004,55 @@ components:
           properties:
             target:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcServicePlan:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcServicePlan
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name for the service plan. Read-only.
+            ramInGB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The size of the RAM in GB. Read-only.
+              format: int32
+            storageInGB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The size of the OS Disk in GB. Read-only.
+              format: int32
+            type:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
+            userProfileInGB:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The size of the user profile disk in GB. Read-only.
+              format: int32
+            vCpuCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The number of vCPUs. Read-only.
+              format: int32
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcSupportedRegion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSupportedRegion
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name for the supported region. Read-only.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudPcUserSetting:
@@ -15848,11 +17079,11 @@ components:
               nullable: true
             localAdminEnabled:
               type: boolean
-              description: 'Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the cloud PC device.'
+              description: 'Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.'
               nullable: true
             selfServiceEnabled:
               type: boolean
-              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the cloud PC through the end user portal.'
+              description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.'
               nullable: true
             assignments:
               type: array
@@ -15976,6 +17207,7 @@ components:
         - notRegisteredPendingEnrollment
         - unknown
       type: string
+      description: Device registration status.
     microsoft.graph.deviceType:
       title: deviceType
       enum:
@@ -16007,6 +17239,7 @@ components:
         - unknown
         - cloudPC
       type: string
+      description: Device type.
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -16022,9 +17255,10 @@ components:
         - jamf
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
-        - windowsManagementCloudApi
+        - msSense
         - intuneAosp
       type: string
+      description: Management agent type.
     microsoft.graph.managementState:
       title: managementState
       enum:
@@ -16041,6 +17275,7 @@ components:
         - retireCanceled
         - discovered
       type: string
+      description: Management state of device in Microsoft Intune.
     microsoft.graph.ownerType:
       title: ownerType
       enum:
@@ -16048,6 +17283,7 @@ components:
         - company
         - personal
       type: string
+      description: Owner type of device.
     microsoft.graph.comanagementEligibleType:
       title: comanagementEligibleType
       enum:
@@ -16076,6 +17312,7 @@ components:
         - rejected
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -16091,6 +17328,7 @@ components:
         - androidAOSP
         - all
       type: string
+      description: Supported platform types for policies.
     microsoft.graph.managedDeviceReportedApp:
       title: managedDeviceReportedApp
       type: object
@@ -16108,6 +17346,7 @@ components:
         - prohibitedApps
         - notApprovedApps
       type: string
+      description: Restricted apps state
     microsoft.graph.certificateRevocationStatus:
       title: certificateRevocationStatus
       enum:
@@ -16117,6 +17356,7 @@ components:
         - failed
         - revoked
       type: string
+      description: Certificate Revocation Status.
     microsoft.graph.deviceManagementPartnerAssignment:
       title: deviceManagementPartnerAssignment
       type: object
@@ -16133,6 +17373,7 @@ components:
         - singleTenantApp
         - multiTenantApp
       type: string
+      description: Partner App Type.
     microsoft.graph.deviceManagementDomainJoinConnectorState:
       title: deviceManagementDomainJoinConnectorState
       enum:
@@ -16140,6 +17381,7 @@ components:
         - error
         - inactive
       type: string
+      description: The ODJ request states.
     microsoft.graph.deviceManagementExchangeConnectorType:
       title: deviceManagementExchangeConnectorType
       enum:
@@ -16148,6 +17390,7 @@ components:
         - serviceToService
         - dedicated
       type: string
+      description: The type of Exchange Connector.
     microsoft.graph.deviceManagementExchangeConnectorStatus:
       title: deviceManagementExchangeConnectorStatus
       enum:
@@ -16156,6 +17399,7 @@ components:
         - connected
         - disconnected
       type: string
+      description: The current status of the Exchange Connector.
     microsoft.graph.deviceManagementExchangeAccessRule:
       title: deviceManagementExchangeAccessRule
       type: object
@@ -16175,6 +17419,7 @@ components:
         - block
         - quarantine
       type: string
+      description: Access Level in Exchange.
     microsoft.graph.deviceManagementExchangeDeviceClass:
       title: deviceManagementExchangeDeviceClass
       type: object
@@ -16194,12 +17439,14 @@ components:
         - admxBacked
         - admxIngested
       type: string
+      description: Type of Group Policy File or Definition.
     microsoft.graph.groupPolicyDefinitionClassType:
       title: groupPolicyDefinitionClassType
       enum:
         - user
         - machine
       type: string
+      description: Group Policy Definition Class Type.
     microsoft.graph.groupPolicyMigrationReadiness:
       title: groupPolicyMigrationReadiness
       enum:
@@ -16209,6 +17456,7 @@ components:
         - error
         - notApplicable
       type: string
+      description: Indicates if the Group Policy Object file is covered and ready for Intune migration.
     microsoft.graph.mdmSupportedState:
       title: mdmSupportedState
       enum:
@@ -16217,6 +17465,7 @@ components:
         - unsupported
         - deprecated
       type: string
+      description: Mdm Support Status of the setting.
     microsoft.graph.groupPolicySettingScope:
       title: groupPolicySettingScope
       enum:
@@ -16224,6 +17473,7 @@ components:
         - device
         - user
       type: string
+      description: Scope of the group policy setting.
     microsoft.graph.groupPolicySettingType:
       title: groupPolicySettingType
       enum:
@@ -16235,6 +17485,7 @@ components:
         - auditSetting
         - windowsFirewallSettings
       type: string
+      description: Setting type of the group policy.
     microsoft.graph.groupPolicyUploadedLanguageFile:
       title: groupPolicyUploadedLanguageFile
       type: object
@@ -16275,6 +17526,7 @@ components:
         - uploadFailed
         - removalFailed
       type: string
+      description: Type of Group Policy uploaded definition file status.
     microsoft.graph.groupPolicyOperationStatus:
       title: groupPolicyOperationStatus
       enum:
@@ -16283,6 +17535,7 @@ components:
         - success
         - failed
       type: string
+      description: Type of Group Policy operation status.
     microsoft.graph.groupPolicyOperationType:
       title: groupPolicyOperationType
       enum:
@@ -16294,6 +17547,7 @@ components:
         - updateLanguageFiles
         - remove
       type: string
+      description: Type of Group Policy operation.
     microsoft.graph.companyPortalBlockedAction:
       title: companyPortalBlockedAction
       type: object
@@ -16314,6 +17568,7 @@ components:
         - availableWithoutPrompts
         - unavailable
       type: string
+      description: Options available for enrollment flow customization
     microsoft.graph.mimeContent:
       title: mimeContent
       type: object
@@ -16408,6 +17663,7 @@ components:
         - enabled
         - unresponsive
       type: string
+      description: Partner state of this tenant.
     microsoft.graph.ndesConnectorState:
       title: ndesConnectorState
       enum:
@@ -16415,6 +17671,7 @@ components:
         - active
         - inactive
       type: string
+      description: The current status of the Ndes Connector.
     microsoft.graph.remoteAssistanceOnboardingStatus:
       title: remoteAssistanceOnboardingStatus
       enum:
@@ -16422,6 +17679,7 @@ components:
         - onboarding
         - onboarded
       type: string
+      description: The current TeamViewer connector status
     microsoft.graph.rolePermission:
       title: rolePermission
       type: object
@@ -16448,6 +17706,7 @@ components:
         - allLicensedUsers
         - allDevicesAndLicensedUsers
       type: string
+      description: Specifies the type of scope for a Role Assignment.
     microsoft.graph.userPfxIntendedPurpose:
       title: userPfxIntendedPurpose
       enum:
@@ -16457,6 +17716,7 @@ components:
         - vpn
         - wifi
       type: string
+      description: Supported values for the intended purpose of a user PFX certificate.
     microsoft.graph.userPfxPaddingScheme:
       title: userPfxPaddingScheme
       enum:
@@ -16467,6 +17727,7 @@ components:
         - oaepSha384
         - oaepSha512
       type: string
+      description: Supported values for the padding scheme used by encryption provider.
     microsoft.graph.cloudPcAuditActivityOperationType:
       title: cloudPcAuditActivityOperationType
       enum:
@@ -16608,6 +17869,14 @@ components:
         - osVersionNotSupported
         - sourceImageInvalid
       type: string
+    microsoft.graph.cloudPcGalleryImageStatus:
+      title: cloudPcGalleryImageStatus
+      enum:
+        - supported
+        - supportedWithWarning
+        - notSupported
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionStatus:
       title: cloudPcOnPremisesConnectionStatus
       enum:
@@ -16639,17 +17908,56 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcOnPremisesConnectionType:
+      title: cloudPcOnPremisesConnectionType
+      enum:
+        - hybridAzureADJoin
+        - azureADJoin
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcDomainJoinConfiguration:
+      title: cloudPcDomainJoinConfiguration
+      type: object
+      properties:
+        onPremisesConnectionId:
+          type: string
+          nullable: true
+        regionName:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcProvisioningPolicyImageType:
       title: cloudPcProvisioningPolicyImageType
       enum:
         - gallery
         - custom
       type: string
+    microsoft.graph.microsoftManagedDesktop:
+      title: microsoftManagedDesktop
+      type: object
+      properties:
+        profile:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcServicePlanType:
+      title: cloudPcServicePlanType
+      enum:
+        - enterprise
+        - business
+        - unknownFutureValue
+      type: string
     odata.error:
       required:
         - error
@@ -16699,6 +18007,7 @@ components:
         - family
         - model
       type: string
+      description: Criteria which defines the type of device this access rule will apply to
     microsoft.graph.companyPortalAction:
       title: companyPortalAction
       enum:
@@ -16706,6 +18015,7 @@ components:
         - remove
         - reset
       type: string
+      description: Action on a device that can be executed in the Company Portal
     microsoft.graph.devicePlatformType:
       title: devicePlatformType
       enum:
@@ -16720,6 +18030,7 @@ components:
         - unknown
         - androidAOSP
       type: string
+      description: Supported platform types.
     microsoft.graph.deviceAndAppManagementAssignmentFilterType:
       title: deviceAndAppManagementAssignmentFilterType
       enum:
@@ -16727,6 +18038,7 @@ components:
         - include
         - exclude
       type: string
+      description: Represents type of the assignment filter.
     microsoft.graph.resourceAction:
       title: resourceAction
       type: object
@@ -16788,10 +18100,10 @@ components:
       properties:
         name:
           type: string
-          description: 'Name for this key-value pair. Possible names are: AdditionalWSFedEndpointCheckResult,  AllowedAuthenticationClassReferencesCheckResult, AlwaysRequireAuthenticationCheckResult,   AutoUpdateEnabledCheckResult, ClaimsProviderNameCheckResult, EncryptClaimsCheckResult,  EncryptedNameIdRequiredCheckResult, MonitoringEnabledCheckResult,NotBeforeSkewCheckResult,  RequestMFAFromClaimsProvidersCheckResult, SignedSamlRequestsRequiredCheckResult, AdditionalAuthenticationRulesCheckResult, TokenLifetimeCheckResult,  DelegationAuthorizationRulesCheckResult, IssuanceAuthorizationRulesCheckResult, IssuanceTransformRulesCheckResult.'
+          description: Name for this key-value pair
         value:
           type: string
-          description: 'Value for this key-value pair. Possible result values are 0 (when the validation check passed), 1 (when the validation check failed), or 2 (when the validation check is a warning).'
+          description: Value for this key-value pair
           nullable: true
       additionalProperties:
         type: object
@@ -16827,6 +18139,22 @@ components:
           $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnectionStatus'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDomainJoinType:
+      title: cloudPcDomainJoinType
+      enum:
+        - azureADJoin
+        - hybridAzureADJoin
+        - unknownFutureValue
+      type: string
+    microsoft.graph.microsoftManagedDesktopType:
+      title: microsoftManagedDesktopType
+      enum:
+        - notManaged
+        - premiumManaged
+        - standardManaged
+        - starterManaged
+        - unknownFutureValue
+      type: string
     odata.error.main:
       required:
         - code
@@ -16868,6 +18196,9 @@ components:
         - endpointConnectivityCheckUnknownError
         - azureAdDeviceSyncCheckDeviceNotFound
         - azureAdDeviceSyncCheckLongSyncCircle
+        - azureAdDeviceSyncCheckConnectDisabled
+        - azureAdDeviceSyncCheckDurationExceeded
+        - azureAdDeviceSyncCheckTransientServiceError
         - azureAdDeviceSyncCheckUnknownError
         - resourceAvailabilityCheckNoSubnetIP
         - resourceAvailabilityCheckSubscriptionDisabled
@@ -16876,11 +18207,13 @@ components:
         - resourceAvailabilityCheckSubscriptionTransferred
         - resourceAvailabilityCheckGeneralSubscriptionError
         - resourceAvailabilityCheckUnsupportedVNetRegion
+        - resourceAvailabilityCheckTransientServiceError
         - resourceAvailabilityCheckUnknownError
         - permissionCheckNoSubscriptionReaderRole
         - permissionCheckNoResourceGroupOwnerRole
         - permissionCheckNoVNetContributorRole
         - permissionCheckNoResourceGroupNetworkContributorRole
+        - permissionCheckTransientServiceError
         - permissionCheckUnknownError
         - internalServerErrorDeploymentCanceled
         - internalServerErrorAllocateResourceFailed

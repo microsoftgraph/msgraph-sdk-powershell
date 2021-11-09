@@ -145,7 +145,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
-    "/deviceManagement/comanagedDevices/{managedDevice-id}/users/{user-id}": {
+    "/deviceManagement/comanagedDevices/{managedDevice-id}/users/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
@@ -817,7 +817,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
-    "/deviceManagement/managedDevices/{managedDevice-id}/users/{user-id}": {
+    "/deviceManagement/managedDevices/{managedDevice-id}/users/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
@@ -1045,6 +1045,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
+    "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails/{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId/{userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
     "/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
@@ -1113,6 +1129,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
+    "/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline-id}/batteryHealthMetrics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline-id}/batteryHealthMetrics/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
     "/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline-id}/bestPracticesMetrics": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
@@ -1150,6 +1174,62 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
     "/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline-id}/workFromAnywhereMetrics/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthAppImpact": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthAppImpact/{userExperienceAnalyticsBatteryHealthAppImpact-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthCapacityDetails": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDeviceAppImpact": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDeviceAppImpact/{userExperienceAnalyticsBatteryHealthDeviceAppImpact-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance/{userExperienceAnalyticsBatteryHealthDevicePerformance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory/{userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthModelPerformance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthModelPerformance/{userExperienceAnalyticsBatteryHealthModelPerformance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthOsPerformance": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthOsPerformance/{userExperienceAnalyticsBatteryHealthOsPerformance-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsBatteryHealthRuntimeDetails": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
@@ -1257,6 +1337,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
+    "/deviceManagement/userExperienceAnalyticsModelScores": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsModelScores/{userExperienceAnalyticsModelScores-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
     "/deviceManagement/userExperienceAnalyticsNotAutopilotReadyDevice": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
@@ -1318,6 +1406,10 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
     "/deviceManagement/userExperienceAnalyticsScoreHistory/{userExperienceAnalyticsScoreHistory-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
+    },
+    "/deviceManagement/userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.yml"
     },
