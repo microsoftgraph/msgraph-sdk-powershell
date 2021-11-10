@@ -17,13 +17,13 @@ For a list of modules found in this repository, see the [Microsoft Graph PowerSh
 
 All the modules are published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
 
-```ps
+``` powershell
 Install-Module Microsoft.Graph
 ```
 
 If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameters to avoid command name conflicts:
 
-```ps
+``` powershell
  Install-Module Microsoft.Graph -AllowClobber -Force
 ```
 
@@ -36,21 +36,21 @@ There is a set of samples in the `samples` folder to help in getting started wit
     The SDK supports two types of authentication: delegated access and app-only access.
     - Delegated access.
 
-        ```ps
+        ``` powershell
         # Using interactive authentication.
         Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
         ```
 
         or
 
-        ```ps
+        ``` powershell
         # Using device code flow.
         Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDeviceAuthentication
         ```
 
         or
 
-        ```ps
+        ``` powershell
         # Using your own access token.
         Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -AccessToken $AccessToken
         ```
@@ -59,21 +59,21 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
         The certificate will be loaded from `Cert:\CurrentUser\My\` store when `-CertificateThumbprint` or `-CertificateName` is specified. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
 
-        ```ps
+        ``` powershell
         # Using -CertificateThumbprint
         Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateThumbprint "YOUR_CERT_THUMBPRINT"
         ```
 
         or
 
-        ```ps
+        ``` powershell
         # Using -CertificateName
         Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT"
         ```
 
         or
 
-        ```ps
+        ``` powershell
         # Using -Certificate
         $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
         Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert
@@ -81,19 +81,19 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 2. List users in your tenant.
 
-    ```ps
+    ``` powershell
     Get-MgUser -Top 10 -Property Id, DisplayName, BusinessPhones | Format-Table Id, DisplayName, BusinessPhones
     ```
 
 3. Filter a user in your tenant.
 
-    ```ps
+    ``` powershell
     $user = Get-MgUser -Filter "displayName eq 'Megan Bowen'"
     ```
 
 4. Create a new app registration.
 
-    ```ps
+    ``` powershell
     New-MgApplication -DisplayName "ScriptedGraphPSApp" `
                       -SignInAudience "AzureADMyOrg" `
                       -Web @{ RedirectUris = "https://localhost"}
@@ -101,7 +101,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 5. Sign out of the current logged-in context i.e. app only or delegated access.
 
-    ```ps
+    ``` powershell
     Disconnect-MgGraph
     ```
 
@@ -109,7 +109,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
 By default, the SDK uses the Microsoft Graph REST API v1.0. You can change this by using the `Select-MgProfile` command. This reloads all modules and only loads commands that call beta endpoint.
 
-```ps
+``` powershell
 Select-MgProfile -Name "beta"
 ```
 
