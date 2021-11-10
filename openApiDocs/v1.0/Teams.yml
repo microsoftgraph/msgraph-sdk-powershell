@@ -3334,7 +3334,6 @@ paths:
                 - specialization
                 - visibility
                 - webUrl
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3342,6 +3341,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
         - name: $expand
           in: query
@@ -3354,7 +3354,6 @@ paths:
             items:
               enum:
                 - '*'
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3362,6 +3361,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
       responses:
         '200':
@@ -3371,10 +3371,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
-            schedule:
-              operationId: groups.Team.GetSchedule
-              parameters:
-                group-id: $request.path.group-id
             channels:
               operationId: groups.Team.ListChannels
               parameters:
@@ -3401,6 +3397,10 @@ paths:
                 group-id: $request.path.group-id
             template:
               operationId: groups.Team.GetTemplate
+              parameters:
+                group-id: $request.path.group-id
+            schedule:
+              operationId: groups.Team.GetSchedule
               parameters:
                 group-id: $request.path.group-id
         default:
@@ -3531,7 +3531,6 @@ paths:
                 - specialization
                 - visibility
                 - webUrl
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3539,6 +3538,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
         - name: $expand
           in: query
@@ -3551,7 +3551,6 @@ paths:
             items:
               enum:
                 - '*'
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3559,6 +3558,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
       responses:
         '200':
@@ -3643,7 +3643,6 @@ paths:
                 - specialization
                 - visibility
                 - webUrl
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3651,6 +3650,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
         - name: $expand
           in: query
@@ -3663,7 +3663,6 @@ paths:
             items:
               enum:
                 - '*'
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -3671,6 +3670,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
       responses:
         '200':
@@ -3680,10 +3680,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
-            schedule:
-              operationId: teams.GetSchedule
-              parameters:
-                team-id: $request.path.team-id
             channels:
               operationId: teams.ListChannels
               parameters:
@@ -3710,6 +3706,10 @@ paths:
                 team-id: $request.path.team-id
             template:
               operationId: teams.GetTemplate
+              parameters:
+                team-id: $request.path.team-id
+            schedule:
+              operationId: teams.GetSchedule
               parameters:
                 team-id: $request.path.team-id
         default:
@@ -13737,7 +13737,6 @@ paths:
                 - specialization
                 - visibility
                 - webUrl
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -13745,6 +13744,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
         - name: $expand
           in: query
@@ -13757,7 +13757,6 @@ paths:
             items:
               enum:
                 - '*'
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -13765,6 +13764,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
       responses:
         '200':
@@ -13866,7 +13866,6 @@ paths:
                 - specialization
                 - visibility
                 - webUrl
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -13874,6 +13873,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
         - name: $expand
           in: query
@@ -13886,7 +13886,6 @@ paths:
             items:
               enum:
                 - '*'
-                - schedule
                 - channels
                 - group
                 - installedApps
@@ -13894,6 +13893,7 @@ paths:
                 - operations
                 - primaryChannel
                 - template
+                - schedule
               type: string
       responses:
         '200':
@@ -13903,11 +13903,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.team'
           links:
-            schedule:
-              operationId: users.JoinedTeams.GetSchedule
-              parameters:
-                user-id: $request.path.user-id
-                team-id: $request.path.team-id
             channels:
               operationId: users.JoinedTeams.ListChannels
               parameters:
@@ -13940,6 +13935,11 @@ paths:
                 team-id: $request.path.team-id
             template:
               operationId: users.JoinedTeams.GetTemplate
+              parameters:
+                user-id: $request.path.user-id
+                team-id: $request.path.team-id
+            schedule:
+              operationId: users.JoinedTeams.GetSchedule
               parameters:
                 user-id: $request.path.user-id
                 team-id: $request.path.team-id
@@ -14894,7 +14894,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-      description: Key value pair for storing custom settings
     microsoft.graph.teamworkNotificationRecipient:
       title: teamworkNotificationRecipient
       type: object
@@ -14968,8 +14967,6 @@ components:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
-            schedule:
-              $ref: '#/components/schemas/microsoft.graph.schedule'
             channels:
               type: array
               items:
@@ -14996,6 +14993,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
             type: object
     microsoft.graph.channel:
@@ -23056,9 +23055,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - msSense
-        - intuneAosp
       type: string
-      description: Management agent type.
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:

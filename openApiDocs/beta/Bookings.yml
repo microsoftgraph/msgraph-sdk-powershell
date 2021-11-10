@@ -2273,6 +2273,7 @@ components:
               nullable: true
             customerTimeZone:
               type: string
+              description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
               nullable: true
             duration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
@@ -2299,8 +2300,10 @@ components:
               nullable: true
             isLocationOnline:
               type: boolean
+              description: True indicates that the appointment will be held online. Default value is false.
             joinWebUrl:
               type: string
+              description: The URL of the online meeting for the appointment.
               nullable: true
             onlineMeetingUrl:
               type: string
@@ -2348,6 +2351,7 @@ components:
               nullable: true
             smsNotificationsEnabled:
               type: boolean
+              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
             staffMemberIds:
               type: array
               items:
@@ -2369,10 +2373,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
+              description: 'Addresses associated with the customer, including home, business and other addresses.'
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
+              description: 'Phone numbers associated with the customer, including home, business and mobile numbers.'
           additionalProperties:
             type: object
           description: Represents a customer of the business.
@@ -2412,6 +2418,7 @@ components:
               description: True means this service is not available to customers for booking.
             isLocationOnline:
               type: boolean
+              description: True indicates that the appointments for the service will be held online. Default value is false.
             notes:
               type: string
               description: Additional information about this service.
@@ -2430,6 +2437,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bookingSchedulingPolicy'
             smsNotificationsEnabled:
               type: boolean
+              description: True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.
             staffMemberIds:
               type: array
               items:
@@ -2438,7 +2446,7 @@ components:
               description: Represents those staff members who provide this service.
             webUrl:
               type: string
-              description: The URL of the booking service.
+              description: The URL a customer uses to access the service.
               nullable: true
           additionalProperties:
             type: object
@@ -2463,6 +2471,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.bookingStaffRole'
             timeZone:
               type: string
+              description: 'The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.'
               nullable: true
             useBusinessHours:
               type: boolean

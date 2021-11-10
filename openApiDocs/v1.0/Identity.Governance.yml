@@ -1885,6 +1885,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - additionalNotificationRecipients
+                - additionalNotificationRecipients desc
                 - createdBy
                 - createdBy desc
                 - createdDateTime
@@ -1921,6 +1923,7 @@ paths:
             items:
               enum:
                 - id
+                - additionalNotificationRecipients
                 - createdBy
                 - createdDateTime
                 - descriptionForAdmins
@@ -2018,6 +2021,7 @@ paths:
             items:
               enum:
                 - id
+                - additionalNotificationRecipients
                 - createdBy
                 - createdDateTime
                 - descriptionForAdmins
@@ -5582,6 +5586,11 @@ components:
         - title: accessReviewScheduleDefinition
           type: object
           properties:
+            additionalNotificationRecipients:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientItem'
+              description: Defines the list of additional users or group members to be notified of the access review progress.
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.userIdentity'
             createdDateTime:
@@ -5955,6 +5964,18 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.accessReviewNotificationRecipientItem:
+      title: accessReviewNotificationRecipientItem
+      type: object
+      properties:
+        notificationRecipientScope:
+          $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
+        notificationTemplateType:
+          type: string
+          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.userIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -6127,6 +6148,11 @@ components:
           type: string
           format: base64url
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewNotificationRecipientScope:
+      title: accessReviewNotificationRecipientScope
+      type: object
       additionalProperties:
         type: object
     microsoft.graph.accessReviewApplyAction:

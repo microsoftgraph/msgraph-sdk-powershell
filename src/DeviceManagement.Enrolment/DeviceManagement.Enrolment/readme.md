@@ -46,10 +46,9 @@ directive:
       subject: ^DeviceManagementWindowAutopilotDeviceIdentity$
     remove: true
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 1.8.0
+module-version: 1.8.1
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

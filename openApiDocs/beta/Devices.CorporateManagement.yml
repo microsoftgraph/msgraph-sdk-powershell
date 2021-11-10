@@ -240,6 +240,8 @@ paths:
                 - disableAppPinIfDevicePinIsSet desc
                 - fingerprintBlocked
                 - fingerprintBlocked desc
+                - gracePeriodToBlockAppsDuringOffClockHours
+                - gracePeriodToBlockAppsDuringOffClockHours desc
                 - managedBrowser
                 - managedBrowser desc
                 - managedBrowserToOpenLinksRequired
@@ -402,6 +404,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -579,6 +582,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -1186,6 +1190,8 @@ paths:
                 - disableAppPinIfDevicePinIsSet desc
                 - fingerprintBlocked
                 - fingerprintBlocked desc
+                - gracePeriodToBlockAppsDuringOffClockHours
+                - gracePeriodToBlockAppsDuringOffClockHours desc
                 - managedBrowser
                 - managedBrowser desc
                 - managedBrowserToOpenLinksRequired
@@ -1366,6 +1372,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -1550,6 +1557,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -3958,6 +3966,8 @@ paths:
                 - disableAppPinIfDevicePinIsSet desc
                 - fingerprintBlocked
                 - fingerprintBlocked desc
+                - gracePeriodToBlockAppsDuringOffClockHours
+                - gracePeriodToBlockAppsDuringOffClockHours desc
                 - managedBrowser
                 - managedBrowser desc
                 - managedBrowserToOpenLinksRequired
@@ -4036,10 +4046,14 @@ paths:
                 - disableProtectionOfManagedOutboundOpenInData desc
                 - exemptedAppProtocols
                 - exemptedAppProtocols desc
+                - exemptedUniversalLinks
+                - exemptedUniversalLinks desc
                 - faceIdBlocked
                 - faceIdBlocked desc
                 - filterOpenInToOnlyManagedApps
                 - filterOpenInToOnlyManagedApps desc
+                - managedUniversalLinks
+                - managedUniversalLinks desc
                 - minimumRequiredSdkVersion
                 - minimumRequiredSdkVersion desc
                 - minimumWipeSdkVersion
@@ -4082,6 +4096,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -4121,8 +4136,10 @@ paths:
                 - deployedAppCount
                 - disableProtectionOfManagedOutboundOpenInData
                 - exemptedAppProtocols
+                - exemptedUniversalLinks
                 - faceIdBlocked
                 - filterOpenInToOnlyManagedApps
+                - managedUniversalLinks
                 - minimumRequiredSdkVersion
                 - minimumWipeSdkVersion
                 - protectInboundDataFromUnknownSources
@@ -4240,6 +4257,7 @@ paths:
                 - dialerRestrictionLevel
                 - disableAppPinIfDevicePinIsSet
                 - fingerprintBlocked
+                - gracePeriodToBlockAppsDuringOffClockHours
                 - managedBrowser
                 - managedBrowserToOpenLinksRequired
                 - maximumAllowedDeviceThreatLevel
@@ -4279,8 +4297,10 @@ paths:
                 - deployedAppCount
                 - disableProtectionOfManagedOutboundOpenInData
                 - exemptedAppProtocols
+                - exemptedUniversalLinks
                 - faceIdBlocked
                 - filterOpenInToOnlyManagedApps
+                - managedUniversalLinks
                 - minimumRequiredSdkVersion
                 - minimumWipeSdkVersion
                 - protectInboundDataFromUnknownSources
@@ -24011,6 +24031,8 @@ paths:
                 - createdDateTime desc
                 - creationType
                 - creationType desc
+                - customSecurityAttributes
+                - customSecurityAttributes desc
                 - department
                 - department desc
                 - deviceKeys
@@ -24160,6 +24182,7 @@ paths:
                 - country
                 - createdDateTime
                 - creationType
+                - customSecurityAttributes
                 - department
                 - deviceKeys
                 - displayName
@@ -24445,6 +24468,8 @@ paths:
                 - createdDateTime desc
                 - creationType
                 - creationType desc
+                - customSecurityAttributes
+                - customSecurityAttributes desc
                 - department
                 - department desc
                 - deviceKeys
@@ -26938,12 +26963,24 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.keyValuePair'
               description: Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
+            exemptedUniversalLinks:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A list of custom urls that are allowed to invocate an unmanaged app
             faceIdBlocked:
               type: boolean
               description: Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
             filterOpenInToOnlyManagedApps:
               type: boolean
               description: Defines if open-in operation is supported from the managed app to the filesharing locations selected. This setting only applies when AllowedOutboundDataTransferDestinations is set to ManagedApps and DisableProtectionOfManagedOutboundOpenInData is set to False.
+            managedUniversalLinks:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A list of custom urls that are allowed to invocate a managed app
             minimumRequiredSdkVersion:
               type: string
               description: Versions less than the specified version will block the managed app from accessing company data.
@@ -29452,6 +29489,8 @@ components:
               type: string
               description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).'
               nullable: true
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
               description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
@@ -30356,6 +30395,12 @@ components:
             fingerprintBlocked:
               type: boolean
               description: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
+            gracePeriodToBlockAppsDuringOffClockHours:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              description: A grace period before blocking app access during off clock hours.
+              format: duration
+              nullable: true
             managedBrowser:
               $ref: '#/components/schemas/microsoft.graph.managedBrowserType'
             managedBrowserToOpenLinksRequired:
@@ -31955,6 +32000,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.customSecurityAttributeValue:
+      title: customSecurityAttributeValue
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceKey:
       title: deviceKey
       type: object
@@ -32024,6 +32074,12 @@ components:
         error:
           type: string
           description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the state of the license assignment was last updated.
+          format: date-time
           nullable: true
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -34333,12 +34389,12 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a live event. Read-only.
+              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -34382,7 +34438,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isCancelled:
               type: boolean
@@ -34406,7 +34462,7 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a live event. Read-only.
+              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -38578,19 +38634,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -39733,15 +39789,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
+              description: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
               format: date-time
             deviceId:
               type: string
-              description: ID of the device the BitLocker key is originally backed up from.
+              description: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
               nullable: true
             key:
               type: string
-              description: The BitLocker recovery key.
+              description: The BitLocker recovery key. Returned only on $select. Not nullable.
             volumeType:
               $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
@@ -41820,7 +41876,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
         notificationTemplateType:
           type: string
-          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
           nullable: true
       additionalProperties:
         type: object
@@ -41858,7 +41914,7 @@ components:
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.'
+          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.'
           format: duration
           nullable: true
         recommendationsEnabled:
