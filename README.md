@@ -1,7 +1,9 @@
 # Microsoft Graph PowerShell SDK
+
 The Microsoft Graph PowerShell SDK is a collection of PowerShell modules that contain commands for calling Microsoft Graph service.
 
-# Modules
+## Modules
+
 The table below contains our Microsoft Graph rollup module. This module installs all the service modules as its dependencies.
 Description       | Module Name       | PowerShell Gallery Link
 ----------------- | ----------------- | ------------------------
@@ -10,6 +12,7 @@ Microsoft Graph   | `Microsoft.Graph` | [![Mg]][MgGallery]
 For a list of modules found in this repository, see the [Microsoft Graph PowerShell modules](https://github.com/microsoftgraph/msgraph-sdk-powershell/wiki/MS-Graph-PowerShell-Modules) document.
 
 ## Installation
+
 ### PowerShell Gallery
 
 All the modules are published on [PowerShell Gallery](https://www.powershellgallery.com/packages/Microsoft.Graph). Installing is as simple as:
@@ -19,9 +22,11 @@ Install-Module Microsoft.Graph
 ```
 
 If you are upgrading from our preview modules, run `Install-Module` with AllowClobber and Force parameters to avoid command name conflicts:
+
 ```ps
  Install-Module Microsoft.Graph -AllowClobber -Force
 ```
+
 There is a set of samples in the `samples` folder to help in getting started with the library. If you have an older version of these modules installed, there are extra uninstall instructions in the [InstallModule](./samples/0-InstallModule.ps1) script.
 
 ## Usage
@@ -29,17 +34,30 @@ There is a set of samples in the `samples` folder to help in getting started wit
 1. Authentication
 
     The SDK supports two types of authentication: delegated access and app-only access.
-    - Delegated access via Device Code Flow.
+    - Delegated access.
 
         ```ps
+        # Using interactive authentication.
         Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All"
+        ```
+
+        or
+
+        ```ps
+        # Using device code flow.
+        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -UseDeviceAuthentication
+        ```
+
+        or
+
+        ```ps
+        # Using your own access token.
+        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -AccessToken $AccessToken
         ```
 
     - App-only access via Client Credential with a certificate.
 
-        The certificate will be loaded from `Cert:\CurrentUser\My\` store. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
-
-        You can pass either `-CertificateThumbprint` or `-CertificateName` to `Connect-MgGraph`.
+        The certificate will be loaded from `Cert:\CurrentUser\My\` store when `-CertificateThumbprint` or `-CertificateName` is specified. Ensure the certificate is present in the store before calling `Connect-MgGraph`.
 
         ```ps
         # Using -CertificateThumbprint
@@ -51,6 +69,14 @@ There is a set of samples in the `samples` folder to help in getting started wit
         ```ps
         # Using -CertificateName
         Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -CertificateName "YOUR_CERT_SUBJECT"
+        ```
+
+        or
+
+        ```ps
+        # Using -Certificate
+        $Cert = Get-ChildItem Cert:\LocalMachine\My\$CertThumbprint
+        Connect-MgGraph -ClientId "YOUR_APP_ID" -TenantId "YOUR_TENANT_ID" -Certificate $Cert
         ```
 
 2. List users in your tenant.
@@ -78,7 +104,9 @@ There is a set of samples in the `samples` folder to help in getting started wit
     ```ps
     Disconnect-MgGraph
     ```
+
 ## API Version
+
 By default, the SDK uses the Microsoft Graph REST API v1.0. You can change this by using the `Select-MgProfile` command. This reloads all modules and only loads commands that call beta endpoint.
 
 ```ps
@@ -96,14 +124,18 @@ If permission-related errors occur and the user you authenticated within the pop
 
 ## Known Issues
 
-- If you attempt to run `Connect-MgGraph` from the PowerShell ISE (integrated scripting environment), the command fails with an error "Device code terminal timed-out after {X} seconds".  This is a known issue, and it is recommended to use a PowerShell host other than the ISE.
 - Using `-Property {PropertyName}` parameter will not select the property as the output of the command. All commands return CLR objects, and customers should pipe the command outputs to `Format-Table` or `Select-Object` to return individual properties.
+
+- Customers upgrading from previous versions of the SDK may encounter auth prompts on every command call. If this happens, one can use the following steps to reset their token cache:
+  - Use `Disconnect-MgGraph` to sign out of the current session.
+  - Run `Remove-Item "$env:USERPROFILE\.graph" -Recurse -Force` to delete your token cache.
+  - Run `Connect-MgGraph` to reconstruct a clean token cache.
 
 ## Issues
 
-If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue in our GitHub issues page.
+If you find any bugs when using the Microsoft Graph PowerShell modules, please file an issue on our GitHub issues page.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
 ## License
 
