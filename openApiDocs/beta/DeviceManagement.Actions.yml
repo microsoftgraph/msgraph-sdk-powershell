@@ -19146,12 +19146,85 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reboot':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reboot
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.rename':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action rename
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reprovision':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action troubleshoot
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
       parameters:
         - name: cloudPC-id
           in: path

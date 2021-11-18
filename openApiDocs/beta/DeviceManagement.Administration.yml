@@ -12674,14 +12674,20 @@ paths:
               enum:
                 - id
                 - id desc
+                - aadDeviceId
+                - aadDeviceId desc
                 - displayName
                 - displayName desc
                 - gracePeriodEndDateTime
                 - gracePeriodEndDateTime desc
                 - imageDisplayName
                 - imageDisplayName desc
+                - lastLoginResult
+                - lastLoginResult desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
+                - lastRemoteActionResult
+                - lastRemoteActionResult desc
                 - managedDeviceId
                 - managedDeviceId desc
                 - managedDeviceName
@@ -12696,6 +12702,8 @@ paths:
                 - servicePlanId desc
                 - servicePlanName
                 - servicePlanName desc
+                - servicePlanType
+                - servicePlanType desc
                 - status
                 - status desc
                 - statusDetails
@@ -12714,10 +12722,13 @@ paths:
             items:
               enum:
                 - id
+                - aadDeviceId
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
+                - lastLoginResult
                 - lastModifiedDateTime
+                - lastRemoteActionResult
                 - managedDeviceId
                 - managedDeviceName
                 - onPremisesConnectionName
@@ -12725,6 +12736,7 @@ paths:
                 - provisioningPolicyName
                 - servicePlanId
                 - servicePlanName
+                - servicePlanType
                 - status
                 - statusDetails
                 - userPrincipalName
@@ -12813,10 +12825,13 @@ paths:
             items:
               enum:
                 - id
+                - aadDeviceId
                 - displayName
                 - gracePeriodEndDateTime
                 - imageDisplayName
+                - lastLoginResult
                 - lastModifiedDateTime
+                - lastRemoteActionResult
                 - managedDeviceId
                 - managedDeviceName
                 - onPremisesConnectionName
@@ -12824,6 +12839,7 @@ paths:
                 - provisioningPolicyName
                 - servicePlanId
                 - servicePlanName
+                - servicePlanType
                 - status
                 - statusDetails
                 - userPrincipalName
@@ -12929,12 +12945,16 @@ paths:
                 - id desc
                 - displayName
                 - displayName desc
+                - expirationDate
+                - expirationDate desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - operatingSystem
                 - operatingSystem desc
                 - osBuildNumber
                 - osBuildNumber desc
+                - osStatus
+                - osStatus desc
                 - sourceImageResourceId
                 - sourceImageResourceId desc
                 - status
@@ -12956,9 +12976,11 @@ paths:
               enum:
                 - id
                 - displayName
+                - expirationDate
                 - lastModifiedDateTime
                 - operatingSystem
                 - osBuildNumber
+                - osStatus
                 - sourceImageResourceId
                 - status
                 - statusDetails
@@ -13049,9 +13071,11 @@ paths:
               enum:
                 - id
                 - displayName
+                - expirationDate
                 - lastModifiedDateTime
                 - operatingSystem
                 - osBuildNumber
+                - osStatus
                 - sourceImageResourceId
                 - status
                 - statusDetails
@@ -13136,6 +13160,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_ListGalleryImages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13243,6 +13268,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to galleryImages for deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_CreateGalleryImages
       requestBody:
         description: New navigation property
@@ -13266,6 +13292,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get galleryImages from deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_GetGalleryImages
       parameters:
         - name: cloudPcGalleryImage-id
@@ -13325,6 +13352,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property galleryImages in deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_UpdateGalleryImages
       parameters:
         - name: cloudPcGalleryImage-id
@@ -13351,6 +13379,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property galleryImages for deviceManagement
+      description: The gallery image resource on Cloud PC.
       operationId: deviceManagement.virtualEndpoint_DeleteGalleryImages
       parameters:
         - name: cloudPcGalleryImage-id
@@ -16683,6 +16712,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcGalleryImage'
+              description: The gallery image resource on Cloud PC.
             onPremisesConnections:
               type: array
               items:
@@ -16758,6 +16788,9 @@ components:
         - title: cloudPC
           type: object
           properties:
+            aadDeviceId:
+              type: string
+              nullable: true
             displayName:
               type: string
               description: The Cloud PC display name.
@@ -16772,11 +16805,15 @@ components:
               type: string
               description: Name of the OS image that's on the Cloud PC.
               nullable: true
+            lastLoginResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               description: 'The Cloud PC''s last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
+            lastRemoteActionResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             managedDeviceId:
               type: string
               description: The Cloud PC’s Intune device ID.
@@ -16805,6 +16842,8 @@ components:
               type: string
               description: The Cloud PC's service plan name.
               nullable: true
+            servicePlanType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
             status:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
             statusDetails:
@@ -16825,6 +16864,11 @@ components:
               type: string
               description: The image's display name.
               nullable: true
+            expirationDate:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+              type: string
+              format: date
+              nullable: true
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -16839,6 +16883,8 @@ components:
               type: string
               description: 'The image''s OS build version. For example: 1909.'
               nullable: true
+            osStatus:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcDeviceImageOsStatus'
             sourceImageResourceId:
               type: string
               description: 'The ID of the source image resource on Azure. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}''.'
@@ -16861,44 +16907,55 @@ components:
           properties:
             displayName:
               type: string
+              description: The official display name of the gallery image. Read-only.
               nullable: true
             endDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
               format: date
               nullable: true
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date when the image is no longer available. Read-only.
               format: date
               nullable: true
             offer:
               type: string
+              description: The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
               nullable: true
             offerDisplayName:
               type: string
+              description: 'The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.'
               nullable: true
             publisher:
               type: string
+              description: The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
               nullable: true
             recommendedSku:
               type: string
+              description: Recommended Cloud PC SKU for this gallery image. Read-only.
               nullable: true
             sizeInGB:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The size of this image in gigabytes. Read-only.
               format: int32
               nullable: true
             sku:
               type: string
+              description: The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
               nullable: true
             skuDisplayName:
               type: string
+              description: 'The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.'
               nullable: true
             startDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date when the image becomes available. Read-only.
               format: date
               nullable: true
             status:
@@ -17822,6 +17879,58 @@ components:
           description: The type of the audit resource.
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcLoginResult:
+      title: cloudPcLoginResult
+      type: object
+      properties:
+        time:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          description: 'The specified action. Supported values: Reprovision, Resize.'
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcServicePlanType:
+      title: cloudPcServicePlanType
+      enum:
+        - enterprise
+        - business
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcStatus:
       title: cloudPcStatus
       enum:
@@ -17843,10 +17952,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the cloud PC status.
+          description: Any additional information about the Cloud PC status.
         code:
           type: string
-          description: The code associated with the cloud PC status.
+          description: The code associated with the Cloud PC status.
           nullable: true
         message:
           type: string
@@ -17854,6 +17963,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcDeviceImageOsStatus:
+      title: cloudPcDeviceImageOsStatus
+      enum:
+        - supported
+        - supportedWithWarning
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcDeviceImageStatus:
       title: cloudPcDeviceImageStatus
       enum:
@@ -17868,6 +17984,8 @@ components:
         - sourceImageNotFound
         - osVersionNotSupported
         - sourceImageInvalid
+        - sourceImageNotGeneralized
+        - unknownFutureValue
       type: string
     microsoft.graph.cloudPcGalleryImageStatus:
       title: cloudPcGalleryImageStatus
@@ -17921,9 +18039,11 @@ components:
       properties:
         onPremisesConnectionId:
           type: string
+          description: 'The on-premises connection ID that matches the virtual network IT admins want the provisioning policy to use when they create Cloud PCs. You can use this property in both domain join types: Azure AD joined or Hybrid Azure AD joined. If you enter an onPremisesConnectionId, leave regionName as empty.'
           nullable: true
         regionName:
           type: string
+          description: 'The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.'
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.cloudPcDomainJoinType'
@@ -17951,13 +18071,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.cloudPcServicePlanType:
-      title: cloudPcServicePlanType
-      enum:
-        - enterprise
-        - business
-        - unknownFutureValue
-      type: string
     odata.error:
       required:
         - error
@@ -18094,6 +18207,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.actionState:
+      title: actionState
+      enum:
+        - none
+        - pending
+        - canceled
+        - active
+        - done
+        - failed
+        - notSupported
+      type: string
     microsoft.graph.keyValuePair:
       title: keyValuePair
       type: object
@@ -18189,6 +18313,9 @@ components:
         - adJoinCheckOrganizationalUnitIncorrectFormat
         - adJoinCheckComputerObjectAlreadyExists
         - adJoinCheckAccessDenied
+        - adJoinCheckCredentialsExpired
+        - adJoinCheckAccountLockedOrDisabled
+        - adJoinCheckAccountQuotaExceeded
         - adJoinCheckUnknownError
         - endpointConnectivityCheckCloudPcUrlNotAllowListed
         - endpointConnectivityCheckWVDUrlNotAllowListed
@@ -18207,6 +18334,15 @@ components:
         - resourceAvailabilityCheckSubscriptionTransferred
         - resourceAvailabilityCheckGeneralSubscriptionError
         - resourceAvailabilityCheckUnsupportedVNetRegion
+        - resourceAvailabilityCheckResourceGroupInvalid
+        - resourceAvailabilityCheckVNetInvalid
+        - resourceAvailabilityCheckSubnetInvalid
+        - resourceAvailabilityCheckResourceGroupBeingDeleted
+        - resourceAvailabilityCheckVNetBeingMoved
+        - resourceAvailabilityCheckSubnetDelegationFailed
+        - resourceAvailabilityCheckSubnetWithExternalResources
+        - resourceAvailabilityCheckResourceGroupLockedForReadonly
+        - resourceAvailabilityCheckResourceGroupLockedForDelete
         - resourceAvailabilityCheckTransientServiceError
         - resourceAvailabilityCheckUnknownError
         - permissionCheckNoSubscriptionReaderRole
@@ -18220,6 +18356,7 @@ components:
         - internalServerErrorVMDeploymentTimeout
         - internalServerErrorUnableToRunDscScript
         - internalServerUnknownError
+        - unknownFutureValue
       type: string
     odata.error.detail:
       required:

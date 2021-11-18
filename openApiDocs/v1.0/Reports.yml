@@ -2030,7 +2030,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2053,7 +2054,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2078,7 +2080,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2101,7 +2104,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2124,7 +2128,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2147,7 +2152,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2172,7 +2178,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2195,7 +2202,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2218,7 +2226,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2284,7 +2293,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2307,7 +2317,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2330,7 +2341,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2353,7 +2365,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3564,7 +3577,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3587,7 +3601,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3612,7 +3627,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3635,7 +3651,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3658,7 +3675,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3681,7 +3699,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3706,7 +3725,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3729,7 +3749,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function

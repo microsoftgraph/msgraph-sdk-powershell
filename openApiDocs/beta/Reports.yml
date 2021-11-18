@@ -133,6 +133,8 @@ paths:
                 - resultReason desc
                 - targetResources
                 - targetResources desc
+                - userAgent
+                - userAgent desc
               type: string
         - name: $select
           in: query
@@ -156,6 +158,7 @@ paths:
                 - result
                 - resultReason
                 - targetResources
+                - userAgent
               type: string
         - name: $expand
           in: query
@@ -252,6 +255,7 @@ paths:
                 - result
                 - resultReason
                 - targetResources
+                - userAgent
               type: string
         - name: $expand
           in: query
@@ -4280,9 +4284,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailActivitySummary'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4305,9 +4308,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailActivitySummary'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4332,9 +4334,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailActivityUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4357,9 +4358,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailActivityUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4382,9 +4382,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailAppUsageAppsUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4407,9 +4406,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailAppUsageUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4434,9 +4432,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailAppUsageUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4459,9 +4456,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailAppUsageUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4484,9 +4480,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.emailAppUsageVersionsUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4647,9 +4642,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.mailboxUsageDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4672,9 +4666,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.mailboxUsageMailboxCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4697,9 +4690,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.mailboxUsageQuotaStatusMailboxCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4722,9 +4714,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.mailboxUsageStorage'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6061,9 +6052,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageDistributionUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6086,9 +6076,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageDistributionUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6111,9 +6100,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6136,9 +6124,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6163,9 +6150,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6188,9 +6174,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsDeviceUsageUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6213,9 +6198,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6238,9 +6222,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityDistributionUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6263,9 +6246,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityDistributionUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6288,9 +6270,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6313,9 +6294,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6338,9 +6318,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityUserCounts'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6365,9 +6344,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6390,9 +6368,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.teamsUserActivityUserDetail'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -8146,6 +8123,9 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
               description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
+            userAgent:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.provisioningObjectSummary:
@@ -8994,324 +8974,6 @@ components:
               description: A collection of registration count and status information for users in your tenant.
           additionalProperties:
             type: object
-    microsoft.graph.emailActivitySummary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailActivitySummary
-          type: object
-          properties:
-            read:
-              type: integer
-              format: int64
-              nullable: true
-            receive:
-              type: integer
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            send:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.emailActivityUserDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailActivityUserDetail
-          type: object
-          properties:
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            readCount:
-              type: integer
-              format: int64
-              nullable: true
-            receiveCount:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            sendCount:
-              type: integer
-              format: int64
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.emailAppUsageAppsUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailAppUsageAppsUserCounts
-          type: object
-          properties:
-            imap4App:
-              type: integer
-              format: int64
-              nullable: true
-            mailForMac:
-              type: integer
-              format: int64
-              nullable: true
-            otherForMobile:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMobile:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWeb:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWindows:
-              type: integer
-              format: int64
-              nullable: true
-            pop3App:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            smtpApp:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.emailAppUsageUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailAppUsageUserCounts
-          type: object
-          properties:
-            imap4App:
-              type: integer
-              format: int64
-              nullable: true
-            mailForMac:
-              type: integer
-              format: int64
-              nullable: true
-            otherForMobile:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMac:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForMobile:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWeb:
-              type: integer
-              format: int64
-              nullable: true
-            outlookForWindows:
-              type: integer
-              format: int64
-              nullable: true
-            pop3App:
-              type: integer
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            smtpApp:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.emailAppUsageUserDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailAppUsageUserDetail
-          type: object
-          properties:
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            imap4App:
-              type: array
-              items:
-                type: string
-                nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            mailForMac:
-              type: array
-              items:
-                type: string
-                nullable: true
-            otherForMobile:
-              type: array
-              items:
-                type: string
-                nullable: true
-            outlookForMac:
-              type: array
-              items:
-                type: string
-                nullable: true
-            outlookForMobile:
-              type: array
-              items:
-                type: string
-                nullable: true
-            outlookForWeb:
-              type: array
-              items:
-                type: string
-                nullable: true
-            outlookForWindows:
-              type: array
-              items:
-                type: string
-                nullable: true
-            pop3App:
-              type: array
-              items:
-                type: string
-                nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            smtpApp:
-              type: array
-              items:
-                type: string
-                nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.emailAppUsageVersionsUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: emailAppUsageVersionsUserCounts
-          type: object
-          properties:
-            outlook2007:
-              type: integer
-              format: int64
-              nullable: true
-            outlook2010:
-              type: integer
-              format: int64
-              nullable: true
-            outlook2013:
-              type: integer
-              format: int64
-              nullable: true
-            outlook2016:
-              type: integer
-              format: int64
-              nullable: true
-            outlook2019:
-              type: integer
-              format: int64
-              nullable: true
-            outlookM365:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            undetermined:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.archivedPrintJob:
       title: archivedPrintJob
       type: object
@@ -9385,169 +9047,6 @@ components:
           format: int32
       additionalProperties:
         type: object
-    microsoft.graph.mailboxUsageDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mailboxUsageDetail
-          type: object
-          properties:
-            createdDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            deletedItemCount:
-              type: integer
-              format: int64
-              nullable: true
-            deletedItemSizeInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            displayName:
-              type: string
-              nullable: true
-            isDeleted:
-              type: boolean
-              nullable: true
-            issueWarningQuotaInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            itemCount:
-              type: integer
-              format: int64
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            prohibitSendQuotaInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            prohibitSendReceiveQuotaInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            storageUsedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-            userPrincipalName:
-              type: string
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.mailboxUsageMailboxCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mailboxUsageMailboxCounts
-          type: object
-          properties:
-            active:
-              type: integer
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            total:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.mailboxUsageQuotaStatusMailboxCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mailboxUsageQuotaStatusMailboxCounts
-          type: object
-          properties:
-            indeterminate:
-              type: integer
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            sendProhibited:
-              type: integer
-              format: int64
-              nullable: true
-            sendReceiveProhibited:
-              type: integer
-              format: int64
-              nullable: true
-            underLimit:
-              type: integer
-              format: int64
-              nullable: true
-            warningIssued:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.mailboxUsageStorage:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: mailboxUsageStorage
-          type: object
-          properties:
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              format: date
-              nullable: true
-            storageUsedInBytes:
-              type: integer
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.office365ActivationCounts:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11457,463 +10956,6 @@ components:
             video:
               type: integer
               format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsDeviceUsageDistributionUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsDeviceUsageDistributionUserCounts
-          type: object
-          properties:
-            androidPhone:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for Android.
-              format: int64
-              nullable: true
-            chromeOS:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a ChromeOS computer.
-              format: int64
-              nullable: true
-            ios:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for iOS.
-              format: int64
-              nullable: true
-            linux:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a Linux computer.
-              format: int64
-              nullable: true
-            mac:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a macOS computer.
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            web:
-              type: integer
-              description: The number of users who were active in the Teams web client on devices.
-              format: int64
-              nullable: true
-            windows:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a Windows-based computer.
-              format: int64
-              nullable: true
-            windowsPhone:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for Windows phone.
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsDeviceUsageUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsDeviceUsageUserCounts
-          type: object
-          properties:
-            androidPhone:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for Android.
-              format: int64
-              nullable: true
-            chromeOS:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a ChromeOS computer.
-              format: int64
-              nullable: true
-            ios:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for iOS.
-              format: int64
-              nullable: true
-            linux:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a Linux computer.
-              format: int64
-              nullable: true
-            mac:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a macOS computer.
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The date on which the users performed the activities.
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            web:
-              type: integer
-              description: The number of users who were active in the Teams web client on devices.
-              format: int64
-              nullable: true
-            windows:
-              type: integer
-              description: The number of users who were active in the Teams desktop client on a Windows-based computer.
-              format: int64
-              nullable: true
-            windowsPhone:
-              type: integer
-              description: The number of users who were active on the Teams mobile client for Windows phone.
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsDeviceUsageUserDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsDeviceUsageUserDetail
-          type: object
-          properties:
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
-              format: date
-              nullable: true
-            isDeleted:
-              type: boolean
-              description: Whether this user has been deleted or soft deleted.
-              nullable: true
-            isLicensed:
-              type: boolean
-              description: Whether the user has been assigned a Teams license.
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The last date that the user participated in a Microsoft Teams activity.
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            usedAndroidPhone:
-              type: boolean
-              description: Whether the user was active on the Teams mobile client for Android.
-              nullable: true
-            usedChromeOS:
-              type: boolean
-              description: Whether the user was active in the Teams desktop client on a ChromeOS computer.
-              nullable: true
-            usediOS:
-              type: boolean
-              description: Whether the user was active on the Teams mobile client for iOS.
-              nullable: true
-            usedLinux:
-              type: boolean
-              description: Whether the user was active in the Teams desktop client on a Linux computer.
-              nullable: true
-            usedMac:
-              type: boolean
-              description: Whether the user was active in the Teams desktop client on a macOS computer.
-              nullable: true
-            usedWeb:
-              type: boolean
-              description: Whether the user was active in the Teams web client on devices.
-              nullable: true
-            usedWindows:
-              type: boolean
-              description: Whether the user was active in the Teams desktop client on a Windows-based computer.
-              nullable: true
-            usedWindowsPhone:
-              type: boolean
-              description: Whether the user was active on the Teams mobile client for Windows phone.
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.'
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsUserActivityCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsUserActivityCounts
-          type: object
-          properties:
-            calls:
-              type: integer
-              description: The number of unique 1:1 calls that users participated in.
-              format: int64
-              nullable: true
-            meetings:
-              type: integer
-              description: The number of unique online meetings that users participated in.
-              format: int64
-              nullable: true
-            privateChatMessages:
-              type: integer
-              description: The number of unique messages that users posted in a private chat.
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The date on which the users performed the activities.
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            teamChatMessages:
-              type: integer
-              description: The number of unique messages that users posted in a team chat.
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsUserActivityDistributionUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsUserActivityDistributionUserCounts
-          type: object
-          properties:
-            calls:
-              type: integer
-              description: The number of unique 1:1 calls that users participated in.
-              format: int64
-              nullable: true
-            meetings:
-              type: integer
-              description: The number of unique online meetings that users participated in.
-              format: int64
-              nullable: true
-            privateChatMessages:
-              type: integer
-              description: The number of unique messages that users posted in a private chat.
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            teamChatMessages:
-              type: integer
-              description: The number of unique messages that users posted in a team chat.
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsUserActivityUserCounts:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsUserActivityUserCounts
-          type: object
-          properties:
-            calls:
-              type: integer
-              description: The number of users who participated in 1:1 calls.
-              format: int64
-              nullable: true
-            meetings:
-              type: integer
-              description: The number of users who participated in online meetings.
-              format: int64
-              nullable: true
-            otherActions:
-              type: integer
-              description: 'The number of users who were active but performed other activities than exposed action types offered in the report (sending or replying to channel messages and chat messages, scheduling or participating in 1:1 calls and meetings). Examples actions are when a user changes the Teams status or the Teams status message or opens a Channel Message post but does not reply.'
-              format: int64
-              nullable: true
-            privateChatMessages:
-              type: integer
-              description: The number of users who posted message in a private chat.
-              format: int64
-              nullable: true
-            reportDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The date on which the users performed the activities.
-              format: date
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            teamChatMessages:
-              type: integer
-              description: The number of users who posted message in a team chat.
-              format: int64
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.teamsUserActivityUserDetail:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: teamsUserActivityUserDetail
-          type: object
-          properties:
-            adHocMeetingsAttendedCount:
-              type: integer
-              description: The number of ad hoc meetings a user participated in.
-              format: int64
-              nullable: true
-            adHocMeetingsOrganizedCount:
-              type: integer
-              description: The number of ad hoc meetings a user organized.
-              format: int64
-              nullable: true
-            assignedProducts:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Products the user assigned with.
-            audioDuration:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              description: Audio duration the user participated in.
-              format: duration
-              nullable: true
-            callCount:
-              type: integer
-              description: The number of 1:1 calls that the user participated in.
-              format: int64
-              nullable: true
-            deletedDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The date when the delete operation happened. Default value is 'null' when the user has not been deleted.
-              format: date
-              nullable: true
-            hasOtherAction:
-              type: boolean
-              description: 'The User is active but has performed other activities than exposed action types offered in the report (sending or replying to channel messages and chat messages, scheduling or participating in 1:1 calls and meetings). Examples actions are when a user changes the Teams status or the Teams status message or opens a Channel Message post but does not reply.'
-              nullable: true
-            isDeleted:
-              type: boolean
-              description: Whether this user has been deleted or soft deleted.
-              nullable: true
-            isLicensed:
-              type: boolean
-              description: Whether the user has been assigned a Teams license.
-              nullable: true
-            lastActivityDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The last date that the user participated in a Microsoft Teams activity.
-              format: date
-              nullable: true
-            meetingCount:
-              type: integer
-              description: The number of online meetings that the user participated in.
-              format: int64
-              nullable: true
-            meetingsAttendedCount:
-              type: integer
-              description: 'The sum of the one-time scheduled, recurring, ad hoc and unclassified meetings a user participated in.'
-              format: int64
-              nullable: true
-            meetingsOrganizedCount:
-              type: integer
-              description: 'The sum of one-time scheduled, Recurring, ad hoc and unclassified meetings a user organized.'
-              format: int64
-              nullable: true
-            privateChatMessageCount:
-              type: integer
-              description: The number of unique messages that the user posted in a private chat.
-              format: int64
-              nullable: true
-            reportPeriod:
-              type: string
-              description: The number of days the report covers.
-              nullable: true
-            reportRefreshDate:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
-              type: string
-              description: The latest date of the content.
-              format: date
-              nullable: true
-            scheduledOneTimeMeetingsAttendedCount:
-              type: integer
-              description: The number of the one-time scheduled meetings a user participated in.
-              format: int64
-              nullable: true
-            scheduledOneTimeMeetingsOrganizedCount:
-              type: integer
-              description: The number of one-time scheduled meetings a user organized.
-              format: int64
-              nullable: true
-            scheduledRecurringMeetingsAttendedCount:
-              type: integer
-              description: The number of the recurring meetings a user participated in.
-              format: int64
-              nullable: true
-            scheduledRecurringMeetingsOrganizedCount:
-              type: integer
-              description: The number of recurring meetings a user organized.
-              format: int64
-              nullable: true
-            screenShareDuration:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              description: Screen sharing duration the user participated in.
-              format: duration
-              nullable: true
-            teamChatMessageCount:
-              type: integer
-              description: The number of unique messages that the user posted in a team chat.
-              format: int64
-              nullable: true
-            userPrincipalName:
-              type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created.'
-              nullable: true
-            videoDuration:
-              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
-              type: string
-              description: Video duration the user participated in.
-              format: duration
               nullable: true
           additionalProperties:
             type: object
