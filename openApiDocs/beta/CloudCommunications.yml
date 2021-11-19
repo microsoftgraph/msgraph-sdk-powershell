@@ -4323,6 +4323,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.clearUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action clearUserPreferredPresence
+      operationId: communications.presences_clearUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/presences/{presence-id}/microsoft.graph.setPresence':
     post:
       tags:
@@ -4351,6 +4371,47 @@ paths:
                   type: string
                 activity:
                   type: string
+                expirationDuration:
+                  pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+                  type: string
+                  format: duration
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/communications/presences/{presence-id}/microsoft.graph.setUserPreferredPresence':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action setUserPreferredPresence
+      operationId: communications.presences_setUserPreferredPresence
+      parameters:
+        - name: presence-id
+          in: path
+          description: 'key: id of presence'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: presence
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                availability:
+                  type: string
+                  nullable: true
+                activity:
+                  type: string
+                  nullable: true
                 expirationDuration:
                   pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
                   type: string
@@ -7887,6 +7948,8 @@ components:
         - organizationAndFederated
         - everyone
         - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval

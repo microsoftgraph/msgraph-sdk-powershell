@@ -3066,10 +3066,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the cloud PC status.
+          description: Any additional information about the Cloud PC status.
         code:
           type: string
-          description: The code associated with the cloud PC status.
+          description: The code associated with the Cloud PC status.
           nullable: true
         message:
           type: string
