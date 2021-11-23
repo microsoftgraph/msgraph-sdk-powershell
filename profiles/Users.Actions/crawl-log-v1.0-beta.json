@@ -1713,7 +1713,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/presence/microsoft.graph.clearUserPreferredPresence": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/presence/microsoft.graph.setPresence": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/presence/microsoft.graph.setUserPreferredPresence": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
@@ -1726,6 +1734,10 @@
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
     "/users/microsoft.graph.getUserOwnedObjects": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/microsoft.graph.validatePassword": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },

@@ -974,6 +974,7 @@ paths:
                 - tenantId
                 - toneInfo
                 - transcription
+                - audioRoutingGroups
                 - operations
                 - participants
               type: string
@@ -988,6 +989,7 @@ paths:
             items:
               enum:
                 - '*'
+                - audioRoutingGroups
                 - operations
                 - participants
               type: string
@@ -1081,6 +1083,7 @@ paths:
                 - tenantId
                 - toneInfo
                 - transcription
+                - audioRoutingGroups
                 - operations
                 - participants
               type: string
@@ -1095,6 +1098,7 @@ paths:
             items:
               enum:
                 - '*'
+                - audioRoutingGroups
                 - operations
                 - participants
               type: string
@@ -1106,6 +1110,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.call'
           links:
+            audioRoutingGroups:
+              operationId: communications.Calls.ListAudioRoutingGroups
+              parameters:
+                call-id: $request.path.call-id
             operations:
               operationId: communications.Calls.ListOperations
               parameters:
@@ -1156,6 +1164,251 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: call
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/audioRoutingGroups':
+    get:
+      tags:
+        - communications.call
+      summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
+      operationId: communications.calls_ListAudioRoutingGroups
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - receivers
+                - receivers desc
+                - routingMode
+                - routingMode desc
+                - sources
+                - sources desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - receivers
+                - routingMode
+                - sources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of audioRoutingGroup
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to audioRoutingGroups for communications
+      description: Read-only. Nullable.
+      operationId: communications.calls_CreateAudioRoutingGroups
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/audioRoutingGroups/{audioRoutingGroup-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get audioRoutingGroups from communications
+      description: Read-only. Nullable.
+      operationId: communications.calls_GetAudioRoutingGroups
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: audioRoutingGroup-id
+          in: path
+          description: 'key: id of audioRoutingGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: audioRoutingGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - receivers
+                - routingMode
+                - sources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property audioRoutingGroups in communications
+      description: Read-only. Nullable.
+      operationId: communications.calls_UpdateAudioRoutingGroups
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: audioRoutingGroup-id
+          in: path
+          description: 'key: id of audioRoutingGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: audioRoutingGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property audioRoutingGroups for communications
+      description: Read-only. Nullable.
+      operationId: communications.calls_DeleteAudioRoutingGroups
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: audioRoutingGroup-id
+          in: path
+          description: 'key: id of audioRoutingGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: audioRoutingGroup
         - name: If-Match
           in: header
           description: ETag
@@ -3008,6 +3261,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -3040,6 +3294,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
                 availability:
                   type: string
                 activity:
@@ -3738,6 +3993,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.toneInfo'
             transcription:
               $ref: '#/components/schemas/microsoft.graph.callTranscriptionInfo'
+            audioRoutingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+              description: Read-only. Nullable.
             operations:
               type: array
               items:
@@ -3748,6 +4008,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.participant'
               description: Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.audioRoutingGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: audioRoutingGroup
+          type: object
+          properties:
+            receivers:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of receiving participant ids.
+            routingMode:
+              $ref: '#/components/schemas/microsoft.graph.routingMode'
+            sources:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of source participant ids.
           additionalProperties:
             type: object
     microsoft.graph.mediaConfig:
@@ -4046,7 +4328,7 @@ components:
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -4073,7 +4355,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -4338,6 +4620,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.callTranscriptionState'
       additionalProperties:
         type: object
+    microsoft.graph.routingMode:
+      title: routingMode
+      enum:
+        - oneToOne
+        - multicast
+        - unknownFutureValue
+      type: string
     microsoft.graph.endpointType:
       title: endpointType
       enum:
@@ -4565,19 +4854,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -5105,6 +5394,8 @@ components:
         - organizationAndFederated
         - everyone
         - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
       type: string
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole

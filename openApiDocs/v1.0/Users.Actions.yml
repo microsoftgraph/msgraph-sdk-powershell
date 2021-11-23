@@ -20095,6 +20095,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -20127,6 +20128,7 @@ paths:
               properties:
                 sessionId:
                   type: string
+                  nullable: true
                 availability:
                   type: string
                 activity:
@@ -21068,11 +21070,11 @@ components:
               description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and NOT).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -21080,25 +21082,25 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
+              description: 'The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, in).'
               nullable: true
             department:
               type: string
-              description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
+              description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, and eq on null values).'
               nullable: true
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -21108,7 +21110,7 @@ components:
               nullable: true
             employeeId:
               type: string
-              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -21128,17 +21130,17 @@ components:
               nullable: true
             faxNumber:
               type: string
-              description: 'The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             givenName:
               type: string
-              description: 'The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
@@ -21151,7 +21153,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: 'The user''s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The user''s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -21170,19 +21172,19 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             officeLocation:
               type: string
-              description: 'The office location in the user''s place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The office location in the user''s place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -21215,11 +21217,11 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -21232,17 +21234,17 @@ components:
               description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, NOT, ge, le, in, startsWith).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)'
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -21266,19 +21268,19 @@ components:
               nullable: true
             state:
               type: string
-              description: 'The state or province in the user''s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The state or province in the user''s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
-              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
@@ -21286,7 +21288,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -21842,7 +21844,7 @@ components:
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -21869,7 +21871,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isEntryExitAnnounced:
               type: boolean
@@ -21945,7 +21947,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-      description: Key value pair for storing custom settings
     microsoft.graph.extensionProperty:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -24242,8 +24243,6 @@ components:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
-            schedule:
-              $ref: '#/components/schemas/microsoft.graph.schedule'
             channels:
               type: array
               items:
@@ -24270,6 +24269,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channel'
             template:
               $ref: '#/components/schemas/microsoft.graph.teamsTemplate'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.schedule'
           additionalProperties:
             type: object
     microsoft.graph.userTeamwork:
@@ -24566,19 +24567,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -26302,9 +26303,7 @@ components:
         - googleCloudDevicePolicyController
         - microsoft365ManagedMdm
         - msSense
-        - intuneAosp
       type: string
-      description: Management agent type.
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -27100,6 +27099,8 @@ components:
               type: string
               description: Read-only. Version number of the chat message.
               nullable: true
+            eventDetail:
+              $ref: '#/components/schemas/microsoft.graph.eventMessageDetail'
             from:
               $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
             importance:
@@ -27291,93 +27292,6 @@ components:
         - hiddenMembership
         - unknownFutureValue
       type: string
-    microsoft.graph.schedule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: schedule
-          type: object
-          properties:
-            enabled:
-              type: boolean
-              description: Indicates whether the schedule is enabled for the team. Required.
-              nullable: true
-            offerShiftRequestsEnabled:
-              type: boolean
-              description: Indicates whether offer shift requests are enabled for the schedule.
-              nullable: true
-            openShiftsEnabled:
-              type: boolean
-              description: Indicates whether open shifts are enabled for the schedule.
-              nullable: true
-            provisionStatus:
-              $ref: '#/components/schemas/microsoft.graph.operationStatus'
-            provisionStatusCode:
-              type: string
-              description: Additional information about why schedule provisioning failed.
-              nullable: true
-            swapShiftsRequestsEnabled:
-              type: boolean
-              description: Indicates whether swap shifts requests are enabled for the schedule.
-              nullable: true
-            timeClockEnabled:
-              type: boolean
-              description: Indicates whether time clock is enabled for the schedule.
-              nullable: true
-            timeOffRequestsEnabled:
-              type: boolean
-              description: Indicates whether time off requests are enabled for the schedule.
-              nullable: true
-            timeZone:
-              type: string
-              description: Indicates the time zone of the schedule team using tz database format. Required.
-              nullable: true
-            workforceIntegrationIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-            offerShiftRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-            openShiftChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
-            openShifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.openShift'
-            schedulingGroups:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
-              description: The logical grouping of users in the schedule (usually by role).
-            shifts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.shift'
-              description: The shifts in the schedule.
-            swapShiftsChangeRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
-            timeOffReasons:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
-              description: The set of reasons for a time off in the schedule.
-            timeOffRequests:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
-            timesOff:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.timeOff'
-              description: The instances of times off in the schedule.
-          additionalProperties:
-            type: object
     microsoft.graph.channel:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27462,7 +27376,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -27487,7 +27401,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
             mail:
               type: string
-              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailEnabled:
               type: boolean
@@ -27495,7 +27409,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             membershipRule:
               type: string
@@ -27534,7 +27448,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
@@ -27542,7 +27456,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -27760,6 +27674,93 @@ components:
           type: object
           additionalProperties:
             type: object
+    microsoft.graph.schedule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schedule
+          type: object
+          properties:
+            enabled:
+              type: boolean
+              description: Indicates whether the schedule is enabled for the team. Required.
+              nullable: true
+            offerShiftRequestsEnabled:
+              type: boolean
+              description: Indicates whether offer shift requests are enabled for the schedule.
+              nullable: true
+            openShiftsEnabled:
+              type: boolean
+              description: Indicates whether open shifts are enabled for the schedule.
+              nullable: true
+            provisionStatus:
+              $ref: '#/components/schemas/microsoft.graph.operationStatus'
+            provisionStatusCode:
+              type: string
+              description: Additional information about why schedule provisioning failed.
+              nullable: true
+            swapShiftsRequestsEnabled:
+              type: boolean
+              description: Indicates whether swap shifts requests are enabled for the schedule.
+              nullable: true
+            timeClockEnabled:
+              type: boolean
+              description: Indicates whether time clock is enabled for the schedule.
+              nullable: true
+            timeOffRequestsEnabled:
+              type: boolean
+              description: Indicates whether time off requests are enabled for the schedule.
+              nullable: true
+            timeZone:
+              type: string
+              description: Indicates the time zone of the schedule team using tz database format. Required.
+              nullable: true
+            workforceIntegrationIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            offerShiftRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+            openShiftChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShiftChangeRequest'
+            openShifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.openShift'
+            schedulingGroups:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.schedulingGroup'
+              description: The logical grouping of users in the schedule (usually by role).
+            shifts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.shift'
+              description: The shifts in the schedule.
+            swapShiftsChangeRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.swapShiftsChangeRequest'
+            timeOffReasons:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffReason'
+              description: The set of reasons for a time off in the schedule.
+            timeOffRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOffRequest'
+            timesOff:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.timeOff'
+              description: The instances of times off in the schedule.
+          additionalProperties:
+            type: object
     microsoft.graph.userScopeTeamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.teamsAppInstallation'
@@ -27852,6 +27853,8 @@ components:
         - organizationAndFederated
         - everyone
         - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
       type: string
     odata.error.main:
       required:
@@ -30140,7 +30143,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -30166,7 +30169,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             isCompliant:
               type: boolean
@@ -30188,15 +30191,15 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             operatingSystem:
               type: string
-              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
@@ -30356,6 +30359,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.eventMessageDetail:
+      title: eventMessageDetail
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.chatMessageFromIdentitySet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -30397,6 +30405,7 @@ components:
         - chatEvent
         - typing
         - unknownFutureValue
+        - systemEventMessage
       type: string
     microsoft.graph.chatMessagePolicyViolation:
       title: chatMessagePolicyViolation
@@ -30468,172 +30477,6 @@ components:
         - moderate
         - unknownFutureValue
       type: string
-    microsoft.graph.offerShiftRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: offerShiftRequest
-          type: object
-          properties:
-            recipientActionDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            recipientActionMessage:
-              type: string
-              description: Custom message sent by recipient of the offer shift request.
-              nullable: true
-            recipientUserId:
-              type: string
-              description: User ID of the recipient of the offer shift request.
-              nullable: true
-            senderShiftId:
-              type: string
-              description: User ID of the sender of the offer shift request.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShiftChangeRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: openShiftChangeRequest
-          type: object
-          properties:
-            openShiftId:
-              type: string
-              description: ID for the open shift.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.openShift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: openShift
-          type: object
-          properties:
-            draftOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-            schedulingGroupId:
-              type: string
-              description: ID for the scheduling group that the open shift belongs to.
-              nullable: true
-            sharedOpenShift:
-              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
-          additionalProperties:
-            type: object
-    microsoft.graph.schedulingGroup:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: schedulingGroup
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The display name for the schedulingGroup. Required.
-              nullable: true
-            isActive:
-              type: boolean
-              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-              nullable: true
-            userIds:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: The list of user IDs that are a member of the schedulingGroup. Required.
-          additionalProperties:
-            type: object
-    microsoft.graph.shift:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: shift
-          type: object
-          properties:
-            draftShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            schedulingGroupId:
-              type: string
-              description: ID of the scheduling group the shift is part of. Required.
-              nullable: true
-            sharedShift:
-              $ref: '#/components/schemas/microsoft.graph.shiftItem'
-            userId:
-              type: string
-              description: ID of the user assigned to the shift. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.swapShiftsChangeRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
-        - title: swapShiftsChangeRequest
-          type: object
-          properties:
-            recipientShiftId:
-              type: string
-              description: ShiftId for the recipient user with whom the request is to swap.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOffReason:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOffReason
-          type: object
-          properties:
-            displayName:
-              type: string
-              description: The name of the timeOffReason. Required.
-              nullable: true
-            iconType:
-              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
-            isActive:
-              type: boolean
-              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOffRequest:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
-        - title: timeOffRequest
-          type: object
-          properties:
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-              nullable: true
-            timeOffReasonId:
-              type: string
-              description: The reason for the time off.
-              nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.timeOff:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
-        - title: timeOff
-          type: object
-          properties:
-            draftTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
-            sharedTimeOff:
-              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
-            userId:
-              type: string
-              description: ID of the user assigned to the timeOff. Required.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.channelMembershipType:
       title: channelMembershipType
       enum:
@@ -30860,6 +30703,172 @@ components:
         - failed
         - unknownFutureValue
       type: string
+    microsoft.graph.offerShiftRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: offerShiftRequest
+          type: object
+          properties:
+            recipientActionDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            recipientActionMessage:
+              type: string
+              description: Custom message sent by recipient of the offer shift request.
+              nullable: true
+            recipientUserId:
+              type: string
+              description: User ID of the recipient of the offer shift request.
+              nullable: true
+            senderShiftId:
+              type: string
+              description: User ID of the sender of the offer shift request.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.openShiftChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: openShiftChangeRequest
+          type: object
+          properties:
+            openShiftId:
+              type: string
+              description: ID for the open shift.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.openShift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: openShift
+          type: object
+          properties:
+            draftOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+            schedulingGroupId:
+              type: string
+              description: ID for the scheduling group that the open shift belongs to.
+              nullable: true
+            sharedOpenShift:
+              $ref: '#/components/schemas/microsoft.graph.openShiftItem'
+          additionalProperties:
+            type: object
+    microsoft.graph.schedulingGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: schedulingGroup
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name for the schedulingGroup. Required.
+              nullable: true
+            isActive:
+              type: boolean
+              description: Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
+              nullable: true
+            userIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: The list of user IDs that are a member of the schedulingGroup. Required.
+          additionalProperties:
+            type: object
+    microsoft.graph.shift:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: shift
+          type: object
+          properties:
+            draftShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            schedulingGroupId:
+              type: string
+              description: ID of the scheduling group the shift is part of. Required.
+              nullable: true
+            sharedShift:
+              $ref: '#/components/schemas/microsoft.graph.shiftItem'
+            userId:
+              type: string
+              description: ID of the user assigned to the shift. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.swapShiftsChangeRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.offerShiftRequest'
+        - title: swapShiftsChangeRequest
+          type: object
+          properties:
+            recipientShiftId:
+              type: string
+              description: ShiftId for the recipient user with whom the request is to swap.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOffReason:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOffReason
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the timeOffReason. Required.
+              nullable: true
+            iconType:
+              $ref: '#/components/schemas/microsoft.graph.timeOffReasonIconType'
+            isActive:
+              type: boolean
+              description: Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOffRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.scheduleChangeRequest'
+        - title: timeOffRequest
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+              nullable: true
+            timeOffReasonId:
+              type: string
+              description: The reason for the time off.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.timeOff:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
+        - title: timeOff
+          type: object
+          properties:
+            draftTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            sharedTimeOff:
+              $ref: '#/components/schemas/microsoft.graph.timeOffItem'
+            userId:
+              type: string
+              description: ID of the user assigned to the timeOff. Required.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -31698,6 +31707,77 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.settingValue:
+      title: settingValue
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the setting (as defined by the groupSettingTemplate).
+          nullable: true
+        value:
+          type: string
+          description: Value of the setting.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.post:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
+        - title: post
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            conversationId:
+              type: string
+              description: Unique ID of the conversation. Read-only.
+              nullable: true
+            conversationThreadId:
+              type: string
+              description: Unique ID of the conversation thread. Read-only.
+              nullable: true
+            from:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            hasAttachments:
+              type: boolean
+              description: Indicates whether the post has at least one attachment. This is a default property.
+            newParticipants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recipient'
+              description: Conversation participants that were added to the thread as part of this post.
+            receivedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              format: date-time
+            sender:
+              $ref: '#/components/schemas/microsoft.graph.recipient'
+            attachments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+              description: Read-only. Nullable. Supports $expand.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+            inReplyTo:
+              $ref: '#/components/schemas/microsoft.graph.post'
+            multiValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
+            singleValueExtendedProperties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
+          additionalProperties:
+            type: object
     microsoft.graph.scheduleChangeRequest:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.changeTrackedEntity'
@@ -31803,77 +31883,6 @@ components:
               type: string
               description: ID of the timeOffReason for this timeOffItem. Required.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.settingValue:
-      title: settingValue
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of the setting (as defined by the groupSettingTemplate).
-          nullable: true
-        value:
-          type: string
-          description: Value of the setting.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.post:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.outlookItem'
-        - title: post
-          type: object
-          properties:
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
-            conversationId:
-              type: string
-              description: Unique ID of the conversation. Read-only.
-              nullable: true
-            conversationThreadId:
-              type: string
-              description: Unique ID of the conversation thread. Read-only.
-              nullable: true
-            from:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            hasAttachments:
-              type: boolean
-              description: Indicates whether the post has at least one attachment. This is a default property.
-            newParticipants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.recipient'
-              description: Conversation participants that were added to the thread as part of this post.
-            receivedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: 'Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
-              format: date-time
-            sender:
-              $ref: '#/components/schemas/microsoft.graph.recipient'
-            attachments:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.attachment'
-              description: Read-only. Nullable. Supports $expand.
-            extensions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
-            inReplyTo:
-              $ref: '#/components/schemas/microsoft.graph.post'
-            multiValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-              description: The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-            singleValueExtendedProperties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-              description: The collection of single-value extended properties defined for the post. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.taskStatus:

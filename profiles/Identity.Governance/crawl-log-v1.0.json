@@ -189,6 +189,166 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
     },
+    "/identityGovernance/entitlementManagement/accessPackages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/catalog": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/catalog/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/microsoft.graph.getApplicablePolicyRequirements": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage/microsoft.graph.getApplicablePolicyRequirements": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/assignment": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/assignment/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/requestor": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/requestor/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignmentRequests/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage/microsoft.graph.getApplicablePolicyRequirements": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/target": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/target/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/assignments/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/catalog": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/catalog/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/microsoft.graph.getApplicablePolicyRequirements": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/settings": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"
+    },
     "/identityGovernance/termsOfUse": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.Governance.yml"

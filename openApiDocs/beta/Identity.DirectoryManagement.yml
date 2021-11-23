@@ -5339,8 +5339,12 @@ paths:
               enum:
                 - id
                 - administrativeUnits
+                - attributeSets
+                - customSecurityAttributeDefinitions
                 - deletedItems
                 - federationConfigurations
+                - inboundSharedUserProfiles
+                - outboundSharedUserProfiles
                 - sharedEmailDomains
                 - featureRolloutPolicies
               type: string
@@ -5356,8 +5360,12 @@ paths:
               enum:
                 - '*'
                 - administrativeUnits
+                - attributeSets
+                - customSecurityAttributeDefinitions
                 - deletedItems
                 - federationConfigurations
+                - inboundSharedUserProfiles
+                - outboundSharedUserProfiles
                 - sharedEmailDomains
                 - featureRolloutPolicies
               type: string
@@ -5371,10 +5379,18 @@ paths:
           links:
             administrativeUnits:
               operationId: directory.ListAdministrativeUnits
+            attributeSets:
+              operationId: directory.ListAttributeSets
+            customSecurityAttributeDefinitions:
+              operationId: directory.ListCustomSecurityAttributeDefinitions
             deletedItems:
               operationId: directory.ListDeletedItems
             federationConfigurations:
               operationId: directory.ListFederationConfigurations
+            inboundSharedUserProfiles:
+              operationId: directory.ListInboundSharedUserProfiles
+            outboundSharedUserProfiles:
+              operationId: directory.ListOutboundSharedUserProfiles
             sharedEmailDomains:
               operationId: directory.ListSharedEmailDomains
             featureRolloutPolicies:
@@ -5627,6 +5643,671 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: administrativeUnit
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/attributeSets:
+    get:
+      tags:
+        - directory.attributeSet
+      summary: Get attributeSets from directory
+      operationId: directory_ListAttributeSets
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - maxAttributesPerSet
+                - maxAttributesPerSet desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - maxAttributesPerSet
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of attributeSet
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attributeSet'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.attributeSet
+      summary: Create new navigation property to attributeSets for directory
+      operationId: directory_CreateAttributeSets
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attributeSet'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attributeSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/attributeSets/{attributeSet-id}':
+    get:
+      tags:
+        - directory.attributeSet
+      summary: Get attributeSets from directory
+      operationId: directory_GetAttributeSets
+      parameters:
+        - name: attributeSet-id
+          in: path
+          description: 'key: id of attributeSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attributeSet
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - maxAttributesPerSet
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attributeSet'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.attributeSet
+      summary: Update the navigation property attributeSets in directory
+      operationId: directory_UpdateAttributeSets
+      parameters:
+        - name: attributeSet-id
+          in: path
+          description: 'key: id of attributeSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attributeSet
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attributeSet'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.attributeSet
+      summary: Delete navigation property attributeSets for directory
+      operationId: directory_DeleteAttributeSets
+      parameters:
+        - name: attributeSet-id
+          in: path
+          description: 'key: id of attributeSet'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: attributeSet
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/customSecurityAttributeDefinitions:
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get customSecurityAttributeDefinitions from directory
+      operationId: directory_ListCustomSecurityAttributeDefinitions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - attributeSet
+                - attributeSet desc
+                - description
+                - description desc
+                - isCollection
+                - isCollection desc
+                - isSearchable
+                - isSearchable desc
+                - name
+                - name desc
+                - status
+                - status desc
+                - type
+                - type desc
+                - usePreDefinedValuesOnly
+                - usePreDefinedValuesOnly desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attributeSet
+                - description
+                - isCollection
+                - isSearchable
+                - name
+                - status
+                - type
+                - usePreDefinedValuesOnly
+                - allowedValues
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allowedValues
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of customSecurityAttributeDefinition
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      operationId: directory_CreateCustomSecurityAttributeDefinitions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}':
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get customSecurityAttributeDefinitions from directory
+      operationId: directory_GetCustomSecurityAttributeDefinitions
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - attributeSet
+                - description
+                - isCollection
+                - isSearchable
+                - name
+                - status
+                - type
+                - usePreDefinedValuesOnly
+                - allowedValues
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - allowedValues
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+          links:
+            allowedValues:
+              operationId: directory.CustomSecurityAttributeDefinitions.ListAllowedValues
+              parameters:
+                customSecurityAttributeDefinition-id: $request.path.customSecurityAttributeDefinition-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      operationId: directory_UpdateCustomSecurityAttributeDefinitions
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Delete navigation property customSecurityAttributeDefinitions for directory
+      operationId: directory_DeleteCustomSecurityAttributeDefinitions
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}/allowedValues':
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get allowedValues from directory
+      operationId: directory.customSecurityAttributeDefinitions_ListAllowedValues
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - isActive
+                - isActive desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isActive
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of allowedValue
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.allowedValue'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Create new navigation property to allowedValues for directory
+      operationId: directory.customSecurityAttributeDefinitions_CreateAllowedValues
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.allowedValue'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.allowedValue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}/allowedValues/{allowedValue-id}':
+    get:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Get allowedValues from directory
+      operationId: directory.customSecurityAttributeDefinitions_GetAllowedValues
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - name: allowedValue-id
+          in: path
+          description: 'key: id of allowedValue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: allowedValue
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isActive
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.allowedValue'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Update the navigation property allowedValues in directory
+      operationId: directory.customSecurityAttributeDefinitions_UpdateAllowedValues
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - name: allowedValue-id
+          in: path
+          description: 'key: id of allowedValue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: allowedValue
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.allowedValue'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.customSecurityAttributeDefinition
+      summary: Delete navigation property allowedValues for directory
+      operationId: directory.customSecurityAttributeDefinitions_DeleteAllowedValues
+      parameters:
+        - name: customSecurityAttributeDefinition-id
+          in: path
+          description: 'key: id of customSecurityAttributeDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: customSecurityAttributeDefinition
+        - name: allowedValue-id
+          in: path
+          description: 'key: id of allowedValue'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: allowedValue
         - name: If-Match
           in: header
           description: ETag
@@ -6522,6 +7203,663 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /directory/inboundSharedUserProfiles:
+    get:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Get inboundSharedUserProfiles from directory
+      operationId: directory_ListInboundSharedUserProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - displayName
+                - displayName desc
+                - homeTenantId
+                - homeTenantId desc
+                - userId
+                - userId desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - displayName
+                - homeTenantId
+                - userId
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of inboundSharedUserProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Create new navigation property to inboundSharedUserProfiles for directory
+      operationId: directory_CreateInboundSharedUserProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/inboundSharedUserProfiles/{inboundSharedUserProfile-userId}':
+    get:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Get inboundSharedUserProfiles from directory
+      operationId: directory_GetInboundSharedUserProfiles
+      parameters:
+        - name: inboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of inboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundSharedUserProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - displayName
+                - homeTenantId
+                - userId
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Update the navigation property inboundSharedUserProfiles in directory
+      operationId: directory_UpdateInboundSharedUserProfiles
+      parameters:
+        - name: inboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of inboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundSharedUserProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.inboundSharedUserProfile
+      summary: Delete navigation property inboundSharedUserProfiles for directory
+      operationId: directory_DeleteInboundSharedUserProfiles
+      parameters:
+        - name: inboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of inboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundSharedUserProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/outboundSharedUserProfiles:
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get outboundSharedUserProfiles from directory
+      operationId: directory_ListOutboundSharedUserProfiles
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - userId
+                - userId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - userId
+                - tenants
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tenants
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of outboundSharedUserProfile
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Create new navigation property to outboundSharedUserProfiles for directory
+      operationId: directory_CreateOutboundSharedUserProfiles
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}':
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get outboundSharedUserProfiles from directory
+      operationId: directory_GetOutboundSharedUserProfiles
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - userId
+                - tenants
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - tenants
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
+          links:
+            tenants:
+              operationId: directory.OutboundSharedUserProfiles.ListTenants
+              parameters:
+                outboundSharedUserProfile-userId: $request.path.outboundSharedUserProfile-userId
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Update the navigation property outboundSharedUserProfiles in directory
+      operationId: directory_UpdateOutboundSharedUserProfiles
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Delete navigation property outboundSharedUserProfiles for directory
+      operationId: directory_DeleteOutboundSharedUserProfiles
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants':
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get tenants from directory
+      operationId: directory.outboundSharedUserProfiles_ListTenants
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+                - tenantId
+                - tenantId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of tenantReference
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.tenantReference'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Create new navigation property to tenants for directory
+      operationId: directory.outboundSharedUserProfiles_CreateTenants
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantReference'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants/{tenantReference-tenantId}':
+    get:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Get tenants from directory
+      operationId: directory.outboundSharedUserProfiles_GetTenants
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: tenantReference-tenantId
+          in: path
+          description: 'key: tenantId of tenantReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantReference
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - tenantId
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.tenantReference'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Update the navigation property tenants in directory
+      operationId: directory.outboundSharedUserProfiles_UpdateTenants
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: tenantReference-tenantId
+          in: path
+          description: 'key: tenantId of tenantReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantReference
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.tenantReference'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.outboundSharedUserProfile
+      summary: Delete navigation property tenants for directory
+      operationId: directory.outboundSharedUserProfiles_DeleteTenants
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: tenantReference-tenantId
+          in: path
+          description: 'key: tenantId of tenantReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantReference
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /directory/sharedEmailDomains:
     get:
       tags:
@@ -10876,6 +12214,7 @@ paths:
               enum:
                 - id
                 - itemInsights
+                - peopleInsights
                 - profileCardProperties
               type: string
         - name: $expand
@@ -10890,6 +12229,7 @@ paths:
               enum:
                 - '*'
                 - itemInsights
+                - peopleInsights
                 - profileCardProperties
               type: string
       responses:
@@ -10902,6 +12242,10 @@ paths:
           links:
             itemInsights:
               operationId: organization.Settings.GetItemInsights
+              parameters:
+                organization-id: $request.path.organization-id
+            peopleInsights:
+              operationId: organization.Settings.GetPeopleInsights
               parameters:
                 organization-id: $request.path.organization-id
             profileCardProperties:
@@ -11010,7 +12354,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+                $ref: '#/components/schemas/microsoft.graph.insightsSettings'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -11033,7 +12377,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
         required: true
       responses:
         '204':
@@ -11047,6 +12391,106 @@ paths:
       summary: Delete navigation property itemInsights for organization
       description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.'
       operationId: organization.settings_DeleteItemInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/peopleInsights':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get peopleInsights from organization
+      operationId: organization.settings_GetPeopleInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - disabledForGroup
+                - isEnabledInOrganization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property peopleInsights in organization
+      operationId: organization.settings_UpdatePeopleInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property peopleInsights for organization
+      operationId: organization.settings_DeletePeopleInsights
       parameters:
         - name: organization-id
           in: path
@@ -12139,31 +13583,31 @@ components:
               description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
-              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             department:
               type: string
-              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             displayName:
               type: string
-              description: 'Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             givenName:
               type: string
-              description: 'First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             jobTitle:
               type: string
-              description: 'Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -12178,7 +13622,7 @@ components:
               description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, NOT).'
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             phones:
               type: array
@@ -12192,7 +13636,7 @@ components:
               description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, NOT, ge, le, startsWith).'
             surname:
               type: string
-              description: 'Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)'
+              description: 'Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             directReports:
               type: array
@@ -12261,7 +13705,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -12295,7 +13739,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             domainName:
               type: string
@@ -12341,15 +13785,15 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             operatingSystem:
               type: string
-              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
@@ -12496,6 +13940,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.administrativeUnit'
               description: Conceptual container for user and group directory objects.
+            attributeSets:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attributeSet'
+            customSecurityAttributeDefinitions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
             deletedItems:
               type: array
               items:
@@ -12506,6 +13958,14 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
               description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+            inboundSharedUserProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.inboundSharedUserProfile'
+            outboundSharedUserProfiles:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.outboundSharedUserProfile'
             sharedEmailDomains:
               type: array
               items:
@@ -12515,6 +13975,65 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.featureRolloutPolicy'
               description: Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.attributeSet:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attributeSet
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            maxAttributesPerSet:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.customSecurityAttributeDefinition:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: customSecurityAttributeDefinition
+          type: object
+          properties:
+            attributeSet:
+              type: string
+            description:
+              type: string
+              nullable: true
+            isCollection:
+              type: boolean
+            isSearchable:
+              type: boolean
+              nullable: true
+            name:
+              type: string
+            status:
+              type: string
+            type:
+              type: string
+            usePreDefinedValuesOnly:
+              type: boolean
+              nullable: true
+            allowedValues:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.allowedValue'
+          additionalProperties:
+            type: object
+    microsoft.graph.allowedValue:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: allowedValue
+          type: object
+          properties:
+            isActive:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.featureRolloutPolicy:
@@ -12555,6 +14074,46 @@ components:
               type: string
               description: The display name of the identity provider.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.inboundSharedUserProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: inboundSharedUserProfile
+          type: object
+          properties:
+            displayName:
+              type: string
+            homeTenantId:
+              type: string
+            userId:
+              type: string
+            userPrincipalName:
+              type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.outboundSharedUserProfile:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: outboundSharedUserProfile
+          type: object
+          properties:
+            userId:
+              type: string
+            tenants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.tenantReference'
+          additionalProperties:
+            type: object
+    microsoft.graph.tenantReference:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        - title: tenantReference
+          type: object
+          properties:
+            tenantId:
+              type: string
           additionalProperties:
             type: object
     microsoft.graph.sharedEmailDomain:
@@ -12777,7 +14336,7 @@ components:
               nullable: true
             countryLetterCode:
               type: string
-              description: Country/region abbreviation for the organization.
+              description: Country or region abbreviation for the organization in ISO 3166-2 format.
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -12891,7 +14450,9 @@ components:
           type: object
           properties:
             itemInsights:
-              $ref: '#/components/schemas/microsoft.graph.itemInsightsSettings'
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
+            peopleInsights:
+              $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             profileCardProperties:
               type: array
               items:
@@ -12899,19 +14460,17 @@ components:
               description: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
           additionalProperties:
             type: object
-    microsoft.graph.itemInsightsSettings:
+    microsoft.graph.insightsSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: itemInsightsSettings
+        - title: insightsSettings
           type: object
           properties:
             disabledForGroup:
               type: string
-              description: 'The ID of an Azure AD group, of which the members'' item insights are disabled. Default is empty. Optional.'
               nullable: true
             isEnabledInOrganization:
               type: boolean
-              description: true if organization item insights are enabled; false if organization item insights are disabled for all users without exceptions. Default is true. Optional.
               nullable: true
           additionalProperties:
             type: object

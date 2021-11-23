@@ -29023,11 +29023,11 @@ components:
               description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and NOT).'
             city:
               type: string
-              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
@@ -29035,21 +29035,23 @@ components:
               nullable: true
             country:
               type: string
-              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
+              description: 'The created date of the user object. Read-only. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in).'
               format: date-time
               nullable: true
             creationType:
               type: string
-              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, and in).'
+              description: 'Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, NOT, in).'
               nullable: true
+            customSecurityAttributes:
+              $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeValue'
             department:
               type: string
-              description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, and in operators).'
+              description: 'The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, and eq on null values).'
               nullable: true
             deviceKeys:
               type: array
@@ -29057,7 +29059,7 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.deviceKey'
             displayName:
               type: string
-              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith), $orderBy, and $search.'
+              description: 'The name displayed in the address book for the user. This is usually the combination of the user''s first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.'
               nullable: true
             employeeHireDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -29067,7 +29069,7 @@ components:
               nullable: true
             employeeId:
               type: string
-              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -29085,17 +29087,17 @@ components:
               nullable: true
             faxNumber:
               type: string
-              description: 'The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The fax number of the user. Returned only on $select. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             givenName:
               type: string
-              description: 'The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             identities:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.objectIdentity'
-              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) only where the signInType is not userPrincipalName.'
+              description: 'Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Returned only on $select. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.'
             imAddresses:
               type: array
               items:
@@ -29113,7 +29115,7 @@ components:
               nullable: true
             jobTitle:
               type: string
-              description: 'The user''s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith).'
+              description: 'The user''s job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, NOT , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             lastPasswordChangeDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -29132,19 +29134,19 @@ components:
               description: State of license assignments for this user. Read-only. Returned only on $select.
             mail:
               type: string
-              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith).'
+              description: 'The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com.Changes to this property will also update the user''s proxyAddresses collection to include the value as an SMTP address. For Azure AD B2C accounts, this property can be updated up to only ten times with unique SMTP addresses. This property cannot contain accent characters.Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, endsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mobilePhone:
               type: string
-              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             officeLocation:
               type: string
-              description: 'The office location in the user''s place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The office location in the user''s place of business. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             onPremisesDistinguishedName:
               type: string
@@ -29177,11 +29179,11 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             onPremisesUserPrincipalName:
               type: string
@@ -29194,13 +29196,13 @@ components:
               description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com'']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, NOT, ge, le, in, startsWith).'
             passwordPolicies:
               type: string
-              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT).'
+              description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, NOT, and eq on null values).'
               nullable: true
             passwordProfile:
               $ref: '#/components/schemas/microsoft.graph.passwordProfile'
             postalCode:
               type: string
-              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             preferredDataLocation:
               type: string
@@ -29208,7 +29210,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith)'
+              description: 'The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             provisionedPlans:
               type: array
@@ -29238,19 +29240,19 @@ components:
               nullable: true
             state:
               type: string
-              description: 'The state or province in the user''s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The state or province in the user''s address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             streetAddress:
               type: string
-              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The street address of the user''s place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             surname:
               type: string
-              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The user''s surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             usageLocation:
               type: string
-              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             userPrincipalName:
               type: string
@@ -29258,7 +29260,7 @@ components:
               nullable: true
             userType:
               type: string
-              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
+              description: 'A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, NOT, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?'
               nullable: true
             mailboxSettings:
               $ref: '#/components/schemas/microsoft.graph.mailboxSettings'
@@ -30410,6 +30412,11 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.customSecurityAttributeValue:
+      title: customSecurityAttributeValue
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.deviceKey:
       title: deviceKey
       type: object
@@ -30479,6 +30486,12 @@ components:
         error:
           type: string
           description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the state of the license assignment was last updated.
+          format: date-time
           nullable: true
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -31336,7 +31349,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'The display name for the group. This property is required when a group is created and cannot be cleared during updates. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -31366,7 +31379,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.licenseProcessingState'
             mail:
               type: string
-              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The SMTP address for the group, for example, ''serviceadmins@contoso.onmicrosoft.com''. Returned by default. Read-only. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailEnabled:
               type: boolean
@@ -31374,7 +31387,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mdmAppId:
               type: string
@@ -31416,7 +31429,7 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             organizationId:
               type: string
@@ -31427,7 +31440,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith).'
+              description: 'The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             proxyAddresses:
               type: array
@@ -33024,7 +33037,7 @@ components:
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -33058,7 +33071,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             domainName:
               type: string
@@ -33104,15 +33117,15 @@ components:
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
               nullable: true
             operatingSystem:
               type: string
-              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
@@ -33225,12 +33238,12 @@ components:
               nullable: true
             alternativeRecording:
               type: string
-              description: The content stream of the alternative recording of a live event. Read-only.
+              description: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             attendeeReport:
               type: string
-              description: The content stream of the attendee report of a live event. Read-only.
+              description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
               format: base64url
               nullable: true
             audioConferencing:
@@ -33274,7 +33287,7 @@ components:
               nullable: true
             isBroadcast:
               type: boolean
-              description: Indicates if this is a live event.
+              description: Indicates if this is a Teams live event.
               nullable: true
             isCancelled:
               type: boolean
@@ -33298,7 +33311,7 @@ components:
               nullable: true
             recording:
               type: string
-              description: The content stream of the recording of a live event. Read-only.
+              description: The content stream of the recording of a Teams live event. Read-only.
               format: base64url
               nullable: true
             startDateTime:
@@ -35411,6 +35424,10 @@ components:
               nullable: true
             target:
               $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItemTarget'
+            insights:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.governanceInsight'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScheduleDefinition:
@@ -37728,19 +37745,19 @@ components:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
         isAttendeeReportEnabled:
           type: boolean
-          description: Indicates whether attendee report is enabled for this live event. Default value is false.
+          description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
           nullable: true
         isQuestionAndAnswerEnabled:
           type: boolean
-          description: Indicates whether Q&A is enabled for this live event. Default value is false.
+          description: Indicates whether Q&A is enabled for this Teams live event. Default value is false.
           nullable: true
         isRecordingEnabled:
           type: boolean
-          description: Indicates whether recording is enabled for this live event. Default value is false.
+          description: Indicates whether recording is enabled for this Teams live event. Default value is false.
           nullable: true
         isVideoOnDemandEnabled:
           type: boolean
-          description: Indicates whether video on demand is enabled for this live event. Default value is false.
+          description: Indicates whether video on demand is enabled for this Teams live event. Default value is false.
           nullable: true
       additionalProperties:
         type: object
@@ -39073,15 +39090,15 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: The date and time when the key was originally backed up to Azure Active Directory.
+              description: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
               format: date-time
             deviceId:
               type: string
-              description: ID of the device the BitLocker key is originally backed up from.
+              description: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
               nullable: true
             key:
               type: string
-              description: The BitLocker recovery key.
+              description: The BitLocker recovery key. Returned only on $select. Not nullable.
             volumeType:
               $ref: '#/components/schemas/microsoft.graph.volumeType'
           additionalProperties:
@@ -39838,6 +39855,19 @@ components:
       type: object
       additionalProperties:
         type: object
+    microsoft.graph.governanceInsight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: governanceInsight
+          type: object
+          properties:
+            insightCreatedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.accessReviewNotificationRecipientItem:
       title: accessReviewNotificationRecipientItem
       type: object
@@ -39846,7 +39876,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
         notificationTemplateType:
           type: string
-          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
+          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
           nullable: true
       additionalProperties:
         type: object
@@ -39881,10 +39911,14 @@ components:
         mailNotificationsEnabled:
           type: boolean
           description: Indicates whether emails are enabled or disabled. Default value is false.
+        recommendationInsightSettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewRecommendationInsightSetting'
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. If not specified, the duration is 30 days.'
+          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.'
           format: duration
           nullable: true
         recommendationsEnabled:
@@ -39936,10 +39970,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the cloud PC status.
+          description: Any additional information about the Cloud PC status.
         code:
           type: string
-          description: The code associated with the cloud PC status.
+          description: The code associated with the Cloud PC status.
           nullable: true
         message:
           type: string
@@ -41010,6 +41044,8 @@ components:
         - organizationAndFederated
         - everyone
         - unknownFutureValue
+        - invited
+        - organizationExcludingGuests
       type: string
     microsoft.graph.meetingParticipantInfo:
       title: meetingParticipantInfo
@@ -41145,10 +41181,11 @@ components:
     microsoft.graph.longRunningOperationStatus:
       title: longRunningOperationStatus
       enum:
-        - notstarted
+        - notStarted
         - running
         - succeeded
         - failed
+        - unknownFutureValue
       type: string
     microsoft.graph.authenticationPhoneType:
       title: authenticationPhoneType
@@ -42069,6 +42106,11 @@ components:
         type: object
     microsoft.graph.accessReviewApplyAction:
       title: accessReviewApplyAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewRecommendationInsightSetting:
+      title: accessReviewRecommendationInsightSetting
       type: object
       additionalProperties:
         type: object

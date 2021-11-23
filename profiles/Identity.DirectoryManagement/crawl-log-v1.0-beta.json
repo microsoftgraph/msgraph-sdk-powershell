@@ -301,6 +301,30 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
+    "/directory/attributeSets": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/attributeSets/{attributeSet-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/customSecurityAttributeDefinitions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}/allowedValues": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/customSecurityAttributeDefinitions/{customSecurityAttributeDefinition-id}/allowedValues/{allowedValue-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
     "/directory/deletedItems": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
@@ -334,6 +358,30 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/directory/federationConfigurations/microsoft.graph.availableProviderTypes()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/inboundSharedUserProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/inboundSharedUserProfiles/{inboundSharedUserProfile-userId}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/outboundSharedUserProfiles": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants/{tenantReference-tenantId}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
@@ -586,6 +634,10 @@
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },
     "/organization/{organization-id}/settings/itemInsights": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
+    },
+    "/organization/{organization-id}/settings/peopleInsights": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.DirectoryManagement.yml"
     },

@@ -1568,6 +1568,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 deviceIds:
                   type: array
                   items:
@@ -1632,6 +1636,86 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.compliancePolicies_assign
+      parameters:
+        - name: deviceManagementCompliancePolicy-id
+          in: path
+          description: 'key: id of deviceManagementCompliancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicyAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/compliancePolicies/{deviceManagementCompliancePolicy-id}/microsoft.graph.setScheduledActions':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action setScheduledActions
+      operationId: deviceManagement.compliancePolicies_setScheduledActions
+      parameters:
+        - name: deviceManagementCompliancePolicy-id
+          in: path
+          description: 'key: id of deviceManagementCompliancePolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementCompliancePolicy
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                scheduledActions:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceScheduledActionForRule'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceScheduledActionForRule'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -2038,6 +2122,10 @@ paths:
                   default: false
                   nullable: true
                 keepUserData:
+                  type: boolean
+                  default: false
+                  nullable: true
+                persistEsimDataPlan:
                   type: boolean
                   default: false
                   nullable: true
@@ -14602,6 +14690,10 @@ paths:
                   type: boolean
                   default: false
                   nullable: true
+                persistEsimDataPlan:
+                  type: boolean
+                  default: false
+                  nullable: true
                 deviceIds:
                   type: array
                   items:
@@ -14703,6 +14795,36 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/microsoft.graph.evaluateAssignmentFilter:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action evaluateAssignmentFilter
+      operationId: deviceManagement_evaluateAssignmentFilter
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  $ref: '#/components/schemas/microsoft.graph.assignmentFilterEvaluateRequest'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -16622,6 +16744,73 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action getDeviceConfigurationPolicySettingsSummaryReport
       operationId: deviceManagement.reports_getDeviceConfigurationPolicySettingsSummaryReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getDeviceConfigurationPolicyStatusSummary:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getDeviceConfigurationPolicyStatusSummary
+      operationId: deviceManagement.reports_getDeviceConfigurationPolicyStatusSummary
       requestBody:
         description: Action parameters
         content:
@@ -18957,12 +19146,85 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reboot':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action reboot
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_reboot
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.rename':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action rename
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_rename
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.reprovision':
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action reprovision
       operationId: deviceManagement.virtualEndpoint.cloudPCs_reprovision
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action troubleshoot
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_troubleshoot
       parameters:
         - name: cloudPC-id
           in: path
@@ -20146,6 +20408,24 @@ components:
           additionalProperties:
             type: object
           description: The DeviceManagementConfigurationPolicyAssignment entity assigns a specific DeviceManagementConfigurationPolicy to an AAD group.
+    microsoft.graph.deviceManagementComplianceScheduledActionForRule:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementComplianceScheduledActionForRule
+          type: object
+          properties:
+            ruleName:
+              type: string
+              description: Name of the rule which this scheduled action applies to.
+              nullable: true
+            scheduledActionConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceActionItem'
+              description: The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.
+          additionalProperties:
+            type: object
+          description: Scheduled Action for Rule
     microsoft.graph.deviceManagementConfigurationPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -20491,6 +20771,8 @@ components:
         - title: deviceConfigurationAssignment
           type: object
           properties:
+            intent:
+              $ref: '#/components/schemas/microsoft.graph.deviceConfigAssignmentIntent'
             source:
               $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentSource'
             sourceId:
@@ -20949,6 +21231,30 @@ components:
           additionalProperties:
             type: object
           description: This entity contains the properties used to assign a branding profile to a group.
+    microsoft.graph.assignmentFilterEvaluateRequest:
+      title: assignmentFilterEvaluateRequest
+      type: object
+      properties:
+        platform:
+          $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+        rule:
+          type: string
+          description: Rule definition of the Assignment Filter.
+        skip:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Number of records to skip. Default value is 0
+          format: int32
+        top:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Limit of records per request. Default value is 100, if provided less than 0 or greater than 100'
+          format: int32
+      additionalProperties:
+        type: object
+      description: Request for assignment filter evaluation for devices.
     microsoft.graph.assignmentFilterStatusDetails:
       title: assignmentFilterStatusDetails
       type: object
@@ -21172,7 +21478,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationPolicy'
-              description: configuration policies referencing the current reusable setting
+              description: configuration policies referencing the current reusable setting. This property is read-only.
           additionalProperties:
             type: object
           description: Graph model for a reusable setting
@@ -21373,6 +21679,33 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
+    microsoft.graph.deviceManagementComplianceActionItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: deviceManagementComplianceActionItem
+          type: object
+          properties:
+            actionType:
+              $ref: '#/components/schemas/microsoft.graph.deviceManagementComplianceActionType'
+            gracePeriodHours:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Number of hours to wait till the action will be enforced. Valid values 0 to 8760
+              format: int32
+            notificationMessageCCList:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: A list of group IDs to speicify who to CC this notification message to. This collection can contain a maximum of 100 elements.
+            notificationTemplateId:
+              type: string
+              description: What notification Message template to use
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Scheduled Action for Rule
     microsoft.graph.deviceManagementConfigurationPlatforms:
       title: deviceManagementConfigurationPlatforms
       enum:
@@ -21430,7 +21763,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationSettingDefinition'
-              description: List of related Setting Definitions
+              description: List of related Setting Definitions. This property is read-only.
           additionalProperties:
             type: object
           description: Setting instance within policy
@@ -21696,6 +22029,13 @@ components:
           additionalProperties:
             type: object
           description: Device Configuration.
+    microsoft.graph.deviceConfigAssignmentIntent:
+      title: deviceConfigAssignmentIntent
+      enum:
+        - apply
+        - remove
+      type: string
+      description: The administrator intent for the assignment of the profile.
     microsoft.graph.windowsPrivacyDataAccessLevel:
       title: windowsPrivacyDataAccessLevel
       enum:
@@ -22167,6 +22507,19 @@ components:
         - exclude
       type: string
       description: Represents type of the assignment filter.
+    microsoft.graph.deviceManagementComplianceActionType:
+      title: deviceManagementComplianceActionType
+      enum:
+        - noAction
+        - notification
+        - block
+        - retire
+        - wipe
+        - removeResourceAccessProfiles
+        - pushNotification
+        - remoteLock
+      type: string
+      description: Scheduled Action Type Enum
     microsoft.graph.deviceManagementConfigurationTemplateFamily:
       title: deviceManagementConfigurationTemplateFamily
       enum:
@@ -22178,6 +22531,7 @@ components:
         - endpointSecurityAttackSurfaceReduction
         - endpointSecurityAccountProtection
         - endpointSecurityApplicationControl
+        - baseline
       type: string
       description: Describes the TemplateFamily for the Template entity
     microsoft.graph.deviceManagementConfigurationSettingDefinition:
@@ -23002,6 +23356,7 @@ components:
       enum:
         - none
         - configuration
+        - compliance
       type: string
       description: Supported setting types
     microsoft.graph.deviceManagementConfigurationControlType:
