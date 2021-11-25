@@ -33,7 +33,7 @@ PublisherDomain : Contoso.com
 
 This examples gets the application by the specified Id.
 
-OTo learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
+To learn about other permissions for this resource, see the [permissions reference](/graph/permissions-reference).
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
