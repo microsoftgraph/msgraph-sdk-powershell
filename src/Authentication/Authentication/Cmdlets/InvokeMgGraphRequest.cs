@@ -931,17 +931,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
-            //// When PATCH or POST is specified, ensure a body is present
-            //if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && Body == null &&
-            //    string.IsNullOrWhiteSpace(InputFilePath))
-            //{
-            //    var error = GetValidationError(
-            //        Resources.BodyMissingWhenMethodIsSpecified,
-            //        ErrorConstants.Codes.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
-            //        nameof(Body), Method);
-            //    ThrowTerminatingError(error);
-            //}
-
             if (PassThru && OutputFilePath == null)
             {
                 var error = GetValidationError(
