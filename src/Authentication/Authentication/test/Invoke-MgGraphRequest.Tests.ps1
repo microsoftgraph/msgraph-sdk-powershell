@@ -120,5 +120,6 @@ Describe 'Invoke-MgGraphRequest Command' {
 
      AfterAll {
           Disconnect-MgGraph
+          Disconnect-AzAccount
      }
 }
