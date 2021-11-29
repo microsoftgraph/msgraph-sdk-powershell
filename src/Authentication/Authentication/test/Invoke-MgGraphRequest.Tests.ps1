@@ -1,10 +1,5 @@
-﻿Describe 'Invoke-MgGraphRequest Command' -Skip {
+﻿Describe 'Invoke-MgGraphRequest Command' {
      BeforeAll {
-          $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
-          if (-Not (Test-Path -Path $loadEnvPath)) {
-               $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
-          }
-          . ($loadEnvPath)
           $ModuleName = "Microsoft.Graph.Authentication"
           $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
           Import-Module $ModulePath -Force
@@ -88,6 +83,12 @@
           It 'Should Not Throw when -InferOutputFilePath is Specified' {
                { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -InferOutputFileName } | Should -Not -Throw
           }
+     }
+
+     Context 'Empty Body Requests' {
+         It 'Should Not Throw when Body is Empty for POST Requests' {
+                { Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST } | Should  -Not -Throw
+         }
      }
 
      AfterAll {
