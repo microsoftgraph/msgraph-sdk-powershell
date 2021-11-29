@@ -1,10 +1,17 @@
-﻿Describe 'Invoke-MgGraphRequest Command' {
+﻿
+Describe 'Invoke-MgGraphRequest Command' {
      BeforeAll {
+         $raptorUtils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
+          . $raptorUtils
+
+          Install-AzModule
+          Connect-AzureTenant
+
           $ModuleName = "Microsoft.Graph.Authentication"
-          $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
+          $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psm1"
           Import-Module $ModulePath -Force
-          $PSDefaultParameterValues = @{"Connect-MgGraph:TenantId" = ${env:TENANTIDENTIFIER}; "Connect-MgGraph:ClientId" = ${env:CLIENTIDENTIFIER}; "Connect-MgGraph:CertificateThumbprint" = ${env:CERTIFICATETHUMBPRINT} }
-          Connect-MgGraph
+
+          Connect-GraphTenant
      }
      Context 'Collection Results' {
           It 'ShouldReturnPsObject' {
@@ -112,6 +119,6 @@
      }
 
      AfterAll {
-          Disconnect-MgGraph
+          #Disconnect-MgGraph
      }
 }
