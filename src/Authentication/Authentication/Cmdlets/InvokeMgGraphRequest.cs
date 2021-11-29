@@ -382,29 +382,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private Uri PrepareUri(HttpClient httpClient, Uri uri)
         {
+            UriBuilder uriBuilder;
+            // For AbsoluteUri such as /beta/groups?$count=true, Get the scheme and host from httpClient
+            // Then use them to compose a new Url with the URL fragment. 
+            if (!uri.IsAbsoluteUri)
+            {
+                uriBuilder = new UriBuilder
+                {
+                    Scheme = httpClient.BaseAddress.Scheme,
+                    Host = httpClient.BaseAddress.Host
+                };
+                uri = new Uri(uriBuilder.Uri, uri);
+            }
+            uriBuilder = new UriBuilder(uri);
+
             // before creating the web request,
             // preprocess Body if content is a dictionary and method is GET (set as query)
             if (Method == GraphRequestMethod.GET &&
                 LanguagePrimitives.TryConvertTo(Body, out IDictionary bodyAsDictionary))
             {
-                UriBuilder uriBuilder;
-                // For AbsoluteUri such as /beta/groups$count=true, Get the scheme and host from httpClient
-                // Then use them to compose a new Url with the URL fragment. 
-                if (!uri.IsAbsoluteUri)
-                {
-                    uriBuilder = new UriBuilder
-                    {
-                        Scheme = httpClient.BaseAddress.Scheme,
-                        Host = httpClient.BaseAddress.Host
-                    };
-                    var newAbsoluteUri = new Uri(uriBuilder.Uri, uri);
-                    uriBuilder = new UriBuilder(newAbsoluteUri);
-                }
-                else
-                {
-                    uriBuilder = new UriBuilder(uri);
-                }
-
                 var bodyQueryParameters = bodyAsDictionary?.FormatDictionary();
                 if (uriBuilder.Query != null && uriBuilder.Query.Length > 1 &&
                     !string.IsNullOrWhiteSpace(bodyQueryParameters))
@@ -415,13 +411,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     uriBuilder.Query = bodyQueryParameters;
                 }
-
-                uri = uriBuilder.Uri;
+                
                 // set body to null to prevent later FillRequestStream
                 Body = null;
             }
 
-            return uri;
+            return uriBuilder.Uri;
         }
 
         private void ThrowIfError(ErrorRecord error)

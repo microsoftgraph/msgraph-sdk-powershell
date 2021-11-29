@@ -85,9 +85,29 @@
           }
      }
 
+     Context 'Absolute and relative URIs' {
+          It 'Should not throw when absolute URI is used on GET' {
+               { Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/organization" } | Should -Not -Throw
+          }
+          It 'Should not throw when relative URI is used on GET' {
+               { Invoke-MgGraphRequest -Method GET -Uri "/v1.0/organization" } | Should -Not -Throw
+          }
+          It 'Should not throw when absolute URI is used on POST' {
+               $body = @{ "ids" = @("00257bcc-c612-4a8b-b04d-ddc1e3cbafc1"); "types" = @("user") }
+               { Invoke-MgGraphRequest -Method POST -Uri "https://graph.microsoft.com/v1.0/directoryObjects/getByIds" -Body $body } | Should -Not -Throw
+          }
+          It 'Should not throw when relative URI is used on POST' {
+               $body = @{ "ids" = @("00257bcc-c612-4a8b-b04d-ddc1e3cbafc1"); "types" = @("user") }
+               { Invoke-MgGraphRequest -Method POST -Uri "/v1.0/directoryObjects/getByIds" -Body $body } | Should -Not -Throw
+          }
+     }
+
      Context 'Empty Body Requests' {
          It 'Should Not Throw when Body is Empty for POST Requests' {
-                { Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST } | Should  -Not -Throw
+                { 
+                    Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST -Verbose
+
+                } | Should  -Not -Throw
          }
      }
 
