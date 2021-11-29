@@ -27,7 +27,7 @@ Function Connect-AzureTenant
     $AzureTenantID = ${env:AZURETENANTID}
     $AzureApplicationID = ${env:AZUREAPPLICATIONID}
 
-    $securePassword = ConvertTo-SecureString -String ${env.AZUREAPPCLIENTSECRET} -AsPlainText -Force
+    $securePassword = ConvertTo-SecureString -String $env:AZUREAPPCLIENTSECRET -AsPlainText -Force
 
     $Credential = New-Object -TypeName PSCredential -ArgumentList $AzureApplicationID, $securePassword
     Connect-AzAccount -Credential $Credential -Tenant $AzureTenantID -ServicePrincipal | Out-Null
