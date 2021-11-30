@@ -47,7 +47,9 @@ jobs:
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
     env:
-       AZUREAPPCLIENTSECRET: $(AZURECLIENTSECRET) 
+       AZUREAPPCLIENTSECRET: $(AZURECLIENTSECRET)
+       MSGRAPHPSSDKCERTIFICATE: $(MsGraphPSSDKCertificate)
+       MSGRAPHPSSDKCERTIFICATEPASSWORD: $(MsGraphPSSDKCertificatePassword)
     inputs:
       targetType: 'inline'
       pwsh: true
