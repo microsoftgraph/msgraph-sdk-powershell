@@ -63,7 +63,7 @@ Function Get-LocalCertificate
     {
         $certificateData = $env:MsGraphPSSDKCertificate
         $kvSecretBytes = [System.Convert]::FromBase64String($certificateData)
-        $pfxCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($base64CertData, "", [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
+        $pfxCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($kvSecretBytes, "", [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
         $global:DefaultCertificate = $pfxCertificate
     }
     return $global:DefaultCertificate
