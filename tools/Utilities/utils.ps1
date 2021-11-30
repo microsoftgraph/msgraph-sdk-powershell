@@ -17,7 +17,7 @@ Function Get-LocalCertificate
 {
     if ($null -eq $global:DefaultCertificate)
     {
-        $certificateData = $env:MsGraphPSSDKCertificate
+        $certificateData = $env:CLIENTCERTIFICATE
         $kvSecretBytes = [System.Convert]::FromBase64String($certificateData)
         $pfxCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($kvSecretBytes, "", [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
         $global:DefaultCertificate = $pfxCertificate

@@ -47,7 +47,7 @@ jobs:
   - task: PowerShell@2
     displayName: 'Generate and Build Auth Module'
     env:
-       MSGRAPHPSSDKCERTIFICATE: $(MsGraphPSSDKCertificate)
+       CLIENTCERTIFICATE: $(MsGraphPSSDKCertificate)
     inputs:
       targetType: 'inline'
       pwsh: true
