@@ -14,7 +14,7 @@ Function Install-AzModule {
 #>
 Function Connect-GraphTenant
 {
-    $defaultCertificate = Get-Certificate
+    $defaultCertificate = Get-LocalCertificate
     #Connect To Microsoft Graph Raptor Default Tenant Using ClientId, TenantId and Certificate
     Connect-MgGraph -Certificate $defaultCertificate -ClientId ${env:CLIENTIDENTIFIER} -TenantId ${env:TENANTIDENTIFIER} | Out-Null
 }
@@ -49,6 +49,20 @@ Function Get-Certificate
         # KeyVault Secrets are Base64 Encoded, thus decode.
         $base64CertData = [Convert]::FromBase64String($secureCertData)
         # Create an In-Memory cert from Cert Data
+        $pfxCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($base64CertData, "", [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
+        $global:DefaultCertificate = $pfxCertificate
+    }
+    return $global:DefaultCertificate
+}
+<#
+    Get Certificate from Azure KeyVault
+#>
+Function Get-LocalCertificate
+{
+    if ($null -eq $global:DefaultCertificate)
+    {
+        $certificateData = $env:MsGraphPSSDKCertificate
+        $kvSecretBytes = [System.Convert]::FromBase64String($certificateData)
         $pfxCertificate = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2 -ArgumentList @($base64CertData, "", [System.Security.Cryptography.X509Certificates.X509KeyStorageFlags]::Exportable)
         $global:DefaultCertificate = $pfxCertificate
     }

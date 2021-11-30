@@ -4,8 +4,8 @@ Describe 'Invoke-MgGraphRequest Command' {
          $raptorUtils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
           . $raptorUtils
 
-          Install-AzModule
-          Connect-AzureTenant
+          #Install-AzModule
+          #Connect-AzureTenant
 
           $ModuleName = "Microsoft.Graph.Authentication"
           $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psm1"
