@@ -1,18 +1,11 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Retrieve a list of recently deleted items
 
-{{ Add output here }}
+```powershell
+Get-MgDirectoryDeletedItem -DirectoryObjectId 'd4142c52-179b-4d31-b5b9-08940873507b'
+
+Id                                   DeletedDateTime
+--                                   ---------------
+d4142c52-179b-4d31-b5b9-08940873507b 8/30/2021 7:37:37 AM
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This command returns the details of the specified directory object. The DirectoryObjectId can be an application, group or user resource.

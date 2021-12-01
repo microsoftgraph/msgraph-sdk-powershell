@@ -2,7 +2,7 @@
 <Configuration>
   <ViewDefinitions>
     <View>
-      <Name>AuthConfigView</Name>
+      <Name>Microsoft.Graph.PowerShell.Authentication.Models.AuthConfig</Name>
       <ViewSelectedBy>
         <TypeName>Microsoft.Graph.PowerShell.Authentication.Models.AuthConfig</TypeName>
       </ViewSelectedBy>
@@ -26,6 +26,122 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Scopes</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Graph.PowerShell.Authentication.Models.GraphCommand</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>APIVersion</PropertyName>
+        <Label>APIVersion</Label>
+      </GroupBy>
+      <TableControl>
+        <TableHeaders>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Command</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Module</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Method</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>URI</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OutputType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Permissions</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Variants</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>Microsoft.Graph.PowerShell.Authentication.Models.GraphPermission</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Graph.PowerShell.Authentication.Models.GraphPermission</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsAdmin</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Description</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>FullDescription</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
+    <View>
+      <Name>Permission</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Graph.Custom.Permission</TypeName>
+      </ViewSelectedBy>
+      <GroupBy>
+        <PropertyName>PermissionType</PropertyName>
+        <Label>PermissionType</Label>
+      </GroupBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Consent</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Description</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Consent</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Description</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>

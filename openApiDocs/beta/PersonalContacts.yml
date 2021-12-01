@@ -23,7 +23,6 @@ paths:
           x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -59,22 +58,6 @@ paths:
                 - displayName
                 - parentFolderId
                 - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - childFolders
                 - contacts
                 - multiValueExtendedProperties
@@ -170,22 +153,6 @@ paths:
                 - displayName
                 - parentFolderId
                 - wellKnownName
-                - childFolders
-                - contacts
-                - multiValueExtendedProperties
-                - singleValueExtendedProperties
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
                 - childFolders
                 - contacts
                 - multiValueExtendedProperties
@@ -312,7 +279,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -633,7 +599,6 @@ paths:
           x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1071,7 +1036,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -1097,7 +1062,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -1164,7 +1128,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -1210,7 +1174,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -1279,7 +1243,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -1327,7 +1291,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -1718,18 +1682,6 @@ paths:
                 - id
                 - height
                 - width
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -2914,22 +2866,6 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3059,22 +2995,6 @@ paths:
                 - photo
                 - singleValueExtendedProperties
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - extensions
-                - multiValueExtendedProperties
-                - photo
-                - singleValueExtendedProperties
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -3177,7 +3097,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -3196,7 +3116,6 @@ paths:
           x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
         - $ref: '#/components/parameters/filter'
         - $ref: '#/components/parameters/count'
         - name: $orderby
@@ -3263,7 +3182,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -3302,7 +3221,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -3364,7 +3283,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -3405,7 +3324,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Nullable.
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -3747,18 +3666,6 @@ paths:
                 - id
                 - height
                 - width
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
               type: string
       responses:
         '200':
@@ -4280,41 +4187,32 @@ components:
               items:
                 type: string
                 nullable: true
-              description: The contact's instant messaging (IM) addresses.
             initials:
               type: string
-              description: The contact's initials.
               nullable: true
             isFavorite:
               type: boolean
               nullable: true
             jobTitle:
               type: string
-              description: The contact’s job title.
               nullable: true
             manager:
               type: string
-              description: The name of the contact's manager.
               nullable: true
             middleName:
               type: string
-              description: The contact's middle name.
               nullable: true
             nickName:
               type: string
-              description: The contact's nickname.
               nullable: true
             officeLocation:
               type: string
-              description: The location of the contact's office.
               nullable: true
             parentFolderId:
               type: string
-              description: The ID of the contact's parent folder.
               nullable: true
             personalNotes:
               type: string
-              description: The user's notes about the contact.
               nullable: true
             phones:
               type: array
@@ -4326,19 +4224,15 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
             profession:
               type: string
-              description: The contact's profession.
               nullable: true
             spouseName:
               type: string
-              description: The name of the contact's spouse/partner.
               nullable: true
             surname:
               type: string
-              description: The contact's surname.
               nullable: true
             title:
               type: string
-              description: The contact's title.
               nullable: true
             websites:
               type: array
@@ -4351,21 +4245,18 @@ components:
               nullable: true
             yomiCompanyName:
               type: string
-              description: The phonetic Japanese company name of the contact.
               nullable: true
             yomiGivenName:
               type: string
-              description: The phonetic Japanese given name (first name) of the contact.
               nullable: true
             yomiSurname:
               type: string
-              description: The phonetic Japanese surname (last name)  of the contact.
               nullable: true
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Nullable.
+              description: The collection of open extensions defined for the contact. Read-only. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -4577,11 +4468,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of an entity instance.
+          description: The email address of the person or entity.
           nullable: true
         name:
           type: string
-          description: The display name of an entity instance.
+          description: The display name of the person or entity.
           nullable: true
       additionalProperties:
         type: object
@@ -4600,10 +4491,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -4705,12 +4596,6 @@ components:
       schema:
         minimum: 0
         type: integer
-    search:
-      name: $search
-      in: query
-      description: Search items by search phrases
-      schema:
-        type: string
     filter:
       name: $filter
       in: query
@@ -4723,6 +4608,12 @@ components:
       description: Include count of items
       schema:
         type: boolean
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      schema:
+        type: string
   securitySchemes:
     azureaadv2:
       type: oauth2

@@ -1,18 +1,12 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Get the identity governance settings
 
-{{ Add output here }}
+```powershell
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgEntitlementManagementSetting
+
+Id        DaysUntilExternalUserDeletedAfterBlocked ExternalUserLifecycleAction
+--        ---------------------------------------- ---------------------------
+singleton 30                                       BlockSignInAndDelete
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example returns the identity governance settings.

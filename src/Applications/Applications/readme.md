@@ -47,6 +47,10 @@ directive:
       subject: (Application|ServicePrincipal)SynchronizationJobCredentials
       variant: Validate1|ValidateExpanded1|ValidateViaIdentity1|ValidateViaIdentityExpanded1
     remove: true
+  - where:
+      verb: Get
+      subject: (Application|ServicePrincipal)AvailableExtensionProperty
+    remove: true
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^(ServicePrincipal|Application)(Member|TransitiveMember|CreatedOnBehalf)$
@@ -86,10 +90,15 @@ directive:
       subject: (^OnPremisePublishingProfileConnectorMember$)
     set:
       subject: $1Of
+# Singularize credentials.
+  - where:
+      subject: (.*)(FederatedIdentityCredential)s(.*)
+    set:
+      subject: $1$2$3
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.6.1
+module-version: 1.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

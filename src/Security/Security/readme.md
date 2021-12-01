@@ -44,6 +44,10 @@ directive:
       verb: Get|Update
       subject: ^Security$
     remove: true
+  - where:
+      verb: Update
+      subject: ^SecurityAttackSimulation$
+    remove: true
 # Rename cmdlets
   - where:
       verb: Remove
@@ -73,6 +77,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.6.1
+module-version: 1.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

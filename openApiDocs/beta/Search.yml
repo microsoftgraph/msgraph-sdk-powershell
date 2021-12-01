@@ -95,10 +95,14 @@ paths:
                 - id desc
                 - configuration
                 - configuration desc
+                - connectorId
+                - connectorId desc
                 - description
                 - description desc
                 - name
                 - name desc
+                - searchSettings
+                - searchSettings desc
                 - state
                 - state desc
               type: string
@@ -114,8 +118,10 @@ paths:
               enum:
                 - id
                 - configuration
+                - connectorId
                 - description
                 - name
+                - searchSettings
                 - state
                 - groups
                 - items
@@ -209,8 +215,10 @@ paths:
               enum:
                 - id
                 - configuration
+                - connectorId
                 - description
                 - name
+                - searchSettings
                 - state
                 - groups
                 - items
@@ -328,6 +336,9 @@ paths:
             items:
               enum:
                 - id
+                - acronyms
+                - bookmarks
+                - qnas
               type: string
         - name: $expand
           in: query
@@ -340,6 +351,9 @@ paths:
             items:
               enum:
                 - '*'
+                - acronyms
+                - bookmarks
+                - qnas
               type: string
       responses:
         '200':
@@ -348,6 +362,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.searchEntity'
+          links:
+            acronyms:
+              operationId: search.ListAcronyms
+            bookmarks:
+              operationId: search.ListBookmarks
+            qnas:
+              operationId: search.ListQnas
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -363,6 +384,482 @@ paths:
             schema:
               $ref: '#/components/schemas/microsoft.graph.searchEntity'
         required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /search/acronyms:
+    get:
+      tags:
+        - search.acronym
+      summary: Get acronyms from search
+      operationId: search_ListAcronyms
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - webUrl
+                - webUrl desc
+                - standsFor
+                - standsFor desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - standsFor
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of acronym
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.search.acronym'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - search.acronym
+      summary: Create new navigation property to acronyms for search
+      operationId: search_CreateAcronyms
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.acronym'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.acronym'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/search/acronyms/{acronym-id}':
+    get:
+      tags:
+        - search.acronym
+      summary: Get acronyms from search
+      operationId: search_GetAcronyms
+      parameters:
+        - name: acronym-id
+          in: path
+          description: 'key: id of acronym'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: acronym
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - standsFor
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.acronym'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - search.acronym
+      summary: Update the navigation property acronyms in search
+      operationId: search_UpdateAcronyms
+      parameters:
+        - name: acronym-id
+          in: path
+          description: 'key: id of acronym'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: acronym
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.acronym'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - search.acronym
+      summary: Delete navigation property acronyms for search
+      operationId: search_DeleteAcronyms
+      parameters:
+        - name: acronym-id
+          in: path
+          description: 'key: id of acronym'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: acronym
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /search/bookmarks:
+    get:
+      tags:
+        - search.bookmark
+      summary: Get bookmarks from search
+      operationId: search_ListBookmarks
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - webUrl
+                - webUrl desc
+                - availabilityEndDateTime
+                - availabilityEndDateTime desc
+                - availabilityStartDateTime
+                - availabilityStartDateTime desc
+                - categories
+                - categories desc
+                - groupIds
+                - groupIds desc
+                - isSuggested
+                - isSuggested desc
+                - keywords
+                - keywords desc
+                - languageTags
+                - languageTags desc
+                - platforms
+                - platforms desc
+                - powerAppIds
+                - powerAppIds desc
+                - state
+                - state desc
+                - targetedVariations
+                - targetedVariations desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - availabilityEndDateTime
+                - availabilityStartDateTime
+                - categories
+                - groupIds
+                - isSuggested
+                - keywords
+                - languageTags
+                - platforms
+                - powerAppIds
+                - state
+                - targetedVariations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookmark
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - search.bookmark
+      summary: Create new navigation property to bookmarks for search
+      operationId: search_CreateBookmarks
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/search/bookmarks/{bookmark-id}':
+    get:
+      tags:
+        - search.bookmark
+      summary: Get bookmarks from search
+      operationId: search_GetBookmarks
+      parameters:
+        - name: bookmark-id
+          in: path
+          description: 'key: id of bookmark'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookmark
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - availabilityEndDateTime
+                - availabilityStartDateTime
+                - categories
+                - groupIds
+                - isSuggested
+                - keywords
+                - languageTags
+                - platforms
+                - powerAppIds
+                - state
+                - targetedVariations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - search.bookmark
+      summary: Update the navigation property bookmarks in search
+      operationId: search_UpdateBookmarks
+      parameters:
+        - name: bookmark-id
+          in: path
+          description: 'key: id of bookmark'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookmark
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - search.bookmark
+      summary: Delete navigation property bookmarks for search
+      operationId: search_DeleteBookmarks
+      parameters:
+        - name: bookmark-id
+          in: path
+          description: 'key: id of bookmark'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookmark
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
       responses:
         '204':
           description: Success
@@ -401,6 +898,254 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /search/qnas:
+    get:
+      tags:
+        - search.qna
+      summary: Get qnas from search
+      operationId: search_ListQnas
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - webUrl
+                - webUrl desc
+                - availabilityEndDateTime
+                - availabilityEndDateTime desc
+                - availabilityStartDateTime
+                - availabilityStartDateTime desc
+                - groupIds
+                - groupIds desc
+                - isSuggested
+                - isSuggested desc
+                - keywords
+                - keywords desc
+                - languageTags
+                - languageTags desc
+                - platforms
+                - platforms desc
+                - state
+                - state desc
+                - targetedVariations
+                - targetedVariations desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - availabilityEndDateTime
+                - availabilityStartDateTime
+                - groupIds
+                - isSuggested
+                - keywords
+                - languageTags
+                - platforms
+                - state
+                - targetedVariations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of qna
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.search.qna'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - search.qna
+      summary: Create new navigation property to qnas for search
+      operationId: search_CreateQnas
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.qna'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.qna'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/search/qnas/{qna-id}':
+    get:
+      tags:
+        - search.qna
+      summary: Get qnas from search
+      operationId: search_GetQnas
+      parameters:
+        - name: qna-id
+          in: path
+          description: 'key: id of qna'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: qna
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - webUrl
+                - availabilityEndDateTime
+                - availabilityStartDateTime
+                - groupIds
+                - isSuggested
+                - keywords
+                - languageTags
+                - platforms
+                - state
+                - targetedVariations
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.search.qna'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - search.qna
+      summary: Update the navigation property qnas in search
+      operationId: search_UpdateQnas
+      parameters:
+        - name: qna-id
+          in: path
+          description: 'key: id of qna'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: qna
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.search.qna'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - search.qna
+      summary: Delete navigation property qnas for search
+      operationId: search_DeleteQnas
+      parameters:
+        - name: qna-id
+          in: path
+          description: 'key: id of qna'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: qna
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.externalConnectors.external:
@@ -421,26 +1166,37 @@ components:
           properties:
             configuration:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.configuration'
+            connectorId:
+              type: string
+              description: The Teams App ID. Optional.
+              nullable: true
             description:
               type: string
+              description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
             name:
               type: string
+              description: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
               nullable: true
+            searchSettings:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.searchSettings'
             state:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionState'
             groups:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+              description: Read-only. Nullable.
             items:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+              description: Read-only. Nullable.
             operations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+              description: Read-only. Nullable.
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
           additionalProperties:
@@ -450,6 +1206,85 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: searchEntity
           type: object
+          properties:
+            acronyms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.search.acronym'
+            bookmarks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.search.bookmark'
+            qnas:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.search.qna'
+          additionalProperties:
+            type: object
+    microsoft.graph.search.acronym:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.search.searchAnswer'
+        - title: acronym
+          type: object
+          properties:
+            standsFor:
+              type: string
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.search.answerState'
+          additionalProperties:
+            type: object
+    microsoft.graph.search.bookmark:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.search.searchAnswer'
+        - title: bookmark
+          type: object
+          properties:
+            availabilityEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            availabilityStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
+            groupIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            isSuggested:
+              type: boolean
+              nullable: true
+            keywords:
+              $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
+            languageTags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            platforms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+            powerAppIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.search.answerState'
+            targetedVariations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
           additionalProperties:
             type: object
     microsoft.graph.searchRequest:
@@ -481,7 +1316,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.entityType'
-          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
+          description: 'One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.'
         fields:
           type: array
           items:
@@ -543,6 +1378,49 @@ components:
           description: 'Represents results from a search query, and the terms used for the query.'
       additionalProperties:
         type: object
+    microsoft.graph.search.qna:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.search.searchAnswer'
+        - title: qna
+          type: object
+          properties:
+            availabilityEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            availabilityStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            groupIds:
+              type: array
+              items:
+                type: string
+                nullable: true
+            isSuggested:
+              type: boolean
+              nullable: true
+            keywords:
+              $ref: '#/components/schemas/microsoft.graph.search.answerKeyword'
+            languageTags:
+              type: array
+              items:
+                type: string
+                nullable: true
+            platforms:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.search.answerState'
+            targetedVariations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.search.answerVariant'
+          additionalProperties:
+            type: object
     microsoft.graph.entity:
       title: entity
       type: object
@@ -561,6 +1439,18 @@ components:
           items:
             type: string
             nullable: true
+          description: A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.searchSettings:
+      title: searchSettings
+      type: object
+      properties:
+        searchResultTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.displayTemplate'
+          description: Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.connectionState:
@@ -580,14 +1470,17 @@ components:
           properties:
             description:
               type: string
+              description: The description of the external group. Optional.
               nullable: true
             displayName:
               type: string
+              description: The friendly name of the external group. Optional.
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupMember'
+              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalItem:
@@ -600,6 +1493,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.acl'
+              description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
             content:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContent'
             properties:
@@ -626,12 +1520,99 @@ components:
           properties:
             baseType:
               type: string
+              description: Must be set to microsoft.graph.externalConnector.externalItem. Required.
             properties:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.property'
+              description: 'The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.'
           additionalProperties:
             type: object
+    microsoft.graph.search.searchAnswer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: searchAnswer
+          type: object
+          properties:
+            description:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.search.identitySet'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            webUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.search.answerState:
+      title: answerState
+      enum:
+        - published
+        - draft
+        - excluded
+        - unknownFutureValue
+      type: string
+    microsoft.graph.search.answerKeyword:
+      title: answerKeyword
+      type: object
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+            nullable: true
+        matchSimilarKeywords:
+          type: boolean
+          nullable: true
+        reservedKeywords:
+          type: array
+          items:
+            type: string
+            nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.devicePlatformType:
+      title: devicePlatformType
+      enum:
+        - android
+        - androidForWork
+        - iOS
+        - macOS
+        - windowsPhone81
+        - windows81AndLater
+        - windows10AndLater
+        - androidWorkProfile
+        - unknown
+        - androidAOSP
+      type: string
+      description: Supported platform types.
+    microsoft.graph.search.answerVariant:
+      title: answerVariant
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        languageTag:
+          type: string
+          nullable: true
+        platform:
+          $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
+        webUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.aggregationOption:
       title: aggregationOption
       type: object
@@ -640,7 +1621,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
         field:
           type: string
-          description: Specifies the field in the schema of the specified entity type that aggregation should be computed on. Required.
+          description: Computes aggregation on the field while the field exists in current entity type. Required.
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -740,6 +1721,28 @@ components:
           $ref: '#/components/schemas/odata.error.main'
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.displayTemplate:
+      title: displayTemplate
+      type: object
+      properties:
+        id:
+          type: string
+          description: 'The text identifier for the display template; for example, contosoTickets.'
+        layout:
+          $ref: '#/components/schemas/microsoft.graph.Json'
+        priority:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Defines the priority of a display template. A display template with priority 1 is evaluated before a template with priority 4. Gaps in priority values are supported.
+          format: int32
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyRule'
+          description: Specifies additional rules for selecting this display template based on the item schema. Optional.
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.externalGroupMember:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -764,6 +1767,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
+          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -774,6 +1778,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContentType'
         value:
           type: string
+          description: The content for the externalItem. Required.
           nullable: true
       additionalProperties:
         type: object
@@ -825,26 +1830,45 @@ components:
           items:
             type: string
             nullable: true
+          description: 'A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^. Optional.'
         isQueryable:
           type: boolean
+          description: Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
           nullable: true
         isRefinable:
           type: boolean
+          description: Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
           nullable: true
         isRetrievable:
           type: boolean
+          description: Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
           nullable: true
         isSearchable:
           type: boolean
+          description: Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.'
         name:
           type: string
+          description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
         type:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyType'
+      additionalProperties:
+        type: object
+    microsoft.graph.search.identitySet:
+      title: identitySet
+      type: object
+      properties:
+        application:
+          $ref: '#/components/schemas/microsoft.graph.search.identity'
+        device:
+          $ref: '#/components/schemas/microsoft.graph.search.identity'
+        user:
+          $ref: '#/components/schemas/microsoft.graph.search.identity'
       additionalProperties:
         type: object
     microsoft.graph.bucketAggregationDefinition:
@@ -908,6 +1932,7 @@ components:
       enum:
         - suggestion
         - modification
+        - unknownFutureValue
       type: string
     microsoft.graph.searchHitsContainer:
       title: searchHitsContainer
@@ -964,6 +1989,29 @@ components:
           additionalProperties:
             type: object
           description: The structure of this object is service-specific
+      additionalProperties:
+        type: object
+    microsoft.graph.Json:
+      title: Json
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.propertyRule:
+      title: propertyRule
+      type: object
+      properties:
+        operation:
+          $ref: '#/components/schemas/microsoft.graph.externalConnectors.ruleOperation'
+        property:
+          type: string
+          description: The property from the externalItem schema. Required.
+        values:
+          type: array
+          items:
+            type: string
+          description: A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.
+        valuesJoinedBy:
+          $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.identitySourceType:
@@ -1076,6 +2124,18 @@ components:
         - dateTimeCollection
         - unknownFutureValue
       type: string
+    microsoft.graph.search.identity:
+      title: identity
+      type: object
+      properties:
+        displayName:
+          type: string
+          nullable: true
+        id:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bucketAggregationRange:
       title: bucketAggregationRange
       type: object
@@ -1094,6 +2154,7 @@ components:
         - count
         - keyAsString
         - keyAsNumber
+        - unknownFutureValue
       type: string
     microsoft.graph.alteredQueryToken:
       title: alteredQueryToken
@@ -1198,6 +2259,25 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.externalConnectors.ruleOperation:
+      title: ruleOperation
+      enum:
+        - 'null'
+        - equals
+        - notEquals
+        - contains
+        - notContains
+        - lessThan
+        - greaterThan
+        - startsWith
+        - unknownFutureValue
+      type: string
+    microsoft.graph.binaryOperator:
+      title: binaryOperator
+      enum:
+        - or
+        - and
+      type: string
     microsoft.graph.searchBucket:
       title: searchBucket
       type: object

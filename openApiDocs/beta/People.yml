@@ -370,7 +370,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -470,18 +470,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -509,7 +497,7 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
       parameters:
         - name: user-id
@@ -541,7 +529,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -590,18 +578,6 @@ paths:
                 - websites
                 - yomiCompany
               type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
       responses:
         '200':
           description: Retrieved navigation property
@@ -616,7 +592,7 @@ paths:
       tags:
         - users.person
       summary: Update the navigation property people in users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
       parameters:
         - name: user-id
@@ -650,7 +626,7 @@ paths:
       tags:
         - users.person
       summary: Delete navigation property people for users
-      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
+      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
         - name: user-id
@@ -6447,7 +6423,7 @@ components:
               nullable: true
             personType:
               type: string
-              description: 'The type of person, for example distribution list.'
+              description: The type of person.
               nullable: true
             phones:
               type: array
@@ -7351,12 +7327,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:

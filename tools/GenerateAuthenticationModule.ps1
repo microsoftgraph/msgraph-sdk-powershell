@@ -10,6 +10,7 @@ Param(
   [switch] $EnableSigning,
   [switch] $BuildWhenEqual,
   [switch] $Test,
+  [switch] $Run,
   [int] $ModulePreviewNumber = -1
 )
 enum VersionState {
@@ -35,6 +36,7 @@ $ValidateUpdatedModuleVersionPS1 = Join-Path $PSScriptRoot ".\ValidateUpdatedMod
 $AuthSrcPath = Join-Path $PSScriptRoot "..\src\Authentication\"
 $AuthModulePath = Join-Path $AuthSrcPath "Authentication" -Resolve
 $TestModulePS1 = Join-Path $PSScriptRoot ".\TestModule.ps1" -Resolve
+$RunModulePS1 = Join-Path $AuthModulePath ".\run-module.ps1" -Resolve
 $AuthCoreCSProj = Join-Path $AuthSrcPath "$ModuleName.Core" "$ModulePrefix.$ModuleName.Core.csproj"
 $CSProjHelperPS1 = Join-Path $PSScriptRoot "./CSProjHelper.ps1"
 
@@ -63,7 +65,7 @@ elseif ($VersionState.Equals([VersionState]::EqualToFeed) -and !$BuildWhenEqual)
 elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([VersionState]::NotOnFeed) -or $BuildWhenEqual) {
   $ModuleVersion = $ManifestContent.ModuleVersion
   # Build and pack generated module.
-  if ($Build) {
+  if ($Build -or $Run) {
     if ($EnableSigning) {
       Set-CSProjValues -ModuleCsProj $AuthCoreCSProj -ModuleVersion $ModuleVersion -AssemblyOriginatorKeyFile $SigningKeyFile
       & $BuildModulePS1 -Module $ModuleName -ModulePrefix $ModulePrefix -ModuleVersion $ModuleVersion -ModulePreviewNumber $ModulePreviewNumber -ReleaseNotes $ManifestContent.PrivateData.PSData.ReleaseNotes -EnableSigning
@@ -77,8 +79,12 @@ elseif ($VersionState.Equals([VersionState]::Valid) -or $VersionState.Equals([Ve
     & $TestModulePS1 -ModulePath (Join-Path $AuthModulePath "artifacts" ) -ModuleName "$ModulePrefix.$ModuleName" -ModuleTestsPath (Join-Path $AuthModulePath "test")
   }
 
-  if ($Pack) {
+  if ($Pack -or $Run) {
     & $PackModulePS1 -Module $ModuleName -ArtifactsLocation $ArtifactsLocation
+  }
+
+  if ($Run) {
+    & $RunModulePS1 -ModuleName "$ModulePrefix.$ModuleName" -ArtifactLocation $ArtifactsLocation
   }
 
   if ($Publish) {

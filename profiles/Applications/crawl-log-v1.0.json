@@ -73,6 +73,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"
     },
+    "/applications/{application-id}/microsoft.graph.setVerifiedPublisher": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.unsetVerifiedPublisher": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Applications.yml"
+    },
     "/applications/{application-id}/owners": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Applications.yml"

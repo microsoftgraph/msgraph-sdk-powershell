@@ -9,6 +9,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
+    "/applications/{application-id}/appManagementPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/appManagementPolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
     "/applications/{application-id}/connectorGroup": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
@@ -30,6 +38,14 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/extensionProperties/{extensionProperty-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/federatedIdentityCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
@@ -78,6 +94,14 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/applications/{application-id}/microsoft.graph.restore": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.setVerifiedPublisher": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/applications/{application-id}/microsoft.graph.unsetVerifiedPublisher": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
@@ -453,6 +477,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
+    "/servicePrincipals/{servicePrincipal-id}/appManagementPolicies": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/appManagementPolicies/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
     "/servicePrincipals/{servicePrincipal-id}/appRoleAssignedTo": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
@@ -498,6 +530,14 @@
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },
     "/servicePrincipals/{servicePrincipal-id}/endpoints/{endpoint-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Applications.yml"
+    },
+    "/servicePrincipals/{servicePrincipal-id}/federatedIdentityCredentials/{federatedIdentityCredential-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Applications.yml"
     },

@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "@autorest/powershell@2.1.401"
+use: "./assets/autorest-powershell-2.1.500.tgz"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -90,7 +90,8 @@ directive:
     - microsoft.graph.ediscovery.sourceCollection
     - microsoft.graph.contentType
     - microsoft.graph.columnDefinition
-
+    - microsoft.graph.groupPolicyDefinition
+    - microsoft.graph.groupPolicyDefinitionValue
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -404,27 +405,33 @@ directive:
       variant: ^(Check|Verify)(.*)
     set:
       verb: Confirm
-# Rename all /$ref cmdlets to *ByRef e.g. New-MgGroupOwnerByRef
+# Add ByRef suffix to /$ref cmdlets
   - where:
-      subject: ^(\w*[a-z])Ref([A-Z]\w*)$
+      subject: ^(\w*[a-z])GraphRef([A-Z]\w*)$
     set:
       subject: $1$2ByRef
+# Remove *ByRef commands
   - where:
-      verb: Get|New
-      subject: ^GroupMemberByRef$
-      variant: ^List$|^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^List3$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
-    set:
-      subject: GroupMemberOfByRef
+      verb: Get|Remove|New
+      subject: ^UserPlanner(FavoritePlanByRef|RecentPlanByRef|RosterPlanByRef)$
+    remove: true
+# Rename *ByRef commands
   - where:
       verb: Get|New
       subject: ^GroupMemberByRef$
       variant: ^List2$|^Create2$|^CreateExpanded2$|^CreateViaIdentity2$|^CreateViaIdentityExpanded2$|^List5$|^Create5$|^CreateExpanded5$|^CreateViaIdentity5$|^CreateViaIdentityExpanded5$
     set:
+      subject: GroupMemberOfByRef
+  - where:
+      verb: Get|New
+      subject: ^GroupMemberByRef$
+      variant: ^List1$|^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^List4$|^Create4$|^CreateExpanded4$|^CreateViaIdentity4$|^CreateViaIdentityExpanded4$
+    set:
       subject: GroupMemberWithLicenseErrorByRef
   - where:
-      verb: Get
+      verb: Get|New
       subject: ^GroupTransitiveMemberByRef$
-      variant: ^List$|^List2$
+      variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
     set:
       subject: GroupTransitiveMemberOfByRef
 # Alias then rename cmdlets to avoid breaking change.
@@ -523,6 +530,10 @@ directive:
         let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
 
+        // Remove noisy log messages.
+        let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
+        $ = $.replace(duplicateDebugRegex, "");
+
         return $;
       }
 
@@ -543,7 +554,9 @@ directive:
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
 
           let beginProcessingRegex = /(^\s*)(protected\s*override\s*void\s*BeginProcessing\(\)\s*{)/gmi
-          $ = $.replace(beginProcessingRegex, '$1$2\n$1  if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref this._top, ref this._count); }\n$1');
+          let topPlaceholder = (!$.includes("private int _top;")) ? 'int _top = default;': ''
+          let countPlaceholder = (!$.includes("SwitchParameter _count;")) ? 'global::System.Management.Automation.SwitchParameter _count;': ''
+          $ = $.replace(beginProcessingRegex, `$1$2\n$1 ${countPlaceholder} ${topPlaceholder} if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref _top, ref _count); }\n$1`);
 
           let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
@@ -634,6 +647,11 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+
+        // Serialize DictionaryEntry struct as a value type.
+        let dictionaryEntrySerializer = 'if (vValue is System.Collections.DictionaryEntry deValue){return new JsonObject { { deValue.Key.ToString(), ToJsonValue(deValue.Value) } };}';
+        let valueTypeSerializerRegex = /(private\s*static\s*JsonNode\s*ToJsonValue\(ValueType vValue\)\s*{\s*)/gm
+        $ = $.replace(valueTypeSerializerRegex, `$1 ${dictionaryEntrySerializer}\n`);
         return $;
       }
 

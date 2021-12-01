@@ -18,8 +18,10 @@ jobs:
     pool: $(BuildAgent)
     steps:
       - template: ./checkout.yml
+        parameters:
+          TargetBranch: ${{ parameters.BaseBranch }}
 
-      - template: ./install-tools.yml
+      - template: ./install-tools-template.yml
 
       - task: PowerShell@2
         name: "ComputeBranch"
@@ -36,8 +38,6 @@ jobs:
           targetType: inline
           script: |
             git status
-            git fetch --all
-            git checkout $(BaseBranch)
             git branch $(ComputeBranch.WeeklyBranch)
             git checkout $(ComputeBranch.WeeklyBranch)
             git status
@@ -110,7 +110,7 @@ jobs:
                 . "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -Modules $_
               } catch {
                 if ($_.Exception.Message -like "No match*") {
-                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."      
+                  Write-Warning "$_. Version will be set to $NewMetaModuleVersion."
                 }
               }
             }

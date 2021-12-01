@@ -50,6 +50,10 @@ directive:
       subject: ^GroupDynamicMembership$
       variant: Evaluate1|EvaluateExpanded1
     remove: true
+  - where:
+      verb: Get
+      subject: (Group)AvailableExtensionProperty
+    remove: true
 # Rename cmdlets
   - where:
       subject: ^(GroupLifecyclePolicy)(\1)+
@@ -137,6 +141,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.6.1
+module-version: 1.9.0
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

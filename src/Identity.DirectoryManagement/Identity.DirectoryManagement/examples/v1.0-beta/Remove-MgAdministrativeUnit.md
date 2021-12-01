@@ -1,18 +1,7 @@
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
+### Example 1: Remove an administrative unit
 
-{{ Add output here }}
+```powershell
+Remove-MgDirectoryAdministrativeUnit -AdministrativeUnitId '416f19a5-2e01-4d15-a78c-d9028fee1ebb'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
+This example removes the specified administrative unit.

@@ -1,0 +1,9 @@
+{
+  "resources": [],
+  "operations": {
+    "/compliance": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Compliance.yml"
+    }
+  }
+}

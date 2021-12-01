@@ -24,6 +24,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOmaSettingPlainTextValue
+      operationId: deviceManagement.deviceConfigurations_getOmaSettingPlainTextValue
+      parameters:
+        - name: deviceConfiguration-id
+          in: path
+          description: 'key: id of deviceConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceConfiguration
+        - name: secretReferenceValueId
+          in: path
+          description: 'Usage: secretReferenceValueId={secretReferenceValueId}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/microsoft.graph.getEffectivePermissions(scope=''{scope}'')':
     get:
       tags:

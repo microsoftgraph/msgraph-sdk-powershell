@@ -268,6 +268,7 @@ paths:
       tags:
         - admin.windows
       summary: Get windows from admin
+      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_GetWindows
       parameters:
         - name: $select
@@ -313,6 +314,7 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property windows in admin
+      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_UpdateWindows
       requestBody:
         description: New navigation property values
@@ -331,6 +333,7 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property windows for admin
+      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_DeleteWindows
       parameters:
         - name: If-Match
@@ -2891,6 +2894,8 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.monitoringSettings'
         rollout:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.rolloutSettings'
+        safeguard:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardSettings'
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentState:
@@ -2953,6 +2958,17 @@ components:
           description: 'Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.'
           format: date-time
           nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.safeguardSettings:
+      title: safeguardSettings
+      type: object
+      properties:
+        disabledSafeguardProfiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardProfile'
+          description: List of safeguards to ignore per device.
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentStateReason:
@@ -3021,6 +3037,14 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.windowsUpdates.safeguardProfile:
+      title: safeguardProfile
+      type: object
+      properties:
+        category:
+          $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardCategory'
+      additionalProperties:
+        type: object
     microsoft.graph.windowsUpdates.deploymentStateReasonValue:
       title: deploymentStateReasonValue
       enum:
@@ -3029,6 +3053,7 @@ components:
         - pausedByRequest
         - pausedByMonitoring
         - unknownFutureValue
+        - faultedByContentOutdated
       type: string
     odata.error.detail:
       required:
@@ -3055,6 +3080,12 @@ components:
       title: monitoringSignal
       enum:
         - rollback
+        - unknownFutureValue
+      type: string
+    microsoft.graph.windowsUpdates.safeguardCategory:
+      title: safeguardCategory
+      enum:
+        - likelyIssues
         - unknownFutureValue
       type: string
   responses:

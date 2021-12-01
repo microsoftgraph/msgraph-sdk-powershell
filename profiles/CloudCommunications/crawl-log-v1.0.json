@@ -37,6 +37,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/calls/{call-id}/audioRoutingGroups": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/calls/{call-id}/audioRoutingGroups/{audioRoutingGroup-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/calls/{call-id}/microsoft.graph.answer": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
@@ -109,6 +117,14 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.startHoldMusic": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.stopHoldMusic": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/calls/{call-id}/participants/microsoft.graph.invite": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
@@ -129,6 +145,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/onlineMeetings/microsoft.graph.createOrGet": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
@@ -141,11 +161,23 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/presences/{presence-id}/microsoft.graph.clearPresence": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/presences/{presence-id}/microsoft.graph.setPresence": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/users/{user-id}/onlineMeetings": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
     "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
