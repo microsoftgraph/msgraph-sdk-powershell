@@ -5338,6 +5338,8 @@ paths:
             items:
               enum:
                 - id
+                - impactedResources
+                - recommendations
                 - administrativeUnits
                 - attributeSets
                 - customSecurityAttributeDefinitions
@@ -5359,6 +5361,8 @@ paths:
             items:
               enum:
                 - '*'
+                - impactedResources
+                - recommendations
                 - administrativeUnits
                 - attributeSets
                 - customSecurityAttributeDefinitions
@@ -5377,6 +5381,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directory'
           links:
+            impactedResources:
+              operationId: directory.ListImpactedResources
+            recommendations:
+              operationId: directory.ListRecommendations
             administrativeUnits:
               operationId: directory.ListAdministrativeUnits
             attributeSets:
@@ -5659,6 +5667,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Get attributeSets from directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_ListAttributeSets
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5736,6 +5745,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Create new navigation property to attributeSets for directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_CreateAttributeSets
       requestBody:
         description: New navigation property
@@ -5759,6 +5769,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Get attributeSets from directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_GetAttributeSets
       parameters:
         - name: attributeSet-id
@@ -5808,6 +5819,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Update the navigation property attributeSets in directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_UpdateAttributeSets
       parameters:
         - name: attributeSet-id
@@ -5834,6 +5846,7 @@ paths:
       tags:
         - directory.attributeSet
       summary: Delete navigation property attributeSets for directory
+      description: Group of related custom security attribute definitions.
       operationId: directory_DeleteAttributeSets
       parameters:
         - name: attributeSet-id
@@ -5859,6 +5872,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get customSecurityAttributeDefinitions from directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_ListCustomSecurityAttributeDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5956,6 +5970,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Create new navigation property to customSecurityAttributeDefinitions for directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_CreateCustomSecurityAttributeDefinitions
       requestBody:
         description: New navigation property
@@ -5979,6 +5994,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get customSecurityAttributeDefinitions from directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_GetCustomSecurityAttributeDefinitions
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6041,6 +6057,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Update the navigation property customSecurityAttributeDefinitions in directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_UpdateCustomSecurityAttributeDefinitions
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6067,6 +6084,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Delete navigation property customSecurityAttributeDefinitions for directory
+      description: Schema of a custom security attributes (key-value pairs).
       operationId: directory_DeleteCustomSecurityAttributeDefinitions
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6092,6 +6110,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get allowedValues from directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_ListAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6173,6 +6192,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Create new navigation property to allowedValues for directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_CreateAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6204,6 +6224,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Get allowedValues from directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_GetAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6259,6 +6280,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Update the navigation property allowedValues in directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_UpdateAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -6292,6 +6314,7 @@ paths:
       tags:
         - directory.customSecurityAttributeDefinition
       summary: Delete navigation property allowedValues for directory
+      description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
       operationId: directory.customSecurityAttributeDefinitions_DeleteAllowedValues
       parameters:
         - name: customSecurityAttributeDefinition-id
@@ -7203,6 +7226,361 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /directory/impactedResources:
+    get:
+      tags:
+        - directory.recommendationResource
+      summary: Get impactedResources from directory
+      operationId: directory_ListImpactedResources
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - addedDateTime
+                - addedDateTime desc
+                - additionalDetails
+                - additionalDetails desc
+                - apiUrl
+                - apiUrl desc
+                - displayName
+                - displayName desc
+                - owner
+                - owner desc
+                - portalUrl
+                - portalUrl desc
+                - rank
+                - rank desc
+                - recommendationId
+                - recommendationId desc
+                - resourceType
+                - resourceType desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addedDateTime
+                - additionalDetails
+                - apiUrl
+                - displayName
+                - owner
+                - portalUrl
+                - rank
+                - recommendationId
+                - resourceType
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of recommendationResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.recommendationResource
+      summary: Create new navigation property to impactedResources for directory
+      operationId: directory_CreateImpactedResources
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/impactedResources/{recommendationResource-id}':
+    get:
+      tags:
+        - directory.recommendationResource
+      summary: Get impactedResources from directory
+      operationId: directory_GetImpactedResources
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addedDateTime
+                - additionalDetails
+                - apiUrl
+                - displayName
+                - owner
+                - portalUrl
+                - rank
+                - recommendationId
+                - resourceType
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendationResource
+      summary: Update the navigation property impactedResources in directory
+      operationId: directory_UpdateImpactedResources
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendationResource
+      summary: Delete navigation property impactedResources for directory
+      operationId: directory_DeleteImpactedResources
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.complete':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action complete
+      operationId: directory.impactedResources_complete
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action dismiss
+      operationId: directory.impactedResources_dismiss
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dismissReason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.postpone':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action postpone
+      operationId: directory.impactedResources_postpone
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postponeUntilDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action reactivate
+      operationId: directory.impactedResources_reactivate
+      parameters:
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directory/inboundSharedUserProfiles:
     get:
       tags:
@@ -7860,6 +8238,805 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/recommendations:
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get recommendations from directory
+      operationId: directory_ListRecommendations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actionSteps
+                - actionSteps desc
+                - benefits
+                - benefits desc
+                - category
+                - category desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - impactStartDateTime
+                - impactStartDateTime desc
+                - impactType
+                - impactType desc
+                - insights
+                - insights desc
+                - lastCheckedDateTime
+                - lastCheckedDateTime desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - postponeUntilDateTime
+                - postponeUntilDateTime desc
+                - priority
+                - priority desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionSteps
+                - benefits
+                - category
+                - createdDateTime
+                - displayName
+                - impactStartDateTime
+                - impactType
+                - insights
+                - lastCheckedDateTime
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - postponeUntilDateTime
+                - priority
+                - status
+                - impactedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - impactedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of recommendation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recommendation'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.recommendation
+      summary: Create new navigation property to recommendations for directory
+      operationId: directory_CreateRecommendations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get recommendations from directory
+      operationId: directory_GetRecommendations
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actionSteps
+                - benefits
+                - category
+                - createdDateTime
+                - displayName
+                - impactStartDateTime
+                - impactType
+                - insights
+                - lastCheckedDateTime
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - postponeUntilDateTime
+                - priority
+                - status
+                - impactedResources
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - impactedResources
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+          links:
+            impactedResources:
+              operationId: directory.Recommendations.ListImpactedResources
+              parameters:
+                recommendation-id: $request.path.recommendation-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendation
+      summary: Update the navigation property recommendations in directory
+      operationId: directory_UpdateRecommendations
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendation
+      summary: Delete navigation property recommendations for directory
+      operationId: directory_DeleteRecommendations
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get impactedResources from directory
+      operationId: directory.recommendations_ListImpactedResources
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - addedDateTime
+                - addedDateTime desc
+                - additionalDetails
+                - additionalDetails desc
+                - apiUrl
+                - apiUrl desc
+                - displayName
+                - displayName desc
+                - owner
+                - owner desc
+                - portalUrl
+                - portalUrl desc
+                - rank
+                - rank desc
+                - recommendationId
+                - recommendationId desc
+                - resourceType
+                - resourceType desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addedDateTime
+                - additionalDetails
+                - apiUrl
+                - displayName
+                - owner
+                - portalUrl
+                - rank
+                - recommendationId
+                - resourceType
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of recommendationResource
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.recommendation
+      summary: Create new navigation property to impactedResources for directory
+      operationId: directory.recommendations_CreateImpactedResources
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}':
+    get:
+      tags:
+        - directory.recommendation
+      summary: Get impactedResources from directory
+      operationId: directory.recommendations_GetImpactedResources
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - addedDateTime
+                - additionalDetails
+                - apiUrl
+                - displayName
+                - owner
+                - portalUrl
+                - rank
+                - recommendationId
+                - resourceType
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.recommendation
+      summary: Update the navigation property impactedResources in directory
+      operationId: directory.recommendations_UpdateImpactedResources
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.recommendation
+      summary: Delete navigation property impactedResources for directory
+      operationId: directory.recommendations_DeleteImpactedResources
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.complete':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action complete
+      operationId: directory.recommendations.impactedResources_complete
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.dismiss':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action dismiss
+      operationId: directory.recommendations.impactedResources_dismiss
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dismissReason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.postpone':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action postpone
+      operationId: directory.recommendations.impactedResources_postpone
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postponeUntilDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/impactedResources/{recommendationResource-id}/microsoft.graph.reactivate':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action reactivate
+      operationId: directory.recommendations.impactedResources_reactivate
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+        - name: recommendationResource-id
+          in: path
+          description: 'key: id of recommendationResource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendationResource
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.complete':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action complete
+      operationId: directory.recommendations_complete
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.dismiss':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action dismiss
+      operationId: directory.recommendations_dismiss
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dismissReason:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.postpone':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action postpone
+      operationId: directory.recommendations_postpone
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postponeUntilDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/recommendations/{recommendation-id}/microsoft.graph.reactivate':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action reactivate
+      operationId: directory.recommendations_reactivate
+      parameters:
+        - name: recommendation-id
+          in: path
+          description: 'key: id of recommendation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: recommendation
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directory/sharedEmailDomains:
     get:
       tags:
@@ -13583,60 +14760,60 @@ components:
               description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
-              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             department:
               type: string
-              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             displayName:
               type: string
-              description: 'Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             givenName:
               type: string
-              description: 'First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             jobTitle:
               type: string
-              description: 'Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, NOT, ge, le, in).'
+              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, NOT).'
+              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).'
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, NOT, in, and eq on null values).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
-              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, NOT, in).'
+              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).'
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, NOT, ge, le, startsWith).'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).'
             surname:
               type: string
-              description: 'Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)'
+              description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             directReports:
               type: array
@@ -13695,17 +14872,17 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, NOT, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
-              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le).'
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -13720,7 +14897,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -13739,7 +14916,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             domainName:
               type: string
@@ -13763,11 +14940,11 @@ components:
               description: List of hostNames for the device.
             isCompliant:
               type: boolean
-              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
             isManaged:
               type: boolean
-              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
             isRooted:
               type: boolean
@@ -13780,26 +14957,26 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             operatingSystem:
               type: string
-              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -13935,6 +15112,14 @@ components:
         - title: directory
           type: object
           properties:
+            impactedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
+            recommendations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendation'
             administrativeUnits:
               type: array
               items:
@@ -13944,10 +15129,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attributeSet'
+              description: Group of related custom security attribute definitions.
             customSecurityAttributeDefinitions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.customSecurityAttributeDefinition'
+              description: Schema of a custom security attributes (key-value pairs).
             deletedItems:
               type: array
               items:
@@ -13985,11 +15172,13 @@ components:
           properties:
             description:
               type: string
+              description: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             maxAttributesPerSet:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: 'Maximum number of custom security attributes that can be defined in this attribute set. Default value is null. If not specified, the administrator can add up to the maximum of 500 active attributes per tenant. Can be changed later.'
               format: int32
               nullable: true
           additionalProperties:
@@ -14002,27 +15191,36 @@ components:
           properties:
             attributeSet:
               type: string
+              description: Name of the attribute set. Case insensitive.
             description:
               type: string
+              description: Description of the custom security attribute. Can be up to 128 characters long and include Unicode characters. Can be changed later.
               nullable: true
             isCollection:
               type: boolean
+              description: 'Indicates whether multiple values can be assigned to the custom security attribute. Cannot be changed later. If type is set to Boolean, isCollection cannot be set to true.'
             isSearchable:
               type: boolean
+              description: Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
               nullable: true
             name:
               type: string
+              description: Name of the custom security attribute. Must be unique within an attribute set. Can be up to 32 characters long and include Unicode characters. Cannot contain spaces or special characters. Cannot be changed later. Case insensitive.
             status:
               type: string
+              description: Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
             type:
               type: string
+              description: 'Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.'
             usePreDefinedValuesOnly:
               type: boolean
+              description: 'Indicates whether only predefined values can be assigned to the custom security attribute. If set to false, free-form values are allowed. Can later be changed from true to false, but cannot be changed from false to true. If type is set to Boolean, usePreDefinedValuesOnly cannot be set to true.'
               nullable: true
             allowedValues:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.allowedValue'
+              description: 'Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.'
           additionalProperties:
             type: object
     microsoft.graph.allowedValue:
@@ -14033,6 +15231,7 @@ components:
           properties:
             isActive:
               type: boolean
+              description: 'Indicates whether the predefined value is active or deactivated. If set to false, this predefined value cannot be assigned to any additional supported directory objects.'
               nullable: true
           additionalProperties:
             type: object
@@ -14076,6 +15275,45 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.recommendationResource:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: recommendationResource
+          type: object
+          properties:
+            addedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            additionalDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+            apiUrl:
+              type: string
+              nullable: true
+            displayName:
+              type: string
+            owner:
+              type: string
+              nullable: true
+            portalUrl:
+              type: string
+              nullable: true
+            rank:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            recommendationId:
+              type: string
+            resourceType:
+              type: string
+            status:
+              $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.inboundSharedUserProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.directoryObject'
@@ -14114,6 +15352,66 @@ components:
           properties:
             tenantId:
               type: string
+          additionalProperties:
+            type: object
+    microsoft.graph.recommendation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: recommendation
+          type: object
+          properties:
+            actionSteps:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.actionStep'
+            benefits:
+              type: string
+              nullable: true
+            category:
+              $ref: '#/components/schemas/microsoft.graph.recommendationCategory'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+            displayName:
+              type: string
+            impactStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            impactType:
+              type: string
+              nullable: true
+            insights:
+              type: string
+              nullable: true
+            lastCheckedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastModifiedBy:
+              type: string
+              nullable: true
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            postponeUntilDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            priority:
+              $ref: '#/components/schemas/microsoft.graph.recommendationPriority'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.recommendationStatus'
+            impactedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.recommendationResource'
           additionalProperties:
             type: object
     microsoft.graph.sharedEmailDomain:
@@ -14759,6 +16057,61 @@ components:
         - emailAsAlternateId
         - unknownFutureValue
       type: string
+    microsoft.graph.keyValue:
+      title: keyValue
+      type: object
+      properties:
+        key:
+          type: string
+          description: Key for the key-value pair.
+          nullable: true
+        value:
+          type: string
+          description: Value for the key-value pair.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.recommendationStatus:
+      title: recommendationStatus
+      enum:
+        - active
+        - completedBySystem
+        - completedByUser
+        - dismissed
+        - postponed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.actionStep:
+      title: actionStep
+      type: object
+      properties:
+        actionUrl:
+          $ref: '#/components/schemas/microsoft.graph.actionUrl'
+        stepNumber:
+          type: integer
+          format: int64
+        text:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.recommendationCategory:
+      title: recommendationCategory
+      enum:
+        - usageAndCompliance
+        - security
+        - productivity
+        - health
+        - configuration
+        - unknownFutureValue
+      type: string
+    microsoft.graph.recommendationPriority:
+      title: recommendationPriority
+      enum:
+        - low
+        - medium
+        - high
+      type: string
     microsoft.graph.settingTemplateValue:
       title: settingTemplateValue
       type: object
@@ -15164,6 +16517,17 @@ components:
         - pager
         - radio
       type: string
+    microsoft.graph.actionUrl:
+      title: actionUrl
+      type: object
+      properties:
+        displayName:
+          type: string
+        url:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
       type: object
