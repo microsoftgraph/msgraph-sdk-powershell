@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "./assets/autorest-powershell-2.1.500.tgz"
+use: "./assets/autorest-powershell-2.1.600.tgz"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
