@@ -4646,6 +4646,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Access packages.
       operationId: identityGovernance.entitlementManagement_ListAccessPackages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4734,6 +4735,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to accessPackages for identityGovernance
+      description: Access packages.
       operationId: identityGovernance.entitlementManagement_CreateAccessPackages
       requestBody:
         description: New navigation property
@@ -4757,6 +4759,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Access packages.
       operationId: identityGovernance.entitlementManagement_GetAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4816,6 +4819,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property accessPackages in identityGovernance
+      description: Access packages.
       operationId: identityGovernance.entitlementManagement_UpdateAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4842,6 +4846,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property accessPackages for identityGovernance
+      description: Access packages.
       operationId: identityGovernance.entitlementManagement_DeleteAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4867,6 +4872,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -4929,6 +4935,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -4957,6 +4964,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_SetGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -4985,6 +4993,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -5061,6 +5070,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5156,6 +5166,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignmentRequests for identityGovernance
+      description: Access package assignment requests.
       operationId: identityGovernance.entitlementManagement_CreateAssignmentRequests
       requestBody:
         description: New navigation property
@@ -5179,6 +5190,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5251,6 +5263,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignmentRequests in identityGovernance
+      description: Access package assignment requests.
       operationId: identityGovernance.entitlementManagement_UpdateAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5277,6 +5290,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignmentRequests for identityGovernance
+      description: Access package assignment requests.
       operationId: identityGovernance.entitlementManagement_DeleteAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5473,6 +5487,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5538,6 +5553,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5570,6 +5586,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property assignment in identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5598,6 +5615,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property assignment for identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5814,6 +5832,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: Access package assignments.
       operationId: identityGovernance.entitlementManagement_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5901,6 +5920,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignments for identityGovernance
+      description: Access package assignments.
       operationId: identityGovernance.entitlementManagement_CreateAssignments
       requestBody:
         description: New navigation property
@@ -5924,6 +5944,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: Access package assignments.
       operationId: identityGovernance.entitlementManagement_GetAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -5988,6 +6009,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignments in identityGovernance
+      description: Access package assignments.
       operationId: identityGovernance.entitlementManagement_UpdateAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -6014,6 +6036,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignments for identityGovernance
+      description: Access package assignments.
       operationId: identityGovernance.entitlementManagement_DeleteAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -6381,6 +6404,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: Access package catalogs.
       operationId: identityGovernance.entitlementManagement_ListCatalogs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6475,6 +6499,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to catalogs for identityGovernance
+      description: Access package catalogs.
       operationId: identityGovernance.entitlementManagement_CreateCatalogs
       requestBody:
         description: New navigation property
@@ -6498,6 +6523,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: Access package catalogs.
       operationId: identityGovernance.entitlementManagement_GetCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6559,6 +6585,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property catalogs in identityGovernance
+      description: Access package catalogs.
       operationId: identityGovernance.entitlementManagement_UpdateCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6585,6 +6612,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property catalogs for identityGovernance
+      description: Access package catalogs.
       operationId: identityGovernance.entitlementManagement_DeleteCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6873,6 +6901,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -6943,6 +6972,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -6979,6 +7009,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_SetGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -7014,6 +7045,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -7111,6 +7143,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: Connected organizations.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7204,6 +7237,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to connectedOrganizations for identityGovernance
+      description: Connected organizations.
       operationId: identityGovernance.entitlementManagement_CreateConnectedOrganizations
       requestBody:
         description: New navigation property
@@ -7227,6 +7261,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: Connected organizations.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7293,6 +7328,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property connectedOrganizations in identityGovernance
+      description: Connected organizations.
       operationId: identityGovernance.entitlementManagement_UpdateConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7319,6 +7355,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property connectedOrganizations for identityGovernance
+      description: Connected organizations.
       operationId: identityGovernance.entitlementManagement_DeleteConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7818,6 +7855,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get settings from identityGovernance
+      description: Entitlement management settings.
       operationId: identityGovernance.entitlementManagement_GetSettings
       parameters:
         - name: $select
@@ -7860,6 +7898,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property settings in identityGovernance
+      description: Entitlement management settings.
       operationId: identityGovernance.entitlementManagement_UpdateSettings
       requestBody:
         description: New navigation property values
@@ -7878,6 +7917,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property settings for identityGovernance
+      description: Entitlement management settings.
       operationId: identityGovernance.entitlementManagement_DeleteSettings
       parameters:
         - name: If-Match
@@ -9152,22 +9192,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
+              description: Access packages.
             assignmentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+              description: Access package assignment requests.
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+              description: Access package assignments.
             catalogs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+              description: Access package catalogs.
             connectedOrganizations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+              description: Connected organizations.
             settings:
               $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
           additionalProperties:
@@ -9261,12 +9306,15 @@ components:
       properties:
         allowCustomAssignmentSchedule:
           type: boolean
+          description: Indicates whether the requestor is allowed to set a custom schedule.
           nullable: true
         isApprovalRequiredForAdd:
           type: boolean
+          description: Indicates whether a request to add must be approved by an approver.
           nullable: true
         isApprovalRequiredForUpdate:
           type: boolean
+          description: Indicates whether a request to update must be approved by an approver.
           nullable: true
         policyDescription:
           type: string
@@ -9315,6 +9363,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessPackageRequestState'
             status:
               type: string
+              description: More information on the request processing status. Read-only.
               nullable: true
             accessPackage:
               $ref: '#/components/schemas/microsoft.graph.accessPackage'
@@ -9333,7 +9382,7 @@ components:
             expiredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             schedule:
@@ -9342,6 +9391,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentState'
             status:
               type: string
+              description: 'More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.'
               nullable: true
             accessPackage:
               $ref: '#/components/schemas/microsoft.graph.accessPackage'
@@ -9369,6 +9419,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: 'A string representation of the principal''s security identifier, if known, or null if the subject does not have a security identifier.'
               nullable: true
             principalName:
               type: string
@@ -9419,6 +9470,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9461,6 +9513,7 @@ components:
             durationUntilExternalUserDeletedAfterBlocked:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: 'If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.'
               format: duration
               nullable: true
             externalUserLifecycleAction:
@@ -9740,6 +9793,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:
