@@ -109,13 +109,11 @@ Describe 'Invoke-MgGraphRequest Command' {
          It 'Should Not Throw when Body is Empty for POST Requests' {
                 { 
                     Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST -Verbose
-
                 } | Should  -Not -Throw
          }
      }
 
      AfterAll {
           Disconnect-MgGraph
-          Disconnect-AzAccount
      }
 }
