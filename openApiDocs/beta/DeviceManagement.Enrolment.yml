@@ -17327,7 +17327,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get entitlementManagement from roleManagement
-      description: The RbacApplication for Entitlement Management
+      description: Container for all entitlement management resources in Azure AD identity governance.
       operationId: roleManagement_GetEntitlementManagement
       parameters:
         - name: $select
@@ -17409,7 +17409,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property entitlementManagement in roleManagement
-      description: The RbacApplication for Entitlement Management
+      description: Container for all entitlement management resources in Azure AD identity governance.
       operationId: roleManagement_UpdateEntitlementManagement
       requestBody:
         description: New navigation property values
@@ -17428,7 +17428,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property entitlementManagement for roleManagement
-      description: The RbacApplication for Entitlement Management
+      description: Container for all entitlement management resources in Azure AD identity governance.
       operationId: roleManagement_DeleteEntitlementManagement
       parameters:
         - name: If-Match

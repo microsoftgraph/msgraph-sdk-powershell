@@ -3639,7 +3639,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3718,7 +3718,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to extensions for directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_CreateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3750,7 +3750,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3805,7 +3805,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property extensions in directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_UpdateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3839,7 +3839,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property extensions for directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_DeleteExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3872,7 +3872,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get members from directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -3955,7 +3955,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4012,7 +4012,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_CreateGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4048,7 +4048,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4136,7 +4136,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to scopedRoleMembers for directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_CreateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4168,7 +4168,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4226,7 +4226,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property scopedRoleMembers in directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_UpdateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property scopedRoleMembers for directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_DeleteScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -8679,11 +8679,11 @@ components:
           properties:
             description:
               type: string
-              description: An optional description for the administrative unit.
+              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).'
               nullable: true
             displayName:
               type: string
-              description: Display name for the administrative unit.
+              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             visibility:
               type: string
@@ -8693,17 +8693,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+              description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+              description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for this Administrative Unit. Nullable.
+              description: The collection of open extensions defined for this administrative unit. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
