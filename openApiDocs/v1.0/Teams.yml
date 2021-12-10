@@ -16852,16 +16852,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharePointIdentitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToV2:
               $ref: '#/components/schemas/microsoft.graph.sharePointIdentitySet'
             hasPassword:
               type: boolean
-              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
+              description: Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -16874,7 +16874,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
+              description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
             shareId:
               type: string
               description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
@@ -18057,7 +18057,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -21597,6 +21597,7 @@ components:
           properties:
             loginName:
               type: string
+              description: The sign in name of the SharePoint identity.
               nullable: true
           additionalProperties:
             type: object

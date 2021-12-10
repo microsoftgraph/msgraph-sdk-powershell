@@ -19824,7 +19824,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'An optional description of the application. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
+              description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string

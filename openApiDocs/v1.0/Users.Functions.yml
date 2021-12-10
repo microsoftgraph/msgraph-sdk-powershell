@@ -1441,7 +1441,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -1472,7 +1472,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -1513,7 +1513,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -1544,7 +1544,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -1916,7 +1916,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -1947,7 +1947,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -1988,7 +1988,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -2019,7 +2019,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -2060,7 +2060,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -2091,7 +2091,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.insights.shared.lastSharedMethod.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -2318,7 +2318,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -2349,7 +2349,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -2390,7 +2390,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -2421,7 +2421,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -2793,7 +2793,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -2824,7 +2824,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -2865,7 +2865,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -2896,7 +2896,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -2937,7 +2937,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -2968,7 +2968,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.insights.shared.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -3195,7 +3195,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -3226,7 +3226,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -3267,7 +3267,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -3298,7 +3298,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -3670,7 +3670,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -3701,7 +3701,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -3742,7 +3742,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -3773,7 +3773,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -3814,7 +3814,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -3845,7 +3845,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.insights.trending.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -4072,7 +4072,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter-9c18
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -4103,7 +4103,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsAfter
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter-db2a
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsAfter
       parameters:
         - name: user-id
           in: path
@@ -4144,7 +4144,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore-72e4
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -4175,7 +4175,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function columnsBefore
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore-1bca
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_columnsBefore
       parameters:
         - name: user-id
           in: path
@@ -4547,7 +4547,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove-3ac1
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -4578,7 +4578,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsAbove
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove-251e
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsAbove
       parameters:
         - name: user-id
           in: path
@@ -4619,7 +4619,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow-3b3c
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -4650,7 +4650,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function rowsBelow
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow-cb11
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_rowsBelow
       parameters:
         - name: user-id
           in: path
@@ -4691,7 +4691,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange-ec2c
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -4722,7 +4722,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function usedRange
-      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange-206d
+      operationId: users.insights.used.resource.microsoft.graph.workbookRange_usedRange
       parameters:
         - name: user-id
           in: path
@@ -5510,7 +5510,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones-ee48
+      operationId: users.outlook_supportedTimeZones
       parameters:
         - name: user-id
           in: path
@@ -5536,7 +5536,7 @@ paths:
       tags:
         - users.Functions
       summary: Invoke function supportedTimeZones
-      operationId: users.outlook_supportedTimeZones-51c6
+      operationId: users.outlook_supportedTimeZones
       parameters:
         - name: user-id
           in: path
@@ -6602,7 +6602,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -10555,16 +10555,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySet'
-              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToIdentitiesV2:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharePointIdentitySet'
+              description: 'For link type permissions, the details of the users to whom permission was granted. Read-only.'
             grantedToV2:
               $ref: '#/components/schemas/microsoft.graph.sharePointIdentitySet'
             hasPassword:
               type: boolean
-              description: 'This indicates whether password is set for this permission, it''s only showing in response. Optional and Read-only and for OneDrive Personal only.'
+              description: Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
               nullable: true
             inheritedFrom:
               $ref: '#/components/schemas/microsoft.graph.itemReference'
@@ -10577,7 +10577,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'The type of permission, e.g. read. See below for the full list of roles. Read-only.'
+              description: 'The type of permission, for example, read. See below for the full list of roles. Read-only.'
             shareId:
               type: string
               description: A unique token that can be used to access this shared item via the **shares** API. Read-only.
@@ -15871,6 +15871,7 @@ components:
           properties:
             loginName:
               type: string
+              description: The sign in name of the SharePoint identity.
               nullable: true
           additionalProperties:
             type: object
