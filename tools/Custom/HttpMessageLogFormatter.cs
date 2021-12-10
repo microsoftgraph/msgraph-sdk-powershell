@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell
             string body = string.Empty;
             try
             {
-                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().Result);
+                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
             catch { }
 
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell
             string body = string.Empty;
             try
             {
-                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().Result);
+                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
             catch { }
 
