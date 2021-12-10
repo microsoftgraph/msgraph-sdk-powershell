@@ -56,11 +56,11 @@ namespace Microsoft.Graph.PowerShell
             return stringBuilder.ToString();
         }
 
+        private static Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
         private static object SanitizeBody(string body)
         {
             IList<Regex> regexList = new List<Regex>();
             // Remove access_token:*  instances in body.
-            Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"");
             regexList.Add(regexPattern);
 
             foreach (Regex matcher in regexList)
