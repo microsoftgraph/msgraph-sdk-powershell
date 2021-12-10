@@ -2030,7 +2030,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2053,7 +2054,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2062,7 +2064,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserDetail
-      operationId: reports_getEmailActivityUserDetail-fe32
+      operationId: reports_getEmailActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -2078,7 +2080,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2087,7 +2090,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailActivityUserDetail
-      operationId: reports_getEmailActivityUserDetail-ddb2
+      operationId: reports_getEmailActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -2101,7 +2104,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2124,7 +2128,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2147,7 +2152,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2156,7 +2162,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserDetail
-      operationId: reports_getEmailAppUsageUserDetail-62ec
+      operationId: reports_getEmailAppUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -2172,7 +2178,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2181,7 +2188,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getEmailAppUsageUserDetail
-      operationId: reports_getEmailAppUsageUserDetail-546b
+      operationId: reports_getEmailAppUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -2195,7 +2202,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2218,7 +2226,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2284,7 +2293,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2307,7 +2317,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2330,7 +2341,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2353,7 +2365,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2433,7 +2446,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserDetail
-      operationId: reports_getOffice365ActiveUserDetail-d389
+      operationId: reports_getOffice365ActiveUserDetail
       parameters:
         - name: date
           in: path
@@ -2458,7 +2471,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365ActiveUserDetail
-      operationId: reports_getOffice365ActiveUserDetail-68ad
+      operationId: reports_getOffice365ActiveUserDetail
       parameters:
         - name: period
           in: path
@@ -2504,7 +2517,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: reports_getOffice365GroupsActivityDetail-81cc
+      operationId: reports_getOffice365GroupsActivityDetail
       parameters:
         - name: date
           in: path
@@ -2529,7 +2542,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOffice365GroupsActivityDetail
-      operationId: reports_getOffice365GroupsActivityDetail-38f6
+      operationId: reports_getOffice365GroupsActivityDetail
       parameters:
         - name: period
           in: path
@@ -2690,7 +2703,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserDetail
-      operationId: reports_getOneDriveActivityUserDetail-05f1
+      operationId: reports_getOneDriveActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -2715,7 +2728,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveActivityUserDetail
-      operationId: reports_getOneDriveActivityUserDetail-c424
+      operationId: reports_getOneDriveActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -2761,7 +2774,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: reports_getOneDriveUsageAccountDetail-e827
+      operationId: reports_getOneDriveUsageAccountDetail
       parameters:
         - name: date
           in: path
@@ -2786,7 +2799,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getOneDriveUsageAccountDetail
-      operationId: reports_getOneDriveUsageAccountDetail-dd7f
+      operationId: reports_getOneDriveUsageAccountDetail
       parameters:
         - name: period
           in: path
@@ -2967,7 +2980,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserDetail
-      operationId: reports_getSharePointActivityUserDetail-f3be
+      operationId: reports_getSharePointActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -2992,7 +3005,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointActivityUserDetail
-      operationId: reports_getSharePointActivityUserDetail-b778
+      operationId: reports_getSharePointActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3015,7 +3028,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageDetail
-      operationId: reports_getSharePointSiteUsageDetail-d27a
+      operationId: reports_getSharePointSiteUsageDetail
       parameters:
         - name: date
           in: path
@@ -3040,7 +3053,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSharePointSiteUsageDetail
-      operationId: reports_getSharePointSiteUsageDetail-204b
+      operationId: reports_getSharePointSiteUsageDetail
       parameters:
         - name: period
           in: path
@@ -3201,7 +3214,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: reports_getSkypeForBusinessActivityUserDetail-e4c9
+      operationId: reports_getSkypeForBusinessActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -3226,7 +3239,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessActivityUserDetail
-      operationId: reports_getSkypeForBusinessActivityUserDetail-744e
+      operationId: reports_getSkypeForBusinessActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3295,7 +3308,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail-a692
+      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -3320,7 +3333,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getSkypeForBusinessDeviceUsageUserDetail
-      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail-e753
+      operationId: reports_getSkypeForBusinessDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -3564,7 +3577,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3587,7 +3601,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3596,7 +3611,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
-      operationId: reports_getTeamsDeviceUsageUserDetail-7148
+      operationId: reports_getTeamsDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -3612,7 +3627,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3621,7 +3637,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsDeviceUsageUserDetail
-      operationId: reports_getTeamsDeviceUsageUserDetail-7565
+      operationId: reports_getTeamsDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -3635,7 +3651,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3658,7 +3675,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3681,7 +3699,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3690,7 +3709,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
-      operationId: reports_getTeamsUserActivityUserDetail-a3f1
+      operationId: reports_getTeamsUserActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -3706,7 +3725,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3715,7 +3735,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityUserDetail
-      operationId: reports_getTeamsUserActivityUserDetail-eb13
+      operationId: reports_getTeamsUserActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3729,7 +3749,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -3827,7 +3848,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserDetail
-      operationId: reports_getYammerActivityUserDetail-ac30
+      operationId: reports_getYammerActivityUserDetail
       parameters:
         - name: date
           in: path
@@ -3852,7 +3873,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerActivityUserDetail
-      operationId: reports_getYammerActivityUserDetail-15a5
+      operationId: reports_getYammerActivityUserDetail
       parameters:
         - name: period
           in: path
@@ -3921,7 +3942,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: reports_getYammerDeviceUsageUserDetail-d0ac
+      operationId: reports_getYammerDeviceUsageUserDetail
       parameters:
         - name: date
           in: path
@@ -3946,7 +3967,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerDeviceUsageUserDetail
-      operationId: reports_getYammerDeviceUsageUserDetail-cfad
+      operationId: reports_getYammerDeviceUsageUserDetail
       parameters:
         - name: period
           in: path
@@ -3992,7 +4013,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityDetail
-      operationId: reports_getYammerGroupsActivityDetail-da9a
+      operationId: reports_getYammerGroupsActivityDetail
       parameters:
         - name: date
           in: path
@@ -4017,7 +4038,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function getYammerGroupsActivityDetail
-      operationId: reports_getYammerGroupsActivityDetail-0d7d
+      operationId: reports_getYammerGroupsActivityDetail
       parameters:
         - name: period
           in: path
@@ -4063,7 +4084,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports_managedDeviceEnrollmentFailureDetails-027e
+      operationId: reports_managedDeviceEnrollmentFailureDetails
       responses:
         '200':
           description: Success
@@ -4079,7 +4100,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentFailureDetails
-      operationId: reports_managedDeviceEnrollmentFailureDetails-2b3d
+      operationId: reports_managedDeviceEnrollmentFailureDetails
       parameters:
         - name: skip
           in: path
@@ -4130,7 +4151,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports_managedDeviceEnrollmentTopFailures-4669
+      operationId: reports_managedDeviceEnrollmentTopFailures
       responses:
         '200':
           description: Success
@@ -4146,7 +4167,7 @@ paths:
       tags:
         - reports.Functions
       summary: Invoke function managedDeviceEnrollmentTopFailures
-      operationId: reports_managedDeviceEnrollmentTopFailures-afd1
+      operationId: reports_managedDeviceEnrollmentTopFailures
       parameters:
         - name: period
           in: path

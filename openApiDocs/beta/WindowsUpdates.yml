@@ -2968,6 +2968,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.windowsUpdates.safeguardProfile'
+          description: List of safeguards to ignore per device.
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.deploymentStateReason:

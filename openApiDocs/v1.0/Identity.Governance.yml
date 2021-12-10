@@ -1724,8 +1724,8 @@ paths:
               enum:
                 - accessReviews
                 - appConsent
-                - entitlementManagement
                 - termsOfUse
+                - entitlementManagement
               type: string
         - name: $expand
           in: query
@@ -1740,8 +1740,8 @@ paths:
                 - '*'
                 - accessReviews
                 - appConsent
-                - entitlementManagement
                 - termsOfUse
+                - entitlementManagement
               type: string
       responses:
         '200':
@@ -1755,10 +1755,10 @@ paths:
               operationId: identityGovernance.GetAccessReviews
             appConsent:
               operationId: identityGovernance.GetAppConsent
-            entitlementManagement:
-              operationId: identityGovernance.GetEntitlementManagement
             termsOfUse:
               operationId: identityGovernance.GetTermsOfUse
+            entitlementManagement:
+              operationId: identityGovernance.GetEntitlementManagement
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4068,6 +4068,12 @@ paths:
               enum:
                 - id
                 - accessPackageAssignmentApprovals
+                - accessPackages
+                - assignmentRequests
+                - assignments
+                - catalogs
+                - connectedOrganizations
+                - settings
               type: string
         - name: $expand
           in: query
@@ -4081,6 +4087,12 @@ paths:
               enum:
                 - '*'
                 - accessPackageAssignmentApprovals
+                - accessPackages
+                - assignmentRequests
+                - assignments
+                - catalogs
+                - connectedOrganizations
+                - settings
               type: string
       responses:
         '200':
@@ -4092,6 +4104,18 @@ paths:
           links:
             accessPackageAssignmentApprovals:
               operationId: identityGovernance.EntitlementManagement.ListAccessPackageAssignmentApprovals
+            accessPackages:
+              operationId: identityGovernance.EntitlementManagement.ListAccessPackages
+            assignmentRequests:
+              operationId: identityGovernance.EntitlementManagement.ListAssignmentRequests
+            assignments:
+              operationId: identityGovernance.EntitlementManagement.ListAssignments
+            catalogs:
+              operationId: identityGovernance.EntitlementManagement.ListCatalogs
+            connectedOrganizations:
+              operationId: identityGovernance.EntitlementManagement.ListConnectedOrganizations
+            settings:
+              operationId: identityGovernance.EntitlementManagement.GetSettings
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4617,6 +4641,3296 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /identityGovernance/entitlementManagement/accessPackages:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackages from identityGovernance
+      description: Access packages.
+      operationId: identityGovernance.entitlementManagement_ListAccessPackages
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isHidden
+                - isHidden desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackage'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to accessPackages for identityGovernance
+      description: Access packages.
+      operationId: identityGovernance.entitlementManagement_CreateAccessPackages
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackages from identityGovernance
+      description: Access packages.
+      operationId: identityGovernance.entitlementManagement_GetAccessPackages
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.AccessPackages.GetCatalog
+              parameters:
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property accessPackages in identityGovernance
+      description: Access packages.
+      operationId: identityGovernance.entitlementManagement_UpdateAccessPackages
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property accessPackages for identityGovernance
+      description: Access packages.
+      operationId: identityGovernance.entitlementManagement_DeleteAccessPackages
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/catalog':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogType
+                - createdDateTime
+                - description
+                - displayName
+                - isExternallyVisible
+                - modifiedDateTime
+                - state
+                - accessPackages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+          links:
+            accessPackages:
+              operationId: identityGovernance.entitlementManagement.accessPackages.Catalog.ListAccessPackages
+              parameters:
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/catalog/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.accessPackages_GetGraphRefCatalog
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            accessPackages:
+              operationId: identityGovernance.entitlementManagement.accessPackages.Catalog.ListAccessPackages
+              parameters:
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.accessPackages_SetGraphRefCatalog
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefCatalog
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/microsoft.graph.getApplicablePolicyRequirements':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.accessPackages_getApplicablePolicyRequirements
+      parameters:
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestRequirements'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/accessPackages/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.accessPackages_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /identityGovernance/entitlementManagement/assignmentRequests:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests.
+      operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - completedDateTime
+                - completedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - requestType
+                - requestType desc
+                - schedule
+                - schedule desc
+                - state
+                - state desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedDateTime
+                - createdDateTime
+                - requestType
+                - schedule
+                - state
+                - status
+                - accessPackage
+                - assignment
+                - requestor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackage
+                - assignment
+                - requestor
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackageAssignmentRequest
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to assignmentRequests for identityGovernance
+      description: Access package assignment requests.
+      operationId: identityGovernance.entitlementManagement_CreateAssignmentRequests
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get assignmentRequests from identityGovernance
+      description: Access package assignment requests.
+      operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - completedDateTime
+                - createdDateTime
+                - requestType
+                - schedule
+                - state
+                - status
+                - accessPackage
+                - assignment
+                - requestor
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackage
+                - assignment
+                - requestor
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+          links:
+            accessPackage:
+              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetAccessPackage
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            assignment:
+              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetAssignment
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            requestor:
+              operationId: identityGovernance.entitlementManagement.AssignmentRequests.GetRequestor
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property assignmentRequests in identityGovernance
+      description: Access package assignment requests.
+      operationId: identityGovernance.entitlementManagement_UpdateAssignmentRequests
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property assignmentRequests for identityGovernance
+      description: Access package assignment requests.
+      operationId: identityGovernance.entitlementManagement_DeleteAssignmentRequests
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackage from identityGovernance
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.GetCatalog
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of accessPackage from identityGovernance
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.AccessPackage.GetCatalog
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property accessPackage in identityGovernance
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property accessPackage for identityGovernance
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/accessPackage/microsoft.graph.getApplicablePolicyRequirements':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.assignmentRequests.accessPackage_getApplicablePolicyRequirements
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestRequirements'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/assignment':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expiredDateTime
+                - schedule
+                - state
+                - status
+                - accessPackage
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackage
+                - target
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+          links:
+            accessPackage:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetAccessPackage
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            target:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetTarget
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/assignment/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAssignment
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            accessPackage:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetAccessPackage
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+            target:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Assignment.GetTarget
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property assignment in identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAssignment
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property assignment for identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAssignment
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/microsoft.graph.cancel':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action cancel
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_cancel
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/requestor':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get requestor from identityGovernance
+      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetRequestor
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - email
+                - objectId
+                - onPremisesSecurityIdentifier
+                - principalName
+                - subjectType
+                - connectedOrganization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - connectedOrganization
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+          links:
+            connectedOrganization:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Requestor.GetConnectedOrganization
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest-id}/requestor/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of requestor from identityGovernance
+      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefRequestor
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            connectedOrganization:
+              operationId: identityGovernance.entitlementManagement.assignmentRequests.Requestor.GetConnectedOrganization
+              parameters:
+                accessPackageAssignmentRequest-id: $request.path.accessPackageAssignmentRequest-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property requestor in identityGovernance
+      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefRequestor
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property requestor for identityGovernance
+      description: 'The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.'
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefRequestor
+      parameters:
+        - name: accessPackageAssignmentRequest-id
+          in: path
+          description: 'key: id of accessPackageAssignmentRequest'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignmentRequest
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignmentRequests/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignmentRequests_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /identityGovernance/entitlementManagement/assignments:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get assignments from identityGovernance
+      description: Access package assignments.
+      operationId: identityGovernance.entitlementManagement_ListAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - expiredDateTime
+                - expiredDateTime desc
+                - schedule
+                - schedule desc
+                - state
+                - state desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expiredDateTime
+                - schedule
+                - state
+                - status
+                - accessPackage
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackage
+                - target
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackageAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to assignments for identityGovernance
+      description: Access package assignments.
+      operationId: identityGovernance.entitlementManagement_CreateAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get assignments from identityGovernance
+      description: Access package assignments.
+      operationId: identityGovernance.entitlementManagement_GetAssignments
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - expiredDateTime
+                - schedule
+                - state
+                - status
+                - accessPackage
+                - target
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackage
+                - target
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+          links:
+            accessPackage:
+              operationId: identityGovernance.entitlementManagement.Assignments.GetAccessPackage
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+            target:
+              operationId: identityGovernance.entitlementManagement.Assignments.GetTarget
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property assignments in identityGovernance
+      description: Access package assignments.
+      operationId: identityGovernance.entitlementManagement_UpdateAssignments
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property assignments for identityGovernance
+      description: Access package assignments.
+      operationId: identityGovernance.entitlementManagement_DeleteAssignments
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackage from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.GetCatalog
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of accessPackage from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.assignments.AccessPackage.GetCatalog
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property accessPackage in identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property accessPackage for identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefAccessPackage
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/accessPackage/microsoft.graph.getApplicablePolicyRequirements':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.assignments.accessPackage_getApplicablePolicyRequirements
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestRequirements'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/target':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get target from identityGovernance
+      description: The subject of the access package assignment. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_GetTarget
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - email
+                - objectId
+                - onPremisesSecurityIdentifier
+                - principalName
+                - subjectType
+                - connectedOrganization
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - connectedOrganization
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+          links:
+            connectedOrganization:
+              operationId: identityGovernance.entitlementManagement.assignments.Target.GetConnectedOrganization
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/{accessPackageAssignment-id}/target/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of target from identityGovernance
+      description: The subject of the access package assignment. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefTarget
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            connectedOrganization:
+              operationId: identityGovernance.entitlementManagement.assignments.Target.GetConnectedOrganization
+              parameters:
+                accessPackageAssignment-id: $request.path.accessPackageAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property target in identityGovernance
+      description: The subject of the access package assignment. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefTarget
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property target for identityGovernance
+      description: The subject of the access package assignment. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefTarget
+      parameters:
+        - name: accessPackageAssignment-id
+          in: path
+          description: 'key: id of accessPackageAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/assignments/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.assignments_filterByCurrentUser
+      parameters:
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /identityGovernance/entitlementManagement/catalogs:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get catalogs from identityGovernance
+      description: Access package catalogs.
+      operationId: identityGovernance.entitlementManagement_ListCatalogs
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - catalogType
+                - catalogType desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isExternallyVisible
+                - isExternallyVisible desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogType
+                - createdDateTime
+                - description
+                - displayName
+                - isExternallyVisible
+                - modifiedDateTime
+                - state
+                - accessPackages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackageCatalog
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to catalogs for identityGovernance
+      description: Access package catalogs.
+      operationId: identityGovernance.entitlementManagement_CreateCatalogs
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get catalogs from identityGovernance
+      description: Access package catalogs.
+      operationId: identityGovernance.entitlementManagement_GetCatalogs
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogType
+                - createdDateTime
+                - description
+                - displayName
+                - isExternallyVisible
+                - modifiedDateTime
+                - state
+                - accessPackages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+          links:
+            accessPackages:
+              operationId: identityGovernance.entitlementManagement.Catalogs.ListAccessPackages
+              parameters:
+                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property catalogs in identityGovernance
+      description: Access package catalogs.
+      operationId: identityGovernance.entitlementManagement_UpdateCatalogs
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property catalogs for identityGovernance
+      description: Access package catalogs.
+      operationId: identityGovernance.entitlementManagement_DeleteCatalogs
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackages from identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - isHidden
+                - isHidden desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessPackage
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessPackage'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to accessPackages for identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs_CreateAccessPackages
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get accessPackages from identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - isHidden
+                - modifiedDateTime
+                - catalog
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - catalog
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+          links:
+            catalog:
+              operationId: identityGovernance.entitlementManagement.catalogs.AccessPackages.GetCatalog
+              parameters:
+                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property accessPackages in identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs_UpdateAccessPackages
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property accessPackages for identityGovernance
+      description: The access packages in this catalog. Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs_DeleteAccessPackages
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/catalog':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogType
+                - createdDateTime
+                - description
+                - displayName
+                - isExternallyVisible
+                - modifiedDateTime
+                - state
+                - accessPackages
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - accessPackages
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+          links:
+            accessPackages:
+              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.Catalog.ListAccessPackages
+              parameters:
+                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/catalog/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetGraphRefCatalog
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            accessPackages:
+              operationId: identityGovernance.entitlementManagement.catalogs.accessPackages.Catalog.ListAccessPackages
+              parameters:
+                accessPackageCatalog-id: $request.path.accessPackageCatalog-id
+                accessPackage-id: $request.path.accessPackage-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_SetGraphRefCatalog
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteGraphRefCatalog
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/microsoft.graph.getApplicablePolicyRequirements':
+    post:
+      tags:
+        - identityGovernance.Actions
+      summary: Invoke action getApplicablePolicyRequirements
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_getApplicablePolicyRequirements
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: accessPackage-id
+          in: path
+          description: 'key: id of accessPackage'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackage
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequestRequirements'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog-id}/accessPackages/microsoft.graph.filterByCurrentUser(on={on})':
+    get:
+      tags:
+        - identityGovernance.Functions
+      summary: Invoke function filterByCurrentUser
+      operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_filterByCurrentUser
+      parameters:
+        - name: accessPackageCatalog-id
+          in: path
+          description: 'key: id of accessPackageCatalog'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessPackageCatalog
+        - name: on
+          in: path
+          description: 'Usage: on={on}'
+          required: true
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.accessPackageFilterByCurrentUserOptions'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.accessPackage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /identityGovernance/entitlementManagement/connectedOrganizations:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get connectedOrganizations from identityGovernance
+      description: Connected organizations.
+      operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - identitySources
+                - identitySources desc
+                - modifiedDateTime
+                - modifiedDateTime desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - identitySources
+                - modifiedDateTime
+                - state
+                - externalSponsors
+                - internalSponsors
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - externalSponsors
+                - internalSponsors
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of connectedOrganization
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to connectedOrganizations for identityGovernance
+      description: Connected organizations.
+      operationId: identityGovernance.entitlementManagement_CreateConnectedOrganizations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get connectedOrganizations from identityGovernance
+      description: Connected organizations.
+      operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - description
+                - displayName
+                - identitySources
+                - modifiedDateTime
+                - state
+                - externalSponsors
+                - internalSponsors
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - externalSponsors
+                - internalSponsors
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+          links:
+            externalSponsors:
+              operationId: identityGovernance.entitlementManagement.ConnectedOrganizations.ListExternalSponsors
+              parameters:
+                connectedOrganization-id: $request.path.connectedOrganization-id
+            internalSponsors:
+              operationId: identityGovernance.entitlementManagement.ConnectedOrganizations.ListInternalSponsors
+              parameters:
+                connectedOrganization-id: $request.path.connectedOrganization-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property connectedOrganizations in identityGovernance
+      description: Connected organizations.
+      operationId: identityGovernance.entitlementManagement_UpdateConnectedOrganizations
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property connectedOrganizations for identityGovernance
+      description: Connected organizations.
+      operationId: identityGovernance.entitlementManagement_DeleteConnectedOrganizations
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get externalSponsors from identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to externalSponsors for identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/{directoryObject-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get externalSponsors from identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_GetExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property externalSponsors in identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_UpdateExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property externalSponsors for identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get internalSponsors from identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListInternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property to internalSponsors for identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateInternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/internalSponsors/{directoryObject-id}':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get internalSponsors from identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_GetInternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property internalSponsors in identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_UpdateInternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property internalSponsors for identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteInternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /identityGovernance/entitlementManagement/settings:
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get settings from identityGovernance
+      description: Entitlement management settings.
+      operationId: identityGovernance.entitlementManagement_GetSettings
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - durationUntilExternalUserDeletedAfterBlocked
+                - externalUserLifecycleAction
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Update the navigation property settings in identityGovernance
+      description: Entitlement management settings.
+      operationId: identityGovernance.entitlementManagement_UpdateSettings
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Delete navigation property settings for identityGovernance
+      description: Entitlement management settings.
+      operationId: identityGovernance.entitlementManagement_DeleteSettings
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /identityGovernance/termsOfUse:
     get:
       tags:
@@ -5562,10 +8876,10 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewSet'
         appConsent:
           $ref: '#/components/schemas/microsoft.graph.appConsentApprovalRoute'
-        entitlementManagement:
-          $ref: '#/components/schemas/microsoft.graph.entitlementManagement'
         termsOfUse:
           $ref: '#/components/schemas/microsoft.graph.termsOfUseContainer'
+        entitlementManagement:
+          $ref: '#/components/schemas/microsoft.graph.entitlementManagement'
       additionalProperties:
         type: object
     microsoft.graph.accessReviewSet:
@@ -5874,6 +9188,33 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approval'
+            accessPackages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+              description: Access packages.
+            assignmentRequests:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+              description: Access package assignment requests.
+            assignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+              description: Access package assignments.
+            catalogs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+              description: Access package catalogs.
+            connectedOrganizations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+              description: Connected organizations.
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
           additionalProperties:
             type: object
     microsoft.graph.approvalFilterByCurrentUserOptions:
@@ -5884,6 +9225,301 @@ components:
         - approver
         - unknownFutureValue
       type: string
+    microsoft.graph.accessPackage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackage
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The description of the access package.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the access package.
+              nullable: true
+            isHidden:
+              type: boolean
+              description: Whether the access package is hidden from the requestor.
+              nullable: true
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            catalog:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageCatalog:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackageCatalog
+          type: object
+          properties:
+            catalogType:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageCatalogType'
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The description of the access package catalog.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the access package catalog.
+              nullable: true
+            isExternallyVisible:
+              type: boolean
+              description: Whether the access packages in this catalog can be requested by users outside of the tenant.
+              nullable: true
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageCatalogState'
+            accessPackages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessPackage'
+              description: The access packages in this catalog. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageAssignmentRequestRequirements:
+      title: accessPackageAssignmentRequestRequirements
+      type: object
+      properties:
+        allowCustomAssignmentSchedule:
+          type: boolean
+          description: Indicates whether the requestor is allowed to set a custom schedule.
+          nullable: true
+        isApprovalRequiredForAdd:
+          type: boolean
+          description: Indicates whether a request to add must be approved by an approver.
+          nullable: true
+        isApprovalRequiredForUpdate:
+          type: boolean
+          description: Indicates whether a request to update must be approved by an approver.
+          nullable: true
+        policyDescription:
+          type: string
+          description: The description of the policy that the user is trying to request access using.
+          nullable: true
+        policyDisplayName:
+          type: string
+          description: The display name of the policy that the user is trying to request access using.
+          nullable: true
+        policyId:
+          type: string
+          description: The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.
+          nullable: true
+        schedule:
+          $ref: '#/components/schemas/microsoft.graph.entitlementManagementSchedule'
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageFilterByCurrentUserOptions:
+      title: accessPackageFilterByCurrentUserOptions
+      enum:
+        - allowedRequestor
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageAssignmentRequest:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackageAssignmentRequest
+          type: object
+          properties:
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            requestType:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageRequestType'
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.entitlementManagementSchedule'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageRequestState'
+            status:
+              type: string
+              description: More information on the request processing status. Read-only.
+              nullable: true
+            accessPackage:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+            assignment:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+            requestor:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackageAssignment
+          type: object
+          properties:
+            expiredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            schedule:
+              $ref: '#/components/schemas/microsoft.graph.entitlementManagementSchedule'
+            state:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentState'
+            status:
+              type: string
+              description: 'More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.'
+              nullable: true
+            accessPackage:
+              $ref: '#/components/schemas/microsoft.graph.accessPackage'
+            target:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubject'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageSubject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessPackageSubject
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the subject.
+              nullable: true
+            email:
+              type: string
+              description: The email address of the subject.
+              nullable: true
+            objectId:
+              type: string
+              description: The object identifier of the subject. null if the subject is not yet a user in the tenant.
+              nullable: true
+            onPremisesSecurityIdentifier:
+              type: string
+              description: 'A string representation of the principal''s security identifier, if known, or null if the subject does not have a security identifier.'
+              nullable: true
+            principalName:
+              type: string
+              description: 'The principal name, if known, of the subject.'
+              nullable: true
+            subjectType:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageSubjectType'
+            connectedOrganization:
+              $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessPackageAssignmentRequestFilterByCurrentUserOptions:
+      title: accessPackageAssignmentRequestFilterByCurrentUserOptions
+      enum:
+        - target
+        - createdBy
+        - approver
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageAssignmentFilterByCurrentUserOptions:
+      title: accessPackageAssignmentFilterByCurrentUserOptions
+      enum:
+        - target
+        - createdBy
+        - unknownFutureValue
+      type: string
+    microsoft.graph.connectedOrganization:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: connectedOrganization
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            description:
+              type: string
+              description: The description of the connected organization.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the connected organization.
+              nullable: true
+            identitySources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identitySource'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.'
+            modifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            state:
+              $ref: '#/components/schemas/microsoft.graph.connectedOrganizationState'
+            externalSponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Nullable.
+            internalSponsors:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+              description: Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.entitlementManagementSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: entitlementManagementSettings
+          type: object
+          properties:
+            durationUntilExternalUserDeletedAfterBlocked:
+              pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+              type: string
+              description: 'If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.'
+              format: duration
+              nullable: true
+            externalUserLifecycleAction:
+              $ref: '#/components/schemas/microsoft.graph.accessPackageExternalUserLifecycleAction'
+          additionalProperties:
+            type: object
     microsoft.graph.termsOfUseContainer:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6131,6 +9767,105 @@ components:
               description: 'The status of the request. Not nullable. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable.'
           additionalProperties:
             type: object
+    microsoft.graph.accessPackageCatalogType:
+      title: accessPackageCatalogType
+      enum:
+        - userManaged
+        - serviceDefault
+        - serviceManaged
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageCatalogState:
+      title: accessPackageCatalogState
+      enum:
+        - unpublished
+        - published
+        - unknownFutureValue
+      type: string
+    microsoft.graph.entitlementManagementSchedule:
+      title: entitlementManagementSchedule
+      type: object
+      properties:
+        expiration:
+          $ref: '#/components/schemas/microsoft.graph.expirationPattern'
+        recurrence:
+          $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.accessPackageRequestType:
+      title: accessPackageRequestType
+      enum:
+        - notSpecified
+        - userAdd
+        - userUpdate
+        - userRemove
+        - adminAdd
+        - adminUpdate
+        - adminRemove
+        - systemAdd
+        - systemUpdate
+        - systemRemove
+        - onBehalfAdd
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageRequestState:
+      title: accessPackageRequestState
+      enum:
+        - submitted
+        - pendingApproval
+        - delivering
+        - delivered
+        - deliveryFailed
+        - denied
+        - scheduled
+        - canceled
+        - partiallyDelivered
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageAssignmentState:
+      title: accessPackageAssignmentState
+      enum:
+        - delivering
+        - partiallyDelivered
+        - delivered
+        - expired
+        - deliveryFailed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageSubjectType:
+      title: accessPackageSubjectType
+      enum:
+        - notSpecified
+        - user
+        - servicePrincipal
+        - unknownFutureValue
+      type: string
+    microsoft.graph.identitySource:
+      title: identitySource
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.connectedOrganizationState:
+      title: connectedOrganizationState
+      enum:
+        - configured
+        - proposed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.accessPackageExternalUserLifecycleAction:
+      title: accessPackageExternalUserLifecycleAction
+      enum:
+        - none
+        - blockSignIn
+        - blockSignInAndDelete
+        - unknownFutureValue
+      type: string
     odata.error:
       required:
         - error
@@ -6180,6 +9915,26 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identity'
         user:
           $ref: '#/components/schemas/microsoft.graph.identity'
+      additionalProperties:
+        type: object
+    microsoft.graph.expirationPattern:
+      title: expirationPattern
+      type: object
+      properties:
+        duration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'The requestor''s desired duration of access represented in ISO 8601 format for durations. For example, PT3H refers to three hours.  If specified in a request, endDateTime should not be present and the type property should be set to afterDuration.'
+          format: duration
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Timestamp of date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          format: date-time
+          nullable: true
+        type:
+          $ref: '#/components/schemas/microsoft.graph.expirationPatternType'
       additionalProperties:
         type: object
     odata.error.main:
@@ -6270,6 +10025,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
       additionalProperties:
         type: object
+    microsoft.graph.expirationPatternType:
+      title: expirationPatternType
+      enum:
+        - notSpecified
+        - noExpiration
+        - afterDateTime
+        - afterDuration
+      type: string
     odata.error.detail:
       required:
         - code

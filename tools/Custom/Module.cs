@@ -105,6 +105,12 @@ namespace Microsoft.Graph.PowerShell
                 var response = eventData?.ResponseMessage as HttpResponseMessage;
                 if (response != null)
                 {
+                    if (response.Headers.Warning != null)
+                    {
+                        string warningHeader = response.Headers.Warning.ToString();
+                        await signal(Events.Warning, cancellationToken,
+                            () => EventFactory.CreateWarningEvent(warningHeader));
+                    }
                     // Log request after response since all our request header are set via middleware pipeline.
                     var request = response?.RequestMessage;
                     if (request != null)
