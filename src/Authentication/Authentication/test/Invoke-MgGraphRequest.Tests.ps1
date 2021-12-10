@@ -1,15 +1,13 @@
-﻿Describe 'Invoke-MgGraphRequest Command' -Skip {
+﻿
+Describe 'Invoke-MgGraphRequest Command' {
      BeforeAll {
-          $loadEnvPath = Join-Path $PSScriptRoot 'loadEnv.ps1'
-          if (-Not (Test-Path -Path $loadEnvPath)) {
-               $loadEnvPath = Join-Path $PSScriptRoot '..\loadEnv.ps1'
-          }
-          . ($loadEnvPath)
+         $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
+          . $utils
           $ModuleName = "Microsoft.Graph.Authentication"
           $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
           Import-Module $ModulePath -Force
-          $PSDefaultParameterValues = @{"Connect-MgGraph:TenantId" = ${env:TENANTIDENTIFIER}; "Connect-MgGraph:ClientId" = ${env:CLIENTIDENTIFIER}; "Connect-MgGraph:CertificateThumbprint" = ${env:CERTIFICATETHUMBPRINT} }
-          Connect-MgGraph
+
+          Connect-GraphTenant
      }
      Context 'Collection Results' {
           It 'ShouldReturnPsObject' {
@@ -105,6 +103,14 @@
                $body = @{ "ids" = @("00257bcc-c612-4a8b-b04d-ddc1e3cbafc1"); "types" = @("user") }
                { Invoke-MgGraphRequest -Method POST -Uri "/v1.0/directoryObjects/getByIds" -Body $body } | Should -Not -Throw
           }
+     }
+
+     Context 'Empty Body Requests' {
+         It 'Should Not Throw when Body is Empty for POST Requests' {
+                { 
+                    Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST -Verbose
+                } | Should  -Not -Throw
+         }
      }
 
      AfterAll {

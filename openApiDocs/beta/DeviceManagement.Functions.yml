@@ -1619,7 +1619,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions-1f5f
+      operationId: deviceManagement_getEffectivePermissions
       responses:
         '200':
           description: Success
@@ -1638,7 +1638,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions-49b0
+      operationId: deviceManagement_getEffectivePermissions
       parameters:
         - name: scope
           in: path
