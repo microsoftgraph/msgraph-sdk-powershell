@@ -157,7 +157,7 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $NumberOfCores -Parallel {
 
         try {
             # Generate PowerShell modules.
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --version:"3.0.6306" --verbose
+            & autorest --module-version:$ModuleVersion --service-name:$ModuleName $ModuleLevelReadMePath --use:"..\msgraph-sdk-powershell\autorest.powershell" --verbose
             if ($LASTEXITCODE) {
                 Write-Error "AutoREST failed to generate '$ModuleName' module."
                 break;
