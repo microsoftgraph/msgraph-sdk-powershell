@@ -496,6 +496,20 @@ directive:
 
         return $;
       }
+# Modify generated .PowerShell.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%2F\w*\d*.PowerShell.cs/gm))
+      {
+        return $;
+      } else {
+        // Change XmlDateTimeSerializationMode from Unspecified to Utc.
+        let toDateTimeRegex = /(\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
+        $ = $.replace(toDateTimeRegex, '$1Utc');
+
+        return $;
+      }
 # Modify generated .cs model classes.
   - from: source-file-csharp
     where: $
