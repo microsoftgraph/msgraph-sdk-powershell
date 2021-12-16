@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-# use: "..\msgraph-sdk-powershell\autorest.powershell"
+use: "$(this-folder)../autorest.powershell"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -653,10 +653,6 @@ directive:
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
 
-        // Serialize DictionaryEntry struct as a value type.
-        let dictionaryEntrySerializer = 'if (vValue is System.Collections.DictionaryEntry deValue){return new JsonObject { { deValue.Key.ToString(), ToJsonValue(deValue.Value) } };}';
-        let valueTypeSerializerRegex = /(private\s*static\s*JsonNode\s*ToJsonValue\(ValueType vValue\)\s*{\s*)/gm
-        $ = $.replace(valueTypeSerializerRegex, `$1 ${dictionaryEntrySerializer}\n`);
         return $;
       }
 
