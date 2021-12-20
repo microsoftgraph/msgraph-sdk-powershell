@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "./assets/autorest-powershell-2.1.500.tgz"
+use: "./assets/autorest-powershell-2.1.600.tgz"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -533,6 +533,11 @@ directive:
         // Remove noisy log messages.
         let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
         $ = $.replace(duplicateDebugRegex, "");
+
+        // catch all exceptions in ProcessRecordAsync.
+        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.Graph\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.Graph\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
+        let catchAllExceptionImplementation = '((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null));'
+        $ = $.replace(processAsyncFinallyRegex, `catch (System.Exception ex){${catchAllExceptionImplementation}}\n$1`);
 
         return $;
       }
