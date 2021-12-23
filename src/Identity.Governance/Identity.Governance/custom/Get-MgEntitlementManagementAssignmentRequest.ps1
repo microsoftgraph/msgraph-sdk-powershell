@@ -15,9 +15,9 @@
 
 <#
 .Synopsis
-Get connectedOrganizations from identityGovernance
+Get assignmentRequests from identityGovernance
 .Description
-Get connectedOrganizations from identityGovernance
+Get assignmentRequests from identityGovernance
 .Example
 PS C:\> {{ Add code here }}
 
@@ -30,15 +30,16 @@ PS C:\> {{ Add code here }}
 .Inputs
 Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 .Outputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest1
 .Notes
 
 .Link
-https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementconnectedorganization
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementassignmentrequest
 #>
-function Get-MgEntitlementManagementConnectedOrganization {
-[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization])]
+function Get-MgEntitlementManagementAssignmentRequest {
+[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageAssignmentRequest1])]
 [CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
+[Microsoft.Graph.PowerShell.Profile('v1.0')]
 param(
     [Parameter()]
     [Alias('Expand')]
@@ -54,29 +55,30 @@ param(
     # Select properties to be returned
     ${Property},
 
-    [Parameter(ParameterSetName='ListByDisplayNameEq', Mandatory)]
+    [Parameter(ParameterSetName='ListByAccessPackageId', Mandatory)]
     [Microsoft.Graph.PowerShell.Category('Query')]
+    [ValidateScript( {
+        try {
+            [System.Guid]::Parse($_) | Out-Null
+            $true
+        }
+        catch {
+            throw "$_ is not a valid ObjectID format. Valid value is a GUID format only."
+        }
+    })]
     [System.String]
     # Filter items by property values
-    ${DisplayNameEq},
+    ${AccessPackageId},
 
-    [Parameter(ParameterSetName='ListByDisplayNameContains', Mandatory)]
-    [Microsoft.Graph.PowerShell.Category('Query')]
-    [System.String]
-    # Filter items by property values
-    ${DisplayNameContains},
-
-    [Parameter(ParameterSetName='ListByDisplayNameEq')]
-    [Parameter(ParameterSetName='ListByDisplayNameContains')]
     [Parameter(ParameterSetName='ListAll')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Alias('OrderBy')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.String[]]
     # Order items by property values
     ${Sort},
 
-    [Parameter(ParameterSetName='ListByDisplayNameEq')]
-    [Parameter(ParameterSetName='ListByDisplayNameContains')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Alias('Limit')]
     [Microsoft.Graph.PowerShell.Category('Query')]
     [System.Int32]
@@ -122,13 +124,13 @@ param(
     # Use the default credentials for the proxy
     ${ProxyUseDefaultCredentials},
 
-    [Parameter(ParameterSetName='ListByDisplayNameEq')]
-    [Parameter(ParameterSetName='ListByDisplayNameContains')]
     [Parameter(ParameterSetName='ListAll')]
+    [Parameter(ParameterSetName='ListByAccessPackageId')]
     [Microsoft.Graph.PowerShell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # List all pages.
     ${All}
+
 )
 
 begin {
@@ -141,16 +143,11 @@ process {
         $PSBoundParameters['OutBuffer'] = 1
     }
     $parameterSet = $PSCmdlet.ParameterSetName
-    if ($parameterSet -eq "ListByDisplayNameEq") {
+    if ($parameterSet -eq "ListByAccessPackageId") {
 
-        $Filter = "displayName eq '{0}'" -f $DisplayNameEq
+        $Filter = "accessPackage/Id eq '{0}'" -f $AccessPackageId
         $PSBoundParameters['Filter'] = $Filter
-        $null = $PSBoundParameters.Remove('DisplayNameEq')
-    } elseif ($parameterSet -eq "ListByDisplayNameContains") {
-
-        $Filter = "contains(tolower(displayName), '{0}')" -f $DisplayNameContains
-        $PSBoundParameters['Filter'] = $Filter
-        $null = $PSBoundParameters.Remove('DisplayNameContains')
+        $null = $PSBoundParameters.Remove('AccessPackageId')
     }
 
     if ($PSBoundParameters.ContainsKey('Top') -or $PSBoundParameters.ContainsKey('All')) {
@@ -159,7 +156,7 @@ process {
         $PSBoundParameters['All'] = $true
     }
 
-    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementConnectedOrganization_List @PSBoundParameters
+    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementAssignmentRequest_List @PSBoundParameters
 }
 
 end {

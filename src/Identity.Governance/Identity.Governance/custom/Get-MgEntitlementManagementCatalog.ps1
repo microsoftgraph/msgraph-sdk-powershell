@@ -15,9 +15,9 @@
 
 <#
 .Synopsis
-Get connectedOrganizations from identityGovernance
+Get catalogs from identityGovernance
 .Description
-Get connectedOrganizations from identityGovernance
+Get catalogs from identityGovernance
 .Example
 PS C:\> {{ Add code here }}
 
@@ -30,16 +30,17 @@ PS C:\> {{ Add code here }}
 .Inputs
 Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
 .Outputs
-Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization
+Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
 .Notes
-
 .Link
-https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementconnectedorganization
+https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance/get-mgentitlementmanagementcatalog
 #>
-function Get-MgEntitlementManagementConnectedOrganization {
-[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization])]
-[CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
+function Get-MgEntitlementManagementCatalog {
+[OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog])]
+[CmdletBinding(DefaultParameterSetName='ListAll',PositionalBinding=$false)]
+[Microsoft.Graph.PowerShell.Profile('v1.0')]
 param(
+
     [Parameter()]
     [Alias('Expand')]
     [Microsoft.Graph.PowerShell.Category('Query')]
@@ -136,10 +137,6 @@ begin {
 }
 
 process {
-    $outBuffer = $null
-    if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-        $PSBoundParameters['OutBuffer'] = 1
-    }
     $parameterSet = $PSCmdlet.ParameterSetName
     if ($parameterSet -eq "ListByDisplayNameEq") {
 
@@ -159,7 +156,7 @@ process {
         $PSBoundParameters['All'] = $true
     }
 
-    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementConnectedOrganization_List @PSBoundParameters
+    Microsoft.Graph.Identity.Governance.private\Get-MgEntitlementManagementCatalog_List @PSBoundParameters
 }
 
 end {
