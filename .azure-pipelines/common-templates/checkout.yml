@@ -30,6 +30,7 @@ steps:
         git fetch --all
         git checkout ${{ parameters.TargetBranch }}
         git pull
+        git submodule update
         git status
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2

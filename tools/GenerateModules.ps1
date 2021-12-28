@@ -73,6 +73,12 @@ $AllowPreRelease = $true
 if ($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
+
+# Build AutoREST.PowerShell submodule.
+Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+rush update
+rush build
+
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
 $ExistingAuthModule = Find-Module "Microsoft.Graph.Authentication" -Repository $RepositoryName -AllowPrerelease:$AllowPreRelease

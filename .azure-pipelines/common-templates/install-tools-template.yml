@@ -42,7 +42,7 @@ steps:
     - task: NodeTool@0
       displayName: 'Install NodeJs 14.11.0'
       inputs:
-        versionSpec: '14.11.0' 
+        versionSpec: '14.18.2'
         checkLatest: true # Optional
 
     - task: Npm@1
@@ -50,6 +50,12 @@ steps:
       inputs:
         command: 'custom'
         customCommand: 'install -g autorest@latest'
+
+    - task: Npm@1
+      displayName: 'Install Rush'
+      inputs:
+        command: 'custom'
+        customCommand: 'install -g @microsoft/rush'
 
     - task: PowerShell@2
       displayName: 'Register PS Repository'
