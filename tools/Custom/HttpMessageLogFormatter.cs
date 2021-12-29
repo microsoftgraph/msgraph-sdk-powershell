@@ -22,11 +22,13 @@ namespace Microsoft.Graph.PowerShell
             if (request == null) return string.Empty;
 
             string body = string.Empty;
-            try
-            {
-                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+            if (request.Content != null) {
+                try
+                {
+                    var content = request.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                    body = FormatString(content);
+                } catch {}
             }
-            catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
@@ -42,11 +44,13 @@ namespace Microsoft.Graph.PowerShell
             if (response == null) return string.Empty;
 
             string body = string.Empty;
-            try
-            {
-                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+            if (response.Content != null) {
+                try
+                {
+                    var content = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+                    body = FormatString(content);
+                } catch {}
             }
-            catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP RESPONSE ============================{Environment.NewLine}");
