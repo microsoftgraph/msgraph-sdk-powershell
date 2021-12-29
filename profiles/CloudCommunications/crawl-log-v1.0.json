@@ -145,6 +145,22 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
+    "/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
     "/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
@@ -174,6 +190,22 @@
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },
     "/users/{user-id}/onlineMeetings/{onlineMeeting-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CloudCommunications.yml"
     },

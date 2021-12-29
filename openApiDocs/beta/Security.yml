@@ -645,8 +645,6 @@ paths:
                 - lastModifiedDateTime desc
                 - launchDateTime
                 - launchDateTime desc
-                - mode
-                - mode desc
                 - payloadDeliveryPlatform
                 - payloadDeliveryPlatform desc
                 - payloadSource
@@ -687,7 +685,6 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - launchDateTime
-                - mode
                 - payloadDeliveryPlatform
                 - payloadSource
                 - report
@@ -794,7 +791,6 @@ paths:
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - launchDateTime
-                - mode
                 - payloadDeliveryPlatform
                 - payloadSource
                 - report
@@ -4519,8 +4515,6 @@ components:
               description: Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
               format: date-time
               nullable: true
-            mode:
-              $ref: '#/components/schemas/microsoft.graph.simulationMode'
             payloadDeliveryPlatform:
               $ref: '#/components/schemas/microsoft.graph.payloadDeliveryPlatform'
             payloadSource:
@@ -6096,13 +6090,6 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.simulationMode:
-      title: simulationMode
-      enum:
-        - real
-        - preview
-        - unknownFutureValue
-      type: string
     microsoft.graph.payloadDeliveryPlatform:
       title: payloadDeliveryPlatform
       enum:
@@ -7049,7 +7036,6 @@ components:
         - inProgress
         - completed
         - overdue
-        - notCompleted
         - unknownFutureValue
       type: string
     microsoft.graph.userTrainingContentEventInfo:
