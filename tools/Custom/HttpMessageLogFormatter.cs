@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell
             string body = string.Empty;
             try
             {
-                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().Result);
+                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
             catch { }
 
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.PowerShell
             string body = string.Empty;
             try
             {
-                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().Result);
+                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
             catch { }
 
@@ -56,11 +56,11 @@ namespace Microsoft.Graph.PowerShell
             return stringBuilder.ToString();
         }
 
+        private static Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"", RegexOptions.Compiled);
         private static object SanitizeBody(string body)
         {
             IList<Regex> regexList = new List<Regex>();
             // Remove access_token:*  instances in body.
-            Regex regexPattern = new Regex("(\\s*\"access_token\"\\s*:\\s*)\"[^\"]+\"");
             regexList.Add(regexPattern);
 
             foreach (Regex matcher in regexList)

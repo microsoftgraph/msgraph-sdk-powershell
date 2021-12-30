@@ -105,7 +105,7 @@ namespace Microsoft.Graph.PowerShell
                 var response = eventData?.ResponseMessage as HttpResponseMessage;
                 if (response != null)
                 {
-                    if (response.Headers.Warning != null)
+                    if (response.Headers.Warning != null && response.Headers.Warning.Any())
                     {
                         string warningHeader = response.Headers.Warning.ToString();
                         await signal(Events.Warning, cancellationToken,
