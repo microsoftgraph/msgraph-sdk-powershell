@@ -262,7 +262,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Get extensions from administrativeUnits
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -341,7 +341,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Create new navigation property to extensions for administrativeUnits
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_CreateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -373,7 +373,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Get extensions from administrativeUnits
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -428,7 +428,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Update the navigation property extensions in administrativeUnits
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_UpdateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -462,7 +462,7 @@ paths:
       tags:
         - administrativeUnits.extension
       summary: Delete navigation property extensions for administrativeUnits
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: administrativeUnits_DeleteExtensions
       parameters:
         - name: administrativeUnit-id
@@ -495,7 +495,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get members from administrativeUnits
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -578,7 +578,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Get ref of members from administrativeUnits
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: administrativeUnits_ListGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -635,7 +635,7 @@ paths:
       tags:
         - administrativeUnits.directoryObject
       summary: Create new navigation property ref to members for administrativeUnits
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: administrativeUnits_CreateGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -855,7 +855,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Get scopedRoleMembers from administrativeUnits
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -943,7 +943,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Create new navigation property to scopedRoleMembers for administrativeUnits
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: administrativeUnits_CreateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -975,7 +975,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Get scopedRoleMembers from administrativeUnits
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -1033,7 +1033,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Update the navigation property scopedRoleMembers in administrativeUnits
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: administrativeUnits_UpdateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -1067,7 +1067,7 @@ paths:
       tags:
         - administrativeUnits.scopedRoleMembership
       summary: Delete navigation property scopedRoleMembers for administrativeUnits
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: administrativeUnits_DeleteScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -13489,7 +13489,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get itemInsights from organization
-      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.'
+      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.'
       operationId: organization.settings_GetItemInsights
       parameters:
         - name: organization-id
@@ -13539,7 +13539,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Update the navigation property itemInsights in organization
-      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.'
+      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.'
       operationId: organization.settings_UpdateItemInsights
       parameters:
         - name: organization-id
@@ -13566,7 +13566,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Delete navigation property itemInsights for organization
-      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. Get itemInsightsSettings through this navigation property.'
+      description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.'
       operationId: organization.settings_DeleteItemInsights
       parameters:
         - name: organization-id
@@ -13592,6 +13592,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Get peopleInsights from organization
+      description: Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
       operationId: organization.settings_GetPeopleInsights
       parameters:
         - name: organization-id
@@ -13641,6 +13642,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Update the navigation property peopleInsights in organization
+      description: Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
       operationId: organization.settings_UpdatePeopleInsights
       parameters:
         - name: organization-id
@@ -13667,6 +13669,7 @@ paths:
       tags:
         - organization.organizationSettings
       summary: Delete navigation property peopleInsights for organization
+      description: Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.
       operationId: organization.settings_DeletePeopleInsights
       parameters:
         - name: organization-id
@@ -14684,11 +14687,11 @@ components:
           properties:
             description:
               type: string
-              description: An optional description for the administrative unit.
+              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).'
               nullable: true
             displayName:
               type: string
-              description: Display name for the administrative unit.
+              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             visibility:
               type: string
@@ -14698,17 +14701,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+              description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+              description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for this Administrative Unit. Nullable.
+              description: The collection of open extensions defined for this administrative unit. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.extension:
@@ -15766,9 +15769,11 @@ components:
           properties:
             disabledForGroup:
               type: string
+              description: 'The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.'
               nullable: true
             isEnabledInOrganization:
               type: boolean
+              description: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
               nullable: true
           additionalProperties:
             type: object

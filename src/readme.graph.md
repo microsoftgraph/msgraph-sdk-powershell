@@ -92,6 +92,7 @@ directive:
     - microsoft.graph.columnDefinition
     - microsoft.graph.groupPolicyDefinition
     - microsoft.graph.groupPolicyDefinitionValue
+    - microsoft.graph.synchronizationLinkedObjects
   # Set parameter alias
   - where:
       parameter-name: OrderBy

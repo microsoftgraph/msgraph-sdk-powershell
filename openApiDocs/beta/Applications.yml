@@ -47,6 +47,8 @@ paths:
                 - appId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - defaultRedirectUri
@@ -117,6 +119,7 @@ paths:
                 - api
                 - appId
                 - appRoles
+                - certification
                 - createdDateTime
                 - defaultRedirectUri
                 - description
@@ -260,6 +263,7 @@ paths:
                 - api
                 - appId
                 - appRoles
+                - certification
                 - createdDateTime
                 - defaultRedirectUri
                 - description
@@ -9031,6 +9035,8 @@ paths:
                 - appId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - defaultRedirectUri
@@ -9101,6 +9107,7 @@ paths:
                 - api
                 - appId
                 - appRoles
+                - certification
                 - createdDateTime
                 - defaultRedirectUri
                 - description
@@ -9231,6 +9238,8 @@ paths:
                 - appId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - defaultRedirectUri
@@ -10598,6 +10607,8 @@ paths:
                 - appId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - defaultRedirectUri
@@ -10668,6 +10679,7 @@ paths:
                 - api
                 - appId
                 - appRoles
+                - certification
                 - createdDateTime
                 - defaultRedirectUri
                 - description
@@ -10805,6 +10817,8 @@ paths:
                 - appId desc
                 - appRoles
                 - appRoles desc
+                - certification
+                - certification desc
                 - createdDateTime
                 - createdDateTime desc
                 - defaultRedirectUri
@@ -19812,6 +19826,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRole'
               description: 'The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.'
+            certification:
+              $ref: '#/components/schemas/microsoft.graph.certification'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21198,6 +21214,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.certification:
+      title: certification
+      type: object
+      properties:
+        certificationDetailsUrl:
+          type: string
+          description: URL that shows certification details for the application.
+          nullable: true
+        certificationExpirationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the current certification for the application will expire.
+          format: date-time
+          nullable: true
+        isCertifiedByMicrosoft:
+          type: boolean
+          description: Indicates whether the application is certified by Microsoft.
+          nullable: true
+        isPublisherAttested:
+          type: boolean
+          description: Indicates whether the application has been self-attested by the application developer or the publisher.
+          nullable: true
+        lastCertificationDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the certification for the application was most recently added or updated.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.informationalUrl:
       title: informationalUrl
       type: object
@@ -21571,6 +21617,8 @@ components:
       title: synchronizationJobSubject
       type: object
       properties:
+        links:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationLinkedObjects'
         objectId:
           type: string
           description: The identifier of an object to which a synchronizationJob  is to be applied.
@@ -21940,7 +21988,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator should be required for consent to the permissions. This will be the default behavior, but each customer can choose to customize the behavior in their organization (by allowing, restricting or limiting user consent to this delegated permission.)'
+          description: 'The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.'
           nullable: true
         userConsentDescription:
           type: string
@@ -22314,6 +22362,22 @@ components:
           type: integer
           description: Value.
           format: int64
+      additionalProperties:
+        type: object
+    microsoft.graph.synchronizationLinkedObjects:
+      title: synchronizationLinkedObjects
+      type: object
+      properties:
+        manager:
+          $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
+        owners:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
       additionalProperties:
         type: object
     microsoft.graph.objectMapping:

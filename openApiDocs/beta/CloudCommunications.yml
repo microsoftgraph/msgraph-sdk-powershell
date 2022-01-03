@@ -8004,8 +8004,17 @@ components:
       properties:
         endpointType:
           $ref: '#/components/schemas/microsoft.graph.endpointType'
+        hidden:
+          type: boolean
+          nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        participantId:
+          type: string
+          nullable: true
+        removeFromDefaultAudioRoutingGroup:
+          type: boolean
+          nullable: true
         replacesCallId:
           type: string
           description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
@@ -8666,6 +8675,10 @@ components:
     microsoft.graph.callOptions:
       title: callOptions
       type: object
+      properties:
+        hideBotAfterEscalation:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRoute:
