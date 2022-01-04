@@ -506,7 +506,7 @@ directive:
         return $;
       } else {
         // Change XmlDateTimeSerializationMode from Unspecified to Utc.
-        let toDateTimeRegex = /(\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
+        let toDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
         $ = $.replace(toDateTimeRegex, '$1Utc');
 
         return $;
