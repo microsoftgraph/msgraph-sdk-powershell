@@ -481,6 +481,10 @@ directive:
           $ = $.replace(complexTypeHintRegex, getExclusionsDynamically + '\n$1$2');
         }
 
+        // Ensure dateTime is always serialized as Utc.
+        let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
+        $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
+
         return $;
       }
 # Modify generated .dictionary.cs model classes.
@@ -506,8 +510,8 @@ directive:
         return $;
       } else {
         // Change XmlDateTimeSerializationMode from Unspecified to Utc.
-        let toDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
-        $ = $.replace(toDateTimeRegex, '$1Utc');
+        let strToDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
+        $ = $.replace(strToDateTimeRegex, '$1Utc');
 
         return $;
       }
