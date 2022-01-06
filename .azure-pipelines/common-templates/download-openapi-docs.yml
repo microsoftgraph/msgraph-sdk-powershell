@@ -99,7 +99,7 @@ jobs:
             # Bump meta-module minor version
             Write-Host "Bumping Microsoft.Graph to $NewMetaModuleVersion."
             & "$(System.DefaultWorkingDirectory)\tools\SetMetaModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion
-            & "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewModuleVersion -SetAuthModule
+            & "$(System.DefaultWorkingDirectory)\tools\SetServiceModuleVersion.ps1" -VersionNumber $NewMetaModuleVersion -SetAuthModule
 
             # Calculate existing service module version
             "$(OpenAPIDocDiff.ModulesWithChanges)" -split " " | ForEach-Object {
