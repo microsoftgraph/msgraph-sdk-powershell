@@ -60,8 +60,20 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
     remove: true
   - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AccessPackageGraphRefCatalog$
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentGraphRefAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentAccessPackage
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -100,16 +112,40 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackage$
     remove: true
   - where:
+      verb: Get
+      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackageAssignment$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentRequestAssignment$
     remove: true
   - where:
       verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRefAccessPackage$
     remove: true
   - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefAssignment$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefRequestor$
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRequestor$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentRequestRequestor$
     remove: true
   - where:
       verb: Get|New|Remove|Update
@@ -132,8 +168,28 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentTarget$
     remove: true
   - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentTarget$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentGraphRefTarget$
+    remove: true
+  - where:
       verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update|Set
+      subject: (.*)(EntitlementManagement)CatalogAccessPackage
+    remove: true
+  - where:
+      verb: Get
+      subject: (.*)(EntitlementManagement)CatalogAccessPackageCatalog$
     remove: true
   - where:
       verb: Get
