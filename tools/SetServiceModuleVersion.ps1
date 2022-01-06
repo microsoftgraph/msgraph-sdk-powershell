@@ -3,9 +3,15 @@
 Param(
     [string] $VersionNumber,
     [string] $ReleaseNotes = "See https://aka.ms/GraphPowerShell-Release.",
-    [string[]] $Modules = $null
+    [string[]] $Modules = $null,
+    [switch] $SetAuthModule
 )
 $WriteToModuleReadMe = Join-Path $PSScriptRoot ".\WriteToModuleReadMe.ps1" -Resolve
+
+if ($SetAuthModule) {
+    $authModulePSd1 = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.psd1"
+    Update-ModuleManifest -Path $authModulePSd1 -ModuleVersion $VersionNumber
+}
 
 $ModulesReadme = @()
 if ($null -ne $Modules) {
