@@ -622,6 +622,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignmentCategories/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.assignmentCategories_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignmentDefaults':
     get:
       tags:
@@ -1350,6 +1376,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.assignments.categories_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -3285,6 +3344,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/classes/{educationClass-id}/assignments/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.classes.assignments_delta
+      parameters:
+        - name: educationClass-id
+          in: path
+          description: 'key: id of educationClass'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationClass
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/classes/{educationClass-id}/assignmentSettings':
     get:
       tags:
@@ -5562,6 +5647,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/me/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.me.assignments.categories_delta
+      parameters:
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/me/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -7249,6 +7360,24 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /education/me/assignments/microsoft.graph.delta():
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.me.assignments_delta
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /education/me/classes:
     get:
       tags:
@@ -8363,6 +8492,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -8436,6 +8566,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -8563,6 +8694,8 @@ paths:
               operationId: education.me.User.GetPresence
             authentication:
               operationId: education.me.User.GetAuthentication
+            tasks:
+              operationId: education.me.User.GetTasks
             chats:
               operationId: education.me.User.ListChats
             joinedTeams:
@@ -8703,6 +8836,8 @@ paths:
               operationId: education.me.User.GetPresence
             authentication:
               operationId: education.me.User.GetAuthentication
+            tasks:
+              operationId: education.me.User.GetTasks
             chats:
               operationId: education.me.User.ListChats
             joinedTeams:
@@ -11560,6 +11695,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users.assignments.categories_delta
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+        - name: educationAssignment-id
+          in: path
+          description: 'key: id of educationAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationAssignment
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationCategory'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish':
     post:
       tags:
@@ -13495,6 +13663,32 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/education/users/{educationUser-id}/assignments/microsoft.graph.delta()':
+    get:
+      tags:
+        - education.Functions
+      summary: Invoke function delta
+      operationId: education.users.assignments_delta
+      parameters:
+        - name: educationUser-id
+          in: path
+          description: 'key: id of educationUser'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: educationUser
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.educationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/education/users/{educationUser-id}/classes':
     get:
       tags:
@@ -14742,6 +14936,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -14815,6 +15010,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -15054,6 +15250,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             authentication:
               operationId: education.users.User.GetAuthentication
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            tasks:
+              operationId: education.users.User.GetTasks
               parameters:
                 educationUser-id: $request.path.educationUser-id
             chats:
@@ -15324,6 +15524,10 @@ paths:
                 educationUser-id: $request.path.educationUser-id
             authentication:
               operationId: education.users.User.GetAuthentication
+              parameters:
+                educationUser-id: $request.path.educationUser-id
+            tasks:
+              operationId: education.users.User.GetTasks
               parameters:
                 educationUser-id: $request.path.educationUser-id
             chats:
@@ -15893,7 +16097,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mdmAppId:
               type: string
@@ -16393,7 +16597,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
@@ -16926,6 +17130,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
+            tasks:
+              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -16949,11 +17155,11 @@ components:
           properties:
             description:
               type: string
-              description: An optional description for the administrative unit.
+              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).'
               nullable: true
             displayName:
               type: string
-              description: Display name for the administrative unit.
+              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             visibility:
               type: string
@@ -16963,17 +17169,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+              description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+              description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for this Administrative Unit. Nullable.
+              description: The collection of open extensions defined for this administrative unit. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.educationSynchronizationProfile:
@@ -20692,6 +20898,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
+    microsoft.graph.tasks:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tasks
+          type: object
+          properties:
+            alltasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: All tasks in the users mailbox.
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
+              description: The task lists in the users mailbox.
+          additionalProperties:
+            type: object
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -23336,6 +23560,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceInsight'
+            instance:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScheduleDefinition:
@@ -23436,7 +23662,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values: Reprovision, Resize.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -23943,13 +24169,25 @@ components:
           type: string
           description: Subscriber carrier of the device
           nullable: true
+        systemManagementBIOSVersion:
+          type: string
+          description: BIOS version as reported by SMBIOS
+          nullable: true
         totalStorageSpace:
           type: integer
           description: Total storage space of the device.
           format: int64
+        tpmManufacturer:
+          type: string
+          description: The identifying information that uniquely names the TPM manufacturer
+          nullable: true
         tpmSpecificationVersion:
           type: string
           description: String that specifies the specification version.
+          nullable: true
+        tpmVersion:
+          type: string
+          description: 'The version of the TPM, as specified by the manufacturer'
           nullable: true
         wifiMac:
           type: string
@@ -26045,6 +26283,92 @@ components:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodKeyStrength'
             device:
               $ref: '#/components/schemas/microsoft.graph.device'
+          additionalProperties:
+            type: object
+    microsoft.graph.baseTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date when the task was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            displayName:
+              type: string
+              description: The name of the task.
+              nullable: true
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            personalProperties:
+              $ref: '#/components/schemas/microsoft.graph.personalTaskProperties'
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
+            checklistItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of checklistItems linked to a task.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task .
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
+              description: A collection of resources linked to the task.
+            parentList:
+              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
+          additionalProperties:
+            type: object
+    microsoft.graph.baseTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the task list.
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: The tasks in this task list. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.chatType:
@@ -30202,6 +30526,73 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.personalTaskProperties:
+      title: personalTaskProperties
+      type: object
+      properties:
+        reminderDatetime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.taskStatus_v2:
+      title: taskStatus_v2
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.linkedResource_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource_v2
+          type: object
+          properties:
+            applicationName:
+              type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
+              nullable: true
+            displayName:
+              type: string
+              description: Field indicating the title of the linkedResource.
+              nullable: true
+            externalId:
+              type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'

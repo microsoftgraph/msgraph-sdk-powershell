@@ -1479,7 +1479,7 @@ components:
             members:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupMember'
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
           additionalProperties:
             type: object
@@ -1743,16 +1743,14 @@ components:
           description: Specifies additional rules for selecting this display template based on the item schema. Optional.
       additionalProperties:
         type: object
-    microsoft.graph.externalConnectors.externalGroupMember:
+    microsoft.graph.externalConnectors.identity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalGroupMember
+        - title: identity
           type: object
           properties:
-            identitySource:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identitySourceType'
             type:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupMemberType'
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityType'
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.acl:
@@ -2014,18 +2012,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:
         type: object
-    microsoft.graph.externalConnectors.identitySourceType:
-      title: identitySourceType
-      enum:
-        - azureActiveDirectory
-        - external
-        - unknownFutureValue
-      type: string
-    microsoft.graph.externalConnectors.externalGroupMemberType:
-      title: externalGroupMemberType
+    microsoft.graph.externalConnectors.identityType:
+      title: identityType
       enum:
         - user
         - group
+        - externalGroup
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.accessType:
@@ -2033,6 +2025,13 @@ components:
       enum:
         - grant
         - deny
+        - unknownFutureValue
+      type: string
+    microsoft.graph.externalConnectors.identitySourceType:
+      title: identitySourceType
+      enum:
+        - azureActiveDirectory
+        - external
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.aclType:

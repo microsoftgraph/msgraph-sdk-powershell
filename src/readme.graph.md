@@ -92,6 +92,7 @@ directive:
     - microsoft.graph.columnDefinition
     - microsoft.graph.groupPolicyDefinition
     - microsoft.graph.groupPolicyDefinitionValue
+    - microsoft.graph.synchronizationLinkedObjects
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -480,6 +481,10 @@ directive:
           $ = $.replace(complexTypeHintRegex, getExclusionsDynamically + '\n$1$2');
         }
 
+        // Ensure dateTime is always serialized as Utc.
+        let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
+        $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
+
         return $;
       }
 # Modify generated .dictionary.cs model classes.
@@ -493,6 +498,20 @@ directive:
         // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
+
+        return $;
+      }
+# Modify generated .PowerShell.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%2F\w*\d*.PowerShell.cs/gm))
+      {
+        return $;
+      } else {
+        // Change XmlDateTimeSerializationMode from Unspecified to Utc.
+        let strToDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
+        $ = $.replace(strToDateTimeRegex, '$1Utc');
 
         return $;
       }

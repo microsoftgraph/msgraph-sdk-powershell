@@ -38,7 +38,6 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 function Get-MgEntitlementManagementAccessPackage {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackage])]
 [CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
-[Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
     [Parameter()]
@@ -173,8 +172,13 @@ process {
         $PSBoundParameters['Filter'] = $Filter
         $null = $PSBoundParameters.Remove('DisplayNameContains')
     } elseif ($parameterSet -eq "ListByCatalogId") {
-
-        $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
+        # use "accessPackageCatalog/Id" for beta, "catalog/Id" for v1.0
+        $mgp = Get-MgProfile
+        if ($null -ne $mgp -and $mgp.Name -eq "beta") {
+            $Filter = "accessPackageCatalog/Id eq '{0}'" -f $CatalogId
+        } else {
+            $Filter = "catalog/Id eq '{0}'" -f $CatalogId
+        }
         $PSBoundParameters['Filter'] = $Filter
         $null = $PSBoundParameters.Remove('CatalogId')
     }

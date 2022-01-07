@@ -562,12 +562,28 @@ paths:
                 ownerUserPrincipalName:
                   type: string
                   nullable: true
-                serviceAccountCredentials:
+                ownerAccessToken:
                   type: string
                   nullable: true
               additionalProperties:
                 type: object
         required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.chromeOSOnboardingStatus'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/chromeOSOnboardingSettings/microsoft.graph.disconnect:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disconnect
+      operationId: deviceManagement.chromeOSOnboardingSettings_disconnect
       responses:
         '200':
           description: Success
@@ -13426,6 +13442,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/hardwareConfigurations/{hardwareConfiguration-id}/microsoft.graph.assign':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action assign
+      operationId: deviceManagement.hardwareConfigurations_assign
+      parameters:
+        - name: hardwareConfiguration-id
+          in: path
+          description: 'key: id of hardwareConfiguration'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: hardwareConfiguration
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                hardwareConfigurationAssignments:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/importedDeviceIdentities/microsoft.graph.importDeviceIdentityList:
     post:
       tags:
@@ -13581,6 +13637,9 @@ paths:
               type: object
               properties:
                 displayName:
+                  type: string
+                  nullable: true
+                description:
                   type: string
                   nullable: true
               additionalProperties:
@@ -19126,6 +19185,38 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.changeUserAccountType':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action changeUserAccountType
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_changeUserAccountType
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userAccountType:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.endGracePeriod':
     post:
       tags:
@@ -19213,6 +19304,20 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userAccountType:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+                osVersion:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -20234,6 +20339,8 @@ components:
         - inprogress
         - onboarded
         - failed
+        - offboarding
+        - unknownFutureValue
       type: string
       description: The onboarding status of the tenant.
     microsoft.graph.deviceLogCollectionRequest:
@@ -21039,6 +21146,17 @@ components:
       additionalProperties:
         type: object
       description: The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
+    microsoft.graph.hardwareConfigurationAssignment:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: hardwareConfigurationAssignment
+          type: object
+          properties:
+            target:
+              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
+          additionalProperties:
+            type: object
+          description: Contains properties used to assign a hardware configuration to a group.
     microsoft.graph.importedDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21518,6 +21636,20 @@ components:
           additionalProperties:
             type: object
           description: Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
+    microsoft.graph.cloudPcUserAccountType:
+      title: cloudPcUserAccountType
+      enum:
+        - standardUser
+        - administrator
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcOperatingSystem:
+      title: cloudPcOperatingSystem
+      enum:
+        - windows10
+        - windows11
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcProvisioningPolicyAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
