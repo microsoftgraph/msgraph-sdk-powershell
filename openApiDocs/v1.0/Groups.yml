@@ -24112,7 +24112,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
@@ -24916,7 +24916,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -24927,20 +24927,20 @@ components:
               nullable: true
             encryptionCertificate:
               type: string
-              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
               nullable: true
             encryptionCertificateId:
               type: string
-              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+              description: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
               format: date-time
             includeResourceData:
               type: boolean
-              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
+              description: 'Optional. When set to true, change notifications include resource data (such as content of a chat message).'
               nullable: true
             latestSupportedTlsVersion:
               type: string
@@ -24948,11 +24948,11 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.'
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
+              description: 'OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
@@ -26327,6 +26327,12 @@ components:
           type: string
           description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
           nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The timestamp when the state of the license assignment was last updated.
+          format: date-time
+          nullable: true
         skuId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
@@ -27602,6 +27608,11 @@ components:
               type: string
               description: The video teleconferencing ID. Read-only.
               nullable: true
+            attendanceReports:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+              description: The attendance reports of an online meeting. Read-only.
           additionalProperties:
             type: object
     microsoft.graph.presence:
@@ -27670,7 +27681,7 @@ components:
               nullable: true
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             installedApps:
               type: array
@@ -29590,6 +29601,38 @@ components:
           $ref: '#/components/schemas/microsoft.graph.meetingParticipantInfo'
       additionalProperties:
         type: object
+    microsoft.graph.meetingAttendanceReport:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingAttendanceReport
+          type: object
+          properties:
+            meetingEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting ended. Read-only.
+              format: date-time
+              nullable: true
+            meetingStartDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: UTC time when the meeting started. Read-only.
+              format: date-time
+              nullable: true
+            totalParticipantCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total number of participants. Read-only.
+              format: int32
+              nullable: true
+            attendanceRecords:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+              description: List of attendance records of an attendance report. Read-only.
+          additionalProperties:
+            type: object
     microsoft.graph.fido2AuthenticationMethod:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
@@ -30667,6 +30710,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.attendanceRecord:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: attendanceRecord
+          type: object
+          properties:
+            attendanceIntervals:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
+              description: List of time periods between joining and leaving a meeting.
+            emailAddress:
+              type: string
+              description: Email address of the user associated with this atttendance record.
+              nullable: true
+            identity:
+              $ref: '#/components/schemas/microsoft.graph.identity'
+            role:
+              type: string
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
+              nullable: true
+            totalAttendanceInSeconds:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: Total duration of the attendances in seconds.
+              format: int32
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.attestationLevel:
       title: attestationLevel
       enum:
@@ -31191,6 +31264,31 @@ components:
         - unknownFutureValue
         - producer
       type: string
+    microsoft.graph.attendanceInterval:
+      title: attendanceInterval
+      type: object
+      properties:
+        durationInSeconds:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.'
+          format: int32
+          nullable: true
+        joinDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee joined in UTC.
+          format: date-time
+          nullable: true
+        leaveDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: The time the attendee left in UTC.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
