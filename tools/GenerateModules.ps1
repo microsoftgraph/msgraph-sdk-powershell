@@ -75,7 +75,12 @@ if ($ModulePreviewNumber -eq -1) {
 }
 
 # Build AutoREST.PowerShell submodule.
-Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+$AutoRESTPath = (Join-Path $ScriptRoot "..\autorest.powershell")
+$AutoRESTPath2 = (Join-Path $PSScriptRoot "..\autorest.powershell")
+Write-Host $AutoRESTPath
+Write-Host $AutoRESTPath2
+Write-Host (Join-Path $ScriptRoot "../autorest.powershell")
+Set-Location $AutoRESTPath
 rush update
 rush build
 
