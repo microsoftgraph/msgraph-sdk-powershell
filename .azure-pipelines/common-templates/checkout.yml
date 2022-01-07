@@ -29,8 +29,8 @@ steps:
         git status
         git fetch --all
         git checkout ${{ parameters.TargetBranch }}
-        git pull
-        git submodule update
+        git pull --recurse-submodules
+        git submodule update --init --recursive --remote
         git status
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
