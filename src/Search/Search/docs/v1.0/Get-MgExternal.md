@@ -1,43 +1,25 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearch
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternal
 schema: 2.0.0
 ---
 
-# Get-MgSearch
+# Get-MgExternal
 
 ## SYNOPSIS
-Get search
+Get external
 
 ## SYNTAX
 
 ```
-Get-MgSearch [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgExternal [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get search
+Get external
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -78,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection1
 
 ## NOTES
 
