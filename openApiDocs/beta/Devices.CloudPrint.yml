@@ -7747,7 +7747,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
@@ -8071,16 +8071,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+              description: Represents a detailed summary of an application sign-in.
             authenticationMethods:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
             credentialUserRegistrationDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+              description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
             userCredentialUsageDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+              description: Represents the self-service password reset (SSPR) usage for a given tenant.
             dailyPrintUsageByPrinter:
               type: array
               items:
@@ -10812,7 +10815,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string

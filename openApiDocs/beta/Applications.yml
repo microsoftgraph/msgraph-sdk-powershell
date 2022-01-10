@@ -21617,8 +21617,6 @@ components:
       title: synchronizationJobSubject
       type: object
       properties:
-        links:
-          $ref: '#/components/schemas/microsoft.graph.synchronizationLinkedObjects'
         objectId:
           type: string
           description: The identifier of an object to which a synchronizationJob  is to be applied.
@@ -22362,22 +22360,6 @@ components:
           type: integer
           description: Value.
           format: int64
-      additionalProperties:
-        type: object
-    microsoft.graph.synchronizationLinkedObjects:
-      title: synchronizationLinkedObjects
-      type: object
-      properties:
-        manager:
-          $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
-        members:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
-        owners:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.synchronizationJobSubject'
       additionalProperties:
         type: object
     microsoft.graph.objectMapping:
