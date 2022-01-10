@@ -980,7 +980,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.comanagedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -990,6 +990,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -2852,7 +2865,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceComplianceScript-id
@@ -2869,6 +2882,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -4441,7 +4467,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -4458,6 +4484,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -5709,7 +5748,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceCustomAttributeShellScript-id
@@ -5733,6 +5772,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -7111,7 +7163,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceHealthScript-id
@@ -7128,6 +7180,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceHealthScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -8368,7 +8433,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
@@ -8385,6 +8450,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -9636,7 +9714,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceManagementScript-id
@@ -9660,6 +9738,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -10969,7 +11060,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
@@ -10986,6 +11077,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -12237,7 +12341,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_playLostModeSound
       parameters:
         - name: deviceShellScript-id
@@ -12261,6 +12365,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -13442,46 +13559,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  '/deviceManagement/hardwareConfigurations/{hardwareConfiguration-id}/microsoft.graph.assign':
-    post:
-      tags:
-        - deviceManagement.Actions
-      summary: Invoke action assign
-      operationId: deviceManagement.hardwareConfigurations_assign
-      parameters:
-        - name: hardwareConfiguration-id
-          in: path
-          description: 'key: id of hardwareConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: hardwareConfiguration
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                hardwareConfigurationAssignments:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.hardwareConfigurationAssignment'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /deviceManagement/importedDeviceIdentities/microsoft.graph.importDeviceIdentityList:
     post:
       tags:
@@ -14145,7 +14222,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: deviceManagement.managedDevices_playLostModeSound
       parameters:
         - name: managedDevice-id
@@ -14155,6 +14232,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -17848,6 +17938,9 @@ paths:
                 filter:
                   type: string
                   nullable: true
+                skipToken:
+                  type: string
+                  nullable: true
               additionalProperties:
                 type: object
         required: true
@@ -20159,6 +20252,27 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/windowsDriverUpdateProfiles/{windowsDriverUpdateProfile-id}/microsoft.graph.syncInventory':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action syncInventory
+      description: Sync the driver inventory of a WindowsDriverUpdateProfile.
+      operationId: deviceManagement.windowsDriverUpdateProfiles_syncInventory
+      parameters:
+        - name: windowsDriverUpdateProfile-id
+          in: path
+          description: 'key: id of windowsDriverUpdateProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: windowsDriverUpdateProfile
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/windowsFeatureUpdateProfiles/{windowsFeatureUpdateProfile-id}/microsoft.graph.assign':
     post:
       tags:
@@ -21146,17 +21260,6 @@ components:
       additionalProperties:
         type: object
       description: The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
-    microsoft.graph.hardwareConfigurationAssignment:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: hardwareConfigurationAssignment
-          type: object
-          properties:
-            target:
-              $ref: '#/components/schemas/microsoft.graph.deviceAndAppManagementAssignmentTarget'
-          additionalProperties:
-            type: object
-          description: Contains properties used to assign a hardware configuration to a group.
     microsoft.graph.importedDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21779,6 +21882,9 @@ components:
         - refreshUserPolicy
         - wakeUpClient
         - appEvaluation
+        - quickScan
+        - fullScan
+        - windowsDefenderUpdateSignatures
       type: string
       description: Action type on Configuration Manager client
     microsoft.graph.windowsDeviceAccount:

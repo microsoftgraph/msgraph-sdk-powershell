@@ -39,6 +39,8 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^security_.*Alerts_v2$
 # Remove cmdlets
   - where:
       verb: Get|Update
