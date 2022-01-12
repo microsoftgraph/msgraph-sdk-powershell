@@ -889,6 +889,8 @@ paths:
                 - appId desc
                 - appliedConditionalAccessPolicies
                 - appliedConditionalAccessPolicies desc
+                - authenticationContextClassReferences
+                - authenticationContextClassReferences desc
                 - authenticationDetails
                 - authenticationDetails desc
                 - authenticationMethodsUsed
@@ -903,6 +905,8 @@ paths:
                 - authenticationRequirementPolicies desc
                 - autonomousSystemNumber
                 - autonomousSystemNumber desc
+                - azureResourceId
+                - azureResourceId desc
                 - clientAppUsed
                 - clientAppUsed desc
                 - conditionalAccessStatus
@@ -915,6 +919,8 @@ paths:
                 - crossTenantAccessType desc
                 - deviceDetail
                 - deviceDetail desc
+                - federatedCredentialId
+                - federatedCredentialId desc
                 - flaggedForReview
                 - flaggedForReview desc
                 - homeTenantId
@@ -947,6 +953,8 @@ paths:
                 - resourceDisplayName desc
                 - resourceId
                 - resourceId desc
+                - resourceServicePrincipalId
+                - resourceServicePrincipalId desc
                 - resourceTenantId
                 - resourceTenantId desc
                 - riskDetail
@@ -967,6 +975,8 @@ paths:
                 - servicePrincipalId desc
                 - servicePrincipalName
                 - servicePrincipalName desc
+                - sessionLifetimePolicies
+                - sessionLifetimePolicies desc
                 - signInEventTypes
                 - signInEventTypes desc
                 - signInIdentifier
@@ -1008,6 +1018,7 @@ paths:
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
+                - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
@@ -1015,12 +1026,14 @@ paths:
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
+                - azureResourceId
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
                 - crossTenantAccessType
                 - deviceDetail
+                - federatedCredentialId
                 - flaggedForReview
                 - homeTenantId
                 - homeTenantName
@@ -1037,6 +1050,7 @@ paths:
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
+                - resourceServicePrincipalId
                 - resourceTenantId
                 - riskDetail
                 - riskEventTypes_v2
@@ -1047,6 +1061,7 @@ paths:
                 - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
+                - sessionLifetimePolicies
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
@@ -1146,6 +1161,7 @@ paths:
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
+                - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
@@ -1153,12 +1169,14 @@ paths:
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
+                - azureResourceId
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
                 - crossTenantAccessType
                 - deviceDetail
+                - federatedCredentialId
                 - flaggedForReview
                 - homeTenantId
                 - homeTenantName
@@ -1175,6 +1193,7 @@ paths:
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
+                - resourceServicePrincipalId
                 - resourceTenantId
                 - riskDetail
                 - riskEventTypes_v2
@@ -1185,6 +1204,7 @@ paths:
                 - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
+                - sessionLifetimePolicies
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
@@ -1302,6 +1322,8 @@ paths:
                 - appId desc
                 - appliedConditionalAccessPolicies
                 - appliedConditionalAccessPolicies desc
+                - authenticationContextClassReferences
+                - authenticationContextClassReferences desc
                 - authenticationDetails
                 - authenticationDetails desc
                 - authenticationMethodsUsed
@@ -1316,6 +1338,8 @@ paths:
                 - authenticationRequirementPolicies desc
                 - autonomousSystemNumber
                 - autonomousSystemNumber desc
+                - azureResourceId
+                - azureResourceId desc
                 - clientAppUsed
                 - clientAppUsed desc
                 - conditionalAccessStatus
@@ -1328,6 +1352,8 @@ paths:
                 - crossTenantAccessType desc
                 - deviceDetail
                 - deviceDetail desc
+                - federatedCredentialId
+                - federatedCredentialId desc
                 - flaggedForReview
                 - flaggedForReview desc
                 - homeTenantId
@@ -1360,6 +1386,8 @@ paths:
                 - resourceDisplayName desc
                 - resourceId
                 - resourceId desc
+                - resourceServicePrincipalId
+                - resourceServicePrincipalId desc
                 - resourceTenantId
                 - resourceTenantId desc
                 - riskDetail
@@ -1380,6 +1408,8 @@ paths:
                 - servicePrincipalId desc
                 - servicePrincipalName
                 - servicePrincipalName desc
+                - sessionLifetimePolicies
+                - sessionLifetimePolicies desc
                 - signInEventTypes
                 - signInEventTypes desc
                 - signInIdentifier
@@ -1419,6 +1449,7 @@ paths:
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
+                - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
@@ -1426,12 +1457,14 @@ paths:
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
+                - azureResourceId
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
                 - crossTenantAccessType
                 - deviceDetail
+                - federatedCredentialId
                 - flaggedForReview
                 - homeTenantId
                 - homeTenantName
@@ -1448,6 +1481,7 @@ paths:
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
+                - resourceServicePrincipalId
                 - resourceTenantId
                 - riskDetail
                 - riskEventTypes_v2
@@ -1458,6 +1492,7 @@ paths:
                 - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
+                - sessionLifetimePolicies
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
@@ -1558,6 +1593,7 @@ paths:
                 - appDisplayName
                 - appId
                 - appliedConditionalAccessPolicies
+                - authenticationContextClassReferences
                 - authenticationDetails
                 - authenticationMethodsUsed
                 - authenticationProcessingDetails
@@ -1565,12 +1601,14 @@ paths:
                 - authenticationRequirement
                 - authenticationRequirementPolicies
                 - autonomousSystemNumber
+                - azureResourceId
                 - clientAppUsed
                 - conditionalAccessStatus
                 - correlationId
                 - createdDateTime
                 - crossTenantAccessType
                 - deviceDetail
+                - federatedCredentialId
                 - flaggedForReview
                 - homeTenantId
                 - homeTenantName
@@ -1587,6 +1625,7 @@ paths:
                 - processingTimeInMilliseconds
                 - resourceDisplayName
                 - resourceId
+                - resourceServicePrincipalId
                 - resourceTenantId
                 - riskDetail
                 - riskEventTypes_v2
@@ -1597,6 +1636,7 @@ paths:
                 - servicePrincipalCredentialThumbprint
                 - servicePrincipalId
                 - servicePrincipalName
+                - sessionLifetimePolicies
                 - signInEventTypes
                 - signInIdentifier
                 - signInIdentifierType
@@ -2351,6 +2391,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_ListApplicationSignInDetailedSummary
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2437,6 +2478,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Create new navigation property to applicationSignInDetailedSummary for reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_CreateApplicationSignInDetailedSummary
       requestBody:
         description: New navigation property
@@ -2460,6 +2502,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Get applicationSignInDetailedSummary from reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_GetApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2512,6 +2555,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Update the navigation property applicationSignInDetailedSummary in reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_UpdateApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2538,6 +2582,7 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Delete navigation property applicationSignInDetailedSummary for reports
+      description: Represents a detailed summary of an application sign-in.
       operationId: reports_DeleteApplicationSignInDetailedSummary
       parameters:
         - name: applicationSignInDetailedSummary-id
@@ -2563,6 +2608,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get authenticationMethods from reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_GetAuthenticationMethods
       parameters:
         - name: $select
@@ -2576,6 +2622,7 @@ paths:
             items:
               enum:
                 - id
+                - userRegistrationDetails
               type: string
         - name: $expand
           in: query
@@ -2588,6 +2635,7 @@ paths:
             items:
               enum:
                 - '*'
+                - userRegistrationDetails
               type: string
       responses:
         '200':
@@ -2596,6 +2644,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
+          links:
+            userRegistrationDetails:
+              operationId: reports.AuthenticationMethods.ListUserRegistrationDetails
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2603,6 +2654,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property authenticationMethods in reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_UpdateAuthenticationMethods
       requestBody:
         description: New navigation property values
@@ -2621,6 +2673,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property authenticationMethods for reports
+      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_DeleteAuthenticationMethods
       parameters:
         - name: If-Match
@@ -2724,11 +2777,240 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /reports/authenticationMethods/userRegistrationDetails:
+    get:
+      tags:
+        - reports.authenticationMethodsRoot
+      summary: Get userRegistrationDetails from reports
+      operationId: reports.authenticationMethods_ListUserRegistrationDetails
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - isMfaCapable
+                - isMfaCapable desc
+                - isMfaRegistered
+                - isMfaRegistered desc
+                - isPasswordlessCapable
+                - isPasswordlessCapable desc
+                - isSsprCapable
+                - isSsprCapable desc
+                - isSsprEnabled
+                - isSsprEnabled desc
+                - isSsprRegistered
+                - isSsprRegistered desc
+                - methodsRegistered
+                - methodsRegistered desc
+                - userDisplayName
+                - userDisplayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isMfaCapable
+                - isMfaRegistered
+                - isPasswordlessCapable
+                - isSsprCapable
+                - isSsprEnabled
+                - isSsprRegistered
+                - methodsRegistered
+                - userDisplayName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userRegistrationDetails
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - reports.authenticationMethodsRoot
+      summary: Create new navigation property to userRegistrationDetails for reports
+      operationId: reports.authenticationMethods_CreateUserRegistrationDetails
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetails-id}':
+    get:
+      tags:
+        - reports.authenticationMethodsRoot
+      summary: Get userRegistrationDetails from reports
+      operationId: reports.authenticationMethods_GetUserRegistrationDetails
+      parameters:
+        - name: userRegistrationDetails-id
+          in: path
+          description: 'key: id of userRegistrationDetails'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userRegistrationDetails
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isMfaCapable
+                - isMfaRegistered
+                - isPasswordlessCapable
+                - isSsprCapable
+                - isSsprEnabled
+                - isSsprRegistered
+                - methodsRegistered
+                - userDisplayName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - reports.authenticationMethodsRoot
+      summary: Update the navigation property userRegistrationDetails in reports
+      operationId: reports.authenticationMethods_UpdateUserRegistrationDetails
+      parameters:
+        - name: userRegistrationDetails-id
+          in: path
+          description: 'key: id of userRegistrationDetails'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userRegistrationDetails
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - reports.authenticationMethodsRoot
+      summary: Delete navigation property userRegistrationDetails for reports
+      operationId: reports.authenticationMethods_DeleteUserRegistrationDetails
+      parameters:
+        - name: userRegistrationDetails-id
+          in: path
+          description: 'key: id of userRegistrationDetails'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userRegistrationDetails
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /reports/credentialUserRegistrationDetails:
     get:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_ListCredentialUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2821,6 +3103,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Create new navigation property to credentialUserRegistrationDetails for reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_CreateCredentialUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -2844,6 +3127,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Get credentialUserRegistrationDetails from reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_GetCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -2898,6 +3182,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Update the navigation property credentialUserRegistrationDetails in reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_UpdateCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -2924,6 +3209,7 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Delete navigation property credentialUserRegistrationDetails for reports
+      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_DeleteCredentialUserRegistrationDetails
       parameters:
         - name: credentialUserRegistrationDetails-id
@@ -7529,6 +7815,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_ListUserCredentialUsageDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7621,6 +7908,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Create new navigation property to userCredentialUsageDetails for reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_CreateUserCredentialUsageDetails
       requestBody:
         description: New navigation property
@@ -7644,6 +7932,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Get userCredentialUsageDetails from reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_GetUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -7698,6 +7987,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Update the navigation property userCredentialUsageDetails in reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_UpdateUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -7724,6 +8014,7 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Delete navigation property userCredentialUsageDetails for reports
+      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_DeleteUserCredentialUsageDetails
       parameters:
         - name: userCredentialUsageDetails-id
@@ -7927,6 +8218,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicy'
               description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
+            authenticationContextClassReferences:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.authenticationContext'
             authenticationDetails:
               type: array
               items:
@@ -7953,11 +8248,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationRequirementPolicy'
+              description: 'Sources of authentication requirement, such as conditional access, per-user MFA, identity protection, and security defaults.'
             autonomousSystemNumber:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: The Autonomous System Number (ASN) of the network used by the actor.
               format: int32
+              nullable: true
+            azureResourceId:
+              type: string
               nullable: true
             clientAppUsed:
               type: string
@@ -7978,14 +8278,20 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInAccessType'
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
+            federatedCredentialId:
+              type: string
+              nullable: true
             flaggedForReview:
               type: boolean
+              description: 'During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.'
               nullable: true
             homeTenantId:
               type: string
+              description: The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.
               nullable: true
             homeTenantName:
               type: string
+              description: 'For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.'
               nullable: true
             incomingTokenType:
               $ref: '#/components/schemas/microsoft.graph.incomingTokenType'
@@ -7995,6 +8301,7 @@ components:
               nullable: true
             ipAddressFromResourceProvider:
               type: string
+              description: 'The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.'
               nullable: true
             isInteractive:
               type: boolean
@@ -8002,6 +8309,7 @@ components:
               nullable: true
             isTenantRestricted:
               type: boolean
+              description: Shows whether the sign in event was subject to an Azure AD tenant restriction policy.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
@@ -8033,8 +8341,12 @@ components:
               type: string
               description: ID of the resource that the user signed into. Supports $filter (eq operator only).
               nullable: true
+            resourceServicePrincipalId:
+              type: string
+              nullable: true
             resourceTenantId:
               type: string
+              description: The tenant identifier of the resource referenced in the sign in.
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -8052,9 +8364,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.riskState'
             servicePrincipalCredentialKeyId:
               type: string
+              description: The unique identifier of the key credential used by the service principal to authenticate.
               nullable: true
             servicePrincipalCredentialThumbprint:
               type: string
+              description: The certificate thumbprint of the certificate used by the service principal to authenticate.
               nullable: true
             servicePrincipalId:
               type: string
@@ -8063,13 +8377,19 @@ components:
               type: string
               description: The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
               nullable: true
+            sessionLifetimePolicies:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sessionLifetimePolicy'
             signInEventTypes:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).'
             signInIdentifier:
               type: string
+              description: The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.
               nullable: true
             signInIdentifierType:
               $ref: '#/components/schemas/microsoft.graph.signInIdentifierType'
@@ -8083,6 +8403,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.tokenIssuerType'
             uniqueTokenIdentifier:
               type: string
+              description: A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.
               nullable: true
             userAgent:
               type: string
@@ -8223,16 +8544,19 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+              description: Represents a detailed summary of an application sign-in.
             authenticationMethods:
               $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
             credentialUserRegistrationDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+              description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
             userCredentialUsageDetails:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+              description: Represents the self-service password reset (SSPR) usage for a given tenant.
             dailyPrintUsageByPrinter:
               type: array
               items:
@@ -8299,6 +8623,11 @@ components:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: authenticationMethodsRoot
           type: object
+          properties:
+            userRegistrationDetails:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
           additionalProperties:
             type: object
     microsoft.graph.userRegistrationFeatureSummary:
@@ -8356,6 +8685,35 @@ components:
           $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
       additionalProperties:
         type: object
+    microsoft.graph.userRegistrationDetails:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userRegistrationDetails
+          type: object
+          properties:
+            isMfaCapable:
+              type: boolean
+            isMfaRegistered:
+              type: boolean
+            isPasswordlessCapable:
+              type: boolean
+            isSsprCapable:
+              type: boolean
+            isSsprEnabled:
+              type: boolean
+            isSsprRegistered:
+              type: boolean
+            methodsRegistered:
+              type: array
+              items:
+                type: string
+                nullable: true
+            userDisplayName:
+              type: string
+            userPrincipalName:
+              type: string
+          additionalProperties:
+            type: object
     microsoft.graph.credentialUserRegistrationDetails:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -8493,7 +8851,7 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: Name of the application that the user signed in to.
+              description: Name of the application that the user signed into.
             failedSignInCount:
               type: integer
               description: Count of failed sign-ins made by the application.
@@ -9497,6 +9855,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessRuleSatisfied'
+          description: 'List of key-value pairs containing each matched exclude condition in the conditional access policy. Example: [{''devicePlatform'' : ''DevicePlatform''}] means the policy didn’t apply, because the DevicePlatform condition was a match.'
         id:
           type: string
           description: An identifier of the conditional access policy.
@@ -9505,8 +9864,20 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessRuleSatisfied'
+          description: 'List of key-value pairs containing each matched include condition in the conditional access policy. Example: [{ ''application'' : ''AllApps''}, {''users'': ''Group''}], meaning Application condition was a match because AllApps are included and Users condition was a match because the user was part of the included Group rule.'
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
+      additionalProperties:
+        type: object
+    microsoft.graph.authenticationContext:
+      title: authenticationContext
+      type: object
+      properties:
+        detail:
+          $ref: '#/components/schemas/microsoft.graph.authenticationContextDetail'
+        id:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.authenticationDetail:
@@ -9558,6 +9929,7 @@ components:
       properties:
         detail:
           type: string
+          description: Provides additional detail on the feature identified in requirementProvider.
           nullable: true
         requirementProvider:
           $ref: '#/components/schemas/microsoft.graph.requirementProvider'
@@ -9681,15 +10053,19 @@ components:
       properties:
         policyId:
           type: string
+          description: The unique identifier for the Private Link policy.
           nullable: true
         policyName:
           type: string
+          description: The name of the Private Link policy in Azure AD.
           nullable: true
         policyTenantId:
           type: string
+          description: The tenant identifier of the Azure AD tenant the Private Link policy belongs to.
           nullable: true
         resourceId:
           type: string
+          description: The Azure Resource Manager (ARM) path for the Private Link policy resource.
           nullable: true
       additionalProperties:
         type: object
@@ -9730,6 +10106,17 @@ components:
         - confirmedCompromised
         - unknownFutureValue
       type: string
+    microsoft.graph.sessionLifetimePolicy:
+      title: sessionLifetimePolicy
+      type: object
+      properties:
+        detail:
+          type: string
+          nullable: true
+        expirationRequirement:
+          $ref: '#/components/schemas/microsoft.graph.expirationRequirement'
+      additionalProperties:
+        type: object
     microsoft.graph.signInIdentifierType:
       title: signInIdentifierType
       enum:
@@ -9768,6 +10155,8 @@ components:
         - ADFederationServices
         - UnknownFutureValue
         - AzureADBackupAuth
+        - ADFederationServicesMFAAdapter
+        - NPSExtension
       type: string
     microsoft.graph.signInUserType:
       title: signInUserType
@@ -10083,9 +10472,11 @@ components:
           properties:
             homeTenantId:
               type: string
+              description: 'For user sign ins, the identifier of the tenant that the user is a member of.'
               nullable: true
             homeTenantName:
               type: string
+              description: 'For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.'
               nullable: true
           additionalProperties:
             type: object
@@ -10173,9 +10564,11 @@ components:
       properties:
         authenticationStrengthId:
           type: string
+          description: Identifier of the authentication strength.
           nullable: true
         displayName:
           type: string
+          description: The name of the authentication strength.
           nullable: true
       additionalProperties:
         type: object
@@ -10222,6 +10615,14 @@ components:
         - reportOnlyFailure
         - reportOnlyNotApplied
         - reportOnlyInterrupted
+      type: string
+    microsoft.graph.authenticationContextDetail:
+      title: authenticationContextDetail
+      enum:
+        - required
+        - previouslySatisfied
+        - notApplicable
+        - unknownFutureValue
       type: string
     microsoft.graph.requirementProvider:
       title: requirementProvider
@@ -10277,6 +10678,17 @@ components:
         - namedNetwork
         - trusted
         - trustedNamedLocation
+        - unknownFutureValue
+      type: string
+    microsoft.graph.expirationRequirement:
+      title: expirationRequirement
+      enum:
+        - rememberMultifactorAuthenticationOnTrustedDevices
+        - tenantTokenLifetimePolicy
+        - audienceTokenLifetimePolicy
+        - signInFrequencyPeriodicReauthentication
+        - ngcMfa
+        - signInFrequencyEveryTime
         - unknownFutureValue
       type: string
     microsoft.graph.authenticationMethodFeature:

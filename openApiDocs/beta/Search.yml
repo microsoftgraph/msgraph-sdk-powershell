@@ -99,6 +99,8 @@ paths:
                 - connectorId desc
                 - description
                 - description desc
+                - ingestedItemsCount
+                - ingestedItemsCount desc
                 - name
                 - name desc
                 - searchSettings
@@ -120,12 +122,14 @@ paths:
                 - configuration
                 - connectorId
                 - description
+                - ingestedItemsCount
                 - name
                 - searchSettings
                 - state
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
         - name: $expand
@@ -142,6 +146,7 @@ paths:
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
       responses:
@@ -217,12 +222,14 @@ paths:
                 - configuration
                 - connectorId
                 - description
+                - ingestedItemsCount
                 - name
                 - searchSettings
                 - state
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
         - name: $expand
@@ -239,6 +246,7 @@ paths:
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
       responses:
@@ -259,6 +267,10 @@ paths:
                 externalConnection-id: $request.path.externalConnection-id
             operations:
               operationId: external.Connections.ListOperations
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+            quota:
+              operationId: external.Connections.GetQuota
               parameters:
                 externalConnection-id: $request.path.externalConnection-id
             schema:
@@ -1174,6 +1186,10 @@ components:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
+            ingestedItemsCount:
+              type: integer
+              format: int64
+              nullable: true
             name:
               type: string
               description: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
@@ -1197,6 +1213,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
               description: Read-only. Nullable.
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
           additionalProperties:
@@ -1510,6 +1528,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             status:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.connectionQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: connectionQuota
+          type: object
+          properties:
+            itemsRemaining:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.schema:

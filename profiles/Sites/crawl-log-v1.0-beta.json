@@ -89,6 +89,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
+    "/sites/{site-id}/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopyFromContentTypeHub": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/contentTypes/{contentType-id}/baseTypes/microsoft.graph.getCompatibleHubContentTypes()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
     "/sites/{site-id}/contentTypes/{contentType-id}/columnLinks": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
@@ -142,6 +150,14 @@
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
     "/sites/{site-id}/contentTypes/microsoft.graph.addCopy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/contentTypes/microsoft.graph.addCopyFromContentTypeHub": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/contentTypes/microsoft.graph.getCompatibleHubContentTypes()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
@@ -309,6 +325,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
+    "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/baseTypes/microsoft.graph.addCopyFromContentTypeHub": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/baseTypes/microsoft.graph.getCompatibleHubContentTypes()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
     "/sites/{site-id}/lists/{list-id}/contentTypes/{contentType-id}/columnLinks": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
@@ -362,6 +386,14 @@
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
     "/sites/{site-id}/lists/{list-id}/contentTypes/microsoft.graph.addCopy": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/lists/{list-id}/contentTypes/microsoft.graph.addCopyFromContentTypeHub": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/lists/{list-id}/contentTypes/microsoft.graph.getCompatibleHubContentTypes()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
@@ -446,6 +478,14 @@
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
     "/sites/{site-id}/lists/{list-id}/items/{listItem-id}/versions/{listItemVersion-id}/microsoft.graph.restoreVersion": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/lists/{list-id}/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Sites.yml"
+    },
+    "/sites/{site-id}/lists/{list-id}/operations/{richLongRunningOperation-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Sites.yml"
     },
