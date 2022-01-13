@@ -78,6 +78,7 @@ paths:
                 - appointments
                 - calendarView
                 - customers
+                - customQuestions
                 - services
                 - staffMembers
               type: string
@@ -95,6 +96,7 @@ paths:
                 - appointments
                 - calendarView
                 - customers
+                - customQuestions
                 - services
                 - staffMembers
               type: string
@@ -183,6 +185,7 @@ paths:
                 - appointments
                 - calendarView
                 - customers
+                - customQuestions
                 - services
                 - staffMembers
               type: string
@@ -200,6 +203,7 @@ paths:
                 - appointments
                 - calendarView
                 - customers
+                - customQuestions
                 - services
                 - staffMembers
               type: string
@@ -221,6 +225,10 @@ paths:
                 bookingBusiness-id: $request.path.bookingBusiness-id
             customers:
               operationId: bookingBusinesses.ListCustomers
+              parameters:
+                bookingBusiness-id: $request.path.bookingBusiness-id
+            customQuestions:
+              operationId: bookingBusinesses.ListCustomQuestions
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
             services:
@@ -332,12 +340,16 @@ paths:
                 - customerNotes desc
                 - customerPhone
                 - customerPhone desc
+                - customers
+                - customers desc
                 - customerTimeZone
                 - customerTimeZone desc
                 - duration
                 - duration desc
                 - end
                 - end desc
+                - filledAttendeesCount
+                - filledAttendeesCount desc
                 - invoiceAmount
                 - invoiceAmount desc
                 - invoiceDate
@@ -352,6 +364,8 @@ paths:
                 - isLocationOnline desc
                 - joinWebUrl
                 - joinWebUrl desc
+                - maximumAttendeesCount
+                - maximumAttendeesCount desc
                 - onlineMeetingUrl
                 - onlineMeetingUrl desc
                 - optOutOfCustomerEmail
@@ -401,9 +415,11 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customers
                 - customerTimeZone
                 - duration
                 - end
+                - filledAttendeesCount
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
@@ -411,6 +427,7 @@ paths:
                 - invoiceUrl
                 - isLocationOnline
                 - joinWebUrl
+                - maximumAttendeesCount
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -533,9 +550,11 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customers
                 - customerTimeZone
                 - duration
                 - end
+                - filledAttendeesCount
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
@@ -543,6 +562,7 @@ paths:
                 - invoiceUrl
                 - isLocationOnline
                 - joinWebUrl
+                - maximumAttendeesCount
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -746,12 +766,16 @@ paths:
                 - customerNotes desc
                 - customerPhone
                 - customerPhone desc
+                - customers
+                - customers desc
                 - customerTimeZone
                 - customerTimeZone desc
                 - duration
                 - duration desc
                 - end
                 - end desc
+                - filledAttendeesCount
+                - filledAttendeesCount desc
                 - invoiceAmount
                 - invoiceAmount desc
                 - invoiceDate
@@ -766,6 +790,8 @@ paths:
                 - isLocationOnline desc
                 - joinWebUrl
                 - joinWebUrl desc
+                - maximumAttendeesCount
+                - maximumAttendeesCount desc
                 - onlineMeetingUrl
                 - onlineMeetingUrl desc
                 - optOutOfCustomerEmail
@@ -815,9 +841,11 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customers
                 - customerTimeZone
                 - duration
                 - end
+                - filledAttendeesCount
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
@@ -825,6 +853,7 @@ paths:
                 - invoiceUrl
                 - isLocationOnline
                 - joinWebUrl
+                - maximumAttendeesCount
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -959,9 +988,11 @@ paths:
                 - customerName
                 - customerNotes
                 - customerPhone
+                - customers
                 - customerTimeZone
                 - duration
                 - end
+                - filledAttendeesCount
                 - invoiceAmount
                 - invoiceDate
                 - invoiceId
@@ -969,6 +1000,7 @@ paths:
                 - invoiceUrl
                 - isLocationOnline
                 - joinWebUrl
+                - maximumAttendeesCount
                 - onlineMeetingUrl
                 - optOutOfCustomerEmail
                 - postBuffer
@@ -1363,6 +1395,251 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/customQuestions':
+    get:
+      tags:
+        - bookingBusinesses.bookingCustomQuestion
+      summary: Get customQuestions from bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
+      operationId: bookingBusinesses_ListCustomQuestions
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - answerInputType
+                - answerInputType desc
+                - answerOptions
+                - answerOptions desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - answerInputType
+                - answerOptions
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingCustomQuestion
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - bookingBusinesses.bookingCustomQuestion
+      summary: Create new navigation property to customQuestions for bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
+      operationId: bookingBusinesses_CreateCustomQuestions
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}':
+    get:
+      tags:
+        - bookingBusinesses.bookingCustomQuestion
+      summary: Get customQuestions from bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
+      operationId: bookingBusinesses_GetCustomQuestions
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomQuestion-id
+          in: path
+          description: 'key: id of bookingCustomQuestion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomQuestion
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - answerInputType
+                - answerOptions
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - bookingBusinesses.bookingCustomQuestion
+      summary: Update the navigation property customQuestions in bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
+      operationId: bookingBusinesses_UpdateCustomQuestions
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomQuestion-id
+          in: path
+          description: 'key: id of bookingCustomQuestion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomQuestion
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - bookingBusinesses.bookingCustomQuestion
+      summary: Delete navigation property customQuestions for bookingBusinesses
+      description: All the custom questions of this business. Read-only. Nullable.
+      operationId: bookingBusinesses_DeleteCustomQuestions
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+        - name: bookingCustomQuestion-id
+          in: path
+          description: 'key: id of bookingCustomQuestion'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingCustomQuestion
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
@@ -1441,6 +1718,8 @@ paths:
                 - displayName desc
                 - additionalInformation
                 - additionalInformation desc
+                - customQuestions
+                - customQuestions desc
                 - defaultDuration
                 - defaultDuration desc
                 - defaultLocation
@@ -1457,6 +1736,8 @@ paths:
                 - isHiddenFromCustomers desc
                 - isLocationOnline
                 - isLocationOnline desc
+                - maximumAttendeesCount
+                - maximumAttendeesCount desc
                 - notes
                 - notes desc
                 - postBuffer
@@ -1485,6 +1766,7 @@ paths:
                 - id
                 - displayName
                 - additionalInformation
+                - customQuestions
                 - defaultDuration
                 - defaultLocation
                 - defaultPrice
@@ -1493,6 +1775,7 @@ paths:
                 - description
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - maximumAttendeesCount
                 - notes
                 - postBuffer
                 - preBuffer
@@ -1602,6 +1885,7 @@ paths:
                 - id
                 - displayName
                 - additionalInformation
+                - customQuestions
                 - defaultDuration
                 - defaultLocation
                 - defaultPrice
@@ -1610,6 +1894,7 @@ paths:
                 - description
                 - isHiddenFromCustomers
                 - isLocationOnline
+                - maximumAttendeesCount
                 - notes
                 - postBuffer
                 - preBuffer
@@ -2227,6 +2512,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
               description: All the customers of this business. Read-only. Nullable.
+            customQuestions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+              description: All the custom questions of this business. Read-only. Nullable.
             services:
               type: array
               items:
@@ -2248,6 +2538,7 @@ components:
           properties:
             additionalInformation:
               type: string
+              description: Additional information that is sent to the customer when an appointment is confirmed.
               nullable: true
             customerEmailAddress:
               type: string
@@ -2271,6 +2562,11 @@ components:
               type: string
               description: The customer's phone number.
               nullable: true
+            customers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingCustomerInformationBase'
+              description: It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
             customerTimeZone:
               type: string
               description: 'The time zone of the customer. For a list of possible values, see dateTimeTimeZone.'
@@ -2282,6 +2578,12 @@ components:
               format: duration
             end:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            filledAttendeesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The current number of customers in the appointment
+              format: int32
             invoiceAmount:
               type: number
               description: The billed amount on the invoice.
@@ -2300,17 +2602,23 @@ components:
               nullable: true
             isLocationOnline:
               type: boolean
-              description: True indicates that the appointment will be held online. Default value is false.
+              description: 'If true, indicates that the appointment will be held online. Default value is false.'
             joinWebUrl:
               type: string
               description: The URL of the online meeting for the appointment.
               nullable: true
+            maximumAttendeesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The maximum number of customers allowed in an appointment.
+              format: int32
             onlineMeetingUrl:
               type: string
               nullable: true
             optOutOfCustomerEmail:
               type: boolean
-              description: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+              description: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2334,7 +2642,7 @@ components:
               description: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             selfServiceAppointmentId:
               type: string
-              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.'
+              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.'
               nullable: true
             serviceId:
               type: string
@@ -2351,7 +2659,7 @@ components:
               nullable: true
             smsNotificationsEnabled:
               type: boolean
-              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+              description: 'If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.'
             staffMemberIds:
               type: array
               items:
@@ -2373,7 +2681,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-              description: 'Addresses associated with the customer, including home, business and other addresses.'
+              description: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
             phones:
               type: array
               items:
@@ -2382,6 +2690,26 @@ components:
           additionalProperties:
             type: object
           description: Represents a customer of the business.
+    microsoft.graph.bookingCustomQuestion:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: bookingCustomQuestion
+          type: object
+          properties:
+            answerInputType:
+              $ref: '#/components/schemas/microsoft.graph.answerInputType'
+            answerOptions:
+              type: array
+              items:
+                type: string
+                nullable: true
+              description: List of possible answer values.
+            displayName:
+              type: string
+              description: Display name of this entity.
+          additionalProperties:
+            type: object
+          description: Represents a custom question of the business.
     microsoft.graph.bookingService:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
@@ -2390,7 +2718,13 @@ components:
           properties:
             additionalInformation:
               type: string
+              description: Additional information that is sent to the customer when an appointment is confirmed.
               nullable: true
+            customQuestions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.bookingQuestionAssignment'
+              description: Contains the set of custom questions associated with a particular service.
             defaultDuration:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2419,6 +2753,12 @@ components:
             isLocationOnline:
               type: boolean
               description: True indicates that the appointments for the service will be held online. Default value is false.
+            maximumAttendeesCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The maximum number of customers allowed in a service.
+              format: int32
             notes:
               type: string
               description: Additional information about this service.
@@ -2620,6 +2960,11 @@ components:
           $ref: '#/components/schemas/microsoft.graph.locationUniqueIdType'
       additionalProperties:
         type: object
+    microsoft.graph.bookingCustomerInformationBase:
+      title: bookingCustomerInformationBase
+      type: object
+      additionalProperties:
+        type: object
     microsoft.graph.dateTimeTimeZone:
       title: dateTimeTimeZone
       type: object
@@ -2696,6 +3041,25 @@ components:
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.phoneType'
+      additionalProperties:
+        type: object
+    microsoft.graph.answerInputType:
+      title: answerInputType
+      enum:
+        - text
+        - radioButton
+        - unknownFutureValue
+      type: string
+    microsoft.graph.bookingQuestionAssignment:
+      title: bookingQuestionAssignment
+      type: object
+      properties:
+        isRequired:
+          type: boolean
+          description: The ID of the custom question.
+        questionId:
+          type: string
+          description: Indicates whether it is mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffRole:
