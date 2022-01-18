@@ -11,6 +11,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Security.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System.Management.Automation;
+    using System;
 
     /// <summary>
     /// A HTTP helper class.
@@ -85,6 +86,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
+            // Increase HTTPClient timeout to 300 seconds.
+            httpClient.Timeout = TimeSpan.FromSeconds(300);
 
             // Prepend SDKVersion header
             PrependSDKHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, AuthModuleVersionHeaderValue);
