@@ -12325,6 +12325,7 @@ paths:
                 - organizationSettings
                 - provisioningPolicies
                 - servicePlans
+                - snapshots
                 - supportedRegions
                 - userSettings
               type: string
@@ -12347,6 +12348,7 @@ paths:
                 - organizationSettings
                 - provisioningPolicies
                 - servicePlans
+                - snapshots
                 - supportedRegions
                 - userSettings
               type: string
@@ -12374,6 +12376,8 @@ paths:
               operationId: deviceManagement.VirtualEndpoint.ListProvisioningPolicies
             servicePlans:
               operationId: deviceManagement.VirtualEndpoint.ListServicePlans
+            snapshots:
+              operationId: deviceManagement.VirtualEndpoint.ListSnapshots
             supportedRegions:
               operationId: deviceManagement.VirtualEndpoint.ListSupportedRegions
             userSettings:
@@ -14443,6 +14447,214 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/virtualEndpoint/snapshots:
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get snapshots from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_ListSnapshots
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - cloudPcId
+                - cloudPcId desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastRestoredDateTime
+                - lastRestoredDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cloudPcId
+                - createdDateTime
+                - lastRestoredDateTime
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcSnapshot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Create new navigation property to snapshots for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_CreateSnapshots
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshot-id}':
+    get:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Get snapshots from deviceManagement
+      operationId: deviceManagement.virtualEndpoint_GetSnapshots
+      parameters:
+        - name: cloudPcSnapshot-id
+          in: path
+          description: 'key: id of cloudPcSnapshot'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSnapshot
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cloudPcId
+                - createdDateTime
+                - lastRestoredDateTime
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Update the navigation property snapshots in deviceManagement
+      operationId: deviceManagement.virtualEndpoint_UpdateSnapshots
+      parameters:
+        - name: cloudPcSnapshot-id
+          in: path
+          description: 'key: id of cloudPcSnapshot'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSnapshot
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.virtualEndpoint
+      summary: Delete navigation property snapshots for deviceManagement
+      operationId: deviceManagement.virtualEndpoint_DeleteSnapshots
+      parameters:
+        - name: cloudPcSnapshot-id
+          in: path
+          description: 'key: id of cloudPcSnapshot'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPcSnapshot
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/virtualEndpoint/supportedRegions:
     get:
       tags:
@@ -14677,6 +14889,8 @@ paths:
                 - lastModifiedDateTime desc
                 - localAdminEnabled
                 - localAdminEnabled desc
+                - restorePointSetting
+                - restorePointSetting desc
                 - selfServiceEnabled
                 - selfServiceEnabled desc
               type: string
@@ -14695,6 +14909,7 @@ paths:
                 - displayName
                 - lastModifiedDateTime
                 - localAdminEnabled
+                - restorePointSetting
                 - selfServiceEnabled
                 - assignments
               type: string
@@ -14787,6 +15002,7 @@ paths:
                 - displayName
                 - lastModifiedDateTime
                 - localAdminEnabled
+                - restorePointSetting
                 - selfServiceEnabled
                 - assignments
               type: string
@@ -16827,6 +17043,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
+            snapshots:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
             supportedRegions:
               type: array
               items:
@@ -17217,6 +17437,28 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcSnapshot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSnapshot
+          type: object
+          properties:
+            cloudPcId:
+              type: string
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            lastRestoredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshotStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcSupportedRegion:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -17255,6 +17497,8 @@ components:
               type: boolean
               description: 'Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.'
               nullable: true
+            restorePointSetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
               description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.'
@@ -18088,6 +18332,7 @@ components:
         - failed
         - provisionedWithWarnings
         - resizing
+        - restoring
         - pendingProvision
         - unknownFutureValue
       type: string
@@ -18224,6 +18469,27 @@ components:
     microsoft.graph.cloudPcManagementAssignmentTarget:
       title: cloudPcManagementAssignmentTarget
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcSnapshotStatus:
+      title: cloudPcSnapshotStatus
+      enum:
+        - ready
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcRestorePointSetting:
+      title: cloudPcRestorePointSetting
+      type: object
+      properties:
+        frequencyInHours:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        userRestoreEnabled:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     odata.error:
