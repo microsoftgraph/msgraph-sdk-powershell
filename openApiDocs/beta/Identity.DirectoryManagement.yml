@@ -7793,6 +7793,59 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/inboundSharedUserProfiles/{inboundSharedUserProfile-userId}/microsoft.graph.exportPersonalData':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action exportPersonalData
+      operationId: directory.inboundSharedUserProfiles_exportPersonalData
+      parameters:
+        - name: inboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of inboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundSharedUserProfile
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                storageLocation:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/directory/inboundSharedUserProfiles/{inboundSharedUserProfile-userId}/microsoft.graph.removePersonalData':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action removePersonalData
+      operationId: directory.inboundSharedUserProfiles_removePersonalData
+      parameters:
+        - name: inboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of inboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: inboundSharedUserProfile
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directory/outboundSharedUserProfiles:
     get:
       tags:
@@ -8238,6 +8291,33 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/directory/outboundSharedUserProfiles/{outboundSharedUserProfile-userId}/tenants/{tenantReference-tenantId}/microsoft.graph.removePersonalData':
+    post:
+      tags:
+        - directory.Actions
+      summary: Invoke action removePersonalData
+      operationId: directory.outboundSharedUserProfiles.tenants_removePersonalData
+      parameters:
+        - name: outboundSharedUserProfile-userId
+          in: path
+          description: 'key: userId of outboundSharedUserProfile'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: outboundSharedUserProfile
+        - name: tenantReference-tenantId
+          in: path
+          description: 'key: tenantId of tenantReference'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: tenantReference
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /directory/recommendations:
     get:
       tags:
@@ -16061,6 +16141,7 @@ components:
         - passwordHashSync
         - emailAsAlternateId
         - unknownFutureValue
+        - certificateBasedAuthentication
       type: string
     microsoft.graph.keyValue:
       title: keyValue

@@ -205,11 +205,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
-    "/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants": {
+    "/communications/onlineMeetings/{onlineMeeting-id}/transcripts": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
-    "/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrant-id}": {
+    "/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
+    "/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
@@ -301,11 +305,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
-    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants": {
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
-    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrant-id}": {
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
+    },
+    "/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CloudCommunications.yml"
     },
