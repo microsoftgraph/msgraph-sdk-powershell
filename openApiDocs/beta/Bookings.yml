@@ -2582,7 +2582,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The current number of customers in the appointment
+              description: The current number of customers in the appointment.
               format: int32
             invoiceAmount:
               type: number
@@ -2602,7 +2602,7 @@ components:
               nullable: true
             isLocationOnline:
               type: boolean
-              description: 'If true, indicates that the appointment will be held online. Default value is false.'
+              description: True indicates that the appointment will be held online. Default value is false.
             joinWebUrl:
               type: string
               description: The URL of the online meeting for the appointment.
@@ -2618,7 +2618,7 @@ components:
               nullable: true
             optOutOfCustomerEmail:
               type: boolean
-              description: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+              description: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2642,7 +2642,7 @@ components:
               description: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             selfServiceAppointmentId:
               type: string
-              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.'
+              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.'
               nullable: true
             serviceId:
               type: string
@@ -2659,7 +2659,7 @@ components:
               nullable: true
             smsNotificationsEnabled:
               type: boolean
-              description: 'If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.'
+              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
             staffMemberIds:
               type: array
               items:
@@ -2681,7 +2681,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-              description: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+              description: 'Addresses associated with the customer, including home, business and other addresses.'
             phones:
               type: array
               items:
@@ -2971,10 +2971,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object
@@ -3056,10 +3056,10 @@ components:
       properties:
         isRequired:
           type: boolean
-          description: The ID of the custom question.
+          description: Indicates whether it is mandatory to answer the custom question.
         questionId:
           type: string
-          description: Indicates whether it is mandatory to answer the custom question.
+          description: If it is mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffRole:
