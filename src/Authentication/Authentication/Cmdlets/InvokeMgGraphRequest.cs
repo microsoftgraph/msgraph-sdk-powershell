@@ -568,7 +568,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private HttpClient GetHttpClient()
         {
             var provider = GetAuthProvider();
-            var client = HttpHelpers.GetGraphHttpClient(provider);
+            var client = HttpHelpers.GetGraphHttpClient(provider, GraphSession.Instance.AuthContext.ClientTimeout);
             return client;
         }
 

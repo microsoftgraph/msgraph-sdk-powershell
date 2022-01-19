@@ -67,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             }
 
             IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
-            return GetGraphHttpClient(authProvider);
+            return GetGraphHttpClient(authProvider, authContext.ClientTimeout);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// </summary>
         /// <param name="authProvider">Custom AuthProvider</param>
         /// <returns></returns>
-        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider)
+        public static HttpClient GetGraphHttpClient(IAuthenticationProvider authProvider, TimeSpan clientTimeout)
         {
             IList<DelegatingHandler> defaultHandlers = GraphClientFactory.CreateDefaultHandlers(authProvider);
 
@@ -86,8 +86,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             defaultHandlers.Insert(2, new ODataQueryOptionsHandler());
 
             HttpClient httpClient = GraphClientFactory.Create(defaultHandlers);
-            // Increase HTTPClient timeout to 300 seconds.
-            httpClient.Timeout = TimeSpan.FromSeconds(300);
+            httpClient.Timeout = clientTimeout;
 
             // Prepend SDKVersion header
             PrependSDKHeader(httpClient, CoreConstants.Headers.SdkVersionHeaderName, AuthModuleVersionHeaderValue);
