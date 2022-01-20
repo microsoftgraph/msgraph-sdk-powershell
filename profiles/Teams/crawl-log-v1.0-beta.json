@@ -625,6 +625,46 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
+    "/teamwork/devices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/activity": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/configuration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/health": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.restart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.runDiagnostics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.updateSoftware": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/operations/{teamworkDeviceOperation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
     "/teamwork/workforceIntegrations": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"

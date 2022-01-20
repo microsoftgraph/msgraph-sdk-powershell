@@ -2950,6 +2950,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -2965,6 +2966,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -3069,6 +3071,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -3084,6 +3087,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -3103,6 +3107,10 @@ paths:
                 onlineMeeting-id: $request.path.onlineMeeting-id
             registration:
               operationId: communications.OnlineMeetings.GetRegistration
+              parameters:
+                onlineMeeting-id: $request.path.onlineMeeting-id
+            transcripts:
+              operationId: communications.OnlineMeetings.ListTranscripts
               parameters:
                 onlineMeeting-id: $request.path.onlineMeeting-id
         default:
@@ -4252,8 +4260,8 @@ paths:
                 - speakers
                 - startDateTime
                 - subject
-                - customQuestions
                 - registrants
+                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -4266,8 +4274,8 @@ paths:
             items:
               enum:
                 - '*'
-                - customQuestions
                 - registrants
+                - customQuestions
               type: string
       responses:
         '200':
@@ -4277,12 +4285,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
           links:
-            customQuestions:
-              operationId: communications.onlineMeetings.Registration.ListCustomQuestions
-              parameters:
-                onlineMeeting-id: $request.path.onlineMeeting-id
             registrants:
               operationId: communications.onlineMeetings.Registration.ListRegistrants
+              parameters:
+                onlineMeeting-id: $request.path.onlineMeeting-id
+            customQuestions:
+              operationId: communications.onlineMeetings.Registration.ListCustomQuestions
               parameters:
                 onlineMeeting-id: $request.path.onlineMeeting-id
         default:
@@ -4589,13 +4597,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants':
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get registrants from communications
-      description: Registrants of the online meeting.
-      operationId: communications.onlineMeetings.registration_ListRegistrants
+      summary: Get transcripts from communications
+      operationId: communications.onlineMeetings_ListTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4621,20 +4628,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - customQuestionAnswers
-                - customQuestionAnswers desc
-                - email
-                - email desc
-                - firstName
-                - firstName desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lastName
-                - lastName desc
-                - registrationDateTime
-                - registrationDateTime desc
-                - status
-                - status desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
               type: string
         - name: $select
           in: query
@@ -4647,13 +4644,8 @@ paths:
             items:
               enum:
                 - id
-                - customQuestionAnswers
-                - email
-                - firstName
-                - joinWebUrl
-                - lastName
-                - registrationDateTime
-                - status
+                - content
+                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -4673,13 +4665,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of meetingRegistrant
+                title: Collection of callTranscript
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -4693,9 +4685,8 @@ paths:
     post:
       tags:
         - communications.onlineMeeting
-      summary: Create new navigation property to registrants for communications
-      description: Registrants of the online meeting.
-      operationId: communications.onlineMeetings.registration_CreateRegistrants
+      summary: Create new navigation property to transcripts for communications
+      operationId: communications.onlineMeetings_CreateTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4709,7 +4700,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
         required: true
       responses:
         '201':
@@ -4717,17 +4708,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/communications/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrant-id}':
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get registrants from communications
-      description: Registrants of the online meeting.
-      operationId: communications.onlineMeetings.registration_GetRegistrants
+      summary: Get transcripts from communications
+      operationId: communications.onlineMeetings_GetTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4736,13 +4726,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4754,13 +4744,8 @@ paths:
             items:
               enum:
                 - id
-                - customQuestionAnswers
-                - email
-                - firstName
-                - joinWebUrl
-                - lastName
-                - registrationDateTime
-                - status
+                - content
+                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -4780,16 +4765,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.onlineMeeting
-      summary: Update the navigation property registrants in communications
-      description: Registrants of the online meeting.
-      operationId: communications.onlineMeetings.registration_UpdateRegistrants
+      summary: Update the navigation property transcripts in communications
+      operationId: communications.onlineMeetings_UpdateTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4798,19 +4782,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
         required: true
       responses:
         '204':
@@ -4821,9 +4805,8 @@ paths:
     delete:
       tags:
         - communications.onlineMeeting
-      summary: Delete navigation property registrants for communications
-      description: Registrants of the online meeting.
-      operationId: communications.onlineMeetings.registration_DeleteRegistrants
+      summary: Delete navigation property transcripts for communications
+      operationId: communications.onlineMeetings_DeleteTranscripts
       parameters:
         - name: onlineMeeting-id
           in: path
@@ -4832,18 +4815,84 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
         - name: If-Match
           in: header
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
+    get:
+      tags:
+        - communications.onlineMeeting
+      summary: Get media content for the navigation property transcripts from communications
+      operationId: communications.onlineMeetings_GetTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - communications.onlineMeeting
+      summary: Update media content for the navigation property transcripts in communications
+      operationId: communications.onlineMeetings_SetTranscriptsContent
+      parameters:
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -5371,6 +5420,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -5386,6 +5436,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -5505,6 +5556,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
         - name: $expand
           in: query
@@ -5520,6 +5572,7 @@ paths:
                 - attendanceReports
                 - meetingAttendanceReport
                 - registration
+                - transcripts
               type: string
       responses:
         '200':
@@ -5541,6 +5594,11 @@ paths:
                 onlineMeeting-id: $request.path.onlineMeeting-id
             registration:
               operationId: users.OnlineMeetings.GetRegistration
+              parameters:
+                user-id: $request.path.user-id
+                onlineMeeting-id: $request.path.onlineMeeting-id
+            transcripts:
+              operationId: users.OnlineMeetings.ListTranscripts
               parameters:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
@@ -6882,8 +6940,8 @@ paths:
                 - speakers
                 - startDateTime
                 - subject
-                - customQuestions
                 - registrants
+                - customQuestions
               type: string
         - name: $expand
           in: query
@@ -6896,8 +6954,8 @@ paths:
             items:
               enum:
                 - '*'
-                - customQuestions
                 - registrants
+                - customQuestions
               type: string
       responses:
         '200':
@@ -6907,13 +6965,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
           links:
-            customQuestions:
-              operationId: users.onlineMeetings.Registration.ListCustomQuestions
+            registrants:
+              operationId: users.onlineMeetings.Registration.ListRegistrants
               parameters:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
-            registrants:
-              operationId: users.onlineMeetings.Registration.ListRegistrants
+            customQuestions:
+              operationId: users.onlineMeetings.Registration.ListCustomQuestions
               parameters:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
@@ -7270,13 +7328,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants':
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get registrants from users
-      description: Registrants of the online meeting.
-      operationId: users.onlineMeetings.registration_ListRegistrants
+      summary: Get transcripts from users
+      operationId: users.onlineMeetings_ListTranscripts
       parameters:
         - name: user-id
           in: path
@@ -7309,20 +7366,10 @@ paths:
               enum:
                 - id
                 - id desc
-                - customQuestionAnswers
-                - customQuestionAnswers desc
-                - email
-                - email desc
-                - firstName
-                - firstName desc
-                - joinWebUrl
-                - joinWebUrl desc
-                - lastName
-                - lastName desc
-                - registrationDateTime
-                - registrationDateTime desc
-                - status
-                - status desc
+                - content
+                - content desc
+                - createdDateTime
+                - createdDateTime desc
               type: string
         - name: $select
           in: query
@@ -7335,13 +7382,8 @@ paths:
             items:
               enum:
                 - id
-                - customQuestionAnswers
-                - email
-                - firstName
-                - joinWebUrl
-                - lastName
-                - registrationDateTime
-                - status
+                - content
+                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -7361,13 +7403,13 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of meetingRegistrant
+                title: Collection of callTranscript
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                      $ref: '#/components/schemas/microsoft.graph.callTranscript'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -7381,9 +7423,8 @@ paths:
     post:
       tags:
         - users.onlineMeeting
-      summary: Create new navigation property to registrants for users
-      description: Registrants of the online meeting.
-      operationId: users.onlineMeetings.registration_CreateRegistrants
+      summary: Create new navigation property to transcripts for users
+      operationId: users.onlineMeetings_CreateTranscripts
       parameters:
         - name: user-id
           in: path
@@ -7404,7 +7445,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
         required: true
       responses:
         '201':
@@ -7412,17 +7453,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/registration/registrants/{meetingRegistrant-id}':
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get registrants from users
-      description: Registrants of the online meeting.
-      operationId: users.onlineMeetings.registration_GetRegistrants
+      summary: Get transcripts from users
+      operationId: users.onlineMeetings_GetTranscripts
       parameters:
         - name: user-id
           in: path
@@ -7438,13 +7478,13 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7456,13 +7496,8 @@ paths:
             items:
               enum:
                 - id
-                - customQuestionAnswers
-                - email
-                - firstName
-                - joinWebUrl
-                - lastName
-                - registrationDateTime
-                - status
+                - content
+                - createdDateTime
               type: string
         - name: $expand
           in: query
@@ -7482,16 +7517,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
-      summary: Update the navigation property registrants in users
-      description: Registrants of the online meeting.
-      operationId: users.onlineMeetings.registration_UpdateRegistrants
+      summary: Update the navigation property transcripts in users
+      operationId: users.onlineMeetings_UpdateTranscripts
       parameters:
         - name: user-id
           in: path
@@ -7507,19 +7541,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
+              $ref: '#/components/schemas/microsoft.graph.callTranscript'
         required: true
       responses:
         '204':
@@ -7530,9 +7564,8 @@ paths:
     delete:
       tags:
         - users.onlineMeeting
-      summary: Delete navigation property registrants for users
-      description: Registrants of the online meeting.
-      operationId: users.onlineMeetings.registration_DeleteRegistrants
+      summary: Delete navigation property transcripts for users
+      operationId: users.onlineMeetings_DeleteTranscripts
       parameters:
         - name: user-id
           in: path
@@ -7548,18 +7581,98 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: onlineMeeting
-        - name: meetingRegistrant-id
+        - name: callTranscript-id
           in: path
-          description: 'key: id of meetingRegistrant'
+          description: 'key: id of callTranscript'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: meetingRegistrant
+          x-ms-docs-key-type: callTranscript
         - name: If-Match
           in: header
           description: ETag
           schema:
             type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/transcripts/{callTranscript-id}/content':
+    get:
+      tags:
+        - users.onlineMeeting
+      summary: Get media content for the navigation property transcripts from users
+      operationId: users.onlineMeetings_GetTranscriptsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.onlineMeeting
+      summary: Update media content for the navigation property transcripts in users
+      operationId: users.onlineMeetings_SetTranscriptsContent
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: onlineMeeting-id
+          in: path
+          description: 'key: id of onlineMeeting'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: onlineMeeting
+        - name: callTranscript-id
+          in: path
+          description: 'key: id of callTranscript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: callTranscript
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
       responses:
         '204':
           description: Success
@@ -8004,8 +8117,17 @@ components:
       properties:
         endpointType:
           $ref: '#/components/schemas/microsoft.graph.endpointType'
+        hidden:
+          type: boolean
+          nullable: true
         identity:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
+        participantId:
+          type: string
+          nullable: true
+        removeFromDefaultAudioRoutingGroup:
+          type: boolean
+          nullable: true
         replacesCallId:
           type: string
           description: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
@@ -8361,6 +8483,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
           additionalProperties:
             type: object
     microsoft.graph.meetingAttendanceReport:
@@ -8405,16 +8531,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving.
+              description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address.
+              description: Email address of the user associated with this atttendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
             role:
               type: string
-              description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -8427,12 +8553,10 @@ components:
             type: object
     microsoft.graph.meetingRegistration:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.meetingRegistrationBase'
         - title: meetingRegistration
           type: object
           properties:
-            allowedRegistrant:
-              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
             description:
               type: string
               description: The description of the meeting.
@@ -8474,11 +8598,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
-            registrants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
-              description: Registrants of the online meeting.
           additionalProperties:
             type: object
     microsoft.graph.meetingRegistrationQuestion:
@@ -8505,41 +8624,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.meetingRegistrant:
+    microsoft.graph.callTranscript:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingRegistrant
+        - title: callTranscript
           type: object
           properties:
-            customQuestionAnswers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customQuestionAnswer'
-              description: The registrant's answer to custom questions.
-            email:
+            content:
               type: string
-              description: The email address of the registrant.
+              format: base64url
               nullable: true
-            firstName:
-              type: string
-              description: The first name of the registrant.
-              nullable: true
-            joinWebUrl:
-              type: string
-              description: A unique web URL for the registrant to join the meeting. Read-only.
-              nullable: true
-            lastName:
-              type: string
-              description: The last name of the registrant.
-              nullable: true
-            registrationDateTime:
+            createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Time in UTC when the registrant registers for the meeting. Read-only.
               format: date-time
               nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantStatus'
           additionalProperties:
             type: object
     microsoft.graph.chatInfo:
@@ -8666,6 +8765,10 @@ components:
     microsoft.graph.callOptions:
       title: callOptions
       type: object
+      properties:
+        hideBotAfterEscalation:
+          type: boolean
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.callRoute:
@@ -9085,6 +9188,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -9147,13 +9252,13 @@ components:
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee joined in UTC.
+          description: The time the attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee left in UTC.
+          description: The time the attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:
@@ -9172,13 +9277,21 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.meetingAudience:
-      title: meetingAudience
-      enum:
-        - everyone
-        - organization
-        - unknownFutureValue
-      type: string
+    microsoft.graph.meetingRegistrationBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrationBase
+          type: object
+          properties:
+            allowedRegistrant:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            registrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+              description: Registrants of the online meeting.
+          additionalProperties:
+            type: object
     microsoft.graph.meetingSpeaker:
       title: meetingSpeaker
       type: object
@@ -9198,32 +9311,6 @@ components:
       enum:
         - text
         - radioButton
-        - unknownFutureValue
-      type: string
-    microsoft.graph.customQuestionAnswer:
-      title: customQuestionAnswer
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Display name of the custom registration question. Read-only.
-          nullable: true
-        questionId:
-          type: string
-          description: ID the custom registration question. Read-only.
-          nullable: true
-        value:
-          type: string
-          description: Answer to the custom registration question.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingRegistrantStatus:
-      title: meetingRegistrantStatus
-      enum:
-        - registered
-        - canceled
-        - processing
         - unknownFutureValue
       type: string
     microsoft.graph.meetingParticipantInfo:
@@ -9704,6 +9791,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether caption is enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.bodyType:
       title: bodyType
       enum:
@@ -9721,6 +9828,25 @@ components:
         - invited
         - organizationExcludingGuests
       type: string
+    microsoft.graph.meetingAudience:
+      title: meetingAudience
+      enum:
+        - everyone
+        - organization
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingRegistrantBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrantBase
+          type: object
+          properties:
+            joinWebUrl:
+              type: string
+              description: A unique web URL for the registrant to join the meeting. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.onlineMeetingRole:
       title: onlineMeetingRole
       enum:

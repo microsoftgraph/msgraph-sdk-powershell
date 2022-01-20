@@ -43,5 +43,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
         ContextScope ContextScope { get; set; }
         X509Certificate2 Certificate { get; set; }
         Version PSHostVersion { get; set; }
+        TimeSpan ClientTimeout { get; set; }
     }
 }

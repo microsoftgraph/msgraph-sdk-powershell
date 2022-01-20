@@ -1,0 +1,89 @@
+{
+  "resources": [],
+  "operations": {
+    "/solutions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/customers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomerBase-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.unpublish": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/services": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMemberBase-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingCurrencies": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    },
+    "/solutions/bookingCurrencies/{bookingCurrency-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Bookings.yml"
+    }
+  }
+}

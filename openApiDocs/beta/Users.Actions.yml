@@ -12558,7 +12558,7 @@ paths:
       tags:
         - users.Actions
       summary: Invoke action playLostModeSound
-      description: Remote lock
+      description: Play lost mode sound
       operationId: users.managedDevices_playLostModeSound
       parameters:
         - name: user-id
@@ -12575,6 +12575,19 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                durationInMinutes:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -21424,6 +21437,281 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.acceptRecommendations':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action acceptRecommendations
+      operationId: users.pendingAccessReviewInstances.decisions.instance_acceptRecommendations
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.applyDecisions':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action applyDecisions
+      operationId: users.pendingAccessReviewInstances.decisions.instance_applyDecisions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.batchRecordDecisions':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action batchRecordDecisions
+      operationId: users.pendingAccessReviewInstances.decisions.instance_batchRecordDecisions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decision:
+                  type: string
+                  nullable: true
+                justification:
+                  type: string
+                  nullable: true
+                principalId:
+                  type: string
+                  nullable: true
+                resourceId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.resetDecisions':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action resetDecisions
+      operationId: users.pendingAccessReviewInstances.decisions.instance_resetDecisions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.sendReminder':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action sendReminder
+      operationId: users.pendingAccessReviewInstances.decisions.instance_sendReminder
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/{accessReviewInstanceDecisionItem-id}/instance/microsoft.graph.stop':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action stop
+      operationId: users.pendingAccessReviewInstances.decisions.instance_stop
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewInstanceDecisionItem-id
+          in: path
+          description: 'key: id of accessReviewInstanceDecisionItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstanceDecisionItem
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/microsoft.graph.recordAllDecisions':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action recordAllDecisions
+      operationId: users.pendingAccessReviewInstances.decisions_recordAllDecisions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                decision:
+                  type: string
+                  nullable: true
+                justification:
+                  type: string
+                  nullable: true
+                principalId:
+                  type: string
+                  nullable: true
+                resourceId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/definition/microsoft.graph.stop':
     post:
       tags:
@@ -21768,6 +22056,99 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/tasks/alltasks/{baseTask-id}/microsoft.graph.move':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action move
+      operationId: users.tasks.alltasks_move
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: baseTask-id
+          in: path
+          description: 'key: id of baseTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: baseTask
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                destinationTaskListId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/tasks/lists/{baseTaskList-id}/tasks/{baseTask-id}/microsoft.graph.move':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action move
+      operationId: users.tasks.lists.tasks_move
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: baseTaskList-id
+          in: path
+          description: 'key: id of baseTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: baseTaskList
+        - name: baseTask-id
+          in: path
+          description: 'key: id of baseTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: baseTask
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                destinationTaskListId:
+                  type: string
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -22803,7 +23184,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only, Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -22838,7 +23219,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
@@ -23135,6 +23516,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
+            tasks:
+              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -23584,6 +23967,10 @@ components:
               $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
             registration:
               $ref: '#/components/schemas/microsoft.graph.meetingRegistration'
+            transcripts:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.callTranscript'
           additionalProperties:
             type: object
     microsoft.graph.outlookTask:
@@ -23645,6 +24032,70 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
               description: The collection of single-value extended properties defined for the task. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.baseTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date when the task was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            displayName:
+              type: string
+              description: The name of the task.
+              nullable: true
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            personalProperties:
+              $ref: '#/components/schemas/microsoft.graph.personalTaskProperties'
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
+            checklistItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of checklistItems linked to a task.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task .
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
+              description: A collection of resources linked to the task.
+            parentList:
+              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
           additionalProperties:
             type: object
     microsoft.graph.teamworkActivityTopic:
@@ -24265,6 +24716,9 @@ components:
         - refreshUserPolicy
         - wakeUpClient
         - appEvaluation
+        - quickScan
+        - fullScan
+        - windowsDefenderUpdateSignatures
       type: string
       description: Action type on Configuration Manager client
     microsoft.graph.windowsDeviceAccount:
@@ -24284,7 +24738,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -24294,7 +24748,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -24574,6 +25028,8 @@ components:
           type: string
           description: The default time zone for the user's mailbox.
           nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
         userPurposeV2:
           $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
         workingHours:
@@ -25057,7 +25513,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mdmAppId:
               type: string
@@ -25538,6 +25994,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
             pages:
               type: array
               items:
@@ -26009,7 +26469,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -26322,7 +26782,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Sets how long (in seconds) this notification content will stay in each platform’s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user’s Windows Action Center.'
+              description: 'Sets how long (in seconds) this notification content will stay in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user''s Windows Action Center.'
               format: int32
               nullable: true
             expirationDateTime:
@@ -26901,6 +27361,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
+    microsoft.graph.tasks:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tasks
+          type: object
+          properties:
+            alltasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: All tasks in the users mailbox.
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
+              description: The task lists in the users mailbox.
+          additionalProperties:
+            type: object
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -26935,7 +27413,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             installedApps:
               type: array
@@ -27377,6 +27855,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -27447,12 +27927,10 @@ components:
             type: object
     microsoft.graph.meetingRegistration:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.meetingRegistrationBase'
         - title: meetingRegistration
           type: object
           properties:
-            allowedRegistrant:
-              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
             description:
               type: string
               description: The description of the meeting.
@@ -27494,11 +27972,23 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
-            registrants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
-              description: Registrants of the online meeting.
+          additionalProperties:
+            type: object
+    microsoft.graph.callTranscript:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: callTranscript
+          type: object
+          properties:
+            content:
+              type: string
+              format: base64url
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.patternedRecurrence:
@@ -27528,6 +28018,95 @@ components:
         - waitingOnOthers
         - deferred
       type: string
+    microsoft.graph.personalTaskProperties:
+      title: personalTaskProperties
+      type: object
+      properties:
+        reminderDatetime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.taskStatus_v2:
+      title: taskStatus_v2
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.linkedResource_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource_v2
+          type: object
+          properties:
+            applicationName:
+              type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
+              nullable: true
+            displayName:
+              type: string
+              description: Field indicating the title of the linkedResource.
+              nullable: true
+            externalId:
+              type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.baseTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the task list.
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: The tasks in this task list. Read-only. Nullable.
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkActivityTopicSource:
       title: teamworkActivityTopicSource
       enum:
@@ -27952,6 +28531,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
     microsoft.graph.mailboxRecipientType:
       title: mailboxRecipientType
       enum:
@@ -28901,6 +29492,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
               description: All items contained in the list.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
             subscriptions:
               type: array
               items:
@@ -29129,6 +29724,28 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.columnDefinition'
               description: The collection of column definitions for this contentType.
+          additionalProperties:
+            type: object
+    microsoft.graph.richLongRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        - title: richLongRunningOperation
+          type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            percentageComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+              nullable: true
+            resourceId:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.sitePage:
@@ -29399,6 +30016,8 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceInsight'
+            instance:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScheduleDefinition:
@@ -29482,7 +30101,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values: Reprovision, Resize.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -29989,13 +30608,25 @@ components:
           type: string
           description: Subscriber carrier of the device
           nullable: true
+        systemManagementBIOSVersion:
+          type: string
+          description: BIOS version as reported by SMBIOS
+          nullable: true
         totalStorageSpace:
           type: integer
           description: Total storage space of the device.
           format: int64
+        tpmManufacturer:
+          type: string
+          description: The identifying information that uniquely names the TPM manufacturer
+          nullable: true
         tpmSpecificationVersion:
           type: string
           description: String that specifies the specification version.
+          nullable: true
+        tpmVersion:
+          type: string
+          description: 'The version of the TPM, as specified by the manufacturer'
           nullable: true
         wifiMac:
           type: string
@@ -32672,6 +33303,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether caption is enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -32693,16 +33344,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving.
+              description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address.
+              description: Email address of the user associated with this atttendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
             role:
               type: string
-              description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -32713,13 +33364,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.meetingAudience:
-      title: meetingAudience
-      enum:
-        - everyone
-        - organization
-        - unknownFutureValue
-      type: string
+    microsoft.graph.meetingRegistrationBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrationBase
+          type: object
+          properties:
+            allowedRegistrant:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            registrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+              description: Registrants of the online meeting.
+          additionalProperties:
+            type: object
     microsoft.graph.meetingSpeaker:
       title: meetingSpeaker
       type: object
@@ -32756,43 +33415,6 @@ components:
               type: boolean
               description: Indicates whether the question is required. Default value is false.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.meetingRegistrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingRegistrant
-          type: object
-          properties:
-            customQuestionAnswers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customQuestionAnswer'
-              description: The registrant's answer to custom questions.
-            email:
-              type: string
-              description: The email address of the registrant.
-              nullable: true
-            firstName:
-              type: string
-              description: The first name of the registrant.
-              nullable: true
-            joinWebUrl:
-              type: string
-              description: A unique web URL for the registrant to join the meeting. Read-only.
-              nullable: true
-            lastName:
-              type: string
-              description: The last name of the registrant.
-              nullable: true
-            registrationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time in UTC when the registrant registers for the meeting. Read-only.
-              format: date-time
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantStatus'
           additionalProperties:
             type: object
     microsoft.graph.recurrencePattern:
@@ -33980,7 +34602,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -33991,20 +34613,20 @@ components:
               nullable: true
             encryptionCertificate:
               type: string
-              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
               nullable: true
             encryptionCertificateId:
               type: string
-              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+              description: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
               format: date-time
             includeResourceData:
               type: boolean
-              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
+              description: 'Optional. When set to true, change notifications include resource data (such as content of a chat message).'
               nullable: true
             latestSupportedTlsVersion:
               type: string
@@ -34012,15 +34634,15 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.'
               nullable: true
             notificationContentType:
               type: string
-              description: Desired content-type for MS Graph change notifications for supported resource types. The default content-type is the 'application/json' content-type.
+              description: Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
+              description: 'OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
@@ -34469,6 +35091,31 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.publicError:
+      title: publicError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Represents the error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
+        message:
+          type: string
+          description: A non-localized message for the developer.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.contentTypeInfo:
       title: contentTypeInfo
       type: object
@@ -36588,48 +37235,41 @@ components:
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee joined in UTC.
+          description: The time the attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee left in UTC.
+          description: The time the attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.meetingAudience:
+      title: meetingAudience
+      enum:
+        - everyone
+        - organization
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingRegistrantBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrantBase
+          type: object
+          properties:
+            joinWebUrl:
+              type: string
+              description: A unique web URL for the registrant to join the meeting. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.answerInputType:
       title: answerInputType
       enum:
         - text
         - radioButton
-        - unknownFutureValue
-      type: string
-    microsoft.graph.customQuestionAnswer:
-      title: customQuestionAnswer
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Display name of the custom registration question. Read-only.
-          nullable: true
-        questionId:
-          type: string
-          description: ID the custom registration question. Read-only.
-          nullable: true
-        value:
-          type: string
-          description: Answer to the custom registration question.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingRegistrantStatus:
-      title: meetingRegistrantStatus
-      enum:
-        - registered
-        - canceled
-        - processing
         - unknownFutureValue
       type: string
     microsoft.graph.weekIndex:
@@ -37229,6 +37869,47 @@ components:
         languageTag:
           type: string
           description: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicErrorDetail:
+      title: publicErrorDetail
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicInnerError:
+      title: publicInnerError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
           nullable: true
       additionalProperties:
         type: object

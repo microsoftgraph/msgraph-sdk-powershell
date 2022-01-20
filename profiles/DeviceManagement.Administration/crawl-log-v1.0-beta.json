@@ -469,6 +469,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
+    "/deviceManagement/virtualEndpoint/organizationSettings": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
     "/deviceManagement/virtualEndpoint/provisioningPolicies": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
@@ -490,6 +494,14 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },
     "/deviceManagement/virtualEndpoint/servicePlans/{cloudPcServicePlan-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/snapshots": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
+    },
+    "/deviceManagement/virtualEndpoint/snapshots/{cloudPcSnapshot-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Administration.yml"
     },

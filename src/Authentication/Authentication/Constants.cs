@@ -7,6 +7,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     using System.IO;
     public static class Constants
     {
+        public const double ClientTimeout = 300;
         public const int MaxContentLength = 10240;
         public const string SDKHeaderValue = "graph-powershell/{0}.{1}.{2}";
         internal const string UserParameterSet = "UserParameterSet";

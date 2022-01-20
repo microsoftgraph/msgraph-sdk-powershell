@@ -193,10 +193,8 @@ process {
     }
 
     if ($RequestType -ne "AdminRemove") {
-       if ($null -ne $StartDate -or $StartDate.Length -eq 0) {
-            $now = Get-Date
-            $ts = Get-Date $now.ToUniversalTime() -format "s"
-            $StartDate = $ts + "Z"
+       if ($null -eq $StartDate -or $StartDate.Length -eq 0) {
+           # allow for a package policy to have a default start date
         }
     }
 
@@ -219,8 +217,15 @@ process {
     }
 
     if ($null -ne $StartDate -and $StartDate.Length -ne 0) {
+        # ensure DateTime.Kind of StartDateTime is Utc
+        $dtin = [System.DateTime]::Parse($StartDate,[System.Globalization.CultureInfo]::InvariantCulture,[System.Globalization.DateTimeStyles]::AdjustToUniversal)
+        if ($dtin.Kind -ne "Utc") {
+            $dtu = [System.DateTime]::SpecifyKind($dtin.ToUniversalTime(),[System.DateTimeKind]::Utc)
+        } else {
+            $dtu = $dtin
+        }
         $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule = new-object Microsoft.Graph.PowerShell.Models.MicrosoftGraphRequestSchedule
-        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $StartDate
+        $AccessPackageAssignmentRequestBodyAccessPackageAssignment.Schedule.StartDateTime = $dtu
     }
 
     $null = $PSBoundParameters.Remove("AccessPackageAssignmentId")
