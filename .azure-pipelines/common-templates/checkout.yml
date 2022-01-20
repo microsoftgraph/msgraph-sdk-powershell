@@ -32,6 +32,14 @@ steps:
         git pull
         git status
 
+  - task: Bash@3
+    displayName: "Update Git Submodules"
+    inputs:
+      targetType: inline
+      script: |
+        git pull --recurse-submodules
+        git submodule update --init --recursive --remote
+
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: "Run CredScan"
     inputs:
