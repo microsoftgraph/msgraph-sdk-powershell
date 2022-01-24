@@ -11,6 +11,7 @@ steps:
     clean: true
     fetchDepth: 1
     persistCredentials: true
+    submodules: recursive
 
   - task: PowerShell@2
     displayName: "Configure user"

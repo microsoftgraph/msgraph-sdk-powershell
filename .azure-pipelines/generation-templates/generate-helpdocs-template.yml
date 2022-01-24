@@ -13,15 +13,18 @@ parameters:
     displayName: Build Agent
 
 steps:
+- checkout: self
+  persistCredentials: true
+
 - task: PowerShell@2
   name: "ComputeBranch"
   displayName: "Compute Docs Branch Name"
   inputs:
     targetType: inline
     script: |
-      $branch = "{0}/{1}" -f "${{ parameters.DOCSBRANCH }}", (Get-Date -Format yyyyMMddHHmm)
+      $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
       Write-Host "Docs Branch $branch"
-      Write-Host "##vso[task.setvariable variable=DocsBranch;isOutput=true]$branch"
+      Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
 
 - task: Bash@3
   displayName: "Create Docs branch"
@@ -29,8 +32,8 @@ steps:
     targetType: inline
     script: |
       git status
-      git branch $(ComputeBranch.DocsBranch)
-      git checkout $(ComputeBranch.DocsBranch)
+      git branch $(ComputeBranch.DocsGenerationBranch)
+      git checkout $(ComputeBranch.DocsGenerationBranch)
       git status
 
 - task: PowerShell@2
@@ -53,5 +56,5 @@ steps:
     targetType: inline
     script: |
       git status
-      git push --set-upstream origin $(ComputeBranch.DocsBranch)
+      git push --set-upstream origin $(ComputeBranch.DocsGenerationBranch)
       git status
