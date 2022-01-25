@@ -1028,7 +1028,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -1120,7 +1120,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contactFolders.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -1166,7 +1166,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -1235,7 +1235,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contactFolders.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -1283,7 +1283,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contactFolders.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -3089,7 +3089,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
         - name: user-id
@@ -3174,7 +3174,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contacts_CreateExtensions
       parameters:
         - name: user-id
@@ -3213,7 +3213,7 @@ paths:
       tags:
         - users.contact
       summary: Get extensions from users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
         - name: user-id
@@ -3275,7 +3275,7 @@ paths:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contacts_UpdateExtensions
       parameters:
         - name: user-id
@@ -3316,7 +3316,7 @@ paths:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      description: The collection of open extensions defined for the contact. Nullable.
       operationId: users.contacts_DeleteExtensions
       parameters:
         - name: user-id
@@ -4243,7 +4243,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the contact. Read-only. Nullable.
+              description: The collection of open extensions defined for the contact. Nullable.
             multiValueExtendedProperties:
               type: array
               items:
@@ -4384,11 +4384,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
