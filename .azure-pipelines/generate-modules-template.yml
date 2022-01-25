@@ -41,7 +41,21 @@ jobs:
 
   steps:
   - template: ./common-templates/install-tools-template.yml
+
+  - task: PowerShell@2
+    name: "ComputeBranch"
+    displayName: "Compute Docs Branch Name"
+    inputs:
+    targetType: inline
+    script: |
+      $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
+      Write-Host "Docs Branch $branch"
+      Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
+
   - template: ./common-templates/checkout.yml
+    parameters:
+        TargetBranch: $(ComputeBranch.DocsGenerationBranch)
+
   - task: PowerShell@2
     displayName: 'Generate Profiles'
     continueOnError: false

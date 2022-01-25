@@ -13,9 +13,6 @@ parameters:
     displayName: Build Agent
 
 steps:
-- checkout: self
-  persistCredentials: true
-
 - task: PowerShell@2
   name: "ComputeBranch"
   displayName: "Compute Docs Branch Name"
