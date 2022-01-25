@@ -1619,7 +1619,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions-1f5f
+      operationId: deviceManagement_getEffectivePermissions
       responses:
         '200':
           description: Success
@@ -1638,7 +1638,7 @@ paths:
       tags:
         - deviceManagement.Functions
       summary: Invoke function getEffectivePermissions
-      operationId: deviceManagement_getEffectivePermissions-49b0
+      operationId: deviceManagement_getEffectivePermissions
       parameters:
         - name: scope
           in: path
@@ -2169,7 +2169,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values: Reprovision, Resize.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'

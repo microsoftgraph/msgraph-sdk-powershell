@@ -3052,7 +3052,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3135,7 +3135,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
-      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3192,7 +3192,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
-      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_CreateGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3639,7 +3639,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_ListExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3718,7 +3718,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to extensions for directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_CreateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3750,7 +3750,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get extensions from directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_GetExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3805,7 +3805,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property extensions in directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_UpdateExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3839,7 +3839,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property extensions for directory
-      description: The collection of open extensions defined for this Administrative Unit. Nullable.
+      description: The collection of open extensions defined for this administrative unit. Nullable.
       operationId: directory.administrativeUnits_DeleteExtensions
       parameters:
         - name: administrativeUnit-id
@@ -3872,7 +3872,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get members from directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -3955,7 +3955,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_ListGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4012,7 +4012,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
-      description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
       operationId: directory.administrativeUnits_CreateGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4048,7 +4048,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4136,7 +4136,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to scopedRoleMembers for directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_CreateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4168,7 +4168,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4226,7 +4226,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property scopedRoleMembers in directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_UpdateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property scopedRoleMembers for directory
-      description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
       operationId: directory.administrativeUnits_DeleteScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -7389,7 +7389,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization. Read-only. Nullable.
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_ListExtensions
       parameters:
         - name: organization-id
@@ -7468,7 +7468,7 @@ paths:
       tags:
         - organization.extension
       summary: Create new navigation property to extensions for organization
-      description: The collection of open extensions defined for the organization. Read-only. Nullable.
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_CreateExtensions
       parameters:
         - name: organization-id
@@ -7500,7 +7500,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization. Read-only. Nullable.
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_GetExtensions
       parameters:
         - name: organization-id
@@ -7555,7 +7555,7 @@ paths:
       tags:
         - organization.extension
       summary: Update the navigation property extensions in organization
-      description: The collection of open extensions defined for the organization. Read-only. Nullable.
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_UpdateExtensions
       parameters:
         - name: organization-id
@@ -7589,7 +7589,7 @@ paths:
       tags:
         - organization.extension
       summary: Delete navigation property extensions for organization
-      description: The collection of open extensions defined for the organization. Read-only. Nullable.
+      description: The collection of open extensions defined for the organization resource. Nullable.
       operationId: organization_DeleteExtensions
       parameters:
         - name: organization-id
@@ -8386,60 +8386,60 @@ components:
               description: Postal addresses for this organizational contact. For now a contact can only have one physical address.
             companyName:
               type: string
-              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             department:
               type: string
-              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             displayName:
               type: string
-              description: 'Display name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             givenName:
               type: string
-              description: 'First name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             jobTitle:
               type: string
-              description: 'Job title for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mail:
               type: string
-              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'The SMTP address for the contact, for example, ''jeff@contoso.onmicrosoft.com''. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mailNickname:
               type: string
-              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values).'
+              description: 'Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, NOT, ge, le, in).'
+              description: 'Date and time when this organizational contact was last synchronized from on-premises AD. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesProvisioningErrors:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.onPremisesProvisioningError'
-              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, NOT).'
+              description: 'List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).'
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, NOT, in, and eq on null values).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             phones:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phone'
-              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, NOT, in).'
+              description: 'List of phones for this organizational contact. Phone types can be mobile, business, and businessFax. Only one of each type can ever be present in the collection. Supports $filter (eq, ne, not, in).'
             proxyAddresses:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, NOT, ge, le, startsWith).'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).'
             surname:
               type: string
-              description: 'Last name for this organizational contact. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values)'
+              description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
               nullable: true
             directReports:
               type: array
@@ -8533,17 +8533,17 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, NOT, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alternativeSecurityId'
-              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le).'
             approximateLastSignInDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, NOT, ge, le, and eq on null values) and $orderBy.'
+              description: 'The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.'
               format: date-time
               nullable: true
             complianceExpirationDateTime:
@@ -8554,7 +8554,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, NOT, startsWith).'
+              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -8569,43 +8569,43 @@ components:
               nullable: true
             displayName:
               type: string
-              description: 'The display name for the device. Required. Supports $filter (eq, ne, NOT, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
+              description: 'The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             isCompliant:
               type: boolean
-              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
+              description: 'true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
             isManaged:
               type: boolean
-              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, NOT).'
+              description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
             mdmAppId:
               type: string
-              description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, NOT, startsWith).'
+              description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, NOT, ge, le, in).'
+              description: 'The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, NOT, in, and eq on null values).'
+              description: 'true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).'
               nullable: true
             operatingSystem:
               type: string
-              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
+              description: 'The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, NOT, ge, le, startsWith, and eq on null values).'
+              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, NOT, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -8617,7 +8617,7 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             memberOf:
               type: array
@@ -8638,7 +8638,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+              description: Groups that this device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
@@ -8679,11 +8679,11 @@ components:
           properties:
             description:
               type: string
-              description: An optional description for the administrative unit.
+              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).'
               nullable: true
             displayName:
               type: string
-              description: Display name for the administrative unit.
+              description: 'Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.'
               nullable: true
             visibility:
               type: string
@@ -8693,17 +8693,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this Adminsitrative Unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+              description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              description: 'Scoped-role members of this Administrative Unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+              description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
             extensions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for this Administrative Unit. Nullable.
+              description: The collection of open extensions defined for this administrative unit. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.scopedRoleMembership:
@@ -8822,7 +8822,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
+              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
             domainNameReferences:
               type: array
               items:
@@ -8913,12 +8913,12 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
             postalCode:
               type: string
@@ -8926,7 +8926,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: 'The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.'
+              description: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
               nullable: true
             privacyProfile:
               $ref: '#/components/schemas/microsoft.graph.privacyProfile'
@@ -8977,7 +8977,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the organization. Read-only. Nullable.
+              description: The collection of open extensions defined for the organization resource. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.organizationalBranding:
@@ -9177,12 +9177,12 @@ components:
         assignedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
           format: date-time
           nullable: true
         capabilityStatus:
           type: string
-          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
           nullable: true
         service:
           type: string
@@ -9373,7 +9373,7 @@ components:
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'

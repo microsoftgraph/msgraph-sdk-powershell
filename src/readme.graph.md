@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "./assets/autorest-powershell-2.1.500.tgz"
+use: "$(this-folder)../autorest.powershell"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -92,6 +92,7 @@ directive:
     - microsoft.graph.columnDefinition
     - microsoft.graph.groupPolicyDefinition
     - microsoft.graph.groupPolicyDefinitionValue
+    - microsoft.graph.synchronizationLinkedObjects
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -480,6 +481,10 @@ directive:
           $ = $.replace(complexTypeHintRegex, getExclusionsDynamically + '\n$1$2');
         }
 
+        // Ensure dateTime is always serialized as Utc.
+        let dateTimeToJsonRegex = /(\.Json\.JsonString\()(.*)\?(\.ToString\(@"yyyy'-'MM'-'dd'T'HH':'mm':'ss\.fffffffK")/gm
+        $ = $.replace(dateTimeToJsonRegex, '$1System.DateTime.SpecifyKind($2.Value.ToUniversalTime(), System.DateTimeKind.Utc)$3');
+
         return $;
       }
 # Modify generated .dictionary.cs model classes.
@@ -493,6 +498,20 @@ directive:
         // Remove Count, Keys, and Values properties from implementations of an IAssociativeArray in models.
         let propertiesToRemoveRegex = /^.*Microsoft\.Graph\.PowerShell\.Runtime\.IAssociativeArray<global::System\.Object>\.(Count|Keys|Values).*$/gm
         $ = $.replace(propertiesToRemoveRegex, '');
+
+        return $;
+      }
+# Modify generated .PowerShell.cs model classes.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CModels%2F\w*\d*.PowerShell.cs/gm))
+      {
+        return $;
+      } else {
+        // Change XmlDateTimeSerializationMode from Unspecified to Utc.
+        let strToDateTimeRegex = /(XmlConvert\.ToDateTime\(.*,.*XmlDateTimeSerializationMode\.)Unspecified/gm
+        $ = $.replace(strToDateTimeRegex, '$1Utc');
 
         return $;
       }
@@ -533,6 +552,11 @@ directive:
         // Remove noisy log messages.
         let duplicateDebugRegex = /^(\s*)(WriteDebug\(\$"{id}:.*)/gmi
         $ = $.replace(duplicateDebugRegex, "");
+
+        // catch all exceptions in ProcessRecordAsync.
+        let processAsyncFinallyRegex = /(finally\s*{\s*await \(\(Microsoft\.Graph\.PowerShell\.Runtime\.IEventListener\)this\)\.Signal\(Microsoft\.Graph\.PowerShell\.Runtime\.Events\.CmdletProcessRecordAsyncEnd\);)/gmi
+        let catchAllExceptionImplementation = '((Runtime.IEventListener)this).Signal(Runtime.Events.CmdletException, $"{ex.GetType().Name} - {ex.Message} : {ex.StackTrace}").Wait(); if (((Runtime.IEventListener)this).Token.IsCancellationRequested) { return; } WriteError(new global::System.Management.Automation.ErrorRecord(ex, string.Empty, global::System.Management.Automation.ErrorCategory.NotSpecified, null));'
+        $ = $.replace(processAsyncFinallyRegex, `catch (System.Exception ex){${catchAllExceptionImplementation}}\n$1`);
 
         return $;
       }
@@ -648,10 +672,6 @@ directive:
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
 
-        // Serialize DictionaryEntry struct as a value type.
-        let dictionaryEntrySerializer = 'if (vValue is System.Collections.DictionaryEntry deValue){return new JsonObject { { deValue.Key.ToString(), ToJsonValue(deValue.Value) } };}';
-        let valueTypeSerializerRegex = /(private\s*static\s*JsonNode\s*ToJsonValue\(ValueType vValue\)\s*{\s*)/gm
-        $ = $.replace(valueTypeSerializerRegex, `$1 ${dictionaryEntrySerializer}\n`);
         return $;
       }
 

@@ -101,6 +101,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control")]
         [Alias("DeviceCode", "DeviceAuth", "Device")]
         public SwitchParameter UseDeviceAuthentication { get; set; }
+
+        [Parameter(ParameterSetName = Constants.AppParameterSet)]
+        [Parameter(ParameterSetName = Constants.AccessTokenParameterSet)]
+        [Parameter(ParameterSetName = Constants.UserParameterSet,
+            Mandatory = false,
+            HelpMessage = "Sets the HTTP client timeout in seconds.")]
+        [ValidateNotNullOrEmpty]
+        public double ClientTimeout { get; set; }
         /// <summary>
         ///     Wait for .NET debugger to attach
         /// </summary>
@@ -178,6 +186,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             using (NoSynchronizationContext)
             {
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
+                if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout))) { authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout); }
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
                 switch (ParameterSetName)
@@ -233,7 +242,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-
                     GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh,
                         _cancellationTokenSource.Token,
                         () => { WriteWarning(Resources.DeviceCodeFallback); });

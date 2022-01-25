@@ -10585,7 +10585,7 @@ paths:
       tags:
         - groups.event
       summary: Get events from groups
-      description: The group's calendar events.
+      description: The group's events.
       operationId: groups_ListEvents
       parameters:
         - name: group-id
@@ -10784,7 +10784,7 @@ paths:
       tags:
         - groups.event
       summary: Create new navigation property to events for groups
-      description: The group's calendar events.
+      description: The group's events.
       operationId: groups_CreateEvents
       parameters:
         - name: group-id
@@ -10816,7 +10816,7 @@ paths:
       tags:
         - groups.event
       summary: Get events from groups
-      description: The group's calendar events.
+      description: The group's events.
       operationId: groups_GetEvents
       parameters:
         - name: group-id
@@ -10944,7 +10944,7 @@ paths:
       tags:
         - groups.event
       summary: Update the navigation property events in groups
-      description: The group's calendar events.
+      description: The group's events.
       operationId: groups_UpdateEvents
       parameters:
         - name: group-id
@@ -10978,7 +10978,7 @@ paths:
       tags:
         - groups.event
       summary: Delete navigation property events for groups
-      description: The group's calendar events.
+      description: The group's events.
       operationId: groups_DeleteEvents
       parameters:
         - name: group-id
@@ -40739,7 +40739,7 @@ paths:
       tags:
         - users.event
       summary: Get events from users
-      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+      description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       operationId: users_ListEvents
       parameters:
         - name: user-id
@@ -40938,7 +40938,7 @@ paths:
       tags:
         - users.event
       summary: Create new navigation property to events for users
-      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+      description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       operationId: users_CreateEvents
       parameters:
         - name: user-id
@@ -40970,7 +40970,7 @@ paths:
       tags:
         - users.event
       summary: Get events from users
-      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+      description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       operationId: users_GetEvents
       parameters:
         - name: user-id
@@ -41098,7 +41098,7 @@ paths:
       tags:
         - users.event
       summary: Update the navigation property events in users
-      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+      description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       operationId: users_UpdateEvents
       parameters:
         - name: user-id
@@ -41132,7 +41132,7 @@ paths:
       tags:
         - users.event
       summary: Delete navigation property events for users
-      description: The user's events. Default is to show Events under the Default Calendar. Read-only. Nullable.
+      description: The user's events. Default is to show events under the Default Calendar. Read-only. Nullable.
       operationId: users_DeleteEvents
       parameters:
         - name: user-id
@@ -45146,15 +45146,15 @@ components:
               nullable: true
             canEdit:
               type: boolean
-              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.'
+              description: 'true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             canShare:
               type: boolean
-              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.'
+              description: 'true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it. Read-only.'
               nullable: true
             canViewPrivateItems:
               type: boolean
-              description: 'true if the user can read calendar items that have been marked private, false otherwise.'
+              description: 'true if the user can read calendar items that have been marked private, false otherwise. This property is set through an Outlook client or the corresponding calendarPermission resource. Read-only.'
               nullable: true
             changeKey:
               type: string
@@ -45166,7 +45166,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.onlineMeetingProviderType'
             hexColor:
               type: string
-              description: 'The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.'
+              description: 'The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.'
               nullable: true
             isDefaultCalendar:
               type: boolean
@@ -45254,7 +45254,7 @@ components:
           properties:
             allowNewTimeProposals:
               type: boolean
-              description: 'true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.'
+              description: true if the meeting organizer allows invitees to propose a new time when responding; otherwise false. Optional. Default is true.
               nullable: true
             attendees:
               type: array
@@ -45422,7 +45422,7 @@ components:
               nullable: true
             name:
               type: string
-              description: The attachment's file name.
+              description: The display name of the attachment. This does not need to be the actual file name.
               nullable: true
             size:
               maximum: 2147483647
@@ -45549,11 +45549,11 @@ components:
       properties:
         address:
           type: string
-          description: The email address of the person or entity.
+          description: The email address of an entity instance.
           nullable: true
         name:
           type: string
-          description: The display name of the person or entity.
+          description: The display name of an entity instance.
           nullable: true
       additionalProperties:
         type: object
@@ -45629,10 +45629,10 @@ components:
       properties:
         dateTime:
           type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
         timeZone:
           type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
           nullable: true
       additionalProperties:
         type: object

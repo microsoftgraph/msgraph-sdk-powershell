@@ -39,6 +39,8 @@ subject-prefix: ''
 
 ``` yaml
 directive:
+# Remove invalid paths.
+  - remove-path-by-operation: ^security_.*Alerts_v2$
 # Remove cmdlets
   - where:
       verb: Get|Update
@@ -77,6 +79,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.0
+module-version: 1.9.2
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

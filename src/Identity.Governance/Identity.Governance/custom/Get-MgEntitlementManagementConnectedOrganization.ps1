@@ -39,7 +39,6 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 function Get-MgEntitlementManagementConnectedOrganization {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization])]
 [CmdletBinding(DefaultParameterSetName='ListAll', PositionalBinding=$false)]
-[Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
     [Parameter()]
     [Alias('Expand')]

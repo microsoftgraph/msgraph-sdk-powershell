@@ -591,6 +591,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_ListLocalizations
       parameters:
         - name: agreement-id
@@ -692,6 +693,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Create new navigation property to localizations for agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_CreateLocalizations
       parameters:
         - name: agreement-id
@@ -723,6 +725,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get localizations from agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_GetLocalizations
       parameters:
         - name: agreement-id
@@ -792,6 +795,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property localizations in agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_UpdateLocalizations
       parameters:
         - name: agreement-id
@@ -825,6 +829,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property localizations for agreements
+      description: The localized version of the terms of use agreement files attached to the agreement.
       operationId: agreements.file_DeleteLocalizations
       parameters:
         - name: agreement-id
@@ -857,6 +862,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_ListVersions
       parameters:
         - name: agreement-id
@@ -963,6 +969,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Create new navigation property to versions for agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_CreateVersions
       parameters:
         - name: agreement-id
@@ -1001,6 +1008,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_GetVersions
       parameters:
         - name: agreement-id
@@ -1069,6 +1077,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Update the navigation property versions in agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_UpdateVersions
       parameters:
         - name: agreement-id
@@ -1109,6 +1118,7 @@ paths:
       tags:
         - agreements.agreementFile
       summary: Delete navigation property versions for agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.file.localizations_DeleteVersions
       parameters:
         - name: agreement-id
@@ -1148,7 +1158,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_ListFiles
       parameters:
         - name: agreement-id
@@ -1250,7 +1260,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to files for agreements
-      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_CreateFiles
       parameters:
         - name: agreement-id
@@ -1282,7 +1292,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get files from agreements
-      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_GetFiles
       parameters:
         - name: agreement-id
@@ -1352,7 +1362,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property files in agreements
-      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_UpdateFiles
       parameters:
         - name: agreement-id
@@ -1386,7 +1396,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property files for agreements
-      description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+      description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
       operationId: agreements_DeleteFiles
       parameters:
         - name: agreement-id
@@ -1419,6 +1429,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_ListVersions
       parameters:
         - name: agreement-id
@@ -1525,6 +1536,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Create new navigation property to versions for agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_CreateVersions
       parameters:
         - name: agreement-id
@@ -1563,6 +1575,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Get versions from agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_GetVersions
       parameters:
         - name: agreement-id
@@ -1631,6 +1644,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Update the navigation property versions in agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_UpdateVersions
       parameters:
         - name: agreement-id
@@ -1671,6 +1685,7 @@ paths:
       tags:
         - agreements.agreementFileLocalization
       summary: Delete navigation property versions for agreements
+      description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
       operationId: agreements.files_DeleteVersions
       parameters:
         - name: agreement-id
@@ -1866,6 +1881,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_ListDefinitions
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1978,6 +1994,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to definitions for identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_CreateDefinitions
       requestBody:
         description: New navigation property
@@ -2001,6 +2018,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get definitions from identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_GetDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2068,6 +2086,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property definitions in identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_UpdateDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2094,6 +2113,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property definitions for identityGovernance
+      description: Represents the template and scheduling for an access review.
       operationId: identityGovernance.accessReviews_DeleteDefinitions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2119,7 +2139,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_ListInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2176,6 +2196,7 @@ paths:
                 - scope
                 - startDateTime
                 - status
+                - contactedReviewers
                 - decisions
               type: string
         - name: $expand
@@ -2189,6 +2210,7 @@ paths:
             items:
               enum:
                 - '*'
+                - contactedReviewers
                 - decisions
               type: string
       responses:
@@ -2218,7 +2240,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to instances for identityGovernance
-      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_CreateInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2250,7 +2272,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get instances from identityGovernance
-      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_GetInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2284,6 +2306,7 @@ paths:
                 - scope
                 - startDateTime
                 - status
+                - contactedReviewers
                 - decisions
               type: string
         - name: $expand
@@ -2297,6 +2320,7 @@ paths:
             items:
               enum:
                 - '*'
+                - contactedReviewers
                 - decisions
               type: string
       responses:
@@ -2307,6 +2331,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
           links:
+            contactedReviewers:
+              operationId: identityGovernance.accessReviews.definitions.Instances.ListContactedReviewers
+              parameters:
+                accessReviewScheduleDefinition-id: $request.path.accessReviewScheduleDefinition-id
+                accessReviewInstance-id: $request.path.accessReviewInstance-id
             decisions:
               operationId: identityGovernance.accessReviews.definitions.Instances.ListDecisions
               parameters:
@@ -2319,7 +2348,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property instances in identityGovernance
-      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_UpdateInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2353,7 +2382,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property instances for identityGovernance
-      description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+      description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
       operationId: identityGovernance.accessReviews.definitions_DeleteInstances
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2381,12 +2410,292 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/contactedReviewers':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get contactedReviewers from identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
+      operationId: identityGovernance.accessReviews.definitions.instances_ListContactedReviewers
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - userPrincipalName
+                - userPrincipalName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - displayName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of accessReviewReviewer
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Create new navigation property to contactedReviewers for identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
+      operationId: identityGovernance.accessReviews.definitions.instances_CreateContactedReviewers
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/contactedReviewers/{accessReviewReviewer-id}':
+    get:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Get contactedReviewers from identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
+      operationId: identityGovernance.accessReviews.definitions.instances_GetContactedReviewers
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewReviewer-id
+          in: path
+          description: 'key: id of accessReviewReviewer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewReviewer
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdDateTime
+                - displayName
+                - userPrincipalName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Update the navigation property contactedReviewers in identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
+      operationId: identityGovernance.accessReviews.definitions.instances_UpdateContactedReviewers
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewReviewer-id
+          in: path
+          description: 'key: id of accessReviewReviewer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewReviewer
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - identityGovernance.accessReviewSet
+      summary: Delete navigation property contactedReviewers for identityGovernance
+      description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
+      operationId: identityGovernance.accessReviews.definitions.instances_DeleteContactedReviewers
+      parameters:
+        - name: accessReviewScheduleDefinition-id
+          in: path
+          description: 'key: id of accessReviewScheduleDefinition'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewScheduleDefinition
+        - name: accessReviewInstance-id
+          in: path
+          description: 'key: id of accessReviewInstance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewInstance
+        - name: accessReviewReviewer-id
+          in: path
+          description: 'key: id of accessReviewReviewer'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: accessReviewReviewer
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition-id}/instances/{accessReviewInstance-id}/decisions':
     get:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_ListDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2511,7 +2820,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Create new navigation property to decisions for identityGovernance
-      description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_CreateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2550,7 +2859,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Get decisions from identityGovernance
-      description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_GetDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2625,7 +2934,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Update the navigation property decisions in identityGovernance
-      description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_UpdateDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -2666,7 +2975,7 @@ paths:
       tags:
         - identityGovernance.accessReviewSet
       summary: Delete navigation property decisions for identityGovernance
-      description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+      description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
       operationId: identityGovernance.accessReviews.definitions.instances_DeleteDecisions
       parameters:
         - name: accessReviewScheduleDefinition-id
@@ -3087,6 +3396,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_ListAppConsentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -3169,6 +3479,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Create new navigation property to appConsentRequests for identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_CreateAppConsentRequests
       requestBody:
         description: New navigation property
@@ -3192,6 +3503,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get appConsentRequests from identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_GetAppConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -3249,6 +3561,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update the navigation property appConsentRequests in identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_UpdateAppConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -3275,6 +3588,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Delete navigation property appConsentRequests for identityGovernance
+      description: A collection of userConsentRequest objects for a specific application.
       operationId: identityGovernance.appConsent_DeleteAppConsentRequests
       parameters:
         - name: appConsentRequest-id
@@ -3701,7 +4015,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_ListStages
       parameters:
         - name: appConsentRequest-id
@@ -3808,7 +4122,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Create new navigation property to stages for identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_CreateStages
       parameters:
         - name: appConsentRequest-id
@@ -3847,7 +4161,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Get stages from identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_GetStages
       parameters:
         - name: appConsentRequest-id
@@ -3916,7 +4230,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Update the navigation property stages in identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_UpdateStages
       parameters:
         - name: appConsentRequest-id
@@ -3957,7 +4271,7 @@ paths:
       tags:
         - identityGovernance.appConsentApprovalRoute
       summary: Delete navigation property stages for identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.appConsent.appConsentRequests.userConsentRequests.approval_DeleteStages
       parameters:
         - name: appConsentRequest-id
@@ -4360,7 +4674,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_ListStages
       parameters:
         - name: approval-id
@@ -4460,7 +4774,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to stages for identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_CreateStages
       parameters:
         - name: approval-id
@@ -4492,7 +4806,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get stages from identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_GetStages
       parameters:
         - name: approval-id
@@ -4554,7 +4868,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property stages in identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_UpdateStages
       parameters:
         - name: approval-id
@@ -4588,7 +4902,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property stages for identityGovernance
-      description: A collection of stages in the approval decision.
+      description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
       operationId: identityGovernance.entitlementManagement.accessPackageAssignmentApprovals_DeleteStages
       parameters:
         - name: approval-id
@@ -4646,6 +4960,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_ListAccessPackages
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4734,6 +5049,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to accessPackages for identityGovernance
+      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_CreateAccessPackages
       requestBody:
         description: New navigation property
@@ -4757,6 +5073,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
+      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_GetAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4816,6 +5133,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property accessPackages in identityGovernance
+      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_UpdateAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4842,6 +5160,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property accessPackages for identityGovernance
+      description: Represents access package objects.
       operationId: identityGovernance.entitlementManagement_DeleteAccessPackages
       parameters:
         - name: accessPackage-id
@@ -4867,6 +5186,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetCatalog
       parameters:
         - name: accessPackage-id
@@ -4929,6 +5249,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_GetGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -4957,6 +5278,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_SetGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -4985,6 +5307,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.accessPackages_DeleteGraphRefCatalog
       parameters:
         - name: accessPackage-id
@@ -5061,6 +5384,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_ListAssignmentRequests
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5156,6 +5480,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignmentRequests for identityGovernance
+      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_CreateAssignmentRequests
       requestBody:
         description: New navigation property
@@ -5179,6 +5504,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignmentRequests from identityGovernance
+      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_GetAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5251,6 +5577,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignmentRequests in identityGovernance
+      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_UpdateAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5277,6 +5604,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignmentRequests for identityGovernance
+      description: Represents access package assignment requests created by or on behalf of a user.
       operationId: identityGovernance.entitlementManagement_DeleteAssignmentRequests
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5302,7 +5630,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5363,7 +5691,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5392,7 +5720,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5421,7 +5749,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
-      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
+      description: The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5473,6 +5801,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5538,6 +5867,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of assignment from identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_GetGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5570,6 +5900,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property assignment in identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_SetGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5598,6 +5929,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property assignment for identityGovernance
+      description: 'For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.'
       operationId: identityGovernance.entitlementManagement.assignmentRequests_DeleteGraphRefAssignment
       parameters:
         - name: accessPackageAssignmentRequest-id
@@ -5814,6 +6146,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_ListAssignments
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5901,6 +6234,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to assignments for identityGovernance
+      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_CreateAssignments
       requestBody:
         description: New navigation property
@@ -5924,6 +6258,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get assignments from identityGovernance
+      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_GetAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -5988,6 +6323,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property assignments in identityGovernance
+      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_UpdateAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -6014,6 +6350,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property assignments for identityGovernance
+      description: Represents the grant of an access package to a subject (user or group).
       operationId: identityGovernance.entitlementManagement_DeleteAssignments
       parameters:
         - name: accessPackageAssignment-id
@@ -6039,7 +6376,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackage from identityGovernance
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -6100,7 +6437,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of accessPackage from identityGovernance
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -6129,7 +6466,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property accessPackage in identityGovernance
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -6158,7 +6495,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property accessPackage for identityGovernance
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
       operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefAccessPackage
       parameters:
         - name: accessPackageAssignment-id
@@ -6210,7 +6547,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get target from identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable.
+      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_GetTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -6272,7 +6609,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of target from identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable.
+      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_GetGraphRefTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -6301,7 +6638,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property target in identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable.
+      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_SetGraphRefTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -6330,7 +6667,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property target for identityGovernance
-      description: The subject of the access package assignment. Read-only. Nullable.
+      description: The subject of the access package assignment. Read-only. Nullable. Supports $expand. Supports $filter (eq) on objectId.
       operationId: identityGovernance.entitlementManagement.assignments_DeleteGraphRefTarget
       parameters:
         - name: accessPackageAssignment-id
@@ -6381,6 +6718,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: Represents a group of access packages.
       operationId: identityGovernance.entitlementManagement_ListCatalogs
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6475,6 +6813,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to catalogs for identityGovernance
+      description: Represents a group of access packages.
       operationId: identityGovernance.entitlementManagement_CreateCatalogs
       requestBody:
         description: New navigation property
@@ -6498,6 +6837,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalogs from identityGovernance
+      description: Represents a group of access packages.
       operationId: identityGovernance.entitlementManagement_GetCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6559,6 +6899,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property catalogs in identityGovernance
+      description: Represents a group of access packages.
       operationId: identityGovernance.entitlementManagement_UpdateCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6585,6 +6926,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property catalogs for identityGovernance
+      description: Represents a group of access packages.
       operationId: identityGovernance.entitlementManagement_DeleteCatalogs
       parameters:
         - name: accessPackageCatalog-id
@@ -6610,7 +6952,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable.
+      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_ListAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -6706,7 +7048,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to accessPackages for identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable.
+      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_CreateAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -6738,7 +7080,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get accessPackages from identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable.
+      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_GetAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -6806,7 +7148,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property accessPackages in identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable.
+      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_UpdateAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -6840,7 +7182,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property accessPackages for identityGovernance
-      description: The access packages in this catalog. Read-only. Nullable.
+      description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
       operationId: identityGovernance.entitlementManagement.catalogs_DeleteAccessPackages
       parameters:
         - name: accessPackageCatalog-id
@@ -6873,6 +7215,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -6943,6 +7286,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get ref of catalog from identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_GetGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -6979,6 +7323,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the ref of navigation property catalog in identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_SetGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -7014,6 +7359,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete ref of navigation property catalog for identityGovernance
+      description: Read-only. Nullable.
       operationId: identityGovernance.entitlementManagement.catalogs.accessPackages_DeleteGraphRefCatalog
       parameters:
         - name: accessPackageCatalog-id
@@ -7111,6 +7457,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_ListConnectedOrganizations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -7204,6 +7551,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Create new navigation property to connectedOrganizations for identityGovernance
+      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_CreateConnectedOrganizations
       requestBody:
         description: New navigation property
@@ -7227,6 +7575,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get connectedOrganizations from identityGovernance
+      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_GetConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7293,6 +7642,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property connectedOrganizations in identityGovernance
+      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_UpdateConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7319,6 +7669,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property connectedOrganizations for identityGovernance
+      description: Represents references to a directory or domain of another organization whose users can request access.
       operationId: identityGovernance.entitlementManagement_DeleteConnectedOrganizations
       parameters:
         - name: connectedOrganization-id
@@ -7818,6 +8169,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Get settings from identityGovernance
+      description: Represents the settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_GetSettings
       parameters:
         - name: $select
@@ -7860,6 +8212,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Update the navigation property settings in identityGovernance
+      description: Represents the settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_UpdateSettings
       requestBody:
         description: New navigation property values
@@ -7878,6 +8231,7 @@ paths:
       tags:
         - identityGovernance.entitlementManagement
       summary: Delete navigation property settings for identityGovernance
+      description: Represents the settings that control the behavior of Azure AD entitlement management.
       operationId: identityGovernance.entitlementManagement_DeleteSettings
       parameters:
         - name: If-Match
@@ -7981,6 +8335,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_ListAgreementAcceptances
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8091,6 +8446,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreementAcceptances for identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_CreateAgreementAcceptances
       requestBody:
         description: New navigation property
@@ -8114,6 +8470,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreementAcceptances from identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_GetAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
@@ -8174,6 +8531,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreementAcceptances in identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_UpdateAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
@@ -8200,6 +8558,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreementAcceptances for identityGovernance
+      description: Represents the current status of a user's response to a company's customizable terms of use agreement.
       operationId: identityGovernance.termsOfUse_DeleteAgreementAcceptances
       parameters:
         - name: agreementAcceptance-id
@@ -8225,6 +8584,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_ListAgreements
       parameters:
         - $ref: '#/components/parameters/top'
@@ -8317,6 +8677,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Create new navigation property to agreements for identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_CreateAgreements
       requestBody:
         description: New navigation property
@@ -8340,6 +8701,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Get agreements from identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_GetAgreements
       parameters:
         - name: agreement-id
@@ -8411,6 +8773,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Update the navigation property agreements in identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_UpdateAgreements
       parameters:
         - name: agreement-id
@@ -8437,6 +8800,7 @@ paths:
       tags:
         - identityGovernance.termsOfUseContainer
       summary: Delete navigation property agreements for identityGovernance
+      description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
       operationId: identityGovernance.termsOfUse_DeleteAgreements
       parameters:
         - name: agreement-id
@@ -8707,7 +9071,7 @@ components:
               nullable: true
             isPerDeviceAcceptanceRequired:
               type: boolean
-              description: 'Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven''t already done so.'
+              description: 'This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven''t already done so.'
               nullable: true
             isViewingBeforeAcceptanceRequired:
               type: boolean
@@ -8732,7 +9096,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
-              description: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+              description: 'PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -8743,11 +9107,11 @@ components:
           properties:
             agreementFileId:
               type: string
-              description: The identifier of the agreement file accepted by the user.
+              description: ID of the agreement file accepted by the user.
               nullable: true
             agreementId:
               type: string
-              description: The identifier of the agreement.
+              description: ID of the agreement.
               nullable: true
             deviceDisplayName:
               type: string
@@ -8759,22 +9123,22 @@ components:
               nullable: true
             deviceOSType:
               type: string
-              description: The operating system used to accept the agreement.
+              description: The operating system used for accepting the agreement.
               nullable: true
             deviceOSVersion:
               type: string
-              description: The operating system version of the device used to accept the agreement.
+              description: The operating system version of the device used for accepting the agreement.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             recordedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
               format: date-time
               nullable: true
             state:
@@ -8789,7 +9153,7 @@ components:
               nullable: true
             userId:
               type: string
-              description: The identifier of the user who accepted the agreement.
+              description: ID of the user who accepted the agreement.
               nullable: true
             userPrincipalName:
               type: string
@@ -8807,6 +9171,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileLocalization'
+              description: The localized version of the terms of use agreement files attached to the agreement.
           additionalProperties:
             type: object
     microsoft.graph.agreementFileLocalization:
@@ -8819,6 +9184,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementFileVersion'
+              description: Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
           additionalProperties:
             type: object
     microsoft.graph.agreementFileVersion:
@@ -8852,6 +9218,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+              description: Represents the template and scheduling for an access review.
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScheduleDefinition:
@@ -8870,7 +9237,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Timestamp when the access review series was created. Supports $select and $orderBy. Read-only.
+              description: Timestamp when the access review series was created. Supports $select. Read-only.
               format: date-time
               nullable: true
             descriptionForAdmins:
@@ -8915,7 +9282,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
-              description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+              description: 'Set of access reviews instances for this access review series. Access reviews that do not recur will only have one instance; otherwise, there is an instance for each recurrence.'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewInstance:
@@ -8952,11 +9319,38 @@ components:
               type: string
               description: 'Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.'
               nullable: true
+            contactedReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewer'
+              description: 'Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.'
             decisions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
-              description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+              description: 'Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewReviewer:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewReviewer
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date when the reviewer was added for the access review.
+              format: date-time
+              nullable: true
+            displayName:
+              type: string
+              description: Name of reviewer.
+              nullable: true
+            userPrincipalName:
+              type: string
+              description: User principal name of the user.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.accessReviewInstanceDecisionItem:
@@ -8992,7 +9386,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.identity'
             principalLink:
               type: string
-              description: 'A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
+              description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
             recommendation:
               type: string
@@ -9042,6 +9436,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequest'
+              description: A collection of userConsentRequest objects for a specific application.
           additionalProperties:
             type: object
     microsoft.graph.appConsentRequest:
@@ -9061,7 +9456,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appConsentRequestScope'
-              description: A list of pending scopes waiting for approval. Required.
+              description: A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.
             userConsentRequests:
               type: array
               items:
@@ -9093,7 +9488,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.approvalStage'
-              description: A collection of stages in the approval decision.
+              description: 'Used for the approvalStages property of approval settings in the requestApprovalSettings property of an access package assignment policy. Specifies the primary, fallback, and escalation approvers of each stage.'
           additionalProperties:
             type: object
     microsoft.graph.approvalStage:
@@ -9152,22 +9547,27 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
+              description: Represents access package objects.
             assignmentRequests:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentRequest'
+              description: Represents access package assignment requests created by or on behalf of a user.
             assignments:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
+              description: Represents the grant of an access package to a subject (user or group).
             catalogs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackageCatalog'
+              description: Represents a group of access packages.
             connectedOrganizations:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.connectedOrganization'
+              description: Represents references to a directory or domain of another organization whose users can request access.
             settings:
               $ref: '#/components/schemas/microsoft.graph.entitlementManagementSettings'
           additionalProperties:
@@ -9198,7 +9598,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name of the access package.
+              description: 'The display name of the access package. Supports $filter (eq, contains).'
               nullable: true
             isHidden:
               type: boolean
@@ -9234,7 +9634,7 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name of the access package catalog.
+              description: 'The display name of the access package catalog. Supports $filter (eq, contains).'
               nullable: true
             isExternallyVisible:
               type: boolean
@@ -9252,7 +9652,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessPackage'
-              description: The access packages in this catalog. Read-only. Nullable.
+              description: The access packages in this catalog. Read-only. Nullable. Supports $expand.
           additionalProperties:
             type: object
     microsoft.graph.accessPackageAssignmentRequestRequirements:
@@ -9261,12 +9661,15 @@ components:
       properties:
         allowCustomAssignmentSchedule:
           type: boolean
+          description: Indicates whether the requestor is allowed to set a custom schedule.
           nullable: true
         isApprovalRequiredForAdd:
           type: boolean
+          description: Indicates whether a request to add must be approved by an approver.
           nullable: true
         isApprovalRequiredForUpdate:
           type: boolean
+          description: Indicates whether a request to update must be approved by an approver.
           nullable: true
         policyDescription:
           type: string
@@ -9315,6 +9718,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessPackageRequestState'
             status:
               type: string
+              description: More information on the request processing status. Read-only.
               nullable: true
             accessPackage:
               $ref: '#/components/schemas/microsoft.graph.accessPackage'
@@ -9342,6 +9746,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessPackageAssignmentState'
             status:
               type: string
+              description: 'More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.'
               nullable: true
             accessPackage:
               $ref: '#/components/schemas/microsoft.graph.accessPackage'
@@ -9369,6 +9774,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
+              description: 'A string representation of the principal''s security identifier, if known, or null if the subject does not have a security identifier.'
               nullable: true
             principalName:
               type: string
@@ -9413,12 +9819,13 @@ components:
               nullable: true
             displayName:
               type: string
-              description: The display name of the connected organization.
+              description: The display name of the connected organization. Supports $filter (eq).
               nullable: true
             identitySources:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.identitySource'
+              description: 'The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.'
             modifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -9461,6 +9868,7 @@ components:
             durationUntilExternalUserDeletedAfterBlocked:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
+              description: 'If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically a number of days, after an external user is blocked from sign in before their account is deleted.'
               format: duration
               nullable: true
             externalUserLifecycleAction:
@@ -9477,10 +9885,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
+              description: Represents the current status of a user's response to a company's customizable terms of use agreement.
             agreements:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreement'
+              description: Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -9526,24 +9936,30 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             displayName:
               type: string
+              description: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
               nullable: true
             fileData:
               $ref: '#/components/schemas/microsoft.graph.agreementFileData'
             fileName:
               type: string
+              description: 'Name of the agreement file (for example, TOU.pdf). Read-only.'
               nullable: true
             isDefault:
               type: boolean
+              description: 'If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.'
               nullable: true
             isMajorVersion:
               type: boolean
+              description: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
               nullable: true
             language:
               type: string
+              description: 'The language of the agreement file in the format ''languagecode2-country/regioncode2''. ''languagecode2'' is a lowercase two-letter code derived from ISO 639-1, while ''country/regioncode2'' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.'
               nullable: true
           additionalProperties:
             type: object
@@ -9555,7 +9971,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.accessReviewNotificationRecipientScope'
         notificationTemplateType:
           type: string
-          description: 'Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.'
+          description: Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.
           nullable: true
       additionalProperties:
         type: object
@@ -9612,7 +10028,7 @@ components:
           description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
         defaultDecision:
           type: string
-          description: 'Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.'
+          description: 'Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.'
           nullable: true
         defaultDecisionEnabled:
           type: boolean
@@ -9663,7 +10079,7 @@ components:
           nullable: true
         id:
           type: string
-          description: Identifier of the resource
+          description: Resource ID
           nullable: true
         type:
           type: string
@@ -9740,6 +10156,7 @@ components:
         startDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
       additionalProperties:

@@ -568,7 +568,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         private HttpClient GetHttpClient()
         {
             var provider = GetAuthProvider();
-            var client = HttpHelpers.GetGraphHttpClient(provider);
+            var client = HttpHelpers.GetGraphHttpClient(provider, GraphSession.Instance.AuthContext.ClientTimeout);
             return client;
         }
 
@@ -931,17 +931,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
-            // When PATCH or POST is specified, ensure a body is present
-            if ((Method == GraphRequestMethod.PATCH || Method == GraphRequestMethod.POST) && Body == null &&
-                string.IsNullOrWhiteSpace(InputFilePath))
-            {
-                var error = GetValidationError(
-                    Resources.BodyMissingWhenMethodIsSpecified,
-                    ErrorConstants.Codes.InvokeGraphRequestBodyMissingWhenMethodIsSpecified,
-                    nameof(Body), Method);
-                ThrowTerminatingError(error);
-            }
-
             if (PassThru && OutputFilePath == null)
             {
                 var error = GetValidationError(
@@ -1170,15 +1159,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     var errorRecord = new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
                         ErrorCategory.InvalidResult, null);
-                    httpRequestException.Data.Add(ErrorCategory.ConnectionError.ToString(), errorRecord);
-                    throw;
+                    ThrowTerminatingError(errorRecord);
                 }
                 catch (Exception exception)
                 {
                     var errorRecord = new ErrorRecord(exception, ErrorCategory.NotSpecified.ToString(),
                         ErrorCategory.InvalidOperation, null);
-                    exception.Data.Add(ErrorCategory.NotSpecified.ToString(), errorRecord);
-                    throw;
+                    ThrowTerminatingError(errorRecord);
                 }
             }
         }

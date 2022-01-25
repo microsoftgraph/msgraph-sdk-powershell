@@ -3,8 +3,6 @@
 steps:
 - task: CodesignValidation@0
 
-- task: CodeIntegrity@0
-
 - task: SdtReport@1
   displayName: "Security Analysis Report"
   continueOnError: true
