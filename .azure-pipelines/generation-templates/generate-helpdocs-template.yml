@@ -14,26 +14,6 @@ parameters:
 
 steps:
 - task: PowerShell@2
-  name: "ComputeBranch"
-  displayName: "Compute Docs Branch Name"
-  inputs:
-    targetType: inline
-    script: |
-      $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
-      Write-Host "Docs Branch $branch"
-      Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
-
-- task: Bash@3
-  displayName: "Create Docs branch"
-  inputs:
-    targetType: inline
-    script: |
-      git status
-      git branch $(ComputeBranch.DocsGenerationBranch)
-      git checkout $(ComputeBranch.DocsGenerationBranch)
-      git status
-
-- task: PowerShell@2
   displayName: Generate Help Docs
   continueOnError: false
   enabled: true
@@ -53,5 +33,5 @@ steps:
     targetType: inline
     script: |
       git status
-      git push --set-upstream origin $(ComputeBranch.DocsGenerationBranch)
+      git push --set-upstream origin $(DOCSBRANCH)
       git status
