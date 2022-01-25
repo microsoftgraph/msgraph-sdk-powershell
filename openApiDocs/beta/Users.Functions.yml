@@ -4551,6 +4551,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceInsight'
+              description: Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
             instance:
               $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
           additionalProperties:
@@ -7252,11 +7253,11 @@ components:
       properties:
         displayName:
           type: string
-          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
+          description: The display name of the identity. This property is read-only.
           nullable: true
         id:
           type: string
-          description: Unique identifier for the identity.
+          description: The identifier of the identity. This property is read-only.
           nullable: true
       additionalProperties:
         type: object
@@ -7292,6 +7293,7 @@ components:
             insightCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Indicates when the insight was created.
               format: date-time
               nullable: true
           additionalProperties:
@@ -8641,6 +8643,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+              description: The collection of long running operations for the site.
             pages:
               type: array
               items:
@@ -10697,6 +10700,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewRecommendationInsightSetting'
+          description: Optional. Describes the types of insights that aid reviewers to make access review decisions.
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
@@ -11705,6 +11709,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+              description: The collection of long running operations for the list.
             subscriptions:
               type: array
               items:
@@ -11959,13 +11964,16 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
+              description: A value between 0 and 100 that indicates the progress of the operation.
               format: int32
               nullable: true
             resourceId:
               type: string
+              description: A unique identifier for the result.
               nullable: true
             type:
               type: string
+              description: Type of the operation.
               nullable: true
           additionalProperties:
             type: object

@@ -11679,11 +11679,11 @@ components:
           properties:
             customBrowserDisplayName:
               type: string
-              description: 'Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: Friendly name of the preferred custom browser to open weblink on Android.
               nullable: true
             customBrowserPackageId:
               type: string
-              description: 'Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: Unique identifier of a custom browser to open weblink on Android.
               nullable: true
             deployedAppCount:
               maximum: 2147483647
@@ -11829,7 +11829,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.managedAppDataEncryptionType'
             customBrowserProtocol:
               type: string
-              description: 'A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.'
+              description: A custom browser protocol to open weblink on iOS.
               nullable: true
             deployedAppCount:
               maximum: 2147483647
