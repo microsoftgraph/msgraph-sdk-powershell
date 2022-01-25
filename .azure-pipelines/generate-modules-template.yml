@@ -48,7 +48,8 @@ jobs:
     inputs:
         targetType: inline
         script: |
-            $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
+            $currentDocsBranch = $(DOCSBRANCH)
+            $branch = "{0}/{1}" -f $currentDocsBranch, (Get-Date -Format yyyyMMddHHmm)
             Write-Host "Docs Branch $branch"
             Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
 
