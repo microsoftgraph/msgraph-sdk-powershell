@@ -46,11 +46,11 @@ jobs:
     name: "ComputeBranch"
     displayName: "Compute Docs Branch Name"
     inputs:
-    targetType: inline
-    script: |
-      $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
-      Write-Host "Docs Branch $branch"
-      Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
+        targetType: inline
+        script: |
+            $branch = "{0}/{1}" -f "$(DOCSBRANCH)", (Get-Date -Format yyyyMMddHHmm)
+            Write-Host "Docs Branch $branch"
+            Write-Host "##vso[task.setvariable variable=DocsGenerationBranch;isOutput=true]$branch"
 
   - template: ./common-templates/checkout.yml
     parameters:
