@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Bookings
-Module Guid: 4a70fc76-e946-4c58-9419-a09c352c8f24
+Module Guid: 17034369-a6f2-4196-a58b-a11db28a5214
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.bookings
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,22 +12,37 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Bookings Cmdlets
 ### [Get-MgBookingBusiness](Get-MgBookingBusiness.md)
-Get entity from bookingBusinesses by key
+Represents a Microsot Bookings Business.
 
 ### [Get-MgBookingBusinessAppointment](Get-MgBookingBusinessAppointment.md)
-Get appointments from bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessCalendarView](Get-MgBookingBusinessCalendarView.md)
-Get calendarView from bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessCustomer](Get-MgBookingBusinessCustomer.md)
-Get customers from bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
+
+### [Get-MgBookingBusinessCustomQuestion](Get-MgBookingBusinessCustomQuestion.md)
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessService](Get-MgBookingBusinessService.md)
-Get services from bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingBusinessStaffMember](Get-MgBookingBusinessStaffMember.md)
-Get staffMembers from bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ### [Get-MgBookingCurrency](Get-MgBookingCurrency.md)
 Get entity from bookingCurrencies by key
@@ -36,73 +51,118 @@ Get entity from bookingCurrencies by key
 Add new entity to bookingBusinesses
 
 ### [New-MgBookingBusinessAppointment](New-MgBookingBusinessAppointment.md)
-Create new navigation property to appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ### [New-MgBookingBusinessCalendarView](New-MgBookingBusinessCalendarView.md)
-Create new navigation property to calendarView for bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ### [New-MgBookingBusinessCustomer](New-MgBookingBusinessCustomer.md)
-Create new navigation property to customers for bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
+
+### [New-MgBookingBusinessCustomQuestion](New-MgBookingBusinessCustomQuestion.md)
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ### [New-MgBookingBusinessService](New-MgBookingBusinessService.md)
-Create new navigation property to services for bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ### [New-MgBookingBusinessStaffMember](New-MgBookingBusinessStaffMember.md)
-Create new navigation property to staffMembers for bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ### [New-MgBookingCurrency](New-MgBookingCurrency.md)
 Add new entity to bookingCurrencies
 
 ### [Publish-MgBookingBusiness](Publish-MgBookingBusiness.md)
-Invoke action publish
+Makes the scheduling page of this business available to the general public.
 
 ### [Remove-MgBookingBusiness](Remove-MgBookingBusiness.md)
-Delete entity from bookingBusinesses
+Represents a Microsot Bookings Business.
 
 ### [Remove-MgBookingBusinessAppointment](Remove-MgBookingBusinessAppointment.md)
-Delete navigation property appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ### [Remove-MgBookingBusinessCalendarView](Remove-MgBookingBusinessCalendarView.md)
-Delete navigation property calendarView for bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ### [Remove-MgBookingBusinessCustomer](Remove-MgBookingBusinessCustomer.md)
-Delete navigation property customers for bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
+
+### [Remove-MgBookingBusinessCustomQuestion](Remove-MgBookingBusinessCustomQuestion.md)
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ### [Remove-MgBookingBusinessService](Remove-MgBookingBusinessService.md)
-Delete navigation property services for bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ### [Remove-MgBookingBusinessStaffMember](Remove-MgBookingBusinessStaffMember.md)
-Delete navigation property staffMembers for bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ### [Remove-MgBookingCurrency](Remove-MgBookingCurrency.md)
 Delete entity from bookingCurrencies
 
 ### [Stop-MgBookingBusinessAppointment](Stop-MgBookingBusinessAppointment.md)
-Invoke action cancel
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ### [Stop-MgBookingBusinessCalendarView](Stop-MgBookingBusinessCalendarView.md)
-Invoke action cancel
+Cancels the giving booking appointment, sending a message to the involved parties.
 
 ### [Unpublish-MgBookingBusiness](Unpublish-MgBookingBusiness.md)
-Invoke action unpublish
+Prevents the general public from seeing the scheduling page of this business.
 
 ### [Update-MgBookingBusiness](Update-MgBookingBusiness.md)
-Update entity in bookingBusinesses
+Represents a Microsot Bookings Business.
 
 ### [Update-MgBookingBusinessAppointment](Update-MgBookingBusinessAppointment.md)
-Update the navigation property appointments in bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ### [Update-MgBookingBusinessCalendarView](Update-MgBookingBusinessCalendarView.md)
-Update the navigation property calendarView in bookingBusinesses
+The set of appointments of this business in a specified date range.
+Read-only.
+Nullable.
 
 ### [Update-MgBookingBusinessCustomer](Update-MgBookingBusinessCustomer.md)
-Update the navigation property customers in bookingBusinesses
+All the customers of this business.
+Read-only.
+Nullable.
+
+### [Update-MgBookingBusinessCustomQuestion](Update-MgBookingBusinessCustomQuestion.md)
+All the custom questions of this business.
+Read-only.
+Nullable.
 
 ### [Update-MgBookingBusinessService](Update-MgBookingBusinessService.md)
-Update the navigation property services in bookingBusinesses
+All the services offered by this business.
+Read-only.
+Nullable.
 
 ### [Update-MgBookingBusinessStaffMember](Update-MgBookingBusinessStaffMember.md)
-Update the navigation property staffMembers in bookingBusinesses
+All the staff members that provide services in this business.
+Read-only.
+Nullable.
 
 ### [Update-MgBookingCurrency](Update-MgBookingCurrency.md)
 Update entity in bookingCurrencies
