@@ -13678,6 +13678,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get organizationSettings from deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_GetOrganizationSettings
       parameters:
         - name: $select
@@ -13720,6 +13721,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property organizationSettings in deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_UpdateOrganizationSettings
       requestBody:
         description: New navigation property values
@@ -13738,6 +13740,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property organizationSettings for deviceManagement
+      description: The Cloud PC organization settings for a tenant.
       operationId: deviceManagement.virtualEndpoint_DeleteOrganizationSettings
       parameters:
         - name: If-Match

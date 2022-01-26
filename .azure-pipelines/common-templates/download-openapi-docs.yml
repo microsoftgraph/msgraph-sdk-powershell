@@ -129,7 +129,7 @@ jobs:
           script: |
             git status
             git add .
-            git commit -m 'Weekly OpenApiDocs Download'
+            git commit -m 'Weekly OpenApiDocs Download. [run ci]'
             git status
             git push --set-upstream origin $(ComputeBranch.WeeklyBranch)
             git status
