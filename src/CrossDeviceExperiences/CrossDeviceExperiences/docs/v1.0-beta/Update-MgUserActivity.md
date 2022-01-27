@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgUserActivity
 
 ## SYNOPSIS
-Update the navigation property activities in users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -47,27 +49,11 @@ Update-MgUserActivity -InputObject <ICrossDeviceExperiencesIdentity> [-Activatio
 ```
 
 ## DESCRIPTION
-Update the navigation property activities in users
+The user's activities across devices.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -159,7 +145,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 userActivity
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserActivity1
@@ -255,7 +241,7 @@ Accept wildcard characters: False
 ### -HistoryItems
 Optional.
 NavigationProperty/Containment; navigation property to the activity's historyItems.
-To construct, see NOTES section for HISTORYITEMS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for HISTORYITEMS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphActivityHistoryItem1[]
@@ -286,7 +272,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICrossDeviceExperiencesIdentity
@@ -394,7 +380,7 @@ Accept wildcard characters: False
 
 ### -VisualElements
 visualInfo
-To construct, see NOTES section for VISUALELEMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VISUALELEMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVisualInfo
