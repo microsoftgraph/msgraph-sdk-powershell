@@ -8,44 +8,28 @@ schema: 2.0.0
 # Get-MgUserContactFolderContactPhoto
 
 ## SYNOPSIS
-Get photo from users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
 ### Get (Default)
 ```
 Get-MgUserContactFolderContactPhoto -ContactFolderId <String> -ContactId <String> -UserId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
-Get-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+Get-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity> [-Property <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get photo from users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -79,24 +63,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity
