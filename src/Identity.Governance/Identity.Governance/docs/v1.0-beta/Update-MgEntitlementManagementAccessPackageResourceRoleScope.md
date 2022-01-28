@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementAccessPackageResourceRoleScope
 
 ## SYNOPSIS
-Update the navigation property accessPackageResourceRoleScopes in identityGovernance
+Nullable.
 
 ## SYNTAX
 
@@ -46,27 +46,9 @@ Update-MgEntitlementManagementAccessPackageResourceRoleScope -InputObject <IIden
 ```
 
 ## DESCRIPTION
-Update the navigation property accessPackageResourceRoleScopes in identityGovernance
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -87,7 +69,7 @@ Accept wildcard characters: False
 
 ### -AccessPackageResourceRole
 accessPackageResourceRole
-To construct, see NOTES section for ACCESSPACKAGERESOURCEROLE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ACCESSPACKAGERESOURCEROLE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRole
@@ -118,7 +100,7 @@ Accept wildcard characters: False
 
 ### -AccessPackageResourceScope
 accessPackageResourceScope
-To construct, see NOTES section for ACCESSPACKAGERESOURCESCOPE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ACCESSPACKAGERESOURCESCOPE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceScope
@@ -149,7 +131,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 accessPackageResourceRoleScope
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageResourceRoleScope
@@ -164,7 +146,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedBy
-.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -179,7 +161,8 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -210,7 +193,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
@@ -225,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -ModifiedBy
-.
+Read-only.
 
 ```yaml
 Type: System.String
@@ -240,7 +223,8 @@ Accept wildcard characters: False
 ```
 
 ### -ModifiedDateTime
-.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 ```yaml
 Type: System.DateTime
@@ -328,30 +312,55 @@ ACCESSPACKAGERESOURCEROLE <IMicrosoftGraphAccessPackageResourceRole>: accessPack
   - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
-    - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
+    - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
+      - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Url <String>]`: The endpoint that is used by Entitlement Management to communicate with the access package resource.
+      - `[CreatedBy <String>]`: The display name of the user that created this object.
+      - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Description <String>]`: The description of this object.
+      - `[DisplayName <String>]`: The display name of this object.
+      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+      - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
+      - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
+      - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
+    - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
+    - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
       - `[Id <String>]`: Read-only.
       - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
-      - `[Description <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[IsRootScope <Boolean?>]`: 
-      - `[OriginId <String>]`: 
-      - `[OriginSystem <String>]`: 
-      - `[RoleOriginId <String>]`: 
-      - `[Url <String>]`: 
-    - `[AddedBy <String>]`: 
-    - `[AddedOn <DateTime?>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[IsPendingOnboarding <Boolean?>]`: 
-    - `[OriginId <String>]`: 
-    - `[OriginSystem <String>]`: 
-    - `[ResourceType <String>]`: 
-    - `[Url <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[OriginId <String>]`: 
-  - `[OriginSystem <String>]`: 
+      - `[Description <String>]`: The description of the scope.
+      - `[DisplayName <String>]`: The display name of the scope.
+      - `[IsRootScope <Boolean?>]`: True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
+      - `[OriginId <String>]`: The unique identifier for the scope in the resource as defined in the origin system.
+      - `[OriginSystem <String>]`: The origin system for the scope.
+      - `[RoleOriginId <String>]`: The origin system for the role, if different.
+      - `[Url <String>]`: A resource locator for the scope.
+    - `[AddedBy <String>]`: Read-only.
+    - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+      - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AttributeName <String>]`: The name of the attribute in the end system.
+      - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Unique identifier for the attribute.
+      - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
+      - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
+    - `[Description <String>]`: A description for the resource.
+    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
+    - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+    - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+    - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
+  - `[Description <String>]`: A description for the resource role.
+  - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
+  - `[OriginId <String>]`: The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+  - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
 
 ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPackageResourceScope
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -359,30 +368,55 @@ ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPa
   - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
+    - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
+      - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Url <String>]`: The endpoint that is used by Entitlement Management to communicate with the access package resource.
+      - `[CreatedBy <String>]`: The display name of the user that created this object.
+      - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[Description <String>]`: The description of this object.
+      - `[DisplayName <String>]`: The display name of this object.
+      - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+      - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
+      - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+      - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
+      - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
+    - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
       - `[Id <String>]`: Read-only.
       - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
-      - `[Description <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[OriginId <String>]`: 
-      - `[OriginSystem <String>]`: 
-    - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
-    - `[AddedBy <String>]`: 
-    - `[AddedOn <DateTime?>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[IsPendingOnboarding <Boolean?>]`: 
-    - `[OriginId <String>]`: 
-    - `[OriginSystem <String>]`: 
-    - `[ResourceType <String>]`: 
-    - `[Url <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[IsRootScope <Boolean?>]`: 
-  - `[OriginId <String>]`: 
-  - `[OriginSystem <String>]`: 
-  - `[RoleOriginId <String>]`: 
-  - `[Url <String>]`: 
+      - `[Description <String>]`: A description for the resource role.
+      - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
+      - `[OriginId <String>]`: The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+      - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+    - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
+    - `[AddedBy <String>]`: Read-only.
+    - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+      - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[AttributeName <String>]`: The name of the attribute in the end system.
+      - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Unique identifier for the attribute.
+      - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
+      - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
+    - `[Description <String>]`: A description for the resource.
+    - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
+    - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment.
+    - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+    - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+    - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
+  - `[Description <String>]`: The description of the scope.
+  - `[DisplayName <String>]`: The display name of the scope.
+  - `[IsRootScope <Boolean?>]`: True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
+  - `[OriginId <String>]`: The unique identifier for the scope in the resource as defined in the origin system.
+  - `[OriginSystem <String>]`: The origin system for the scope.
+  - `[RoleOriginId <String>]`: The origin system for the role, if different.
+  - `[Url <String>]`: A resource locator for the scope.
 
 BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageResourceRoleScope
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -393,35 +427,60 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageReso
     - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: 
-      - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: 
+      - `[AccessPackageResourceEnvironment <IMicrosoftGraphAccessPackageResourceEnvironment>]`: accessPackageResourceEnvironment
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[AccessPackageResources <IMicrosoftGraphAccessPackageResource[]>]`: Read-only. Required.
+        - `[ConnectionInfo <IMicrosoftGraphConnectionInfo>]`: connectionInfo
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Url <String>]`: The endpoint that is used by Entitlement Management to communicate with the access package resource.
+        - `[CreatedBy <String>]`: The display name of the user that created this object.
+        - `[CreatedDateTime <DateTime?>]`: The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[Description <String>]`: The description of this object.
+        - `[DisplayName <String>]`: The display name of this object.
+        - `[IsDefaultEnvironment <Boolean?>]`: Determines whether this is default environment or not. It is set to true for all static origin systems, such as Azure AD groups and Azure AD Applications.
+        - `[ModifiedBy <String>]`: The display name of the entity that last modified this object.
+        - `[ModifiedDateTime <DateTime?>]`: The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[OriginId <String>]`: The unique identifier of this environment in the origin system.
+        - `[OriginSystem <String>]`: The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).
+      - `[AccessPackageResourceRoles <IMicrosoftGraphAccessPackageResourceRole[]>]`: Read-only. Nullable. Supports $expand.
+      - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
         - `[Id <String>]`: Read-only.
         - `[AccessPackageResource <IMicrosoftGraphAccessPackageResource>]`: accessPackageResource
-        - `[Description <String>]`: 
-        - `[DisplayName <String>]`: 
-        - `[IsRootScope <Boolean?>]`: 
-        - `[OriginId <String>]`: 
-        - `[OriginSystem <String>]`: 
-        - `[RoleOriginId <String>]`: 
-        - `[Url <String>]`: 
-      - `[AddedBy <String>]`: 
-      - `[AddedOn <DateTime?>]`: 
-      - `[Description <String>]`: 
-      - `[DisplayName <String>]`: 
-      - `[IsPendingOnboarding <Boolean?>]`: 
-      - `[OriginId <String>]`: 
-      - `[OriginSystem <String>]`: 
-      - `[ResourceType <String>]`: 
-      - `[Url <String>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[OriginId <String>]`: 
-    - `[OriginSystem <String>]`: 
+        - `[Description <String>]`: The description of the scope.
+        - `[DisplayName <String>]`: The display name of the scope.
+        - `[IsRootScope <Boolean?>]`: True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.
+        - `[OriginId <String>]`: The unique identifier for the scope in the resource as defined in the origin system.
+        - `[OriginSystem <String>]`: The origin system for the scope.
+        - `[RoleOriginId <String>]`: The origin system for the role, if different.
+        - `[Url <String>]`: A resource locator for the scope.
+      - `[AddedBy <String>]`: Read-only.
+      - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+      - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+        - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[AttributeName <String>]`: The name of the attribute in the end system.
+        - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Unique identifier for the attribute.
+        - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
+        - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
+      - `[Description <String>]`: A description for the resource.
+      - `[DisplayName <String>]`: The display name of the resource, such as the application name, group name or site name.
+      - `[IsPendingOnboarding <Boolean?>]`: True if the resource is not yet available for assignment.
+      - `[OriginId <String>]`: The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.
+      - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
+      - `[ResourceType <String>]`: The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.
+      - `[Url <String>]`: A unique resource locator for the resource, such as the URL for signing a user into an application.
+    - `[Description <String>]`: A description for the resource role.
+    - `[DisplayName <String>]`: The display name of the resource role such as the role defined by the application.
+    - `[OriginId <String>]`: The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
+    - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
   - `[AccessPackageResourceScope <IMicrosoftGraphAccessPackageResourceScope>]`: accessPackageResourceScope
-  - `[CreatedBy <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[ModifiedBy <String>]`: 
-  - `[ModifiedDateTime <DateTime?>]`: 
+  - `[CreatedBy <String>]`: Read-only.
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ModifiedBy <String>]`: Read-only.
+  - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -430,28 +489,41 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
+  - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
+  - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
   - `[AccessReviewId <String>]`: key: id of accessReview
   - `[AccessReviewId1 <String>]`: key: id of accessReview
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
+  - `[AccessReviewInstanceDecisionItemId1 <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
+  - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
   - `[AgreementId <String>]`: key: id of agreement
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
+  - `[ApprovalId <String>]`: key: id of approval
+  - `[ApprovalStageId <String>]`: key: id of approvalStage
+  - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
+  - `[GroupId <String>]`: key: id of group
+  - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
@@ -461,6 +533,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
