@@ -8,44 +8,30 @@ schema: 2.0.0
 # Remove-MgBookingBusinessAppointment
 
 ## SYNOPSIS
-Delete navigation property appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgBookingBusinessAppointment -BookingAppointmentId <String> -BookingBusinessId <String>
  [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgBookingBusinessAppointment -InputObject <IBookingsIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property appointments for bookingBusinesses
+All the appointments of this business.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -54,7 +40,7 @@ key: id of bookingAppointment
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -69,7 +55,7 @@ key: id of bookingBusiness
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -96,11 +82,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IBookingsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -180,8 +166,11 @@ INPUTOBJECT <IBookingsIdentity>: Identity Parameter
   - `[BookingAppointmentId <String>]`: key: id of bookingAppointment
   - `[BookingBusinessId <String>]`: key: id of bookingBusiness
   - `[BookingCurrencyId <String>]`: key: id of bookingCurrency
+  - `[BookingCustomQuestionId <String>]`: key: id of bookingCustomQuestion
+  - `[BookingCustomerBaseId <String>]`: key: id of bookingCustomerBase
   - `[BookingCustomerId <String>]`: key: id of bookingCustomer
   - `[BookingServiceId <String>]`: key: id of bookingService
+  - `[BookingStaffMemberBaseId <String>]`: key: id of bookingStaffMemberBase
   - `[BookingStaffMemberId <String>]`: key: id of bookingStaffMember
 
 ## RELATED LINKS
