@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgPolicyTokenIssuancePolicy
 
 ## SYNOPSIS
-Create new navigation property to tokenIssuancePolicies for policies
+The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ## SYNTAX
 
@@ -26,27 +26,9 @@ New-MgPolicyTokenIssuancePolicy -BodyParameter <Hashtable> [-Confirm] [-WhatIf] 
 ```
 
 ## DESCRIPTION
-Create new navigation property to tokenIssuancePolicies for policies
+The policy that specifies the characteristics of SAML tokens issued by Azure AD.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,7 +49,7 @@ Accept wildcard characters: False
 
 ### -AppliesTo
 .
-To construct, see NOTES section for APPLIESTO properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
@@ -82,8 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
+tokenIssuancePolicy
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -131,6 +112,7 @@ Accept wildcard characters: False
 
 ### -Description
 Description for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -146,6 +128,7 @@ Accept wildcard characters: False
 
 ### -DisplayName
 Display name for this policy.
+Required.
 
 ```yaml
 Type: System.String
@@ -231,7 +214,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTokenIssuancePolicy
 
 ## NOTES
 

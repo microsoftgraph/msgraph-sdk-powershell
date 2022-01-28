@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## SYNTAX
 
@@ -18,27 +18,9 @@ Remove-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-IfMatch <String>] [-Pa
 ```
 
 ## DESCRIPTION
-Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
