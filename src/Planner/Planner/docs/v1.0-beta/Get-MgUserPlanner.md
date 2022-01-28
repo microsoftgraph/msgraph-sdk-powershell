@@ -8,25 +8,21 @@ schema: 2.0.0
 # Get-MgUserPlanner
 
 ## SYNOPSIS
-Get planner from users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### Get1
+### Get2
 ```
 Get-MgUserPlanner -PlannerDeltaId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
@@ -35,35 +31,25 @@ Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [
  [<CommonParameters>]
 ```
 
+### GetViaIdentity2
+```
+Get-MgUserPlanner -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
 ### List
 ```
-Get-MgUserPlanner -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
+Get-MgUserPlanner -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get planner from users
+Selective Planner services available to the user.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -82,13 +68,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -129,11 +116,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: GetViaIdentity, GetViaIdentity1
+Parameter Sets: GetViaIdentity1, GetViaIdentity2
 Aliases:
 
 Required: True
@@ -163,7 +150,7 @@ key: id of plannerDelta
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -253,7 +240,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, Get1, List
+Parameter Sets: Get1, Get2, List
 Aliases:
 
 Required: True
@@ -274,7 +261,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerDelta
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUser
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerUser1
 
 ### System.String
 
@@ -292,6 +279,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

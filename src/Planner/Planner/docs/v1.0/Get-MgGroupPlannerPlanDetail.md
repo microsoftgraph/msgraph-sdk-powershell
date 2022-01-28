@@ -8,7 +8,9 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanDetail
 
 ## SYNOPSIS
-Get details from groups
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +27,11 @@ Get-MgGroupPlannerPlanDetail -InputObject <IPlannerIdentity> [-ExpandProperty <S
 ```
 
 ## DESCRIPTION
-Get details from groups
+Additional details about the plan.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -81,7 +67,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
@@ -134,7 +120,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerPlanDetails1
 
 ## NOTES
 
@@ -150,6 +136,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 

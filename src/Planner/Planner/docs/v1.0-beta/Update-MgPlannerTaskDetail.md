@@ -8,30 +8,32 @@ schema: 2.0.0
 # Update-MgPlannerTaskDetail
 
 ## SYNOPSIS
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgPlannerTaskDetail -PlannerTaskId <String> [-AdditionalProperties <Hashtable>]
  [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-PreviewType <String>]
  [-References <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
-Update-MgPlannerTaskDetail -PlannerTaskId <String> -BodyParameter <IMicrosoftGraphPlannerTaskDetails1>
+Update-MgPlannerTaskDetail -PlannerTaskId <String> -BodyParameter <IMicrosoftGraphPlannerTaskDetails>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
-Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTaskDetails1>
+Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> -BodyParameter <IMicrosoftGraphPlannerTaskDetails>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalProperties <Hashtable>]
  [-Checklist <Hashtable>] [-Description <String>] [-Id <String>] [-PreviewType <String>]
@@ -39,27 +41,11 @@ Update-MgPlannerTaskDetail -InputObject <IPlannerIdentity> [-AdditionalPropertie
 ```
 
 ## DESCRIPTION
-Update the navigation property details in planner
+Read-only.
+Nullable.
+Additional details about the task.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -68,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -80,11 +66,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 plannerTaskDetails
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
-Parameter Sets: Update, UpdateViaIdentity
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -99,7 +85,7 @@ plannerChecklistItems
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -114,7 +100,7 @@ Description of the task
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -129,7 +115,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -141,11 +127,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -175,7 +161,7 @@ key: id of plannerTask
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -190,7 +176,7 @@ plannerPreviewType
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -205,7 +191,7 @@ plannerExternalReferences
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -251,7 +237,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerTaskDetails
 
 ### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
 
@@ -268,7 +254,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails1>: plannerTaskDetails
+BODYPARAMETER <IMicrosoftGraphPlannerTaskDetails>: plannerTaskDetails
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Checklist <IMicrosoftGraphPlannerChecklistItems>]`: plannerChecklistItems
@@ -283,6 +269,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
