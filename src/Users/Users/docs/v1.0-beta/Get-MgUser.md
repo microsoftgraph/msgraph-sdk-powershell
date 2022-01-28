@@ -14,19 +14,21 @@ Get entity from users by key
 
 ### List (Default)
 ```
-Get-MgUser [-Count] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
- [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUser [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-ConsistencyLevel <String>] [-All]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
-Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgUser -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [-ConsistencyLevel <String>]
+ [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUser -InputObject <IUsersIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+ [-ConsistencyLevel <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -34,23 +36,171 @@ Get entity from users by key
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get the list of all the users
 ```powershell
-PS C:\> {{ Add code here }}
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser  | Format-List  ID, DisplayName, Mail, UserPrincipalName
 
-{{ Add output here }}
+Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
+DisplayName       : Kristi Laar
+Mail              : Adams@contoso.com
+UserPrincipalName : Adams@contoso.com
+
+Id                : dba12422-ac75-486a-a960-cd7cb3f6963f
+DisplayName       : Adele Vance
+Mail              : AdeleV@contoso.com
+UserPrincipalName : AdeleV@contoso.com
 ```
 
-{{ Add description here }}
+This command returns a list of all users.
 
-### Example 2: {{ Add title here }}
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
+### Example 2: Get a user by Id
 ```powershell
-PS C:\> {{ Add code here }}
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser -UserId 'e4e2b110-8d4f-434f-a990-7cd63e23aed6' | 
+  Format-List  ID, DisplayName, Mail, UserPrincipalName
 
-{{ Add output here }}
+Id                : e4e2b110-8d4f-434f-a990-7cd63e23aed6
+DisplayName       : Kristi Laar
+Mail              : Adams@contoso.com
+UserPrincipalName : Adams@contoso.com
 ```
 
-{{ Add description here }}
+This command gets the specified user.
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
+### Example 3: Get a count of all users
+```powershell
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser -Count userCount -ConsistencyLevel eventual
+
+Id                                   DisplayName              Mail                           UserPrincipalName        
+--                                   -----------              ----                           -----------------               
+00f9b5d4-290f-413d-ab86-feb3cdc23736 Johanna Lorenz           JohannaL@Contoso.com           JohannaL@Contoso.com
+0568f35e-9177-4630-abd6-d533b21f1f78 Brian Johnson (TAILSPIN) BrianJ@Contoso.com             BrianJ@Contoso.com
+075b32dd-edb7-47cf-89ef-f3f733683a3f Patti Fernandez          PattiF@Contoso.com             PattiF@Contoso.com
+0d005a1a-5e61-4388-bf5e-9060d727f891 Conf Room Baker          Baker@Contoso.com              Baker@Contoso.com
+15516fb3-d57e-4d46-8aa9-8305bfd85b31 Enrico Cattaneo          EnricoC@Contoso.com            EnricoC@Contoso.com
+180d5d54-159d-4970-ae07-99c8b658fa89 Allan Deyoung            AllanD@Contoso.com             AllanD@Contoso.com
+185190a7-54f0-4892-add3-211c21327570 Debra Berger             DebraB@Contoso.com             DebraB@Contoso.com
+```
+
+The example gets a list of all users.
+The $userCount variable contains the count of the objects in the result.
+Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
+For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
+### Example 4: Use -Filter and -Top to get one user with a display name that starts with 'a' including a count of returned objects
+```powershell
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'a')" -Top 1
+
+Id                                   DisplayName   Mail                               UserPrincipalName                  UserType
+--                                   -----------   ----                               -----------------                  --------
+577a8b8a-ab84-4f90-a6cc-a62cd56010be Allan Deyoung AllanD@M365x814237.OnMicrosoft.com AllanD@M365x814237.OnMicrosoft.com Member
+```
+
+This example returns the top 1 users with the display name starting with 'a'.
+The $userCount variable contains the count of the objects in the result.
+Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
+For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
+### Example 5: Use -Search to get all the users whose display name contains 'Conf' including a count of the returned users
+```powershell
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser -ConsistencyLevel eventual -Count userCount -Search '"DisplayName:Conf"'
+
+Id                                   DisplayName       Mail                UserPrincipalName                   
+--                                   -----------       ----                -----------------                             
+0d005a1a-5e61-4388-bf5e-9060d727f891 Conf Room Baker   Baker@Contoso.com   Baker@Contoso.com
+1e34292e-e5a3-46fd-9cac-8d37f2d3ab4a Conf Room Stevens Stevens@Contoso.com Stevens@Contoso.com
+4aec2afd-be23-46d1-9138-f5ee6b77af5a Conf Room Crystal Crystal@Contoso.com Crystal@Contoso.com
+82a56dfc-31f9-4b90-8a1c-6c4326bbffd9 Conf Room Hood    Hood@Contoso.com    Hood@Contoso.com
+a7afe08d-55b9-4c44-be94-05d17c6513f3 Conf Room Rainier Rainier@Contoso.com Rainier@Contoso.com
+```
+
+This example returns all users whose display name contains 'Conf'.
+The $userCount variable contains the count of the objects in the result.
+Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
+For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
+
+### Example 6: Use -Filter to get all the users with a display name that starts with 'Conf' including a count of the returned users, with the results ordered by UserPrincipalName
+```powershell
+Connect-MgGraph -Scopes 'User.Read.All'
+Get-MgUser -ConsistencyLevel eventual -Count userCount -Filter "startsWith(DisplayName, 'Conf')" -OrderBy UserPrincipalName
+
+Id                                   DisplayName       Mail                UserPrincipalName                   
+--                                   -----------       ----                -----------------                   
+0d005a1a-5e61-4388-bf5e-9060d727f891 Conf Room Baker   Baker@Contoso.com   Baker@Contoso.com
+4aec2afd-be23-46d1-9138-f5ee6b77af5a Conf Room Crystal Crystal@Contoso.com Crystal@Contoso.com
+82a56dfc-31f9-4b90-8a1c-6c4326bbffd9 Conf Room Hood    Hood@Contoso.com    Hood@Contoso.com
+a7afe08d-55b9-4c44-be94-05d17c6513f3 Conf Room Rainier Rainier@Contoso.com Rainier@Contoso.com
+1e34292e-e5a3-46fd-9cac-8d37f2d3ab4a Conf Room Stevens Stevens@Contoso.com Stevens@Contoso.com
+```
+
+This example filters all users whose display name starts with 'Conf' and orders the results by the user principal name.
+The $userCount variable contains the count of the objects in the result.
+Advanced query requires the ConsistencyLevel parameter set to `eventual` and the Count parameter in the command.
+For more information about *ConsistencyLevel* and *Count*, see [Advanced query capabilities on Azure AD directory objects](/graph/aad-advanced-queries).
+
+One of the following permissions is required to run this cmdlet;
+
+|Permission type| Recommended Permissions| Other Permissions|
+|-----|------|------|
+|Delegated (work or school account)|User.ReadBasic.All, User.Read.All| User.ReadWrite.All, Directory.Read.All|
+|Application|User.Read.All|User.ReadWrite.All, Directory.Read.All|
+
+To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`.
+For example, `Connect-MgGraph -Scopes User.ReadBasic.All, User.Read.All`.
 
 ## PARAMETERS
 
@@ -69,13 +219,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -ConsistencyLevel
+Indicates the requested consistency level.
+Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Type: System.String
+Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
+
+```yaml
+Type: System.String
+Parameter Sets: List
+Aliases: CV
 
 Required: False
 Position: Named
@@ -116,11 +283,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -225,7 +392,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -244,7 +411,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUser
 
 ## NOTES
 
@@ -257,18 +424,19 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
