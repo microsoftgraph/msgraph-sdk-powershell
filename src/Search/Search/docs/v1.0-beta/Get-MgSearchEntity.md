@@ -1,11 +1,11 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearch
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchentity
 schema: 2.0.0
 ---
 
-# Get-MgSearch
+# Get-MgSearchEntity
 
 ## SYNOPSIS
 Get search
@@ -13,31 +13,13 @@ Get search
 ## SYNTAX
 
 ```
-Get-MgSearch [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgSearchEntity [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Get search
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -78,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.String
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchEntity1
 
 ## NOTES
 

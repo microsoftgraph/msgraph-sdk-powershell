@@ -1,59 +1,57 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/update-mgsearch
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/remove-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# Update-MgSearch
+# Remove-MgSearchBookmark
 
 ## SYNOPSIS
-Update search
+Delete navigation property bookmarks for search
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Delete (Default)
 ```
-Update-MgSearch [-AdditionalProperties <Hashtable>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf]
+Remove-MgSearchBookmark -BookmarkId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update
+### DeleteViaIdentity
 ```
-Update-MgSearch -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update search
+Delete navigation property bookmarks for search
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -BookmarkId
+key: id of bookmark
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IfMatch
+ETag
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -63,33 +61,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-search
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update
+Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -144,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.ISearchIdentity
 
 ## OUTPUTS
 
@@ -153,6 +137,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <ISearchIdentity>: Identity Parameter
+  - `[AcronymId <String>]`: key: id of acronym
+  - `[BookmarkId <String>]`: key: id of bookmark
+  - `[ExternalConnectionId <String>]`: key: id of externalConnection
+  - `[QnaId <String>]`: key: id of qna
 
 ## RELATED LINKS
 
