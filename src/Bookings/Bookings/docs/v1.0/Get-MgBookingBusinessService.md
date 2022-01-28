@@ -248,7 +248,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBookingService1
 
 ## NOTES
 
