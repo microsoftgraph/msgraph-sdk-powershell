@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgServicePrincipalAppRoleAssignment
 
 ## SYNOPSIS
-Get appRoleAssignments from servicePrincipals
+App role assignment for another app or service, granted to this service principal.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,27 +33,43 @@ Get-MgServicePrincipalAppRoleAssignment -InputObject <IApplicationsIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get appRoleAssignments from servicePrincipals
+App role assignment for another app or service, granted to this service principal.
+Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get all application role assignments for a service principal
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId '0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61' |  Format-List
 
-{{ Add output here }}
+AppRoleId            : 00000000-0000-0000-0000-000000000000
+CreatedDateTime      : 8/31/2021 2:01:28 PM
+DeletedDateTime      :
+Id                   : PRLbC6e4yUyMwr0XutBvYfZHkKGzlbxDr2I-QJWN9rs
+PrincipalDisplayName : Example App
+PrincipalId          : 0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61
+PrincipalType        : ServicePrincipal
+ResourceDisplayName  : Office 365 Management APIs
+ResourceId           : 557aedfc-007c-4904-918a-7e6fed2e7403
+AdditionalProperties : {[@odata.id, https://graph.microsoft.com/v2/fb625e04-52aa-42da-b10d-14f1195d665f/directoryObjects/$/Microsof
+                       t.DirectoryServices.ServicePrincipal('0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61')/appRoleAssignments/PRLbC6e4yUyM
+                       wr0XutBvYfZHkKGzlbxDr2I-QJWN9rs]}
+
+AppRoleId            : 00000000-0000-0000-0000-000000000000
+CreatedDateTime      : 8/31/2021 1:59:44 PM
+DeletedDateTime      :
+Id                   : PRLbC6e4yUyMwr0XutBvYZsr7FiAW3pIqP4F9944yBc
+PrincipalDisplayName : Example App
+PrincipalId          : 0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61
+PrincipalType        : ServicePrincipal
+ResourceDisplayName  : Office 365 SharePoint Online
+ResourceId           : 1c48f923-4fbb-4d37-b772-4d577eefec9e
+AdditionalProperties : {[@odata.id, https://graph.microsoft.com/v2/fb625e04-52aa-42da-b10d-14f1195d665f/directoryObjects/$/Microsof
+                       t.DirectoryServices.ServicePrincipal('0bdb123d-b8a7-4cc9-8cc2-bd17bad06f61')/appRoleAssignments/PRLbC6e4yUyM
+                       wr0XutBvYZsr7FiAW3pIqP4F9944yBc]}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example gets the application role assignments that have been granted to the specified service principal.
 
 ## PARAMETERS
 
@@ -86,13 +103,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -133,7 +151,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
@@ -276,17 +294,15 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -297,8 +313,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
