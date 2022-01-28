@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserMobileAppTroubleshootingEvent
 
 ## SYNOPSIS
-Create new navigation property to mobileAppTroubleshootingEvents for users
+The list of mobile app troubleshooting events for this user.
 
 ## SYNTAX
 
@@ -49,33 +49,15 @@ New-MgUserMobileAppTroubleshootingEvent -InputObject <IDevicesCorporateManagemen
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileAppTroubleshootingEvents for users
+The list of mobile app troubleshooting events for this user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -AdditionalInformation
 A set of string key and string value pairs which provides additional information on the Troubleshooting event
-To construct, see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -121,7 +103,7 @@ Accept wildcard characters: False
 
 ### -AppLogCollectionRequests
 The collection property of AppLogUploadRequest.
-To construct, see NOTES section for APPLOGCOLLECTIONREQUESTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPLOGCOLLECTIONREQUESTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAppLogCollectionRequest[]
@@ -136,8 +118,8 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-MobileAppTroubleshootingEvent Entity.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+Event representing a users device application install status.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingEvent
@@ -199,7 +181,7 @@ Accept wildcard characters: False
 
 ### -History
 Intune Mobile Application Troubleshooting History Item
-To construct, see NOTES section for HISTORY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for HISTORY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]
@@ -230,7 +212,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -261,7 +243,7 @@ Accept wildcard characters: False
 
 ### -TroubleshootingErrorDetails
 Object containing detailed information about the error and its remediation.
-To construct, see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
@@ -365,11 +347,11 @@ ADDITIONALINFORMATION <IMicrosoftGraphKeyValuePair[]>: A set of string key and s
 APPLOGCOLLECTIONREQUESTS <IMicrosoftGraphAppLogCollectionRequest[]>: The collection property of AppLogUploadRequest.
   - `[Id <String>]`: Read-only.
   - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
-  - `[CustomLogFolders <String[]>]`: List of log folders. 
+  - `[CustomLogFolders <String[]>]`: List of log folders.
   - `[ErrorMessage <String>]`: Error message if any during the upload process
-  - `[Status <String>]`: appLogUploadState
+  - `[Status <String>]`: AppLogUploadStatus
 
-BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: MobileAppTroubleshootingEvent Entity.
+BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: Event representing a users device application install status.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
     - `[Name <String>]`: Name for this key-value pair
@@ -379,20 +361,20 @@ BODYPARAMETER <IMicrosoftGraphMobileAppTroubleshootingEvent>: MobileAppTroublesh
   - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
   - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Context <String>]`: 
-    - `[Failure <String>]`: 
+    - `[Context <String>]`: Not yet documented
+    - `[Failure <String>]`: Not yet documented
     - `[FailureDetails <String>]`: The detailed description of what went wrong.
     - `[Remediation <String>]`: The detailed description of how to remediate this issue.
     - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
       - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-      - `[Text <String>]`: 
+      - `[Text <String>]`: Not yet documented
   - `[Id <String>]`: Read-only.
   - `[AppLogCollectionRequests <IMicrosoftGraphAppLogCollectionRequest[]>]`: The collection property of AppLogUploadRequest.
     - `[Id <String>]`: Read-only.
     - `[CompletedDateTime <DateTime?>]`: Time at which the upload log request reached a terminal state
-    - `[CustomLogFolders <String[]>]`: List of log folders. 
+    - `[CustomLogFolders <String[]>]`: List of log folders.
     - `[ErrorMessage <String>]`: Error message if any during the upload process
-    - `[Status <String>]`: appLogUploadState
+    - `[Status <String>]`: AppLogUploadStatus
   - `[ApplicationId <String>]`: Intune application identifier.
   - `[History <IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]>]`: Intune Mobile Application Troubleshooting History Item
     - `[OccurrenceDateTime <DateTime?>]`: Time when the history item occurred.
@@ -404,26 +386,26 @@ HISTORY <IMicrosoftGraphMobileAppTroubleshootingHistoryItem[]>: Intune Mobile Ap
   - `[OccurrenceDateTime <DateTime?>]`: Time when the history item occurred.
   - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Context <String>]`: 
-    - `[Failure <String>]`: 
+    - `[Context <String>]`: Not yet documented
+    - `[Failure <String>]`: Not yet documented
     - `[FailureDetails <String>]`: The detailed description of what went wrong.
     - `[Remediation <String>]`: The detailed description of how to remediate this issue.
     - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
       - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-      - `[Text <String>]`: 
+      - `[Text <String>]`: Not yet documented
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -463,14 +445,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -482,13 +463,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
 
 TROUBLESHOOTINGERRORDETAILS <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>: Object containing detailed information about the error and its remediation.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Context <String>]`: 
-  - `[Failure <String>]`: 
+  - `[Context <String>]`: Not yet documented
+  - `[Failure <String>]`: Not yet documented
   - `[FailureDetails <String>]`: The detailed description of what went wrong.
   - `[Remediation <String>]`: The detailed description of how to remediate this issue.
   - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
     - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-    - `[Text <String>]`: 
+    - `[Text <String>]`: Not yet documented
 
 ## RELATED LINKS
 
