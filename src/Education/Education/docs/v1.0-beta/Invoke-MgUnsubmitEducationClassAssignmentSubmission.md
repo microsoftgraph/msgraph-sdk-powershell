@@ -12,13 +12,13 @@ Invoke action unsubmit
 
 ## SYNTAX
 
-### Unsubmit (Default)
+### Unsubmit1 (Default)
 ```
 Invoke-MgUnsubmitEducationClassAssignmentSubmission -EducationAssignmentId <String> -EducationClassId <String>
  -EducationSubmissionId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UnsubmitViaIdentity
+### UnsubmitViaIdentity1
 ```
 Invoke-MgUnsubmitEducationClassAssignmentSubmission -InputObject <IEducationIdentity> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -29,24 +29,6 @@ Invoke action unsubmit
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -EducationAssignmentId
@@ -54,7 +36,7 @@ key: id of educationAssignment
 
 ```yaml
 Type: System.String
-Parameter Sets: Unsubmit
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -69,7 +51,7 @@ key: id of educationClass
 
 ```yaml
 Type: System.String
-Parameter Sets: Unsubmit
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -84,7 +66,7 @@ key: id of educationSubmission
 
 ```yaml
 Type: System.String
-Parameter Sets: Unsubmit
+Parameter Sets: Unsubmit1
 Aliases:
 
 Required: True
@@ -96,11 +78,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
-Parameter Sets: UnsubmitViaIdentity
+Parameter Sets: UnsubmitViaIdentity1
 Aliases:
 
 Required: True
