@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserProfileEducationalActivity
 
 ## SYNOPSIS
-Update the navigation property educationalActivities in users
+Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 
 ## SYNTAX
 
@@ -18,8 +18,8 @@ Update-MgUserProfileEducationalActivity -EducationalActivityId <String> -UserId 
  [-AdditionalProperties <Hashtable>] [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>]
  [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>]
  [-Id <String>] [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>]
- [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSource>]
+ [-IsSearchable] [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
+ [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
  [-StartMonthYear <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -40,34 +40,16 @@ Update-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity>
 Update-MgUserProfileEducationalActivity -InputObject <IPeopleIdentity> [-AdditionalProperties <Hashtable>]
  [-AllowedAudiences <String>] [-CompletionMonthYear <DateTime>] [-CreatedBy <IMicrosoftGraphIdentitySet>]
  [-CreatedDateTime <DateTime>] [-EndMonthYear <DateTime>] [-Id <String>]
- [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>]
+ [-Inference <IMicrosoftGraphInferenceData>] [-Institution <IMicrosoftGraphInstitutionData>] [-IsSearchable]
  [-LastModifiedBy <IMicrosoftGraphIdentitySet>] [-LastModifiedDateTime <DateTime>]
- [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSource>]
+ [-Program <IMicrosoftGraphEducationalActivityDetail>] [-Source <IMicrosoftGraphPersonDataSources>]
  [-StartMonthYear <DateTime>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property educationalActivities in users
+Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -103,7 +85,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 educationalActivity
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivity
@@ -118,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompletionMonthYear
-.
+The month and year the user graduated or completed the activity.
 
 ```yaml
 Type: System.DateTime
@@ -134,7 +116,7 @@ Accept wildcard characters: False
 
 ### -CreatedBy
 identitySet
-To construct, see NOTES section for CREATEDBY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
@@ -149,7 +131,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -179,7 +161,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndMonthYear
-.
+The month and year the user completed the educational activity referenced.
 
 ```yaml
 Type: System.DateTime
@@ -210,7 +192,7 @@ Accept wildcard characters: False
 
 ### -Inference
 inferenceData
-To construct, see NOTES section for INFERENCE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INFERENCE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInferenceData
@@ -226,7 +208,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
@@ -242,7 +224,7 @@ Accept wildcard characters: False
 
 ### -Institution
 institutionData
-To construct, see NOTES section for INSTITUTION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INSTITUTION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInstitutionData
@@ -256,9 +238,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -IsSearchable
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastModifiedBy
 identitySet
-To construct, see NOTES section for LASTMODIFIEDBY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LASTMODIFIEDBY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
@@ -273,7 +270,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Provides the dateTimeOffset for when the entity was created.
 
 ```yaml
 Type: System.DateTime
@@ -304,7 +301,7 @@ Accept wildcard characters: False
 
 ### -Program
 educationalActivityDetail
-To construct, see NOTES section for PROGRAM properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PROGRAM properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationalActivityDetail
@@ -319,11 +316,11 @@ Accept wildcard characters: False
 ```
 
 ### -Source
-personDataSource
-To construct, see NOTES section for SOURCE properties and create a hash table.
+personDataSources
+To construct, please use Get-Help -Online and see NOTES section for SOURCE properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSource
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPersonDataSources
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -335,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartMonthYear
-.
+The month and year the user commenced the activity referenced.
 
 ```yaml
 Type: System.DateTime
@@ -424,63 +421,64 @@ BODYPARAMETER <IMicrosoftGraphEducationalActivity>: educationalActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
   - `[Inference <IMicrosoftGraphInferenceData>]`: inferenceData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ConfidenceScore <Double?>]`: 
-    - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+    - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+    - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
+  - `[IsSearchable <Boolean?>]`: 
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Source <IMicrosoftGraphPersonDataSource>]`: personDataSource
+  - `[LastModifiedDateTime <DateTime?>]`: Provides the dateTimeOffset for when the entity was created.
+  - `[Source <IMicrosoftGraphPersonDataSources>]`: personDataSources
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Type <String>]`: 
+    - `[Type <String[]>]`: 
   - `[Id <String>]`: Read-only.
-  - `[CompletionMonthYear <DateTime?>]`: 
-  - `[EndMonthYear <DateTime?>]`: 
+  - `[CompletionMonthYear <DateTime?>]`: The month and year the user graduated or completed the activity.
+  - `[EndMonthYear <DateTime?>]`: The month and year the user completed the educational activity referenced.
   - `[Institution <IMicrosoftGraphInstitutionData>]`: institutionData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
+    - `[Description <String>]`: Short description of the institution the user studied at.
+    - `[DisplayName <String>]`: Name of the institution the user studied at.
     - `[Location <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[City <String>]`: The city.
       - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-      - `[PostOfficeBox <String>]`: 
+      - `[PostOfficeBox <String>]`: The post office box number.
       - `[PostalCode <String>]`: The postal code.
       - `[State <String>]`: The state.
       - `[Street <String>]`: The street.
       - `[Type <String>]`: physicalAddressType
-    - `[WebUrl <String>]`: 
+    - `[WebUrl <String>]`: Link to the institution or department homepage.
   - `[Program <IMicrosoftGraphEducationalActivityDetail>]`: educationalActivityDetail
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Abbreviation <String>]`: 
-    - `[Activities <String>]`: 
-    - `[Awards <String>]`: 
-    - `[Description <String>]`: 
-    - `[DisplayName <String>]`: 
-    - `[FieldsOfStudy <String>]`: 
-    - `[Grade <String>]`: 
-    - `[Notes <String>]`: 
-    - `[WebUrl <String>]`: 
-  - `[StartMonthYear <DateTime?>]`: 
+    - `[Abbreviation <String>]`: Shortened name of the degree or program (example: PhD, MBA)
+    - `[Activities <String[]>]`: Extracurricular activities undertaken alongside the program.
+    - `[Awards <String[]>]`: Any awards or honors associated with the program.
+    - `[Description <String>]`: Short description of the program provided by the user.
+    - `[DisplayName <String>]`: Long-form name of the program that the user has provided.
+    - `[FieldsOfStudy <String[]>]`: Majors and minors associated with the program. (if applicable)
+    - `[Grade <String>]`: The final grade, class, GPA or score.
+    - `[Notes <String>]`: Additional notes the user has provided.
+    - `[WebUrl <String>]`: Link to the degree or program page.
+  - `[StartMonthYear <DateTime?>]`: The month and year the user commenced the activity referenced.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 INFERENCE <IMicrosoftGraphInferenceData>: inferenceData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[ConfidenceScore <Double?>]`: 
-  - `[UserHasVerifiedAccuracy <Boolean?>]`: 
+  - `[ConfidenceScore <Double?>]`: Confidence score reflecting the accuracy of the data inferred about the user.
+  - `[UserHasVerifiedAccuracy <Boolean?>]`: Records if the user has confirmed this inference as being True or False.
 
 INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ActivityStatisticsId <String>]`: key: id of activityStatistics
@@ -491,8 +489,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person
@@ -511,43 +509,43 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
 
 INSTITUTION <IMicrosoftGraphInstitutionData>: institutionData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[Description <String>]`: Short description of the institution the user studied at.
+  - `[DisplayName <String>]`: Name of the institution the user studied at.
   - `[Location <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.
     - `[Type <String>]`: physicalAddressType
-  - `[WebUrl <String>]`: 
+  - `[WebUrl <String>]`: Link to the institution or department homepage.
 
 LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
 PROGRAM <IMicrosoftGraphEducationalActivityDetail>: educationalActivityDetail
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Abbreviation <String>]`: 
-  - `[Activities <String>]`: 
-  - `[Awards <String>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
-  - `[FieldsOfStudy <String>]`: 
-  - `[Grade <String>]`: 
-  - `[Notes <String>]`: 
-  - `[WebUrl <String>]`: 
+  - `[Abbreviation <String>]`: Shortened name of the degree or program (example: PhD, MBA)
+  - `[Activities <String[]>]`: Extracurricular activities undertaken alongside the program.
+  - `[Awards <String[]>]`: Any awards or honors associated with the program.
+  - `[Description <String>]`: Short description of the program provided by the user.
+  - `[DisplayName <String>]`: Long-form name of the program that the user has provided.
+  - `[FieldsOfStudy <String[]>]`: Majors and minors associated with the program. (if applicable)
+  - `[Grade <String>]`: The final grade, class, GPA or score.
+  - `[Notes <String>]`: Additional notes the user has provided.
+  - `[WebUrl <String>]`: Link to the degree or program page.
 
-SOURCE <IMicrosoftGraphPersonDataSource>: personDataSource
+SOURCE <IMicrosoftGraphPersonDataSources>: personDataSources
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Type <String>]`: 
+  - `[Type <String[]>]`: 
 
 ## RELATED LINKS
 
