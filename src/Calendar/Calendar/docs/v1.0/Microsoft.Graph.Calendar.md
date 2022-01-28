@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Calendar
-Module Guid: 5d9a48d7-a5af-4c53-9ec0-f86dc1549d25
+Module Guid: 0a804c28-b620-4707-ac36-842c3cb7e02c
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.calendar
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,290 +12,470 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Calendar Cmdlets
 ### [Get-MgGroupCalendar](Get-MgGroupCalendar.md)
-Get calendar from groups
+The group's calendar.
+Read-only.
 
 ### [Get-MgGroupCalendarMultiValueExtendedProperty](Get-MgGroupCalendarMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupCalendarPermission](Get-MgGroupCalendarPermission.md)
-Get calendarPermissions from groups
+The permissions of the users with whom the calendar is shared.
 
 ### [Get-MgGroupCalendarSingleValueExtendedProperty](Get-MgGroupCalendarSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupCalendarView](Get-MgGroupCalendarView.md)
-Get calendarView from groups
+The calendar view for the calendar.
+Navigation property.
+Read-only.
 
 ### [Get-MgGroupEvent](Get-MgGroupEvent.md)
-Get events from groups
+The group's events.
 
 ### [Get-MgGroupEventAttachment](Get-MgGroupEventAttachment.md)
-Get attachments from groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventCalendar](Get-MgGroupEventCalendar.md)
-Get calendar from groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgGroupEventExtension](Get-MgGroupEventExtension.md)
-Get extensions from groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgGroupEventInstance](Get-MgGroupEventInstance.md)
-Get instances from groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventMultiValueExtendedProperty](Get-MgGroupEventMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupEventSingleValueExtendedProperty](Get-MgGroupEventSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgPlace](Get-MgPlace.md)
 Get entity from places by key
 
 ### [Get-MgUserCalendar](Get-MgUserCalendar.md)
-Get calendar from users
+The user's primary calendar.
+Read-only.
 
 ### [Get-MgUserCalendarEvent](Get-MgUserCalendarEvent.md)
-Get events from users
+The events in the calendar.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserCalendarGroup](Get-MgUserCalendarGroup.md)
-Get calendarGroups from users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarGroupCalendar](Get-MgUserCalendarGroupCalendar.md)
-Get calendars from users
+The calendars in the calendar group.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarMultiValueExtendedProperty](Get-MgUserCalendarMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarPermission](Get-MgUserCalendarPermission.md)
-Get calendarPermissions from users
+The permissions of the users with whom the calendar is shared.
 
 ### [Get-MgUserCalendarSingleValueExtendedProperty](Get-MgUserCalendarSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserCalendarView](Get-MgUserCalendarView.md)
-Get calendarView from users
+The calendar view for the calendar.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserDefaultCalendar](Get-MgUserDefaultCalendar.md)
-Get calendars from users
+The user's calendars.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEvent](Get-MgUserEvent.md)
-Get events from users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventAttachment](Get-MgUserEventAttachment.md)
-Get attachments from users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventCalendar](Get-MgUserEventCalendar.md)
-Get calendar from users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Get-MgUserEventExtension](Get-MgUserEventExtension.md)
-Get extensions from users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Get-MgUserEventInstance](Get-MgUserEventInstance.md)
-Get instances from users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventMultiValueExtendedProperty](Get-MgUserEventMultiValueExtendedProperty.md)
-Get multiValueExtendedProperties from users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Get-MgUserEventSingleValueExtendedProperty](Get-MgUserEventSingleValueExtendedProperty.md)
-Get singleValueExtendedProperties from users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [New-MgGroupCalendarMultiValueExtendedProperty](New-MgGroupCalendarMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [New-MgGroupCalendarPermission](New-MgGroupCalendarPermission.md)
-Create new navigation property to calendarPermissions for groups
+The permissions of the users with whom the calendar is shared.
 
 ### [New-MgGroupCalendarSingleValueExtendedProperty](New-MgGroupCalendarSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [New-MgGroupEvent](New-MgGroupEvent.md)
-Create new navigation property to events for groups
+The group's events.
 
 ### [New-MgGroupEventAttachment](New-MgGroupEventAttachment.md)
-Create new navigation property to attachments for groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgGroupEventExtension](New-MgGroupEventExtension.md)
-Create new navigation property to extensions for groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [New-MgGroupEventInstance](New-MgGroupEventInstance.md)
-Create new navigation property to instances for groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgGroupEventMultiValueExtendedProperty](New-MgGroupEventMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [New-MgGroupEventSingleValueExtendedProperty](New-MgGroupEventSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [New-MgPlace](New-MgPlace.md)
 Add new entity to places
 
 ### [New-MgUserCalendar](New-MgUserCalendar.md)
-Create new navigation property to calendars for users
+The user's calendars.
+Read-only.
+Nullable.
 
 ### [New-MgUserCalendarEvent](New-MgUserCalendarEvent.md)
-Create new navigation property to events for users
+The events in the calendar.
+Navigation property.
+Read-only.
 
 ### [New-MgUserCalendarGroup](New-MgUserCalendarGroup.md)
-Create new navigation property to calendarGroups for users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ### [New-MgUserCalendarGroupCalendar](New-MgUserCalendarGroupCalendar.md)
-Create new navigation property to calendars for users
+The calendars in the calendar group.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgUserCalendarMultiValueExtendedProperty](New-MgUserCalendarMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [New-MgUserCalendarPermission](New-MgUserCalendarPermission.md)
-Create new navigation property to calendarPermissions for users
+The permissions of the users with whom the calendar is shared.
 
 ### [New-MgUserCalendarSingleValueExtendedProperty](New-MgUserCalendarSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [New-MgUserEvent](New-MgUserEvent.md)
-Create new navigation property to events for users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ### [New-MgUserEventAttachment](New-MgUserEventAttachment.md)
-Create new navigation property to attachments for users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgUserEventExtension](New-MgUserEventExtension.md)
-Create new navigation property to extensions for users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [New-MgUserEventInstance](New-MgUserEventInstance.md)
-Create new navigation property to instances for users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [New-MgUserEventMultiValueExtendedProperty](New-MgUserEventMultiValueExtendedProperty.md)
-Create new navigation property to multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [New-MgUserEventSingleValueExtendedProperty](New-MgUserEventSingleValueExtendedProperty.md)
-Create new navigation property to singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupCalendarMultiValueExtendedProperty](Remove-MgGroupCalendarMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupCalendarPermission](Remove-MgGroupCalendarPermission.md)
-Delete navigation property calendarPermissions for groups
+The permissions of the users with whom the calendar is shared.
 
 ### [Remove-MgGroupCalendarSingleValueExtendedProperty](Remove-MgGroupCalendarSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupEvent](Remove-MgGroupEvent.md)
-Delete navigation property events for groups
+The group's events.
 
 ### [Remove-MgGroupEventAttachment](Remove-MgGroupEventAttachment.md)
-Delete navigation property attachments for groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupEventCalendar](Remove-MgGroupEventCalendar.md)
-Delete navigation property calendar for groups
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Remove-MgGroupEventExtension](Remove-MgGroupEventExtension.md)
-Delete navigation property extensions for groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Remove-MgGroupEventInstance](Remove-MgGroupEventInstance.md)
-Delete navigation property instances for groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupEventMultiValueExtendedProperty](Remove-MgGroupEventMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Remove-MgGroupEventSingleValueExtendedProperty](Remove-MgGroupEventSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Remove-MgPlace](Remove-MgPlace.md)
 Delete entity from places
 
 ### [Remove-MgUserCalendar](Remove-MgUserCalendar.md)
-Delete navigation property calendars for users
+The user's calendars.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserCalendarGroup](Remove-MgUserCalendarGroup.md)
-Delete navigation property calendarGroups for users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserCalendarMultiValueExtendedProperty](Remove-MgUserCalendarMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserCalendarPermission](Remove-MgUserCalendarPermission.md)
-Delete navigation property calendarPermissions for users
+The permissions of the users with whom the calendar is shared.
 
 ### [Remove-MgUserCalendarSingleValueExtendedProperty](Remove-MgUserCalendarSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserEvent](Remove-MgUserEvent.md)
-Delete navigation property events for users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserEventAttachment](Remove-MgUserEventAttachment.md)
-Delete navigation property attachments for users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserEventCalendar](Remove-MgUserEventCalendar.md)
-Delete navigation property calendar for users
+The calendar that contains the event.
+Navigation property.
+Read-only.
 
 ### [Remove-MgUserEventExtension](Remove-MgUserEventExtension.md)
-Delete navigation property extensions for users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Remove-MgUserEventInstance](Remove-MgUserEventInstance.md)
-Delete navigation property instances for users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserEventMultiValueExtendedProperty](Remove-MgUserEventMultiValueExtendedProperty.md)
-Delete navigation property multiValueExtendedProperties for users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Remove-MgUserEventSingleValueExtendedProperty](Remove-MgUserEventSingleValueExtendedProperty.md)
-Delete navigation property singleValueExtendedProperties for users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupCalendarMultiValueExtendedProperty](Update-MgGroupCalendarMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupCalendarPermission](Update-MgGroupCalendarPermission.md)
-Update the navigation property calendarPermissions in groups
+The permissions of the users with whom the calendar is shared.
 
 ### [Update-MgGroupCalendarSingleValueExtendedProperty](Update-MgGroupCalendarSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupEvent](Update-MgGroupEvent.md)
-Update the navigation property events in groups
+The group's events.
 
 ### [Update-MgGroupEventAttachment](Update-MgGroupEventAttachment.md)
-Update the navigation property attachments in groups
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupEventExtension](Update-MgGroupEventExtension.md)
-Update the navigation property extensions in groups
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Update-MgGroupEventInstance](Update-MgGroupEventInstance.md)
-Update the navigation property instances in groups
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupEventMultiValueExtendedProperty](Update-MgGroupEventMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in groups
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Update-MgGroupEventSingleValueExtendedProperty](Update-MgGroupEventSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in groups
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Update-MgPlace](Update-MgPlace.md)
 Update entity in places
 
 ### [Update-MgUserCalendar](Update-MgUserCalendar.md)
-Update the navigation property calendars in users
+The user's calendars.
+Read-only.
+Nullable.
 
 ### [Update-MgUserCalendarGroup](Update-MgUserCalendarGroup.md)
-Update the navigation property calendarGroups in users
+The user's calendar groups.
+Read-only.
+Nullable.
 
 ### [Update-MgUserCalendarMultiValueExtendedProperty](Update-MgUserCalendarMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Update-MgUserCalendarPermission](Update-MgUserCalendarPermission.md)
-Update the navigation property calendarPermissions in users
+The permissions of the users with whom the calendar is shared.
 
 ### [Update-MgUserCalendarSingleValueExtendedProperty](Update-MgUserCalendarSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the calendar.
+Read-only.
+Nullable.
 
 ### [Update-MgUserEvent](Update-MgUserEvent.md)
-Update the navigation property events in users
+The user's events.
+Default is to show events under the Default Calendar.
+Read-only.
+Nullable.
 
 ### [Update-MgUserEventAttachment](Update-MgUserEventAttachment.md)
-Update the navigation property attachments in users
+The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Update-MgUserEventExtension](Update-MgUserEventExtension.md)
-Update the navigation property extensions in users
+The collection of open extensions defined for the event.
+Nullable.
 
 ### [Update-MgUserEventInstance](Update-MgUserEventInstance.md)
-Update the navigation property instances in users
+The occurrences of a recurring series, if the event is a series master.
+This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series.
+Navigation property.
+Read-only.
+Nullable.
 
 ### [Update-MgUserEventMultiValueExtendedProperty](Update-MgUserEventMultiValueExtendedProperty.md)
-Update the navigation property multiValueExtendedProperties in users
+The collection of multi-value extended properties defined for the event.
+Read-only.
+Nullable.
 
 ### [Update-MgUserEventSingleValueExtendedProperty](Update-MgUserEventSingleValueExtendedProperty.md)
-Update the navigation property singleValueExtendedProperties in users
+The collection of single-value extended properties defined for the event.
+Read-only.
+Nullable.
 
