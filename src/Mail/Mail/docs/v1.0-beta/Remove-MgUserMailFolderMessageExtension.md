@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageExtension
 
 ## SYNOPSIS
-Delete navigation property extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Remove-MgUserMailFolderMessageExtension -InputObject <IMailIdentity> [-IfMatch <
 ```
 
 ## DESCRIPTION
-Delete navigation property extensions for users
+The collection of open extensions defined for the message.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -81,7 +65,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
