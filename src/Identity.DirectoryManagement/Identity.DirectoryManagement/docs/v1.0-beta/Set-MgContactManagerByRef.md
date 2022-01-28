@@ -8,56 +8,42 @@ schema: 2.0.0
 # Set-MgContactManagerByRef
 
 ## SYNOPSIS
-Update the ref of navigation property manager in contacts
+The user or contact that is this contact's manager.
+Read-only.
+Supports $expand.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgContactManagerByRef -OrgContactId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Update1
+### Set1
 ```
 Set-MgContactManagerByRef -OrgContactId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### SetViaIdentity1
 ```
 Set-MgContactManagerByRef -InputObject <IIdentityDirectoryManagementIdentity> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### SetViaIdentityExpanded1
 ```
 Set-MgContactManagerByRef -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property manager in contacts
+The user or contact that is this contact's manager.
+Read-only.
+Supports $expand.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -81,7 +67,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -93,11 +79,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +98,7 @@ key: id of orgContact
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -192,8 +178,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
+  - `[AllowedValueId <String>]`: key: id of allowedValue
+  - `[AttributeSetId <String>]`: key: id of attributeSet
   - `[CommandId <String>]`: key: id of command
   - `[ContractId <String>]`: key: id of contract
+  - `[CustomSecurityAttributeDefinitionId <String>]`: key: id of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: key: id of device
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectoryRoleId <String>]`: key: id of directoryRole
@@ -204,11 +193,21 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[DomainId <String>]`: key: id of domain
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
+  - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
+  - `[RecommendationId <String>]`: key: id of recommendation
+  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
