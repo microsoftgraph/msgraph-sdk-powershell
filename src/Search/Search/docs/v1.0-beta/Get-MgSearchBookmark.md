@@ -1,38 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Search
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgexternalconnection
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search/get-mgsearchbookmark
 schema: 2.0.0
 ---
 
-# Get-MgExternalConnection
+# Get-MgSearchBookmark
 
 ## SYNOPSIS
-Get connections from external
+Get bookmarks from search
 
 ## SYNTAX
 
 ### List (Default)
 ```
-Get-MgExternalConnection [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
- [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
- [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get1
-```
-Get-MgExternalConnection -ExternalConnectionId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgSearchBookmark [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>]
+ [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>]
  [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### Get
 ```
-Get-MgExternalConnection -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+Get-MgSearchBookmark -BookmarkId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgSearchBookmark -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get connections from external
+Get bookmarks from search
 
 ## EXAMPLES
 
@@ -47,6 +47,21 @@ Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BookmarkId
+key: id of bookmark
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -84,21 +99,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ExternalConnectionId
-key: id of externalConnection
-
-```yaml
-Type: System.String
-Parameter Sets: Get1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Filter
 Filter items by property values
 
@@ -120,7 +120,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISearchIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphExternalConnectorsExternalConnection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSearchBookmark
 
 ## NOTES
 
