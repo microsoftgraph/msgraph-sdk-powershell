@@ -1,90 +1,58 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Groups
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/remove-mggrouprejectedsender
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups/set-mggroupcreatedonbehalfofbyref
 schema: 2.0.0
 ---
 
-# Remove-MgGroupRejectedSender
+# Set-MgGroupCreatedOnBehalfOfByRef
 
 ## SYNOPSIS
-Delete navigation property rejectedSenders for groups
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
 ## SYNTAX
 
-### Delete (Default)
+### SetExpanded1 (Default)
 ```
-Remove-MgGroupRejectedSender -DirectoryObjectId <String> -GroupId <String> [-IfMatch <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-MgGroupRejectedSender -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Set-MgGroupCreatedOnBehalfOfByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
+### Set1
+```
+Set-MgGroupCreatedOnBehalfOfByRef -GroupId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity1
+```
+Set-MgGroupCreatedOnBehalfOfByRef -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded1
+```
+Set-MgGroupCreatedOnBehalfOfByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Delete navigation property rejectedSenders for groups
+The user (or application) that created the group.
+Note: This is not set if the user is an administrator.
+Read-only.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
-### -DirectoryObjectId
-key: id of directoryObject
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -GroupId
-key: id of group
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IfMatch
-ETag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -94,13 +62,43 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -BodyParameter
+.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Set1, SetViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -GroupId
+key: id of group
+
+```yaml
+Type: System.String
+Parameter Sets: Set1, SetExpanded1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -163,6 +161,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IGroupsIdentity
 
+### System.Collections.Hashtable
+
 ## OUTPUTS
 
 ### System.Boolean
@@ -170,6 +170,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
+
+### Set-MgGroupCreatedOnBehalfByRef
 
 COMPLEX PARAMETER PROPERTIES
 
@@ -180,14 +182,13 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -197,7 +198,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
