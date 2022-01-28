@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserMailFolderMessageRule
 
 ## SYNOPSIS
-Delete navigation property messageRules for users
+The collection of rules that apply to the user's Inbox folder.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgUserMailFolderMessageRule -InputObject <IMailIdentity> [-IfMatch <Strin
 ```
 
 ## DESCRIPTION
-Delete navigation property messageRules for users
+The collection of rules that apply to the user's Inbox folder.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,7 +48,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMailIdentity
