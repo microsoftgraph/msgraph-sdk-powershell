@@ -85,29 +85,11 @@ Update the navigation property companies in financials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -Accounts
 .
-To construct, see NOTES section for ACCOUNTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ACCOUNTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccount[]
@@ -138,7 +120,7 @@ Accept wildcard characters: False
 
 ### -AgedAccountsPayable
 .
-To construct, see NOTES section for AGEDACCOUNTSPAYABLE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for AGEDACCOUNTSPAYABLE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgedAccountsPayable[]
@@ -154,7 +136,7 @@ Accept wildcard characters: False
 
 ### -AgedAccountsReceivable
 .
-To construct, see NOTES section for AGEDACCOUNTSRECEIVABLE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for AGEDACCOUNTSRECEIVABLE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgedAccountsReceivable[]
@@ -170,7 +152,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 company
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompany
@@ -216,7 +198,7 @@ Accept wildcard characters: False
 
 ### -CompanyInformation
 .
-To construct, see NOTES section for COMPANYINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for COMPANYINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCompanyInformation1[]
@@ -232,7 +214,7 @@ Accept wildcard characters: False
 
 ### -CountriesRegions
 .
-To construct, see NOTES section for COUNTRIESREGIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for COUNTRIESREGIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCountryRegion[]
@@ -248,7 +230,7 @@ Accept wildcard characters: False
 
 ### -Currencies
 .
-To construct, see NOTES section for CURRENCIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CURRENCIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency[]
@@ -264,7 +246,7 @@ Accept wildcard characters: False
 
 ### -CustomerPaymentJournals
 .
-To construct, see NOTES section for CUSTOMERPAYMENTJOURNALS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMERPAYMENTJOURNALS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPaymentJournal[]
@@ -280,7 +262,7 @@ Accept wildcard characters: False
 
 ### -CustomerPayments
 .
-To construct, see NOTES section for CUSTOMERPAYMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMERPAYMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomerPayment[]
@@ -296,7 +278,7 @@ Accept wildcard characters: False
 
 ### -Customers
 .
-To construct, see NOTES section for CUSTOMERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer[]
@@ -312,7 +294,7 @@ Accept wildcard characters: False
 
 ### -Dimensions
 .
-To construct, see NOTES section for DIMENSIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DIMENSIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimension[]
@@ -328,7 +310,7 @@ Accept wildcard characters: False
 
 ### -DimensionValues
 .
-To construct, see NOTES section for DIMENSIONVALUES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DIMENSIONVALUES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDimensionValue[]
@@ -359,7 +341,7 @@ Accept wildcard characters: False
 
 ### -Employees
 .
-To construct, see NOTES section for EMPLOYEES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EMPLOYEES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEmployee[]
@@ -375,7 +357,7 @@ Accept wildcard characters: False
 
 ### -GeneralLedgerEntries
 .
-To construct, see NOTES section for GENERALLEDGERENTRIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for GENERALLEDGERENTRIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphGeneralLedgerEntry[]
@@ -406,7 +388,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
@@ -422,7 +404,7 @@ Accept wildcard characters: False
 
 ### -ItemCategories
 .
-To construct, see NOTES section for ITEMCATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ITEMCATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemCategory[]
@@ -438,7 +420,7 @@ Accept wildcard characters: False
 
 ### -Items
 .
-To construct, see NOTES section for ITEMS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ITEMS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItem[]
@@ -454,7 +436,7 @@ Accept wildcard characters: False
 
 ### -JournalLines
 .
-To construct, see NOTES section for JOURNALLINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for JOURNALLINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournalLine[]
@@ -470,7 +452,7 @@ Accept wildcard characters: False
 
 ### -Journals
 .
-To construct, see NOTES section for JOURNALS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for JOURNALS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJournal[]
@@ -516,7 +498,7 @@ Accept wildcard characters: False
 
 ### -PaymentMethods
 .
-To construct, see NOTES section for PAYMENTMETHODS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYMENTMETHODS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentMethod[]
@@ -532,7 +514,7 @@ Accept wildcard characters: False
 
 ### -PaymentTerms
 .
-To construct, see NOTES section for PAYMENTTERMS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERMS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm[]
@@ -548,7 +530,7 @@ Accept wildcard characters: False
 
 ### -Picture
 .
-To construct, see NOTES section for PICTURE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
@@ -564,7 +546,7 @@ Accept wildcard characters: False
 
 ### -PurchaseInvoiceLines
 .
-To construct, see NOTES section for PURCHASEINVOICELINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PURCHASEINVOICELINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine[]
@@ -580,7 +562,7 @@ Accept wildcard characters: False
 
 ### -PurchaseInvoices
 .
-To construct, see NOTES section for PURCHASEINVOICES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PURCHASEINVOICES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoice[]
@@ -596,7 +578,7 @@ Accept wildcard characters: False
 
 ### -SalesCreditMemoLines
 .
-To construct, see NOTES section for SALESCREDITMEMOLINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESCREDITMEMOLINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesCreditMemoLine[]
@@ -612,7 +594,7 @@ Accept wildcard characters: False
 
 ### -SalesCreditMemos
 .
-To construct, see NOTES section for SALESCREDITMEMOS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESCREDITMEMOS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesCreditMemo[]
@@ -628,7 +610,7 @@ Accept wildcard characters: False
 
 ### -SalesInvoiceLines
 .
-To construct, see NOTES section for SALESINVOICELINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESINVOICELINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoiceLine[]
@@ -644,7 +626,7 @@ Accept wildcard characters: False
 
 ### -SalesInvoices
 .
-To construct, see NOTES section for SALESINVOICES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESINVOICES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesInvoice[]
@@ -660,7 +642,7 @@ Accept wildcard characters: False
 
 ### -SalesOrderLines
 .
-To construct, see NOTES section for SALESORDERLINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESORDERLINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesOrderLine[]
@@ -676,7 +658,7 @@ Accept wildcard characters: False
 
 ### -SalesOrders
 .
-To construct, see NOTES section for SALESORDERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESORDERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesOrder[]
@@ -692,7 +674,7 @@ Accept wildcard characters: False
 
 ### -SalesQuoteLines
 .
-To construct, see NOTES section for SALESQUOTELINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESQUOTELINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuoteLine[]
@@ -708,7 +690,7 @@ Accept wildcard characters: False
 
 ### -SalesQuotes
 .
-To construct, see NOTES section for SALESQUOTES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESQUOTES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesQuote[]
@@ -724,7 +706,7 @@ Accept wildcard characters: False
 
 ### -ShipmentMethods
 .
-To construct, see NOTES section for SHIPMENTMETHODS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SHIPMENTMETHODS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod[]
@@ -755,7 +737,7 @@ Accept wildcard characters: False
 
 ### -TaxAreas
 .
-To construct, see NOTES section for TAXAREAS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TAXAREAS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxArea[]
@@ -771,7 +753,7 @@ Accept wildcard characters: False
 
 ### -TaxGroups
 .
-To construct, see NOTES section for TAXGROUPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TAXGROUPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTaxGroup[]
@@ -787,7 +769,7 @@ Accept wildcard characters: False
 
 ### -UnitsOfMeasure
 .
-To construct, see NOTES section for UNITSOFMEASURE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for UNITSOFMEASURE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUnitOfMeasure[]
@@ -803,7 +785,7 @@ Accept wildcard characters: False
 
 ### -Vendors
 .
-To construct, see NOTES section for VENDORS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVendor[]
