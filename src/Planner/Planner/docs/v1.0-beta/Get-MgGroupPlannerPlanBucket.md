@@ -8,51 +8,24 @@ schema: 2.0.0
 # Get-MgGroupPlannerPlanBucket
 
 ## SYNOPSIS
-Get buckets from groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### List1 (Default)
 ```
-Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-Count] [-ExpandProperty <String[]>]
+Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerPlanId <String> [-ExpandProperty <String[]>]
  [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
- [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgGroupPlannerPlanBucket -GroupId <String> -PlannerBucketId <String> -PlannerPlanId <String>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgGroupPlannerPlanBucket -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
- [-Property <String[]>] [<CommonParameters>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get buckets from groups
+Collection of buckets in the plan.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -61,7 +34,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -71,13 +44,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List1
-Aliases:
+Type: System.String
+Parameter Sets: (All)
+Aliases: CV
 
 Required: False
 Position: Named
@@ -106,7 +80,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -121,29 +95,13 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -152,25 +110,10 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PlannerBucketId
-key: id of plannerBucket
-
-```yaml
-Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -182,7 +125,7 @@ key: id of plannerPlan
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List1
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -212,7 +155,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -227,7 +170,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -242,7 +185,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases: OrderBy
 
 Required: False
@@ -257,7 +200,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List1
+Parameter Sets: (All)
 Aliases: Limit
 
 Required: False
@@ -272,8 +215,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlannerBucket1
@@ -281,19 +222,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <IPlannerIdentity>: Identity Parameter
-  - `[GroupId <String>]`: key: id of group
-  - `[PlannerBucketId <String>]`: key: id of plannerBucket
-  - `[PlannerDeltaId <String>]`: key: id of plannerDelta
-  - `[PlannerPlanId <String>]`: key: id of plannerPlan
-  - `[PlannerTaskId <String>]`: key: id of plannerTask
-  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 

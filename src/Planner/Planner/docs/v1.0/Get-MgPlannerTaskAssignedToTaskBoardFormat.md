@@ -8,44 +8,30 @@ schema: 2.0.0
 # Get-MgPlannerTaskAssignedToTaskBoardFormat
 
 ## SYNOPSIS
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgPlannerTaskAssignedToTaskBoardFormat -PlannerTaskId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgPlannerTaskAssignedToTaskBoardFormat -InputObject <IPlannerIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get assignedToTaskBoardFormat from planner
+Read-only.
+Nullable.
+Used to render the task correctly in the task board view when grouped by assignedTo.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,11 +52,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPlannerIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -85,7 +71,7 @@ key: id of plannerTask
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -135,6 +121,8 @@ INPUTOBJECT <IPlannerIdentity>: Identity Parameter
   - `[PlannerBucketId <String>]`: key: id of plannerBucket
   - `[PlannerDeltaId <String>]`: key: id of plannerDelta
   - `[PlannerPlanId <String>]`: key: id of plannerPlan
+  - `[PlannerRosterId <String>]`: key: id of plannerRoster
+  - `[PlannerRosterMemberId <String>]`: key: id of plannerRosterMember
   - `[PlannerTaskId <String>]`: key: id of plannerTask
   - `[UserId <String>]`: key: id of user
 
