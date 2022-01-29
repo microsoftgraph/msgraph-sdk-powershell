@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserSetting
 
 ## SYNOPSIS
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -16,19 +17,19 @@ Update the navigation property settings in users
 ```
 Update-MgUserSetting -UserId <String> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### Update1
 ```
-Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru] [-Confirm]
+Update-MgUserSetting -UserId <String> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
-Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings> [-PassThru]
+Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGraphUserSettings1> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,32 +37,15 @@ Update-MgUserSetting -InputObject <IUsersIdentity> -BodyParameter <IMicrosoftGra
 ```
 Update-MgUserSetting -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
  [-ContributionToContentDiscoveryAsOrganizationDisabled] [-ContributionToContentDiscoveryDisabled]
- [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences>] [-PassThru] [-Confirm] [-WhatIf]
+ [-Id <String>] [-ShiftPreferences <IMicrosoftGraphShiftPreferences1>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property settings in users
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -82,10 +66,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 userSettings
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -97,7 +81,9 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryAsOrganizationDisabled
-.
+Reflects the Office Delve organization level setting.
+When set to true, the organization doesn't have access to Office Delve.
+This setting is read-only and can only be changed by administrators in the SharePoint admin center.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -112,7 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### -ContributionToContentDiscoveryDisabled
-.
+When set to true, documents in the user's Office Delve are disabled.
+Users can control this setting in Office Delve.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,7 +130,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
@@ -174,10 +161,10 @@ Accept wildcard characters: False
 
 ### -ShiftPreferences
 shiftPreferences
-To construct, see NOTES section for SHIFTPREFERENCES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SHIFTPREFERENCES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShiftPreferences1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -239,7 +226,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSettings1
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
@@ -256,23 +243,23 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
+BODYPARAMETER <IMicrosoftGraphUserSettings1>: userSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: 
-  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: 
-  - `[ShiftPreferences <IMicrosoftGraphShiftPreferences>]`: shiftPreferences
+  - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
+  - `[ContributionToContentDiscoveryDisabled <Boolean?>]`: When set to true, documents in the user's Office Delve are disabled. Users can control this setting in Office Delve.
+  - `[ShiftPreferences <IMicrosoftGraphShiftPreferences1>]`: shiftPreferences
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-        - `[Id <String>]`: Unique identifier for the identity.
+        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+        - `[Id <String>]`: The identifier of the identity. This property is read-only.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+    - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
     - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
       - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
@@ -300,32 +287,33 @@ BODYPARAMETER <IMicrosoftGraphUserSettings>: userSettings
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[ExtensionId <String>]`: key: id of extension
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
+  - `[LinkedResourceId <String>]`: key: id of linkedResource
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotificationId <String>]`: key: id of notification
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OutlookCategoryId <String>]`: key: id of outlookCategory
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
+  - `[TodoTaskId <String>]`: key: id of todoTask
+  - `[TodoTaskListId <String>]`: key: id of todoTaskList
   - `[UserId <String>]`: key: id of user
 
-SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences>: shiftPreferences
+SHIFTPREFERENCES <IMicrosoftGraphShiftPreferences1>: shiftPreferences
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+  - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
   - `[Availability <IMicrosoftGraphShiftAvailability[]>]`: Availability of the user to be scheduled for work and its recurrence pattern.
     - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
