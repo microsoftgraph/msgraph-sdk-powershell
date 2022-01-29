@@ -8,7 +8,8 @@ schema: 2.0.0
 # New-MgEducationMeClassByRef
 
 ## SYNOPSIS
-Create new navigation property ref to classes for education
+Classes to which the user belongs.
+Nullable.
 
 ## SYNTAX
 
@@ -23,27 +24,10 @@ New-MgEducationMeClassByRef -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<Co
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to classes for education
+Classes to which the user belongs.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
