@@ -14,12 +14,13 @@ Invoke function getSharePointActivityPages
 
 ### Get1 (Default)
 ```
-Get-MgReportSharePointActivityPage -Period <String> [<CommonParameters>]
+Get-MgReportSharePointActivityPage -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgReportSharePointActivityPage -InputObject <IReportsIdentity> [<CommonParameters>]
+Get-MgReportSharePointActivityPage -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,29 +28,11 @@ Invoke function getSharePointActivityPages
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
@@ -63,8 +46,38 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Period
-.
+Usage: period={period}
 
 ```yaml
 Type: System.String
@@ -87,7 +100,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSharePointActivityPages
+### System.Boolean
 
 ## NOTES
 
@@ -101,19 +114,29 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IReportsIdentity>: Identity Parameter
   - `[ApplicationSignInDetailedSummaryId <String>]`: key: id of applicationSignInDetailedSummary
   - `[CredentialUserRegistrationDetailsId <String>]`: key: id of credentialUserRegistrationDetails
-  - `[Date <DateTime?>]`: 
+  - `[Date <DateTime?>]`: Usage: date={date}
+  - `[DeviceManagementCachedReportConfigurationId <String>]`: key: id of deviceManagementCachedReportConfiguration
+  - `[DeviceManagementExportJobId <String>]`: key: id of deviceManagementExportJob
   - `[DirectoryAuditId <String>]`: key: id of directoryAudit
-  - `[Filter <String>]`: 
-  - `[Period <String>]`: 
-  - `[PrintUsageSummaryByPrinterId <String>]`: key: id of PrintUsageSummaryByPrinter
-  - `[PrintUsageSummaryByUserId <String>]`: key: id of PrintUsageSummaryByUser
+  - `[EndDateTime <DateTime?>]`: Usage: endDateTime={endDateTime}
+  - `[Filter <String>]`: Usage: filter={filter}
+  - `[GroupId <String>]`: Usage: groupId={groupId}
+  - `[IncludedUserRoles <String>]`: Usage: includedUserRoles={includedUserRoles}
+  - `[IncludedUserTypes <String>]`: Usage: includedUserTypes={includedUserTypes}
+  - `[Period <String>]`: Usage: period={period}
+  - `[PrintUsageByPrinterId <String>]`: key: id of printUsageByPrinter
+  - `[PrintUsageByUserId <String>]`: key: id of printUsageByUser
+  - `[PrinterId <String>]`: Usage: printerId={printerId}
   - `[ProvisioningObjectSummaryId <String>]`: key: id of provisioningObjectSummary
   - `[RestrictedSignInId <String>]`: key: id of restrictedSignIn
   - `[SignInId <String>]`: key: id of signIn
-  - `[Skip <Int32?>]`: 
-  - `[SkipToken <String>]`: 
-  - `[Top <Int32?>]`: 
+  - `[Skip <Int32?>]`: Usage: skip={skip}
+  - `[SkipToken <String>]`: Usage: skipToken={skipToken}
+  - `[StartDateTime <DateTime?>]`: Usage: startDateTime={startDateTime}
+  - `[Top <Int32?>]`: Usage: top={top}
   - `[UserCredentialUsageDetailsId <String>]`: key: id of userCredentialUsageDetails
+  - `[UserId <String>]`: Usage: userId={userId}
+  - `[UserRegistrationDetailsId <String>]`: key: id of userRegistrationDetails
 
 ## RELATED LINKS
 
