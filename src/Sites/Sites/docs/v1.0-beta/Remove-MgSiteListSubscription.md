@@ -8,44 +8,26 @@ schema: 2.0.0
 # Remove-MgSiteListSubscription
 
 ## SYNOPSIS
-Delete navigation property subscriptions for sites
+The set of subscriptions on the list.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgSiteListSubscription -ListId <String> -SiteId <String> -SubscriptionId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgSiteListSubscription -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property subscriptions for sites
+The set of subscriptions on the list.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,11 +48,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -85,7 +67,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -115,7 +97,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -130,7 +112,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -196,22 +178,31 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
   - `[DriveId <String>]`: key: id of drive
-  - `[EndDateTime <String>]`: 
+  - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
-  - `[Interval <String>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
+  - `[Interval <String>]`: Usage: interval={interval}
   - `[ListId <String>]`: key: id of list
+  - `[ListId1 <String>]`: Usage: listId={listId}
   - `[ListItemId <String>]`: key: id of listItem
   - `[ListItemVersionId <String>]`: key: id of listItemVersion
   - `[NotebookId <String>]`: key: id of notebook
   - `[OnenotePageId <String>]`: key: id of onenotePage
   - `[OnenoteSectionId <String>]`: key: id of onenoteSection
-  - `[Path <String>]`: 
+  - `[Path <String>]`: Usage: path={path}
+  - `[PermissionId <String>]`: key: id of permission
+  - `[RelationId <String>]`: key: id of relation
+  - `[RichLongRunningOperationId <String>]`: key: id of richLongRunningOperation
+  - `[SetId <String>]`: key: id of set
+  - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
   - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
-  - `[StartDateTime <String>]`: 
+  - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
+  - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[TermId <String>]`: key: id of term
+  - `[TermId1 <String>]`: key: id of term
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
