@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppPolicy
 
 ## SYNOPSIS
-Create new navigation property to managedAppPolicies for deviceAppManagement
+Managed app policies.
 
 ## SYNTAX
 
@@ -21,32 +21,14 @@ New-MgDeviceAppMgtManagedAppPolicy [-AdditionalProperties <Hashtable>] [-Created
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy> [-Confirm] [-WhatIf]
+New-MgDeviceAppMgtManagedAppPolicy -BodyParameter <IMicrosoftGraphManagedAppPolicy1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedAppPolicies for deviceAppManagement
+Managed app policies.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -67,10 +49,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 The ManagedAppPolicy resource represents a base type for platform specific policies.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 Parameter Sets: Create
 Aliases:
 
@@ -207,11 +189,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1
 
 ## NOTES
 
@@ -224,7 +206,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphManagedAppPolicy>: The ManagedAppPolicy resource represents a base type for platform specific policies.
+BODYPARAMETER <IMicrosoftGraphManagedAppPolicy1>: The ManagedAppPolicy resource represents a base type for platform specific policies.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.

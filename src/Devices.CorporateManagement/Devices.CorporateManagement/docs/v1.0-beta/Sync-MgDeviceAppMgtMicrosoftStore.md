@@ -8,7 +8,7 @@ schema: 2.0.0
 # Sync-MgDeviceAppMgtMicrosoftStore
 
 ## SYNOPSIS
-Invoke action syncMicrosoftStoreForBusinessApps
+Syncs Intune account with Microsoft Store For Business
 
 ## SYNTAX
 
@@ -17,27 +17,9 @@ Sync-MgDeviceAppMgtMicrosoftStore [-PassThru] [-Confirm] [-WhatIf] [<CommonParam
 ```
 
 ## DESCRIPTION
-Invoke action syncMicrosoftStoreForBusinessApps
+Syncs Intune account with Microsoft Store For Business
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
