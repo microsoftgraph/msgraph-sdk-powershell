@@ -12,12 +12,12 @@ Invoke action revokeSignInSessions
 
 ## SYNTAX
 
-### Revoke1 (Default)
+### Revoke (Default)
 ```
 Revoke-MgUserSign -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RevokeViaIdentity1
+### RevokeViaIdentity
 ```
 Revoke-MgUserSign -InputObject <IUsersActionsIdentity> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -27,33 +27,15 @@ Invoke action revokeSignInSessions
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RevokeViaIdentity1
+Parameter Sets: RevokeViaIdentity
 Aliases:
 
 Required: True
@@ -68,7 +50,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Revoke1
+Parameter Sets: Revoke
 Aliases:
 
 Required: True
@@ -130,9 +112,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
@@ -149,8 +134,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

@@ -8,53 +8,35 @@ schema: 2.0.0
 # Remove-MgUserDeviceFromManagement
 
 ## SYNOPSIS
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## SYNTAX
 
-### Remove1 (Default)
+### Remove (Default)
 ```
 Remove-MgUserDeviceFromManagement -UserId <String> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### RemoveViaIdentity1
+### RemoveViaIdentity
 ```
 Remove-MgUserDeviceFromManagement -InputObject <IUsersActionsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: RemoveViaIdentity1
+Parameter Sets: RemoveViaIdentity
 Aliases:
 
 Required: True
@@ -84,7 +66,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Remove1
+Parameter Sets: Remove
 Aliases:
 
 Required: True
@@ -146,9 +128,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
@@ -165,8 +150,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 

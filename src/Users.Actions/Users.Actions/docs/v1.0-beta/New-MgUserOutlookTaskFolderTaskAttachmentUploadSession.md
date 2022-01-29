@@ -46,24 +46,6 @@ Invoke action createUploadSession
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 
 ### -AttachmentItem
 attachmentItem
-To construct, see NOTES section for ATTACHMENTITEM properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTITEM properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentItem
@@ -99,7 +81,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasksOutlooktaskIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
@@ -230,6 +212,7 @@ To create the parameters described below, construct a hash table containing the 
 ATTACHMENTITEM <IMicrosoftGraphAttachmentItem>: attachmentItem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AttachmentType <String>]`: attachmentType
+  - `[ContentId <String>]`: The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
   - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
   - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false. Optional.
   - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
@@ -240,15 +223,19 @@ BODYPARAMETER <IPaths93Ov0OUsersUserIdOutlookTaskfoldersOutlooktaskfolderIdTasks
   - `[AttachmentItem <IMicrosoftGraphAttachmentItem>]`: attachmentItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AttachmentType <String>]`: attachmentType
+    - `[ContentId <String>]`: The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
     - `[ContentType <String>]`: The nature of the data in the attachment. Optional.
     - `[IsInline <Boolean?>]`: true if the attachment is an inline attachment; otherwise, false. Optional.
     - `[Name <String>]`: The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
     - `[Size <Int64?>]`: The length of the attachment in bytes. Required.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
+  - `[BaseTaskId <String>]`: key: id of baseTask
+  - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
@@ -265,8 +252,10 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[OutlookTaskFolderId <String>]`: key: id of outlookTaskFolder
   - `[OutlookTaskGroupId <String>]`: key: id of outlookTaskGroup
   - `[OutlookTaskId <String>]`: key: id of outlookTask
+  - `[SharedInsightId <String>]`: key: id of sharedInsight
+  - `[TrendingId <String>]`: key: id of trending
+  - `[UsedInsightId <String>]`: key: id of usedInsight
   - `[UserId <String>]`: key: id of user
-  - `[WindowsInformationProtectionDeviceRegistrationId <String>]`: key: id of windowsInformationProtectionDeviceRegistration
 
 ## RELATED LINKS
 
