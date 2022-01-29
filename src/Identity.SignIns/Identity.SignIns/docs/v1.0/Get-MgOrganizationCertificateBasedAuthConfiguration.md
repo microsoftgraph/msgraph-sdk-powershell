@@ -8,51 +8,22 @@ schema: 2.0.0
 # Get-MgOrganizationCertificateBasedAuthConfiguration
 
 ## SYNOPSIS
-Get certificateBasedAuthConfiguration from organization
+Navigation property to manage certificate-based authentication configuration.
+Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 
 ## SYNTAX
 
-### List (Default)
 ```
-Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId <String> [-Count]
- [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
-```
-
-### Get
-```
-Get-MgOrganizationCertificateBasedAuthConfiguration -CertificateBasedAuthConfigurationId <String>
- -OrganizationId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
-```
-
-### GetViaIdentity
-```
-Get-MgOrganizationCertificateBasedAuthConfiguration -InputObject <IIdentitySignInsIdentity>
- [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgOrganizationCertificateBasedAuthConfiguration -OrganizationId <String> [-ExpandProperty <String[]>]
+ [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get certificateBasedAuthConfiguration from organization
+Navigation property to manage certificate-based authentication configuration.
+Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -61,7 +32,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -71,28 +42,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CertificateBasedAuthConfigurationId
-key: id of certificateBasedAuthConfiguration
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Count
-Include count of items
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
+Parameter Sets: (All)
+Aliases: CV
 
 Required: False
 Position: Named
@@ -121,7 +78,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -131,28 +88,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-Parameter Sets: GetViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -OrganizationId
 key: id of organization
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -167,7 +108,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -197,7 +138,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -212,7 +153,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -227,7 +168,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases: OrderBy
 
 Required: False
@@ -242,7 +183,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: (All)
 Aliases: Limit
 
 Required: False
@@ -257,8 +198,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IIdentitySignInsIdentity
-
 ## OUTPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCertificateBasedAuthConfiguration
@@ -266,53 +205,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
-  - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
-  - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
-  - `[AuthorizationPolicyId <String>]`: key: id of authorizationPolicy
-  - `[CertificateBasedAuthConfigurationId <String>]`: key: id of certificateBasedAuthConfiguration
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
-  - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
-  - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
-  - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
-  - `[EmailAuthenticationMethodId <String>]`: key: id of emailAuthenticationMethod
-  - `[Fido2AuthenticationMethodId <String>]`: key: id of fido2AuthenticationMethod
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
-  - `[IdentityProviderId <String>]`: key: id of identityProvider
-  - `[IdentityUserFlowId <String>]`: key: id of identityUserFlow
-  - `[InformationProtectionLabelId <String>]`: key: id of informationProtectionLabel
-  - `[InvitationId <String>]`: key: id of invitation
-  - `[LongRunningOperationId <String>]`: key: id of longRunningOperation
-  - `[MicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of microsoftAuthenticatorAuthenticationMethod
-  - `[NamedLocationId <String>]`: key: id of namedLocation
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
-  - `[OrganizationId <String>]`: key: id of organization
-  - `[PasswordAuthenticationMethodId <String>]`: key: id of passwordAuthenticationMethod
-  - `[PasswordlessMicrosoftAuthenticatorAuthenticationMethodId <String>]`: key: id of passwordlessMicrosoftAuthenticatorAuthenticationMethod
-  - `[PermissionGrantConditionSetId <String>]`: key: id of permissionGrantConditionSet
-  - `[PermissionGrantPolicyId <String>]`: key: id of permissionGrantPolicy
-  - `[PhoneAuthenticationMethodId <String>]`: key: id of phoneAuthenticationMethod
-  - `[RiskDetectionId <String>]`: key: id of riskDetection
-  - `[RiskyUserHistoryItemId <String>]`: key: id of riskyUserHistoryItem
-  - `[RiskyUserId <String>]`: key: id of riskyUser
-  - `[SecurityQuestionAuthenticationMethodId <String>]`: key: id of securityQuestionAuthenticationMethod
-  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
-  - `[SensitivityLabelId1 <String>]`: key: id of sensitivityLabel
-  - `[SoftwareOathAuthenticationMethodId <String>]`: key: id of softwareOathAuthenticationMethod
-  - `[TemporaryAccessPassAuthenticationMethodId <String>]`: key: id of temporaryAccessPassAuthenticationMethod
-  - `[ThreatAssessmentRequestId <String>]`: key: id of threatAssessmentRequest
-  - `[ThreatAssessmentResultId <String>]`: key: id of threatAssessmentResult
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
-  - `[TrustFrameworkKeySetId <String>]`: key: id of trustFrameworkKeySet
-  - `[TrustFrameworkPolicyId <String>]`: key: id of trustFrameworkPolicy
-  - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
 
