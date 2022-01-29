@@ -63,24 +63,6 @@ Update the navigation property purchaseInvoices in financials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 purchaseInvoice
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoice
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 
 ### -BuyFromAddress
 postalAddressType
-To construct, see NOTES section for BUYFROMADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BUYFROMADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -147,7 +129,7 @@ Accept wildcard characters: False
 
 ### -Currency
 currency
-To construct, see NOTES section for CURRENCY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
@@ -253,7 +235,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
@@ -329,7 +311,7 @@ Accept wildcard characters: False
 
 ### -PayToAddress
 postalAddressType
-To construct, see NOTES section for PAYTOADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYTOADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -435,7 +417,7 @@ Accept wildcard characters: False
 
 ### -PurchaseInvoiceLines
 .
-To construct, see NOTES section for PURCHASEINVOICELINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PURCHASEINVOICELINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPurchaseInvoiceLine[]
@@ -451,7 +433,7 @@ Accept wildcard characters: False
 
 ### -ShipToAddress
 postalAddressType
-To construct, see NOTES section for SHIPTOADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SHIPTOADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -557,7 +539,7 @@ Accept wildcard characters: False
 
 ### -Vendor
 vendor
-To construct, see NOTES section for VENDOR properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDOR properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVendor
