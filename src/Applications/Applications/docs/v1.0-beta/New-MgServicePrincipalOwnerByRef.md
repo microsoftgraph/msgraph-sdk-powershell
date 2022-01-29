@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-MgServicePrincipalOwnerByRef
 
 ## SYNOPSIS
-Create new navigation property ref to owners for servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## SYNTAX
 
@@ -37,27 +41,25 @@ New-MgServicePrincipalOwnerByRef -InputObject <IApplicationsIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to owners for servicePrincipals
+Directory objects that are owners of this servicePrincipal.
+The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object.
+Read-only.
+Nullable.
+Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Add an owner for a service principal
 ```powershell
-PS C:\> {{ Add code here }}
+$newOwner = @{
+  "@odata.id"= "https://graph.microsoft.com/v1.0/directoryObjects/8a7c50d3-fcbd-4727-a889-8ab232dfea01"
+  }
 
-{{ Add output here }}
+New-MgServicePrincipalOwnerByRef -ServicePrincipalId '1c48f923-4fbb-4d37-b772-4d577eefec9e' -BodyParameter $newOwner
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+In this example, the first command defines the value for the `$newOwner` variable in a hashtable.
+The second command adds the new owner to the specified service principal.
 
 ## PARAMETERS
 
@@ -93,7 +95,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
@@ -179,17 +181,15 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -200,8 +200,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
