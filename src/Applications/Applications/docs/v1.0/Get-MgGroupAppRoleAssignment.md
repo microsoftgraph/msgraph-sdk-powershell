@@ -8,15 +8,16 @@ schema: 2.0.0
 # Get-MgGroupAppRoleAssignment
 
 ## SYNOPSIS
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
+Supports $expand.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgGroupAppRoleAssignment -GroupId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgGroupAppRoleAssignment -GroupId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
@@ -32,27 +33,29 @@ Get-MgGroupAppRoleAssignment -InputObject <IApplicationsIdentity> [-ExpandProper
 ```
 
 ## DESCRIPTION
-Get appRoleAssignments from groups
+Represents the app roles a group has been granted for an application.
+Supports $expand.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get appRoleAssignments granted to a group
 ```powershell
-PS C:\> {{ Add code here }}
+Get-MgGroupAppRoleAssignment -GroupId '2692d278-8323-4094-b286-e0ffce5e54a5' |
+  Format-List
 
-{{ Add output here }}
+AppRoleId            : 00000000-0000-0000-0000-000000000000
+CreatedDateTime      : 7/29/2021 10:08:49 AM
+DeletedDateTime      :
+Id                   : eNKSJiODlECyhuD_zl5UpexaKrcAYuZEhjCKxfNmzDM
+PrincipalDisplayName : Marketing
+PrincipalId          : 2692d278-8323-4094-b286-e0ffce5e54a5
+PrincipalType        : Group
+ResourceDisplayName  : Common Data Service
+ResourceId           : 93af1c70-e87f-45df-8780-8af2d7afd05e
+AdditionalProperties : {}
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example get all app role assignments granted to the specified group.
 
 ## PARAMETERS
 
@@ -86,13 +89,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named
@@ -148,7 +152,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
@@ -276,17 +280,15 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment
   - `[ApplicationId <String>]`: key: id of application
   - `[ApplicationTemplateId <String>]`: key: id of applicationTemplate
-  - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConnectorGroupId <String>]`: key: id of connectorGroup
   - `[ConnectorId <String>]`: key: id of connector
+  - `[DelegatedPermissionClassificationId <String>]`: key: id of delegatedPermissionClassification
   - `[DirectoryDefinitionId <String>]`: key: id of directoryDefinition
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[EndpointId <String>]`: key: id of endpoint
   - `[ExtensionPropertyId <String>]`: key: id of extensionProperty
+  - `[FederatedIdentityCredentialId <String>]`: key: id of federatedIdentityCredential
   - `[GroupId <String>]`: key: id of group
-  - `[HomeRealmDiscoveryPolicyId <String>]`: key: id of homeRealmDiscoveryPolicy
   - `[LicenseDetailsId <String>]`: key: id of licenseDetails
-  - `[OAuth2PermissionGrantId <String>]`: key: id of oAuth2PermissionGrant
   - `[OnPremisesAgentGroupId <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentGroupId1 <String>]`: key: id of onPremisesAgentGroup
   - `[OnPremisesAgentId <String>]`: key: id of onPremisesAgent
@@ -297,8 +299,6 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[ServicePrincipalId <String>]`: key: id of servicePrincipal
   - `[SynchronizationJobId <String>]`: key: id of synchronizationJob
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
-  - `[TokenIssuancePolicyId <String>]`: key: id of tokenIssuancePolicy
-  - `[TokenLifetimePolicyId <String>]`: key: id of tokenLifetimePolicy
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

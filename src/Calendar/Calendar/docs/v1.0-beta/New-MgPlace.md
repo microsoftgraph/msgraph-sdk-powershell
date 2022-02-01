@@ -29,24 +29,6 @@ Add new entity to places
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -66,7 +48,7 @@ Accept wildcard characters: False
 
 ### -Address
 physicalAddress
-To construct, see NOTES section for ADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 place
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPlace1
@@ -113,7 +95,7 @@ Accept wildcard characters: False
 
 ### -GeoCoordinates
 outlookGeoCoordinates
-To construct, see NOTES section for GEOCOORDINATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for GEOCOORDINATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOutlookGeoCoordinates
@@ -212,7 +194,7 @@ ADDRESS <IMicrosoftGraphPhysicalAddress1>: physicalAddress
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-  - `[PostOfficeBox <String>]`: 
+  - `[PostOfficeBox <String>]`: The post office box number.
   - `[PostalCode <String>]`: The postal code.
   - `[State <String>]`: The state.
   - `[Street <String>]`: The street.
@@ -225,7 +207,7 @@ BODYPARAMETER <IMicrosoftGraphPlace1>: place
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
-    - `[PostOfficeBox <String>]`: 
+    - `[PostOfficeBox <String>]`: The post office box number.
     - `[PostalCode <String>]`: The postal code.
     - `[State <String>]`: The state.
     - `[Street <String>]`: The street.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceAppMgtWindowManagementAppByRef
 
 ## SYNOPSIS
-Get ref of windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## SYNTAX
 
@@ -17,27 +17,9 @@ Get-MgDeviceAppMgtWindowManagementAppByRef [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of windowsManagementApp from deviceAppManagement
+Windows management app.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -54,7 +36,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ALIASES
 
-### Get-MgDeviceAppManagementRefWindowManagementApp
+### Get-MgDeviceAppManagementGraphRefWindowManagementApp
 
 ## RELATED LINKS
 

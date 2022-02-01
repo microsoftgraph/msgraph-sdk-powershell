@@ -8,14 +8,14 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtManagedEBook
 
 ## SYNOPSIS
-Update the navigation property managedEBooks in deviceAppManagement
+The Managed eBook.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]
+ [-Assignments <IMicrosoftGraphManagedEBookAssignment[]>]
  [-Categories <IMicrosoftGraphManagedEBookCategory[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-DisplayName <String>] [-Id <String>]
  [-InformationUrl <String>] [-InstallSummary <IMicrosoftGraphEBookInstallSummary>]
@@ -27,20 +27,20 @@ Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> [-AdditionalPropertie
 
 ### Update
 ```
-Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> -BodyParameter <IMicrosoftGraphManagedEBook1>
+Update-MgDeviceAppMgtManagedEBook -ManagedEBookId <String> -BodyParameter <IMicrosoftGraphManagedEBook>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedEBook1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedEBook> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]
+ [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphManagedEBookAssignment[]>]
  [-Categories <IMicrosoftGraphManagedEBookCategory[]>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-DisplayName <String>] [-Id <String>]
  [-InformationUrl <String>] [-InstallSummary <IMicrosoftGraphEBookInstallSummary>]
@@ -51,27 +51,9 @@ Update-MgDeviceAppMgtManagedEBook -InputObject <IDevicesCorporateManagementIdent
 ```
 
 ## DESCRIPTION
-Update the navigation property managedEBooks in deviceAppManagement
+The Managed eBook.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -92,10 +74,10 @@ Accept wildcard characters: False
 
 ### -Assignments
 The list of assignments for this eBook.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -108,10 +90,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class containing the base properties for Managed eBook.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -124,7 +106,7 @@ Accept wildcard characters: False
 
 ### -Categories
 The list of categories for this eBook.
-To construct, see NOTES section for CATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookCategory[]
@@ -170,7 +152,7 @@ Accept wildcard characters: False
 
 ### -DeviceStates
 The list of installation states for this eBook.
-To construct, see NOTES section for DEVICESTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
@@ -231,7 +213,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -247,7 +229,7 @@ Accept wildcard characters: False
 
 ### -InstallSummary
 Contains properties for the installation summary of a book for a device.
-To construct, see NOTES section for INSTALLSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
@@ -263,7 +245,7 @@ Accept wildcard characters: False
 
 ### -LargeCover
 Contains properties for a generic mime content.
-To construct, see NOTES section for LARGECOVER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LARGECOVER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
@@ -369,7 +351,7 @@ Accept wildcard characters: False
 
 ### -UserStateSummary
 The list of installation states for this eBook.
-To construct, see NOTES section for USERSTATESUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATESUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary[]
@@ -421,7 +403,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
 
 ## OUTPUTS
 
@@ -438,24 +420,24 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment1[]>: The list of assignments for this eBook.
+ASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment[]>: The list of assignments for this eBook.
   - `[Id <String>]`: Read-only.
-  - `[InstallIntent <String>]`: installIntent
+  - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
 
-BODYPARAMETER <IMicrosoftGraphManagedEBook1>: An abstract class containing the base properties for Managed eBook.
+BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the base properties for Managed eBook.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]`: The list of assignments for this eBook.
+  - `[Assignments <IMicrosoftGraphManagedEBookAssignment[]>]`: The list of assignments for this eBook.
     - `[Id <String>]`: Read-only.
-    - `[InstallIntent <String>]`: installIntent
+    - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
   - `[Categories <IMicrosoftGraphManagedEBookCategory[]>]`: The list of categories for this eBook.
     - `[Id <String>]`: Read-only.
     - `[DisplayName <String>]`: The name of the eBook category.
@@ -467,7 +449,7 @@ BODYPARAMETER <IMicrosoftGraphManagedEBook1>: An abstract class containing the b
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: installState
+    - `[InstallState <String>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.
@@ -509,7 +491,7 @@ DEVICESTATES <IMicrosoftGraphDeviceInstallState[]>: The list of installation sta
   - `[DeviceId <String>]`: Device Id.
   - `[DeviceName <String>]`: Device name.
   - `[ErrorCode <String>]`: The error code for install failures.
-  - `[InstallState <String>]`: installState
+  - `[InstallState <String>]`: Possible values for install state.
   - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
   - `[OSDescription <String>]`: OS Description.
   - `[OSVersion <String>]`: OS Version.
@@ -518,15 +500,15 @@ DEVICESTATES <IMicrosoftGraphDeviceInstallState[]>: The list of installation sta
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -566,14 +548,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -605,7 +586,7 @@ USERSTATESUMMARY <IMicrosoftGraphUserInstallStateSummary[]>: The list of install
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: installState
+    - `[InstallState <String>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.

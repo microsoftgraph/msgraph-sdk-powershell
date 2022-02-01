@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgUserContactFolderContactPhoto
 
 ## SYNOPSIS
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## SYNTAX
 
@@ -39,27 +40,10 @@ Update-MgUserContactFolderContactPhoto -InputObject <IPersonalContactsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property photo in users
+Optional contact picture.
+You can get or set a photo for a contact.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -80,7 +64,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 profilePhoto
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProfilePhoto
@@ -157,7 +141,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPersonalContactsIdentity

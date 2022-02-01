@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecuritySecureScore
 
 ## SYNOPSIS
-Create new navigation property to secureScores for Security
+Create new navigation property to secureScores for security
 
 ## SYNTAX
 
@@ -28,27 +28,9 @@ New-MgSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create new navigation property to secureScores for Security
+Create new navigation property to secureScores for security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -84,7 +66,7 @@ Accept wildcard characters: False
 
 ### -AverageComparativeScores
 Average score by different scopes (for example, average by industry, average by seating) and control category (Identity, Data, Device, Apps, Infrastructure) within the scope.
-To construct, see NOTES section for AVERAGECOMPARATIVESCORES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for AVERAGECOMPARATIVESCORES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
@@ -115,7 +97,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 secureScore
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 
 ### -ControlScores
 Contains tenant scores for a set of controls.
-To construct, see NOTES section for CONTROLSCORES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CONTROLSCORES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphControlScore[]
@@ -237,7 +219,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation

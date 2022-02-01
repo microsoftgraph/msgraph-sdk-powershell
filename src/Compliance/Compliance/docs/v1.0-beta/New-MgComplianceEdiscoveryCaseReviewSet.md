@@ -8,58 +8,46 @@ schema: 2.0.0
 # New-MgComplianceEdiscoveryCaseReviewSet
 
 ## SYNOPSIS
-Create new navigation property to reviewSets for compliance
+Returns a list of reviewSet objects in the case.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-Queries <IMicrosoftGraphReviewSetQuery[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> [-AdditionalProperties <Hashtable>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
+ [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgComplianceEdiscoveryCaseReviewSet -EdiscoveryCaseId <String> -BodyParameter <IMicrosoftGraphReviewSet>
+New-MgComplianceEdiscoveryCaseReviewSet -CaseId <String> -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentity
 ```
 New-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity>
- -BodyParameter <IMicrosoftGraphReviewSet> [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphEdiscoveryReviewSet> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
 ```
 New-MgComplianceEdiscoveryCaseReviewSet -InputObject <IComplianceIdentity> [-AdditionalProperties <Hashtable>]
- [-CreatedBy <String>] [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-Id <String>]
- [-Queries <IMicrosoftGraphReviewSetQuery[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CreatedBy <IMicrosoftGraphIdentitySet>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
+ [-Id <String>] [-Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to reviewSets for compliance
+Returns a list of reviewSet objects in the case.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -80,10 +68,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 reviewSet
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReviewSet
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
@@ -94,11 +82,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -CreatedBy
-.
+### -CaseId
+key: id of case
 
 ```yaml
 Type: System.String
+Parameter Sets: Create, CreateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CreatedBy
+identitySet
+To construct, please use Get-Help -Online and see NOTES section for CREATEDBY properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySet
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -110,7 +114,10 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The datetime when the review set was created.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -125,7 +132,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The review set name.
+The name is unique with a maximum limit of 64 characters.
 
 ```yaml
 Type: System.String
@@ -133,21 +141,6 @@ Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -EdiscoveryCaseId
-key: id of ediscoveryCase
-
-```yaml
-Type: System.String
-Parameter Sets: Create, CreateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -171,7 +164,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IComplianceIdentity
@@ -186,11 +179,12 @@ Accept wildcard characters: False
 ```
 
 ### -Queries
-.
-To construct, see NOTES section for QUERIES properties and create a hash table.
+Read-only.
+Nullable.
+To construct, please use Get-Help -Online and see NOTES section for QUERIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReviewSetQuery[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSetQuery[]
 Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
@@ -239,11 +233,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IComplianceIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReviewSet
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphReviewSet
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEdiscoveryReviewSet
 
 ## NOTES
 
@@ -254,34 +248,67 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphReviewSet>: reviewSet
+BODYPARAMETER <IMicrosoftGraphEdiscoveryReviewSet>: reviewSet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CreatedBy <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[Queries <IMicrosoftGraphReviewSetQuery[]>]`: 
+  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Application <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[Device <IMicrosoftGraphIdentity>]`: identity
+    - `[User <IMicrosoftGraphIdentity>]`: identity
+  - `[CreatedDateTime <DateTime?>]`: The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[DisplayName <String>]`: The review set name. The name is unique with a maximum limit of 64 characters.
+  - `[Queries <IMicrosoftGraphEdiscoveryReviewSetQuery[]>]`: Read-only. Nullable.
     - `[Id <String>]`: Read-only.
-    - `[CreatedBy <String>]`: 
-    - `[CreatedDateTime <DateTime?>]`: 
-    - `[DisplayName <String>]`: 
-    - `[LastModifiedBy <String>]`: 
-    - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[Query <String>]`: 
+    - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[CreatedDateTime <DateTime?>]`: The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DisplayName <String>]`: The name of the query.
+    - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[LastModifiedDateTime <DateTime?>]`: The date and time the query was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[Query <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
+
+CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Application <IMicrosoftGraphIdentity>]`: identity
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[Device <IMicrosoftGraphIdentity>]`: identity
+  - `[User <IMicrosoftGraphIdentity>]`: identity
 
 INPUTOBJECT <IComplianceIdentity>: Identity Parameter
-  - `[EdiscoveryCaseId <String>]`: key: id of ediscoveryCase
+  - `[CaseId <String>]`: key: id of case
+  - `[CaseOperationId <String>]`: key: id of caseOperation
+  - `[CustodianId <String>]`: key: id of custodian
+  - `[DataSourceId <String>]`: key: id of dataSource
+  - `[LegalHoldId <String>]`: key: id of legalHold
+  - `[NoncustodialDataSourceId <String>]`: key: id of noncustodialDataSource
   - `[ReviewSetId <String>]`: key: id of reviewSet
   - `[ReviewSetQueryId <String>]`: key: id of reviewSetQuery
+  - `[SiteSourceId <String>]`: key: id of siteSource
+  - `[SourceCollectionId <String>]`: key: id of sourceCollection
+  - `[TagId <String>]`: key: id of tag
+  - `[UnifiedGroupSourceId <String>]`: key: id of unifiedGroupSource
+  - `[UserSourceId <String>]`: key: id of userSource
 
-QUERIES <IMicrosoftGraphReviewSetQuery[]>: .
+QUERIES <IMicrosoftGraphEdiscoveryReviewSetQuery[]>: Read-only. Nullable.
   - `[Id <String>]`: Read-only.
-  - `[CreatedBy <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[DisplayName <String>]`: 
-  - `[LastModifiedBy <String>]`: 
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[Query <String>]`: 
+  - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Application <IMicrosoftGraphIdentity>]`: identity
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[Device <IMicrosoftGraphIdentity>]`: identity
+    - `[User <IMicrosoftGraphIdentity>]`: identity
+  - `[CreatedDateTime <DateTime?>]`: The time and date when the query was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DisplayName <String>]`: The name of the query.
+  - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
+  - `[LastModifiedDateTime <DateTime?>]`: The date and time the query was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[Query <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Document metadata fields in Advanced eDiscovery.  This field maps directly to the keywords condition.  You can refine searches by using fields listed in the searchable field name paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
 
 ## RELATED LINKS
 

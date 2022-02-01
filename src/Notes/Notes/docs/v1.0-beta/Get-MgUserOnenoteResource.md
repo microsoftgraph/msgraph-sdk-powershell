@@ -8,7 +8,10 @@ schema: 2.0.0
 # Get-MgUserOnenoteResource
 
 ## SYNOPSIS
-Get resources from users
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +28,12 @@ Get-MgUserOnenoteResource -InputObject <INotesIdentity> [-ExpandProperty <String
 ```
 
 ## DESCRIPTION
-Get resources from users
+The image and other file resources in OneNote pages.
+Getting a resources collection is not supported, but you can get the binary content of a specific resource.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,7 +54,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.INotesIdentity

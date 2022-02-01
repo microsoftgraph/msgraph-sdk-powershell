@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEducationSchoolAdministrativeUnit
 
 ## SYNOPSIS
-Get administrativeUnit from education
+The underlying administrativeUnit for this school.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Get-MgEducationSchoolAdministrativeUnit -InputObject <IEducationIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get administrativeUnit from education
+The underlying administrativeUnit for this school.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -81,7 +63,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity

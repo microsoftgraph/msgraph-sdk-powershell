@@ -8,43 +8,25 @@ schema: 2.0.0
 # Set-MgEducationMeUserByRef
 
 ## SYNOPSIS
-Update the ref of navigation property user in education
+The directory user corresponding to this user.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgEducationMeUserByRef [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Update1
+### Set1
 ```
 Set-MgEducationMeUserByRef -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the ref of navigation property user in education
+The directory user corresponding to this user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -53,7 +35,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1
+Parameter Sets: SetExpanded1
 Aliases:
 
 Required: False
@@ -68,7 +50,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update1
+Parameter Sets: Set1
 Aliases:
 
 Required: True

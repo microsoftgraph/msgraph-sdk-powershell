@@ -23,14 +23,14 @@ Update-MgDirectoryRole -DirectoryRoleId <String> [-AdditionalProperties <Hashtab
 
 ### Update
 ```
-Update-MgDirectoryRole -DirectoryRoleId <String> -BodyParameter <IMicrosoftGraphDirectoryRole1> [-PassThru]
+Update-MgDirectoryRole -DirectoryRoleId <String> -BodyParameter <IMicrosoftGraphDirectoryRole> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
 Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphDirectoryRole1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphDirectoryRole> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -46,24 +46,6 @@ Update-MgDirectoryRole -InputObject <IIdentityDirectoryManagementIdentity> [-Add
 Update entity in directoryRoles
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -83,12 +65,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-Represents an Azure Active Directory object.
-The directoryObject type is the base type for many other directory entity types.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+directoryRole
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -117,6 +98,7 @@ Accept wildcard characters: False
 ### -Description
 The description for the directory role.
 Read-only.
+Supports $filter (eq), $search, $select.
 
 ```yaml
 Type: System.String
@@ -148,6 +130,7 @@ Accept wildcard characters: False
 ### -DisplayName
 The display name for the directory role.
 Read-only.
+Supports $filter (eq), $search, $select.
 
 ```yaml
 Type: System.String
@@ -178,7 +161,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
@@ -197,7 +180,8 @@ Users that are members of this directory role.
 HTTP Methods: GET, POST, DELETE.
 Read-only.
 Nullable.
-To construct, see NOTES section for MEMBERS properties and create a hash table.
+Supports $expand.
+To construct, please use Get-Help -Online and see NOTES section for MEMBERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject[]
@@ -230,6 +214,7 @@ Accept wildcard characters: False
 The id of the directoryRoleTemplate that this role is based on.
 The property must be specified when activating a directory role in a tenant with a POST operation.
 After the directory role has been activated, the property is read only.
+Supports $filter (eq), $select.
 
 ```yaml
 Type: System.String
@@ -244,8 +229,10 @@ Accept wildcard characters: False
 ```
 
 ### -ScopedMembers
-.
-To construct, see NOTES section for SCOPEDMEMBERS properties and create a hash table.
+Members of this directory role that are scoped to administrative units.
+Read-only.
+Nullable.
+To construct, please use Get-Help -Online and see NOTES section for SCOPEDMEMBERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphScopedRoleMembership[]
@@ -297,7 +284,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryRole
 
 ## OUTPUTS
 
@@ -312,29 +299,32 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphDirectoryRole1>: Represents an Azure Active Directory object. The directoryObject type is the base type for many other directory entity types.
+BODYPARAMETER <IMicrosoftGraphDirectoryRole>: directoryRole
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[DeletedDateTime <DateTime?>]`: 
   - `[Id <String>]`: Read-only.
-  - `[Description <String>]`: The description for the directory role. Read-only.
-  - `[DisplayName <String>]`: The display name for the directory role. Read-only.
-  - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+  - `[Description <String>]`: The description for the directory role. Read-only. Supports $filter (eq), $search, $select.
+  - `[DisplayName <String>]`: The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
+  - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
     - `[Id <String>]`: Read-only.
     - `[DeletedDateTime <DateTime?>]`: 
-  - `[RoleTemplateId <String>]`: The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.
-  - `[ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>]`: 
+  - `[RoleTemplateId <String>]`: The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
+  - `[ScopedMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
-    - `[AdministrativeUnitId <String>]`: 
-    - `[RoleId <String>]`: 
+    - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+    - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-      - `[Id <String>]`: Unique identifier for the identity.
+      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+      - `[Id <String>]`: The identifier of the identity. This property is read-only.
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
+  - `[AllowedValueId <String>]`: key: id of allowedValue
+  - `[AttributeSetId <String>]`: key: id of attributeSet
   - `[CommandId <String>]`: key: id of command
   - `[ContractId <String>]`: key: id of contract
+  - `[CustomSecurityAttributeDefinitionId <String>]`: key: id of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: key: id of device
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectoryRoleId <String>]`: key: id of directoryRole
@@ -345,25 +335,35 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[DomainId <String>]`: key: id of domain
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
+  - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
+  - `[RecommendationId <String>]`: key: id of recommendation
+  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
-MEMBERS <IMicrosoftGraphDirectoryObject[]>: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.
+MEMBERS <IMicrosoftGraphDirectoryObject[]>: Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
   - `[Id <String>]`: Read-only.
   - `[DeletedDateTime <DateTime?>]`: 
 
-SCOPEDMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: .
+SCOPEDMEMBERS <IMicrosoftGraphScopedRoleMembership[]>: Members of this directory role that are scoped to administrative units. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
-  - `[AdministrativeUnitId <String>]`: 
-  - `[RoleId <String>]`: 
+  - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
+  - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
   - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
-    - `[Id <String>]`: Unique identifier for the identity.
+    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
+    - `[Id <String>]`: The identifier of the identity. This property is read-only.
 
 ## RELATED LINKS
 

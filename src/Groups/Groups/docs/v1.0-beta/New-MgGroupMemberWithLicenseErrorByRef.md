@@ -8,56 +8,40 @@ schema: 2.0.0
 # New-MgGroupMemberWithLicenseErrorByRef
 
 ## SYNOPSIS
-Create new navigation property ref to membersWithLicenseErrors for groups
+A list of group members with license errors from this group-based license assignment.
+Read-only.
 
 ## SYNTAX
 
-### CreateExpanded2 (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgGroupMemberWithLicenseErrorByRef -GroupId <String> [-AdditionalProperties <Hashtable>] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Create2
+### Create1
 ```
 New-MgGroupMemberWithLicenseErrorByRef -GroupId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity2
+### CreateViaIdentity1
 ```
 New-MgGroupMemberWithLicenseErrorByRef -InputObject <IGroupsIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded2
+### CreateViaIdentityExpanded1
 ```
 New-MgGroupMemberWithLicenseErrorByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Hashtable>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to membersWithLicenseErrors for groups
+A list of group members with license errors from this group-based license assignment.
+Read-only.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded2, CreateViaIdentityExpanded2
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -81,7 +65,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Create2, CreateViaIdentity2
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -96,7 +80,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Create2, CreateExpanded2
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -108,11 +92,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
-Parameter Sets: CreateViaIdentity2, CreateViaIdentityExpanded2
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -179,14 +163,13 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -196,7 +179,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

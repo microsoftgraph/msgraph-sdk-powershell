@@ -8,16 +8,16 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedAppRegistration
 
 ## SYNOPSIS
-Create new navigation property to managedAppRegistrations for deviceAppManagement
+The managed app registrations.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
 New-MgDeviceAppMgtManagedAppRegistration [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>]
- [-ApplicationVersion <String>] [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>]
+ [-ApplicationVersion <String>] [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]
  [-CreatedDateTime <DateTime>] [-DeviceName <String>] [-DeviceTag <String>] [-DeviceType <String>]
- [-FlaggedReasons <String[]>] [-Id <String>] [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>]
+ [-FlaggedReasons <String[]>] [-Id <String>] [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]
  [-LastSyncDateTime <DateTime>] [-ManagementSdkVersion <String>]
  [-Operations <IMicrosoftGraphManagedAppOperation[]>] [-PlatformVersion <String>] [-UserId <String>]
  [-Version <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -25,32 +25,14 @@ New-MgDeviceAppMgtManagedAppRegistration [-AdditionalProperties <Hashtable>] [-A
 
 ### Create
 ```
-New-MgDeviceAppMgtManagedAppRegistration -BodyParameter <IMicrosoftGraphManagedAppRegistration> [-Confirm]
+New-MgDeviceAppMgtManagedAppRegistration -BodyParameter <IMicrosoftGraphManagedAppRegistration1> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedAppRegistrations for deviceAppManagement
+The managed app registrations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -101,10 +83,10 @@ Accept wildcard characters: False
 
 ### -AppliedPolicies
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
-To construct, see NOTES section for APPLIEDPOLICIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPLIEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -117,10 +99,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 Parameter Sets: Create
 Aliases:
 
@@ -226,10 +208,10 @@ Accept wildcard characters: False
 
 ### -IntendedPolicies
 Zero or more policies admin intended for the app as of now.
-To construct, see NOTES section for INTENDEDPOLICIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INTENDEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -272,7 +254,7 @@ Accept wildcard characters: False
 
 ### -Operations
 Zero or more long running operations triggered on the app registration.
-To construct, see NOTES section for OPERATIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation[]
@@ -367,11 +349,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
 
 ## NOTES
 
@@ -384,7 +366,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policys already applied on the registered app when it last synchronized with managment service.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
@@ -392,13 +374,13 @@ APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Zero or more policys alread
   - `[LastModifiedDateTime <DateTime?>]`: Last time the policy was modified.
   - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphManagedAppRegistration>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationVersion <String>]`: App version
-  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
     - `[Id <String>]`: Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
@@ -410,7 +392,7 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration>: The ManagedAppEntity is t
   - `[DeviceTag <String>]`: App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
   - `[DeviceType <String>]`: Host device type
   - `[FlaggedReasons <String[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policies admin intended for the app as of now.
+  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policies admin intended for the app as of now.
   - `[LastSyncDateTime <DateTime?>]`: Date and time of last the app synced with management service.
   - `[ManagementSdkVersion <String>]`: App management SDK version
   - `[Operations <IMicrosoftGraphManagedAppOperation[]>]`: Zero or more long running operations triggered on the app registration.
@@ -423,7 +405,7 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration>: The ManagedAppEntity is t
   - `[UserId <String>]`: The user Id to who this app registration belongs.
   - `[Version <String>]`: Version of the entity.
 
-INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Zero or more policies admin intended for the app as of now.
+INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policies admin intended for the app as of now.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.

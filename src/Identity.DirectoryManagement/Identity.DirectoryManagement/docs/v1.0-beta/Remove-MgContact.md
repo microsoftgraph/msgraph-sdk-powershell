@@ -12,13 +12,13 @@ Delete entity from contacts
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgContact -OrgContactId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -28,24 +28,6 @@ Remove-MgContact -InputObject <IIdentityDirectoryManagementIdentity> [-IfMatch <
 Delete entity from contacts
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,11 +48,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -85,7 +67,7 @@ key: id of orgContact
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -163,8 +145,11 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
+  - `[AllowedValueId <String>]`: key: id of allowedValue
+  - `[AttributeSetId <String>]`: key: id of attributeSet
   - `[CommandId <String>]`: key: id of command
   - `[ContractId <String>]`: key: id of contract
+  - `[CustomSecurityAttributeDefinitionId <String>]`: key: id of customSecurityAttributeDefinition
   - `[DeviceId <String>]`: key: id of device
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectoryRoleId <String>]`: key: id of directoryRole
@@ -175,11 +160,21 @@ INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[DomainId <String>]`: key: id of domain
   - `[ExtensionId <String>]`: key: id of extension
   - `[FeatureRolloutPolicyId <String>]`: key: id of featureRolloutPolicy
+  - `[IdentityProviderBaseId <String>]`: key: id of identityProviderBase
+  - `[InboundSharedUserProfileUserId <String>]`: key: userId of inboundSharedUserProfile
+  - `[InternalDomainFederationId <String>]`: key: id of internalDomainFederation
   - `[OrgContactId <String>]`: key: id of orgContact
   - `[OrganizationId <String>]`: key: id of organization
-  - `[OrganizationalBrandingId <String>]`: key: id of organizationalBranding
+  - `[OutboundSharedUserProfileUserId <String>]`: key: userId of outboundSharedUserProfile
+  - `[ProfileCardPropertyId <String>]`: key: id of profileCardProperty
+  - `[RecommendationId <String>]`: key: id of recommendation
+  - `[RecommendationResourceId <String>]`: key: id of recommendationResource
   - `[ScopedRoleMembershipId <String>]`: key: id of scopedRoleMembership
+  - `[SharedEmailDomainId <String>]`: key: id of sharedEmailDomain
+  - `[SharedEmailDomainInvitationId <String>]`: key: id of sharedEmailDomainInvitation
   - `[SubscribedSkuId <String>]`: key: id of subscribedSku
+  - `[TenantReferenceTenantId <String>]`: key: tenantId of tenantReference
+  - `[UsageRightId <String>]`: key: id of usageRight
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

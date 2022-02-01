@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Targeted managed app configurations.
 
 ## SYNTAX
 
@@ -30,27 +30,9 @@ New-MgDeviceAppMgtTargetedManagedAppConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Targeted managed app configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,7 +53,7 @@ Accept wildcard characters: False
 
 ### -Apps
 List of apps to which the policy is deployed.
-To construct, see NOTES section for APPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
@@ -87,7 +69,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment1[]
@@ -103,7 +85,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration1
@@ -134,7 +116,7 @@ Accept wildcard characters: False
 
 ### -CustomSettings
 A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-To construct, see NOTES section for CUSTOMSETTINGS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMSETTINGS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -165,7 +147,7 @@ Accept wildcard characters: False
 
 ### -DeploymentSummary
 The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
