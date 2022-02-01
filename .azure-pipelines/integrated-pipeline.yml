@@ -42,6 +42,13 @@ trigger:
       - releases/*
       - bugfixes/*
       - features/*
+      exclude:
+      - DocsGeneration/*
+
+pr:
+  branches:
+    exclude:
+    - DocsGeneration/*
 
 stages:
 - stage: ComputeVersion
