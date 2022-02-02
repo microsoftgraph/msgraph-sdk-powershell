@@ -931,6 +931,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -4962,6 +4963,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -10035,6 +10037,8 @@ paths:
                 - webUrl desc
                 - contentType
                 - contentType desc
+                - deleted
+                - deleted desc
                 - sharepointIds
                 - sharepointIds desc
               type: string
@@ -10059,6 +10063,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -10184,6 +10189,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -11018,6 +11024,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -12510,6 +12517,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/drives/{drive-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.list.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/drives/{drive-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - drives.Functions
+      summary: Invoke function delta
+      operationId: drives.list.items_delta
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: token
+          in: path
+          description: 'Usage: token={token}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/drives/{drive-id}/list/operations':
     get:
       tags:
@@ -16364,6 +16430,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -21437,6 +21504,8 @@ paths:
                 - webUrl desc
                 - contentType
                 - contentType desc
+                - deleted
+                - deleted desc
                 - sharepointIds
                 - sharepointIds desc
               type: string
@@ -21461,6 +21530,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -21586,6 +21656,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -22420,6 +22491,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -23912,6 +23984,65 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/shares/{sharedDriveItem-id}/list/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - shares.Functions
+      summary: Invoke function delta
+      operationId: shares.list.items_delta
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/shares/{sharedDriveItem-id}/list/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - shares.Functions
+      summary: Invoke function delta
+      operationId: shares.list.items_delta
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: token
+          in: path
+          description: 'Usage: token={token}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/shares/{sharedDriveItem-id}/list/operations':
     get:
       tags:
@@ -24510,6 +24641,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -25233,6 +25365,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -27898,6 +28031,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -33451,7 +33586,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -33850,6 +33985,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -36470,6 +36607,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -38029,6 +38168,17 @@ components:
             isEnabled:
               type: boolean
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -41000,6 +41150,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -43320,6 +43478,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

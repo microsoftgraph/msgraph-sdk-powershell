@@ -16282,7 +16282,7 @@ components:
               nullable: true
             fileName:
               type: string
-              description: The file name of the uploaded ADML file.
+              description: 'The file name of the ADMX file without the path. For example: edge.admx Inherited from groupPolicyDefinitionFile'
               nullable: true
             groupPolicyUploadedLanguageFiles:
               type: array

@@ -9666,6 +9666,7 @@ paths:
                 - contributionToContentDiscoveryAsOrganizationDisabled
                 - contributionToContentDiscoveryDisabled
                 - itemInsights
+                - contactMergeSuggestions
                 - regionalAndLanguageSettings
                 - shiftPreferences
               type: string
@@ -9681,6 +9682,7 @@ paths:
               enum:
                 - '*'
                 - itemInsights
+                - contactMergeSuggestions
                 - regionalAndLanguageSettings
                 - shiftPreferences
               type: string
@@ -9694,6 +9696,10 @@ paths:
           links:
             itemInsights:
               operationId: users.Settings.GetItemInsights
+              parameters:
+                user-id: $request.path.user-id
+            contactMergeSuggestions:
+              operationId: users.Settings.GetContactMergeSuggestions
               parameters:
                 user-id: $request.path.user-id
             regionalAndLanguageSettings:
@@ -9740,6 +9746,105 @@ paths:
       summary: Delete navigation property settings for users
       description: Read-only. Nullable.
       operationId: users_DeleteSettings
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/settings/contactMergeSuggestions':
+    get:
+      tags:
+        - users.userSettings
+      summary: Get contactMergeSuggestions from users
+      operationId: users.settings_GetContactMergeSuggestions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - isEnabled
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.userSettings
+      summary: Update the navigation property contactMergeSuggestions in users
+      operationId: users.settings_UpdateContactMergeSuggestions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.userSettings
+      summary: Delete navigation property contactMergeSuggestions for users
+      operationId: users.settings_DeleteContactMergeSuggestions
       parameters:
         - name: user-id
           in: path
@@ -12989,10 +13094,23 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
               $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.userInsightsSettings:
@@ -15290,7 +15408,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -18493,6 +18611,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -22947,6 +23067,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -24245,6 +24367,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -27048,6 +27178,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

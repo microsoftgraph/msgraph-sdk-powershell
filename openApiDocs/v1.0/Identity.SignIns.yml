@@ -8652,7 +8652,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
-              description: Represents the settings for each authentication method.
+              description: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
           additionalProperties:
             type: object
     microsoft.graph.authorizationPolicy:

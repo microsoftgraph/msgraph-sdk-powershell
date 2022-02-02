@@ -479,6 +479,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - releasedDateTime
@@ -505,6 +507,7 @@ paths:
                 - id
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - lastModifiedDateTime
                 - releasedDateTime
                 - status
@@ -621,6 +624,7 @@ paths:
                 - id
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - lastModifiedDateTime
                 - releasedDateTime
                 - status
@@ -772,12 +776,66 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.applyHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action applyHold
+      operationId: compliance.ediscovery.cases.custodians_applyHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: 'key: id of custodian'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.release':
     post:
       tags:
         - compliance.Actions
       summary: Invoke action release
       operationId: compliance.ediscovery.cases.custodians_release
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: custodian-id
+          in: path
+          description: 'key: id of custodian'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: custodian
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/custodians/{custodian-id}/microsoft.graph.ediscovery.removeHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action removeHold
+      operationId: compliance.ediscovery.cases.custodians_removeHold
       parameters:
         - name: case-id
           in: path
@@ -871,6 +929,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
               type: string
         - name: $select
           in: query
@@ -886,6 +946,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - site
               type: string
         - name: $expand
@@ -1005,6 +1066,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - site
               type: string
         - name: $expand
@@ -1587,6 +1649,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - includedSources
                 - includedSources desc
               type: string
@@ -1604,6 +1668,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - includedSources
                 - group
               type: string
@@ -1724,6 +1789,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - includedSources
                 - group
               type: string
@@ -2510,6 +2576,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - email
                 - email desc
                 - includedSources
@@ -2531,6 +2599,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - email
                 - includedSources
                 - siteWebUrl
@@ -2651,6 +2720,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - email
                 - includedSources
                 - siteWebUrl
@@ -2757,6 +2827,76 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/custodians/microsoft.graph.ediscovery.applyHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action applyHold
+      operationId: compliance.ediscovery.cases.custodians_applyHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/custodians/microsoft.graph.ediscovery.removeHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action removeHold
+      operationId: compliance.ediscovery.cases.custodians_removeHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/legalHolds':
     get:
       tags:
@@ -3103,6 +3243,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
               type: string
         - name: $select
           in: query
@@ -3118,6 +3260,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - site
               type: string
         - name: $expand
@@ -3237,6 +3380,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - site
               type: string
         - name: $expand
@@ -3818,6 +3962,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - includedSources
                 - includedSources desc
               type: string
@@ -3835,6 +3981,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - includedSources
                 - group
               type: string
@@ -3953,6 +4100,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - includedSources
                 - group
               type: string
@@ -4737,6 +4885,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - email
                 - email desc
                 - includedSources
@@ -4758,6 +4908,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - email
                 - includedSources
                 - siteWebUrl
@@ -4878,6 +5029,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - email
                 - includedSources
                 - siteWebUrl
@@ -5060,6 +5212,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - releasedDateTime
@@ -5082,6 +5236,7 @@ paths:
                 - id
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - lastModifiedDateTime
                 - releasedDateTime
                 - status
@@ -5192,6 +5347,7 @@ paths:
                 - id
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - lastModifiedDateTime
                 - releasedDateTime
                 - status
@@ -5336,6 +5492,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
               type: string
         - name: $expand
           in: query
@@ -5425,12 +5582,66 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.applyHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action applyHold
+      operationId: compliance.ediscovery.cases.noncustodialDataSources_applyHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: noncustodialDataSource-id
+          in: path
+          description: 'key: id of noncustodialDataSource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: noncustodialDataSource
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.release':
     post:
       tags:
         - compliance.Actions
       summary: Invoke action release
       operationId: compliance.ediscovery.cases.noncustodialDataSources_release
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: noncustodialDataSource-id
+          in: path
+          description: 'key: id of noncustodialDataSource'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: noncustodialDataSource
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/{noncustodialDataSource-id}/microsoft.graph.ediscovery.removeHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action removeHold
+      operationId: compliance.ediscovery.cases.noncustodialDataSources_removeHold
       parameters:
         - name: case-id
           in: path
@@ -5473,6 +5684,76 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: noncustodialDataSource
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/microsoft.graph.ediscovery.applyHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action applyHold
+      operationId: compliance.ediscovery.cases.noncustodialDataSources_applyHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/noncustodialDataSources/microsoft.graph.ediscovery.removeHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action removeHold
+      operationId: compliance.ediscovery.cases.noncustodialDataSources_removeHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
       responses:
         '204':
           description: Success
@@ -6942,6 +7223,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
               type: string
         - name: $select
           in: query
@@ -6957,6 +7240,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
               type: string
         - name: $expand
           in: query
@@ -7074,6 +7358,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
               type: string
         - name: $expand
           in: query
@@ -7411,6 +7696,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
               type: string
         - name: $select
           in: query
@@ -7426,6 +7713,7 @@ paths:
                 - createdBy
                 - createdDateTime
                 - displayName
+                - holdStatus
               type: string
         - name: $expand
           in: query
@@ -7507,6 +7795,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
               type: string
       responses:
         '200':
@@ -7826,6 +8116,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - releasedDateTime
@@ -7848,6 +8140,7 @@ paths:
                 - id
                 - createdDateTime
                 - displayName
+                - holdStatus
                 - lastModifiedDateTime
                 - releasedDateTime
                 - status
@@ -7935,6 +8228,8 @@ paths:
                 - createdDateTime desc
                 - displayName
                 - displayName desc
+                - holdStatus
+                - holdStatus desc
                 - lastModifiedDateTime
                 - lastModifiedDateTime desc
                 - releasedDateTime
@@ -8009,6 +8304,90 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/noncustodialSources/microsoft.graph.ediscovery.applyHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action applyHold
+      operationId: compliance.ediscovery.cases.sourceCollections.noncustodialSources_applyHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: sourceCollection-id
+          in: path
+          description: 'key: id of sourceCollection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceCollection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/compliance/ediscovery/cases/{case-id}/sourceCollections/{sourceCollection-id}/noncustodialSources/microsoft.graph.ediscovery.removeHold':
+    post:
+      tags:
+        - compliance.Actions
+      summary: Invoke action removeHold
+      operationId: compliance.ediscovery.cases.sourceCollections.noncustodialSources_removeHold
+      parameters:
+        - name: case-id
+          in: path
+          description: 'key: id of case'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: case
+        - name: sourceCollection-id
+          in: path
+          description: 'key: id of sourceCollection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sourceCollection
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/compliance/ediscovery/cases/{case-id}/tags':
     get:
       tags:
@@ -9436,6 +9815,8 @@ components:
               type: string
               description: The display name of the dataSource. This will be the name of the SharePoint site.
               nullable: true
+            holdStatus:
+              $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSourceHoldStatus'
           additionalProperties:
             type: object
     microsoft.graph.ediscovery.caseOperation:
@@ -9762,6 +10143,8 @@ components:
               type: string
               description: Display name of the dataSourceContainer entity.
               nullable: true
+            holdStatus:
+              $ref: '#/components/schemas/microsoft.graph.ediscovery.dataSourceHoldStatus'
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -11077,6 +11460,16 @@ components:
         - Success
         - UnknownFutureValue
       type: string
+    microsoft.graph.ediscovery.dataSourceHoldStatus:
+      title: dataSourceHoldStatus
+      enum:
+        - notApplied
+        - applied
+        - applying
+        - removing
+        - partial
+        - unknownFutureValue
+      type: string
     microsoft.graph.ediscovery.caseAction:
       title: caseAction
       enum:
@@ -11086,6 +11479,7 @@ components:
         - index
         - estimateStatistics
         - addToReviewSet
+        - holdUpdate
         - unknownFutureValue
       type: string
     microsoft.graph.resultInfo:
@@ -12439,6 +12833,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -15204,7 +15600,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -15603,6 +15999,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -18975,6 +19373,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -20374,6 +20774,17 @@ components:
             isEnabled:
               type: boolean
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -23446,6 +23857,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -25241,6 +25660,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

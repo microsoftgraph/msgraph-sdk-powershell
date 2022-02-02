@@ -13178,6 +13178,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_ListWorkforceIntegrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13276,6 +13277,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Create new navigation property to workforceIntegrations for teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_CreateWorkforceIntegrations
       requestBody:
         description: New navigation property
@@ -13299,6 +13301,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_GetWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -13355,6 +13358,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Update the navigation property workforceIntegrations in teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_UpdateWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -13381,6 +13385,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Delete navigation property workforceIntegrations for teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_DeleteWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -15805,6 +15810,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+              description: A workforce integration with shifts.
           additionalProperties:
             type: object
     microsoft.graph.workforceIntegration:

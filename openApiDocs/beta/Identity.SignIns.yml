@@ -18540,7 +18540,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodConfiguration'
-              description: Represents the settings for each authentication method.
+              description: Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
           additionalProperties:
             type: object
     microsoft.graph.authorizationPolicy:
@@ -22256,7 +22256,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -22655,6 +22655,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -23805,10 +23807,12 @@ components:
           type: array
           items:
             type: string
+          description: Service principal IDs excluded from the policy scope.
         includeServicePrincipals:
           type: array
           items:
             type: string
+          description: 'Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.'
       additionalProperties:
         type: object
     microsoft.graph.conditionalAccessClientApp:
@@ -25938,6 +25942,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -27484,6 +27490,17 @@ components:
             isEnabled:
               type: boolean
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -30287,6 +30304,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -31564,6 +31583,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -34461,6 +34488,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

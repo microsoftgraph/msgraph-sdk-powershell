@@ -6120,6 +6120,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -11866,6 +11867,8 @@ paths:
                 - webUrl desc
                 - contentType
                 - contentType desc
+                - deleted
+                - deleted desc
                 - sharepointIds
                 - sharepointIds desc
               type: string
@@ -11890,6 +11893,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -12029,6 +12033,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -12974,6 +12979,7 @@ paths:
                 - parentReference
                 - webUrl
                 - contentType
+                - deleted
                 - sharepointIds
                 - createdByUser
                 - lastModifiedByUser
@@ -14680,6 +14686,79 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/sites/{site-id}/lists/{list-id}/items/microsoft.graph.delta()':
+    get:
+      tags:
+        - sites.Functions
+      summary: Invoke function delta
+      operationId: sites.lists.items_delta
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/sites/{site-id}/lists/{list-id}/items/microsoft.graph.delta(token=''{token}'')':
+    get:
+      tags:
+        - sites.Functions
+      summary: Invoke function delta
+      operationId: sites.lists.items_delta
+      parameters:
+        - name: site-id
+          in: path
+          description: 'key: id of site'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: site
+        - name: list-id
+          in: path
+          description: 'key: id of list'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: list
+        - name: token
+          in: path
+          description: 'Usage: token={token}'
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.listItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/sites/{site-id}/lists/{list-id}/operations':
     get:
       tags:
@@ -24320,6 +24399,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -28914,7 +28995,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable. Supports $expand.'
+              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -28924,7 +29005,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.'
+              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
             permissionGrants:
               type: array
               items:
@@ -29791,7 +29872,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -30190,6 +30271,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -32691,6 +32774,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -34250,6 +34335,17 @@ components:
             isEnabled:
               type: boolean
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -37165,6 +37261,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -39485,6 +39589,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

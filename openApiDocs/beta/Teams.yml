@@ -17121,6 +17121,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get devices from teamwork
+      description: The Teams devices provisioned for the tenant.
       operationId: teamwork_ListDevices
       parameters:
         - $ref: '#/components/parameters/top'
@@ -17233,6 +17234,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Create new navigation property to devices for teamwork
+      description: The Teams devices provisioned for the tenant.
       operationId: teamwork_CreateDevices
       requestBody:
         description: New navigation property
@@ -17256,6 +17258,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get devices from teamwork
+      description: The Teams devices provisioned for the tenant.
       operationId: teamwork_GetDevices
       parameters:
         - name: teamworkDevice-id
@@ -17339,6 +17342,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Update the navigation property devices in teamwork
+      description: The Teams devices provisioned for the tenant.
       operationId: teamwork_UpdateDevices
       parameters:
         - name: teamworkDevice-id
@@ -17365,6 +17369,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Delete navigation property devices for teamwork
+      description: The Teams devices provisioned for the tenant.
       operationId: teamwork_DeleteDevices
       parameters:
         - name: teamworkDevice-id
@@ -17390,6 +17395,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get activity from teamwork
+      description: The activity properties that change based on the device usage.
       operationId: teamwork.devices_GetActivity
       parameters:
         - name: teamworkDevice-id
@@ -17442,6 +17448,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Update the navigation property activity in teamwork
+      description: The activity properties that change based on the device usage.
       operationId: teamwork.devices_UpdateActivity
       parameters:
         - name: teamworkDevice-id
@@ -17468,6 +17475,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Delete navigation property activity for teamwork
+      description: The activity properties that change based on the device usage.
       operationId: teamwork.devices_DeleteActivity
       parameters:
         - name: teamworkDevice-id
@@ -17493,6 +17501,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get configuration from teamwork
+      description: The configuration properties of the device.
       operationId: teamwork.devices_GetConfiguration
       parameters:
         - name: teamworkDevice-id
@@ -17552,6 +17561,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Update the navigation property configuration in teamwork
+      description: The configuration properties of the device.
       operationId: teamwork.devices_UpdateConfiguration
       parameters:
         - name: teamworkDevice-id
@@ -17578,6 +17588,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Delete navigation property configuration for teamwork
+      description: The configuration properties of the device.
       operationId: teamwork.devices_DeleteConfiguration
       parameters:
         - name: teamworkDevice-id
@@ -17603,6 +17614,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get health from teamwork
+      description: The health properties of the device.
       operationId: teamwork.devices_GetHealth
       parameters:
         - name: teamworkDevice-id
@@ -17659,6 +17671,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Update the navigation property health in teamwork
+      description: The health properties of the device.
       operationId: teamwork.devices_UpdateHealth
       parameters:
         - name: teamworkDevice-id
@@ -17685,6 +17698,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Delete navigation property health for teamwork
+      description: The health properties of the device.
       operationId: teamwork.devices_DeleteHealth
       parameters:
         - name: teamworkDevice-id
@@ -17785,6 +17799,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get operations from teamwork
+      description: The async operations on the device.
       operationId: teamwork.devices_ListOperations
       parameters:
         - name: teamworkDevice-id
@@ -17890,6 +17905,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Create new navigation property to operations for teamwork
+      description: The async operations on the device.
       operationId: teamwork.devices_CreateOperations
       parameters:
         - name: teamworkDevice-id
@@ -17921,6 +17937,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Get operations from teamwork
+      description: The async operations on the device.
       operationId: teamwork.devices_GetOperations
       parameters:
         - name: teamworkDevice-id
@@ -17984,6 +18001,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Update the navigation property operations in teamwork
+      description: The async operations on the device.
       operationId: teamwork.devices_UpdateOperations
       parameters:
         - name: teamworkDevice-id
@@ -18017,6 +18035,7 @@ paths:
       tags:
         - teamwork.teamworkDevice
       summary: Delete navigation property operations for teamwork
+      description: The async operations on the device.
       operationId: teamwork.devices_DeleteOperations
       parameters:
         - name: teamworkDevice-id
@@ -18049,6 +18068,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_ListWorkforceIntegrations
       parameters:
         - $ref: '#/components/parameters/top'
@@ -18156,6 +18176,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Create new navigation property to workforceIntegrations for teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_CreateWorkforceIntegrations
       requestBody:
         description: New navigation property
@@ -18179,6 +18200,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Get workforceIntegrations from teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_GetWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -18238,6 +18260,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Update the navigation property workforceIntegrations in teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_UpdateWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -18264,6 +18287,7 @@ paths:
       tags:
         - teamwork.workforceIntegration
       summary: Delete navigation property workforceIntegrations for teamwork
+      description: A workforce integration with shifts.
       operationId: teamwork_DeleteWorkforceIntegrations
       parameters:
         - name: workforceIntegration-id
@@ -20514,7 +20538,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users, contacts, and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable. Supports $expand.'
+              description: 'Members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -20524,7 +20548,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.'
+              description: 'The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
             permissionGrants:
               type: array
               items:
@@ -21597,10 +21621,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.workforceIntegration'
+              description: A workforce integration with shifts.
             devices:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkDevice'
+              description: The Teams devices provisioned for the tenant.
           additionalProperties:
             type: object
     microsoft.graph.teamworkDevice:
@@ -21613,12 +21639,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamworkDeviceActivityState'
             companyAssetTag:
               type: string
+              description: The company asset tag assigned by the admin on the device.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device was enrolled to the tenant.
               format: date-time
               nullable: true
             currentUser:
@@ -21634,10 +21662,12 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device detail was last modified.
               format: date-time
               nullable: true
             notes:
               type: string
+              description: The notes added by the admin to the device.
               nullable: true
             activity:
               $ref: '#/components/schemas/microsoft.graph.teamworkDeviceActivity'
@@ -21649,6 +21679,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamworkDeviceOperation'
+              description: The async operations on the device.
           additionalProperties:
             type: object
     microsoft.graph.teamworkDeviceActivity:
@@ -21664,6 +21695,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device activity document was created.
               format: date-time
               nullable: true
             lastModifiedBy:
@@ -21671,6 +21703,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device activity detail was last modified.
               format: date-time
               nullable: true
           additionalProperties:
@@ -21688,6 +21721,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device configuration document was created.
               format: date-time
               nullable: true
             displayConfiguration:
@@ -21699,6 +21733,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device configuration was last modified.
               format: date-time
               nullable: true
             microphoneConfiguration:
@@ -21726,6 +21761,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device health document was created.
               format: date-time
               nullable: true
             hardwareHealth:
@@ -21735,6 +21771,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device health detail was last modified.
               format: date-time
               nullable: true
             loginStatus:
@@ -21765,6 +21802,7 @@ components:
             completedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).'
               format: date-time
               nullable: true
             createdBy:
@@ -21772,6 +21810,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device operation was created.
               format: date-time
               nullable: true
             error:
@@ -21781,6 +21820,7 @@ components:
             lastActionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: The UTC date and time when the device operation was last modified.
               format: date-time
               nullable: true
             operationType:
@@ -21788,10 +21828,12 @@ components:
             startedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Time at which the operation was started.
               format: date-time
               nullable: true
             status:
               type: string
+              description: 'The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.'
           additionalProperties:
             type: object
     microsoft.graph.workforceIntegration:
@@ -22992,6 +23034,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -25286,7 +25330,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -25685,6 +25729,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -26533,17 +26579,22 @@ components:
           items:
             type: string
             nullable: true
+          description: MAC address.
         manufacturer:
           type: string
+          description: Device manufacturer.
           nullable: true
         model:
           type: string
+          description: Devie model.
           nullable: true
         serialNumber:
           type: string
+          description: Device serial number.
           nullable: true
         uniqueId:
           type: string
+          description: The unique identifier for the device.
           nullable: true
       additionalProperties:
         type: object
@@ -26595,19 +26646,23 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamworkConfiguredPeripheral'
+          description: The list of configured displays. Applicable only for Microsoft Teams Rooms devices.
         displayCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'Total number of connected displays, including the inbuilt display. Applicable only for Teams Rooms devices.'
           format: int32
           nullable: true
         inBuiltDisplayScreenConfiguration:
           $ref: '#/components/schemas/microsoft.graph.teamworkDisplayScreenConfiguration'
         isContentDuplicationAllowed:
           type: boolean
+          description: True if content duplication is allowed. Applicable only for Teams Rooms devices.
           nullable: true
         isDualDisplayModeEnabled:
           type: boolean
+          description: 'True if dual display mode is enabled. If isDualDisplayModeEnabled is true, then the content will be displayed on both front of room screens instead of just the one screen, when it is shared via the HDMI ingest module on the Microsoft Teams Rooms device. Applicable only for Teams Rooms devices.'
           nullable: true
       additionalProperties:
         type: object
@@ -26617,6 +26672,7 @@ components:
       properties:
         processorModel:
           type: string
+          description: The CPU model on the device.
           nullable: true
         compute:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheral'
@@ -26630,6 +26686,7 @@ components:
       properties:
         isMicrophoneOptional:
           type: boolean
+          description: True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.
           nullable: true
         defaultMicrophone:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheral'
@@ -26645,18 +26702,23 @@ components:
       properties:
         adminAgentSoftwareVersion:
           type: string
+          description: The software version for the admin agent running on the device.
           nullable: true
         firmwareSoftwareVersion:
           type: string
+          description: The software version for the firmware running on the device.
           nullable: true
         operatingSystemSoftwareVersion:
           type: string
+          description: The software version for the operating system on the device.
           nullable: true
         partnerAgentSoftwareVersion:
           type: string
+          description: The software version for the partner agent running on the device.
           nullable: true
         teamsClientSoftwareVersion:
           type: string
+          description: The software version for the Teams client running on the device.
           nullable: true
       additionalProperties:
         type: object
@@ -26666,9 +26728,11 @@ components:
       properties:
         isCommunicationSpeakerOptional:
           type: boolean
+          description: True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.
           nullable: true
         isSpeakerOptional:
           type: boolean
+          description: True if the configured speaker is optional. Used to compute the health state if the speaker is not optional.
           nullable: true
         defaultCommunicationSpeaker:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheral'
@@ -26688,35 +26752,45 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkDateTimeConfiguration'
         defaultPassword:
           type: string
+          description: The default password for the device. Write-Only.
           nullable: true
         deviceLockTimeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: The device lock timeout in seconds.
           format: duration
           nullable: true
         isDeviceLockEnabled:
           type: boolean
+          description: True if the device lock is enabled.
           nullable: true
         isLoggingEnabled:
           type: boolean
+          description: True if logging is enabled.
           nullable: true
         isPowerSavingEnabled:
           type: boolean
+          description: True if power saving is enabled.
           nullable: true
         isScreenCaptureEnabled:
           type: boolean
+          description: True if screen capture is enabled.
           nullable: true
         isSilentModeEnabled:
           type: boolean
+          description: True if silent mode is enabled.
           nullable: true
         language:
           type: string
+          description: The language option for the device.
           nullable: true
         lockPin:
           type: string
+          description: The pin that unlocks the device. Write-Only.
           nullable: true
         loggingLevel:
           type: string
+          description: The logging level for the device.
           nullable: true
         networkConfiguration:
           $ref: '#/components/schemas/microsoft.graph.teamworkNetworkConfiguration'
@@ -26741,6 +26815,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -26779,6 +26854,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.teamworkPeripheralHealth'
+          description: The health details about displays.
         microphoneHealth:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheralHealth'
         roomCameraHealth:
@@ -29348,6 +29424,8 @@ components:
               type: string
               description: 'Link to the principal object. For example: https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -30857,6 +30935,17 @@ components:
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
           additionalProperties:
             type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.regionalAndLanguageSettings:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -32288,12 +32377,15 @@ components:
           properties:
             displayName:
               type: string
+              description: Display name for the peripheral.
               nullable: true
             productId:
               type: string
+              description: The product ID of the device. Each product from a vendor has its own ID.
               nullable: true
             vendorId:
               type: string
+              description: The unique identifier for the vendor of the device. Each vendor has a unique ID.
               nullable: true
           additionalProperties:
             type: object
@@ -32303,12 +32395,15 @@ components:
       properties:
         isContentCameraInverted:
           type: boolean
+          description: True if the content camera is inverted.
           nullable: true
         isContentCameraOptional:
           type: boolean
+          description: True if the content camera is optional.
           nullable: true
         isContentEnhancementEnabled:
           type: boolean
+          description: True if the content enhancement is enabled.
           nullable: true
       additionalProperties:
         type: object
@@ -32318,6 +32413,7 @@ components:
       properties:
         isOptional:
           type: boolean
+          description: 'True if the current peripheral is optional. If set to false, this property is also used as part of the calculation of the health state for the device.'
           nullable: true
         peripheral:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheral'
@@ -32331,22 +32427,27 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.
           format: int32
           nullable: true
         backlightTimeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.
           format: duration
           nullable: true
         isHighContrastEnabled:
           type: boolean
+          description: True if high contrast mode is enabled. Not applicable for Teams Rooms devices.
           nullable: true
         isScreensaverEnabled:
           type: boolean
+          description: True if screensaver is enabled. Not applicable for Teams Rooms devices.
           nullable: true
         screensaverTimeout:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
+          description: Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.
           format: duration
           nullable: true
       additionalProperties:
@@ -32357,22 +32458,27 @@ components:
       properties:
         dateFormat:
           type: string
+          description: The date format for the device.
           nullable: true
         officeHoursEndTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: The time of the day when the device is turned off.
           format: time
           nullable: true
         officeHoursStartTime:
           pattern: '^([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?$'
           type: string
+          description: The time of the day when the device is turned on.
           format: time
           nullable: true
         timeFormat:
           type: string
+          description: The time format for the device.
           nullable: true
         timeZone:
           type: string
+          description: The time zone to which the office hours apply.
           nullable: true
       additionalProperties:
         type: object
@@ -32382,30 +32488,39 @@ components:
       properties:
         defaultGateway:
           type: string
+          description: The default gateway is the path used to pass information when the destination is unknown to the device.
           nullable: true
         domainName:
           type: string
+          description: 'The network domain of the device, for example, contoso.com.'
           nullable: true
         hostName:
           type: string
+          description: The device name on a network.
           nullable: true
         ipAddress:
           type: string
+          description: The IP address is a numerical label that uniquely identifies every device connected to the internet.
           nullable: true
         isDhcpEnabled:
           type: boolean
+          description: True if DHCP is enabled.
           nullable: true
         isPCPortEnabled:
           type: boolean
+          description: True if the PC port is enabled.
           nullable: true
         primaryDns:
           type: string
+          description: A primary DNS is the first point of contact for a device that translates the hostname into an IP address.
           nullable: true
         secondaryDns:
           type: string
+          description: A secondary DNS is used when the primary DNS is not available.
           nullable: true
         subnetMask:
           type: string
+          description: A subnet mask is a number that distinguishes the network address and the host address within an IP address.
           nullable: true
       additionalProperties:
         type: object
@@ -32425,18 +32540,23 @@ components:
       properties:
         emailToSendLogsAndFeedback:
           type: string
+          description: Email address to send logs and feedback.
           nullable: true
         isAutoScreenShareEnabled:
           type: boolean
+          description: True if auto screen shared is enabled.
           nullable: true
         isBluetoothBeaconingEnabled:
           type: boolean
+          description: True if Bluetooth beaconing is enabled.
           nullable: true
         isHideMeetingNamesEnabled:
           type: boolean
+          description: True if hiding meeting names is enabled.
           nullable: true
         isSendLogsAndFeedbackEnabled:
           type: boolean
+          description: True if sending logs and feedback is enabled.
           nullable: true
       additionalProperties:
         type: object
@@ -32456,6 +32576,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.teamworkConnection'
         isOptional:
           type: boolean
+          description: True if the peripheral is optional. Used for health computation.
           nullable: true
         peripheral:
           $ref: '#/components/schemas/microsoft.graph.teamworkPeripheral'
@@ -32467,9 +32588,11 @@ components:
       properties:
         availableVersion:
           type: string
+          description: The available software version to update.
           nullable: true
         currentVersion:
           type: string
+          description: The current software version.
           nullable: true
         softwareFreshness:
           $ref: '#/components/schemas/microsoft.graph.teamworkSoftwareFreshness'
@@ -34215,6 +34338,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -35662,12 +35793,15 @@ components:
       properties:
         domain:
           type: string
+          description: The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.
           nullable: true
         domainUserName:
           type: string
+          description: 'The domain and username of the console device, for example, Seattle/RanierConf.'
           nullable: true
         smtpAddress:
           type: string
+          description: The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.
           nullable: true
       additionalProperties:
         type: object
@@ -36291,6 +36425,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object

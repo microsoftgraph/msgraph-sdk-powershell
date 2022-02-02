@@ -2340,6 +2340,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_ListJobs
       parameters:
         - name: application-id
@@ -2432,6 +2433,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to jobs for applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_CreateJobs
       parameters:
         - name: application-id
@@ -2463,6 +2465,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_GetJobs
       parameters:
         - name: application-id
@@ -2529,6 +2532,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property jobs in applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_UpdateJobs
       parameters:
         - name: application-id
@@ -2562,6 +2566,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property jobs for applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_DeleteJobs
       parameters:
         - name: application-id
@@ -3489,6 +3494,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_ListTemplates
       parameters:
         - name: application-id
@@ -3587,6 +3593,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to templates for applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_CreateTemplates
       parameters:
         - name: application-id
@@ -3618,6 +3625,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_GetTemplates
       parameters:
         - name: application-id
@@ -3686,6 +3694,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property templates in applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_UpdateTemplates
       parameters:
         - name: application-id
@@ -3719,6 +3728,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property templates for applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_DeleteTemplates
       parameters:
         - name: application-id
@@ -16872,6 +16882,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_ListJobs
       parameters:
         - name: servicePrincipal-id
@@ -16964,6 +16975,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to jobs for servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_CreateJobs
       parameters:
         - name: servicePrincipal-id
@@ -16995,6 +17007,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_GetJobs
       parameters:
         - name: servicePrincipal-id
@@ -17061,6 +17074,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property jobs in servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_UpdateJobs
       parameters:
         - name: servicePrincipal-id
@@ -17094,6 +17108,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property jobs for servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_DeleteJobs
       parameters:
         - name: servicePrincipal-id
@@ -18021,6 +18036,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_ListTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18119,6 +18135,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to templates for servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_CreateTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18150,6 +18167,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_GetTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18218,6 +18236,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property templates in servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_UpdateTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18251,6 +18270,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property templates for servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_DeleteTemplates
       parameters:
         - name: servicePrincipal-id
@@ -20186,14 +20206,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              description: Represents a collection of credentials to access provisioned cloud applications.
             jobs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+              description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
             templates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+              description: Pre-configured synchronization settings for a particular application.
           additionalProperties:
             type: object
     microsoft.graph.synchronizationJob:

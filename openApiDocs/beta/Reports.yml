@@ -2782,6 +2782,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2880,6 +2881,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_CreateUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -2903,6 +2905,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2959,6 +2962,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_UpdateUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2985,6 +2989,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_DeleteUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -8633,6 +8638,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+              description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
           additionalProperties:
             type: object
     microsoft.graph.userRegistrationFeatureSummary:
@@ -8698,25 +8704,34 @@ components:
           properties:
             isMfaCapable:
               type: boolean
+              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             isMfaRegistered:
               type: boolean
+              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
             isPasswordlessCapable:
               type: boolean
+              description: 'Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).'
             isSsprCapable:
               type: boolean
+              description: Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSsprEnabled:
               type: boolean
+              description: Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
             isSsprRegistered:
               type: boolean
+              description: Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
             methodsRegistered:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).'
             userDisplayName:
               type: string
+              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.'
             userPrincipalName:
               type: string
+              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationDetails:
