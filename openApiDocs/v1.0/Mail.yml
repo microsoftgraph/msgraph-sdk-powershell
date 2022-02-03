@@ -46,7 +46,7 @@ paths:
               operationId: users.InferenceClassification.ListOverrides
               parameters:
                 user-id: $request.path.user-id
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -73,7 +73,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -98,7 +98,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
@@ -168,7 +168,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -202,7 +202,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}':
@@ -248,7 +248,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -282,7 +282,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -314,7 +314,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders':
@@ -401,7 +401,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -435,7 +435,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}':
@@ -516,7 +516,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -550,7 +550,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -582,7 +582,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders':
@@ -693,7 +693,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -734,7 +734,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}':
@@ -844,7 +844,7 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 mailFolder-id1: $request.path.mailFolder-id1
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -885,7 +885,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -924,7 +924,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
@@ -1019,7 +1019,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1060,7 +1060,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}':
@@ -1119,7 +1119,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1160,7 +1160,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -1199,7 +1199,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
@@ -1381,7 +1381,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1422,7 +1422,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}':
@@ -1548,7 +1548,7 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 message-id: $request.path.message-id
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1589,7 +1589,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -1628,7 +1628,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value':
@@ -1667,7 +1667,7 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
@@ -1708,7 +1708,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments':
@@ -1813,7 +1813,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1861,7 +1861,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}':
@@ -1936,7 +1936,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1984,7 +1984,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2030,7 +2030,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions':
@@ -2120,7 +2120,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2168,7 +2168,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}':
@@ -2238,7 +2238,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2286,7 +2286,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2332,7 +2332,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties':
@@ -2426,7 +2426,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2474,7 +2474,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -2545,7 +2545,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2593,7 +2593,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2639,7 +2639,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties':
@@ -2733,7 +2733,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2781,7 +2781,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -2852,7 +2852,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2900,7 +2900,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2946,7 +2946,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties':
@@ -3033,7 +3033,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3074,7 +3074,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -3138,7 +3138,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3179,7 +3179,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3218,7 +3218,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties':
@@ -3305,7 +3305,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3346,7 +3346,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -3410,7 +3410,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3451,7 +3451,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3490,7 +3490,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages':
@@ -3649,7 +3649,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3683,7 +3683,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}':
@@ -3782,7 +3782,7 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 message-id: $request.path.message-id
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3816,7 +3816,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3848,7 +3848,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/$value':
@@ -3880,7 +3880,7 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
@@ -3914,7 +3914,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments':
@@ -4012,7 +4012,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4053,7 +4053,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments/{attachment-id}':
@@ -4121,7 +4121,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4162,7 +4162,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4201,7 +4201,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions':
@@ -4284,7 +4284,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4325,7 +4325,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions/{extension-id}':
@@ -4388,7 +4388,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4429,7 +4429,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4468,7 +4468,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties':
@@ -4555,7 +4555,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4596,7 +4596,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -4660,7 +4660,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4701,7 +4701,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4740,7 +4740,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties':
@@ -4827,7 +4827,7 @@ paths:
                     type: string
                 additionalProperties:
                   type: object
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4868,7 +4868,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -4932,7 +4932,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4973,7 +4973,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -5012,7 +5012,7 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        '4XX':
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -5720,12 +5720,15 @@ components:
           items:
             $ref: '#/components/schemas/odata.error.detail'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/odata.error.innererror'
       additionalProperties:
         type: object
+    odata.error.innererror:
+      type: object
+      description: The structure of this object is service-specific
+      properties:
+        code:
+          type: string
     odata.error.detail:
       required:
         - code
