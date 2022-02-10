@@ -17,7 +17,7 @@ Nullable.
 ### UpdateExpanded (Default)
 ```
 Update-MgBookingBusinessCustomer -BookingBusinessId <String> -BookingCustomerId <String>
- [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPhysicalAddress[]>] [-DisplayName <String>]
+ [-AdditionalProperties <Hashtable>] [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>]
  [-EmailAddress <String>] [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -37,7 +37,7 @@ Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgBookingBusinessCustomer -InputObject <IBookingsIdentity> [-AdditionalProperties <Hashtable>]
- [-Addresses <IMicrosoftGraphPhysicalAddress[]>] [-DisplayName <String>] [-EmailAddress <String>]
+ [-Addresses <IMicrosoftGraphPhysicalAddress1[]>] [-DisplayName <String>] [-EmailAddress <String>]
  [-Id <String>] [-Phones <IMicrosoftGraphPhone[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -70,7 +70,7 @@ Addresses associated with the customer, including home, business and other addre
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPhysicalAddress1[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -272,7 +272,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ADDRESSES <IMicrosoftGraphPhysicalAddress[]>: Addresses associated with the customer, including home, business and other addresses.
+ADDRESSES <IMicrosoftGraphPhysicalAddress1[]>: Addresses associated with the customer, including home, business and other addresses.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[PostOfficeBox <String>]`: The post office box number.
@@ -286,7 +286,7 @@ BODYPARAMETER <IMicrosoftGraphBookingCustomer>: Represents a customer of the bus
   - `[EmailAddress <String>]`: The email address of the person.
   - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
   - `[Id <String>]`: Read-only.
-  - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer, including home, business and other addresses.
+  - `[Addresses <IMicrosoftGraphPhysicalAddress1[]>]`: Addresses associated with the customer, including home, business and other addresses.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: The post office box number.
