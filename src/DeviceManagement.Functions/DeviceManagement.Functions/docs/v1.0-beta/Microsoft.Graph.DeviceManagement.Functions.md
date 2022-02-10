@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Functions
-Module Guid: f65990f3-eb53-4bb4-85f9-f9a8675628f4
+Module Guid: 6ac4ab67-25df-408e-9cfb-a43b060aaf2b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.functions
 Help Version: 1.0.0.0
 Locale: en-US
