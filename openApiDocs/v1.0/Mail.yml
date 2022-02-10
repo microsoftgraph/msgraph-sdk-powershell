@@ -5541,6 +5541,10 @@ components:
       additionalProperties:
         type: object
     microsoft.graph.outlookItem:
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.message': '#/components/schemas/microsoft.graph.message'
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: outlookItem
