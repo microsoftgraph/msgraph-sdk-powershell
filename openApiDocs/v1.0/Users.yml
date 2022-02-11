@@ -5949,6 +5949,13 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.directoryObject:
+      discriminator:
+        propertyName: '@odata.type'
+        mapping:
+          '#microsoft.graph.appRoleAssignment': '#/components/schemas/microsoft.graph.appRoleAssignment'
+          '#microsoft.graph.device': '#/components/schemas/microsoft.graph.device'
+          '#microsoft.graph.group': '#/components/schemas/microsoft.graph.group'
+          '#microsoft.graph.user': '#/components/schemas/microsoft.graph.user'
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
         - title: directoryObject
