@@ -66,7 +66,7 @@ directive:
   - where:
       verb: Update
       subject: ^(SecurityAlert)$
-      variant: Update1|UpdateExpanded1
+      variant: Update2|UpdateExpanded2
     set:
       subject: $1Multiple
   - where:
