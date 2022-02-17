@@ -15,6 +15,7 @@ parameters:
 jobs:
   - job: GetLatestDocs
     displayName: Download OpenApiDocs
+    timeoutInMinutes: 120
     pool: $(BuildAgent)
     steps:
       - template: ./checkout.yml
