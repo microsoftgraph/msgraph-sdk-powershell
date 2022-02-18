@@ -4,12 +4,9 @@
 parameters:
   - name: Branch
     type: string
-    default: "WeeklyOpenApiDocsDownload"
   - name: BaseBranch
     type: string
-    default: "dev"
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
 jobs:

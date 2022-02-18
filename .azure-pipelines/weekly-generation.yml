@@ -10,15 +10,14 @@ parameters:
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
-  BaseBranch: "dev"
-  BUILDAGENT: ${{ parameters.BuildAgent }}
+  BaseBranch: "enhancements/AzDoPipelineImprovements" #TODO: Remove me!
+  BuildAgent: ${{ parameters.BuildAgent }}
 
-pool: $(BUILDAGENT)
-
+pool: $(BuildAgent)
 trigger: none
 pr: none
 schedules:
-  - cron: "0 12 * * WED" # Run every wednesday at noon UTC
+  - cron: "0 12 * * WED" # Run every Wednesday at noon UTC
     displayName: "Weekly PS SDK generation"
     branches:
       include:
