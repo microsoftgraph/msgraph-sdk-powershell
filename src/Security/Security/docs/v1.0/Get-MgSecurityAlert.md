@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgSecurityAlert
 
 ## SYNOPSIS
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -31,7 +32,8 @@ Get-MgSecurityAlert -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -251,6 +253,8 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
   - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile

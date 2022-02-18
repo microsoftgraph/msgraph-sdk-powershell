@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 36dd0f6d-61b0-48f6-abdb-636146418c56
+Module Guid: 5256f4fb-6c70-4439-9ca3-d5798450a202
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,10 +15,17 @@ Microsoft Graph PowerShell Cmdlets
 Get securityActions from security
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
 Represent attack simulation and training campaign of a tenant.
+
+### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
+Get simulationAutomations from security
+
+### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
+Get runs from security
 
 ### [Get-MgSecurityCloudAppSecurityProfile](Get-MgSecurityCloudAppSecurityProfile.md)
 Get cloudAppSecurityProfiles from security
@@ -63,10 +70,17 @@ Get userSecurityProfiles from security
 Create new navigation property to securityActions for security
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
 Represent attack simulation and training campaign of a tenant.
+
+### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
+Create new navigation property to simulationAutomations for security
+
+### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
+Create new navigation property to runs for security
 
 ### [New-MgSecurityCloudAppSecurityProfile](New-MgSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
@@ -108,10 +122,17 @@ Create new navigation property to userSecurityProfiles for security
 Delete navigation property securityActions for security
 
 ### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
 Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+
+### [Remove-MgSecurityAttackSimulationAutomation](Remove-MgSecurityAttackSimulationAutomation.md)
+Delete navigation property simulationAutomations for security
+
+### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
+Delete navigation property runs for security
 
 ### [Remove-MgSecurityCloudAppSecurityProfile](Remove-MgSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
@@ -165,10 +186,17 @@ Invoke action submitTiIndicators
 Update the navigation property securityActions in security
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Update-MgSecurityAlertMultiple](Update-MgSecurityAlertMultiple.md)
 Invoke action updateAlerts
+
+### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
+Update the navigation property simulationAutomations in security
+
+### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
+Update the navigation property runs in security
 
 ### [Update-MgSecurityCloudAppSecurityProfile](Update-MgSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security

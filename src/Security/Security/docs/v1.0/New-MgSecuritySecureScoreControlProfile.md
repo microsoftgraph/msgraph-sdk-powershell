@@ -12,7 +12,7 @@ Create new navigation property to secureScoreControlProfiles for security
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgSecuritySecureScoreControlProfile [-ActionType <String>] [-ActionUrl <String>]
  [-AdditionalProperties <Hashtable>] [-AzureTenantId <String>]
@@ -24,7 +24,7 @@ New-MgSecuritySecureScoreControlProfile [-ActionType <String>] [-ActionUrl <Stri
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgSecuritySecureScoreControlProfile -BodyParameter <IMicrosoftGraphSecureScoreControlProfile> [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -42,7 +42,7 @@ Control action type (Config, Review, Behavior).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -57,7 +57,7 @@ URL to where the control can be actioned.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -72,7 +72,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -87,7 +87,7 @@ GUID string for tenant ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -103,7 +103,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlProfile
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -119,7 +119,7 @@ To construct, please use Get-Help -Online and see NOTES section for COMPLIANCEIN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphComplianceInformation[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -130,11 +130,11 @@ Accept wildcard characters: False
 ```
 
 ### -ControlCategory
-Control action category (Account, Data, Device, Apps, Infrastructure).
+Control action category (Identity, Data, Device, Apps, Infrastructure).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -150,7 +150,7 @@ To construct, please use Get-Help -Online and see NOTES section for CONTROLSTATE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScoreControlStateUpdate[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -165,7 +165,7 @@ Flag to indicate if a control is depreciated.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -195,7 +195,7 @@ Resource cost of implemmentating control (low, moderate, high).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -211,7 +211,7 @@ The Timestamp type represents date and time
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -222,11 +222,11 @@ Accept wildcard characters: False
 ```
 
 ### -MaxScore
-Current obtained max score on specified date.
+max attainable score for the control.
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -241,7 +241,7 @@ Microsoft's stack ranking of control.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -256,7 +256,7 @@ Description of what the control will help remediate.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -271,7 +271,7 @@ Description of the impact on users of the remediation.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -286,7 +286,7 @@ Service that owns the control (Exchange, Sharepoint, Azure AD).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -297,11 +297,11 @@ Accept wildcard characters: False
 ```
 
 ### -Threats
-List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -316,7 +316,7 @@ Control tier (Core, Defense in Depth, Advanced.)
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -331,7 +331,7 @@ Title of the control.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -346,7 +346,7 @@ User impact of implementing control (low, moderate, high).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -362,7 +362,7 @@ To construct, please use Get-Help -Online and see NOTES section for VENDORINFORM
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -434,7 +434,7 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
       - `[Name <String>]`: Certification control name
       - `[Url <String>]`: URL for the Microsoft Service Trust Portal
     - `[CertificationName <String>]`: Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-  - `[ControlCategory <String>]`: Control action category (Account, Data, Device, Apps, Infrastructure).
+  - `[ControlCategory <String>]`: Control action category (Identity, Data, Device, Apps, Infrastructure).
   - `[ControlStateUpdates <IMicrosoftGraphSecureScoreControlStateUpdate[]>]`: Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
     - `[AssignedTo <String>]`: 
     - `[Comment <String>]`: 
@@ -444,12 +444,12 @@ BODYPARAMETER <IMicrosoftGraphSecureScoreControlProfile>: secureScoreControlProf
   - `[Deprecated <Boolean?>]`: Flag to indicate if a control is depreciated.
   - `[ImplementationCost <String>]`: Resource cost of implemmentating control (low, moderate, high).
   - `[LastModifiedDateTime <DateTime?>]`: Time at which the control profile entity was last modified. The Timestamp type represents date and time
-  - `[MaxScore <Double?>]`: Current obtained max score on specified date.
+  - `[MaxScore <Double?>]`: max attainable score for the control.
   - `[Rank <Int32?>]`: Microsoft's stack ranking of control.
   - `[Remediation <String>]`: Description of what the control will help remediate.
   - `[RemediationImpact <String>]`: Description of the impact on users of the remediation.
   - `[Service <String>]`: Service that owns the control (Exchange, Sharepoint, Azure AD).
-  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+  - `[Threats <String[]>]`: List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
   - `[Tier <String>]`: Control tier (Core, Defense in Depth, Advanced.)
   - `[Title <String>]`: Title of the control.
   - `[UserImpact <String>]`: User impact of implementing control (low, moderate, high).

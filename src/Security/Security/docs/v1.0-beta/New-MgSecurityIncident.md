@@ -14,16 +14,18 @@ Create new navigation property to incidents for security
 
 ### CreateExpanded (Default)
 ```
-New-MgSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftGraphAlertV2[]>]
- [-AssignedTo <String>] [-Classification <String>] [-Comments <IMicrosoftGraphAlertCommentV2[]>]
+New-MgSecurityIncident [-AdditionalProperties <Hashtable>] [-Alerts <IMicrosoftGraphSecurityAlert[]>]
+ [-AssignedTo <String>] [-Classification <String>] [-Comments <IMicrosoftGraphSecurityAlertComment[]>]
  [-CreatedDateTime <DateTime>] [-Determination <String>] [-DisplayName <String>] [-Id <String>]
  [-IncidentWebUrl <String>] [-LastUpdateDateTime <DateTime>] [-RedirectIncidentId <String>]
- [-Severity <String>] [-Status <String>] [-Tags <String[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-Severity <String>] [-Status <String>] [-Tags <String[]>] [-TenantId <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgSecurityIncident -BodyParameter <IMicrosoftGraphIncident> [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgSecurityIncident -BodyParameter <IMicrosoftGraphSecurityIncident> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +55,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for ALERTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertV2[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlert[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -84,7 +86,7 @@ incident
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIncident
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
 Parameter Sets: Create
 Aliases:
 
@@ -96,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Classification
-alertClassification_v2
+alertClassification
 
 ```yaml
 Type: System.String
@@ -115,7 +117,7 @@ Accept wildcard characters: False
 To construct, please use Get-Help -Online and see NOTES section for COMMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertCommentV2[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityAlertComment[]
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -142,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -Determination
-alertDetermination_v2
+alertDetermination
 
 ```yaml
 Type: System.String
@@ -232,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -Severity
-alertSeverity_v2
+alertSeverity
 
 ```yaml
 Type: System.String
@@ -266,6 +268,21 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TenantId
+.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -312,11 +329,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIncident
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIncident
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityIncident
 
 ## NOTES
 
@@ -327,22 +344,22 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ALERTS <IMicrosoftGraphAlertV2[]>: .
+ALERTS <IMicrosoftGraphSecurityAlert[]>: .
   - `[Id <String>]`: Read-only.
-  - `[AadTenantId <String>]`: 
   - `[ActorDisplayName <String>]`: 
   - `[AlertWebUrl <String>]`: 
   - `[AssignedTo <String>]`: 
   - `[Category <String>]`: 
-  - `[Classification <String>]`: alertClassification_v2
-  - `[Comments <IMicrosoftGraphAlertCommentV2[]>]`: 
+  - `[Classification <String>]`: alertClassification
+  - `[Comments <IMicrosoftGraphSecurityAlertComment[]>]`: 
     - `[Comment <String>]`: 
     - `[CreatedByDisplayName <String>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
   - `[Description <String>]`: 
+  - `[DetectionSource <String>]`: detectionSource
   - `[DetectorId <String>]`: 
-  - `[Determination <String>]`: alertDetermination_v2
+  - `[Determination <String>]`: alertDetermination
   - `[FirstActivityDateTime <DateTime?>]`: 
   - `[IncidentId <String>]`: 
   - `[IncidentWebUrl <String>]`: 
@@ -350,33 +367,35 @@ ALERTS <IMicrosoftGraphAlertV2[]>: .
   - `[LastUpdateDateTime <DateTime?>]`: 
   - `[MitreTechniques <String[]>]`: 
   - `[ProviderAlertId <String>]`: 
+  - `[RecommendedActions <String>]`: 
   - `[ResolvedDateTime <DateTime?>]`: 
   - `[ServiceSource <String>]`: serviceSource
-  - `[Severity <String>]`: alertSeverity_v2
-  - `[Status <String>]`: alertStatus_v2
+  - `[Severity <String>]`: alertSeverity
+  - `[Status <String>]`: alertStatus
+  - `[TenantId <String>]`: 
   - `[ThreatDisplayName <String>]`: 
   - `[ThreatFamilyName <String>]`: 
   - `[Title <String>]`: 
 
-BODYPARAMETER <IMicrosoftGraphIncident>: incident
+BODYPARAMETER <IMicrosoftGraphSecurityIncident>: incident
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Alerts <IMicrosoftGraphAlertV2[]>]`: 
+  - `[Alerts <IMicrosoftGraphSecurityAlert[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[AadTenantId <String>]`: 
     - `[ActorDisplayName <String>]`: 
     - `[AlertWebUrl <String>]`: 
     - `[AssignedTo <String>]`: 
     - `[Category <String>]`: 
-    - `[Classification <String>]`: alertClassification_v2
-    - `[Comments <IMicrosoftGraphAlertCommentV2[]>]`: 
+    - `[Classification <String>]`: alertClassification
+    - `[Comments <IMicrosoftGraphSecurityAlertComment[]>]`: 
       - `[Comment <String>]`: 
       - `[CreatedByDisplayName <String>]`: 
       - `[CreatedDateTime <DateTime?>]`: 
     - `[CreatedDateTime <DateTime?>]`: 
     - `[Description <String>]`: 
+    - `[DetectionSource <String>]`: detectionSource
     - `[DetectorId <String>]`: 
-    - `[Determination <String>]`: alertDetermination_v2
+    - `[Determination <String>]`: alertDetermination
     - `[FirstActivityDateTime <DateTime?>]`: 
     - `[IncidentId <String>]`: 
     - `[IncidentWebUrl <String>]`: 
@@ -384,27 +403,30 @@ BODYPARAMETER <IMicrosoftGraphIncident>: incident
     - `[LastUpdateDateTime <DateTime?>]`: 
     - `[MitreTechniques <String[]>]`: 
     - `[ProviderAlertId <String>]`: 
+    - `[RecommendedActions <String>]`: 
     - `[ResolvedDateTime <DateTime?>]`: 
     - `[ServiceSource <String>]`: serviceSource
-    - `[Severity <String>]`: alertSeverity_v2
-    - `[Status <String>]`: alertStatus_v2
+    - `[Severity <String>]`: alertSeverity
+    - `[Status <String>]`: alertStatus
+    - `[TenantId <String>]`: 
     - `[ThreatDisplayName <String>]`: 
     - `[ThreatFamilyName <String>]`: 
     - `[Title <String>]`: 
   - `[AssignedTo <String>]`: 
-  - `[Classification <String>]`: alertClassification_v2
-  - `[Comments <IMicrosoftGraphAlertCommentV2[]>]`: 
+  - `[Classification <String>]`: alertClassification
+  - `[Comments <IMicrosoftGraphSecurityAlertComment[]>]`: 
   - `[CreatedDateTime <DateTime?>]`: 
-  - `[Determination <String>]`: alertDetermination_v2
+  - `[Determination <String>]`: alertDetermination
   - `[DisplayName <String>]`: 
   - `[IncidentWebUrl <String>]`: 
   - `[LastUpdateDateTime <DateTime?>]`: 
   - `[RedirectIncidentId <String>]`: 
-  - `[Severity <String>]`: alertSeverity_v2
+  - `[Severity <String>]`: alertSeverity
   - `[Status <String>]`: incidentStatus
   - `[Tags <String[]>]`: 
+  - `[TenantId <String>]`: 
 
-COMMENTS <IMicrosoftGraphAlertCommentV2[]>: .
+COMMENTS <IMicrosoftGraphSecurityAlertComment[]>: .
   - `[Comment <String>]`: 
   - `[CreatedByDisplayName <String>]`: 
   - `[CreatedDateTime <DateTime?>]`: 

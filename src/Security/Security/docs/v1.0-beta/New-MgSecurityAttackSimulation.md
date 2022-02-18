@@ -15,14 +15,11 @@ Represent attack simulation and training campaign of a tenant.
 ### CreateExpanded (Default)
 ```
 New-MgSecurityAttackSimulation [-AdditionalProperties <Hashtable>] [-AttackTechnique <String>]
- [-AttackType <String>] [-CleanupArtifacts] [-CompletionDateTime <DateTime>]
+ [-AttackType <String>] [-AutomationId <String>] [-CompletionDateTime <DateTime>]
  [-CreatedBy <IMicrosoftGraphEmailIdentity>] [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DisplayName <String>] [-EnableRegionTimezoneDelivery] [-Id <String>] [-IncludeAllAccountTargets]
- [-IsAutomated] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>] [-LastModifiedDateTime <DateTime>]
- [-LaunchDateTime <DateTime>] [-PayloadDeliveryPlatform <String>] [-PayloadSource <String>]
- [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>] [-TrainingAssignmentPreference <String>]
- [-TrainingContentPreference <String>] [-TrainingDueDateTime <DateTime>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-DisplayName <String>] [-Id <String>] [-IsAutomated] [-LastModifiedBy <IMicrosoftGraphEmailIdentity>]
+ [-LastModifiedDateTime <DateTime>] [-LaunchDateTime <DateTime>] [-PayloadDeliveryPlatform <String>]
+ [-Report <IMicrosoftGraphSimulationReport>] [-Status <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -83,6 +80,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AutomationId
+.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 simulation
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
@@ -96,21 +108,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -CleanupArtifacts
-Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -192,41 +189,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableRegionTimezoneDelivery
-Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncludeAllAccountTargets
-Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -315,21 +282,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PayloadSource
-payloadSource
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Report
 simulationReport
 To construct, please use Get-Help -Online and see NOTES section for REPORT properties and create a hash table.
@@ -351,51 +303,6 @@ simulationStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TrainingAssignmentPreference
-trainingAssignmentPreference
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TrainingContentPreference
-trainingContentPreference
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TrainingDueDateTime
-Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
-
-```yaml
-Type: System.DateTime
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -462,24 +369,21 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
   - `[Id <String>]`: Read-only.
   - `[AttackTechnique <String>]`: simulationAttackTechnique
   - `[AttackType <String>]`: simulationAttackType
-  - `[CleanupArtifacts <Boolean?>]`: Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
+  - `[AutomationId <String>]`: 
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation of the attack simulation and training campaign.
   - `[Description <String>]`: Description of the attack simulation and training campaign.
   - `[DisplayName <String>]`: Display name of the attack simulation and training campaign. Supports $filter and $orderby.
-  - `[EnableRegionTimezoneDelivery <Boolean?>]`: Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-  - `[IncludeAllAccountTargets <Boolean?>]`: Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
   - `[IsAutomated <Boolean?>]`: Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
   - `[LastModifiedDateTime <DateTime?>]`: Date and time of the most recent modification of the attack simulation and training campaign.
   - `[LaunchDateTime <DateTime?>]`: Date and time of the launch/start of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[PayloadDeliveryPlatform <String>]`: payloadDeliveryPlatform
-  - `[PayloadSource <String>]`: payloadSource
   - `[Report <IMicrosoftGraphSimulationReport>]`: simulationReport
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Overview <IMicrosoftGraphSimulationReportOverview>]`: simulationReportOverview
@@ -533,20 +437,17 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
         - `[TrainingCompletedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
         - `[TrainingUpdatedProperties <IMicrosoftGraphUserTrainingContentEventInfo>]`: userTrainingContentEventInfo
   - `[Status <String>]`: simulationStatus
-  - `[TrainingAssignmentPreference <String>]`: trainingAssignmentPreference
-  - `[TrainingContentPreference <String>]`: trainingContentPreference
-  - `[TrainingDueDateTime <DateTime?>]`: Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
 
 CREATEDBY <IMicrosoftGraphEmailIdentity>: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
 LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>: emailIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
 REPORT <IMicrosoftGraphSimulationReport>: simulationReport
