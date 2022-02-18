@@ -10,7 +10,7 @@ parameters:
 
 variables:
   Branch: "WeeklyOpenApiDocsDownload"
-  BaseBranch: "enhancements/AzDoPipelineImprovements" #TODO: Remove me!
+  BaseBranch: "dev"
   BuildAgent: ${{ parameters.BuildAgent }}
 
 pool: $(BuildAgent)
