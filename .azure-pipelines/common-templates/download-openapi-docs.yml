@@ -129,7 +129,7 @@ jobs:
             git add .
             git commit -m 'Weekly OpenApiDocs Download. [run ci]'
             git status
-            git push --set-upstream origin $(ComputeBranch.WeeklyBranch)
+            git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
             git status
 
 # References
