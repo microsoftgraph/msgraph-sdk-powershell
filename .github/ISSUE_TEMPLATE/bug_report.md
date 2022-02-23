@@ -15,10 +15,9 @@ A clear and concise description of what the bug is.
 
 Steps to reproduce the behavior:
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Run Connect-MgGraph with '...'
+2. Run command '....'
+3. See error
 
 ### **Expected behavior**
 
