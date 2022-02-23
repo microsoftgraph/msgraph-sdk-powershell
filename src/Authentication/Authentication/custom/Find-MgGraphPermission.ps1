@@ -246,10 +246,17 @@ $scriptblock = {
     }
 }
 
-$params = @{
+$paramsFindMg = @{
     CommandName = 'Find-MgGraphPermission'
     ParameterName = 'SearchString'
     ScriptBlock = $scriptBlock
 }
 
-Register-ArgumentCompleter @params
+$paramsConnectMg = @{
+    CommandName = 'Connect-MgGraph'
+    ParameterName = 'Scopes'
+    ScriptBlock = $scriptBlock
+}
+
+Register-ArgumentCompleter @paramsFindMg
+Register-ArgumentCompleter @paramsConnectMg
