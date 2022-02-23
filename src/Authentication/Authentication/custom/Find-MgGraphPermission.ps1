@@ -225,12 +225,13 @@ function Find-MgGraphPermission {
     }
 }
 
-$scriptblock = {
-    param($commandName,
-    $parameterName,
-    $wordToComplete,
-    $commandAst,
-    $fakeBoundParameters
+$scriptBlock = {
+    param (
+        $commandName,
+        $parameterName,
+        $wordToComplete,
+        $commandAst,
+        $fakeBoundParameters
     )
 
     $permissions = @()
@@ -241,22 +242,8 @@ $scriptblock = {
     $permissions += $permissionsAppRolesQuery.Name
     $permissions | Where-Object {
         $_ -like "$wordToComplete*"
-    } | ForEach-Object {
-        $_
     }
 }
 
-$paramsFindMg = @{
-    CommandName = 'Find-MgGraphPermission'
-    ParameterName = 'SearchString'
-    ScriptBlock = $scriptBlock
-}
-
-$paramsConnectMg = @{
-    CommandName = 'Connect-MgGraph'
-    ParameterName = 'Scopes'
-    ScriptBlock = $scriptBlock
-}
-
-Register-ArgumentCompleter @paramsFindMg
-Register-ArgumentCompleter @paramsConnectMg
+Register-ArgumentCompleter -CommandName Find-MgGraphPermission -ParameterName SearchString -ScriptBlock $scriptBlock
+Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Scopes -ScriptBlock $scriptBlock
