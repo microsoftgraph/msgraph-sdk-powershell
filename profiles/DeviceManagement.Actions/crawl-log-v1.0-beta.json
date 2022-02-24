@@ -1849,6 +1849,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.disable": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.enable": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
@@ -1905,7 +1913,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
+    "/deviceManagement/reports/microsoft.graph.getComplianceSettingDetailsReport": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
     "/deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
+    },
+    "/deviceManagement/reports/microsoft.graph.getComplianceSettingsReport": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Actions.yml"
     },
