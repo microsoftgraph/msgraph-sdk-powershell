@@ -213,7 +213,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
-    "/teams/{team-id}/channels/{channel-id}/filesFolder/content": {
+    "/teams/{team-id}/channels/{channel-id}/filesFolder/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
@@ -405,7 +405,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
-    "/teams/{team-id}/primaryChannel/filesFolder/content": {
+    "/teams/{team-id}/primaryChannel/filesFolder/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },

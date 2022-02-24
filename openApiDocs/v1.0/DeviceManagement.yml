@@ -2207,7 +2207,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_ListScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2291,7 +2291,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Create new navigation property to scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_CreateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2323,7 +2323,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Get scheduledActionsForRule from deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_GetScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2387,7 +2387,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Update the navigation property scheduledActionsForRule in deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_UpdateScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -2421,7 +2421,7 @@ paths:
       tags:
         - deviceManagement.deviceCompliancePolicy
       summary: Delete navigation property scheduledActionsForRule for deviceManagement
-      description: The list of scheduled action for this rule
+      description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
       operationId: deviceManagement.deviceCompliancePolicies_DeleteScheduledActionsForRule
       parameters:
         - name: deviceCompliancePolicy-id
@@ -7657,7 +7657,7 @@ components:
             intuneAccountId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: Intune Account ID for given tenant
+              description: Intune Account Id for given tenant
               format: uuid
             settings:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementSettings'
@@ -8109,7 +8109,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceComplianceScheduledActionForRule'
-              description: The list of scheduled action for this rule
+              description: The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
             userStatuses:
               type: array
               items:
