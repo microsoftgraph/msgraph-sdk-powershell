@@ -15839,6 +15839,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.disable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_disable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.enable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_enable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding':
     post:
       tags:
@@ -16679,12 +16719,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingDetailsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingDetailsReport
+      operationId: deviceManagement.reports_getComplianceSettingDetailsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport:
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingNonComplianceReport
       operationId: deviceManagement.reports_getComplianceSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingsReport
+      operationId: deviceManagement.reports_getComplianceSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -22516,6 +22690,8 @@ components:
         - macOS
         - windows10X
         - windows10
+        - linux
+        - unknownFutureValue
       type: string
       description: Supported platform types.
     microsoft.graph.deviceManagementConfigurationTechnologies:
@@ -23954,6 +24130,10 @@ components:
             displayName:
               type: string
               description: The localized friendly name of the ADMX file.
+              nullable: true
+            fileName:
+              type: string
+              description: 'The file name of the ADMX file without the path. For example: edge.admx'
               nullable: true
             languageCodes:
               type: array

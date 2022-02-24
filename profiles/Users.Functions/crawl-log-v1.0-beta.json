@@ -125,14 +125,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
-    "/users/{user-id}/calendarView/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/calendarView/{event-id}/calendar/events/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
     "/users/{user-id}/calendarView/{event-id}/calendar/microsoft.graph.allowedCalendarSharingRoles(User='{User}')": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
@@ -162,14 +154,6 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
     "/users/{user-id}/contacts/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/calendarView/microsoft.graph.delta()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/events/{event-id}/calendar/events/microsoft.graph.delta()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
@@ -214,6 +198,10 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
     "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getNonCompliantSettings()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
+    "/users/{user-id}/managedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
@@ -289,22 +277,6 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.preview()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id1}/microsoft.graph.preview()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/onenote/pages/{onenotePage-id}/parentSection/pages/{onenotePage-id1}/microsoft.graph.preview()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
-    "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/parentNotebook/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
-    },
     "/users/{user-id}/onenote/sectionGroups/{sectionGroup-id}/sections/{onenoteSection-id}/pages/{onenotePage-id}/microsoft.graph.preview()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
@@ -326,6 +298,14 @@
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
     "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/decisions/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/stages/{accessReviewStage-id}/decisions/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
+    },
+    "/users/{user-id}/pendingAccessReviewInstances/{accessReviewInstance-id}/stages/microsoft.graph.filterByCurrentUser(on={on})": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Functions.yml"
     },
