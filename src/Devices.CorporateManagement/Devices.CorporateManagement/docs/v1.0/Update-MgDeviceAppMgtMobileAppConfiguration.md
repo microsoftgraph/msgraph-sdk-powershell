@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtMobileAppConfiguration
 
 ## SYNOPSIS
-Update the navigation property mobileAppConfigurations in deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## SYNTAX
 
@@ -18,7 +18,7 @@ Update-MgDeviceAppMgtMobileAppConfiguration -ManagedDeviceMobileAppConfiguration
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]
+ [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
  [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TargetedMobileApps <String[]>]
  [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]
@@ -46,7 +46,7 @@ Update-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManag
  [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]>]
  [-CreatedDateTime <DateTime>] [-Description <String>]
- [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]
+ [-DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]
  [-DeviceStatusSummary <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1>]
  [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-TargetedMobileApps <String[]>]
  [-UserStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]>]
@@ -55,27 +55,9 @@ Update-MgDeviceAppMgtMobileAppConfiguration -InputObject <IDevicesCorporateManag
 ```
 
 ## DESCRIPTION
-Update the navigation property mobileAppConfigurations in deviceAppManagement
+The Managed Device Mobile Application Configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -96,7 +78,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 The list of group assignemenets for app configration.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationAssignment1[]
@@ -112,7 +94,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class for Mobile app configuration for enrolled devices.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfiguration1
@@ -158,10 +140,10 @@ Accept wildcard characters: False
 
 ### -DeviceStatuses
 List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-To construct, see NOTES section for DEVICESTATUSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -174,7 +156,7 @@ Accept wildcard characters: False
 
 ### -DeviceStatusSummary
 Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
-To construct, see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATUSSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSummary1
@@ -220,7 +202,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -296,7 +278,7 @@ Accept wildcard characters: False
 
 ### -UserStatuses
 List of ManagedDeviceMobileAppConfigurationUserStatus.
-To construct, see NOTES section for USERSTATUSES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATUSES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserStatus[]
@@ -312,7 +294,7 @@ Accept wildcard characters: False
 
 ### -UserStatusSummary
 Contains properties, inherited properties and actions for an MDM mobile app configuration user status summary.
-To construct, see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATUSSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedDeviceMobileAppConfigurationUserSummary1
@@ -420,7 +402,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>: An abstract
     - `[NotApplicableCount <Int32?>]`: Number of not applicable devices
     - `[PendingCount <Int32?>]`: Number of pending devices
     - `[SuccessCount <Int32?>]`: Number of succeeded devices
-  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+  - `[DeviceStatuses <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>]`: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
     - `[Id <String>]`: Read-only.
     - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
     - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -451,7 +433,7 @@ BODYPARAMETER <IMicrosoftGraphManagedDeviceMobileAppConfiguration1>: An abstract
     - `[UserPrincipalName <String>]`: UserPrincipalName.
   - `[Version <Int32?>]`: Version of the device configuration.
 
-DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+DEVICESTATUSES <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceStatus1[]>: List of ManagedDeviceMobileAppConfigurationDeviceStatus.
   - `[Id <String>]`: Read-only.
   - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires
   - `[DeviceDisplayName <String>]`: Device name of the DevicePolicyStatus.
@@ -475,15 +457,15 @@ DEVICESTATUSSUMMARY <IMicrosoftGraphManagedDeviceMobileAppConfigurationDeviceSum
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -523,14 +505,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserDeviceManagementTroubleshootingEvent
 
 ## SYNOPSIS
-Update the navigation property deviceManagementTroubleshootingEvents in users
+The list of troubleshooting events for this user.
 
 ## SYNTAX
 
@@ -45,33 +45,15 @@ Update-MgUserDeviceManagementTroubleshootingEvent -InputObject <IDevicesCorporat
 ```
 
 ## DESCRIPTION
-Update the navigation property deviceManagementTroubleshootingEvents in users
+The list of troubleshooting events for this user.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
 ### -AdditionalInformation
 A set of string key and string value pairs which provides additional information on the Troubleshooting event
-To construct, see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ADDITIONALINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -102,7 +84,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Event representing an general failure.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingEvent
@@ -194,7 +176,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -225,7 +207,7 @@ Accept wildcard characters: False
 
 ### -TroubleshootingErrorDetails
 Object containing detailed information about the error and its remediation.
-To construct, see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for TROUBLESHOOTINGERRORDETAILS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails
@@ -322,26 +304,26 @@ BODYPARAMETER <IMicrosoftGraphDeviceManagementTroubleshootingEvent>: Event repre
   - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
   - `[TroubleshootingErrorDetails <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>]`: Object containing detailed information about the error and its remediation.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Context <String>]`: 
-    - `[Failure <String>]`: 
+    - `[Context <String>]`: Not yet documented
+    - `[Failure <String>]`: Not yet documented
     - `[FailureDetails <String>]`: The detailed description of what went wrong.
     - `[Remediation <String>]`: The detailed description of how to remediate this issue.
     - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
       - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-      - `[Text <String>]`: 
+      - `[Text <String>]`: Not yet documented
 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -381,14 +363,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -400,13 +381,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
 
 TROUBLESHOOTINGERRORDETAILS <IMicrosoftGraphDeviceManagementTroubleshootingErrorDetails>: Object containing detailed information about the error and its remediation.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Context <String>]`: 
-  - `[Failure <String>]`: 
+  - `[Context <String>]`: Not yet documented
+  - `[Failure <String>]`: Not yet documented
   - `[FailureDetails <String>]`: The detailed description of what went wrong.
   - `[Remediation <String>]`: The detailed description of how to remediate this issue.
   - `[Resources <IMicrosoftGraphDeviceManagementTroubleshootingErrorResource[]>]`: Links to helpful documentation about this failure.
     - `[Link <String>]`: The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}
-    - `[Text <String>]`: 
+    - `[Text <String>]`: Not yet documented
 
 ## RELATED LINKS
 

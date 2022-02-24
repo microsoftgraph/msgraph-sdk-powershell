@@ -213,7 +213,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
-    "/teams/{team-id}/channels/{channel-id}/filesFolder/content": {
+    "/teams/{team-id}/channels/{channel-id}/filesFolder/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
@@ -405,7 +405,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
-    "/teams/{team-id}/primaryChannel/filesFolder/content": {
+    "/teams/{team-id}/primaryChannel/filesFolder/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
@@ -622,6 +622,46 @@
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },
     "/teamwork": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/activity": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/configuration": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/health": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.restart": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.runDiagnostics": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/microsoft.graph.updateSoftware": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/operations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Teams.yml"
+    },
+    "/teamwork/devices/{teamworkDevice-id}/operations/{teamworkDeviceOperation-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Teams.yml"
     },

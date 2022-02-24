@@ -12,13 +12,13 @@ Invoke action validateProperties
 
 ## SYNTAX
 
-### ValidateExpanded1 (Default)
+### ValidateExpanded (Default)
 ```
 Test-MgApplicationProperty [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EntityType <String>]
  [-MailNickname <String>] [-OnBehalfOfUserId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Validate1
+### Validate
 ```
 Test-MgApplicationProperty
  -BodyParameter <IPathsW28MefApplicationsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema>
@@ -30,24 +30,6 @@ Invoke action validateProperties
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -55,7 +37,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ValidateExpanded1
+Parameter Sets: ValidateExpanded
 Aliases:
 
 Required: False
@@ -67,11 +49,11 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsW28MefApplicationsMicrosoftGraphValidatepropertiesPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Validate1
+Parameter Sets: Validate
 Aliases:
 
 Required: True
@@ -86,7 +68,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded1
+Parameter Sets: ValidateExpanded
 Aliases:
 
 Required: False
@@ -101,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded1
+Parameter Sets: ValidateExpanded
 Aliases:
 
 Required: False
@@ -116,7 +98,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded1
+Parameter Sets: ValidateExpanded
 Aliases:
 
 Required: False
@@ -131,7 +113,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ValidateExpanded1
+Parameter Sets: ValidateExpanded
 Aliases:
 
 Required: False

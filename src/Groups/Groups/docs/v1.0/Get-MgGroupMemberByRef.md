@@ -8,37 +8,27 @@ schema: 2.0.0
 # Get-MgGroupMemberByRef
 
 ## SYNOPSIS
-Get ref of members from groups
+Members of this group, who can be users, devices, other groups, or service principals.
+Supports the List members, Add member, and Remove member operations.
+Nullable.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ## SYNTAX
 
 ```
-Get-MgGroupMemberByRef -GroupId <String> [-Count] [-Filter <String>] [-Search <String>] [-Skip <Int32>]
- [-Sort <String[]>] [-Top <Int32>] [-All] [-PageSize <Int32>] [<CommonParameters>]
+Get-MgGroupMemberByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get ref of members from groups
+Members of this group, who can be users, devices, other groups, or service principals.
+Supports the List members, Add member, and Remove member operations.
+Nullable.
+Supports $expand including nested $select.
+For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -57,13 +47,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: (All)
-Aliases:
+Aliases: CV
 
 Required: False
 Position: Named

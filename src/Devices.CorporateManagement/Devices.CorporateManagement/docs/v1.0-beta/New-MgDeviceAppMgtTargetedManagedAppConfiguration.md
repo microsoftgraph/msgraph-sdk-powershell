@@ -8,13 +8,13 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTargetedManagedAppConfiguration
 
 ## SYNOPSIS
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Targeted managed app configurations.
 
 ## SYNTAX
 
 ### CreateExpanded (Default)
 ```
-New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>]
+New-MgDeviceAppMgtTargetedManagedAppConfiguration [-AdditionalProperties <Hashtable>] [-AppGroupType <String>]
  [-Apps <IMicrosoftGraphManagedMobileApp[]>]
  [-Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>] [-CreatedDateTime <DateTime>]
  [-CustomSettings <IMicrosoftGraphKeyValuePair[]>] [-DeployedAppCount <Int32>]
@@ -30,27 +30,9 @@ New-MgDeviceAppMgtTargetedManagedAppConfiguration
 ```
 
 ## DESCRIPTION
-Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+Targeted managed app configurations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,9 +51,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AppGroupType
+Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Apps
 List of apps to which the policy is deployed.
-To construct, see NOTES section for APPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
@@ -87,7 +84,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppPolicyAssignment[]
@@ -103,7 +100,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTargetedManagedAppConfiguration
@@ -134,7 +131,7 @@ Accept wildcard characters: False
 
 ### -CustomSettings
 A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-To construct, see NOTES section for CUSTOMSETTINGS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMSETTINGS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -165,7 +162,7 @@ Accept wildcard characters: False
 
 ### -DeploymentSummary
 The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
@@ -345,12 +342,12 @@ APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is de
 
 ASSIGNMENTS <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
   - `[Id <String>]`: Read-only.
-  - `[Source <String>]`: deviceAndAppManagementAssignmentSource
+  - `[Source <String>]`: Represents source of assignment.
   - `[SourceId <String>]`: Identifier for resource used for deployment to a group
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>: Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -364,6 +361,7 @@ BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>: Configuration us
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
   - `[Id <String>]`: Read-only.
+  - `[AppGroupType <String>]`: Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
     - `[Id <String>]`: Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
@@ -371,12 +369,12 @@ BODYPARAMETER <IMicrosoftGraphTargetedManagedAppConfiguration>: Configuration us
     - `[Version <String>]`: Version of the entity.
   - `[Assignments <IMicrosoftGraphTargetedManagedAppPolicyAssignment[]>]`: Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
     - `[Id <String>]`: Read-only.
-    - `[Source <String>]`: deviceAndAppManagementAssignmentSource
+    - `[Source <String>]`: Represents source of assignment.
     - `[SourceId <String>]`: Identifier for resource used for deployment to a group
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
   - `[DeployedAppCount <Int32?>]`: Count of apps to which the current policy is deployed.
   - `[DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]`: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

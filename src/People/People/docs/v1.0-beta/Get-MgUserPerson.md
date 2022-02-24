@@ -8,51 +8,36 @@ schema: 2.0.0
 # Get-MgUserPerson
 
 ## SYNOPSIS
-Get people from users
+Read-only.
+The most relevant people to the user.
+The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
+A person is an aggregation of information from across mail, contacts and social networks.
 
 ## SYNTAX
 
 ### List1 (Default)
 ```
-Get-MgUserPerson -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
- [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+Get-MgUserPerson -UserId <String> [-Filter <String>] [-Property <String[]>] [-Search <String>] [-Skip <Int32>]
+ [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ### Get1
 ```
-Get-MgUserPerson -PersonId <String> -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserPerson -PersonId <String> -UserId <String> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity1
 ```
-Get-MgUserPerson -InputObject <IPeopleIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgUserPerson -InputObject <IPeopleIdentity> [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get people from users
+Read-only.
+The most relevant people to the user.
+The collection is ordered by their relevance to the user, which is determined by the user's communication, collaboration and business relationships.
+A person is an aggregation of information from across mail, contacts and social networks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,28 +56,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String
 Parameter Sets: List1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ExpandProperty
-Expand related entities
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases: Expand
+Aliases: CV
 
 Required: False
 Position: Named
@@ -118,7 +89,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
@@ -281,8 +252,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person

@@ -45,24 +45,6 @@ Invoke action onenotePatchContent
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -82,7 +64,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 .
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphOnenotepatchcontentPostRequestbodyContentApplicationJsonSchema
@@ -98,7 +80,7 @@ Accept wildcard characters: False
 
 ### -Commands
 .
-To construct, see NOTES section for COMMANDS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for COMMANDS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOnenotePatchContentCommand[]
@@ -129,7 +111,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
@@ -232,26 +214,25 @@ BODYPARAMETER <IPaths96Tlp1GroupsGroupIdOnenotePagesOnenotepageIdMicrosoftGraphO
     - `[Action <String>]`: onenotePatchActionType
     - `[Content <String>]`: A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
     - `[Position <String>]`: onenotePatchInsertPosition
-    - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
+    - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
 
 COMMANDS <IMicrosoftGraphOnenotePatchContentCommand[]>: .
   - `[Action <String>]`: onenotePatchActionType
   - `[Content <String>]`: A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
   - `[Position <String>]`: onenotePatchInsertPosition
-  - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
+  - `[Target <String>]`: The element to update. Must be the #<data-id> or the generated {id} of the element, or the body or title keyword.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -261,7 +242,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

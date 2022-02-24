@@ -99,6 +99,8 @@ paths:
                 - connectorId desc
                 - description
                 - description desc
+                - ingestedItemsCount
+                - ingestedItemsCount desc
                 - name
                 - name desc
                 - searchSettings
@@ -120,12 +122,14 @@ paths:
                 - configuration
                 - connectorId
                 - description
+                - ingestedItemsCount
                 - name
                 - searchSettings
                 - state
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
         - name: $expand
@@ -142,6 +146,7 @@ paths:
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
       responses:
@@ -217,12 +222,14 @@ paths:
                 - configuration
                 - connectorId
                 - description
+                - ingestedItemsCount
                 - name
                 - searchSettings
                 - state
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
         - name: $expand
@@ -239,6 +246,7 @@ paths:
                 - groups
                 - items
                 - operations
+                - quota
                 - schema
               type: string
       responses:
@@ -259,6 +267,10 @@ paths:
                 externalConnection-id: $request.path.externalConnection-id
             operations:
               operationId: external.Connections.ListOperations
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+            quota:
+              operationId: external.Connections.GetQuota
               parameters:
                 externalConnection-id: $request.path.externalConnection-id
             schema:
@@ -883,8 +895,6 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/microsoft.graph.searchRequest'
-                queryAlterationOptions:
-                  $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
               additionalProperties:
                 type: object
         required: true
@@ -894,7 +904,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.searchResponse'
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.searchResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1174,6 +1186,10 @@ components:
               type: string
               description: Description of the connection displayed in the Microsoft 365 admin center. Optional.
               nullable: true
+            ingestedItemsCount:
+              type: integer
+              format: int64
+              nullable: true
             name:
               type: string
               description: The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
@@ -1197,6 +1213,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
               description: Read-only. Nullable.
+            quota:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionQuota'
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
           additionalProperties:
@@ -1331,6 +1349,8 @@ components:
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        queryAlterationOptions:
+          $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
         resultTemplateOptions:
           $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
         size:
@@ -1349,19 +1369,8 @@ components:
           items:
             type: string
             nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.searchAlterationOptions:
-      title: searchAlterationOptions
-      type: object
-      properties:
-        enableModification:
+        trimDuplicates:
           type: boolean
-          description: 'Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.'
-          nullable: true
-        enableSuggestion:
-          type: boolean
-          description: 'Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -1369,13 +1378,21 @@ components:
       title: searchResponse
       type: object
       properties:
-        queryAlterationResponse:
-          $ref: '#/components/schemas/microsoft.graph.alterationResponse'
-        value:
+        hitsContainers:
           type: array
           items:
-            $ref: '#/components/schemas/microsoft.graph.searchResultSet'
-          description: 'Represents results from a search query, and the terms used for the query.'
+            $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
+          description: A collection of search results.
+        queryAlterationResponse:
+          $ref: '#/components/schemas/microsoft.graph.alterationResponse'
+        resultTemplates:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateDictionary'
+        searchTerms:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Contains the search terms sent in the initial search query.
       additionalProperties:
         type: object
     microsoft.graph.search.qna:
@@ -1479,7 +1496,7 @@ components:
             members:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupMember'
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
               description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
           additionalProperties:
             type: object
@@ -1510,6 +1527,18 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicError'
             status:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.connectionQuota:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: connectionQuota
+          type: object
+          properties:
+            itemsRemaining:
+              type: integer
+              format: int64
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.schema:
@@ -1652,8 +1681,25 @@ components:
           type: string
           description: The search query containing the search terms. Required.
           nullable: true
+        queryTemplate:
+          type: string
+          nullable: true
         query_string:
           $ref: '#/components/schemas/microsoft.graph.searchQueryString'
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlterationOptions:
+      title: searchAlterationOptions
+      type: object
+      properties:
+        enableModification:
+          type: boolean
+          description: 'Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.'
+          nullable: true
+        enableSuggestion:
+          type: boolean
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.resultTemplateOption:
@@ -1662,7 +1708,7 @@ components:
       properties:
         enableResultTemplate:
           type: boolean
-          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -1679,6 +1725,33 @@ components:
           description: The name of the property to sort on. Required.
       additionalProperties:
         type: object
+    microsoft.graph.searchHitsContainer:
+      title: searchHitsContainer
+      type: object
+      properties:
+        aggregations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchAggregation'
+          description: Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
+        hits:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchHit'
+          description: A collection of the search results.
+        moreResultsAvailable:
+          type: boolean
+          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
+          nullable: true
+        total:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.alterationResponse:
       title: alterationResponse
       type: object
@@ -1693,25 +1766,13 @@ components:
           $ref: '#/components/schemas/microsoft.graph.searchAlterationType'
       additionalProperties:
         type: object
-    microsoft.graph.searchResultSet:
-      title: searchResultSet
-      type: object
-      properties:
-        hitsContainers:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
-          description: A collection of search results.
-        resultTemplates:
-          $ref: '#/components/schemas/microsoft.graph.resultTemplateDictionary'
-        searchTerms:
-          type: array
-          items:
-            type: string
-            nullable: true
-          description: Contains the search terms sent in the initial search query.
-      additionalProperties:
-        type: object
+    microsoft.graph.resultTemplateDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: resultTemplateDictionary
+          type: object
+          additionalProperties:
+            type: object
     odata.error:
       required:
         - error
@@ -1743,16 +1804,14 @@ components:
           description: Specifies additional rules for selecting this display template based on the item schema. Optional.
       additionalProperties:
         type: object
-    microsoft.graph.externalConnectors.externalGroupMember:
+    microsoft.graph.externalConnectors.identity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalGroupMember
+        - title: identity
           type: object
           properties:
-            identitySource:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identitySourceType'
             type:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupMemberType'
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityType'
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.acl:
@@ -1908,13 +1967,73 @@ components:
           description: Contains the actual search terms of the request.
       additionalProperties:
         type: object
+    microsoft.graph.searchAggregation:
+      title: searchAggregation
+      type: object
+      properties:
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchBucket'
+          description: Defines the actual buckets of the computed aggregation.
+        field:
+          type: string
+          description: Defines on which field the aggregation was computed on.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.searchHit:
+      title: searchHit
+      type: object
+      properties:
+        contentSource:
+          type: string
+          description: The name of the content source which the externalItem is part of .
+          nullable: true
+        hitId:
+          type: string
+          description: The internal identifier for the item.
+          nullable: true
+        rank:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The rank or the order of the result.
+          format: int32
+          nullable: true
+        resultTemplateId:
+          type: string
+          description: ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+          nullable: true
+        summary:
+          type: string
+          description: 'A summary of the result, if a summary is available.'
+          nullable: true
+        _id:
+          type: string
+          nullable: true
+        _score:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        _summary:
+          type: string
+          nullable: true
+        resource:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+        _source:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
     microsoft.graph.searchAlteration:
       title: searchAlteration
       type: object
       properties:
         alteredHighlightedQueryString:
           type: string
-          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)'
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.'
           nullable: true
         alteredQueryString:
           type: string
@@ -1924,7 +2043,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
-          description: Represents changed segments with respect to original query.
+          description: Represents changed segments related to an original user query.
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationType:
@@ -1934,40 +2053,11 @@ components:
         - modification
         - unknownFutureValue
       type: string
-    microsoft.graph.searchHitsContainer:
-      title: searchHitsContainer
+    microsoft.graph.Dictionary:
+      title: Dictionary
       type: object
-      properties:
-        aggregations:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchAggregation'
-          description: Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
-        hits:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchHit'
-          description: A collection of the search results.
-        moreResultsAvailable:
-          type: boolean
-          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
-          nullable: true
-        total:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
-          format: int32
-          nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.resultTemplateDictionary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
-        - title: resultTemplateDictionary
-          type: object
-          additionalProperties:
-            type: object
     odata.error.main:
       required:
         - code
@@ -2014,18 +2104,12 @@ components:
           $ref: '#/components/schemas/microsoft.graph.binaryOperator'
       additionalProperties:
         type: object
-    microsoft.graph.externalConnectors.identitySourceType:
-      title: identitySourceType
-      enum:
-        - azureActiveDirectory
-        - external
-        - unknownFutureValue
-      type: string
-    microsoft.graph.externalConnectors.externalGroupMemberType:
-      title: externalGroupMemberType
+    microsoft.graph.externalConnectors.identityType:
+      title: identityType
       enum:
         - user
         - group
+        - externalGroup
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.accessType:
@@ -2033,6 +2117,13 @@ components:
       enum:
         - grant
         - deny
+        - unknownFutureValue
+      type: string
+    microsoft.graph.externalConnectors.identitySourceType:
+      title: identitySourceType
+      enum:
+        - azureActiveDirectory
+        - external
         - unknownFutureValue
       type: string
     microsoft.graph.externalConnectors.aclType:
@@ -2156,6 +2247,27 @@ components:
         - keyAsNumber
         - unknownFutureValue
       type: string
+    microsoft.graph.searchBucket:
+      title: searchBucket
+      type: object
+      properties:
+        aggregationFilterToken:
+          type: string
+          description: 'A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format ''{field}:/''{aggregationFilterToken}/''''. See an example.'
+          nullable: true
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
+          format: int32
+          nullable: true
+        key:
+          type: string
+          description: The discrete value of the field that an aggregation was computed on.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.alteredQueryToken:
       title: alteredQueryToken
       type: object
@@ -2178,71 +2290,6 @@ components:
           type: string
           description: Represents the corrected segment string.
           nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.searchAggregation:
-      title: searchAggregation
-      type: object
-      properties:
-        buckets:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchBucket'
-          description: Defines the actual buckets of the computed aggregation.
-        field:
-          type: string
-          description: Defines on which field the aggregation was computed on.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.searchHit:
-      title: searchHit
-      type: object
-      properties:
-        contentSource:
-          type: string
-          description: The name of the content source which the externalItem is part of .
-          nullable: true
-        hitId:
-          type: string
-          description: The internal identifier for the item.
-          nullable: true
-        rank:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The rank or the order of the result.
-          format: int32
-          nullable: true
-        resultTemplateId:
-          type: string
-          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
-          nullable: true
-        summary:
-          type: string
-          description: 'A summary of the result, if a summary is available.'
-          nullable: true
-        _id:
-          type: string
-          nullable: true
-        _score:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          format: int32
-          nullable: true
-        _summary:
-          type: string
-          nullable: true
-        resource:
-          $ref: '#/components/schemas/microsoft.graph.entity'
-        _source:
-          $ref: '#/components/schemas/microsoft.graph.entity'
-      additionalProperties:
-        type: object
-    microsoft.graph.Dictionary:
-      title: Dictionary
-      type: object
       additionalProperties:
         type: object
     odata.error.detail:
@@ -2278,27 +2325,6 @@ components:
         - or
         - and
       type: string
-    microsoft.graph.searchBucket:
-      title: searchBucket
-      type: object
-      properties:
-        aggregationFilterToken:
-          type: string
-          description: 'A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format ''{field}:/''{aggregationFilterToken}/''''. See an example.'
-          nullable: true
-        count:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.
-          format: int32
-          nullable: true
-        key:
-          type: string
-          description: The discrete value of the field that an aggregation was computed on.
-          nullable: true
-      additionalProperties:
-        type: object
   responses:
     error:
       description: error

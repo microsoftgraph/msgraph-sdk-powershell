@@ -40,29 +40,18 @@ Add a member to an Office 365 group or security group through the members naviga
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Add a member to a group.
 ```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+New-MgGroupMember -GroupId '872648e7-b23a-4328-bd46-f1bd431c2354' -DirectoryObjectId '8a7c50d3-fcbd-4727-a889-8ab232dfea01'
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example adds a member specified by the DirectoryObjectId to the specified group.
 
 ## PARAMETERS
 
 ### -BodyParameter
 HELP MESSAGE MISSING
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDirectoryObject
@@ -108,7 +97,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IGroupsIdentity
@@ -184,14 +173,13 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
   - `[ConversationId <String>]`: key: id of conversation
   - `[ConversationThreadId <String>]`: key: id of conversationThread
-  - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[DirectorySettingId <String>]`: key: id of directorySetting
   - `[EndpointId <String>]`: key: id of endpoint
   - `[EventId <String>]`: key: id of event
   - `[ExtensionId <String>]`: key: id of extension
   - `[GroupId <String>]`: key: id of group
   - `[GroupLifecyclePolicyId <String>]`: key: id of groupLifecyclePolicy
-  - `[IncludePersonalNotebooks <Boolean?>]`: 
+  - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
   - `[MentionId <String>]`: key: id of mention
   - `[MultiValueLegacyExtendedPropertyId <String>]`: key: id of multiValueLegacyExtendedProperty
   - `[NotebookId <String>]`: key: id of notebook
@@ -201,7 +189,7 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[ProfilePhotoId <String>]`: key: id of profilePhoto
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SingleValueLegacyExtendedPropertyId <String>]`: key: id of singleValueLegacyExtendedProperty
-  - `[User <String>]`: 
+  - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

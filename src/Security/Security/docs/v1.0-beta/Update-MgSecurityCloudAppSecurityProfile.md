@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityCloudAppSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property cloudAppSecurityProfiles in Security
+Update the navigation property cloudAppSecurityProfiles in security
 
 ## SYNTAX
 
@@ -48,27 +48,9 @@ Update-MgSecurityCloudAppSecurityProfile -InputObject <ISecurityIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the navigation property cloudAppSecurityProfiles in Security
+Update the navigation property cloudAppSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -119,7 +101,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 cloudAppSecurityProfile
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityProfile
@@ -210,7 +192,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
@@ -406,7 +388,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
@@ -506,10 +488,12 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 

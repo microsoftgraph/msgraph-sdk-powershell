@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyIdentitySecurityDefaultEnforcementPolicy
 
 ## SYNOPSIS
-Get identitySecurityDefaultsEnforcementPolicy from policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## SYNTAX
 
@@ -18,27 +18,9 @@ Get-MgPolicyIdentitySecurityDefaultEnforcementPolicy [-ExpandProperty <String[]>
 ```
 
 ## DESCRIPTION
-Get identitySecurityDefaultsEnforcementPolicy from policies
+The policy that represents the security defaults that protect against common attacks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -79,7 +61,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIdentitySecurityDefaultsEnforcementPolicy1
 
 ## NOTES
 

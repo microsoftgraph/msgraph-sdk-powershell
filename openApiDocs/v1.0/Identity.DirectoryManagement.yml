@@ -3872,7 +3872,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get members from directory
-      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: directory.administrativeUnits_ListMembers
       parameters:
         - name: administrativeUnit-id
@@ -3955,7 +3955,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get ref of members from directory
-      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: directory.administrativeUnits_ListGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4012,7 +4012,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property ref to members for directory
-      description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+      description: Users and groups that are members of this administrative unit. Supports $expand.
       operationId: directory.administrativeUnits_CreateGraphRefMembers
       parameters:
         - name: administrativeUnit-id
@@ -4048,7 +4048,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_ListScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4136,7 +4136,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Create new navigation property to scopedRoleMembers for directory
-      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_CreateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4168,7 +4168,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Get scopedRoleMembers from directory
-      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_GetScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4226,7 +4226,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Update the navigation property scopedRoleMembers in directory
-      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_UpdateScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4260,7 +4260,7 @@ paths:
       tags:
         - directory.administrativeUnit
       summary: Delete navigation property scopedRoleMembers for directory
-      description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+      description: Scoped-role members of this administrative unit.
       operationId: directory.administrativeUnits_DeleteScopedRoleMembers
       parameters:
         - name: administrativeUnit-id
@@ -4736,7 +4736,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       operationId: directoryRoles_ListMembers
       parameters:
         - name: directoryRole-id
@@ -4819,7 +4819,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Get ref of members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       operationId: directoryRoles_ListGraphRefMembers
       parameters:
         - name: directoryRole-id
@@ -4876,7 +4876,7 @@ paths:
       tags:
         - directoryRoles.directoryObject
       summary: Create new navigation property ref to members for directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
       operationId: directoryRoles_CreateGraphRefMembers
       parameters:
         - name: directoryRole-id
@@ -8487,7 +8487,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string
@@ -8679,7 +8679,7 @@ components:
           properties:
             description:
               type: string
-              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith).'
+              description: 'An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.'
               nullable: true
             displayName:
               type: string
@@ -8687,18 +8687,18 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this administrative unit. HTTP Methods: GET (list members), POST (add members), DELETE (remove members).'
+              description: Users and groups that are members of this administrative unit. Supports $expand.
             scopedRoleMembers:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.scopedRoleMembership'
-              description: 'Scoped-role members of this administrative unit.  HTTP Methods: GET (list scopedRoleMemberships), POST (add scopedRoleMembership), DELETE (remove scopedRoleMembership).'
+              description: Scoped-role members of this administrative unit.
             extensions:
               type: array
               items:
@@ -8730,21 +8730,21 @@ components:
           properties:
             description:
               type: string
-              description: The description for the directory role. Read-only.
+              description: 'The description for the directory role. Read-only. Supports $filter (eq), $search, $select.'
               nullable: true
             displayName:
               type: string
-              description: The display name for the directory role. Read-only.
+              description: 'The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.'
               nullable: true
             roleTemplateId:
               type: string
-              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.'
+              description: 'The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.'
               nullable: true
             members:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.'
+              description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
             scopedMembers:
               type: array
               items:
@@ -9369,11 +9369,11 @@ components:
       properties:
         appliesTo:
           type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'

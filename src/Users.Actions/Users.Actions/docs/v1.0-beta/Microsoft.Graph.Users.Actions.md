@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: c605bff5-3c5b-4a0e-a811-f367d7dd0081
+Module Guid: 6a40a14c-4161-4b98-ad93-292765cf9279
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,16 +15,19 @@ Microsoft Graph PowerShell Cmdlets
 Invoke action applyDecisions
 
 ### [Clear-MgUserAndBlockManagedApp](Clear-MgUserAndBlockManagedApp.md)
-Invoke action wipeAndBlockManagedApps
+Blocks the managed app user from app check-in.
 
 ### [Clear-MgUserManagedAppRegistrationByDeviceTag](Clear-MgUserManagedAppRegistrationByDeviceTag.md)
-Invoke action wipeManagedAppRegistrationsByDeviceTag
+Issues a wipe operation on an app registration with specified device tag.
 
 ### [Clear-MgUserManagedDevice](Clear-MgUserManagedDevice.md)
-Invoke action wipe
+Wipe a device
 
-### [Clear-MgUserWindowInformationProtectionDeviceRegistration](Clear-MgUserWindowInformationProtectionDeviceRegistration.md)
-Invoke action wipe
+### [Clear-MgUserPresence](Clear-MgUserPresence.md)
+Invoke action clearPresence
+
+### [Clear-MgUserPresenceUserPreferredPresence](Clear-MgUserPresenceUserPreferredPresence.md)
+Invoke action clearUserPreferredPresence
 
 ### [Complete-MgUserOutlookTask](Complete-MgUserOutlookTask.md)
 Invoke action complete
@@ -68,20 +71,23 @@ Invoke action copyToSectionGroup
 ### [Disable-MgUserAuthenticationMethodSmSign](Disable-MgUserAuthenticationMethodSmSign.md)
 Invoke action disableSmsSignIn
 
+### [Disable-MgUserManagedDevice](Disable-MgUserManagedDevice.md)
+Invoke action disable
+
 ### [Disable-MgUserManagedDeviceLostMode](Disable-MgUserManagedDeviceLostMode.md)
-Invoke action disableLostMode
+Disable lost mode
 
 ### [Enable-MgUserAuthenticationMethodSmSign](Enable-MgUserAuthenticationMethodSmSign.md)
 Invoke action enableSmsSignIn
 
 ### [Enable-MgUserManagedDeviceLostMode](Enable-MgUserManagedDeviceLostMode.md)
-Invoke action enableLostMode
+Enable lost mode
 
 ### [Export-MgUserPersonalData](Export-MgUserPersonalData.md)
 Invoke action exportPersonalData
 
 ### [Find-MgUserManagedDevice](Find-MgUserManagedDevice.md)
-Invoke action locateDevice
+Locate a device
 
 ### [Find-MgUserMeetingTime](Find-MgUserMeetingTime.md)
 Invoke action findMeetingTimes
@@ -113,6 +119,12 @@ Invoke action getNotebookFromWebUrl
 ### [Get-MgUserOwnedObjectByType](Get-MgUserOwnedObjectByType.md)
 Invoke action getUserOwnedObjects
 
+### [Initialize-MgUserManagedDeviceEsim](Initialize-MgUserManagedDeviceEsim.md)
+Activate eSIM on the device.
+
+### [Initialize-MgUserServicePlan](Initialize-MgUserServicePlan.md)
+Invoke action activateServicePlan
+
 ### [Invoke-MgAcceptUserEvent](Invoke-MgAcceptUserEvent.md)
 Invoke action accept
 
@@ -125,11 +137,47 @@ Invoke action tentativelyAccept
 ### [Invoke-MgAcceptUserEventTentatively](Invoke-MgAcceptUserEventTentatively.md)
 Invoke action tentativelyAccept
 
+### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage.md)
+Invoke action accept
+
+### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequest](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequest.md)
+Invoke action accept
+
+### [Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequestTentatively](Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphEventMessageRequestTentatively.md)
+Invoke action tentativelyAccept
+
+### [Invoke-MgAcceptUserMessageMicrosoftGraphCalendarSharingMessage](Invoke-MgAcceptUserMessageMicrosoftGraphCalendarSharingMessage.md)
+Invoke action accept
+
+### [Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequest](Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequest.md)
+Invoke action accept
+
+### [Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequestTentatively](Invoke-MgAcceptUserMessageMicrosoftGraphEventMessageRequestTentatively.md)
+Invoke action tentativelyAccept
+
+### [Invoke-MgAcceptUserPendingAccessReviewInstanceDecisionInstanceRecommendation](Invoke-MgAcceptUserPendingAccessReviewInstanceDecisionInstanceRecommendation.md)
+Invoke action acceptRecommendations
+
 ### [Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation](Invoke-MgAcceptUserPendingAccessReviewInstanceRecommendation.md)
 Invoke action acceptRecommendations
 
+### [Invoke-MgBatchUserPendingAccessReviewInstanceDecisionInstanceRecordDecision](Invoke-MgBatchUserPendingAccessReviewInstanceDecisionInstanceRecordDecision.md)
+Invoke action batchRecordDecisions
+
+### [Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision](Invoke-MgBatchUserPendingAccessReviewInstanceRecordDecision.md)
+Invoke action batchRecordDecisions
+
+### [Invoke-MgBulkUserManagedDeviceReprovisionCloudPc](Invoke-MgBulkUserManagedDeviceReprovisionCloudPc.md)
+Invoke action bulkReprovisionCloudPc
+
+### [Invoke-MgBulkUserManagedDeviceRestoreCloudPc](Invoke-MgBulkUserManagedDeviceRestoreCloudPc.md)
+Invoke action bulkRestoreCloudPc
+
 ### [Invoke-MgCleanUserManagedDeviceWindowDevice](Invoke-MgCleanUserManagedDeviceWindowDevice.md)
-Invoke action cleanWindowsDevice
+Clean Windows device
+
+### [Invoke-MgCloudUserManagedDevice](Invoke-MgCloudUserManagedDevice.md)
+Invoke action reprovisionCloudPc
 
 ### [Invoke-MgCreateOrGetUserOnlineMeeting](Invoke-MgCreateOrGetUserOnlineMeeting.md)
 Invoke action createOrGet
@@ -140,6 +188,15 @@ Invoke action decline
 ### [Invoke-MgDeclineUserEventInstance](Invoke-MgDeclineUserEventInstance.md)
 Invoke action decline
 
+### [Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest](Invoke-MgDeclineUserMailFolderMessageMicrosoftGraphEventMessageRequest.md)
+Invoke action decline
+
+### [Invoke-MgDeclineUserMessageMicrosoftGraphEventMessageRequest](Invoke-MgDeclineUserMessageMicrosoftGraphEventMessageRequest.md)
+Invoke action decline
+
+### [Invoke-MgDeprovisionUserManagedDevice](Invoke-MgDeprovisionUserManagedDevice.md)
+Invoke action deprovision
+
 ### [Invoke-MgDismissUserEventInstanceReminder](Invoke-MgDismissUserEventInstanceReminder.md)
 Invoke action dismissReminder
 
@@ -147,7 +204,7 @@ Invoke action dismissReminder
 Invoke action dismissReminder
 
 ### [Invoke-MgDownUserManagedDeviceShut](Invoke-MgDownUserManagedDeviceShut.md)
-Invoke action shutDown
+Shut down device
 
 ### [Invoke-MgExecuteUserManagedDeviceAction](Invoke-MgExecuteUserManagedDeviceAction.md)
 Invoke action executeAction
@@ -167,20 +224,26 @@ Invoke action forward
 ### [Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink](Invoke-MgHasUserDeviceEnrollmentConfigurationPayloadLink.md)
 Invoke action hasPayloadLinks
 
-### [Invoke-MgInvalidateUserreshTokenByRef](Invoke-MgInvalidateUserreshTokenByRef.md)
+### [Invoke-MgInvalidateUserRefreshToken](Invoke-MgInvalidateUserRefreshToken.md)
 Invoke action invalidateAllRefreshTokens
 
 ### [Invoke-MgLicenseUser](Invoke-MgLicenseUser.md)
 Invoke action reprocessLicenseAssignment
 
 ### [Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser](Invoke-MgLogoutUserManagedDeviceSharedAppleDeviceActiveUser.md)
-Invoke action logoutSharedAppleDeviceActiveUser
+Logout shared Apple device active user
 
 ### [Invoke-MgOverrideUserManagedDeviceComplianceState](Invoke-MgOverrideUserManagedDeviceComplianceState.md)
 Invoke action overrideComplianceState
 
 ### [Invoke-MgPlayUserManagedDeviceLostModeSound](Invoke-MgPlayUserManagedDeviceLostModeSound.md)
-Invoke action playLostModeSound
+Play lost mode sound
+
+### [Invoke-MgRecordUserPendingAccessReviewInstanceDecision](Invoke-MgRecordUserPendingAccessReviewInstanceDecision.md)
+Invoke action recordAllDecisions
+
+### [Invoke-MgReenableUserManagedDevice](Invoke-MgReenableUserManagedDevice.md)
+Invoke action reenable
 
 ### [Invoke-MgReplyAllUserMailFolderMessage](Invoke-MgReplyAllUserMailFolderMessage.md)
 Invoke action replyAll
@@ -195,10 +258,10 @@ Invoke action reply
 Invoke action reply
 
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
-Invoke action retire
+Retire a device
 
 ### [Invoke-MgRotateUserManagedDeviceBitLockerKey](Invoke-MgRotateUserManagedDeviceBitLockerKey.md)
-Invoke action rotateBitLockerKeys
+Rotate BitLockerKeys
 
 ### [Invoke-MgRotateUserManagedDeviceFileVaultKey](Invoke-MgRotateUserManagedDeviceFileVaultKey.md)
 Invoke action rotateFileVaultKey
@@ -222,7 +285,7 @@ Invoke action unsubscribe
 Invoke action unsubscribe
 
 ### [Lock-MgUserManagedDeviceRemote](Lock-MgUserManagedDeviceRemote.md)
-Invoke action remoteLock
+Remote lock
 
 ### [Move-MgUserMailFolder](Move-MgUserMailFolder.md)
 Invoke action move
@@ -233,7 +296,16 @@ Invoke action move
 ### [Move-MgUserMailFolderMessage](Move-MgUserMailFolderMessage.md)
 Invoke action move
 
+### [Move-MgUserManagedDeviceToOu](Move-MgUserManagedDeviceToOu.md)
+Invoke action moveDevicesToOU
+
 ### [Move-MgUserMessage](Move-MgUserMessage.md)
+Invoke action move
+
+### [Move-MgUserTaskAlltask](Move-MgUserTaskAlltask.md)
+Invoke action move
+
+### [Move-MgUserTaskListTask](Move-MgUserTaskListTask.md)
 Invoke action move
 
 ### [New-MgUserEventAttachmentUploadSession](New-MgUserEventAttachmentUploadSession.md)
@@ -254,8 +326,11 @@ Invoke action createReplyAll
 ### [New-MgUserManagedDeviceLogCollectionRequest](New-MgUserManagedDeviceLogCollectionRequest.md)
 Invoke action createDeviceLogCollectionRequest
 
-### [New-MgUserManagedDeviceLogCollectionRequestDownloadUrl](New-MgUserManagedDeviceLogCollectionRequestDownloadUrl.md)
+### [New-MgUserManagedDeviceLogCollectionResponseDownloadUrl](New-MgUserManagedDeviceLogCollectionResponseDownloadUrl.md)
 Invoke action createDownloadUrl
+
+### [New-MgUserManagedDeviceWindowsDefenderUpdateSignature](New-MgUserManagedDeviceWindowsDefenderUpdateSignature.md)
+Invoke action windowsDefenderUpdateSignatures
 
 ### [New-MgUserMessageAttachmentUploadSession](New-MgUserMessageAttachmentUploadSession.md)
 Invoke action createUploadSession
@@ -282,37 +357,40 @@ Invoke action createUploadSession
 Invoke action createUploadSession
 
 ### [Remove-MgUserDeviceFromManagement](Remove-MgUserDeviceFromManagement.md)
-Invoke action removeAllDevicesFromManagement
+Retire all devices from management for this user
 
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
-Invoke action deleteUserFromSharedAppleDevice
+Delete user from shared Apple device
 
 ### [Request-MgUserManagedDeviceRemoteAssistance](Request-MgUserManagedDeviceRemoteAssistance.md)
-Invoke action requestRemoteAssistance
+Request remote assistance
 
 ### [Reset-MgUserAuthenticationMethodPassword](Reset-MgUserAuthenticationMethodPassword.md)
 Invoke action resetPassword
 
 ### [Reset-MgUserManagedDevicePasscode](Reset-MgUserManagedDevicePasscode.md)
-Invoke action resetPasscode
-
-### [Reset-MgUserPassword](Reset-MgUserPassword.md)
-Invoke action changePassword
+Reset passcode
 
 ### [Reset-MgUserPendingAccessReviewInstanceDecision](Reset-MgUserPendingAccessReviewInstanceDecision.md)
 Invoke action resetDecisions
 
+### [Resize-MgUserManagedDeviceCloudPc](Resize-MgUserManagedDeviceCloudPc.md)
+Invoke action resizeCloudPc
+
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
-Invoke action rebootNow
+Reboot device
 
 ### [Restore-MgUser](Restore-MgUser.md)
 Invoke action restore
 
+### [Restore-MgUserManagedDeviceCloudPc](Restore-MgUserManagedDeviceCloudPc.md)
+Invoke action restoreCloudPc
+
 ### [Restore-MgUserManagedDevicePasscode](Restore-MgUserManagedDevicePasscode.md)
-Invoke action recoverPasscode
+Recover passcode
 
 ### [Revoke-MgUserManagedDeviceAppleVppLicense](Revoke-MgUserManagedDeviceAppleVppLicense.md)
-Invoke action revokeAppleVppLicenses
+Revoke all Apple Vpp licenses for a device
 
 ### [Revoke-MgUserSign](Revoke-MgUserSign.md)
 Invoke action revokeSignInSessions
@@ -328,6 +406,9 @@ Invoke action sendCustomNotificationToCompanyPortal
 
 ### [Send-MgUserMessage](Send-MgUserMessage.md)
 Invoke action send
+
+### [Send-MgUserPendingAccessReviewInstanceDecisionInstanceReminder](Send-MgUserPendingAccessReviewInstanceDecisionInstanceReminder.md)
+Invoke action sendReminder
 
 ### [Send-MgUserPendingAccessReviewInstanceReminder](Send-MgUserPendingAccessReviewInstanceReminder.md)
 Invoke action sendReminder
@@ -345,13 +426,19 @@ Invoke action setPriority
 Invoke action assignLicense
 
 ### [Set-MgUserManagedDeviceName](Set-MgUserManagedDeviceName.md)
-Invoke action setDeviceName
+Set device name of the device.
+
+### [Set-MgUserPresence](Set-MgUserPresence.md)
+Invoke action setPresence
+
+### [Set-MgUserPresenceUserPreferredPresence](Set-MgUserPresenceUserPreferredPresence.md)
+Invoke action setUserPreferredPresence
 
 ### [Skip-MgUserManagedDeviceActivationLock](Skip-MgUserManagedDeviceActivationLock.md)
-Invoke action bypassActivationLock
+Bypass activation lock
 
 ### [Start-MgUserManagedDeviceConfigurationManagerAction](Start-MgUserManagedDeviceConfigurationManagerAction.md)
-Invoke action triggerConfigurationManagerAction
+Trigger action on ConfigurationManager client
 
 ### [Stop-MgUserEvent](Stop-MgUserEvent.md)
 Invoke action cancel
@@ -362,24 +449,30 @@ Invoke action cancel
 ### [Stop-MgUserPendingAccessReviewInstance](Stop-MgUserPendingAccessReviewInstance.md)
 Invoke action stop
 
+### [Stop-MgUserPendingAccessReviewInstanceDecisionInstance](Stop-MgUserPendingAccessReviewInstanceDecisionInstance.md)
+Invoke action stop
+
 ### [Stop-MgUserPendingAccessReviewInstanceDefinition](Stop-MgUserPendingAccessReviewInstanceDefinition.md)
 Invoke action stop
 
 ### [Sync-MgUserManagedDevice](Sync-MgUserManagedDevice.md)
 Invoke action syncDevice
 
+### [Test-MgUserPassword](Test-MgUserPassword.md)
+Invoke action validatePassword
+
 ### [Test-MgUserProperty](Test-MgUserProperty.md)
 Invoke action validateProperties
 
 ### [Unblock-MgUserManagedApp](Unblock-MgUserManagedApp.md)
-Invoke action unblockManagedApps
-
-### [Update-MgUserManagedDevice](Update-MgUserManagedDevice.md)
-Invoke action windowsDefenderUpdateSignatures
+Unblocks the managed app user from app check-in.
 
 ### [Update-MgUserManagedDeviceWindowDeviceAccount](Update-MgUserManagedDeviceWindowDeviceAccount.md)
 Invoke action updateWindowsDeviceAccount
 
 ### [Update-MgUserOnenotePageContent](Update-MgUserOnenotePageContent.md)
 Invoke action onenotePatchContent
+
+### [Update-MgUserPassword](Update-MgUserPassword.md)
+Invoke action changePassword
 

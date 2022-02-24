@@ -58,24 +58,6 @@ Update the navigation property customer in financials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -95,7 +77,7 @@ Accept wildcard characters: False
 
 ### -Address
 postalAddressType
-To construct, see NOTES section for ADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -126,7 +108,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 customer
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
@@ -157,7 +139,7 @@ Accept wildcard characters: False
 
 ### -Currency
 currency
-To construct, see NOTES section for CURRENCY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
@@ -278,7 +260,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
@@ -339,7 +321,7 @@ Accept wildcard characters: False
 
 ### -PaymentMethod
 paymentMethod
-To construct, see NOTES section for PAYMENTMETHOD properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYMENTMETHOD properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentMethod
@@ -370,7 +352,7 @@ Accept wildcard characters: False
 
 ### -PaymentTerm
 paymentTerm
-To construct, see NOTES section for PAYMENTTERM properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
@@ -416,7 +398,7 @@ Accept wildcard characters: False
 
 ### -Picture
 .
-To construct, see NOTES section for PICTURE properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PICTURE properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPicture[]
@@ -432,7 +414,7 @@ Accept wildcard characters: False
 
 ### -ShipmentMethod
 shipmentMethod
-To construct, see NOTES section for SHIPMENTMETHOD properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SHIPMENTMETHOD properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphShipmentMethod

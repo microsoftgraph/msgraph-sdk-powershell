@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtDefaultManagedAppProtection
 
 ## SYNOPSIS
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Default managed app policies.
 
 ## SYNTAX
 
@@ -24,26 +24,30 @@ New-MgDeviceAppMgtDefaultManagedAppProtection [-AdditionalProperties <Hashtable>
  [-AppActionIfAndroidDeviceModelNotAllowed <String>]
  [-AppActionIfAndroidSafetyNetAppsVerificationFailed <String>]
  [-AppActionIfAndroidSafetyNetDeviceAttestationFailed <String>]
- [-AppActionIfDeviceComplianceRequired <String>] [-AppActionIfIosDeviceModelNotAllowed <String>]
- [-AppActionIfMaximumPinRetriesExceeded <String>] [-AppActionIfUnableToAuthenticateUser <String>]
- [-AppDataEncryptionType <String>] [-Apps <IMicrosoftGraphManagedMobileApp[]>]
- [-BlockDataIngestionIntoOrganizationDocuments] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
+ [-AppActionIfDeviceComplianceRequired <String>] [-AppActionIfDeviceLockNotSet <String>]
+ [-AppActionIfIosDeviceModelNotAllowed <String>] [-AppActionIfMaximumPinRetriesExceeded <String>]
+ [-AppActionIfUnableToAuthenticateUser <String>] [-AppDataEncryptionType <String>]
+ [-Apps <IMicrosoftGraphManagedMobileApp[]>] [-BiometricAuthenticationBlocked]
+ [-BlockAfterCompanyPortalUpdateDeferralInDays <Int32>] [-BlockDataIngestionIntoOrganizationDocuments]
+ [-ConnectToVpnOnLaunch] [-ContactSyncBlocked] [-CreatedDateTime <DateTime>]
  [-CustomBrowserDisplayName <String>] [-CustomBrowserPackageId <String>] [-CustomBrowserProtocol <String>]
  [-CustomDialerAppDisplayName <String>] [-CustomDialerAppPackageId <String>]
  [-CustomDialerAppProtocol <String>] [-CustomSettings <IMicrosoftGraphKeyValuePair[]>] [-DataBackupBlocked]
  [-DeployedAppCount <Int32>] [-DeploymentSummary <IMicrosoftGraphManagedAppPolicyDeploymentSummary>]
- [-Description <String>] [-DeviceComplianceRequired] [-DialerRestrictionLevel <String>]
+ [-Description <String>] [-DeviceComplianceRequired] [-DeviceLockRequired] [-DialerRestrictionLevel <String>]
  [-DisableAppEncryptionIfDeviceEncryptionIsEnabled] [-DisableAppPinIfDevicePinIsSet]
  [-DisableProtectionOfManagedOutboundOpenInData] [-DisplayName <String>] [-EncryptAppData]
  [-ExemptedAppPackages <IMicrosoftGraphKeyValuePair[]>]
  [-ExemptedAppProtocols <IMicrosoftGraphKeyValuePair[]>] [-FaceIdBlocked] [-FilterOpenInToOnlyManagedApps]
- [-FingerprintBlocked] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>]
- [-ManagedBrowserToOpenLinksRequired] [-MaximumAllowedDeviceThreatLevel <String>] [-MaximumPinRetries <Int32>]
- [-MinimumPinLength <Int32>] [-MinimumRequiredAppVersion <String>]
- [-MinimumRequiredCompanyPortalVersion <String>] [-MinimumRequiredOSVersion <String>]
- [-MinimumRequiredPatchVersion <String>] [-MinimumRequiredSdkVersion <String>]
- [-MinimumWarningAppVersion <String>] [-MinimumWarningCompanyPortalVersion <String>]
- [-MinimumWarningOSVersion <String>] [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
+ [-FingerprintBlocked] [-GracePeriodToBlockAppsDuringOffClockHours <TimeSpan>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-ManagedBrowser <String>] [-ManagedBrowserToOpenLinksRequired]
+ [-MaximumAllowedDeviceThreatLevel <String>] [-MaximumPinRetries <Int32>] [-MaximumRequiredOSVersion <String>]
+ [-MaximumWarningOSVersion <String>] [-MaximumWipeOSVersion <String>] [-MinimumPinLength <Int32>]
+ [-MinimumRequiredAppVersion <String>] [-MinimumRequiredCompanyPortalVersion <String>]
+ [-MinimumRequiredOSVersion <String>] [-MinimumRequiredPatchVersion <String>]
+ [-MinimumRequiredSdkVersion <String>] [-MinimumWarningAppVersion <String>]
+ [-MinimumWarningCompanyPortalVersion <String>] [-MinimumWarningOSVersion <String>]
+ [-MinimumWarningPatchVersion <String>] [-MinimumWipeAppVersion <String>]
  [-MinimumWipeCompanyPortalVersion <String>] [-MinimumWipeOSVersion <String>]
  [-MinimumWipePatchVersion <String>] [-MinimumWipeSdkVersion <String>]
  [-MobileThreatDefenseRemediationAction <String>] [-NotificationRestriction <String>]
@@ -52,39 +56,22 @@ New-MgDeviceAppMgtDefaultManagedAppProtection [-AdditionalProperties <Hashtable>
  [-PeriodOnlineBeforeAccessCheck <TimeSpan>] [-PinCharacterSet <String>] [-PinRequired]
  [-PinRequiredInsteadOfBiometricTimeout <TimeSpan>] [-PreviousPinBlockCount <Int32>] [-PrintBlocked]
  [-ProtectInboundDataFromUnknownSources] [-RequiredAndroidSafetyNetAppsVerificationType <String>]
- [-RequiredAndroidSafetyNetDeviceAttestationType <String>] [-RoleScopeTagIds <String[]>] [-SaveAsBlocked]
- [-ScreenCaptureBlocked] [-SimplePinBlocked] [-ThirdPartyKeyboardsBlocked] [-Version <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RequiredAndroidSafetyNetDeviceAttestationType <String>] [-RequiredAndroidSafetyNetEvaluationType <String>]
+ [-RoleScopeTagIds <String[]>] [-SaveAsBlocked] [-ScreenCaptureBlocked] [-SimplePinBlocked]
+ [-ThirdPartyKeyboardsBlocked] [-Version <String>] [-WarnAfterCompanyPortalUpdateDeferralInDays <Int32>]
+ [-WipeAfterCompanyPortalUpdateDeferralInDays <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
 ```
-New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection1>
+New-MgDeviceAppMgtDefaultManagedAppProtection -BodyParameter <IMicrosoftGraphDefaultManagedAppProtection>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to defaultManagedAppProtections for deviceAppManagement
+Default managed app policies.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -166,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedInboundDataTransferSources
-managedAppDataTransferLevel
+Data can be transferred from/to these classes of apps
 
 ```yaml
 Type: System.String
@@ -214,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedOutboundClipboardSharingLevel
-managedAppClipboardSharingLevel
+Represents the level to which the device's clipboard may be shared between apps
 
 ```yaml
 Type: System.String
@@ -229,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedOutboundDataTransferDestinations
-managedAppDataTransferLevel
+Data can be transferred from/to these classes of apps
 
 ```yaml
 Type: System.String
@@ -244,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfAndroidDeviceManufacturerNotAllowed
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -259,7 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfAndroidDeviceModelNotAllowed
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -274,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfAndroidSafetyNetAppsVerificationFailed
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -289,7 +276,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfAndroidSafetyNetDeviceAttestationFailed
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -304,7 +291,22 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfDeviceComplianceRequired
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AppActionIfDeviceLockNotSet
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -319,7 +321,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfIosDeviceModelNotAllowed
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -334,7 +336,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfMaximumPinRetriesExceeded
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -349,7 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppActionIfUnableToAuthenticateUser
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -364,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppDataEncryptionType
-managedAppDataEncryptionType
+Represents the level to which app data is encrypted for managed apps
 
 ```yaml
 Type: System.String
@@ -380,10 +382,41 @@ Accept wildcard characters: False
 
 ### -Apps
 List of apps to which the policy is deployed.
-To construct, see NOTES section for APPS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedMobileApp[]
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BiometricAuthenticationBlocked
+Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True.
+(Android Only)
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BlockAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+
+```yaml
+Type: System.Int32
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -411,10 +444,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
 Parameter Sets: Create
 Aliases:
 
@@ -422,6 +455,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ConnectToVpnOnLaunch
+Whether the app should connect to the configured VPN on launch (Android only).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -550,7 +598,7 @@ Accept wildcard characters: False
 
 ### -CustomSettings
 A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-To construct, see NOTES section for CUSTOMSETTINGS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMSETTINGS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -596,7 +644,7 @@ Accept wildcard characters: False
 
 ### -DeploymentSummary
 The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEPLOYMENTSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicyDeploymentSummary
@@ -640,8 +688,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeviceLockRequired
+Defines if any kind of lock must be required on device.
+(android only)
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DialerRestrictionLevel
-managedAppPhoneNumberRedirectLevel
+The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
 
 ```yaml
 Type: System.String
@@ -737,7 +801,7 @@ Accept wildcard characters: False
 ### -ExemptedAppPackages
 Android App packages in this list will be exempt from the policy and will be able to receive data from managed apps.
 (Android only)
-To construct, see NOTES section for EXEMPTEDAPPPACKAGES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTEDAPPPACKAGES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -754,7 +818,7 @@ Accept wildcard characters: False
 ### -ExemptedAppProtocols
 iOS Apps in this list will be exempt from the policy and will be able to receive data from managed apps.
 (iOS Only)
-To construct, see NOTES section for EXEMPTEDAPPPROTOCOLS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for EXEMPTEDAPPPROTOCOLS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphKeyValuePair[]
@@ -816,6 +880,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -GracePeriodToBlockAppsDuringOffClockHours
+A grace period before blocking app access during off clock hours.
+
+```yaml
+Type: System.TimeSpan
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Read-only.
 
@@ -847,7 +926,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedBrowser
-managedBrowserType
+Type of managed browser
 
 ```yaml
 Type: System.String
@@ -877,7 +956,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumAllowedDeviceThreatLevel
-managedAppDeviceThreatLevel
+The maxium threat level allowed for an app to be compliant.
 
 ```yaml
 Type: System.String
@@ -896,6 +975,51 @@ Maximum number of incorrect pin retry attempts before the managed app is either 
 
 ```yaml
 Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumRequiredOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumWarningOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumWipeOSVersion
+Versions bigger than the specified version will block the managed app from accessing company data.
+
+```yaml
+Type: System.String
 Parameter Sets: CreateExpanded
 Aliases:
 
@@ -1136,7 +1260,7 @@ Accept wildcard characters: False
 ```
 
 ### -MobileThreatDefenseRemediationAction
-managedAppRemediationAction
+An admin initiated action to be applied on a managed app.
 
 ```yaml
 Type: System.String
@@ -1151,7 +1275,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRestriction
-managedAppNotificationRestriction
+Restrict managed app notification
 
 ```yaml
 Type: System.String
@@ -1241,7 +1365,7 @@ Accept wildcard characters: False
 ```
 
 ### -PinCharacterSet
-managedAppPinCharacterSet
+Character set which is to be used for a user's app PIN
 
 ```yaml
 Type: System.String
@@ -1333,7 +1457,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredAndroidSafetyNetAppsVerificationType
-androidManagedAppSafetyNetAppsVerificationType
+An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 
 ```yaml
 Type: System.String
@@ -1348,7 +1472,22 @@ Accept wildcard characters: False
 ```
 
 ### -RequiredAndroidSafetyNetDeviceAttestationType
-androidManagedAppSafetyNetDeviceAttestationType
+An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RequiredAndroidSafetyNetEvaluationType
+An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 
 ```yaml
 Type: System.String
@@ -1454,6 +1593,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WarnAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WipeAfterCompanyPortalUpdateDeferralInDays
+Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
+
+```yaml
+Type: System.Int32
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -1490,11 +1659,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDefaultManagedAppProtection
 
 ## NOTES
 
@@ -1513,28 +1682,32 @@ APPS <IMicrosoftGraphManagedMobileApp[]>: List of apps to which the policy is de
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection>: Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AllowedDataIngestionLocations <String[]>]`: Data storage locations where a user may store managed data.
   - `[AllowedDataStorageLocations <String[]>]`: Data storage locations where a user may store managed data.
-  - `[AllowedInboundDataTransferSources <String>]`: managedAppDataTransferLevel
+  - `[AllowedInboundDataTransferSources <String>]`: Data can be transferred from/to these classes of apps
   - `[AllowedOutboundClipboardSharingExceptionLength <Int32?>]`: Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed.
-  - `[AllowedOutboundClipboardSharingLevel <String>]`: managedAppClipboardSharingLevel
-  - `[AllowedOutboundDataTransferDestinations <String>]`: managedAppDataTransferLevel
-  - `[AppActionIfDeviceComplianceRequired <String>]`: managedAppRemediationAction
-  - `[AppActionIfMaximumPinRetriesExceeded <String>]`: managedAppRemediationAction
-  - `[AppActionIfUnableToAuthenticateUser <String>]`: managedAppRemediationAction
+  - `[AllowedOutboundClipboardSharingLevel <String>]`: Represents the level to which the device's clipboard may be shared between apps
+  - `[AllowedOutboundDataTransferDestinations <String>]`: Data can be transferred from/to these classes of apps
+  - `[AppActionIfDeviceComplianceRequired <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfMaximumPinRetriesExceeded <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfUnableToAuthenticateUser <String>]`: An admin initiated action to be applied on a managed app.
   - `[BlockDataIngestionIntoOrganizationDocuments <Boolean?>]`: Indicates whether a user can bring data into org documents.
   - `[ContactSyncBlocked <Boolean?>]`: Indicates whether contacts can be synced to the user's device.
   - `[DataBackupBlocked <Boolean?>]`: Indicates whether the backup of a managed app's data is blocked.
   - `[DeviceComplianceRequired <Boolean?>]`: Indicates whether device compliance is required.
-  - `[DialerRestrictionLevel <String>]`: managedAppPhoneNumberRedirectLevel
+  - `[DialerRestrictionLevel <String>]`: The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
   - `[DisableAppPinIfDevicePinIsSet <Boolean?>]`: Indicates whether use of the app pin is required if the device pin is set.
   - `[FingerprintBlocked <Boolean?>]`: Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-  - `[ManagedBrowser <String>]`: managedBrowserType
+  - `[GracePeriodToBlockAppsDuringOffClockHours <TimeSpan?>]`: A grace period before blocking app access during off clock hours.
+  - `[ManagedBrowser <String>]`: Type of managed browser
   - `[ManagedBrowserToOpenLinksRequired <Boolean?>]`: Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
-  - `[MaximumAllowedDeviceThreatLevel <String>]`: managedAppDeviceThreatLevel
+  - `[MaximumAllowedDeviceThreatLevel <String>]`: The maxium threat level allowed for an app to be compliant.
   - `[MaximumPinRetries <Int32?>]`: Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+  - `[MaximumRequiredOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
+  - `[MaximumWarningOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
+  - `[MaximumWipeOSVersion <String>]`: Versions bigger than the specified version will block the managed app from accessing company data.
   - `[MinimumPinLength <Int32?>]`: Minimum pin length required for an app-level pin if PinRequired is set to True
   - `[MinimumRequiredAppVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[MinimumRequiredOSVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
@@ -1542,14 +1715,14 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
   - `[MinimumWarningOSVersion <String>]`: Versions less than the specified version will result in warning message on the managed app from accessing company data.
   - `[MinimumWipeAppVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
   - `[MinimumWipeOSVersion <String>]`: Versions less than or equal to the specified version will wipe the managed app and the associated company data.
-  - `[MobileThreatDefenseRemediationAction <String>]`: managedAppRemediationAction
-  - `[NotificationRestriction <String>]`: managedAppNotificationRestriction
+  - `[MobileThreatDefenseRemediationAction <String>]`: An admin initiated action to be applied on a managed app.
+  - `[NotificationRestriction <String>]`: Restrict managed app notification
   - `[OrganizationalCredentialsRequired <Boolean?>]`: Indicates whether organizational credentials are required for app use.
   - `[PeriodBeforePinReset <TimeSpan?>]`: TimePeriod before the all-level pin must be reset if PinRequired is set to True.
   - `[PeriodOfflineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is not connected to the internet.
   - `[PeriodOfflineBeforeWipeIsEnforced <TimeSpan?>]`: The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
   - `[PeriodOnlineBeforeAccessCheck <TimeSpan?>]`: The period after which access is checked when the device is connected to the internet.
-  - `[PinCharacterSet <String>]`: managedAppPinCharacterSet
+  - `[PinCharacterSet <String>]`: Character set which is to be used for a user's app PIN
   - `[PinRequired <Boolean?>]`: Indicates whether an app-level pin is required.
   - `[PinRequiredInsteadOfBiometricTimeout <TimeSpan?>]`: Timeout in minutes for an app pin instead of non biometrics passcode
   - `[PreviousPinBlockCount <Int32?>]`: Requires a pin to be unique from the number specified in this property.
@@ -1566,17 +1739,21 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
   - `[AllowedAndroidDeviceManufacturers <String>]`: Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)
   - `[AllowedAndroidDeviceModels <String[]>]`: List of device models allowed, as a string, for the managed app to work. (Android Only)
   - `[AllowedIosDeviceModels <String>]`: Semicolon seperated list of device models allowed, as a string, for the managed app to work. (iOS Only)
-  - `[AppActionIfAndroidDeviceManufacturerNotAllowed <String>]`: managedAppRemediationAction
-  - `[AppActionIfAndroidDeviceModelNotAllowed <String>]`: managedAppRemediationAction
-  - `[AppActionIfAndroidSafetyNetAppsVerificationFailed <String>]`: managedAppRemediationAction
-  - `[AppActionIfAndroidSafetyNetDeviceAttestationFailed <String>]`: managedAppRemediationAction
-  - `[AppActionIfIosDeviceModelNotAllowed <String>]`: managedAppRemediationAction
-  - `[AppDataEncryptionType <String>]`: managedAppDataEncryptionType
+  - `[AppActionIfAndroidDeviceManufacturerNotAllowed <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfAndroidDeviceModelNotAllowed <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfAndroidSafetyNetAppsVerificationFailed <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfAndroidSafetyNetDeviceAttestationFailed <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfDeviceLockNotSet <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppActionIfIosDeviceModelNotAllowed <String>]`: An admin initiated action to be applied on a managed app.
+  - `[AppDataEncryptionType <String>]`: Represents the level to which app data is encrypted for managed apps
   - `[Apps <IMicrosoftGraphManagedMobileApp[]>]`: List of apps to which the policy is deployed.
     - `[Id <String>]`: Read-only.
     - `[MobileAppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Version <String>]`: Version of the entity.
+  - `[BiometricAuthenticationBlocked <Boolean?>]`: Indicates whether use of the biometric authentication is allowed in place of a pin if PinRequired is set to True. (Android Only)
+  - `[BlockAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or app access will be blocked.
+  - `[ConnectToVpnOnLaunch <Boolean?>]`: Whether the app should connect to the configured VPN on launch (Android only).
   - `[CustomBrowserDisplayName <String>]`: Friendly name of the preferred custom browser to open weblink on Android. (Android only)
   - `[CustomBrowserPackageId <String>]`: Unique identifier of a custom browser to open weblink on Android. (Android only)
   - `[CustomBrowserProtocol <String>]`: A custom browser protocol to open weblink on iOS. (iOS only)
@@ -1597,6 +1774,7 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
     - `[DisplayName <String>]`: Not yet documented
     - `[LastRefreshTime <DateTime?>]`: Not yet documented
     - `[Version <String>]`: Version of the entity.
+  - `[DeviceLockRequired <Boolean?>]`: Defines if any kind of lock must be required on device. (android only)
   - `[DisableAppEncryptionIfDeviceEncryptionIsEnabled <Boolean?>]`: When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
   - `[DisableProtectionOfManagedOutboundOpenInData <Boolean?>]`: Disable protection of data transferred to other apps through IOS OpenIn option. This setting is only allowed to be True when AllowedOutboundDataTransferDestinations is set to ManagedApps. (iOS Only)
   - `[EncryptAppData <Boolean?>]`: Indicates whether managed-app data should be encrypted. (Android only)
@@ -1613,10 +1791,13 @@ BODYPARAMETER <IMicrosoftGraphDefaultManagedAppProtection1>: Policy used to conf
   - `[MinimumWipePatchVersion <String>]`: Android security patch level  less than or equal to the specified value will wipe the managed app and the associated company data. (Android only)
   - `[MinimumWipeSdkVersion <String>]`: Versions less than the specified version will block the managed app from accessing company data.
   - `[ProtectInboundDataFromUnknownSources <Boolean?>]`: Protect incoming data from unknown source. This setting is only allowed to be True when AllowedInboundDataTransferSources is set to AllApps. (iOS Only)
-  - `[RequiredAndroidSafetyNetAppsVerificationType <String>]`: androidManagedAppSafetyNetAppsVerificationType
-  - `[RequiredAndroidSafetyNetDeviceAttestationType <String>]`: androidManagedAppSafetyNetDeviceAttestationType
+  - `[RequiredAndroidSafetyNetAppsVerificationType <String>]`: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
+  - `[RequiredAndroidSafetyNetDeviceAttestationType <String>]`: An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
+  - `[RequiredAndroidSafetyNetEvaluationType <String>]`: An admin enforced Android SafetyNet evaluation type requirement on a managed app.
   - `[ScreenCaptureBlocked <Boolean?>]`: Indicates whether screen capture is blocked. (Android only)
   - `[ThirdPartyKeyboardsBlocked <Boolean?>]`: Defines if third party keyboards are allowed while accessing a managed app. (iOS Only)
+  - `[WarnAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or the user will receive the warning
+  - `[WipeAfterCompanyPortalUpdateDeferralInDays <Int32?>]`: Maximum number of days Company Portal update can be deferred on the device or the company data on the app will be wiped
 
 CUSTOMSETTINGS <IMicrosoftGraphKeyValuePair[]>: A set of string key and string value pairs to be sent to the affected users, unalterned by this service
   - `[Name <String>]`: Name for this key-value pair

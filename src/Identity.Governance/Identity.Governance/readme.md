@@ -38,17 +38,17 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)$
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)|^identityGovernance\.accessReviews\.definitions\.instances\.stages\.decisions.*$
 # Remove cmdlets
   - where:
       verb: Get
       subject: ^AgreementFile$
-      variant: ^Get2|Get3|GetViaIdentity2|GetViaIdentity3$
+      variant: ^Get1|Get3|GetViaIdentity1|GetViaIdentity3$
     remove: true
   - where:
       verb: Update
       subject: ^AgreementFile$
-      variant: ^Update2|Update3|UpdateExpanded2|UpdateExpanded3|UpdateViaIdentity2|UpdateViaIdentity3|UpdateViaIdentityExpanded2|UpdateViaIdentityExpanded3$
+      variant: ^Update1|Update3|UpdateExpanded1|UpdateExpanded3|UpdateViaIdentity1|UpdateViaIdentity3|UpdateViaIdentityExpanded1|UpdateViaIdentityExpanded3$
     remove: true
   - where:
       verb: Remove
@@ -60,8 +60,20 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageRefAccessPackageCatalog$
     remove: true
   - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AccessPackageGraphRefCatalog$
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentGraphRefAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentAccessPackage
     remove: true
   - where:
       verb: Get|Remove|Update
@@ -100,16 +112,40 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackage$
     remove: true
   - where:
+      verb: Get
+      subject: (.*)(EntitlementManagement)AssignmentRequestAccessPackage
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestAccessPackageAssignment$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentRequestAssignment$
     remove: true
   - where:
       verb: Get|Remove|Set
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRefAccessPackage$
     remove: true
   - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefAssignment$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentRequestGraphRefRequestor$
+    remove: true
+  - where:
       verb: Get|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentRequestRequestor$
+    remove: true
+  - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentRequestRequestor$
     remove: true
   - where:
       verb: Get|New|Remove|Update
@@ -132,8 +168,28 @@ directive:
       subject: (.*)(EntitlementManagement)AccessPackageAssignmentTarget$
     remove: true
   - where:
+      verb: Get|Remove|Update
+      subject: (.*)(EntitlementManagement)AssignmentTarget$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)AssignmentGraphRefTarget$
+    remove: true
+  - where:
       verb: Get|New|Remove|Update
       subject: (.*)(EntitlementManagement)AccessPackageCatalogAccessPackage$
+    remove: true
+  - where:
+      verb: Get|Remove|Set
+      subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
+    remove: true
+  - where:
+      verb: Get|New|Remove|Update|Set
+      subject: (.*)(EntitlementManagement)CatalogAccessPackage
+    remove: true
+  - where:
+      verb: Get
+      subject: (.*)(EntitlementManagement)CatalogAccessPackageCatalog$
     remove: true
   - where:
       verb: Get
@@ -238,7 +294,7 @@ directive:
     remove: true
   - where:
       verb: New|Remove|Update|Get
-      subject: (.*)(IdentityGovernance)Term
+      subject: ^(.*)(IdentityGovernance)Term$
     remove: true
   - where:
       verb: New|Remove|Update|Get|Invoke
@@ -279,6 +335,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.1
+module-version: 1.9.3
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

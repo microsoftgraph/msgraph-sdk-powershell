@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgEducationClassAssignment
 
 ## SYNOPSIS
-Delete navigation property assignments for education
+All assignments associated with this class.
+Nullable.
 
 ## SYNTAX
 
@@ -25,27 +26,10 @@ Remove-MgEducationClassAssignment -InputObject <IEducationIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete navigation property assignments for education
+All assignments associated with this class.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -96,7 +80,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity

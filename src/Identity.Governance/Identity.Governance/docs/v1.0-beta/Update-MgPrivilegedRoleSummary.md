@@ -8,7 +8,9 @@ schema: 2.0.0
 # Update-MgPrivilegedRoleSummary
 
 ## SYNOPSIS
-Update the navigation property summary in privilegedRoles
+The summary information for this role.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
@@ -39,27 +41,11 @@ Update-MgPrivilegedRoleSummary -InputObject <IIdentityGovernanceIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the navigation property summary in privilegedRoles
+The summary information for this role.
+Read-only.
+Nullable.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -80,7 +66,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 privilegedRoleSummary
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrivilegedRoleSummary
@@ -95,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -ElevatedCount
-.
+The number of users that have the role assigned and the role is activated.
 
 ```yaml
 Type: System.Int32
@@ -126,7 +112,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
@@ -141,7 +127,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagedCount
-.
+The number of users that have the role assigned but the role is deactivated.
 
 ```yaml
 Type: System.Int32
@@ -156,7 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -MfaEnabled
-.
+true if the role activation requires MFA.
+false if the role activation doesn't require MFA.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,7 +203,7 @@ Accept wildcard characters: False
 ```
 
 ### -UsersCount
-.
+The number of users that are assigned with the role.
 
 ```yaml
 Type: System.Int32
@@ -286,11 +273,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphPrivilegedRoleSummary>: privilegedRoleSummary
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ElevatedCount <Int32?>]`: 
-  - `[ManagedCount <Int32?>]`: 
-  - `[MfaEnabled <Boolean?>]`: 
+  - `[ElevatedCount <Int32?>]`: The number of users that have the role assigned and the role is activated.
+  - `[ManagedCount <Int32?>]`: The number of users that have the role assigned but the role is deactivated.
+  - `[MfaEnabled <Boolean?>]`: true if the role activation requires MFA. false if the role activation doesn't require MFA.
   - `[Status <String>]`: roleSummaryStatus
-  - `[UsersCount <Int32?>]`: 
+  - `[UsersCount <Int32?>]`: The number of users that are assigned with the role.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -299,28 +286,41 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentResourceRoleId <String>]`: key: id of accessPackageAssignmentResourceRole
   - `[AccessPackageCatalogId <String>]`: key: id of accessPackageCatalog
   - `[AccessPackageId <String>]`: key: id of accessPackage
+  - `[AccessPackageResourceEnvironmentId <String>]`: key: id of accessPackageResourceEnvironment
   - `[AccessPackageResourceId <String>]`: key: id of accessPackageResource
   - `[AccessPackageResourceRequestId <String>]`: key: id of accessPackageResourceRequest
   - `[AccessPackageResourceRoleId <String>]`: key: id of accessPackageResourceRole
   - `[AccessPackageResourceRoleScopeId <String>]`: key: id of accessPackageResourceRoleScope
   - `[AccessPackageResourceScopeId <String>]`: key: id of accessPackageResourceScope
   - `[AccessReviewDecisionId <String>]`: key: id of accessReviewDecision
+  - `[AccessReviewHistoryDefinitionId <String>]`: key: id of accessReviewHistoryDefinition
+  - `[AccessReviewHistoryInstanceId <String>]`: key: id of accessReviewHistoryInstance
   - `[AccessReviewId <String>]`: key: id of accessReview
   - `[AccessReviewId1 <String>]`: key: id of accessReview
+  - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
+  - `[AccessReviewInstanceDecisionItemId1 <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
+  - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
   - `[AgreementId <String>]`: key: id of agreement
+  - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
+  - `[ApprovalId <String>]`: key: id of approval
+  - `[ApprovalStageId <String>]`: key: id of approvalStage
+  - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
+  - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
   - `[GovernanceRoleAssignmentId <String>]`: key: id of governanceRoleAssignment
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
+  - `[GroupId <String>]`: key: id of group
+  - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
   - `[PrivilegedOperationEventId <String>]`: key: id of privilegedOperationEvent
@@ -330,6 +330,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ProgramControlId <String>]`: key: id of programControl
   - `[ProgramControlTypeId <String>]`: key: id of programControlType
   - `[ProgramId <String>]`: key: id of program
+  - `[UserConsentRequestId <String>]`: key: id of userConsentRequest
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

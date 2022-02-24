@@ -63,24 +63,6 @@ Create new navigation property to salesOrders for financials
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -100,7 +82,7 @@ Accept wildcard characters: False
 
 ### -BillingPostalAddress
 postalAddressType
-To construct, see NOTES section for BILLINGPOSTALADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BILLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -161,7 +143,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 salesOrder
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesOrder
@@ -192,7 +174,7 @@ Accept wildcard characters: False
 
 ### -Currency
 currency
-To construct, see NOTES section for CURRENCY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CURRENCY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCurrency
@@ -238,7 +220,7 @@ Accept wildcard characters: False
 
 ### -Customer
 customer
-To construct, see NOTES section for CUSTOMER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CUSTOMER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCustomer
@@ -389,7 +371,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFinancialsIdentity
@@ -465,7 +447,7 @@ Accept wildcard characters: False
 
 ### -PaymentTerm
 paymentTerm
-To construct, see NOTES section for PAYMENTTERM properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for PAYMENTTERM properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPaymentTerm
@@ -541,7 +523,7 @@ Accept wildcard characters: False
 
 ### -SalesOrderLines
 .
-To construct, see NOTES section for SALESORDERLINES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SALESORDERLINES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSalesOrderLine[]
@@ -572,7 +554,7 @@ Accept wildcard characters: False
 
 ### -SellingPostalAddress
 postalAddressType
-To construct, see NOTES section for SELLINGPOSTALADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SELLINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType
@@ -588,7 +570,7 @@ Accept wildcard characters: False
 
 ### -ShippingPostalAddress
 postalAddressType
-To construct, see NOTES section for SHIPPINGPOSTALADDRESS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for SHIPPINGPOSTALADDRESS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPostalAddressType

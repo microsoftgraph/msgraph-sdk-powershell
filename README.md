@@ -52,7 +52,7 @@ There is a set of samples in the `samples` folder to help in getting started wit
 
         ``` powershell
         # Using your own access token.
-        Connect-MgGraph -Scopes "User.Read.All", "Group.ReadWrite.All" -AccessToken $AccessToken
+        Connect-MgGraph -AccessToken $AccessToken
         ```
 
     - App-only access via Client Credential with a certificate.

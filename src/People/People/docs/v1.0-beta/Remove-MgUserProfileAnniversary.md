@@ -8,13 +8,13 @@ schema: 2.0.0
 # Remove-MgUserProfileAnniversary
 
 ## SYNOPSIS
-Delete navigation property anniversaries for users
+Represents the details of meaningful dates associated with a person.
 
 ## SYNTAX
 
 ### Delete (Default)
 ```
-Remove-MgUserProfileAnniversary -PersonAnniversaryId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
+Remove-MgUserProfileAnniversary -PersonAnnualEventId <String> -UserId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -25,27 +25,9 @@ Remove-MgUserProfileAnniversary -InputObject <IPeopleIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Delete navigation property anniversaries for users
+Represents the details of meaningful dates associated with a person.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -66,7 +48,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPeopleIdentity
@@ -95,8 +77,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PersonAnniversaryId
-key: id of personAnniversary
+### -PersonAnnualEventId
+key: id of personAnnualEvent
 
 ```yaml
 Type: System.String
@@ -185,8 +167,8 @@ INPUTOBJECT <IPeopleIdentity>: Identity Parameter
   - `[ItemPhoneId <String>]`: key: id of itemPhone
   - `[ItemPublicationId <String>]`: key: id of itemPublication
   - `[LanguageProficiencyId <String>]`: key: id of languageProficiency
-  - `[PersonAnniversaryId <String>]`: key: id of personAnniversary
   - `[PersonAnnotationId <String>]`: key: id of personAnnotation
+  - `[PersonAnnualEventId <String>]`: key: id of personAnnualEvent
   - `[PersonAwardId <String>]`: key: id of personAward
   - `[PersonCertificationId <String>]`: key: id of personCertification
   - `[PersonId <String>]`: key: id of person

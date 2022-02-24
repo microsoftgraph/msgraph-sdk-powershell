@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtPolicySet
 
 ## SYNOPSIS
-Create new navigation property to policySets for deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## SYNTAX
 
@@ -28,27 +28,9 @@ New-MgDeviceAppMgtPolicySet -BodyParameter <IMicrosoftGraphPolicySet> [-Confirm]
 ```
 
 ## DESCRIPTION
-Create new navigation property to policySets for deviceAppManagement
+The PolicySet of Policies and Applications
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +51,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 Assignments of the PolicySet.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetAssignment[]
@@ -85,7 +67,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 A class containing the properties used for PolicySet.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySet
@@ -191,7 +173,7 @@ Accept wildcard characters: False
 
 ### -Items
 Items of the PolicySet with maximum count 100.
-To construct, see NOTES section for ITEMS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ITEMS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPolicySetItem[]
@@ -236,7 +218,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-policySetStatus
+The enum to specify the status of PolicySet.
 
 ```yaml
 Type: System.String
@@ -309,7 +291,7 @@ ASSIGNMENTS <IMicrosoftGraphPolicySetAssignment[]>: Assignments of the PolicySet
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+    - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
 
 BODYPARAMETER <IMicrosoftGraphPolicySet>: A class containing the properties used for PolicySet.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -320,7 +302,7 @@ BODYPARAMETER <IMicrosoftGraphPolicySet>: A class containing the properties used
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceAndAppManagementAssignmentFilterId <String>]`: The Id of the filter for the target assignment.
-      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: deviceAndAppManagementAssignmentFilterType
+      - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Creation time of the PolicySet.
   - `[Description <String>]`: Description of the PolicySet.
   - `[DisplayName <String>]`: DisplayName of the PolicySet.
@@ -335,10 +317,10 @@ BODYPARAMETER <IMicrosoftGraphPolicySet>: A class containing the properties used
     - `[ItemType <String>]`: policySetType of the PolicySetItem.
     - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
     - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-    - `[Status <String>]`: policySetStatus
+    - `[Status <String>]`: The enum to specify the status of PolicySet.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySet.
   - `[RoleScopeTags <String[]>]`: RoleScopeTags of the PolicySet
-  - `[Status <String>]`: policySetStatus
+  - `[Status <String>]`: The enum to specify the status of PolicySet.
 
 ITEMS <IMicrosoftGraphPolicySetItem[]>: Items of the PolicySet with maximum count 100.
   - `[Id <String>]`: Read-only.
@@ -349,7 +331,7 @@ ITEMS <IMicrosoftGraphPolicySetItem[]>: Items of the PolicySet with maximum coun
   - `[ItemType <String>]`: policySetType of the PolicySetItem.
   - `[LastModifiedDateTime <DateTime?>]`: Last modified time of the PolicySetItem.
   - `[PayloadId <String>]`: PayloadId of the PolicySetItem.
-  - `[Status <String>]`: policySetStatus
+  - `[Status <String>]`: The enum to specify the status of PolicySet.
 
 ## RELATED LINKS
 

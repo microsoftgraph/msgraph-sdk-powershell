@@ -1994,6 +1994,7 @@ paths:
                 - softwareUpdateScreenDisabled
                 - temporarySessionTimeoutInSeconds
                 - updateCompleteScreenDisabled
+                - userlessSharedAadModeEnabled
                 - userSessionTimeoutInSeconds
                 - watchMigrationScreenDisabled
                 - welcomeScreenDisabled
@@ -24313,6 +24314,9 @@ components:
             updateCompleteScreenDisabled:
               type: boolean
               description: Indicates if Weclome screen is disabled
+            userlessSharedAadModeEnabled:
+              type: boolean
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648

@@ -12,20 +12,20 @@ Get onlineMeetings from users
 
 ## SYNTAX
 
-### List (Default)
+### List1 (Default)
 ```
-Get-MgUserOnlineMeeting -UserId <String> [-Count] [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgUserOnlineMeeting -UserId <String> [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
- [-PageSize <Int32>] [<CommonParameters>]
+ [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgUserOnlineMeeting -OnlineMeetingId <String> -UserId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgUserOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
@@ -36,24 +36,6 @@ Get onlineMeetings from users
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -All
@@ -61,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -71,13 +53,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Count
-Include count of items
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
-Aliases:
+Type: System.String
+Parameter Sets: List1
+Aliases: CV
 
 Required: False
 Position: Named
@@ -106,7 +89,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -118,11 +101,11 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -137,7 +120,7 @@ key: id of onlineMeeting
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -152,7 +135,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -182,7 +165,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -197,7 +180,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -212,7 +195,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: OrderBy
 
 Required: False
@@ -227,7 +210,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List1
 Aliases: Limit
 
 Required: False
@@ -242,7 +225,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -273,7 +256,18 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
+  - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
+  - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
+  - `[CallId <String>]`: key: id of call
+  - `[CallRecordId <String>]`: key: id of callRecord
+  - `[CallTranscriptId <String>]`: key: id of callTranscript
+  - `[CommsOperationId <String>]`: key: id of commsOperation
+  - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
+  - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
+  - `[ParticipantId <String>]`: key: id of participant
+  - `[PresenceId <String>]`: key: id of presence
+  - `[SessionId <String>]`: key: id of session
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

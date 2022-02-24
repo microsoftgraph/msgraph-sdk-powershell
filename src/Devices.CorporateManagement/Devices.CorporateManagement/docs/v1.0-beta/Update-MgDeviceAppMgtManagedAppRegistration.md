@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceAppMgtManagedAppRegistration
 
 ## SYNOPSIS
-Update the navigation property managedAppRegistrations in deviceAppManagement
+The managed app registrations.
 
 ## SYNTAX
 
@@ -16,10 +16,10 @@ Update the navigation property managedAppRegistrations in deviceAppManagement
 ```
 Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
  [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>] [-ApplicationVersion <String>]
- [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-AzureAdDeviceId <String>]
+ [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>] [-AzureAdDeviceId <String>]
  [-CreatedDateTime <DateTime>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
  [-DeviceTag <String>] [-DeviceType <String>] [-FlaggedReasons <String[]>] [-Id <String>]
- [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-LastSyncDateTime <DateTime>]
+ [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>] [-LastSyncDateTime <DateTime>]
  [-ManagedDeviceId <String>] [-ManagementSdkVersion <String>]
  [-Operations <IMicrosoftGraphManagedAppOperation[]>] [-PlatformVersion <String>] [-UserId <String>]
  [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -28,50 +28,32 @@ Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
 ### Update1
 ```
 Update-MgDeviceAppMgtManagedAppRegistration -ManagedAppRegistrationId <String>
- -BodyParameter <IMicrosoftGraphManagedAppRegistration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedAppRegistration> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity1
 ```
 Update-MgDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
- -BodyParameter <IMicrosoftGraphManagedAppRegistration1> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -BodyParameter <IMicrosoftGraphManagedAppRegistration> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded1
 ```
 Update-MgDeviceAppMgtManagedAppRegistration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppIdentifier <Hashtable>] [-ApplicationVersion <String>]
- [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-AzureAdDeviceId <String>]
+ [-AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>] [-AzureAdDeviceId <String>]
  [-CreatedDateTime <DateTime>] [-DeviceManufacturer <String>] [-DeviceModel <String>] [-DeviceName <String>]
  [-DeviceTag <String>] [-DeviceType <String>] [-FlaggedReasons <String[]>] [-Id <String>]
- [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>] [-LastSyncDateTime <DateTime>]
+ [-IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>] [-LastSyncDateTime <DateTime>]
  [-ManagedDeviceId <String>] [-ManagementSdkVersion <String>]
  [-Operations <IMicrosoftGraphManagedAppOperation[]>] [-PlatformVersion <String>] [-UserId <String>]
  [-Version <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property managedAppRegistrations in deviceAppManagement
+The managed app registrations.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -122,10 +104,10 @@ Accept wildcard characters: False
 
 ### -AppliedPolicies
 Zero or more policys already applied on the registered app when it last synchronized with managment service.
-To construct, see NOTES section for APPLIEDPOLICIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for APPLIEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -154,10 +136,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration
 Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
@@ -293,7 +275,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
@@ -309,10 +291,10 @@ Accept wildcard characters: False
 
 ### -IntendedPolicies
 Zero or more policies admin intended for the app as of now.
-To construct, see NOTES section for INTENDEDPOLICIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INTENDEDPOLICIES properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy1[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppPolicy[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -386,7 +368,7 @@ Accept wildcard characters: False
 
 ### -Operations
 Zero or more long running operations triggered on the app registration.
-To construct, see NOTES section for OPERATIONS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for OPERATIONS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppOperation[]
@@ -498,7 +480,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IDevicesCorporateManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration1
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedAppRegistration
 
 ## OUTPUTS
 
@@ -515,7 +497,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Zero or more policys already applied on the registered app when it last synchronized with managment service.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.
@@ -524,13 +506,13 @@ APPLIEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policys alrea
   - `[RoleScopeTagIds <String[]>]`: List of Scope Tags for this Entity instance.
   - `[Version <String>]`: Version of the entity.
 
-BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+BODYPARAMETER <IMicrosoftGraphManagedAppRegistration>: The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ApplicationVersion <String>]`: App version
-  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
+  - `[AppliedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policys already applied on the registered app when it last synchronized with managment service.
     - `[Id <String>]`: Read-only.
     - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
     - `[Description <String>]`: The policy's description.
@@ -540,13 +522,13 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is 
     - `[Version <String>]`: Version of the entity.
   - `[AzureAdDeviceId <String>]`: The Azure Active Directory Device identifier of the host device. Value could be empty even when the host device is Azure Active Directory registered.
   - `[CreatedDateTime <DateTime?>]`: Date and time of creation
-  - `[DeviceManufacturer <String>]`: The device manufacturer for the current app registration 
-  - `[DeviceModel <String>]`: The device model for the current app registration 
+  - `[DeviceManufacturer <String>]`: The device manufacturer for the current app registration
+  - `[DeviceModel <String>]`: The device model for the current app registration
   - `[DeviceName <String>]`: Host device name
   - `[DeviceTag <String>]`: App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
   - `[DeviceType <String>]`: Host device type
   - `[FlaggedReasons <String[]>]`: Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy1[]>]`: Zero or more policies admin intended for the app as of now.
+  - `[IntendedPolicies <IMicrosoftGraphManagedAppPolicy[]>]`: Zero or more policies admin intended for the app as of now.
   - `[LastSyncDateTime <DateTime?>]`: Date and time of last the app synced with management service.
   - `[ManagedDeviceId <String>]`: The Managed Device identifier of the host device. Value could be empty even when the host device is managed.
   - `[ManagementSdkVersion <String>]`: App management SDK version
@@ -563,15 +545,15 @@ BODYPARAMETER <IMicrosoftGraphManagedAppRegistration1>: The ManagedAppEntity is 
 INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[AndroidManagedAppProtectionId <String>]`: key: id of androidManagedAppProtection
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
-  - `[BundleId <String>]`: 
-  - `[Count <Int64?>]`: 
+  - `[AssignmentFilterEvaluationStatusDetailsId <String>]`: key: id of assignmentFilterEvaluationStatusDetails
+  - `[BundleId <String>]`: Usage: bundleId={bundleId}
+  - `[Count <Int64?>]`: Usage: count={count}
   - `[DefaultManagedAppProtectionId <String>]`: key: id of defaultManagedAppProtection
-  - `[DetectedAppId <String>]`: key: id of detectedApp
   - `[DeviceAppManagementTaskId <String>]`: key: id of deviceAppManagementTask
   - `[DeviceCompliancePolicyStateId <String>]`: key: id of deviceCompliancePolicyState
   - `[DeviceConfigurationStateId <String>]`: key: id of deviceConfigurationState
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
-  - `[DeviceId <String>]`: 
+  - `[DeviceId <String>]`: Usage: deviceId={deviceId}
   - `[DeviceInstallStateId <String>]`: key: id of deviceInstallState
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[DeviceManagementTroubleshootingEventId <String>]`: key: id of deviceManagementTroubleshootingEvent
@@ -611,14 +593,13 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[SecurityBaselineSettingStateId <String>]`: key: id of securityBaselineSettingState
   - `[SecurityBaselineStateId <String>]`: key: id of securityBaselineState
   - `[SideLoadingKeyId <String>]`: key: id of sideLoadingKey
-  - `[Status <String>]`: 
+  - `[Status <String>]`: Usage: status={status}
   - `[TargetedManagedAppConfigurationId <String>]`: key: id of targetedManagedAppConfiguration
   - `[TargetedManagedAppPolicyAssignmentId <String>]`: key: id of targetedManagedAppPolicyAssignment
   - `[UserAppInstallStatusId <String>]`: key: id of userAppInstallStatus
   - `[UserId <String>]`: key: id of user
-  - `[UserId1 <String>]`: key: id of user
   - `[UserInstallStateSummaryId <String>]`: key: id of userInstallStateSummary
-  - `[UserPrincipalName <String>]`: 
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[VppTokenId <String>]`: key: id of vppToken
   - `[WindowsDefenderApplicationControlSupplementalPolicyAssignmentId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyAssignment
   - `[WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatusId <String>]`: key: id of windowsDefenderApplicationControlSupplementalPolicyDeploymentStatus
@@ -628,7 +609,7 @@ INPUTOBJECT <IDevicesCorporateManagementIdentity>: Identity Parameter
   - `[WindowsInformationProtectionPolicyId <String>]`: key: id of windowsInformationProtectionPolicy
   - `[WindowsInformationProtectionWipeActionId <String>]`: key: id of windowsInformationProtectionWipeAction
 
-INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy1[]>: Zero or more policies admin intended for the app as of now.
+INTENDEDPOLICIES <IMicrosoftGraphManagedAppPolicy[]>: Zero or more policies admin intended for the app as of now.
   - `[Id <String>]`: Read-only.
   - `[CreatedDateTime <DateTime?>]`: The date and time the policy was created.
   - `[Description <String>]`: The policy's description.

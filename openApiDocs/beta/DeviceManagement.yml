@@ -104,6 +104,7 @@ paths:
                 - managedDeviceOverview
                 - managedDevices
                 - mobileAppTroubleshootingEvents
+                - oemWarrantyInformationOnboarding
                 - remoteActionAudits
                 - userExperienceAnalyticsAppHealthApplicationPerformance
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
@@ -143,6 +144,7 @@ paths:
                 - userExperienceAnalyticsScoreHistory
                 - userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
                 - userExperienceAnalyticsWorkFromAnywhereMetrics
+                - userExperienceAnalyticsWorkFromAnywhereModelPerformance
                 - windowsMalwareInformation
                 - derivedCredentials
                 - resourceAccessProfiles
@@ -265,6 +267,7 @@ paths:
                 - managedDeviceOverview
                 - managedDevices
                 - mobileAppTroubleshootingEvents
+                - oemWarrantyInformationOnboarding
                 - remoteActionAudits
                 - userExperienceAnalyticsAppHealthApplicationPerformance
                 - userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
@@ -304,6 +307,7 @@ paths:
                 - userExperienceAnalyticsScoreHistory
                 - userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
                 - userExperienceAnalyticsWorkFromAnywhereMetrics
+                - userExperienceAnalyticsWorkFromAnywhereModelPerformance
                 - windowsMalwareInformation
                 - derivedCredentials
                 - resourceAccessProfiles
@@ -487,6 +491,8 @@ paths:
               operationId: deviceManagement.ListManagedDevices
             mobileAppTroubleshootingEvents:
               operationId: deviceManagement.ListMobileAppTroubleshootingEvents
+            oemWarrantyInformationOnboarding:
+              operationId: deviceManagement.ListOemWarrantyInformationOnboarding
             remoteActionAudits:
               operationId: deviceManagement.ListRemoteActionAudits
             userExperienceAnalyticsAppHealthApplicationPerformance:
@@ -565,6 +571,8 @@ paths:
               operationId: deviceManagement.GetUserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
             userExperienceAnalyticsWorkFromAnywhereMetrics:
               operationId: deviceManagement.ListUserExperienceAnalyticsWorkFromAnywhereMetrics
+            userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+              operationId: deviceManagement.ListUserExperienceAnalyticsWorkFromAnywhereModelPerformance
             windowsMalwareInformation:
               operationId: deviceManagement.ListWindowsMalwareInformation
             derivedCredentials:
@@ -5400,6 +5408,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -5473,6 +5482,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -5749,7 +5759,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get windowsProtectionState from deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.comanagedDevices_GetWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -5824,7 +5834,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property windowsProtectionState in deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.comanagedDevices_UpdateWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -5851,7 +5861,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property windowsProtectionState for deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.comanagedDevices_DeleteWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -27866,6 +27876,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -27939,6 +27950,7 @@ paths:
                 - onlineMeetings
                 - presence
                 - authentication
+                - tasks
                 - chats
                 - joinedTeams
                 - teamwork
@@ -28215,7 +28227,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Get windowsProtectionState from deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.managedDevices_GetWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -28290,7 +28302,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Update the navigation property windowsProtectionState in deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.managedDevices_UpdateWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -28317,7 +28329,7 @@ paths:
       tags:
         - deviceManagement.managedDevice
       summary: Delete navigation property windowsProtectionState for deviceManagement
-      description: The device protection status.
+      description: The device protection status. This property is read-only.
       operationId: deviceManagement.managedDevices_DeleteWindowsProtectionState
       parameters:
         - name: managedDevice-id
@@ -35568,6 +35580,8 @@ paths:
                 - deviceManufacturer desc
                 - deviceModel
                 - deviceModel desc
+                - healthStatus
+                - healthStatus desc
                 - meanTimeToFailureInMinutes
                 - meanTimeToFailureInMinutes desc
                 - modelAppHealthScore
@@ -35589,6 +35603,7 @@ paths:
                 - activeDeviceCount
                 - deviceManufacturer
                 - deviceModel
+                - healthStatus
                 - meanTimeToFailureInMinutes
                 - modelAppHealthScore
                 - modelAppHealthStatus
@@ -35680,6 +35695,7 @@ paths:
                 - activeDeviceCount
                 - deviceManufacturer
                 - deviceModel
+                - healthStatus
                 - meanTimeToFailureInMinutes
                 - modelAppHealthScore
                 - modelAppHealthStatus
@@ -35801,6 +35817,8 @@ paths:
                 - deviceManufacturer desc
                 - deviceModel
                 - deviceModel desc
+                - healthStatus
+                - healthStatus desc
                 - meanTimeToFailureInMinutes
                 - meanTimeToFailureInMinutes desc
                 - processedDateTime
@@ -35826,6 +35844,7 @@ paths:
                 - deviceId
                 - deviceManufacturer
                 - deviceModel
+                - healthStatus
                 - meanTimeToFailureInMinutes
                 - processedDateTime
               type: string
@@ -35922,6 +35941,7 @@ paths:
                 - deviceId
                 - deviceManufacturer
                 - deviceModel
+                - healthStatus
                 - meanTimeToFailureInMinutes
                 - processedDateTime
               type: string
@@ -38232,6 +38252,7 @@ paths:
                 - batteryCapacityFair
                 - batteryCapacityGood
                 - batteryCapacityPoor
+                - lastRefreshedDateTime
               type: string
         - name: $expand
           in: query
@@ -38550,6 +38571,8 @@ paths:
                 - estimatedRuntimeInMinutes desc
                 - healthStatus
                 - healthStatus desc
+                - manufacturer
+                - manufacturer desc
                 - maxCapacityPercentage
                 - maxCapacityPercentage desc
                 - model
@@ -38572,6 +38595,7 @@ paths:
                 - deviceName
                 - estimatedRuntimeInMinutes
                 - healthStatus
+                - manufacturer
                 - maxCapacityPercentage
                 - model
               type: string
@@ -38665,6 +38689,7 @@ paths:
                 - deviceName
                 - estimatedRuntimeInMinutes
                 - healthStatus
+                - manufacturer
                 - maxCapacityPercentage
                 - model
               type: string
@@ -39416,6 +39441,7 @@ paths:
                 - batteryRuntimeFair
                 - batteryRuntimeGood
                 - batteryRuntimePoor
+                - lastRefreshedDateTime
               type: string
         - name: $expand
           in: query
@@ -39973,7 +39999,6 @@ paths:
                 - deviceId
                 - metricDateTime
                 - metricType
-                - userExperienceAnalyticsMetric
               type: string
         - name: $expand
           in: query
@@ -39986,7 +40011,6 @@ paths:
             items:
               enum:
                 - '*'
-                - userExperienceAnalyticsMetric
               type: string
       responses:
         '200':
@@ -40063,7 +40087,6 @@ paths:
                 - deviceId
                 - metricDateTime
                 - metricType
-                - userExperienceAnalyticsMetric
               type: string
         - name: $expand
           in: query
@@ -40076,7 +40099,6 @@ paths:
             items:
               enum:
                 - '*'
-                - userExperienceAnalyticsMetric
               type: string
       responses:
         '200':
@@ -40085,11 +40107,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetricHistory'
-          links:
-            userExperienceAnalyticsMetric:
-              operationId: deviceManagement.UserExperienceAnalyticsDeviceMetricHistory.GetUserExperienceAnalyticsMetric
-              parameters:
-                userExperienceAnalyticsMetricHistory-id: $request.path.userExperienceAnalyticsMetricHistory-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -40126,136 +40143,6 @@ paths:
       summary: Delete navigation property userExperienceAnalyticsDeviceMetricHistory for deviceManagement
       description: User experience analytics device metric history
       operationId: deviceManagement_DeleteUserExperienceAnalyticsDeviceMetricHistory
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsDeviceMetricHistory/{userExperienceAnalyticsMetricHistory-id}/userExperienceAnalyticsMetric':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Get userExperienceAnalyticsMetric from deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsDeviceMetricHistory_GetUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsDeviceMetricHistory/{userExperienceAnalyticsMetricHistory-id}/userExperienceAnalyticsMetric/$ref':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Get ref of userExperienceAnalyticsMetric from deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsDeviceMetricHistory_GetGraphRefUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Update the ref of navigation property userExperienceAnalyticsMetric in deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsDeviceMetricHistory_SetGraphRefUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Delete ref of navigation property userExperienceAnalyticsMetric for deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsDeviceMetricHistory_DeleteGraphRefUserExperienceAnalyticsMetric
       parameters:
         - name: userExperienceAnalyticsMetricHistory-id
           in: path
@@ -41960,7 +41847,6 @@ paths:
                 - deviceId
                 - metricDateTime
                 - metricType
-                - userExperienceAnalyticsMetric
               type: string
         - name: $expand
           in: query
@@ -41973,7 +41859,6 @@ paths:
             items:
               enum:
                 - '*'
-                - userExperienceAnalyticsMetric
               type: string
       responses:
         '200':
@@ -42050,7 +41935,6 @@ paths:
                 - deviceId
                 - metricDateTime
                 - metricType
-                - userExperienceAnalyticsMetric
               type: string
         - name: $expand
           in: query
@@ -42063,7 +41947,6 @@ paths:
             items:
               enum:
                 - '*'
-                - userExperienceAnalyticsMetric
               type: string
       responses:
         '200':
@@ -42072,11 +41955,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetricHistory'
-          links:
-            userExperienceAnalyticsMetric:
-              operationId: deviceManagement.UserExperienceAnalyticsMetricHistory.GetUserExperienceAnalyticsMetric
-              parameters:
-                userExperienceAnalyticsMetricHistory-id: $request.path.userExperienceAnalyticsMetricHistory-id
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -42113,136 +41991,6 @@ paths:
       summary: Delete navigation property userExperienceAnalyticsMetricHistory for deviceManagement
       description: User experience analytics metric history
       operationId: deviceManagement_DeleteUserExperienceAnalyticsMetricHistory
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsMetricHistory/{userExperienceAnalyticsMetricHistory-id}/userExperienceAnalyticsMetric':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Get userExperienceAnalyticsMetric from deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsMetricHistory_GetUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - unit
-                - value
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/deviceManagement/userExperienceAnalyticsMetricHistory/{userExperienceAnalyticsMetricHistory-id}/userExperienceAnalyticsMetric/$ref':
-    get:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Get ref of userExperienceAnalyticsMetric from deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsMetricHistory_GetGraphRefUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Update the ref of navigation property userExperienceAnalyticsMetric in deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsMetricHistory_SetGraphRefUserExperienceAnalyticsMetric
-      parameters:
-        - name: userExperienceAnalyticsMetricHistory-id
-          in: path
-          description: 'key: id of userExperienceAnalyticsMetricHistory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userExperienceAnalyticsMetricHistory
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - deviceManagement.userExperienceAnalyticsMetricHistory
-      summary: Delete ref of navigation property userExperienceAnalyticsMetric for deviceManagement
-      description: User experience analytics metric.
-      operationId: deviceManagement.userExperienceAnalyticsMetricHistory_DeleteGraphRefUserExperienceAnalyticsMetric
       parameters:
         - name: userExperienceAnalyticsMetricHistory-id
           in: path
@@ -42301,6 +42049,8 @@ paths:
                 - modelDeviceCount desc
                 - startupPerformanceScore
                 - startupPerformanceScore desc
+                - workFromAnywhereScore
+                - workFromAnywhereScore desc
               type: string
         - name: $select
           in: query
@@ -42320,6 +42070,7 @@ paths:
                 - model
                 - modelDeviceCount
                 - startupPerformanceScore
+                - workFromAnywhereScore
               type: string
         - name: $expand
           in: query
@@ -42412,6 +42163,7 @@ paths:
                 - model
                 - modelDeviceCount
                 - startupPerformanceScore
+                - workFromAnywhereScore
               type: string
         - name: $expand
           in: query
@@ -44871,6 +44623,239 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      summary: Get userExperienceAnalyticsWorkFromAnywhereModelPerformance from deviceManagement
+      description: The user experience analytics work from anywhere model performance
+      operationId: deviceManagement_ListUserExperienceAnalyticsWorkFromAnywhereModelPerformance
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - cloudIdentityScore
+                - cloudIdentityScore desc
+                - cloudManagementScore
+                - cloudManagementScore desc
+                - cloudProvisioningScore
+                - cloudProvisioningScore desc
+                - healthStatus
+                - healthStatus desc
+                - manufacturer
+                - manufacturer desc
+                - model
+                - model desc
+                - modelDeviceCount
+                - modelDeviceCount desc
+                - windowsScore
+                - windowsScore desc
+                - workFromAnywhereScore
+                - workFromAnywhereScore desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cloudIdentityScore
+                - cloudManagementScore
+                - cloudProvisioningScore
+                - healthStatus
+                - manufacturer
+                - model
+                - modelDeviceCount
+                - windowsScore
+                - workFromAnywhereScore
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of userExperienceAnalyticsWorkFromAnywhereModelPerformance
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      summary: Create new navigation property to userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
+      description: The user experience analytics work from anywhere model performance
+      operationId: deviceManagement_CreateUserExperienceAnalyticsWorkFromAnywhereModelPerformance
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/deviceManagement/userExperienceAnalyticsWorkFromAnywhereModelPerformance/{userExperienceAnalyticsWorkFromAnywhereModelPerformance-id}':
+    get:
+      tags:
+        - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      summary: Get userExperienceAnalyticsWorkFromAnywhereModelPerformance from deviceManagement
+      description: The user experience analytics work from anywhere model performance
+      operationId: deviceManagement_GetUserExperienceAnalyticsWorkFromAnywhereModelPerformance
+      parameters:
+        - name: userExperienceAnalyticsWorkFromAnywhereModelPerformance-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsWorkFromAnywhereModelPerformance
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - cloudIdentityScore
+                - cloudManagementScore
+                - cloudProvisioningScore
+                - healthStatus
+                - manufacturer
+                - model
+                - modelDeviceCount
+                - windowsScore
+                - workFromAnywhereScore
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      summary: Update the navigation property userExperienceAnalyticsWorkFromAnywhereModelPerformance in deviceManagement
+      description: The user experience analytics work from anywhere model performance
+      operationId: deviceManagement_UpdateUserExperienceAnalyticsWorkFromAnywhereModelPerformance
+      parameters:
+        - name: userExperienceAnalyticsWorkFromAnywhereModelPerformance-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - deviceManagement.userExperienceAnalyticsWorkFromAnywhereModelPerformance
+      summary: Delete navigation property userExperienceAnalyticsWorkFromAnywhereModelPerformance for deviceManagement
+      description: The user experience analytics work from anywhere model performance
+      operationId: deviceManagement_DeleteUserExperienceAnalyticsWorkFromAnywhereModelPerformance
+      parameters:
+        - name: userExperienceAnalyticsWorkFromAnywhereModelPerformance-id
+          in: path
+          description: 'key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: userExperienceAnalyticsWorkFromAnywhereModelPerformance
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /deviceManagement/windowsInformationProtectionAppLearningSummaries:
     get:
       tags:
@@ -46110,6 +46095,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.mobileAppTroubleshootingEvent'
               description: The collection property of MobileAppTroubleshootingEvent.
+            oemWarrantyInformationOnboarding:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.oemWarrantyInformationOnboarding'
+              description: List of OEM Warranty Statuses
             remoteActionAudits:
               type: array
               items:
@@ -46287,6 +46277,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric'
               description: User experience analytics work from anywhere metrics.
+            userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance'
+              description: The user experience analytics work from anywhere model performance
             windowsMalwareInformation:
               type: array
               items:
@@ -47128,7 +47123,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: GetProductInfo function. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -47546,7 +47541,7 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
@@ -47562,18 +47557,18 @@ components:
               type: array
               items:
                 type: string
-              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq and not).'
+              description: 'The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).'
             city:
               type: string
               description: 'The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
@@ -47611,7 +47606,7 @@ components:
               nullable: true
             employeeId:
               type: string
-              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -47667,7 +47662,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -47763,7 +47758,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only, Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -47798,7 +47793,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
+              description: 'The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user''s email name. The general format is alias@domain, where domain must be present in the tenant''s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, '' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.'
               nullable: true
             userType:
               type: string
@@ -48095,6 +48090,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.presence'
             authentication:
               $ref: '#/components/schemas/microsoft.graph.authentication'
+            tasks:
+              $ref: '#/components/schemas/microsoft.graph.tasks'
             chats:
               type: array
               items:
@@ -50724,7 +50721,7 @@ components:
               nullable: true
             disableUDPConnections:
               type: boolean
-              description: 'When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.'
+              description: 'When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.'
             displayName:
               type: string
               description: The MicrosoftTunnelConfiguration's display name
@@ -51611,6 +51608,8 @@ components:
               type: string
               description: The model name of the device.
               nullable: true
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
             meanTimeToFailureInMinutes:
               maximum: 2147483647
               minimum: -2147483648
@@ -51676,6 +51675,8 @@ components:
               type: string
               description: The model name of the device.
               nullable: true
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
             meanTimeToFailureInMinutes:
               maximum: 2147483647
               minimum: -2147483648
@@ -51900,6 +51901,11 @@ components:
               type: integer
               description: Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
               format: int32
+            lastRefreshedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Recorded date time of this capacity details instance.
+              format: date-time
           additionalProperties:
             type: object
           description: 'The user experience analytics battery health capacity entity contains count of devices broken down into 3 categories - devices with capacity > 80%, devices with capacity 50-80% and devices with capacity < 50 %.This API provides the count of devices in these 3 categories..'
@@ -51968,8 +51974,10 @@ components:
               description: The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
               format: int32
             healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
+            manufacturer:
               type: string
-              description: The overall battery health status of the device.
+              description: The manufacturer name of the device.
               nullable: true
             maxCapacityPercentage:
               maximum: 2147483647
@@ -52119,6 +52127,11 @@ components:
               type: integer
               description: Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
               format: int32
+            lastRefreshedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Recorded date time of this runtime details instance.
+              format: date-time
           additionalProperties:
             type: object
           description: 'The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime > 5 hours, devices with runtime 3-5 hours and devices with runtime < 3 hours.This API provides the count of devices in these 3 categories.'
@@ -52141,8 +52154,6 @@ components:
               type: string
               description: The user experience analytics metric type.
               nullable: true
-            userExperienceAnalyticsMetric:
-              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsMetric'
           additionalProperties:
             type: object
           description: The user experience analytics metric history.
@@ -52531,6 +52542,10 @@ components:
             startupPerformanceScore:
               type: number
               description: The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            workFromAnywhereScore:
+              type: number
+              description: The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
               format: double
           additionalProperties:
             type: object
@@ -52979,6 +52994,51 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics Device for work from anywhere report
+    microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: userExperienceAnalyticsWorkFromAnywhereModelPerformance
+          type: object
+          properties:
+            cloudIdentityScore:
+              type: number
+              description: The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            cloudManagementScore:
+              type: number
+              description: The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            cloudProvisioningScore:
+              type: number
+              description: The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            healthStatus:
+              $ref: '#/components/schemas/microsoft.graph.userExperienceAnalyticsHealthState'
+            manufacturer:
+              type: string
+              description: The user experience work from anywhere's manufacturer name of the devices.
+              nullable: true
+            model:
+              type: string
+              description: The user experience work from anywhere's model name of the devices.
+              nullable: true
+            modelDeviceCount:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
+              format: int32
+            windowsScore:
+              type: number
+              description: The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+            workFromAnywhereScore:
+              type: number
+              description: The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+              format: double
+          additionalProperties:
+            type: object
+          description: The user experience analytics work from anywhere model performance.
     microsoft.graph.windowsInformationProtectionAppLearningSummary:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -53121,6 +53181,9 @@ components:
           type: integer
           description: 'When the device does not check in for specified number of days, the company data might be removed and the device will not be under management. Valid values 30 to 270'
           format: int32
+        enableAutopilotDiagnostics:
+          type: boolean
+          description: Determines whether the autopilot diagnostic feature is enabled or not.
         enableLogCollection:
           type: boolean
           description: Determines whether the log collection feature should be available for use.
@@ -53537,6 +53600,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcOnPremisesConnection'
               description: A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
+            organizationSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOrganizationSettings'
             provisioningPolicies:
               type: array
               items:
@@ -53547,6 +53612,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlan'
               description: Cloud PC service plans.
+            snapshots:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+              description: Cloud PC snapshots.
             supportedRegions:
               type: array
               items:
@@ -54616,6 +54686,9 @@ components:
             allowPartnerToCollectIOSApplicationMetadata:
               type: boolean
               description: 'For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune'
+            allowPartnerToCollectIOSPersonalApplicationMetadata:
+              type: boolean
+              description: 'For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about personally installed applications from Intune'
             androidDeviceBlockedOnMissingPartnerData:
               type: boolean
               description: 'For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant'
@@ -54958,6 +55031,25 @@ components:
           additionalProperties:
             type: object
           description: Represents a custom attribute script for macOS.
+    microsoft.graph.oemWarrantyInformationOnboarding:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: oemWarrantyInformationOnboarding
+          type: object
+          properties:
+            available:
+              type: boolean
+              description: Specifies whether warranty API is available. This property is read-only.
+            enabled:
+              type: boolean
+              description: Specifies whether warranty query is enabled for given OEM. This property is read-only.
+            oemName:
+              type: string
+              description: OEM name. This property is read-only.
+              nullable: true
+          additionalProperties:
+            type: object
+          description: Warranty status entity for a given OEM
     microsoft.graph.appleUserInitiatedEnrollmentProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -55487,6 +55579,10 @@ components:
               type: string
               description: The localized friendly name of the ADMX file.
               nullable: true
+            fileName:
+              type: string
+              description: 'The file name of the ADMX file without the path. For example: edge.admx'
+              nullable: true
             languageCodes:
               type: array
               items:
@@ -55534,10 +55630,6 @@ components:
             defaultLanguageCode:
               type: string
               description: The default language of the uploaded ADMX file.
-              nullable: true
-            fileName:
-              type: string
-              description: The file name of the uploaded ADML file.
               nullable: true
             groupPolicyUploadedLanguageFiles:
               type: array
@@ -55793,11 +55885,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
               description: Entity representing a job to export a report
-            reportSchedules:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.deviceManagementReportSchedule'
-              description: Entity representing a schedule for which reports are delivered
           additionalProperties:
             type: object
           description: Singleton entity that acts as a container for all reports functionality.
@@ -56623,7 +56710,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values: Reprovision, Resize.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -57098,13 +57185,25 @@ components:
           type: string
           description: Subscriber carrier of the device
           nullable: true
+        systemManagementBIOSVersion:
+          type: string
+          description: BIOS version as reported by SMBIOS
+          nullable: true
         totalStorageSpace:
           type: integer
           description: Total storage space of the device.
           format: int64
+        tpmManufacturer:
+          type: string
+          description: The identifying information that uniquely names the TPM manufacturer
+          nullable: true
         tpmSpecificationVersion:
           type: string
           description: String that specifies the specification version.
+          nullable: true
+        tpmVersion:
+          type: string
+          description: 'The version of the TPM, as specified by the manufacturer'
           nullable: true
         wifiMac:
           type: string
@@ -57483,7 +57582,7 @@ components:
         lastNonInteractiveSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastNonInteractiveSignInRequestId:
@@ -57493,7 +57592,7 @@ components:
         lastSignInDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The last interactive sign-in date for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
+          description: 'The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: ''2014-01-01T00:00:00Z''. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.'
           format: date-time
           nullable: true
         lastSignInRequestId:
@@ -57620,7 +57719,7 @@ components:
           description: The service plans that are disabled in this assignment. Read-Only.
         error:
           type: string
-          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
+          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.'
           nullable: true
         lastUpdatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -57636,7 +57735,7 @@ components:
           nullable: true
         state:
           type: string
-          description: 'Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.'
+          description: 'Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.'
           nullable: true
       additionalProperties:
         type: object
@@ -57792,6 +57891,8 @@ components:
           type: string
           description: The default time zone for the user's mailbox.
           nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
         userPurposeV2:
           $ref: '#/components/schemas/microsoft.graph.mailboxRecipientType'
         workingHours:
@@ -58522,7 +58623,7 @@ components:
               nullable: true
             mailNickname:
               type: string
-              description: 'The mail alias for the group, unique in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] '' ; : . <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             mdmAppId:
               type: string
@@ -58686,7 +58787,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.'
+              description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -58696,7 +58797,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
             permissionGrants:
               type: array
               items:
@@ -59169,6 +59270,8 @@ components:
               nullable: true
             root:
               $ref: '#/components/schemas/microsoft.graph.root'
+            settings:
+              $ref: '#/components/schemas/microsoft.graph.siteSettings'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             siteCollection:
@@ -59207,6 +59310,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.list'
               description: The collection of lists under this site.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+              description: The collection of long running operations for the site.
             pages:
               type: array
               items:
@@ -59327,6 +59435,11 @@ components:
               description: 'Each principal reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.'
             definition:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleDefinition'
+            stages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStage'
+              description: 'If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptance:
@@ -59546,7 +59659,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Sets how long (in seconds) this notification content will stay in each platform’s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user’s Windows Action Center.'
+              description: 'Sets how long (in seconds) this notification content will stay in each platform''s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user''s Windows Action Center.'
               format: int32
               nullable: true
             expirationDateTime:
@@ -59632,6 +59745,8 @@ components:
               description: 'When set to true, documents in the user''s Office Delve are disabled. Users can control this setting in Office Delve.'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.userInsightsSettings'
+            contactMergeSuggestions:
+              $ref: '#/components/schemas/microsoft.graph.contactMergeSuggestions'
             regionalAndLanguageSettings:
               $ref: '#/components/schemas/microsoft.graph.regionalAndLanguageSettings'
             shiftPreferences:
@@ -59952,6 +60067,10 @@ components:
               type: string
               description: 'Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.'
               nullable: true
+            mdmAppId:
+              type: string
+              description: 'Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).'
+              nullable: true
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -60141,6 +60260,8 @@ components:
               nullable: true
             joinInformation:
               $ref: '#/components/schemas/microsoft.graph.itemBody'
+            joinMeetingIdSettings:
+              $ref: '#/components/schemas/microsoft.graph.joinMeetingIdSettings'
             joinUrl:
               type: string
               nullable: true
@@ -60252,6 +60373,24 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
           additionalProperties:
             type: object
+    microsoft.graph.tasks:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: tasks
+          type: object
+          properties:
+            alltasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: All tasks in the users mailbox.
+            lists:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTaskList'
+              description: The task lists in the users mailbox.
+          additionalProperties:
+            type: object
     microsoft.graph.chat:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -60286,7 +60425,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.chatViewpoint'
             webUrl:
               type: string
-              description: 'A hyperlink that will go to the chat in Microsoft Teams. This URL should be treated as an opaque blob, and not parsed. Read-only.'
+              description: 'The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.'
               nullable: true
             installedApps:
               type: array
@@ -60379,7 +60518,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
-              description: The collection of channels & messages associated with the team.
+              description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
             installedApps:
@@ -61272,6 +61411,14 @@ components:
       additionalProperties:
         type: object
       description: Object containing detailed information about the error and its remediation.
+    microsoft.graph.userExperienceAnalyticsHealthState:
+      title: userExperienceAnalyticsHealthState
+      enum:
+        - unknown
+        - insufficientData
+        - needsAttention
+        - meetingGoals
+      type: string
     microsoft.graph.userExperienceAnalyticsInsight:
       title: userExperienceAnalyticsInsight
       type: object
@@ -61297,17 +61444,9 @@ components:
     microsoft.graph.diskType:
       title: diskType
       enum:
-        - unkown
         - hdd
         - ssd
-      type: string
-    microsoft.graph.userExperienceAnalyticsHealthState:
-      title: userExperienceAnalyticsHealthState
-      enum:
         - unknown
-        - insufficientData
-        - needsAttention
-        - meetingGoals
       type: string
     microsoft.graph.userExperienceAnalyticsOperatingSystemRestartCategory:
       title: userExperienceAnalyticsOperatingSystemRestartCategory
@@ -61655,15 +61794,16 @@ components:
           properties:
             aadDeviceId:
               type: string
+              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
               nullable: true
             displayName:
               type: string
-              description: The Cloud PC display name.
+              description: The display name of the Cloud PC.
               nullable: true
             gracePeriodEndDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             imageDisplayName:
@@ -61675,37 +61815,39 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The Cloud PC''s last modified date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
             lastRemoteActionResult:
               $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
             managedDeviceId:
               type: string
-              description: The Cloud PC’s Intune device ID.
+              description: The Intune device ID of the Cloud PC.
               nullable: true
             managedDeviceName:
               type: string
-              description: The Cloud PC’s Intune device name.
+              description: The Intune device name of the Cloud PC.
               nullable: true
             onPremisesConnectionName:
               type: string
-              description: The on-premises connection that is applied during provisioning of Cloud PCs.
+              description: The on-premises connection that is applied during the provisioning of Cloud PCs.
               nullable: true
+            osVersion:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
             provisioningPolicyId:
               type: string
-              description: The Cloud PC's provisioning policy ID.
+              description: The provisioning policy ID of the Cloud PC.
               nullable: true
             provisioningPolicyName:
               type: string
-              description: The provisioning policy that is applied during provisioning of Cloud PCs.
+              description: The provisioning policy that is applied during the provisioning of Cloud PCs.
               nullable: true
             servicePlanId:
               type: string
-              description: The Cloud PC's service plan ID.
+              description: The service plan ID of the Cloud PC.
               nullable: true
             servicePlanName:
               type: string
-              description: The Cloud PC's service plan name.
+              description: The service plan name of the Cloud PC.
               nullable: true
             servicePlanType:
               $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
@@ -61713,6 +61855,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
             statusDetails:
               $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+            userAccountType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
             userPrincipalName:
               type: string
               description: The user principal name (UPN) of the user assigned to the Cloud PC.
@@ -61732,6 +61876,7 @@ components:
             expirationDate:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
               type: string
+              description: The date the image became unavailable.
               format: date
               nullable: true
             lastModifiedDateTime:
@@ -61835,7 +61980,7 @@ components:
           properties:
             adDomainName:
               type: string
-              description: The fully qualified domain name (FQDN) of the Active Directory domain you want to join.
+              description: The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.
               nullable: true
             adDomainPassword:
               type: string
@@ -61843,7 +61988,7 @@ components:
               nullable: true
             adDomainUsername:
               type: string
-              description: 'The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com.'
+              description: 'The username of an Active Directory account (user or service account) that has permissions to create computer objects in Active Directory. Required format: admin@contoso.com. Optional.'
               nullable: true
             displayName:
               type: string
@@ -61877,6 +62022,18 @@ components:
             virtualNetworkId:
               type: string
               description: 'The ID of the target virtual network. Required format: ''/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}''.'
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcOrganizationSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcOrganizationSettings
+          type: object
+          properties:
+            osVersion:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            userAccountType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
           additionalProperties:
             type: object
     microsoft.graph.cloudPcProvisioningPolicy:
@@ -61955,6 +62112,31 @@ components:
               format: int32
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcSnapshot:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSnapshot
+          type: object
+          properties:
+            cloudPcId:
+              type: string
+              description: The unique identifier for the Cloud PC.
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            lastRestoredDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshotStatus'
+          additionalProperties:
+            type: object
     microsoft.graph.cloudPcSupportedRegion:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -61993,6 +62175,8 @@ components:
               type: boolean
               description: 'Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.'
               nullable: true
+            restorePointSetting:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRestorePointSetting'
             selfServiceEnabled:
               type: boolean
               description: 'Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.'
@@ -62089,6 +62273,8 @@ components:
         - inprogress
         - onboarded
         - failed
+        - offboarding
+        - unknownFutureValue
       type: string
       description: The onboarding status of the tenant.
     microsoft.graph.termsAndConditionsAcceptanceStatus:
@@ -62218,6 +62404,8 @@ components:
         - macOS
         - windows10X
         - windows10
+        - linux
+        - unknownFutureValue
       type: string
       description: Supported platform types.
     microsoft.graph.deviceManagementConfigurationSettingUsage:
@@ -62777,6 +62965,9 @@ components:
             updateCompleteScreenDisabled:
               type: boolean
               description: Indicates if Weclome screen is disabled
+            userlessSharedAadModeEnabled:
+              type: boolean
+              description: Indicates that this apple device is designated to support 'shared device mode' scenarios. This is distinct from the 'shared iPad' scenario. See Shared iOS and iPadOS devices.
             userSessionTimeoutInSeconds:
               maximum: 2147483647
               minimum: -2147483648
@@ -63335,7 +63526,6 @@ components:
     microsoft.graph.remoteAssistanceState:
       title: remoteAssistanceState
       enum:
-        - notConfigured
         - disabled
         - enabled
       type: string
@@ -63431,63 +63621,6 @@ components:
           additionalProperties:
             type: object
           description: Entity representing a job to export a report
-    microsoft.graph.deviceManagementReportSchedule:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: deviceManagementReportSchedule
-          type: object
-          properties:
-            emails:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Emails to which the scheduled reports are delivered
-            endDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time that the delivery of the scheduled reports ends
-              format: date-time
-            filter:
-              type: string
-              description: Filters applied on the report
-              nullable: true
-            format:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementReportFileFormat'
-            orderBy:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Ordering of columns in the report
-            recurrence:
-              $ref: '#/components/schemas/microsoft.graph.deviceManagementScheduledReportRecurrence'
-            reportName:
-              type: string
-              description: Name of the report
-            reportScheduleName:
-              type: string
-              description: Name of the schedule
-            select:
-              type: array
-              items:
-                type: string
-                nullable: true
-              description: Columns selected from the report
-            startDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time that the delivery of the scheduled reports starts
-              format: date-time
-            subject:
-              type: string
-              description: Subject of the scheduled reports that are delivered
-            userId:
-              type: string
-              description: The Id of the User who created the report
-          additionalProperties:
-            type: object
-          description: Entity representing a schedule for which reports are delivered
     microsoft.graph.windowsAutopilotDeploymentState:
       title: windowsAutopilotDeploymentState
       enum:
@@ -63864,6 +63997,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - unknown
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
     microsoft.graph.mailboxRecipientType:
       title: mailboxRecipientType
       enum:
@@ -64095,11 +64240,11 @@ components:
       properties:
         appliesTo:
           type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -65358,6 +65503,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.listItem'
               description: All items contained in the list.
+            operations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.richLongRunningOperation'
+              description: The collection of long running operations for the list.
             subscriptions:
               type: array
               items:
@@ -65378,6 +65528,18 @@ components:
     microsoft.graph.root:
       title: root
       type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.siteSettings:
+      title: siteSettings
+      type: object
+      properties:
+        languageTag:
+          type: string
+          nullable: true
+        timeZone:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.siteCollection:
@@ -65588,6 +65750,31 @@ components:
               description: The collection of column definitions for this contentType.
           additionalProperties:
             type: object
+    microsoft.graph.richLongRunningOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.longRunningOperation'
+        - title: richLongRunningOperation
+          type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            percentageComplete:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              description: A value between 0 and 100 that indicates the progress of the operation.
+              format: int32
+              nullable: true
+            resourceId:
+              type: string
+              description: A unique identifier for the result.
+              nullable: true
+            type:
+              type: string
+              description: Type of the operation.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.sitePage:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.baseItem'
@@ -65793,7 +65980,7 @@ components:
               nullable: true
             userPrincipalName:
               type: string
-              description: User principal name of the user.
+              description: User principal name of the reviewer.
               nullable: true
           additionalProperties:
             type: object
@@ -65832,6 +66019,8 @@ components:
               type: string
               description: 'A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.'
               nullable: true
+            principalResourceMembership:
+              $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembership'
             recommendation:
               type: string
               description: 'A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -65856,6 +66045,9 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.governanceInsight'
+              description: Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            instance:
+              $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
           additionalProperties:
             type: object
     microsoft.graph.accessReviewScheduleDefinition:
@@ -65915,6 +66107,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScope'
             settings:
               $ref: '#/components/schemas/microsoft.graph.accessReviewScheduleSettings'
+            stageSettings:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewStageSettings'
+              description: 'Required only for a multi-stage access review to define the stages and their settings. You can break down each review instance into up to three sequential stages, where each stage can have a different set of reviewers, fallback reviewers, and settings. Stages will be created sequentially based on the dependsOn property. Optional.  When this property is defined, its settings are used instead of the corresponding settings in the accessReviewScheduleDefinition object and its settings, reviewers, and fallbackReviewers properties.'
             status:
               type: string
               description: 'This read-only field specifies the status of an access review. The typical states include Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed.  Supports $select, $orderby, and $filter (eq only). Read-only.'
@@ -65924,6 +66121,45 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.accessReviewInstance'
               description: 'If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.'
+          additionalProperties:
+            type: object
+    microsoft.graph.accessReviewStage:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: accessReviewStage
+          type: object
+          properties:
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review stage is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. This property is the cumulative total of the durationInDays for all stages. Read-only.'
+              format: date-time
+              nullable: true
+            fallbackReviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user''s manager does not exist.'
+            reviewers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+              description: 'This collection of access review scopes is used to define who the reviewers are. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.'
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'DateTime when review stage is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              format: date-time
+              nullable: true
+            status:
+              type: string
+              description: 'Specifies the status of an accessReviewStage. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $orderby, and $filter (eq only). Read-only.'
+              nullable: true
+            decisions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.accessReviewInstanceDecisionItem'
+              description: 'Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.'
           additionalProperties:
             type: object
     microsoft.graph.agreementAcceptanceState:
@@ -66271,6 +66507,17 @@ components:
             isEnabled:
               type: boolean
               description: true if user's itemInsights and meeting hours insights are enabled; false if user's itemInsights and meeting hours insights are disabled. Default is true. Optional.
+          additionalProperties:
+            type: object
+    microsoft.graph.contactMergeSuggestions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contactMergeSuggestions
+          type: object
+          properties:
+            isEnabled:
+              type: boolean
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.regionalAndLanguageSettings:
@@ -67261,6 +67508,8 @@ components:
       properties:
         allowedAudience:
           $ref: '#/components/schemas/microsoft.graph.broadcastMeetingAudience'
+        captions:
+          $ref: '#/components/schemas/microsoft.graph.broadcastMeetingCaptionSettings'
         isAttendeeReportEnabled:
           type: boolean
           description: Indicates whether attendee report is enabled for this Teams live event. Default value is false.
@@ -67300,6 +67549,21 @@ components:
         threadId:
           type: string
           description: The unique identifier for a thread in Microsoft Teams.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.joinMeetingIdSettings:
+      title: joinMeetingIdSettings
+      type: object
+      properties:
+        isPasscodeRequired:
+          type: boolean
+          nullable: true
+        joinMeetingId:
+          type: string
+          nullable: true
+        passcode:
+          type: string
           nullable: true
       additionalProperties:
         type: object
@@ -67370,12 +67634,10 @@ components:
             type: object
     microsoft.graph.meetingRegistration:
       allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - $ref: '#/components/schemas/microsoft.graph.meetingRegistrationBase'
         - title: meetingRegistration
           type: object
           properties:
-            allowedRegistrant:
-              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
             description:
               type: string
               description: The description of the meeting.
@@ -67417,11 +67679,6 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.meetingRegistrationQuestion'
               description: Custom registration questions.
-            registrants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.meetingRegistrant'
-              description: Registrants of the online meeting.
           additionalProperties:
             type: object
     microsoft.graph.outOfOfficeSettings:
@@ -67691,6 +67948,92 @@ components:
               $ref: '#/components/schemas/microsoft.graph.device'
           additionalProperties:
             type: object
+    microsoft.graph.baseTask:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTask
+          type: object
+          properties:
+            body:
+              $ref: '#/components/schemas/microsoft.graph.itemBody'
+            bodyLastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            completedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date when the task was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            displayName:
+              type: string
+              description: The name of the task.
+              nullable: true
+            dueDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            importance:
+              $ref: '#/components/schemas/microsoft.graph.importance'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
+              format: date-time
+            personalProperties:
+              $ref: '#/components/schemas/microsoft.graph.personalTaskProperties'
+            recurrence:
+              $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
+            startDateTime:
+              $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
+            checklistItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+              description: A collection of checklistItems linked to a task.
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task .
+            linkedResources:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.linkedResource_v2'
+              description: A collection of resources linked to the task.
+            parentList:
+              $ref: '#/components/schemas/microsoft.graph.baseTaskList'
+          additionalProperties:
+            type: object
+    microsoft.graph.baseTaskList:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: baseTaskList
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The name of the task list.
+              nullable: true
+            extensions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+              description: The collection of open extensions defined for the task list. Nullable.
+            tasks:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.baseTask'
+              description: The tasks in this task list. Read-only. Nullable.
+          additionalProperties:
+            type: object
     microsoft.graph.chatType:
       title: chatType
       enum:
@@ -67709,7 +68052,7 @@ components:
           nullable: true
         joinWebUrl:
           type: string
-          description: The URL which can be clicked on to join or uniquely identify the meeting.
+          description: The URL that users click to join or uniquely identify the meeting.
           nullable: true
         organizer:
           $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
@@ -67856,6 +68199,8 @@ components:
               description: 'List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.'
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+            onBehalfOf:
+              $ref: '#/components/schemas/microsoft.graph.chatMessageFromIdentitySet'
             policyViolation:
               $ref: '#/components/schemas/microsoft.graph.chatMessagePolicyViolation'
             reactions:
@@ -68515,10 +68860,18 @@ components:
         time:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: 'The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcOperatingSystem:
+      title: cloudPcOperatingSystem
+      enum:
+        - windows10
+        - windows11
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcServicePlanType:
       title: cloudPcServicePlanType
       enum:
@@ -68537,6 +68890,15 @@ components:
         - failed
         - provisionedWithWarnings
         - resizing
+        - restoring
+        - pendingProvision
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcUserAccountType:
+      title: cloudPcUserAccountType
+      enum:
+        - standardUser
+        - administrator
         - unknownFutureValue
       type: string
     microsoft.graph.cloudPcDeviceImageOsStatus:
@@ -68637,6 +68999,7 @@ components:
       properties:
         profile:
           type: string
+          description: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
@@ -68652,6 +69015,27 @@ components:
               $ref: '#/components/schemas/microsoft.graph.cloudPcManagementAssignmentTarget'
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcSnapshotStatus:
+      title: cloudPcSnapshotStatus
+      enum:
+        - ready
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcRestorePointSetting:
+      title: cloudPcRestorePointSetting
+      type: object
+      properties:
+        frequencyInHours:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        userRestoreEnabled:
+          type: boolean
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcUserSettingAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -68898,6 +69282,27 @@ components:
         - userRightsAssignment
         - auditSetting
         - windowsFirewallSettings
+        - appLockerRuleCollection
+        - dataSourcesSettings
+        - devicesSettings
+        - driveMapSettings
+        - environmentVariables
+        - filesSettings
+        - folderOptions
+        - folders
+        - iniFiles
+        - internetOptions
+        - localUsersAndGroups
+        - networkOptions
+        - networkShares
+        - ntServices
+        - powerOptions
+        - printers
+        - regionalOptionsSettings
+        - registrySettings
+        - scheduledTasks
+        - shortcutSettings
+        - startMenuSettings
       type: string
       description: Setting type of the group policy.
     microsoft.graph.groupPolicyOperationStatus:
@@ -68973,15 +69378,6 @@ components:
         - replaceLocalizableValues
       type: string
       description: Configures how the requested export job is localized
-    microsoft.graph.deviceManagementScheduledReportRecurrence:
-      title: deviceManagementScheduledReportRecurrence
-      enum:
-        - none
-        - daily
-        - weekly
-        - monthly
-      type: string
-      description: Possible values for the recurrence of a scheduled report
     microsoft.graph.deviceManagementAutopilotPolicyComplianceStatus:
       title: deviceManagementAutopilotPolicyComplianceStatus
       enum:
@@ -69852,6 +70248,8 @@ components:
           properties:
             contentType:
               $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
+            deleted:
+              $ref: '#/components/schemas/microsoft.graph.deleted'
             sharepointIds:
               $ref: '#/components/schemas/microsoft.graph.sharepointIds'
             activities:
@@ -70406,7 +70804,7 @@ components:
               nullable: true
             changeType:
               type: string
-              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list.Note: Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
+              description: 'Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.'
             clientState:
               type: string
               description: Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
@@ -70417,20 +70815,20 @@ components:
               nullable: true
             encryptionCertificate:
               type: string
-              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional. Required when includeResourceData is true.
+              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
               nullable: true
             encryptionCertificateId:
               type: string
-              description: A custom app-provided identifier to help identify the certificate needed to decrypt resource data. Optional.
+              description: Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
               nullable: true
             expirationDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to.  See the table below for maximum supported subscription length of time.'
+              description: 'Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.'
               format: date-time
             includeResourceData:
               type: boolean
-              description: 'When set to true, change notifications include resource data (such as content of a chat message). Optional.'
+              description: 'Optional. When set to true, change notifications include resource data (such as content of a chat message).'
               nullable: true
             latestSupportedTlsVersion:
               type: string
@@ -70438,15 +70836,15 @@ components:
               nullable: true
             lifecycleNotificationUrl:
               type: string
-              description: 'The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol. Optional. Read more about how Outlook resources use lifecycle notifications.'
+              description: 'Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved and missed notifications. This URL must make use of the HTTPS protocol.'
               nullable: true
             notificationContentType:
               type: string
-              description: Desired content-type for MS Graph change notifications for supported resource types. The default content-type is the 'application/json' content-type.
+              description: Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'OData Query Options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property eg  when the print job is completed, when a print job resource isFetchable property value becomes true etc.'
+              description: 'OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
@@ -70895,6 +71293,31 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.publicError:
+      title: publicError
+      type: object
+      properties:
+        code:
+          type: string
+          description: Represents the error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: Details of the error.
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.publicInnerError'
+        message:
+          type: string
+          description: A non-localized message for the developer.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.contentTypeInfo:
       title: contentTypeInfo
       type: object
@@ -70994,20 +71417,20 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time of group creation. Read-only.
+              description: Date and time of the group creation. Read-only.
               format: date-time
               nullable: true
             description:
               type: string
-              description: Description giving details on the term usage.
+              description: Description that gives details on the term usage.
               nullable: true
             displayName:
               type: string
-              description: Name of group.
+              description: Name of the group.
               nullable: true
             parentSiteId:
               type: string
-              description: Id of the parent site of this group.
+              description: ID of the parent site of this group.
               nullable: true
             scope:
               $ref: '#/components/schemas/microsoft.graph.termStore.termGroupScope'
@@ -71126,6 +71549,14 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembership:
+      title: decisionItemPrincipalResourceMembership
+      type: object
+      properties:
+        membershipType:
+          $ref: '#/components/schemas/microsoft.graph.decisionItemPrincipalResourceMembershipType'
+      additionalProperties:
+        type: object
     microsoft.graph.accessReviewInstanceDecisionItemResource:
       title: accessReviewInstanceDecisionItemResource
       type: object
@@ -71158,6 +71589,7 @@ components:
             insightCreatedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Indicates when the insight was created.
               format: date-time
               nullable: true
           additionalProperties:
@@ -71186,6 +71618,10 @@ components:
         autoApplyDecisionsEnabled:
           type: boolean
           description: 'Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.'
+        decisionHistoriesForReviewersEnabled:
+          type: boolean
+          description: 'Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).'
+          nullable: true
         defaultDecision:
           type: string
           description: 'Decision chosen if defaultDecisionEnabled is true. Can be one of Approve, Deny, or Recommendation.'
@@ -71209,10 +71645,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.accessReviewRecommendationInsightSetting'
+          description: 'Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.'
         recommendationLookBackDuration:
           pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
           type: string
-          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days.'
+          description: 'Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.'
           format: duration
           nullable: true
         recommendationsEnabled:
@@ -71223,6 +71660,55 @@ components:
         reminderNotificationsEnabled:
           type: boolean
           description: Indicates whether reminders are enabled or disabled. Default value is false.
+      additionalProperties:
+        type: object
+    microsoft.graph.accessReviewStageSettings:
+      title: accessReviewStageSettings
+      type: object
+      properties:
+        decisionsThatWillMoveToNextStage:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: 'Indicate which decisions will go to the next stage. Can be a sub-set of Approve, Deny, Recommendation, or NotReviewed. If not provided, all decisions will go to the next stage. Optional.'
+        dependsOn:
+          type: array
+          items:
+            type: string
+          description: 'Defines the sequential or parallel order of the stages and depends on the stageId. Only sequential stages are currently supported. For example, if stageId is 2, then dependsOn must be 1. If stageId is 1, do not specify dependsOn. Required if stageId is not 1.'
+        durationInDays:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: 'The duration of the stage. Required.  NOTE: The cumulative value of this property across all stages  1. Will override the instanceDurationInDays setting on the accessReviewScheduleDefinition object. 2. Cannot exceed the length of one recurrence. That is, if the review recurs weekly, the cumulative durationInDays cannot exceed 7.'
+          format: int32
+        fallbackReviewers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+          description: 'If provided, the fallback reviewers are asked to complete a review if the primary reviewers do not exist. For example, if managers are selected as reviewers and a principal under review does not have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.'
+        recommendationInsightSettings:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewRecommendationInsightSetting'
+        recommendationLookBackDuration:
+          pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
+          type: string
+          description: 'Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition object.'
+          format: duration
+          nullable: true
+        recommendationsEnabled:
+          type: boolean
+          description: 'Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.'
+        reviewers:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.accessReviewReviewerScope'
+          description: 'Defines who the reviewers are. If none are specified, the review is a self-review (users review their own access).  For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API. NOTE: The value of this property will override the corresponding setting on the accessReviewScheduleDefinition.'
+        stageId:
+          type: string
+          description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
       additionalProperties:
         type: object
     microsoft.graph.resultantAppState:
@@ -71976,6 +72462,26 @@ components:
         - everyone
         - unknownFutureValue
       type: string
+    microsoft.graph.broadcastMeetingCaptionSettings:
+      title: broadcastMeetingCaptionSettings
+      type: object
+      properties:
+        isCaptionEnabled:
+          type: boolean
+          description: Indicates whether caption is enabled for this Teams live event.
+          nullable: true
+        spokenLanguage:
+          type: string
+          description: The spoken language.
+          nullable: true
+        translationLanguages:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: The translation languages (choose up to 6).
+      additionalProperties:
+        type: object
     microsoft.graph.lobbyBypassScope:
       title: lobbyBypassScope
       enum:
@@ -72011,16 +72517,16 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.attendanceInterval'
-              description: List of time periods between joining and leaving.
+              description: List of time periods between joining and leaving a meeting.
             emailAddress:
               type: string
-              description: Email address.
+              description: Email address of the user associated with this atttendance record.
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
             role:
               type: string
-              description: 'Role of the attendee. Possible values are None, Attendee, Presenter, and Organizer.'
+              description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
               nullable: true
             totalAttendanceInSeconds:
               maximum: 2147483647
@@ -72031,13 +72537,21 @@ components:
               nullable: true
           additionalProperties:
             type: object
-    microsoft.graph.meetingAudience:
-      title: meetingAudience
-      enum:
-        - everyone
-        - organization
-        - unknownFutureValue
-      type: string
+    microsoft.graph.meetingRegistrationBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrationBase
+          type: object
+          properties:
+            allowedRegistrant:
+              $ref: '#/components/schemas/microsoft.graph.meetingAudience'
+            registrants:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.meetingRegistrantBase'
+              description: Registrants of the online meeting.
+          additionalProperties:
+            type: object
     microsoft.graph.meetingSpeaker:
       title: meetingSpeaker
       type: object
@@ -72074,43 +72588,6 @@ components:
               type: boolean
               description: Indicates whether the question is required. Default value is false.
               nullable: true
-          additionalProperties:
-            type: object
-    microsoft.graph.meetingRegistrant:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: meetingRegistrant
-          type: object
-          properties:
-            customQuestionAnswers:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.customQuestionAnswer'
-              description: The registrant's answer to custom questions.
-            email:
-              type: string
-              description: The email address of the registrant.
-              nullable: true
-            firstName:
-              type: string
-              description: The first name of the registrant.
-              nullable: true
-            joinWebUrl:
-              type: string
-              description: A unique web URL for the registrant to join the meeting. Read-only.
-              nullable: true
-            lastName:
-              type: string
-              description: The last name of the registrant.
-              nullable: true
-            registrationDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Time in UTC when the registrant registers for the meeting. Read-only.
-              format: date-time
-              nullable: true
-            status:
-              $ref: '#/components/schemas/microsoft.graph.meetingRegistrantStatus'
           additionalProperties:
             type: object
     microsoft.graph.attestationLevel:
@@ -72155,6 +72632,73 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.personalTaskProperties:
+      title: personalTaskProperties
+      type: object
+      properties:
+        reminderDatetime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
+    microsoft.graph.taskStatus_v2:
+      title: taskStatus_v2
+      enum:
+        - notStarted
+        - inProgress
+        - completed
+        - unknownFutureValue
+      type: string
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.linkedResource_v2:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: linkedResource_v2
+          type: object
+          properties:
+            applicationName:
+              type: string
+              description: Field indicating the app name of the source that is sending the linkedResource.
+              nullable: true
+            displayName:
+              type: string
+              description: Field indicating the title of the linkedResource.
+              nullable: true
+            externalId:
+              type: string
+              description: Id of the object that is associated with this task on the third-party/partner system.
+              nullable: true
+            webUrl:
+              type: string
+              description: Deep link to the linkedResource.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkUserIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.identity'
@@ -73509,6 +74053,47 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.publicErrorDetail:
+      title: publicErrorDetail
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.publicInnerError:
+      title: publicInnerError
+      type: object
+      properties:
+        code:
+          type: string
+          description: The error code.
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.publicErrorDetail'
+          description: A collection of error details.
+        message:
+          type: string
+          description: The error message.
+          nullable: true
+        target:
+          type: string
+          description: The target of the error.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sitePageData:
       title: sitePageData
       type: object
@@ -73624,6 +74209,13 @@ components:
               $ref: '#/components/schemas/microsoft.graph.termStore.term'
           additionalProperties:
             type: object
+    microsoft.graph.decisionItemPrincipalResourceMembershipType:
+      title: decisionItemPrincipalResourceMembershipType
+      enum:
+        - direct
+        - indirect
+        - unknownFutureValue
+      type: string
     microsoft.graph.accessReviewNotificationRecipientScope:
       title: accessReviewNotificationRecipientScope
       type: object
@@ -74029,48 +74621,41 @@ components:
         joinDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee joined in UTC.
+          description: The time the attendee joined in UTC.
           format: date-time
           nullable: true
         leaveDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: Time attendee left in UTC.
+          description: The time the attendee left in UTC.
           format: date-time
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.meetingAudience:
+      title: meetingAudience
+      enum:
+        - everyone
+        - organization
+        - unknownFutureValue
+      type: string
+    microsoft.graph.meetingRegistrantBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: meetingRegistrantBase
+          type: object
+          properties:
+            joinWebUrl:
+              type: string
+              description: A unique web URL for the registrant to join the meeting. Read-only.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.answerInputType:
       title: answerInputType
       enum:
         - text
         - radioButton
-        - unknownFutureValue
-      type: string
-    microsoft.graph.customQuestionAnswer:
-      title: customQuestionAnswer
-      type: object
-      properties:
-        displayName:
-          type: string
-          description: Display name of the custom registration question. Read-only.
-          nullable: true
-        questionId:
-          type: string
-          description: ID the custom registration question. Read-only.
-          nullable: true
-        value:
-          type: string
-          description: Answer to the custom registration question.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.meetingRegistrantStatus:
-      title: meetingRegistrantStatus
-      enum:
-        - registered
-        - canceled
-        - processing
         - unknownFutureValue
       type: string
     microsoft.graph.teamworkUserIdentityType:
@@ -74423,6 +75008,7 @@ components:
       title: cloudPcOnPremisesConnectionHealthCheckErrorType
       enum:
         - dnsCheckFqdnNotFound
+        - dnsCheckNameWithInvalidCharacter
         - dnsCheckUnknownError
         - adJoinCheckFqdnNotFound
         - adJoinCheckIncorrectCredentials
@@ -74442,6 +75028,7 @@ components:
         - azureAdDeviceSyncCheckLongSyncCircle
         - azureAdDeviceSyncCheckConnectDisabled
         - azureAdDeviceSyncCheckDurationExceeded
+        - azureAdDeviceSyncCheckScpNotConfigured
         - azureAdDeviceSyncCheckTransientServiceError
         - azureAdDeviceSyncCheckUnknownError
         - resourceAvailabilityCheckNoSubnetIP

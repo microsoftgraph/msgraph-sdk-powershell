@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityHostSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property hostSecurityProfiles in Security
+Update the navigation property hostSecurityProfiles in security
 
 ## SYNTAX
 
@@ -49,27 +49,9 @@ Update-MgSecurityHostSecurityProfile -InputObject <ISecurityIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Update the navigation property hostSecurityProfiles in Security
+Update the navigation property hostSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -120,7 +102,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 hostSecurityProfile
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityProfile
@@ -196,7 +178,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
@@ -272,7 +254,7 @@ Accept wildcard characters: False
 
 ### -LogonUsers
 .
-To construct, see NOTES section for LOGONUSERS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LOGONUSERS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLogonUser[]
@@ -303,7 +285,7 @@ Accept wildcard characters: False
 
 ### -NetworkInterfaces
 .
-To construct, see NOTES section for NETWORKINTERFACES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for NETWORKINTERFACES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkInterface[]
@@ -424,7 +406,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
@@ -503,20 +485,20 @@ BODYPARAMETER <IMicrosoftGraphHostSecurityProfile>: hostSecurityProfile
   - `[IsHybridAzureDomainJoined <Boolean?>]`: 
   - `[LastSeenDateTime <DateTime?>]`: 
   - `[LogonUsers <IMicrosoftGraphLogonUser[]>]`: 
-    - `[AccountDomain <String>]`: 
-    - `[AccountName <String>]`: 
+    - `[AccountDomain <String>]`: Domain of user account used to logon.
+    - `[AccountName <String>]`: Account name of user account used to logon.
     - `[AccountType <String>]`: userAccountSecurityType
-    - `[FirstSeenDateTime <DateTime?>]`: 
-    - `[LastSeenDateTime <DateTime?>]`: 
-    - `[LogonId <String>]`: 
-    - `[LogonTypes <String[]>]`: 
+    - `[FirstSeenDateTime <DateTime?>]`: DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LastSeenDateTime <DateTime?>]`: DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[LogonId <String>]`: User logon ID.
+    - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
   - `[NetBiosName <String>]`: 
   - `[NetworkInterfaces <IMicrosoftGraphNetworkInterface[]>]`: 
-    - `[Description <String>]`: 
-    - `[IPV4Address <String>]`: 
-    - `[IPV6Address <String>]`: 
-    - `[LocalIPV6Address <String>]`: 
-    - `[MacAddress <String>]`: 
+    - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+    - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
+    - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
+    - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.
+    - `[MacAddress <String>]`: MAC address of the NIC on this host.
   - `[OS <String>]`: 
   - `[OSVersion <String>]`: 
   - `[ParentHost <String>]`: 
@@ -537,28 +519,30 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
 LOGONUSERS <IMicrosoftGraphLogonUser[]>: .
-  - `[AccountDomain <String>]`: 
-  - `[AccountName <String>]`: 
+  - `[AccountDomain <String>]`: Domain of user account used to logon.
+  - `[AccountName <String>]`: Account name of user account used to logon.
   - `[AccountType <String>]`: userAccountSecurityType
-  - `[FirstSeenDateTime <DateTime?>]`: 
-  - `[LastSeenDateTime <DateTime?>]`: 
-  - `[LogonId <String>]`: 
-  - `[LogonTypes <String[]>]`: 
+  - `[FirstSeenDateTime <DateTime?>]`: DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastSeenDateTime <DateTime?>]`: DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LogonId <String>]`: User logon ID.
+  - `[LogonTypes <String[]>]`: Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
 
 NETWORKINTERFACES <IMicrosoftGraphNetworkInterface[]>: .
-  - `[Description <String>]`: 
-  - `[IPV4Address <String>]`: 
-  - `[IPV6Address <String>]`: 
-  - `[LocalIPV6Address <String>]`: 
-  - `[MacAddress <String>]`: 
+  - `[Description <String>]`: Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection <#/>, etc.).
+  - `[IPV4Address <String>]`: Last IPv4 address associated with this NIC.
+  - `[IPV6Address <String>]`: Last Public (aka global) IPv6 address associated with this NIC.
+  - `[LocalIPV6Address <String>]`: Last local (link-local or site-local) IPv6 address associated with this NIC.
+  - `[MacAddress <String>]`: MAC address of the NIC on this host.
 
 VENDORINFORMATION <IMicrosoftGraphSecurityVendorInformation>: securityVendorInformation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

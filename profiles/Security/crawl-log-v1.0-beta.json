@@ -9,6 +9,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/alerts_v2": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/alerts_v2/{alert-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/alerts/{alert-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
@@ -18,6 +26,22 @@
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/attackSimulation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/{simulationAutomationRun-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -69,6 +93,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/incidents/{incident-id}/alerts": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/incidents/{incident-id}/alerts/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/ipSecurityProfiles": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
@@ -77,7 +109,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/microsoft.graph.runHuntingQuery": {
+    "/security/microsoft.graph.security.runHuntingQuery": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
