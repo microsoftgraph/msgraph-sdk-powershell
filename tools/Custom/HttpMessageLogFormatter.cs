@@ -4,7 +4,6 @@
 
 namespace Microsoft.Graph.PowerShell
 {
-    using Hyak.Common;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -22,12 +21,13 @@ namespace Microsoft.Graph.PowerShell
             if (request == null) return string.Empty;
 
             string body = string.Empty;
-            if (request.Content != null) {
+            if (request.Content != null)
+            {
                 try
                 {
-                    var content = request.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-                    body = FormatString(content);
-                } catch {}
+                    body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                }
+                catch { }
             }
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -44,13 +44,11 @@ namespace Microsoft.Graph.PowerShell
             if (response == null) return string.Empty;
 
             string body = string.Empty;
-            if (response.Content != null) {
-                try
-                {
-                    var content = response.Content.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-                    body = FormatString(content);
-                } catch {}
+            try
+            {
+                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
+            catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP RESPONSE ============================{Environment.NewLine}");
@@ -96,11 +94,13 @@ namespace Microsoft.Graph.PowerShell
         {
             try
             {
-                if (CloudException.IsJson(content))
+                content = content.Trim();
+                if ((content.StartsWith("{") && content.EndsWith("}")) || // object
+                    (content.StartsWith("[") && content.EndsWith("]"))) // array
                 {
                     return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(content), Formatting.Indented);
                 }
-                if (CloudException.IsXml(content))
+                if (content.StartsWith("<"))
                 {
                     return XDocument.Parse(content).ToString();
                 }
