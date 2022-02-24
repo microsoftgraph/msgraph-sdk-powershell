@@ -83,7 +83,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -272,7 +272,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
@@ -296,7 +296,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_GetAlerts
       parameters:
         - name: alert-id
@@ -383,7 +383,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
@@ -410,7 +410,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts for security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
@@ -943,7 +943,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alert'
-              description: Notifications for suspicious or potential security issues in a customer’s tenant.
+              description: Read-only. Nullable.
             secureScoreControlProfiles:
               type: array
               items:
@@ -1169,7 +1169,7 @@ components:
               description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
@@ -1192,7 +1192,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: Current obtained max score on specified date.
+              description: max attainable score for the control.
               format: double
               nullable: true
             rank:
@@ -1219,7 +1219,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
             tier:
               type: string
               description: 'Control tier (Core, Defense in Depth, Advanced.)'
@@ -1519,7 +1519,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
+          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
           nullable: true
         destinationAddress:
           type: string
