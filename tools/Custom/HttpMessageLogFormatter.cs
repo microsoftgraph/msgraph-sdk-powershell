@@ -21,14 +21,11 @@ namespace Microsoft.Graph.PowerShell
             if (request == null) return string.Empty;
 
             string body = string.Empty;
-            if (request.Content != null)
+            try
             {
-                try
-                {
-                    body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-                }
-                catch { }
+                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
+            catch { }
 
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"============================ HTTP REQUEST ============================{Environment.NewLine}");
