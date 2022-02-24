@@ -501,6 +501,10 @@ components:
           format: int32
         query:
           $ref: '#/components/schemas/microsoft.graph.searchQuery'
+        queryAlterationOptions:
+          $ref: '#/components/schemas/microsoft.graph.searchAlterationOptions'
+        resultTemplateOptions:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateOption'
         size:
           maximum: 2147483647
           minimum: -2147483648
@@ -523,6 +527,10 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.searchHitsContainer'
           description: A collection of search results.
+        queryAlterationResponse:
+          $ref: '#/components/schemas/microsoft.graph.alterationResponse'
+        resultTemplates:
+          $ref: '#/components/schemas/microsoft.graph.resultTemplateDictionary'
         searchTerms:
           type: array
           items:
@@ -579,7 +587,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalItem:
@@ -619,7 +627,7 @@ components:
           properties:
             baseType:
               type: string
-              description: Must be set to microsoft.graph.externalItem. Required.
+              description: Must be set to microsoft.graph.externalConnector.externalItem. Required.
             properties:
               type: array
               items:
@@ -667,6 +675,30 @@ components:
           description: The search query containing the search terms. Required.
       additionalProperties:
         type: object
+    microsoft.graph.searchAlterationOptions:
+      title: searchAlterationOptions
+      type: object
+      properties:
+        enableModification:
+          type: boolean
+          description: 'Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.'
+          nullable: true
+        enableSuggestion:
+          type: boolean
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resultTemplateOption:
+      title: resultTemplateOption
+      type: object
+      properties:
+        enableResultTemplate:
+          type: boolean
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.sortProperty:
       title: sortProperty
       type: object
@@ -707,6 +739,27 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.alterationResponse:
+      title: alterationResponse
+      type: object
+      properties:
+        originalQueryString:
+          type: string
+          description: Defines the original user query string.
+          nullable: true
+        queryAlteration:
+          $ref: '#/components/schemas/microsoft.graph.searchAlteration'
+        queryAlterationType:
+          $ref: '#/components/schemas/microsoft.graph.searchAlterationType'
+      additionalProperties:
+        type: object
+    microsoft.graph.resultTemplateDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: resultTemplateDictionary
+          type: object
+          additionalProperties:
+            type: object
     odata.error:
       required:
         - error
@@ -736,7 +789,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.'
+          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -814,13 +867,13 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -890,12 +943,47 @@ components:
           description: The rank or the order of the result.
           format: int32
           nullable: true
+        resultTemplateId:
+          type: string
+          description: ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
+          nullable: true
         summary:
           type: string
           description: 'A summary of the result, if a summary is available.'
           nullable: true
         resource:
           $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlteration:
+      title: searchAlteration
+      type: object
+      properties:
+        alteredHighlightedQueryString:
+          type: string
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.'
+          nullable: true
+        alteredQueryString:
+          type: string
+          description: Defines the altered query string with spelling correction.
+          nullable: true
+        alteredQueryTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
+          description: Represents changed segments related to an original user query.
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlterationType:
+      title: searchAlterationType
+      enum:
+        - suggestion
+        - modification
+        - unknownFutureValue
+      type: string
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
       additionalProperties:
         type: object
     odata.error.main:
@@ -1060,6 +1148,30 @@ components:
         key:
           type: string
           description: The discrete value of the field that an aggregation was computed on.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.alteredQueryToken:
+      title: alteredQueryToken
+      type: object
+      properties:
+        length:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Defines the length of a changed segment.
+          format: int32
+          nullable: true
+        offset:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: Defines the offset of a changed segment.
+          format: int32
+          nullable: true
+        suggestion:
+          type: string
+          description: Represents the corrected segment string.
           nullable: true
       additionalProperties:
         type: object
