@@ -4651,7 +4651,7 @@ components:
               format: date-time
             activityDisplayName:
               type: string
-              description: 'Indicates the activity name or the operation name (E.g. ''Create User'', ''Add member to group''). For a list of activities logged, refer to Azure Ad activity list.'
+              description: 'Indicates the activity name or the operation name (examples: ''Create User'' and ''Add member to group''). For full list, see Azure AD activity list.'
             additionalDetails:
               type: array
               items:
@@ -4683,7 +4683,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.targetResource'
-              description: Information about the resource that changed due to the activity.
+              description: 'Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.'
           additionalProperties:
             type: object
     microsoft.graph.provisioningObjectSummary:
@@ -4769,11 +4769,11 @@ components:
           properties:
             appDisplayName:
               type: string
-              description: The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+              description: App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
               nullable: true
             appId:
               type: string
-              description: The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+              description: Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
               nullable: true
             appliedConditionalAccessPolicies:
               type: array
@@ -4782,38 +4782,38 @@ components:
               description: A list of conditional access policies that are triggered by the corresponding sign-in activity.
             clientAppUsed:
               type: string
-              description: 'The legacy client used for sign-in activity. For example: Browser, Exchange Active Sync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).'
+              description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
             correlationId:
               type: string
-              description: The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+              description: The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
               nullable: true
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
+              description: 'Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).'
               format: date-time
             deviceDetail:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             ipAddress:
               type: string
-              description: The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+              description: IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
               nullable: true
             isInteractive:
               type: boolean
-              description: 'Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn''t provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user''s behalf in a process transparent to the user.'
+              description: Indicates if a sign-in is interactive or not.
               nullable: true
             location:
               $ref: '#/components/schemas/microsoft.graph.signInLocation'
             resourceDisplayName:
               type: string
-              description: The name of the resource that the user signed in to. Supports $filter (eq operator only).
+              description: Name of the resource the user signed into. Supports $filter (eq operator only).
               nullable: true
             resourceId:
               type: string
-              description: The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+              description: ID of the resource that the user signed into. Supports $filter (eq operator only).
               nullable: true
             riskDetail:
               $ref: '#/components/schemas/microsoft.graph.riskDetail'
@@ -4838,14 +4838,14 @@ components:
               $ref: '#/components/schemas/microsoft.graph.signInStatus'
             userDisplayName:
               type: string
-              description: The display name of the user. Supports $filter (eq and startsWith operators only).
+              description: Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
             userId:
               type: string
-              description: The identifier of the user. Supports $filter (eq operator only).
+              description: ID of the user that initiated the sign-in. Supports $filter (eq operator only).
             userPrincipalName:
               type: string
-              description: The UPN of the user. Supports $filter (eq and startsWith operators only).
+              description: User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
               nullable: true
           additionalProperties:
             type: object
@@ -4961,7 +4961,7 @@ components:
       properties:
         content:
           type: string
-          description: Report content; details vary by report type.
+          description: Not yet documented
           format: base64url
           nullable: true
       additionalProperties:
@@ -5025,11 +5025,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Key for the key-value pair.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Value for the key-value pair.
           nullable: true
       additionalProperties:
         type: object
@@ -5096,15 +5096,15 @@ components:
       properties:
         displayName:
           type: string
-          description: Name of property that was modified.
+          description: Indicates the property name of the target attribute that was changed.
           nullable: true
         newValue:
           type: string
-          description: New property value.
+          description: Indicates the updated value for the propery.
           nullable: true
         oldValue:
           type: string
-          description: Old property value.
+          description: Indicates the previous value (before the update) for the property.
           nullable: true
       additionalProperties:
         type: object
@@ -5186,7 +5186,7 @@ components:
       properties:
         displayName:
           type: string
-          description: Name of the conditional access policy.
+          description: 'Refers to the Name of the conditional access policy (example: ''Require MFA for Salesforce'').'
           nullable: true
         enforcedGrantControls:
           type: array
@@ -5202,7 +5202,7 @@ components:
           description: 'Refers to the session controls enforced by the conditional access policy (example: ''Require app enforced controls'').'
         id:
           type: string
-          description: Identifier of the conditional access policy.
+          description: An identifier of the conditional access policy.
           nullable: true
         result:
           $ref: '#/components/schemas/microsoft.graph.appliedConditionalAccessPolicyResult'
@@ -5222,31 +5222,31 @@ components:
       properties:
         browser:
           type: string
-          description: Indicates the browser information of the used for signing-in.
+          description: Indicates the browser information of the used for signing in.
           nullable: true
         deviceId:
           type: string
-          description: Refers to the UniqueID of the device used for signing-in.
+          description: Refers to the UniqueID of the device used for signing in.
           nullable: true
         displayName:
           type: string
-          description: Refers to the name of the device used for signing-in.
+          description: Refers to the name of the device used for signing in.
           nullable: true
         isCompliant:
           type: boolean
-          description: Indicates whether the device is compliant or not.
+          description: Indicates whether the device is compliant.
           nullable: true
         isManaged:
           type: boolean
-          description: Indicates if the device is managed or not.
+          description: Indicates whether the device is managed.
           nullable: true
         operatingSystem:
           type: string
-          description: Indicates the OS name and version used for signing-in.
+          description: Indicates the operating system name and version used for signing in.
           nullable: true
         trustType:
           type: string
-          description: 'Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
+          description: 'Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.'
           nullable: true
       additionalProperties:
         type: object
@@ -5465,11 +5465,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -5551,12 +5551,12 @@ components:
           nullable: true
         latitude:
           type: number
-          description: 'Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The latitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
         longitude:
           type: number
-          description: 'Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.'
+          description: 'Optional. The longitude, in decimal, for the item. Read-only.'
           format: double
           nullable: true
       additionalProperties:

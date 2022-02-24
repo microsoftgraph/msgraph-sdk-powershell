@@ -3200,6 +3200,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -3763,6 +3764,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - fileName
+                - fileName desc
                 - languageCodes
                 - languageCodes desc
                 - lastModifiedDateTime
@@ -3789,6 +3792,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -3884,6 +3888,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -4700,6 +4705,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -6659,6 +6665,8 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
+                - fileName
+                - fileName desc
                 - languageCodes
                 - languageCodes desc
                 - lastModifiedDateTime
@@ -6675,8 +6683,6 @@ paths:
                 - content desc
                 - defaultLanguageCode
                 - defaultLanguageCode desc
-                - fileName
-                - fileName desc
                 - groupPolicyUploadedLanguageFiles
                 - groupPolicyUploadedLanguageFiles desc
                 - status
@@ -6697,6 +6703,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -6705,7 +6712,6 @@ paths:
                 - targetPrefix
                 - content
                 - defaultLanguageCode
-                - fileName
                 - groupPolicyUploadedLanguageFiles
                 - status
                 - uploadDateTime
@@ -6800,6 +6806,7 @@ paths:
                 - id
                 - description
                 - displayName
+                - fileName
                 - languageCodes
                 - lastModifiedDateTime
                 - policyType
@@ -6808,7 +6815,6 @@ paths:
                 - targetPrefix
                 - content
                 - defaultLanguageCode
-                - fileName
                 - groupPolicyUploadedLanguageFiles
                 - status
                 - uploadDateTime
@@ -14455,6 +14461,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_ListSnapshots
       parameters:
         - $ref: '#/components/parameters/top'
@@ -14538,6 +14545,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Create new navigation property to snapshots for deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_CreateSnapshots
       requestBody:
         description: New navigation property
@@ -14561,6 +14569,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Get snapshots from deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_GetSnapshots
       parameters:
         - name: cloudPcSnapshot-id
@@ -14612,6 +14621,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Update the navigation property snapshots in deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_UpdateSnapshots
       parameters:
         - name: cloudPcSnapshot-id
@@ -14638,6 +14648,7 @@ paths:
       tags:
         - deviceManagement.virtualEndpoint
       summary: Delete navigation property snapshots for deviceManagement
+      description: Cloud PC snapshots.
       operationId: deviceManagement.virtualEndpoint_DeleteSnapshots
       parameters:
         - name: cloudPcSnapshot-id
@@ -15929,6 +15940,10 @@ components:
               type: string
               description: The localized friendly name of the ADMX file.
               nullable: true
+            fileName:
+              type: string
+              description: 'The file name of the ADMX file without the path. For example: edge.admx'
+              nullable: true
             languageCodes:
               type: array
               items:
@@ -16279,10 +16294,6 @@ components:
             defaultLanguageCode:
               type: string
               description: The default language of the uploaded ADMX file.
-              nullable: true
-            fileName:
-              type: string
-              description: The file name of the uploaded ADML file.
               nullable: true
             groupPolicyUploadedLanguageFiles:
               type: array
@@ -17050,6 +17061,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.cloudPcSnapshot'
+              description: Cloud PC snapshots.
             supportedRegions:
               type: array
               items:
@@ -17448,14 +17460,17 @@ components:
           properties:
             cloudPcId:
               type: string
+              description: The unique identifier for the Cloud PC.
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             lastRestoredDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: 'The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
               format: date-time
               nullable: true
             status:

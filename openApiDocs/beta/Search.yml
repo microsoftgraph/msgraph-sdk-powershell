@@ -1497,7 +1497,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
           additionalProperties:
             type: object
     microsoft.graph.externalConnectors.externalItem:
@@ -1549,7 +1549,7 @@ components:
           properties:
             baseType:
               type: string
-              description: Must be set to microsoft.graph.externalItem. Required.
+              description: Must be set to microsoft.graph.externalConnector.externalItem. Required.
             properties:
               type: array
               items:
@@ -1694,11 +1694,11 @@ components:
       properties:
         enableModification:
           type: boolean
-          description: 'Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.'
+          description: 'Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.'
           nullable: true
         enableSuggestion:
           type: boolean
-          description: 'Indicates whether spelling suggestions are enabled. If enabled, user will get the search results for original search query and suggesting spelling correction in queryAlterationResponse property of the response for typos in query. Optional.'
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -1708,7 +1708,7 @@ components:
       properties:
         enableResultTemplate:
           type: boolean
-          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.'
           nullable: true
       additionalProperties:
         type: object
@@ -1826,7 +1826,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.'
+          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -1904,13 +1904,13 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -2003,7 +2003,7 @@ components:
           nullable: true
         resultTemplateId:
           type: string
-          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
+          description: ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
           nullable: true
         summary:
           type: string
@@ -2033,7 +2033,7 @@ components:
       properties:
         alteredHighlightedQueryString:
           type: string
-          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)'
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.'
           nullable: true
         alteredQueryString:
           type: string
@@ -2043,7 +2043,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
-          description: Represents changed segments with respect to original query.
+          description: Represents changed segments related to an original user query.
       additionalProperties:
         type: object
     microsoft.graph.searchAlterationType:

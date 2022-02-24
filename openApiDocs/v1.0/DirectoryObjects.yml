@@ -539,7 +539,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string

@@ -3080,7 +3080,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_ListAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3183,7 +3183,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Create new navigation property to appRoleAssignedTo for servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_CreateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3215,7 +3215,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Get appRoleAssignedTo from servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_GetAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3278,7 +3278,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Update the navigation property appRoleAssignedTo in servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_UpdateAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -3312,7 +3312,7 @@ paths:
       tags:
         - servicePrincipals.appRoleAssignment
       summary: Delete navigation property appRoleAssignedTo for servicePrincipals
-      description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+      description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
       operationId: servicePrincipals_DeleteAppRoleAssignedTo
       parameters:
         - name: servicePrincipal-id
@@ -4931,6 +4931,48 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.addTokenSigningCertificate':
+    post:
+      tags:
+        - servicePrincipals.Actions
+      summary: Invoke action addTokenSigningCertificate
+      operationId: servicePrincipals_addTokenSigningCertificate
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+                endDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.selfSignedCertificate'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/servicePrincipals/{servicePrincipal-id}/microsoft.graph.checkMemberGroups':
     post:
       tags:
@@ -5738,7 +5780,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5835,7 +5877,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Get ref of tokenIssuancePolicies from servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_ListGraphRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5900,7 +5942,7 @@ paths:
       tags:
         - servicePrincipals.tokenIssuancePolicy
       summary: Create new navigation property ref to tokenIssuancePolicies for servicePrincipals
-      description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+      description: The tokenIssuancePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateGraphRefTokenIssuancePolicies
       parameters:
         - name: servicePrincipal-id
@@ -5936,7 +5978,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6033,7 +6075,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Get ref of tokenLifetimePolicies from servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_ListGraphRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6098,7 +6140,7 @@ paths:
       tags:
         - servicePrincipals.tokenLifetimePolicy
       summary: Create new navigation property ref to tokenLifetimePolicies for servicePrincipals
-      description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+      description: The tokenLifetimePolicies assigned to this service principal.
       operationId: servicePrincipals_CreateGraphRefTokenLifetimePolicies
       parameters:
         - name: servicePrincipal-id
@@ -6707,7 +6749,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.apiApplication'
             appId:
               type: string
-              description: The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.
+              description: The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only.
               nullable: true
             applicationTemplateId:
               type: string
@@ -6726,7 +6768,7 @@ components:
               nullable: true
             description:
               type: string
-              description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
+              description: 'Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.'
               nullable: true
             disabledByMicrosoftStatus:
               type: string
@@ -6738,7 +6780,7 @@ components:
               nullable: true
             groupMembershipClaims:
               type: string
-              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).'
+              description: 'Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).'
               nullable: true
             identifierUris:
               type: array
@@ -6753,7 +6795,7 @@ components:
               nullable: true
             isFallbackPublicClient:
               type: boolean
-              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
+              description: 'Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.'
               nullable: true
             keyCredentials:
               type: array
@@ -6783,7 +6825,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.publicClientApplication'
             publisherDomain:
               type: string
-              description: 'The verified publisher domain for the application. Read-only. Supports $filter (eq, ne, ge, le, startsWith).'
+              description: 'The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application''s publisher domain. Supports $filter (eq, ne, ge, le, startsWith).'
               nullable: true
             requiredResourceAccess:
               type: array
@@ -6800,7 +6842,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Custom strings that can be used to categorize and identify the application. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
             tokenEncryptionKeyId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
@@ -6866,7 +6908,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string
@@ -6901,18 +6943,18 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         key:
           type: string
-          description: Value for the key credential. Should be a base 64 encoded value.
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
           format: base64url
           nullable: true
         keyId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for the key.
+          description: The unique identifier (GUID) for the key.
           format: uuid
           nullable: true
         startDateTime:
@@ -6923,7 +6965,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
           nullable: true
         usage:
           type: string
@@ -7124,7 +7166,7 @@ components:
             appOwnerOrganizationId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications.Supports $filter (eq, ne, NOT, ge, le).'
+              description: 'Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).'
               format: uuid
               nullable: true
             appRoleAssignmentRequired:
@@ -7184,7 +7226,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordCredential'
-              description: The collection of password credentials associated with the service principal. Not nullable.
+              description: The collection of password credentials associated with the application. Not nullable.
             preferredSingleSignOnMode:
               type: string
               description: 'Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.'
@@ -7207,7 +7249,7 @@ components:
               description: 'Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the ''aud'' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).'
             servicePrincipalType:
               type: string
-              description: Identifies if the service principal represents an application or a managed identity. This is set by Azure AD internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.
+              description: 'Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.'
               nullable: true
             signInAudience:
               type: string
@@ -7228,7 +7270,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.appRoleAssignment'
-              description: 'App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.'
+              description: 'App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.'
             appRoleAssignments:
               type: array
               items:
@@ -7283,12 +7325,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-              description: The tokenIssuancePolicies assigned to this service principal. Supports $expand.
+              description: The tokenIssuancePolicies assigned to this service principal.
             tokenLifetimePolicies:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-              description: The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+              description: The tokenLifetimePolicies assigned to this service principal.
             transitiveMemberOf:
               type: array
               items:
@@ -7312,11 +7354,11 @@ components:
               $ref: '#/components/schemas/microsoft.graph.permissionClassificationType'
             permissionId:
               type: string
-              description: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+              description: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
               nullable: true
             permissionName:
               type: string
-              description: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+              description: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
               nullable: true
           additionalProperties:
             type: object
@@ -7346,6 +7388,47 @@ components:
               description: URL of the published resource. Not nullable. Read-only.
           additionalProperties:
             type: object
+    microsoft.graph.selfSignedCertificate:
+      title: selfSignedCertificate
+      type: object
+      properties:
+        customKeyIdentifier:
+          type: string
+          format: base64url
+          nullable: true
+        displayName:
+          type: string
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        key:
+          type: string
+          format: base64url
+          nullable: true
+        keyId:
+          pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+          type: string
+          format: uuid
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        thumbprint:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        usage:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -7357,7 +7440,7 @@ components:
               description: The id of the client service principal for the application which is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).
             consentType:
               type: string
-              description: 'Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
+              description: 'Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).'
               nullable: true
             principalId:
               type: string
@@ -7444,7 +7527,7 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.'
+          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.'
           format: uuid
         isEnabled:
           type: boolean
@@ -7570,7 +7653,7 @@ components:
           nullable: true
         displayName:
           type: string
-          description: The verified publisher name from the app publisher's Microsoft Partner Network (MPN) account.
+          description: The verified publisher name from the app publisher's Partner Center account.
           nullable: true
         verifiedPublisherId:
           type: string
@@ -7703,11 +7786,11 @@ components:
       properties:
         key:
           type: string
-          description: Key.
+          description: Key for the key-value pair.
           nullable: true
         value:
           type: string
-          description: Value.
+          description: Value for the key-value pair.
           nullable: true
       additionalProperties:
         type: object
@@ -7754,11 +7837,11 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+          description: 'The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application''s service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application''s service principal.'
           format: uuid
         type:
           type: string
-          description: 'Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).'
+          description: 'Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).'
           nullable: true
       additionalProperties:
         type: object

@@ -214,6 +214,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.comanagedDevices_getOemWarranty
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/configManagerCollections/microsoft.graph.getPolicySummary(policyId=''{policyId}'')':
     get:
       tags:
@@ -422,6 +446,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceConfigurations/{deviceConfiguration-id}/groupAssignments/{deviceConfigurationGroupAssignment-id}/deviceConfiguration/microsoft.graph.getOmaSettingPlainTextValue(secretReferenceValueId=''{secretReferenceValueId}'')':
     get:
       tags:
@@ -609,6 +664,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -728,6 +814,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -823,6 +947,37 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -981,6 +1136,37 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -1100,6 +1286,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getCloudPcRemoteActionResults()':
     get:
       tags:
@@ -1195,6 +1419,37 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -1317,6 +1572,44 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_getOemWarranty
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/deviceManagement/intents/{deviceManagementIntent-id}/microsoft.graph.compare(templateId=''{templateId}'')':
     get:
       tags:
@@ -1424,6 +1717,30 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicySettingState'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.getOemWarranty()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getOemWarranty
+      operationId: deviceManagement.managedDevices_getOemWarranty
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.oemWarranty'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -2255,6 +2572,31 @@ components:
       additionalProperties:
         type: object
       description: Device Compilance Policy Setting State for a given device.
+    microsoft.graph.oemWarranty:
+      title: oemWarranty
+      type: object
+      properties:
+        additionalWarranties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
+          description: List of additional warranty offers. This collection can contain a maximum of 100 elements.
+        baseWarranties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.warrantyOffer'
+          description: List of base warranty offers. This collection can contain a maximum of 100 elements.
+        deviceConfigurationUrl:
+          type: string
+          description: Device configuration page URL
+          nullable: true
+        deviceWarrantyUrl:
+          type: string
+          description: Device warranty page URL
+          nullable: true
+      additionalProperties:
+        type: object
+      description: OEM Warranty information for a given device
     microsoft.graph.configManagerPolicySummary:
       title: configManagerPolicySummary
       type: object
@@ -3105,6 +3447,29 @@ components:
         - conflict
         - notAssigned
       type: string
+    microsoft.graph.warrantyOffer:
+      title: warrantyOffer
+      type: object
+      properties:
+        description:
+          type: string
+          description: Warranty offer description
+          nullable: true
+        endDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Warranty offer end date
+          format: date-time
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Warranty offer start date
+          format: date-time
+        type:
+          $ref: '#/components/schemas/microsoft.graph.warrantyType'
+      additionalProperties:
+        type: object
+      description: Models and Manufactures meatadata for managed devices in the account
     microsoft.graph.deviceHealthScriptRemediationHistoryData:
       title: deviceHealthScriptRemediationHistoryData
       type: object
@@ -3263,9 +3628,9 @@ components:
     microsoft.graph.diskType:
       title: diskType
       enum:
-        - unkown
         - hdd
         - ssd
+        - unknown
       type: string
     microsoft.graph.userExperienceAnalyticsHealthState:
       title: userExperienceAnalyticsHealthState
@@ -3320,6 +3685,15 @@ components:
         - deviceConfiguration
         - deviceIntent
       type: string
+    microsoft.graph.warrantyType:
+      title: warrantyType
+      enum:
+        - unknown
+        - manufacturer
+        - contractual
+        - unknownFutureValue
+      type: string
+      description: Models and Manufactures meatadata for managed devices in the account
     microsoft.graph.deviceAndAppManagementAssignmentTarget:
       title: deviceAndAppManagementAssignmentTarget
       type: object
