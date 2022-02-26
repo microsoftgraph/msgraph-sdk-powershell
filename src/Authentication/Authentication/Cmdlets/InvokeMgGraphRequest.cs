@@ -4,13 +4,14 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
@@ -544,21 +545,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private IAuthenticationProvider GetAuthProvider()
         {
-            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken)
+            // TODO: Merge tith authentication utils implementation. CODE DUPLICATE!
+            if (Authentication == GraphRequestAuthenticationType.Default)
             {
-                return new InvokeGraphRequestAuthProvider(GraphRequestSession);
+                return AuthenticationHelpers.GetAuthenticationProvider(GraphSession.Instance.AuthContext);
+            }
+            else if (Authentication == GraphRequestAuthenticationType.UserProvidedToken)
+            {
+                return new TokenCredentialAuthProvider(new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphRequestSession.Token)));
             }
 
-            // Ensure that AuthContext is present in DefaultAuth mode, otherwise demand for Connect-Graph to be called.
-            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext != null)
-            {
-                return AuthenticationHelpers.GetAuthProvider(GraphSession.Instance.AuthContext);
-            }
-
-            var error = new ArgumentNullException(
-                Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(GraphSession.Instance.AuthContext)),
+            throw new ArgumentNullException(Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(GraphSession.Instance.AuthContext)),
                 nameof(GraphSession.Instance.AuthContext));
-            throw error;
         }
 
         /// <summary>

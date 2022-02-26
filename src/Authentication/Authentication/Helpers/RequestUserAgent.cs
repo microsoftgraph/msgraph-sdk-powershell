@@ -57,7 +57,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         {
             get
             {
-                if (OperatingSystem.IsWindows())
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
                     // only generate the windows user agent once
                     if (_windowsUserAgent == null)
@@ -71,14 +71,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 
                     return _windowsUserAgent;
                 }
-                else if (OperatingSystem.IsMacOS())
-                {
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                     return "Macintosh";
-                }
-                else if (OperatingSystem.IsLinux())
-                {
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                     return "Linux";
-                }
                 else
                 {
                     // unknown/unsupported platform

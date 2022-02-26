@@ -1,17 +1,16 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-namespace Microsoft.Graph.PowerShell.Authentication.Helpers
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
-    using Microsoft.Graph.Auth;
+    using Azure.Core;
+    using Azure.Identity;
     using Microsoft.Graph.PowerShell.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.TokenCache;
     using Microsoft.Identity.Client;
-
     using System;
     using System.Linq;
     using System.Net;
-    using System.Net.Http.Headers;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
@@ -50,76 +49,60 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        /// Gets an <see cref="IAuthenticationProvider"/> using the provide <see cref="IAuthContext"/>.
+        /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to get an auth provider for.</param>
-        /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
-        public static IAuthenticationProvider GetAuthProvider(IAuthContext authContext)
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
+        /// <returns>A <see cref="TokenCredential"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static TokenCredential GetTokenCredential(IAuthContext authContext)
         {
             if (authContext is null)
             {
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
             }
 
-            IAuthenticationProvider authProvider = null;
+            TokenCredential tokenCredential = null;
             string authorityUrl = GetAuthorityUrl(authContext);
+            var options = new TokenCredentialOptions
+            {
+                // TODO: Test authority composition with National cloud.
+                //AuthorityHost = AzureAuthorityHosts.AzurePublicCloud
+                AuthorityHost = new Uri(authorityUrl)
+            };
+
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
+                    if (authContext.AuthProviderType == AuthProviderType.InteractiveAuthenticationProvider)
+                        tokenCredential = new InteractiveBrowserCredential(authContext.TenantId, authContext.ClientId, options);
+                    else
                     {
-                        //Specify Default RedirectUri
-                        //https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser
-                        IPublicClientApplication publicClientApp = PublicClientApplicationBuilder
-                            .Create(authContext.ClientId)
-                            .WithTenantId(authContext.TenantId)
-                            .WithAuthority(authorityUrl)
-                            .WithClientCapabilities(new[] { "cp1" })
-                            .WithDefaultRedirectUri()
-                            .Build();
-                        ConfigureTokenCache(publicClientApp.UserTokenCache, authContext);
-                        switch (authContext.AuthProviderType)
+                        Func<DeviceCodeInfo, CancellationToken, Task> callback = (code, cancellation) =>
                         {
-                            case AuthProviderType.DeviceCodeProvider:
-                            case AuthProviderType.DeviceCodeProviderFallBack:
-                                authProvider = new DeviceCodeProvider(publicClientApp, authContext.Scopes,
-                                     result =>
-                                    {
-                                        GraphSession.Instance.OutputWriter.WriteObject(result.Message);
-                                        return Task.CompletedTask;
-                                    });
-                                break;
-                            case AuthProviderType.InteractiveAuthenticationProvider:
-                                authProvider = new InteractiveAuthenticationProvider(publicClientApp, authContext.Scopes);
-                                break;
-                        }
-                        break;
+                            GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                            return Task.CompletedTask;
+                        };
+                        tokenCredential = new DeviceCodeCredential(callback, authContext.TenantId, authContext.ClientId, options);
                     }
+                    break;
                 case AuthenticationType.AppOnly:
-                    {
-                        IConfidentialClientApplication confidentialClientApp = ConfidentialClientApplicationBuilder
-                            .Create(authContext.ClientId)
-                            .WithTenantId(authContext.TenantId)
-                            .WithAuthority(authorityUrl)
-                            .WithCertificate(GetCertificate(authContext))
-                            .Build();
-
-                        ConfigureTokenCache(confidentialClientApp.AppTokenCache, authContext);
-                        string graphBaseUrl = GraphSession.Instance.Environment?.GraphEndpoint ?? "https://graph.microsoft.com";
-                        authProvider = new ClientCredentialProvider(confidentialClientApp, $"{graphBaseUrl}/.default");
-                        break;
-                    }
+                    tokenCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), options);
+                    break;
                 case AuthenticationType.UserProvidedAccessToken:
-                    authProvider = new DelegateAuthenticationProvider(requestMessage =>
-                    {
-                        requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer",
-                            new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken).Password);
-                        return Task.CompletedTask;
-                    });
+                    tokenCredential = new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken));
                     break;
             }
-            return authProvider;
+            return tokenCredential;
         }
 
+        /// <summary>
+        /// Gets a <see cref="IAuthenticationProvider"/> using the provided <see cref="IAuthContext"/>
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
+        /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
+        public static IAuthenticationProvider GetAuthenticationProvider(IAuthContext authContext)
+        {
+            return new TokenCredentialAuthProvider(GetTokenCredential(authContext), authContext.Scopes);
+        }
         /// <summary>
         /// Configures a token cache using the provide <see cref="IAuthContext"/>.
         /// </summary>

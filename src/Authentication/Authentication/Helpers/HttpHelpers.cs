@@ -12,6 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System.Management.Automation;
     using System;
+    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 
     /// <summary>
     /// A HTTP helper class.
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProvider(authContext);
             return GetGraphHttpClient(authProvider, authContext.ClientTimeout);
         }
 

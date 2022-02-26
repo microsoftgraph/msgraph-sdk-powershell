@@ -4,7 +4,7 @@
 using Microsoft.Graph.PowerShell.Authentication.Core;
 using System;
 using System.Globalization;
-using System.Security;
+using System.Runtime.InteropServices;
 
 namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
 {
@@ -22,30 +22,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
         {
             if (string.IsNullOrEmpty(authContext.ClientId))
             {
-                throw new ArgumentNullException(string.Format(
-                    CultureInfo.CurrentCulture,
-                    ErrorConstants.Message.NullOrEmptyParameter,
+                throw new ArgumentNullException(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.NullOrEmptyParameter,
                     nameof(authContext.ClientId)));
             }
 
             if (authContext.ContextScope == ContextScope.Process)
-            {
                 return GraphSession.Instance.MSALToken;
-            }
             else
             {
-                if (Helpers.OperatingSystem.IsWindows())
-                {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                     return WindowsTokenCache.GetToken(authContext.ClientId);
-                }
-                else if (Helpers.OperatingSystem.IsMacOS())
-                {
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                     return MacTokenCache.GetToken(authContext.ClientId);
-                }
                 else
-                {
                     return LinuxTokenCache.GetToken(authContext.ClientId);
-                }
             }
         }
 
@@ -74,11 +64,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             }
             else if (authContext.ContextScope == ContextScope.CurrentUser)
             {
-                if (Helpers.OperatingSystem.IsWindows())
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
                     WindowsTokenCache.SetToken(authContext.ClientId, accessToken);
                 }
-                else if (Helpers.OperatingSystem.IsMacOS())
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                 {
                     MacTokenCache.SetToken(authContext.ClientId, accessToken);
                 }
@@ -104,23 +94,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.TokenCache
             }
 
             if (authContext.ContextScope == ContextScope.Process)
-            {
                 GraphSession.Instance.MSALToken = null;
-            }
             else
             {
-                if (Helpers.OperatingSystem.IsWindows())
-                {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                     WindowsTokenCache.DeleteToken(authContext.ClientId);
-                }
-                else if (Helpers.OperatingSystem.IsMacOS())
-                {
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
                     MacTokenCache.DeleteToken(authContext.ClientId);
-                }
                 else
-                {
                     LinuxTokenCache.DeleteToken(authContext.ClientId);
-                }
             }
         }
     }
