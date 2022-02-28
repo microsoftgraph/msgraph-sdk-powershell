@@ -4,7 +4,6 @@
 
 namespace Microsoft.Graph.PowerShell
 {
-    using Hyak.Common;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -92,11 +91,13 @@ namespace Microsoft.Graph.PowerShell
         {
             try
             {
-                if (CloudException.IsJson(content))
+                content = content.Trim();
+                if ((content.StartsWith("{") && content.EndsWith("}")) || // object
+                    (content.StartsWith("[") && content.EndsWith("]"))) // array
                 {
                     return JsonConvert.SerializeObject(JsonConvert.DeserializeObject(content), Formatting.Indented);
                 }
-                if (CloudException.IsXml(content))
+                if (content.StartsWith("<"))
                 {
                     return XDocument.Parse(content).ToString();
                 }
