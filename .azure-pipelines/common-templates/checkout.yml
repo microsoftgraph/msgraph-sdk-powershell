@@ -10,6 +10,7 @@ steps:
   - checkout: self
     clean: true
     fetchDepth: 1
+    submodules: true
     persistCredentials: true
 
   - task: PowerShell@2
@@ -31,6 +32,7 @@ steps:
         git checkout ${{ parameters.TargetBranch }}
         git pull
         git status
+
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@2
     displayName: "Run CredScan"
