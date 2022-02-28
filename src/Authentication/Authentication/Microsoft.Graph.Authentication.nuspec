@@ -32,6 +32,12 @@
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Tokens.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\Microsoft.IdentityModel.Logging.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.IdentityModel.Tokens.Jwt.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Memory.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Threading.Tasks.Extensions.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Diagnostics.DiagnosticSource.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Runtime.CompilerServices.Unsafe.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Buffers.dll" target="Dependencies" />
     <!-- Copy framework dependent assemblies to respective framework directory. -->
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />
@@ -39,6 +45,5 @@
     <!-- Desktop -->
     <file src="artifacts\Dependencies\Desktop\Microsoft.Identity.Client.dll" target="Dependencies\Desktop" />
     <file src="artifacts\Dependencies\Desktop\System.Security.Cryptography.ProtectedData.dll" target="Dependencies\Desktop" />
-    <file src="artifacts\Dependencies\Desktop\System.Threading.Tasks.Extensions.dll" target="Dependencies\Desktop" />
   </files>
 </package>

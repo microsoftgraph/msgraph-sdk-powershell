@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netcoreapp3.1;net461</TargetFrameworks>
@@ -6,6 +6,7 @@
     <Version>1.9.3</Version>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Core" Version="1.22.0" />
     <PackageReference Include="Azure.Identity" Version="1.5.0" />
     <PackageReference Include="Microsoft.Graph.Core" Version="2.0.8" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.41.0" />
@@ -17,6 +18,7 @@
     <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   <ItemGroup>
     <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />

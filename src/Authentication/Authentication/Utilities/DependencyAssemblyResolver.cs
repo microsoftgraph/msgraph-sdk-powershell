@@ -13,11 +13,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         // Catalog our dependencies here to ensure we don't load anything else.
         private static IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
         {
+            { "Azure.Core", new Version("1.20.0.0") },
+            { "Azure.Identity", new Version("1.5.0.0") },
             { "Microsoft.Identity.Client", new Version("4.41.0.0") },
             { "Microsoft.IdentityModel.Tokens", new Version("6.16.0") },
             { "Microsoft.IdentityModel.Logging", new Version("6.16.0") },
             { "Microsoft.IdentityModel.JsonWebTokens", new Version("6.16.0") },
             { "System.IdentityModel.Tokens.Jwt", new Version("6.16.0") },
+            { "System.Diagnostics.DiagnosticSource", new Version("4.0.4.0") },
+            { "System.Runtime.CompilerServices.Unsafe", new Version("4.0.4.1") },
+            { "System.Memory", new Version("4.0.1.1") },
+            { "System.Buffers", new Version("4.0.2.0") },
+            { "System.Text.Json", new Version("4.0.0.0") },
             { "System.Security.Cryptography.ProtectedData", new Version("6.0.0.0") },
             { "Newtonsoft.Json", new Version("13.0.1.0") },
         };
