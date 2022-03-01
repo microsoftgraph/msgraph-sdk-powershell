@@ -16,6 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
+    using Azure.Core;
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
@@ -241,9 +242,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, ForceRefresh,
-                        _cancellationTokenSource.Token,
-                        () => { WriteWarning(Resources.DeviceCodeFallback); });
+                    // TODO: Clean me up!
+                    var tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(authContext);
+                    var requestContext = new TokenRequestContext(authContext.Scopes);
+                    var token = await tokenCredential.GetTokenAsync(requestContext, _cancellationTokenSource.Token).ConfigureAwait(false);
+                    GraphSession.Instance.AuthContext = authContext;
+                    // JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
+                    //GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, ForceRefresh,
+                    //    _cancellationTokenSource.Token,
+                    //    () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
                 catch (Exception ex)
                 {

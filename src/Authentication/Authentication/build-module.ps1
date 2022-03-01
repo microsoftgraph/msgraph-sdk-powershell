@@ -9,7 +9,7 @@ $ModuleName = "Authentication"
 $ModulePrefix = "Microsoft.Graph"
 $netStandard = "netstandard2.0"
 $netCoreApp = "netcoreapp3.1"
-$netFx = "net461"
+$netFx = "net472"
 $copyExtensions = @('.dll', '.pdb')
 
 # Source code locations

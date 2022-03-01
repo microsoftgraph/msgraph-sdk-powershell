@@ -13,6 +13,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     using System.IO;
     using System.Linq;
     using System.Net;
+    using System.Runtime.InteropServices;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
@@ -25,6 +26,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     public static class AuthenticationHelpers
     {
         static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        // TODO: Move token name to config.
+        static string _tokenCacheName = "MyToken";
+        static string _tokenCachePath = Path.Combine(Constants.GraphDirectoryPath, _tokenCacheName);
 
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
@@ -36,12 +40,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 _cacheLock.EnterWriteLock();
                 if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-                {
                     GraphSession.Instance.UserProvidedToken = null;
-                }
                 else
                 {
-                    TokenCacheStorage.DeleteToken(authContext);
+                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                        WindowsTokenCache.DeleteToken(_tokenCacheName);
+                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                        MacTokenCache.DeleteToken(_tokenCacheName);
+                    else
+                        LinuxTokenCache.DeleteToken(_tokenCacheName);
                 }
             }
             finally
@@ -58,56 +65,99 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext)
         {
             if (authContext is null)
-            {
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            }
 
-            Uri authorityUri = new Uri(GetAuthorityUrl(authContext));
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
-                    var authRecord = await GetAuthenticationRecordAsync(authContext).ConfigureAwait(false);
                     if (authContext.AuthProviderType == AuthProviderType.InteractiveAuthenticationProvider)
-                    {
-                        var interactiveOptions = new InteractiveBrowserCredentialOptions
-                        {
-                            AuthorityHost = authorityUri,
-                            TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = authContext.ClientId },
-                            AuthenticationRecord = authRecord
-                        };
-                        var interactiveBrowserCredential = new InteractiveBrowserCredential(authContext.TenantId, authContext.ClientId, interactiveOptions);
-                        return interactiveBrowserCredential;
-                    }
+                        return await GetInteractiveBrowserCredentialAsync(authContext).ConfigureAwait(false);
                     else
-                    {
-                        Func<DeviceCodeInfo, CancellationToken, Task> callback = (code, cancellation) =>
-                        {
-                            GraphSession.Instance.OutputWriter.WriteObject(code.Message);
-                            return Task.CompletedTask;
-                        };
-                        var deviceCodeOptions = new DeviceCodeCredentialOptions
-                        {
-                            AuthorityHost = authorityUri,
-                            TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = authContext.ClientId },
-                            AuthenticationRecord = authRecord
-                        };
-                        var deviceCodeCredential = new DeviceCodeCredential(callback, authContext.TenantId, authContext.ClientId, deviceCodeOptions);
-                        return deviceCodeCredential;
-                    }
+                        return await GetDeviceCodeCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
-                    var clientCredentialOptions = new ClientCertificateCredentialOptions
-                    {
-                        AuthorityHost = authorityUri,
-                        TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = authContext.ClientId }
-                    };
-                    var clientCertificateCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions);
-                    return clientCertificateCredential;
+                    return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
-                    var userProvidedTokenCredential = new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken));
-                    return userProvidedTokenCredential;
+                    return new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken));
                 default:
                     return null;
             }
+        }
+
+        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext)
+        {
+            AuthenticationRecord authRecord;
+            InteractiveBrowserCredential interactiveBrowserCredential;
+            var interactiveOptions = new InteractiveBrowserCredentialOptions
+            {
+                ClientId = authContext.ClientId,
+                TenantId = authContext.TenantId,
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName }
+            };
+
+            if (!File.Exists(_tokenCachePath))
+            {
+                interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                authRecord = await interactiveBrowserCredential.AuthenticateAsync();
+                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
+                    await authRecord.SerializeAsync(authRecordStream);
+            }
+            else
+            {
+                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Open, FileAccess.Read))
+                {
+                    authRecord = await AuthenticationRecord.DeserializeAsync(authRecordStream);
+                    interactiveOptions.AuthenticationRecord = authRecord;
+                    interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                }
+            }
+            return interactiveBrowserCredential;
+        }
+
+        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext)
+        {
+            AuthenticationRecord authRecord;
+            DeviceCodeCredential deviceCodeCredential;
+            var deviceCodeOptions = new DeviceCodeCredentialOptions
+            {
+                ClientId = authContext.ClientId,
+                TenantId = authContext.TenantId,
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName },
+                DeviceCodeCallback = (code, cancellation) =>
+                {
+                    GraphSession.Instance.OutputWriter.WriteObject(code.Message);
+                    return Task.CompletedTask;
+                }
+            };
+
+            if (!File.Exists(_tokenCachePath))
+            {
+                deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
+                authRecord = await deviceCodeCredential.AuthenticateAsync();
+                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
+                    await authRecord.SerializeAsync(authRecordStream);
+            }
+            else
+            {
+                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Open, FileAccess.Read))
+                {
+                    authRecord = await AuthenticationRecord.DeserializeAsync(authRecordStream);
+                    deviceCodeOptions.AuthenticationRecord = authRecord;
+                    deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
+                }
+            }
+            return deviceCodeCredential;
+        }
+
+        private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext)
+        {
+            var clientCredentialOptions = new ClientCertificateCredentialOptions
+            {
+                AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName },
+            };
+            return await Task.FromResult(new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions));
         }
 
         /// <summary>
@@ -120,87 +170,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext).GetAwaiter().GetResult(), authContext.Scopes);
         }
 
-        private static async Task<AuthenticationRecord> GetAuthenticationRecordAsync(IAuthContext authContext)
-        {
-            string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, authContext.ClientId);
-            if (File.Exists(tokenCacheFilePath))
-            {
-                using (var authRecordStream = new FileStream(tokenCacheFilePath, FileMode.Open, FileAccess.Read))
-                {
-                    return await AuthenticationRecord.DeserializeAsync(authRecordStream).ConfigureAwait(false);
-                }
-            }
-            return null;
-        }
-        /// <summary>
-        /// Configures a token cache using the provide <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="tokenCache">MSAL's token cache to configure.</param>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to get configure an token cache for.</param>
-        private static void ConfigureTokenCache(AuthenticationRecord authRecord, IAuthContext authContext)
-        {
-            string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, authContext.ClientId);
-            string AUTH_RECORD_PATH = tokenCacheFilePath;
-            if (!File.Exists(AUTH_RECORD_PATH))
-            {
-                using(var authRecordStream = new FileStream(AUTH_RECORD_PATH, FileMode.Create, FileAccess.Write))
-                {
-                    authRecord.Serialize(authRecordStream);
-                }
-            }
-            else
-            {
-                // Load the previously serialized AuthenticationRecord from disk and deserialize it.
-                using (var authRecordStream = new FileStream(AUTH_RECORD_PATH, FileMode.Open, FileAccess.Read))
-                {
-                    authRecord = AuthenticationRecord.Deserialize(authRecordStream);
-                }
-
-                // Construct a new client with our TokenCachePersistenceOptions with the addition of the AuthenticationRecord property.
-                // This tells the credential to use the same token cache in addition to which account to try and fetch from cache when GetToken is called.
-                //credential = new InteractiveBrowserCredential(
-                //    new InteractiveBrowserCredentialOptions
-                //    {
-                //        TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = TOKEN_CACHE_NAME },
-                //        AuthenticationRecord = authRecord
-                //    });
-            }
-
-            //tokenCache.SetBeforeAccess((TokenCacheNotificationArgs args) =>
-            //{
-            //    try
-            //    {
-            //        _cacheLock.EnterReadLock();
-            //        args.TokenCache.DeserializeMsalV3(TokenCacheStorage.GetToken(authContext), shouldClearExistingCache: true);
-            //    }
-            //    finally
-            //    {
-            //        _cacheLock.ExitReadLock();
-            //    }
-            //});
-
-            //tokenCache.SetAfterAccess((TokenCacheNotificationArgs args) =>
-            //{
-            //    if (args.HasStateChanged)
-            //    {
-            //        try
-            //        {
-            //            _cacheLock.EnterWriteLock();
-            //            TokenCacheStorage.SetToken(authContext, args.TokenCache.SerializeMsalV3());
-            //        }
-            //        finally
-            //        {
-            //            _cacheLock.ExitWriteLock();
-            //        }
-            //    }
-            //});
-        }
-
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken, Action fallBackWarning = null)
         {
             try
             {
-                string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, authContext.ClientId);
+                string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, "MyToken");
                 var requestContext = new TokenRequestContext(authContext.Scopes);
                 var tokenCredential = await GetTokenCredentialAsync(authContext).ConfigureAwait(false);
                 if (!File.Exists(tokenCacheFilePath) && authContext.AuthType == AuthenticationType.Delegated)

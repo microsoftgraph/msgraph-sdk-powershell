@@ -1120,7 +1120,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         using (var httpRequestMessage = GetRequest(client, Uri))
                         {
                             var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage);
-
                             FillRequestStream(httpRequestMessage);
                             try
                             {
@@ -1134,9 +1133,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                     var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
                                     ThrowTerminatingError(httpErrorRecord);
                                 }
-
                                 await ProcessResponseAsync(httpResponseMessage);
-
                             }
                             catch (HttpRequestException ex)
                             {
