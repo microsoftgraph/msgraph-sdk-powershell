@@ -1,44 +1,38 @@
-﻿---
-name: Client bug report
-about: Report an issue that is caused by the SDK
-title: "[Client bug]: provide a descriptive title here"
-labels: client bug
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: ''
 assignees: ''
 
 ---
 
-### **Describe the bug**
-
+**Describe the bug**
 A clear and concise description of what the bug is.
 
-### **To Reproduce**
-
+**To Reproduce**
 Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
-1. Run Connect-MgGraph with '...'
-2. Run command '....'
-3. See error
-
-### **Expected behavior**
-
+**Expected behavior**
 A clear and concise description of what you expected to happen.
 
-### **Screenshots**
-
+**Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-### **SDK version**
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
 
-Provide the SDK version number from `Get-Module Microsoft.Graph -ListAvailable | select Name, Version`.
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
 
-### **Environment (please complete the following information):**
-
-Provide the following environment information from the `$PSVersionTable` variable:
-
-- PSVersion: [e.g. 7.2.1]
-- OS: [e.g. Windows]
-- Platform [e.g. Win32NT]
-
-### **Additional context**
-
+**Additional context**
 Add any other context about the problem here.
