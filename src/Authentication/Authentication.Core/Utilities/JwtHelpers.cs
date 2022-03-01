@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <param name="authContext">An <see cref="IAuthContext"/> to store JWT claims in.</param>
         internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
         {
-            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(jwToken);
+            var jwtPayload = DecodeToObject<Models.JwtPayload>(jwToken);
             if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
             {
                 if (jwtPayload == null)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                             "AccessToken"));
                 }
 
-                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
+                if (jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
                 {
                     throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,

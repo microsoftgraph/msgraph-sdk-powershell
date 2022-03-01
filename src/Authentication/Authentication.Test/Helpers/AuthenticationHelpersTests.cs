@@ -1,5 +1,6 @@
 ﻿namespace Microsoft.Graph.Authentication.Test.Helpers
 {
+    using Azure.Core;
     using Azure.Identity;
     using Microsoft.Graph.PowerShell.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
@@ -47,7 +48,7 @@
         }
 
         [Fact]
-        public void ShouldUseDeviceCodeWhenSpecifiedByUser()
+        public async Task ShouldUseDeviceCodeWhenSpecifiedByUserAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -59,7 +60,7 @@
             };
 
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
 
             // Assert
             Assert.IsType<DeviceCodeCredential>(tokenCredential);
@@ -68,7 +69,7 @@
             GraphSession.Reset();
         }
         [Fact]
-        public void ShouldUseDeviceCodeWhenFallback()
+        public async Task ShouldUseDeviceCodeWhenFallbackAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -80,7 +81,7 @@
             };
 
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
 
             // Assert
             Assert.IsType<DeviceCodeCredential>(tokenCredential);
@@ -89,7 +90,7 @@
             GraphSession.Reset();
         }
         [Fact]
-        public void ShouldUseInteractiveProviderWhenDelegated()
+        public async Task ShouldUseInteractiveProviderWhenDelegatedAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -100,7 +101,7 @@
             };
 
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
 
             // Assert
             Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
@@ -110,7 +111,7 @@
         }
 
         [Fact]
-        public void ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvided()
+        public async Task ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvidedAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -122,7 +123,7 @@
             };
 
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
 
             // Assert
             Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
@@ -133,7 +134,7 @@
 
 #if NETCORE
         [Fact]
-        public void ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvided()
+        public async Task ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvidedAsync()
         {
             // Arrange
             AuthContext appOnlyAuthContext = new AuthContext
@@ -146,7 +147,7 @@
             CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateName);
 
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -158,7 +159,7 @@
         }
 
         [Fact]
-        public void ShouldUseInMemoryCertificateWhenProvided()
+        public async Task ShouldUseInMemoryCertificateWhenProvidedAsync()
         {
             // Arrange
             var certificate = CreateSelfSignedCert("cn=inmemorycert");
@@ -170,7 +171,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -179,7 +180,7 @@
         }
 
         [Fact]
-        public void ShouldUseCertNameInsteadOfPassedInCertificateWhenBothAreSpecified()
+        public async Task ShouldUseCertNameInsteadOfPassedInCertificateWhenBothAreSpecifiedAsync()
         {
             // Arrange
             var dummyCertName = "CN=dummycert";
@@ -195,7 +196,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -206,7 +207,7 @@
         }
 
         [Fact]
-        public void ShouldUseCertThumbPrintInsteadOfPassedInCertificateWhenBothAreSpecified()
+        public async Task ShouldUseCertThumbPrintInsteadOfPassedInCertificateWhenBothAreSpecifiedAsync()
         {
             // Arrange
             var dummyCertName = "CN=dummycert";
@@ -222,7 +223,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            var tokenCredential = AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -245,7 +246,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = () => AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             //Assert
             Assert.ThrowsAny<Exception>(action);
@@ -263,7 +264,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = () => AuthenticationHelpers.GetTokenCredential(appOnlyAuthContext);
+            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
 
             //Assert
             Assert.Throws<ArgumentNullException>(action);

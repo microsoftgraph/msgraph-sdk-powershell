@@ -16,6 +16,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             { "Azure.Core", new Version("1.20.0.0") },
             { "Azure.Identity", new Version("1.5.0.0") },
             { "Microsoft.Identity.Client", new Version("4.41.0.0") },
+            { "Microsoft.Identity.Client.Extensions.Msal", new Version("2.18.4.0") },
             { "Microsoft.IdentityModel.Tokens", new Version("6.16.0") },
             { "Microsoft.IdentityModel.Logging", new Version("6.16.0") },
             { "Microsoft.IdentityModel.JsonWebTokens", new Version("6.16.0") },

@@ -3,8 +3,7 @@
 // ------------------------------------------------------------------------------
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.Authentication.Core;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
+    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using System;
     using System.Management.Automation;
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
@@ -31,7 +30,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(
                     new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
-            Authenticator.LogOut(authContext);
+            AuthenticationHelpers.Logout(authContext);
 
             GraphSession.Instance.AuthContext = null;
         }

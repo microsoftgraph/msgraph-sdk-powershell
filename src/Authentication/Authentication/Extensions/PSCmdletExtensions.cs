@@ -21,7 +21,7 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="cmdlet">The calling <see cref="PSCmdlet"/></param>
         /// <param name="responseMessage">The HTTP response message from the service.</param>
         /// <param name="returnNow">Determines whether the caller should return after OverrideOnDefault is called, or not. </param>
-        public static void OverrideOnDefault(this PSCmdlet cmdlet, global::System.Net.Http.HttpResponseMessage responseMessage, ref global::System.Threading.Tasks.Task<bool> returnNow)
+        public static void OverrideOnDefault(this PSCmdlet cmdlet, System.Net.Http.HttpResponseMessage responseMessage, ref System.Threading.Tasks.Task<bool> returnNow)
         {
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.PowerShell
                 {
                     cmdlet.WriteObject(true);
                 }
-                returnNow = global::System.Threading.Tasks.Task<bool>.FromResult(true);
+                returnNow = System.Threading.Tasks.Task.FromResult(true);
             }
         }
 
