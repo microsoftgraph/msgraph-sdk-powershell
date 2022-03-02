@@ -6,7 +6,7 @@ Set-StrictMode -Version 2
 
 . "$psscriptroot/common/Permissions.ps1"
 
-$scriptBlock = {
+$scopesParameterCompleterBlock = {
     param (
         $commandName,
         $parameterName,
@@ -24,4 +24,4 @@ $scriptBlock = {
     }
 }
 
-Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Scopes -ScriptBlock $scriptBlock
+Register-ArgumentCompleter -CommandName Connect-MgGraph -ParameterName Scopes -ScriptBlock $scopesParameterCompleterBlock
