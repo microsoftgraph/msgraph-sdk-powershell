@@ -6791,6 +6791,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6883,6 +6884,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6914,6 +6916,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -6980,6 +6983,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -7013,6 +7017,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.cloudPC.resourceNamespaces_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9007,6 +9012,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9099,6 +9105,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Create new navigation property to resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9130,6 +9137,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9196,6 +9204,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Update the navigation property resourceActions in roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -9229,6 +9238,7 @@ paths:
       tags:
         - roleManagement.rbacApplicationMultiple
       summary: Delete navigation property resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.deviceManagement.resourceNamespaces_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -10902,6 +10912,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - transitiveRoleAssignments
                 - roleAssignmentApprovals
                 - roleAssignmentScheduleInstances
                 - roleAssignmentScheduleRequests
@@ -10924,6 +10935,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - transitiveRoleAssignments
                 - roleAssignmentApprovals
                 - roleAssignmentScheduleInstances
                 - roleAssignmentScheduleRequests
@@ -10946,6 +10958,8 @@ paths:
               operationId: roleManagement.Directory.ListRoleAssignments
             roleDefinitions:
               operationId: roleManagement.Directory.ListRoleDefinitions
+            transitiveRoleAssignments:
+              operationId: roleManagement.Directory.ListTransitiveRoleAssignments
             roleAssignmentApprovals:
               operationId: roleManagement.Directory.ListRoleAssignmentApprovals
             roleAssignmentScheduleInstances:
@@ -11345,6 +11359,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11437,6 +11452,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11468,6 +11484,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11534,6 +11551,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property resourceActions in roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -11567,6 +11585,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.directory.resourceNamespaces_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -17323,6 +17342,768 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /roleManagement/directory/transitiveRoleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get transitiveRoleAssignments from roleManagement
+      operationId: roleManagement.directory_ListTransitiveRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - condition
+                - condition desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - principalOrganizationId
+                - principalOrganizationId desc
+                - resourceScope
+                - resourceScope desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - principalOrganizationId
+                - resourceScope
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to transitiveRoleAssignments for roleManagement
+      operationId: roleManagement.directory_CreateTransitiveRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get transitiveRoleAssignments from roleManagement
+      operationId: roleManagement.directory_GetTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - principalOrganizationId
+                - resourceScope
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          links:
+            appScope:
+              operationId: roleManagement.directory.TransitiveRoleAssignments.GetAppScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            directoryScope:
+              operationId: roleManagement.directory.TransitiveRoleAssignments.GetDirectoryScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            principal:
+              operationId: roleManagement.directory.TransitiveRoleAssignments.GetPrincipal
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            roleDefinition:
+              operationId: roleManagement.directory.TransitiveRoleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property transitiveRoleAssignments in roleManagement
+      operationId: roleManagement.directory_UpdateTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property transitiveRoleAssignments for roleManagement
+      operationId: roleManagement.directory_DeleteTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/appScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property appScope in roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_UpdateAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property appScope for roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_DeleteAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property directoryScope in roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_SetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property directoryScope for roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_DeleteGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property principal in roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_SetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property principal for roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.directory.transitiveRoleAssignments_DeleteGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.transitiveRoleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.transitiveRoleAssignments_GetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.directory.transitiveRoleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property roleDefinition in roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.transitiveRoleAssignments_SetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property roleDefinition for roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.directory.transitiveRoleAssignments_DeleteGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /roleManagement/entitlementManagement:
     get:
       tags:
@@ -17345,6 +18126,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - transitiveRoleAssignments
                 - roleAssignmentApprovals
                 - roleAssignmentScheduleInstances
                 - roleAssignmentScheduleRequests
@@ -17367,6 +18149,7 @@ paths:
                 - resourceNamespaces
                 - roleAssignments
                 - roleDefinitions
+                - transitiveRoleAssignments
                 - roleAssignmentApprovals
                 - roleAssignmentScheduleInstances
                 - roleAssignmentScheduleRequests
@@ -17389,6 +18172,8 @@ paths:
               operationId: roleManagement.EntitlementManagement.ListRoleAssignments
             roleDefinitions:
               operationId: roleManagement.EntitlementManagement.ListRoleDefinitions
+            transitiveRoleAssignments:
+              operationId: roleManagement.EntitlementManagement.ListTransitiveRoleAssignments
             roleAssignmentApprovals:
               operationId: roleManagement.EntitlementManagement.ListRoleAssignmentApprovals
             roleAssignmentScheduleInstances:
@@ -17788,6 +18573,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_ListResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -17880,6 +18666,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Create new navigation property to resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_CreateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -17911,6 +18698,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Get resourceActions from roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_GetResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -17977,6 +18765,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Update the navigation property resourceActions in roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_UpdateResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -18010,6 +18799,7 @@ paths:
       tags:
         - roleManagement.rbacApplication
       summary: Delete navigation property resourceActions for roleManagement
+      description: Operations that an authorized principal are allowed to perform.
       operationId: roleManagement.entitlementManagement.resourceNamespaces_DeleteResourceActions
       parameters:
         - name: unifiedRbacResourceNamespace-id
@@ -23766,6 +24556,768 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  /roleManagement/entitlementManagement/transitiveRoleAssignments:
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get transitiveRoleAssignments from roleManagement
+      operationId: roleManagement.entitlementManagement_ListTransitiveRoleAssignments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appScopeId
+                - appScopeId desc
+                - condition
+                - condition desc
+                - directoryScopeId
+                - directoryScopeId desc
+                - principalId
+                - principalId desc
+                - principalOrganizationId
+                - principalOrganizationId desc
+                - resourceScope
+                - resourceScope desc
+                - roleDefinitionId
+                - roleDefinitionId desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - principalOrganizationId
+                - resourceScope
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of unifiedRoleAssignment
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Create new navigation property to transitiveRoleAssignments for roleManagement
+      operationId: roleManagement.entitlementManagement_CreateTransitiveRoleAssignments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get transitiveRoleAssignments from roleManagement
+      operationId: roleManagement.entitlementManagement_GetTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appScopeId
+                - condition
+                - directoryScopeId
+                - principalId
+                - principalOrganizationId
+                - resourceScope
+                - roleDefinitionId
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appScope
+                - directoryScope
+                - principal
+                - roleDefinition
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+          links:
+            appScope:
+              operationId: roleManagement.entitlementManagement.TransitiveRoleAssignments.GetAppScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            directoryScope:
+              operationId: roleManagement.entitlementManagement.TransitiveRoleAssignments.GetDirectoryScope
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            principal:
+              operationId: roleManagement.entitlementManagement.TransitiveRoleAssignments.GetPrincipal
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+            roleDefinition:
+              operationId: roleManagement.entitlementManagement.TransitiveRoleAssignments.GetRoleDefinition
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property transitiveRoleAssignments in roleManagement
+      operationId: roleManagement.entitlementManagement_UpdateTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property transitiveRoleAssignments for roleManagement
+      operationId: roleManagement.entitlementManagement_DeleteTransitiveRoleAssignments
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/appScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get appScope from roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.appScope'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the navigation property appScope in roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_UpdateAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.appScope'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete navigation property appScope for roleManagement
+      description: Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_DeleteAppScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of directoryScope from roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property directoryScope in roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_SetGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property directoryScope for roleManagement
+      description: The directory object that is the scope of the assignment. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_DeleteGraphRefDirectoryScope
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of principal from roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property principal in roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_SetGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property principal for roleManagement
+      description: Referencing the assigned principal. Read-only. Supports $expand.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_DeleteGraphRefPrincipal
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - isBuiltIn
+                - isEnabled
+                - resourceScopes
+                - rolePermissions
+                - templateId
+                - version
+                - inheritsPermissionsFrom
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - inheritsPermissionsFrom
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.entitlementManagement.transitiveRoleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref':
+    get:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Get ref of roleDefinition from roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_GetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            inheritsPermissionsFrom:
+              operationId: roleManagement.entitlementManagement.transitiveRoleAssignments.RoleDefinition.ListInheritsPermissionsFrom
+              parameters:
+                unifiedRoleAssignment-id: $request.path.unifiedRoleAssignment-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Update the ref of navigation property roleDefinition in roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_SetGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - roleManagement.rbacApplication
+      summary: Delete ref of navigation property roleDefinition for roleManagement
+      description: The roleDefinition the assignment is for.  Supports $expand. roleDefinition.Id will be auto expanded.
+      operationId: roleManagement.entitlementManagement.transitiveRoleAssignments_DeleteGraphRefRoleDefinition
+      parameters:
+        - name: unifiedRoleAssignment-id
+          in: path
+          description: 'key: id of unifiedRoleAssignment'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: unifiedRoleAssignment
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.androidDeviceOwnerEnrollmentProfile:
@@ -24931,10 +26483,12 @@ components:
           properties:
             name:
               type: string
+              description: 'Name of the resource namespace. Typically, the same name as the id property, such as microsoft.aad.b2c. Required. Supports $filter (eq, startsWith).'
             resourceActions:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceAction'
+              description: Operations that an authorized principal are allowed to perform.
           additionalProperties:
             type: object
     microsoft.graph.unifiedRbacResourceAction:
@@ -24945,14 +26499,18 @@ components:
           properties:
             actionVerb:
               type: string
+              description: 'HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.'
               nullable: true
             description:
               type: string
+              description: Description for the action. Supports $filter (eq).
               nullable: true
             name:
               type: string
+              description: 'Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).'
             resourceScopeId:
               type: string
+              description: Not implemented.
               nullable: true
             resourceScope:
               $ref: '#/components/schemas/microsoft.graph.unifiedRbacResourceScope'
@@ -25127,6 +26685,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.unifiedRoleDefinition'
               description: Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+            transitiveRoleAssignments:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.unifiedRoleAssignment'
             roleAssignmentApprovals:
               type: array
               items:
