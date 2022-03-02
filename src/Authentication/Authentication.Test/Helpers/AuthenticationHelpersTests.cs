@@ -60,7 +60,7 @@
             };
 
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
             Assert.IsType<DeviceCodeCredential>(tokenCredential);
@@ -81,7 +81,7 @@
             };
 
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
             Assert.IsType<DeviceCodeCredential>(tokenCredential);
@@ -101,7 +101,7 @@
             };
 
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
             Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
@@ -123,7 +123,7 @@
             };
 
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
             Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
@@ -147,7 +147,7 @@
             CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateName);
 
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -171,7 +171,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -196,7 +196,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -223,7 +223,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
@@ -246,7 +246,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             //Assert
             Assert.ThrowsAny<Exception>(action);
@@ -264,7 +264,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext);
+            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             //Assert
             Assert.Throws<ArgumentNullException>(action);

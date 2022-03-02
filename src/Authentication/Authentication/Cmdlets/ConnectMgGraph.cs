@@ -16,14 +16,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
-    using Azure.Core;
     using Microsoft.Graph.PowerShell.Authentication.Common;
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Microsoft.Graph.PowerShell.Authentication.Properties;
     using Microsoft.Graph.PowerShell.Authentication.Utilities;
 
     using static AsyncHelpers;
@@ -242,12 +240,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
+                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token);
                     // TODO: Clean me up!
-                    var tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(authContext);
-                    var requestContext = new TokenRequestContext(authContext.Scopes);
-                    var token = await tokenCredential.GetTokenAsync(requestContext, _cancellationTokenSource.Token).ConfigureAwait(false);
-                    GraphSession.Instance.AuthContext = authContext;
-                    // JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
                     //GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, ForceRefresh,
                     //    _cancellationTokenSource.Token,
                     //    () => { WriteWarning(Resources.DeviceCodeFallback); });
@@ -272,10 +266,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns>A formated array of scopes.</returns>
         private string[] ProcessScopes(string[] scopes)
         {
-            if (scopes == null)
-            {
+            if (scopes is null)
                 return new string[0];
-            }
 
             List<string> formatedScopes = new List<string>();
             foreach (string scope in scopes)

@@ -18,11 +18,8 @@ using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
-
 using Newtonsoft.Json;
-
 using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
-
 using DriveNotFoundException = System.Management.Automation.DriveNotFoundException;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets

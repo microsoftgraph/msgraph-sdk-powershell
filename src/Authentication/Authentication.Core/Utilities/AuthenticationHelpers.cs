@@ -62,7 +62,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
         /// <returns>A <see cref="TokenCredential"/> based on provided <see cref="IAuthContext"/>.</returns>
-        public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext)
+        public static async Task<TokenCredential> GetTokenCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
@@ -71,9 +71,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 case AuthenticationType.Delegated:
                     if (authContext.AuthProviderType == AuthProviderType.InteractiveAuthenticationProvider)
-                        return await GetInteractiveBrowserCredentialAsync(authContext).ConfigureAwait(false);
+                        return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                     else
-                        return await GetDeviceCodeCredentialAsync(authContext).ConfigureAwait(false);
+                        return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                 case AuthenticationType.AppOnly:
                     return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
@@ -83,8 +83,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             }
         }
 
-        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext)
+        private static async Task<InteractiveBrowserCredential> GetInteractiveBrowserCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
             AuthenticationRecord authRecord;
             InteractiveBrowserCredential interactiveBrowserCredential;
             var interactiveOptions = new InteractiveBrowserCredentialOptions
@@ -98,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (!File.Exists(_tokenCachePath))
             {
                 interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                authRecord = await interactiveBrowserCredential.AuthenticateAsync();
+                authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
                 using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
                     await authRecord.SerializeAsync(authRecordStream);
             }
@@ -114,8 +117,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return interactiveBrowserCredential;
         }
 
-        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext)
+        private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
         {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
             AuthenticationRecord authRecord;
             DeviceCodeCredential deviceCodeCredential;
             var deviceCodeOptions = new DeviceCodeCredentialOptions
@@ -134,7 +140,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (!File.Exists(_tokenCachePath))
             {
                 deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
-                authRecord = await deviceCodeCredential.AuthenticateAsync();
+                authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                 using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
                     await authRecord.SerializeAsync(authRecordStream);
             }
@@ -152,6 +158,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext)
         {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
             var clientCredentialOptions = new ClientCertificateCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
@@ -167,46 +176,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns>A <see cref="IAuthenticationProvider"/> based on provided <see cref="IAuthContext"/>.</returns>
         public static IAuthenticationProvider GetAuthenticationProvider(IAuthContext authContext)
         {
-            return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext).GetAwaiter().GetResult(), authContext.Scopes);
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            // TODO: See if module class has a cancelation token we can tap on.
+            return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext, default).GetAwaiter().GetResult(), authContext.Scopes);
+        }
+
+        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
+            var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken);
+            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+            JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
+            return authContext;
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, bool forceRefresh, CancellationToken cancellationToken, Action fallBackWarning = null)
         {
             try
             {
-                string tokenCacheFilePath = Path.Combine(Constants.GraphDirectoryPath, "MyToken");
-                var requestContext = new TokenRequestContext(authContext.Scopes);
-                var tokenCredential = await GetTokenCredentialAsync(authContext).ConfigureAwait(false);
-                if (!File.Exists(tokenCacheFilePath) && authContext.AuthType == AuthenticationType.Delegated)
-                {
-                    AuthenticationRecord authRecord = null;
-                    switch (tokenCredential)
-                    {
-                        case InteractiveBrowserCredential interactiveBrowserCredential:
-                            authRecord = await interactiveBrowserCredential.AuthenticateAsync(requestContext, cancellationToken).ConfigureAwait(false);
-                            break;
-                        case DeviceCodeCredential deviceCodeCredential:
-                            authRecord = await deviceCodeCredential.AuthenticateAsync(requestContext, cancellationToken).ConfigureAwait(false);
-                            break;
-                        default:
-                            authRecord = null;
-                            break;
-                    }
-                    if (authRecord != null)
-                    {
-                        using (var authRecordStream = new FileStream(tokenCacheFilePath, FileMode.Create, FileAccess.Write))
-                        {
-                            await authRecord.SerializeAsync(authRecordStream).ConfigureAwait(false);
-                        }
-                    }
-                }
-                else
-                {
-                    var token = await tokenCredential.GetTokenAsync(requestContext, cancellationToken).ConfigureAwait(false);
-                    IAccount account = null;
-                    JwtHelpers.DecodeJWT(token.Token, account, ref authContext);
-                }
-
                 // TODO: Update fallback logic. This won't work with Azure Identity.
                 //if (authContext.AuthProviderType == AuthProviderType.InteractiveAuthenticationProvider)
                 //{
@@ -284,44 +274,37 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns></returns>
         private static string GetAuthorityUrl(IAuthContext authContext)
         {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+
             string audience = authContext.TenantId ?? Constants.DefaulAdTenant;
-            string defaultInstance = Constants.DefaultAzureADEndpoint;
-            string authorityUrl = $"{defaultInstance}/{audience}";
-
             if (GraphSession.Instance.Environment != null)
-            {
-                authorityUrl = $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
-            }
-
-            return authorityUrl;
+                return $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
+            else
+                return $"{Constants.DefaultAzureADEndpoint}/{audience}";
         }
 
         /// <summary>
         /// Gets a certificate based on the current context.
         /// Priority is Name, ThumbPrint, then In-Memory Cert
         /// </summary>
-        /// <param name="context">Current <see cref="IAuthContext"/> context</param>
+        /// <param name="authContext">Current <see cref="IAuthContext"/> context</param>
         /// <returns>A <see cref="X509Certificate2"/> based on provided <see cref="IAuthContext"/> context</returns>
-        private static X509Certificate2 GetCertificate(IAuthContext context)
+        private static X509Certificate2 GetCertificate(IAuthContext authContext)
         {
-            X509Certificate2 certificate;
-            if (!string.IsNullOrWhiteSpace(context.CertificateName))
-            {
-                certificate = GetCertificateByName(context.CertificateName);
-            }
-            else if (!string.IsNullOrWhiteSpace(context.CertificateThumbprint))
-            {
-                certificate = GetCertificateByThumbprint(context.CertificateThumbprint);
-            }
-            else
-            {
-                certificate = context.Certificate;
-            }
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            if (certificate == null)
-            {
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {context.CertificateThumbprint}, Name {context.CertificateName} or In-Memory could not be found");
-            }
+            X509Certificate2 certificate;
+            if (!string.IsNullOrWhiteSpace(authContext.CertificateName))
+                certificate = GetCertificateByName(authContext.CertificateName);
+            else if (!string.IsNullOrWhiteSpace(authContext.CertificateThumbprint))
+                certificate = GetCertificateByThumbprint(authContext.CertificateThumbprint);
+            else
+                certificate = authContext.Certificate;
+
+            if (certificate is null)
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, Name {authContext.CertificateName} or In-Memory could not be found");
 
             return certificate;
         }
@@ -333,8 +316,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns></returns>
         private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
         {
+            // TODO: Perform certificate lookup in both CurrentUser and LocalMachine. LocalMachine takes precedence.
             X509Certificate2 xCertificate = null;
-
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
                 xStore.Open(OpenFlags.ReadOnly);
@@ -363,8 +346,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns></returns>
         private static X509Certificate2 GetCertificateByName(string certificateName)
         {
+            // TODO: Perform certificate lookup in both CurrentUser and LocalMachine. LocalMachine takes precedence.
             X509Certificate2 xCertificate = null;
-
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
                 xStore.Open(OpenFlags.ReadOnly);
