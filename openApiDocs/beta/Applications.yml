@@ -101,6 +101,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -146,6 +148,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -290,6 +293,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -9099,6 +9103,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -9144,6 +9150,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -9302,6 +9309,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -10671,6 +10680,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -10716,6 +10727,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -10881,6 +10893,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -19947,6 +19961,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             web:
               $ref: '#/components/schemas/microsoft.graph.webApplication'
+            windows:
+              $ref: '#/components/schemas/microsoft.graph.windowsApplication'
             onPremisesPublishing:
               $ref: '#/components/schemas/microsoft.graph.onPremisesPublishing'
             appManagementPolicies:
@@ -21413,6 +21429,21 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.redirectUriSettings'
           description: Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsApplication:
+      title: windowsApplication
+      type: object
+      properties:
+        packageSid:
+          type: string
+          description: The package security identifier that Microsoft has assigned the application. Optional. Read-only.
+          nullable: true
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
       additionalProperties:
         type: object
     microsoft.graph.onPremisesPublishing:

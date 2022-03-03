@@ -27299,6 +27299,8 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.agreementAcceptance'
               description: The user's terms of use acceptance statuses. Read-only. Nullable.
+            security:
+              $ref: '#/components/schemas/microsoft.graph.security.security'
             deviceEnrollmentConfigurations:
               type: array
               items:
@@ -30013,6 +30015,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.security.security:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: security
+          type: object
+          properties:
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceEnrollmentConfiguration:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -30028,6 +30040,8 @@ components:
               type: string
               description: The description of the device enrollment configuration
               nullable: true
+            deviceEnrollmentConfigurationType:
+              $ref: '#/components/schemas/microsoft.graph.deviceEnrollmentConfigurationType'
             displayName:
               type: string
               description: The display name of the device enrollment configuration
@@ -31381,6 +31395,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the chat. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -31431,6 +31446,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamMessagingSettings'
             specialization:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
+            summary:
+              $ref: '#/components/schemas/microsoft.graph.teamSummary'
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
@@ -33476,6 +33493,37 @@ components:
         - declined
         - unknownFutureValue
       type: string
+    microsoft.graph.security.informationProtection:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtection
+          type: object
+          properties:
+            labelPolicySettings:
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtectionPolicySetting'
+            sensitivityLabels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+          additionalProperties:
+            type: object
+    microsoft.graph.deviceEnrollmentConfigurationType:
+      title: deviceEnrollmentConfigurationType
+      enum:
+        - unknown
+        - limit
+        - platformRestrictions
+        - windowsHelloForBusiness
+        - defaultLimit
+        - defaultPlatformRestrictions
+        - defaultWindowsHelloForBusiness
+        - defaultWindows10EnrollmentCompletionPageConfiguration
+        - windows10EnrollmentCompletionPageConfiguration
+        - deviceComanagementAuthorityConfiguration
+        - singlePlatformRestriction
+        - unknownFutureValue
+      type: string
+      description: Describes the TemplateFamily for the Template entity
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -33499,7 +33547,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -36157,8 +36205,6 @@ components:
         - title: baseTask
           type: object
           properties:
-            body:
-              $ref: '#/components/schemas/microsoft.graph.itemBody'
             bodyLastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -36188,14 +36234,17 @@ components:
               type: string
               description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
-            personalProperties:
-              $ref: '#/components/schemas/microsoft.graph.personalTaskProperties'
             recurrence:
               $ref: '#/components/schemas/microsoft.graph.patternedRecurrence'
             startDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             status:
               $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
+            textBody:
+              type: string
+              nullable: true
+            viewpoint:
+              $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
             checklistItems:
               type: array
               items:
@@ -36619,6 +36668,30 @@ components:
         - healthcareCareCoordination
         - unknownFutureValue
       type: string
+    microsoft.graph.teamSummary:
+      title: teamSummary
+      type: object
+      properties:
+        guestsCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        membersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+        ownersCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.teamVisibilityType:
       title: teamVisibilityType
       enum:
@@ -38073,6 +38146,62 @@ components:
           description: Unique identifier of the accessReviewStageSettings. The stageId will be used in dependsOn property to indicate the stage relationship. Required.
       additionalProperties:
         type: object
+    microsoft.graph.security.informationProtectionPolicySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicySetting
+          type: object
+          properties:
+            defaultLabelId:
+              type: string
+              nullable: true
+            isDowngradeJustificationRequired:
+              type: boolean
+            isMandatory:
+              type: boolean
+            moreInfoUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            color:
+              type: string
+              nullable: true
+            contentFormats:
+              type: array
+              items:
+                type: string
+                nullable: true
+            description:
+              type: string
+              nullable: true
+            hasProtection:
+              type: boolean
+            isActive:
+              type: boolean
+            isAppliable:
+              type: boolean
+            name:
+              type: string
+              nullable: true
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+          additionalProperties:
+            type: object
     microsoft.graph.deviceAndAppManagementAssignmentSource:
       title: deviceAndAppManagementAssignmentSource
       enum:
@@ -38723,7 +38852,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
-              description: Description of the task
+              description: Description of the task.
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
@@ -39339,14 +39468,6 @@ components:
         - weak
         - unknown
       type: string
-    microsoft.graph.personalTaskProperties:
-      title: personalTaskProperties
-      type: object
-      properties:
-        reminderDatetime:
-          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
-      additionalProperties:
-        type: object
     microsoft.graph.taskStatus_v2:
       title: taskStatus_v2
       enum:
@@ -39355,6 +39476,19 @@ components:
         - completed
         - unknownFutureValue
       type: string
+    microsoft.graph.taskViewpoint:
+      title: taskViewpoint
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            type: string
+            nullable: true
+        reminderDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+      additionalProperties:
+        type: object
     microsoft.graph.checklistItem:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
