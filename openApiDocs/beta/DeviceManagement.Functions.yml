@@ -2486,7 +2486,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -3628,9 +3628,10 @@ components:
     microsoft.graph.diskType:
       title: diskType
       enum:
+        - unknown
         - hdd
         - ssd
-        - unknown
+        - unknownFutureValue
       type: string
     microsoft.graph.userExperienceAnalyticsHealthState:
       title: userExperienceAnalyticsHealthState

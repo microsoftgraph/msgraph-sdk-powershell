@@ -18297,7 +18297,7 @@ components:
       properties:
         actionName:
           type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize. Supported values in enterprise Cloud PC devices are: Rename, Reboot, Reprovision, Troubleshoot.'
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
           nullable: true
         actionState:
           $ref: '#/components/schemas/microsoft.graph.actionState'
@@ -18503,10 +18503,12 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: 'The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.'
           format: int32
           nullable: true
         userRestoreEnabled:
           type: boolean
+          description: 'If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.'
           nullable: true
       additionalProperties:
         type: object
