@@ -15,8 +15,7 @@ $scopesParameterBlock = {
     )
 
     $permissions = @()
-    $permissionsData = Permissions_GetPermissionsData
-    $permissionsOAuthQuery = Permissions_GetOauthData $permissionsData
+    $permissionsOAuthQuery = Permissions_GetOauthData (Permissions_GetPermissionsData)
     $permissions += $permissionsOAuthQuery.Name
     $permissions | Where-Object {
         $_ -like "$wordToComplete*"
