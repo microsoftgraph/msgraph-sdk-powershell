@@ -187,6 +187,26 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/subscriptions/{subscription-id}/microsoft.graph.reauthorize':
+    post:
+      tags:
+        - subscriptions.Actions
+      summary: Invoke action reauthorize
+      operationId: subscriptions_reauthorize
+      parameters:
+        - name: subscription-id
+          in: path
+          description: 'key: id of subscription'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: subscription
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
 components:
   schemas:
     microsoft.graph.subscription:

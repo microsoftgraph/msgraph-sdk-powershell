@@ -7519,7 +7519,7 @@ paths:
       tags:
         - users.authentication
       summary: Get device from users
-      description: The registered device on which this Windows Hello for Business key resides.
+      description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
       operationId: users.authentication.windowsHelloForBusinessMethods_GetDevice
       parameters:
         - name: user-id
@@ -7630,7 +7630,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property device in users
-      description: The registered device on which this Windows Hello for Business key resides.
+      description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
       operationId: users.authentication.windowsHelloForBusinessMethods_UpdateDevice
       parameters:
         - name: user-id
@@ -7664,7 +7664,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property device for users
-      description: The registered device on which this Windows Hello for Business key resides.
+      description: 'The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user''s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.'
       operationId: users.authentication.windowsHelloForBusinessMethods_DeleteDevice
       parameters:
         - name: user-id
@@ -11150,6 +11150,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the chat. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -16768,7 +16769,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
-              description: Description of the task
+              description: Description of the task.
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
