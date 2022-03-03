@@ -2880,6 +2880,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get tabs from chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_ListTabs
       parameters:
         - name: chat-id
@@ -2969,6 +2970,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Create new navigation property to tabs for chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_CreateTabs
       parameters:
         - name: chat-id
@@ -3000,6 +3002,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Get tabs from chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_GetTabs
       parameters:
         - name: chat-id
@@ -3065,6 +3068,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Update the navigation property tabs in chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_UpdateTabs
       parameters:
         - name: chat-id
@@ -3098,6 +3102,7 @@ paths:
       tags:
         - chats.teamsTab
       summary: Delete navigation property tabs for chats
+      description: A collection of all the tabs in the chat. Nullable.
       operationId: chats_DeleteTabs
       parameters:
         - name: chat-id
@@ -14806,6 +14811,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the chat. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.teamsAppInstallation:
@@ -24292,7 +24298,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
-              description: Description of the task
+              description: Description of the task.
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'

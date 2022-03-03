@@ -681,6 +681,42 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
     },
+    "/roleManagement/directory/transitiveRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/directory/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
     "/roleManagement/entitlementManagement": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
@@ -970,6 +1006,42 @@
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
     },
     "/roleManagement/entitlementManagement/roleEligibilitySchedules/microsoft.graph.filterByCurrentUser(on={on})": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/appScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
+    },
+    "/roleManagement/entitlementManagement/transitiveRoleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Enrolment.yml"
     }
