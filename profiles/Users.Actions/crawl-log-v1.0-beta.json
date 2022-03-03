@@ -1453,6 +1453,22 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
     },
+    "/users/{user-id}/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateApplication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateClassificationResults": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateRemoval": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
+    "/users/{user-id}/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.Actions.yml"
+    },
     "/users/{user-id}/tasks/alltasks/{baseTask-id}/microsoft.graph.move": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.Actions.yml"

@@ -4264,6 +4264,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserDistributionUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserDistributionUserCounts
+      operationId: reports_getBrowserDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserUserCounts
+      operationId: reports_getBrowserUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserUserDetail
+      operationId: reports_getBrowserUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getCredentialUsageSummary(period=''{period}'')':
     get:
       tags:
@@ -6181,6 +6253,104 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityCounts
+      operationId: reports_getTeamsTeamActivityCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDetail
+      operationId: reports_getTeamsTeamActivityDetail
+      parameters:
+        - name: date
+          in: path
+          description: 'Usage: date={date}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDetail
+      operationId: reports_getTeamsTeamActivityDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDistributionCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDistributionCounts
+      operationId: reports_getTeamsTeamActivityDistributionCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getTeamsUserActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -6259,6 +6429,30 @@ paths:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityTotalCounts
       operationId: reports_getTeamsUserActivityTotalCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityTotalDistributionCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityTotalDistributionCounts
+      operationId: reports_getTeamsUserActivityTotalDistributionCounts
       parameters:
         - name: period
           in: path
