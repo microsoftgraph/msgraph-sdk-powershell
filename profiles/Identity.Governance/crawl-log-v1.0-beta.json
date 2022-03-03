@@ -557,7 +557,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/$ref": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -769,7 +777,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/$ref": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackage/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -933,7 +949,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionHandlers/$ref": {
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionHandlers/{customExtensionHandler-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment-id}/accessPackageAssignmentPolicy/customExtensionHandlers/{customExtensionHandler-id}/customExtension/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -1289,7 +1313,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/$ref": {
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackageCatalogs/{accessPackageCatalog-id}/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
@@ -1649,7 +1681,15 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },
-    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/$ref": {
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
+    },
+    "/identityGovernance/entitlementManagement/accessPackages/{accessPackage-id}/accessPackageAssignmentPolicies/{accessPackageAssignmentPolicy-id}/customExtensionHandlers/{customExtensionHandler-id}/customExtension/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Identity.Governance.yml"
     },

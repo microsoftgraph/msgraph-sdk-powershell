@@ -93,6 +93,12 @@ directive:
     - microsoft.graph.groupPolicyDefinition
     - microsoft.graph.groupPolicyDefinitionValue
     - microsoft.graph.synchronizationLinkedObjects
+    - microsoft.graph.security.security
+    - microsoft.graph.teamSummary
+    - microsoft.graph.security.informationProtection
+    - microsoft.graph.security.informationProtectionPolicySetting
+    - microsoft.graph.security.sensitivityLabel
+    - microsoft.graph.taskViewpoint
   # Set parameter alias
   - where:
       parameter-name: OrderBy
