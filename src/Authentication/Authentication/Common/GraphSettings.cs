@@ -103,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// </summary>
         public void Save()
         {
-            Save(Constants.SettingFilePath);
+            Save(Constants.ContextSettingsPath);
         }
 
         /// <summary>

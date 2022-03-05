@@ -26,34 +26,32 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     public static class AuthenticationHelpers
     {
         static ReaderWriterLockSlim _cacheLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
-        // TODO: Move token name to config.
-        static string _tokenCacheName = "MyToken";
-        static string _tokenCachePath = Path.Combine(Constants.GraphDirectoryPath, _tokenCacheName);
 
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static void Logout(IAuthContext authContext)
+        public static async Task LogoutAsync(IAuthContext authContext)
         {
             try
             {
-                _cacheLock.EnterWriteLock();
+                //_cacheLock.EnterWriteLock();
                 if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
                     GraphSession.Instance.UserProvidedToken = null;
                 else
                 {
-                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                        WindowsTokenCache.DeleteToken(_tokenCacheName);
-                    else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                        MacTokenCache.DeleteToken(_tokenCacheName);
-                    else
-                        LinuxTokenCache.DeleteToken(_tokenCacheName);
+                    await DeleteAuthRecordAsync().ConfigureAwait(false);
+                    //if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                    //    WindowsTokenCache.DeleteToken(authContext.ClientId);
+                    //else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                    //    MacTokenCache.DeleteToken(authContext.ClientId);
+                    //else
+                    //    LinuxTokenCache.DeleteToken(authContext.ClientId);
                 }
             }
             finally
             {
-                _cacheLock.ExitWriteLock();
+                //_cacheLock.ExitWriteLock();
             }
         }
 
@@ -88,31 +86,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            AuthenticationRecord authRecord;
             InteractiveBrowserCredential interactiveBrowserCredential;
             var interactiveOptions = new InteractiveBrowserCredentialOptions
             {
                 ClientId = authContext.ClientId,
                 TenantId = authContext.TenantId,
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName }
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName }
             };
 
-            if (!File.Exists(_tokenCachePath))
+            if (!File.Exists(Constants.AuthRecordPath))
             {
                 interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
-                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
-                    await authRecord.SerializeAsync(authRecordStream);
+                var authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
             }
             else
             {
-                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Open, FileAccess.Read))
-                {
-                    authRecord = await AuthenticationRecord.DeserializeAsync(authRecordStream);
-                    interactiveOptions.AuthenticationRecord = authRecord;
-                    interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
-                }
+                interactiveOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+                interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
             }
             return interactiveBrowserCredential;
         }
@@ -122,14 +114,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            AuthenticationRecord authRecord;
             DeviceCodeCredential deviceCodeCredential;
             var deviceCodeOptions = new DeviceCodeCredentialOptions
             {
                 ClientId = authContext.ClientId,
                 TenantId = authContext.TenantId,
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName },
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName },
                 DeviceCodeCallback = (code, cancellation) =>
                 {
                     GraphSession.Instance.OutputWriter.WriteObject(code.Message);
@@ -137,21 +128,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 }
             };
 
-            if (!File.Exists(_tokenCachePath))
+            if (!File.Exists(Constants.AuthRecordPath))
             {
                 deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
-                authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
-                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Create, FileAccess.Write))
-                    await authRecord.SerializeAsync(authRecordStream);
+                var authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
+                await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
             }
             else
             {
-                using (var authRecordStream = new FileStream(_tokenCachePath, FileMode.Open, FileAccess.Read))
-                {
-                    authRecord = await AuthenticationRecord.DeserializeAsync(authRecordStream);
-                    deviceCodeOptions.AuthenticationRecord = authRecord;
-                    deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
-                }
+                deviceCodeOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
+                deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
             }
             return deviceCodeCredential;
         }
@@ -164,7 +150,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             var clientCredentialOptions = new ClientCertificateCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = _tokenCacheName },
+                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName },
             };
             return await Task.FromResult(new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions));
         }
@@ -374,6 +360,31 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return exception.InnerException is MsalClientException clientException &&
                    clientException?.ErrorCode == MsalError.LinuxXdgOpen ||
                    (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
+        }
+
+        private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
+        {
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            if (!File.Exists(Constants.AuthRecordPath))
+                return null;
+            using (var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
+                return await AuthenticationRecord.DeserializeAsync(authRecordStream);
+        }
+
+        public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord)
+        {
+            // Try to create directory if it doesn't exist.
+            Directory.CreateDirectory(Constants.GraphDirectoryPath);
+            using(var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+                await authRecord.SerializeAsync(authRecordStream);
+        }
+
+        public static Task DeleteAuthRecordAsync()
+        {
+            if (File.Exists(Constants.AuthRecordPath))
+                File.Delete(Constants.AuthRecordPath);
+            return Task.CompletedTask;
         }
     }
 }

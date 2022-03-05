@@ -118,7 +118,7 @@ namespace Microsoft.Graph.PowerShell
         /// <returns>A new instance of <see cref="GraphSettings"/>.</returns>
         internal static GraphSettings GetContextSettings(this PSCmdlet cmdlet)
         {
-            return new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.SettingFilePath, FileProtection.SharedRead));
+            return new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
         }
 
         internal static IEnumerable<T> RunScript<T>(string script)

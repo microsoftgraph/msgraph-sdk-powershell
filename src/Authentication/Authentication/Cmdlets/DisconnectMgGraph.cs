@@ -4,12 +4,18 @@
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+    using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using System;
     using System.Management.Automation;
+    using System.Threading;
+    using System.Threading.Tasks;
+
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
     [Alias("Disconnect-Graph")]
     public class DisconnectMgGraph : PSCmdlet
     {
+        private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+
         protected override void BeginProcessing()
         {
             base.BeginProcessing();
@@ -23,15 +29,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void ProcessRecord()
         {
             base.ProcessRecord();
+            try
+            {
+                using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
+                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
+            }
+            catch (Exception exception)
+            {
+                WriteError(new ErrorRecord(exception, string.Empty, ErrorCategory.NotSpecified, null));
+            }
+        }
 
+        private async Task ProcessRecordAsync()
+        {
             IAuthContext authContext = GraphSession.Instance.AuthContext;
-
             if (authContext == null)
                 ThrowTerminatingError(
                     new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
-            AuthenticationHelpers.Logout(authContext);
-
+            await AuthenticationHelpers.LogoutAsync(authContext);
             GraphSession.Instance.AuthContext = null;
         }
 
