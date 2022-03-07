@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: ^admin(_.*Windows|.windows_.*Updates|.windows.updates.deployments_.*Audience)$|admin.serviceAnnouncement.*
+  - remove-path-by-operation: ^admin(_.*Windows|.windows_.*Updates|.windows.updates.deployments_.*Audience)$|^admin(?!\.windows).*$
 # Pluralize.
   - where:
       subject: (.*)AdminWindowUpdate(.*)
