@@ -8,14 +8,14 @@ schema: 2.0.0
 # New-MgDeviceAppMgtManagedEBook
 
 ## SYNOPSIS
-Create new navigation property to managedEBooks for deviceAppManagement
+The Managed eBook.
 
 ## SYNTAX
 
 ### CreateExpanded1 (Default)
 ```
 New-MgDeviceAppMgtManagedEBook [-AdditionalProperties <Hashtable>]
- [-Assignments <IMicrosoftGraphManagedEBookAssignment[]>] [-CreatedDateTime <DateTime>]
+ [-Assignments <IMicrosoftGraphManagedEBookAssignment1[]>] [-CreatedDateTime <DateTime>]
  [-Description <String>] [-DeviceStates <IMicrosoftGraphDeviceInstallState[]>] [-DisplayName <String>]
  [-Id <String>] [-InformationUrl <String>] [-InstallSummary <IMicrosoftGraphEBookInstallSummary>]
  [-LargeCover <IMicrosoftGraphMimeContent>] [-LastModifiedDateTime <DateTime>]
@@ -25,32 +25,14 @@ New-MgDeviceAppMgtManagedEBook [-AdditionalProperties <Hashtable>]
 
 ### Create1
 ```
-New-MgDeviceAppMgtManagedEBook -BodyParameter <IMicrosoftGraphManagedEBook> [-Confirm] [-WhatIf]
+New-MgDeviceAppMgtManagedEBook -BodyParameter <IMicrosoftGraphManagedEBook1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property to managedEBooks for deviceAppManagement
+The Managed eBook.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -71,10 +53,10 @@ Accept wildcard characters: False
 
 ### -Assignments
 The list of assignments for this eBook.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBookAssignment1[]
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -87,10 +69,10 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class containing the base properties for Managed eBook.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
 Parameter Sets: Create1
 Aliases:
 
@@ -133,7 +115,7 @@ Accept wildcard characters: False
 
 ### -DeviceStates
 The list of installation states for this eBook.
-To construct, see NOTES section for DEVICESTATES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for DEVICESTATES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceInstallState[]
@@ -194,7 +176,7 @@ Accept wildcard characters: False
 
 ### -InstallSummary
 Contains properties for the installation summary of a book for a device.
-To construct, see NOTES section for INSTALLSUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INSTALLSUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEBookInstallSummary
@@ -210,7 +192,7 @@ Accept wildcard characters: False
 
 ### -LargeCover
 Contains properties for a generic mime content.
-To construct, see NOTES section for LARGECOVER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LARGECOVER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
@@ -286,7 +268,7 @@ Accept wildcard characters: False
 
 ### -UserStateSummary
 The list of installation states for this eBook.
-To construct, see NOTES section for USERSTATESUMMARY properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for USERSTATESUMMARY properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserInstallStateSummary[]
@@ -336,11 +318,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphManagedEBook1
 
 ## NOTES
 
@@ -353,18 +335,18 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment[]>: The list of assignments for this eBook.
+ASSIGNMENTS <IMicrosoftGraphManagedEBookAssignment1[]>: The list of assignments for this eBook.
   - `[Id <String>]`: Read-only.
-  - `[InstallIntent <String>]`: installIntent
+  - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
 
-BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the base properties for Managed eBook.
+BODYPARAMETER <IMicrosoftGraphManagedEBook1>: An abstract class containing the base properties for Managed eBook.
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Assignments <IMicrosoftGraphManagedEBookAssignment[]>]`: The list of assignments for this eBook.
+  - `[Assignments <IMicrosoftGraphManagedEBookAssignment1[]>]`: The list of assignments for this eBook.
     - `[Id <String>]`: Read-only.
-    - `[InstallIntent <String>]`: installIntent
+    - `[InstallIntent <String>]`: Possible values for the install intent chosen by the admin.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[CreatedDateTime <DateTime?>]`: The date and time when the eBook file was created.
@@ -374,7 +356,7 @@ BODYPARAMETER <IMicrosoftGraphManagedEBook>: An abstract class containing the ba
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: installState
+    - `[InstallState <String>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.
@@ -411,7 +393,7 @@ DEVICESTATES <IMicrosoftGraphDeviceInstallState[]>: The list of installation sta
   - `[DeviceId <String>]`: Device Id.
   - `[DeviceName <String>]`: Device name.
   - `[ErrorCode <String>]`: The error code for install failures.
-  - `[InstallState <String>]`: installState
+  - `[InstallState <String>]`: Possible values for install state.
   - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
   - `[OSDescription <String>]`: OS Description.
   - `[OSVersion <String>]`: OS Version.
@@ -439,7 +421,7 @@ USERSTATESUMMARY <IMicrosoftGraphUserInstallStateSummary[]>: The list of install
     - `[DeviceId <String>]`: Device Id.
     - `[DeviceName <String>]`: Device name.
     - `[ErrorCode <String>]`: The error code for install failures.
-    - `[InstallState <String>]`: installState
+    - `[InstallState <String>]`: Possible values for install state.
     - `[LastSyncDateTime <DateTime?>]`: Last sync date and time.
     - `[OSDescription <String>]`: OS Description.
     - `[OSVersion <String>]`: OS Version.

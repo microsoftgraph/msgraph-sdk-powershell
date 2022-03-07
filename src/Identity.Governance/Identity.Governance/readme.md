@@ -38,17 +38,17 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)$
+  - remove-path-by-operation: ^identityGovernance_(Get|Create|Update|Set|Delete)EntitlementManagement$|^identityGovernance\.entitlementManagement(_.*AccessPackageResourceRoleScopes|\.accessPackageResourceRoleScopes.*|\.accessPackageAssignmentPolicies\..*|\.accessPackageAssignmentRequests\..*|\.accessPackageAssignmentResourceRoles\..*|\.accessPackageAssignments\..*|\.accessPackageCatalogs\..*|\.accessPackageResourceRequests\..*|\.accessPackageResources\..*|\.accessPackages\..*)|^identityGovernance\.accessReviews\.definitions\.instances\.decisions\.(instance_.*)|^identityGovernance\.accessReviews\.definitions\.instances\.stages\.decisions.*$
 # Remove cmdlets
   - where:
       verb: Get
       subject: ^AgreementFile$
-      variant: ^Get2|Get3|GetViaIdentity2|GetViaIdentity3$
+      variant: ^Get1|Get3|GetViaIdentity1|GetViaIdentity3$
     remove: true
   - where:
       verb: Update
       subject: ^AgreementFile$
-      variant: ^Update2|Update3|UpdateExpanded2|UpdateExpanded3|UpdateViaIdentity2|UpdateViaIdentity3|UpdateViaIdentityExpanded2|UpdateViaIdentityExpanded3$
+      variant: ^Update1|Update3|UpdateExpanded1|UpdateExpanded3|UpdateViaIdentity1|UpdateViaIdentity3|UpdateViaIdentityExpanded1|UpdateViaIdentityExpanded3$
     remove: true
   - where:
       verb: Remove
@@ -294,7 +294,7 @@ directive:
     remove: true
   - where:
       verb: New|Remove|Update|Get
-      subject: (.*)(IdentityGovernance)Term
+      subject: ^(.*)(IdentityGovernance)Term$
     remove: true
   - where:
       verb: New|Remove|Update|Get|Invoke
@@ -335,6 +335,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.2
+module-version: 1.9.3
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

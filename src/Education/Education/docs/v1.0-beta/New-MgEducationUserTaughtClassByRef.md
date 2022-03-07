@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgEducationUserTaughtClassByRef
 
 ## SYNOPSIS
-Create new navigation property ref to taughtClasses for education
+Classes for which the user is a teacher.
 
 ## SYNTAX
 
@@ -37,27 +37,9 @@ New-MgEducationUserTaughtClassByRef -InputObject <IEducationIdentity> [-Addition
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to taughtClasses for education
+Classes for which the user is a teacher.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -108,7 +90,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity

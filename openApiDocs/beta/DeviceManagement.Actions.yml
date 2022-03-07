@@ -1187,6 +1187,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.comanagedDevices_restoreCloudPc
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/comanagedDevices/{managedDevice-id}/microsoft.graph.retire':
     post:
       tags:
@@ -1571,6 +1604,44 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/comanagedDevices/microsoft.graph.bulkRestoreCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkRestoreCloudPc
+      operationId: deviceManagement.comanagedDevices_bulkRestoreCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                restorePointDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                timeRange:
+                  $ref: '#/components/schemas/microsoft.graph.restoreTimeRange'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -2120,6 +2191,52 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/detectedApps/{detectedApp-id}/managedDevices/microsoft.graph.bulkRestoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkRestoreCloudPc
+      operationId: deviceManagement.detectedApps.managedDevices_bulkRestoreCloudPc
+      parameters:
+        - name: detectedApp-id
+          in: path
+          description: 'key: id of detectedApp'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: detectedApp
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                restorePointDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                timeRange:
+                  $ref: '#/components/schemas/microsoft.graph.restoreTimeRange'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -3124,6 +3241,46 @@ paths:
               type: object
               properties:
                 targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceComplianceScripts/{deviceComplianceScript-id}/deviceRunStates/{deviceComplianceScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceComplianceScripts.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceComplianceScript-id
+          in: path
+          description: 'key: id of deviceComplianceScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScript
+        - name: deviceComplianceScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceComplianceScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceComplianceScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
                   type: string
                   nullable: true
               additionalProperties:
@@ -4737,6 +4894,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
@@ -6070,6 +6267,53 @@ paths:
               type: object
               properties:
                 targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceCustomAttributeShellScripts/{deviceCustomAttributeShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceCustomAttributeShellScripts.userRunStates.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceCustomAttributeShellScript-id
+          in: path
+          description: 'key: id of deviceCustomAttributeShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceCustomAttributeShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
                   type: string
                   nullable: true
               additionalProperties:
@@ -7433,6 +7677,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceHealthScripts.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceHealthScript-id
+          in: path
+          description: 'key: id of deviceHealthScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScript
+        - name: deviceHealthScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceHealthScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceHealthScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceHealthScripts/{deviceHealthScript-id}/deviceRunStates/{deviceHealthScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
@@ -8692,6 +8976,46 @@ paths:
               type: object
               properties:
                 targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceManagementScripts.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
                   type: string
                   nullable: true
               additionalProperties:
@@ -10047,6 +10371,53 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceManagementScripts.userRunStates.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceManagementScript-id
+          in: path
+          description: 'key: id of deviceManagementScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/deviceManagementScripts/{deviceManagementScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.retire':
     post:
       tags:
@@ -11319,6 +11690,46 @@ paths:
               type: object
               properties:
                 targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceShellScripts.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
                   type: string
                   nullable: true
               additionalProperties:
@@ -12663,6 +13074,53 @@ paths:
               type: object
               properties:
                 targetServicePlanId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/deviceShellScripts/{deviceShellScript-id}/userRunStates/{deviceManagementScriptUserState-id}/deviceRunStates/{deviceManagementScriptDeviceState-id}/managedDevice/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.deviceShellScripts.userRunStates.deviceRunStates.managedDevice_restoreCloudPc
+      parameters:
+        - name: deviceShellScript-id
+          in: path
+          description: 'key: id of deviceShellScript'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceShellScript
+        - name: deviceManagementScriptUserState-id
+          in: path
+          description: 'key: id of deviceManagementScriptUserState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptUserState
+        - name: deviceManagementScriptDeviceState-id
+          in: path
+          description: 'key: id of deviceManagementScriptDeviceState'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: deviceManagementScriptDeviceState
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
                   type: string
                   nullable: true
               additionalProperties:
@@ -14429,6 +14887,39 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.restoreCloudPc':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action restoreCloudPc
+      operationId: deviceManagement.managedDevices_restoreCloudPc
+      parameters:
+        - name: managedDevice-id
+          in: path
+          description: 'key: id of managedDevice'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: managedDevice
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cloudPcSnapshotId:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/managedDevices/{managedDevice-id}/microsoft.graph.retire':
     post:
       tags:
@@ -14813,6 +15304,44 @@ paths:
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/managedDevices/microsoft.graph.bulkRestoreCloudPc:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action bulkRestoreCloudPc
+      operationId: deviceManagement.managedDevices_bulkRestoreCloudPc
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                managedDeviceIds:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                restorePointDateTime:
+                  pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                  type: string
+                  format: date-time
+                  nullable: true
+                timeRange:
+                  $ref: '#/components/schemas/microsoft.graph.restoreTimeRange'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -15304,6 +15833,46 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: notificationMessageTemplate
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.disable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_disable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.enable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_enable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
       responses:
         '204':
           description: Success
@@ -16150,12 +16719,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingDetailsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingDetailsReport
+      operationId: deviceManagement.reports_getComplianceSettingDetailsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport:
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingNonComplianceReport
       operationId: deviceManagement.reports_getComplianceSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingsReport
+      operationId: deviceManagement.reports_getComplianceSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -20562,6 +21265,44 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.restoreTimeRange:
+      title: restoreTimeRange
+      enum:
+        - before
+        - after
+        - beforeOrAfter
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcBulkRemoteActionResult:
+      title: cloudPcBulkRemoteActionResult
+      type: object
+      properties:
+        failedDeviceIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of all the Intune managed device IDs that completed the bulk action with a failure.
+        notFoundDeviceIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
+        notSupportedDeviceIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
+        successfulDeviceIds:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: A list of all the Intune managed device IDs that completed the bulk action successfully.
+      additionalProperties:
+        type: object
     microsoft.graph.managedDeviceRemoteAction:
       title: managedDeviceRemoteAction
       enum:
@@ -21456,6 +22197,12 @@ components:
       title: assignmentFilterEvaluateRequest
       type: object
       properties:
+        orderBy:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Order the devices should be sorted in. Default is ascending on device name.
         platform:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         rule:
@@ -21953,6 +22700,8 @@ components:
         - macOS
         - windows10X
         - windows10
+        - linux
+        - unknownFutureValue
       type: string
       description: Supported platform types.
     microsoft.graph.deviceManagementConfigurationTechnologies:
@@ -23391,6 +24140,10 @@ components:
             displayName:
               type: string
               description: The localized friendly name of the ADMX file.
+              nullable: true
+            fileName:
+              type: string
+              description: 'The file name of the ADMX file without the path. For example: edge.admx'
               nullable: true
             languageCodes:
               type: array

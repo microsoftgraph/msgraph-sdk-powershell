@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupCalendarPermission
 
 ## SYNOPSIS
-Delete navigation property calendarPermissions for groups
+The permissions of the users with whom the calendar is shared.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgGroupCalendarPermission -InputObject <ICalendarIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-Delete navigation property calendarPermissions for groups
+The permissions of the users with whom the calendar is shared.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -96,7 +78,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICalendarIdentity

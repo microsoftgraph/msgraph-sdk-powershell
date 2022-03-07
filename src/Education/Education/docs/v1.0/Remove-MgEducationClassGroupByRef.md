@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationClassGroupByRef
 
 ## SYNOPSIS
-Delete ref of navigation property group for education
+The underlying Microsoft 365 group object.
 
 ## SYNTAX
 
@@ -25,27 +25,9 @@ Remove-MgEducationClassGroupByRef -InputObject <IEducationIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete ref of navigation property group for education
+The underlying Microsoft 365 group object.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -81,7 +63,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity

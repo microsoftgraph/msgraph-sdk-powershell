@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgSecurityIPSecurityProfile
 
 ## SYNOPSIS
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## SYNTAX
 
@@ -47,27 +47,9 @@ Update-MgSecurityIPSecurityProfile -InputObject <ISecurityIdentity> [-ActivityGr
 ```
 
 ## DESCRIPTION
-Update the navigation property ipSecurityProfiles in Security
+Update the navigation property ipSecurityProfiles in security
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -148,7 +130,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 ipSecurityProfile
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPSecurityProfile
@@ -224,7 +206,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
@@ -240,7 +222,7 @@ Accept wildcard characters: False
 
 ### -IPCategories
 .
-To construct, see NOTES section for IPCATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for IPCATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPCategory[]
@@ -256,7 +238,7 @@ Accept wildcard characters: False
 
 ### -IPReferenceData
 .
-To construct, see NOTES section for IPREFERENCEDATA properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for IPREFERENCEDATA properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphIPReferenceData[]
@@ -347,7 +329,7 @@ Accept wildcard characters: False
 
 ### -VendorInformation
 securityVendorInformation
-To construct, see NOTES section for VENDORINFORMATION properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for VENDORINFORMATION properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
@@ -429,7 +411,7 @@ BODYPARAMETER <IMicrosoftGraphIPSecurityProfile>: ipSecurityProfile
     - `[Name <String>]`: 
     - `[Vendor <String>]`: 
   - `[IPReferenceData <IMicrosoftGraphIPReferenceData[]>]`: 
-    - `[Asn <Int32?>]`: 
+    - `[Asn <Int64?>]`: 
     - `[City <String>]`: 
     - `[CountryOrRegionCode <String>]`: 
     - `[Organization <String>]`: 
@@ -452,10 +434,12 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
@@ -465,7 +449,7 @@ IPCATEGORIES <IMicrosoftGraphIPCategory[]>: .
   - `[Vendor <String>]`: 
 
 IPREFERENCEDATA <IMicrosoftGraphIPReferenceData[]>: .
-  - `[Asn <Int32?>]`: 
+  - `[Asn <Int64?>]`: 
   - `[City <String>]`: 
   - `[CountryOrRegionCode <String>]`: 
   - `[Organization <String>]`: 

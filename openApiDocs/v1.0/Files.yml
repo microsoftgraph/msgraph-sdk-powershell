@@ -5226,12 +5226,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/drives/{drive-id}/list/drive/$ref':
+    get:
       tags:
         - drives.list
-      summary: Update the navigation property drive in drives
+      summary: Get ref of drive from drives
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: drives.list_UpdateDrive
+      operationId: drives.list_GetGraphRefDrive
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: drives.list.Drive.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            lastModifiedByUser:
+              operationId: drives.list.Drive.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+            bundles:
+              operationId: drives.list.Drive.ListBundles
+              parameters:
+                drive-id: $request.path.drive-id
+            following:
+              operationId: drives.list.Drive.ListFollowing
+              parameters:
+                drive-id: $request.path.drive-id
+            items:
+              operationId: drives.list.Drive.ListItems
+              parameters:
+                drive-id: $request.path.drive-id
+            list:
+              operationId: drives.list.Drive.GetList
+              parameters:
+                drive-id: $request.path.drive-id
+            root:
+              operationId: drives.list.Drive.GetRoot
+              parameters:
+                drive-id: $request.path.drive-id
+            special:
+              operationId: drives.list.Drive.ListSpecial
+              parameters:
+                drive-id: $request.path.drive-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.list
+      summary: Update the ref of navigation property drive in drives
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
+      operationId: drives.list_SetGraphRefDrive
       parameters:
         - name: drive-id
           in: path
@@ -5241,11 +5299,13 @@ paths:
             type: string
           x-ms-docs-key-type: drive
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -5256,9 +5316,9 @@ paths:
     delete:
       tags:
         - drives.list
-      summary: Delete navigation property drive for drives
+      summary: Delete ref of navigation property drive for drives
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: drives.list_DeleteDrive
+      operationId: drives.list_DeleteGraphRefDrive
       parameters:
         - name: drive-id
           in: path
@@ -5964,12 +6024,95 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/drives/{drive-id}/list/items/{listItem-id}/driveItem/$ref':
+    get:
       tags:
         - drives.list
-      summary: Update the navigation property driveItem in drives
+      summary: Get ref of driveItem from drives
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: drives.list.items_UpdateDriveItem
+      operationId: drives.list.items_GetGraphRefDriveItem
+      parameters:
+        - name: drive-id
+          in: path
+          description: 'key: id of drive'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: drive
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: drives.list.items.DriveItem.GetCreatedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: drives.list.items.DriveItem.GetLastModifiedByUser
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            workbook:
+              operationId: drives.list.items.DriveItem.GetWorkbook
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: drives.list.items.DriveItem.GetAnalytics
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            children:
+              operationId: drives.list.items.DriveItem.ListChildren
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            listItem:
+              operationId: drives.list.items.DriveItem.GetListItem
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            permissions:
+              operationId: drives.list.items.DriveItem.ListPermissions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            subscriptions:
+              operationId: drives.list.items.DriveItem.ListSubscriptions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            thumbnails:
+              operationId: drives.list.items.DriveItem.ListThumbnails
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: drives.list.items.DriveItem.ListVersions
+              parameters:
+                drive-id: $request.path.drive-id
+                listItem-id: $request.path.listItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - drives.list
+      summary: Update the ref of navigation property driveItem in drives
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
+      operationId: drives.list.items_SetGraphRefDriveItem
       parameters:
         - name: drive-id
           in: path
@@ -5986,11 +6129,13 @@ paths:
             type: string
           x-ms-docs-key-type: listItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -6001,9 +6146,9 @@ paths:
     delete:
       tags:
         - drives.list
-      summary: Delete navigation property driveItem for drives
+      summary: Delete ref of navigation property driveItem for drives
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: drives.list.items_DeleteDriveItem
+      operationId: drives.list.items_DeleteGraphRefDriveItem
       parameters:
         - name: drive-id
           in: path
@@ -6024,72 +6169,6 @@ paths:
           description: ETag
           schema:
             type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/list/items/{listItem-id}/driveItem/content':
-    get:
-      tags:
-        - drives.list
-      summary: Get media content for the navigation property driveItem from drives
-      operationId: drives.list.items_GetDriveItemContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      responses:
-        '200':
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - drives.list
-      summary: Update media content for the navigation property driveItem in drives
-      operationId: drives.list.items_SetDriveItemContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         '204':
           description: Success
@@ -8028,12 +8107,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/groups/{group-id}/drive/$ref':
+    get:
       tags:
         - groups.drive
-      summary: Update the navigation property drive in groups
+      summary: Get ref of drive from groups
       description: The group's default drive. Read-only.
-      operationId: groups_UpdateDrive
+      operationId: groups_GetGraphRefDrive
+      parameters:
+        - name: group-id
+          in: path
+          description: 'key: id of group'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: group
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: groups.Drive.GetCreatedByUser
+              parameters:
+                group-id: $request.path.group-id
+            lastModifiedByUser:
+              operationId: groups.Drive.GetLastModifiedByUser
+              parameters:
+                group-id: $request.path.group-id
+            bundles:
+              operationId: groups.Drive.ListBundles
+              parameters:
+                group-id: $request.path.group-id
+            following:
+              operationId: groups.Drive.ListFollowing
+              parameters:
+                group-id: $request.path.group-id
+            items:
+              operationId: groups.Drive.ListItems
+              parameters:
+                group-id: $request.path.group-id
+            list:
+              operationId: groups.Drive.GetList
+              parameters:
+                group-id: $request.path.group-id
+            root:
+              operationId: groups.Drive.GetRoot
+              parameters:
+                group-id: $request.path.group-id
+            special:
+              operationId: groups.Drive.ListSpecial
+              parameters:
+                group-id: $request.path.group-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - groups.drive
+      summary: Update the ref of navigation property drive in groups
+      description: The group's default drive. Read-only.
+      operationId: groups_SetGraphRefDrive
       parameters:
         - name: group-id
           in: path
@@ -8043,11 +8180,13 @@ paths:
             type: string
           x-ms-docs-key-type: group
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -8058,9 +8197,9 @@ paths:
     delete:
       tags:
         - groups.drive
-      summary: Delete navigation property drive for groups
+      summary: Delete ref of navigation property drive for groups
       description: The group's default drive. Read-only.
-      operationId: groups_DeleteDrive
+      operationId: groups_DeleteGraphRefDrive
       parameters:
         - name: group-id
           in: path
@@ -8890,12 +9029,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/driveItem/$ref':
+    get:
       tags:
         - shares.driveItem
-      summary: Update the navigation property driveItem in shares
+      summary: Get ref of driveItem from shares
       description: Used to access the underlying driveItem
-      operationId: shares_UpdateDriveItem
+      operationId: shares_GetGraphRefDriveItem
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.driveItem
+      summary: Update the ref of navigation property driveItem in shares
+      description: Used to access the underlying driveItem
+      operationId: shares_SetGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -8905,11 +9110,13 @@ paths:
             type: string
           x-ms-docs-key-type: sharedDriveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -8920,9 +9127,9 @@ paths:
     delete:
       tags:
         - shares.driveItem
-      summary: Delete navigation property driveItem for shares
+      summary: Delete ref of navigation property driveItem for shares
       description: Used to access the underlying driveItem
-      operationId: shares_DeleteDriveItem
+      operationId: shares_DeleteGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -8936,58 +9143,6 @@ paths:
           description: ETag
           schema:
             type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/driveItem/content':
-    get:
-      tags:
-        - shares.driveItem
-      summary: Get media content for the navigation property driveItem from shares
-      operationId: shares_GetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      responses:
-        '200':
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - shares.driveItem
-      summary: Update media content for the navigation property driveItem in shares
-      operationId: shares_SetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         '204':
           description: Success
@@ -9193,44 +9348,13 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - shares.driveItem
-      summary: Create new navigation property to items for shares
-      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_CreateItems
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/items/{driveItem-id}':
+  '/shares/{sharedDriveItem-id}/items/$ref':
     get:
       tags:
         - shares.driveItem
-      summary: Get items from shares
+      summary: Get ref of items from shares
       description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_GetItems
+      operationId: shares_ListGraphRefItems
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -9239,16 +9363,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: sharedDriveItem
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -9257,139 +9379,103 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - createdBy
+                - createdBy desc
                 - createdDateTime
+                - createdDateTime desc
                 - description
+                - description desc
                 - eTag
+                - eTag desc
                 - lastModifiedBy
+                - lastModifiedBy desc
                 - lastModifiedDateTime
+                - lastModifiedDateTime desc
                 - name
+                - name desc
                 - parentReference
+                - parentReference desc
                 - webUrl
+                - webUrl desc
                 - audio
+                - audio desc
                 - bundle
+                - bundle desc
                 - content
+                - content desc
                 - cTag
+                - cTag desc
                 - deleted
+                - deleted desc
                 - file
+                - file desc
                 - fileSystemInfo
+                - fileSystemInfo desc
                 - folder
+                - folder desc
                 - image
+                - image desc
                 - location
+                - location desc
                 - malware
+                - malware desc
                 - package
+                - package desc
                 - pendingOperations
+                - pendingOperations desc
                 - photo
+                - photo desc
                 - publication
+                - publication desc
                 - remoteItem
+                - remoteItem desc
                 - root
+                - root desc
                 - searchResult
+                - searchResult desc
                 - shared
+                - shared desc
                 - sharepointIds
+                - sharepointIds desc
                 - size
+                - size desc
                 - specialFolder
+                - specialFolder desc
                 - video
+                - video desc
                 - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
+                - webDavUrl desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          description: Retrieved navigation property links
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: shares.Items.GetCreatedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            lastModifiedByUser:
-              operationId: shares.Items.GetLastModifiedByUser
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            workbook:
-              operationId: shares.Items.GetWorkbook
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            analytics:
-              operationId: shares.Items.GetAnalytics
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            children:
-              operationId: shares.Items.ListChildren
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            listItem:
-              operationId: shares.Items.GetListItem
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            permissions:
-              operationId: shares.Items.ListPermissions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            subscriptions:
-              operationId: shares.Items.ListSubscriptions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            thumbnails:
-              operationId: shares.Items.ListThumbnails
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
-            versions:
-              operationId: shares.Items.ListVersions
-              parameters:
-                sharedDriveItem-id: $request.path.sharedDriveItem-id
-                driveItem-id: $request.path.driveItem-id
+                title: Collection of links of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
-    patch:
+    post:
       tags:
         - shares.driveItem
-      summary: Update the navigation property items in shares
+      summary: Create new navigation property ref to items for shares
       description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_UpdateItems
+      operationId: shares_CreateGraphRefItems
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -9398,121 +9484,24 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: sharedDriveItem
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref value
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - shares.driveItem
-      summary: Delete navigation property items for shares
-      description: All driveItems contained in the sharing root. This collection cannot be enumerated.
-      operationId: shares_DeleteItems
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/items/{driveItem-id}/content':
-    get:
-      tags:
-        - shares.driveItem
-      summary: Get media content for the navigation property items from shares
-      operationId: shares_GetItemsContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      responses:
-        '200':
-          description: Retrieved media content
+        '201':
+          description: Created navigation property link.
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - shares.driveItem
-      summary: Update media content for the navigation property items in shares
-      operationId: shares_SetItemsContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -12857,12 +12846,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/list/drive/$ref':
+    get:
       tags:
         - shares.list
-      summary: Update the navigation property drive in shares
+      summary: Get ref of drive from shares
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: shares.list_UpdateDrive
+      operationId: shares.list_GetGraphRefDrive
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.list.Drive.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.list.Drive.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            bundles:
+              operationId: shares.list.Drive.ListBundles
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            following:
+              operationId: shares.list.Drive.ListFollowing
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.list.Drive.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            list:
+              operationId: shares.list.Drive.GetList
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            root:
+              operationId: shares.list.Drive.GetRoot
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            special:
+              operationId: shares.list.Drive.ListSpecial
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.list
+      summary: Update the ref of navigation property drive in shares
+      description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
+      operationId: shares.list_SetGraphRefDrive
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -12872,11 +12919,13 @@ paths:
             type: string
           x-ms-docs-key-type: sharedDriveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -12887,9 +12936,9 @@ paths:
     delete:
       tags:
         - shares.list
-      summary: Delete navigation property drive for shares
+      summary: Delete ref of navigation property drive for shares
       description: 'Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].'
-      operationId: shares.list_DeleteDrive
+      operationId: shares.list_DeleteGraphRefDrive
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13595,12 +13644,95 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem/$ref':
+    get:
       tags:
         - shares.list
-      summary: Update the navigation property driveItem in shares
+      summary: Get ref of driveItem from shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.list.items_UpdateDriveItem
+      operationId: shares.list.items_GetGraphRefDriveItem
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+        - name: listItem-id
+          in: path
+          description: 'key: id of listItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: listItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.list.items.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            lastModifiedByUser:
+              operationId: shares.list.items.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            workbook:
+              operationId: shares.list.items.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            analytics:
+              operationId: shares.list.items.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            children:
+              operationId: shares.list.items.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            listItem:
+              operationId: shares.list.items.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            permissions:
+              operationId: shares.list.items.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            subscriptions:
+              operationId: shares.list.items.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            thumbnails:
+              operationId: shares.list.items.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+            versions:
+              operationId: shares.list.items.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+                listItem-id: $request.path.listItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.list
+      summary: Update the ref of navigation property driveItem in shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
+      operationId: shares.list.items_SetGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13617,11 +13749,13 @@ paths:
             type: string
           x-ms-docs-key-type: listItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -13632,9 +13766,9 @@ paths:
     delete:
       tags:
         - shares.list
-      summary: Delete navigation property driveItem for shares
+      summary: Delete ref of navigation property driveItem for shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.list.items_DeleteDriveItem
+      operationId: shares.list.items_DeleteGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -13655,72 +13789,6 @@ paths:
           description: ETag
           schema:
             type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/list/items/{listItem-id}/driveItem/content':
-    get:
-      tags:
-        - shares.list
-      summary: Get media content for the navigation property driveItem from shares
-      operationId: shares.list.items_GetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      responses:
-        '200':
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - shares.list
-      summary: Update media content for the navigation property driveItem in shares
-      operationId: shares.list.items_SetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-        - name: listItem-id
-          in: path
-          description: 'key: id of listItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: listItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         '204':
           description: Success
@@ -15145,12 +15213,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/listItem/driveItem/$ref':
+    get:
       tags:
         - shares.listItem
-      summary: Update the navigation property driveItem in shares
+      summary: Get ref of driveItem from shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.listItem_UpdateDriveItem
+      operationId: shares.listItem_GetGraphRefDriveItem
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.listItem.DriveItem.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.listItem.DriveItem.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.listItem.DriveItem.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.listItem.DriveItem.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.listItem.DriveItem.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.listItem.DriveItem.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.listItem.DriveItem.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.listItem.DriveItem.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.listItem.DriveItem.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.listItem.DriveItem.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.listItem
+      summary: Update the ref of navigation property driveItem in shares
+      description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
+      operationId: shares.listItem_SetGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -15160,11 +15294,13 @@ paths:
             type: string
           x-ms-docs-key-type: sharedDriveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -15175,9 +15311,9 @@ paths:
     delete:
       tags:
         - shares.listItem
-      summary: Delete navigation property driveItem for shares
+      summary: Delete ref of navigation property driveItem for shares
       description: 'For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]'
-      operationId: shares.listItem_DeleteDriveItem
+      operationId: shares.listItem_DeleteGraphRefDriveItem
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -15191,58 +15327,6 @@ paths:
           description: ETag
           schema:
             type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/listItem/driveItem/content':
-    get:
-      tags:
-        - shares.listItem
-      summary: Get media content for the navigation property driveItem from shares
-      operationId: shares.listItem_GetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      responses:
-        '200':
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - shares.listItem
-      summary: Update media content for the navigation property driveItem in shares
-      operationId: shares.listItem_SetDriveItemContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         '204':
           description: Success
@@ -16127,12 +16211,78 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/root/$ref':
+    get:
       tags:
         - shares.driveItem
-      summary: Update the navigation property root in shares
+      summary: Get ref of root from shares
       description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-      operationId: shares_UpdateRoot
+      operationId: shares_GetGraphRefRoot
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.Root.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.Root.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            workbook:
+              operationId: shares.Root.GetWorkbook
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.Root.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            children:
+              operationId: shares.Root.ListChildren
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            listItem:
+              operationId: shares.Root.GetListItem
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.Root.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            subscriptions:
+              operationId: shares.Root.ListSubscriptions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            thumbnails:
+              operationId: shares.Root.ListThumbnails
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            versions:
+              operationId: shares.Root.ListVersions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.driveItem
+      summary: Update the ref of navigation property root in shares
+      description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
+      operationId: shares_SetGraphRefRoot
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16142,11 +16292,13 @@ paths:
             type: string
           x-ms-docs-key-type: sharedDriveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -16157,9 +16309,9 @@ paths:
     delete:
       tags:
         - shares.driveItem
-      summary: Delete navigation property root for shares
+      summary: Delete ref of navigation property root for shares
       description: Used to access the underlying driveItem. Deprecated -- use driveItem instead.
-      operationId: shares_DeleteRoot
+      operationId: shares_DeleteGraphRefRoot
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16173,58 +16325,6 @@ paths:
           description: ETag
           schema:
             type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/shares/{sharedDriveItem-id}/root/content':
-    get:
-      tags:
-        - shares.driveItem
-      summary: Get media content for the navigation property root from shares
-      operationId: shares_GetRootContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      responses:
-        '200':
-          description: Retrieved media content
-          content:
-            application/octet-stream:
-              schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - shares.driveItem
-      summary: Update media content for the navigation property root in shares
-      operationId: shares_SetRootContent
-      parameters:
-        - name: sharedDriveItem-id
-          in: path
-          description: 'key: id of sharedDriveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedDriveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
       responses:
         '204':
           description: Success
@@ -16385,12 +16485,98 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/shares/{sharedDriveItem-id}/site/$ref':
+    get:
       tags:
         - shares.site
-      summary: Update the navigation property site in shares
+      summary: Get ref of site from shares
       description: Used to access the underlying site
-      operationId: shares_UpdateSite
+      operationId: shares_GetGraphRefSite
+      parameters:
+        - name: sharedDriveItem-id
+          in: path
+          description: 'key: id of sharedDriveItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sharedDriveItem
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: shares.Site.GetCreatedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lastModifiedByUser:
+              operationId: shares.Site.GetLastModifiedByUser
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            analytics:
+              operationId: shares.Site.GetAnalytics
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            columns:
+              operationId: shares.Site.ListColumns
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            contentTypes:
+              operationId: shares.Site.ListContentTypes
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            drive:
+              operationId: shares.Site.GetDrive
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            drives:
+              operationId: shares.Site.ListDrives
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            externalColumns:
+              operationId: shares.Site.ListExternalColumns
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            items:
+              operationId: shares.Site.ListItems
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            lists:
+              operationId: shares.Site.ListLists
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            permissions:
+              operationId: shares.Site.ListPermissions
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            sites:
+              operationId: shares.Site.ListSites
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            termStore:
+              operationId: shares.Site.GetTermStore
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            termStores:
+              operationId: shares.Site.ListTermStores
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+            onenote:
+              operationId: shares.Site.GetOnenote
+              parameters:
+                sharedDriveItem-id: $request.path.sharedDriveItem-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - shares.site
+      summary: Update the ref of navigation property site in shares
+      description: Used to access the underlying site
+      operationId: shares_SetGraphRefSite
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16400,11 +16586,13 @@ paths:
             type: string
           x-ms-docs-key-type: sharedDriveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.site'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -16415,9 +16603,9 @@ paths:
     delete:
       tags:
         - shares.site
-      summary: Delete navigation property site for shares
+      summary: Delete ref of navigation property site for shares
       description: Used to access the underlying site
-      operationId: shares_DeleteSite
+      operationId: shares_DeleteGraphRefSite
       parameters:
         - name: sharedDriveItem-id
           in: path
@@ -16549,12 +16737,70 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-    patch:
+  '/users/{user-id}/drive/$ref':
+    get:
       tags:
         - users.drive
-      summary: Update the navigation property drive in users
+      summary: Get ref of drive from users
       description: The user's OneDrive. Read-only.
-      operationId: users_UpdateDrive
+      operationId: users_GetGraphRefDrive
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+          links:
+            createdByUser:
+              operationId: users.Drive.GetCreatedByUser
+              parameters:
+                user-id: $request.path.user-id
+            lastModifiedByUser:
+              operationId: users.Drive.GetLastModifiedByUser
+              parameters:
+                user-id: $request.path.user-id
+            bundles:
+              operationId: users.Drive.ListBundles
+              parameters:
+                user-id: $request.path.user-id
+            following:
+              operationId: users.Drive.ListFollowing
+              parameters:
+                user-id: $request.path.user-id
+            items:
+              operationId: users.Drive.ListItems
+              parameters:
+                user-id: $request.path.user-id
+            list:
+              operationId: users.Drive.GetList
+              parameters:
+                user-id: $request.path.user-id
+            root:
+              operationId: users.Drive.GetRoot
+              parameters:
+                user-id: $request.path.user-id
+            special:
+              operationId: users.Drive.ListSpecial
+              parameters:
+                user-id: $request.path.user-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.drive
+      summary: Update the ref of navigation property drive in users
+      description: The user's OneDrive. Read-only.
+      operationId: users_SetGraphRefDrive
       parameters:
         - name: user-id
           in: path
@@ -16564,11 +16810,13 @@ paths:
             type: string
           x-ms-docs-key-type: user
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.drive'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
         '204':
@@ -16579,9 +16827,9 @@ paths:
     delete:
       tags:
         - users.drive
-      summary: Delete navigation property drive for users
+      summary: Delete ref of navigation property drive for users
       description: The user's OneDrive. Read-only.
-      operationId: users_DeleteDrive
+      operationId: users_DeleteGraphRefDrive
       parameters:
         - name: user-id
           in: path
@@ -19004,7 +19252,7 @@ components:
               nullable: true
             ageGroup:
               type: string
-              description: 'Sets the age group of the user. Allowed values: null, minor, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             assignedLicenses:
               type: array
@@ -19027,11 +19275,11 @@ components:
               nullable: true
             companyName:
               type: string
-              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length of the company name is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              description: 'The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
               nullable: true
             consentProvidedForMinor:
               type: string
-              description: 'Sets whether consent has been obtained for minors. Allowed values: null, granted, denied and notRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
+              description: 'Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).'
               nullable: true
             country:
               type: string
@@ -19063,7 +19311,7 @@ components:
               nullable: true
             employeeId:
               type: string
-              description: 'The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
+              description: 'The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).'
               nullable: true
             employeeOrgData:
               $ref: '#/components/schemas/microsoft.graph.employeeOrgData'
@@ -19116,7 +19364,7 @@ components:
               nullable: true
             legalAgeGroupClassification:
               type: string
-              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
+              description: 'Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.'
               nullable: true
             licenseAssignmentStates:
               type: array
@@ -19208,7 +19456,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).'
             showInAddressList:
               type: boolean
               description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Returned only on $select. Supports $filter (eq, ne, not, in).'
@@ -19962,20 +20210,20 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Date and time of group creation. Read-only.
+              description: Date and time of the group creation. Read-only.
               format: date-time
               nullable: true
             description:
               type: string
-              description: Description giving details on the term usage.
+              description: Description that gives details on the term usage.
               nullable: true
             displayName:
               type: string
-              description: Name of group.
+              description: Name of the group.
               nullable: true
             parentSiteId:
               type: string
-              description: Id of the parent site of this group.
+              description: ID of the parent site of this group.
               nullable: true
             scope:
               $ref: '#/components/schemas/microsoft.graph.termStore.termGroupScope'
@@ -20307,7 +20555,7 @@ components:
           description: The service plans that are disabled in this assignment. Read-Only.
         error:
           type: string
-          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.'
+          description: 'License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.'
           nullable: true
         lastUpdatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -20323,7 +20571,7 @@ components:
           nullable: true
         state:
           type: string
-          description: 'Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.'
+          description: 'Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.'
           nullable: true
       additionalProperties:
         type: object
@@ -20479,6 +20727,8 @@ components:
           type: string
           description: The default time zone for the user's mailbox.
           nullable: true
+        userPurpose:
+          $ref: '#/components/schemas/microsoft.graph.userPurpose'
         workingHours:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
@@ -21976,6 +22226,12 @@ components:
               description: Date and time at which the chat was renamed or list of members were last changed. Read-only.
               format: date-time
               nullable: true
+            onlineMeetingInfo:
+              $ref: '#/components/schemas/microsoft.graph.teamworkOnlineMeetingInfo'
+            tenantId:
+              type: string
+              description: The identifier of the tenant in which the chat was created. Read-only.
+              nullable: true
             topic:
               type: string
               description: (Optional) Subject or topic for the chat. Only available for group chats.
@@ -22003,6 +22259,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.teamsTab'
+              description: A collection of all the tabs in the chat. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.team:
@@ -22057,7 +22314,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.channel'
-              description: The collection of channels & messages associated with the team.
+              description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
             installedApps:
@@ -22545,6 +22802,17 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.userPurpose:
+      title: userPurpose
+      enum:
+        - user
+        - linked
+        - shared
+        - room
+        - equipment
+        - others
+        - unknownFutureValue
+      type: string
     microsoft.graph.workingHours:
       title: workingHours
       type: object
@@ -22576,11 +22844,11 @@ components:
       properties:
         appliesTo:
           type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -24098,6 +24366,22 @@ components:
         - meeting
         - unknownFutureValue
       type: string
+    microsoft.graph.teamworkOnlineMeetingInfo:
+      title: teamworkOnlineMeetingInfo
+      type: object
+      properties:
+        calendarEventId:
+          type: string
+          description: The identifier of the calendar event associated with the meeting.
+          nullable: true
+        joinWebUrl:
+          type: string
+          description: The URL that users click to join or uniquely identify the meeting.
+          nullable: true
+        organizer:
+          $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentity'
+      additionalProperties:
+        type: object
     microsoft.graph.teamsAppInstallation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -24601,7 +24885,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable. Supports $expand.'
+              description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -24611,7 +24895,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand.'
+              description: 'The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).'
             permissionGrants:
               type: array
               items:
@@ -25792,7 +26076,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.plannerChecklistItems'
             description:
               type: string
-              description: Description of the task
+              description: Description of the task.
               nullable: true
             previewType:
               $ref: '#/components/schemas/microsoft.graph.plannerPreviewType'
@@ -26168,6 +26452,16 @@ components:
         - weak
         - unknown
       type: string
+    microsoft.graph.teamworkUserIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: teamworkUserIdentity
+          type: object
+          properties:
+            userIdentityType:
+              $ref: '#/components/schemas/microsoft.graph.teamworkUserIdentityType'
+          additionalProperties:
+            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -27235,6 +27529,18 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamworkUserIdentityType:
+      title: teamworkUserIdentityType
+      enum:
+        - aadUser
+        - onPremiseAadUser
+        - anonymousGuest
+        - federatedUser
+        - personalMicrosoftAccountUser
+        - skypeUser
+        - phoneUser
+        - unknownFutureValue
+      type: string
     microsoft.graph.teamsAppDistributionMethod:
       title: teamsAppDistributionMethod
       enum:

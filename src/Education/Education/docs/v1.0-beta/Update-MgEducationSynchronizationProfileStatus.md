@@ -8,15 +8,16 @@ schema: 2.0.0
 # Update-MgEducationSynchronizationProfileStatus
 
 ## SYNOPSIS
-Update the navigation property profileStatus in education
+The synchronization status.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
 Update-MgEducationSynchronizationProfileStatus -EducationSynchronizationProfileId <String>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastSynchronizationDateTime <DateTime>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ErrorCount <Int64>] [-Id <String>] [-LastActivityDateTime <DateTime>]
+ [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-StatusMessage <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -36,32 +37,15 @@ Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
 ### UpdateViaIdentityExpanded
 ```
 Update-MgEducationSynchronizationProfileStatus -InputObject <IEducationIdentity>
- [-AdditionalProperties <Hashtable>] [-Id <String>] [-LastSynchronizationDateTime <DateTime>]
- [-Status <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-ErrorCount <Int64>] [-Id <String>] [-LastActivityDateTime <DateTime>]
+ [-LastSynchronizationDateTime <DateTime>] [-Status <String>] [-StatusMessage <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property profileStatus in education
+The synchronization status.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -82,7 +66,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 educationSynchronizationProfileStatus
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphEducationSynchronizationProfileStatus
@@ -111,6 +95,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ErrorCount
+Number of errors during synchronization.
+
+```yaml
+Type: System.Int64
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 Read-only.
 
@@ -128,7 +127,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IEducationIdentity
@@ -142,8 +141,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -LastActivityDateTime
+Represents the time when most recent changes were observed in profile.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LastSynchronizationDateTime
-.
+Represents the time of the most recent successful synchronization.
 
 ```yaml
 Type: System.DateTime
@@ -174,6 +188,21 @@ Accept wildcard characters: False
 
 ### -Status
 educationSynchronizationStatus
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StatusMessage
+Status message for the current profile's synchronization stage.
 
 ```yaml
 Type: System.String
@@ -243,8 +272,11 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfileStatus>: educationSynchronizationProfileStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[LastSynchronizationDateTime <DateTime?>]`: 
+  - `[ErrorCount <Int64?>]`: Number of errors during synchronization.
+  - `[LastActivityDateTime <DateTime?>]`: Represents the time when most recent changes were observed in profile.
+  - `[LastSynchronizationDateTime <DateTime?>]`: Represents the time of the most recent successful  synchronization.
   - `[Status <String>]`: educationSynchronizationStatus
+  - `[StatusMessage <String>]`: Status message for the current profile's synchronization stage.
 
 INPUTOBJECT <IEducationIdentity>: Identity Parameter
   - `[EducationAssignmentId <String>]`: key: id of educationAssignment

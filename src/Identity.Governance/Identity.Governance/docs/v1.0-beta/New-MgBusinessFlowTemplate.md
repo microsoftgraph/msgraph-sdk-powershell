@@ -29,24 +29,6 @@ Add new entity to businessFlowTemplates
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -66,7 +48,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 businessFlowTemplate
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphBusinessFlowTemplate
@@ -81,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the business flow template
 
 ```yaml
 Type: System.String
@@ -164,7 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphBusinessFlowTemplate>: businessFlowTemplate
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of the business flow template
 
 ## RELATED LINKS
 

@@ -1455,6 +1455,8 @@ paths:
                   type: integer
                   format: int32
                   nullable: true
+                callOptions:
+                  $ref: '#/components/schemas/microsoft.graph.incomingCallOptions'
               additionalProperties:
                 type: object
         required: true
@@ -5222,6 +5224,13 @@ components:
         - data
         - unknownFutureValue
       type: string
+    microsoft.graph.incomingCallOptions:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.callOptions'
+        - title: incomingCallOptions
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.cancelMediaProcessingOperation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.commsOperation'

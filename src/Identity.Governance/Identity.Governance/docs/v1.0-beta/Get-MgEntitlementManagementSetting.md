@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgEntitlementManagementSetting
 
 ## SYNOPSIS
-Get settings from identityGovernance
+Represents the settings that control the behavior of Azure AD entitlement management.
 
 ## SYNTAX
 
@@ -17,27 +17,21 @@ Get-MgEntitlementManagementSetting [-ExpandProperty <String[]>] [-Property <Stri
 ```
 
 ## DESCRIPTION
-Get settings from identityGovernance
+Represents the settings that control the behavior of Azure AD entitlement management.
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
+### Example 1: Get the identity governance settings
 ```powershell
-PS C:\> {{ Add code here }}
+Connect-MgGraph -Scopes 'EntitlementManagement.ReadWrite.All'
+Get-MgEntitlementManagementSetting
 
-{{ Add output here }}
+Id        DaysUntilExternalUserDeletedAfterBlocked ExternalUserLifecycleAction
+--        ---------------------------------------- ---------------------------
+singleton 30                                       BlockSignInAndDelete
 ```
 
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
+This example returns the identity governance settings.
 
 ## PARAMETERS
 

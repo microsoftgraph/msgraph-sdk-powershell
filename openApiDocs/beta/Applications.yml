@@ -101,6 +101,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -146,6 +148,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -290,6 +293,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -2340,6 +2344,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_ListJobs
       parameters:
         - name: application-id
@@ -2432,6 +2437,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to jobs for applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_CreateJobs
       parameters:
         - name: application-id
@@ -2463,6 +2469,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get jobs from applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_GetJobs
       parameters:
         - name: application-id
@@ -2529,6 +2536,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property jobs in applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_UpdateJobs
       parameters:
         - name: application-id
@@ -2562,6 +2570,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property jobs for applications
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: applications.synchronization_DeleteJobs
       parameters:
         - name: application-id
@@ -3489,6 +3498,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_ListTemplates
       parameters:
         - name: application-id
@@ -3587,6 +3597,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Create new navigation property to templates for applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_CreateTemplates
       parameters:
         - name: application-id
@@ -3618,6 +3629,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Get templates from applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_GetTemplates
       parameters:
         - name: application-id
@@ -3686,6 +3698,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Update the navigation property templates in applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_UpdateTemplates
       parameters:
         - name: application-id
@@ -3719,6 +3732,7 @@ paths:
       tags:
         - applications.synchronization
       summary: Delete navigation property templates for applications
+      description: Pre-configured synchronization settings for a particular application.
       operationId: applications.synchronization_DeleteTemplates
       parameters:
         - name: application-id
@@ -9089,6 +9103,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -9134,6 +9150,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -9292,6 +9309,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -10661,6 +10680,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -10706,6 +10727,7 @@ paths:
                 - uniqueName
                 - verifiedPublisher
                 - web
+                - windows
                 - onPremisesPublishing
                 - appManagementPolicies
                 - createdOnBehalfOf
@@ -10871,6 +10893,8 @@ paths:
                 - verifiedPublisher desc
                 - web
                 - web desc
+                - windows
+                - windows desc
                 - onPremisesPublishing
                 - onPremisesPublishing desc
               type: string
@@ -16872,6 +16896,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_ListJobs
       parameters:
         - name: servicePrincipal-id
@@ -16964,6 +16989,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to jobs for servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_CreateJobs
       parameters:
         - name: servicePrincipal-id
@@ -16995,6 +17021,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get jobs from servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_GetJobs
       parameters:
         - name: servicePrincipal-id
@@ -17061,6 +17088,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property jobs in servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_UpdateJobs
       parameters:
         - name: servicePrincipal-id
@@ -17094,6 +17122,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property jobs for servicePrincipals
+      description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
       operationId: servicePrincipals.synchronization_DeleteJobs
       parameters:
         - name: servicePrincipal-id
@@ -18021,6 +18050,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_ListTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18119,6 +18149,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Create new navigation property to templates for servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_CreateTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18150,6 +18181,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Get templates from servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_GetTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18218,6 +18250,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Update the navigation property templates in servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_UpdateTemplates
       parameters:
         - name: servicePrincipal-id
@@ -18251,6 +18284,7 @@ paths:
       tags:
         - servicePrincipals.synchronization
       summary: Delete navigation property templates for servicePrincipals
+      description: Pre-configured synchronization settings for a particular application.
       operationId: servicePrincipals.synchronization_DeleteTemplates
       parameters:
         - name: servicePrincipal-id
@@ -19927,6 +19961,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.verifiedPublisher'
             web:
               $ref: '#/components/schemas/microsoft.graph.webApplication'
+            windows:
+              $ref: '#/components/schemas/microsoft.graph.windowsApplication'
             onPremisesPublishing:
               $ref: '#/components/schemas/microsoft.graph.onPremisesPublishing'
             appManagementPolicies:
@@ -20044,7 +20080,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string
@@ -20105,12 +20141,12 @@ components:
         endDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the credential expires.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+          description: 'The date and time at which the credential expires. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         key:
           type: string
-          description: 'The certificate''s raw data in byte array converted to Base64 string; for example, [System.Convert]::ToBase64String($Cert.GetRawCertData()).'
+          description: 'The certificate''s raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.'
           format: base64url
           nullable: true
         keyId:
@@ -20127,7 +20163,7 @@ components:
           nullable: true
         type:
           type: string
-          description: 'The type of key credential; for example, Symmetric.'
+          description: 'The type of key credential; for example, Symmetric, AsymmetricX509Cert.'
           nullable: true
         usage:
           type: string
@@ -20186,14 +20222,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationSecretKeyStringValuePair'
+              description: Represents a collection of credentials to access provisioned cloud applications.
             jobs:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationJob'
+              description: 'Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.'
             templates:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.synchronizationTemplate'
+              description: Pre-configured synchronization settings for a particular application.
           additionalProperties:
             type: object
     microsoft.graph.synchronizationJob:
@@ -20834,7 +20873,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.permissionScope'
-              description: The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
+              description: 'The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity''s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.'
             publisherName:
               type: string
               nullable: true
@@ -21199,7 +21238,7 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new Guid identifier must be provided.'
+          description: 'Unique role identifier inside the appRoles collection. When creating a new app role, a new GUID identifier must be provided.'
           format: uuid
         isEnabled:
           type: boolean
@@ -21390,6 +21429,21 @@ components:
           items:
             $ref: '#/components/schemas/microsoft.graph.redirectUriSettings'
           description: Specifies the index of the URLs where user tokens are sent for sign-in. This is only valid for applications using SAML.
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsApplication:
+      title: windowsApplication
+      type: object
+      properties:
+        packageSid:
+          type: string
+          description: The package security identifier that Microsoft has assigned the application. Optional. Read-only.
+          nullable: true
+        redirectUris:
+          type: array
+          items:
+            type: string
+          description: Specifies the URLs where user tokens are sent for sign-in or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent. Only available for applications that support the PersonalMicrosoftAccount signInAudience.
       additionalProperties:
         type: object
     microsoft.graph.onPremisesPublishing:
@@ -22028,11 +22082,11 @@ components:
       properties:
         appliesTo:
           type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
@@ -22099,11 +22153,11 @@ components:
         id:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: The unique identifier for one of the oauth2PermissionScopes or appRole instances that the resource application exposes.
+          description: 'The unique identifier of an app role or delegated permission exposed by the resource application. For delegated permissions, this should match the id property of one of the delegated permissions in the oauth2PermissionScopes collection of the resource application''s service principal. For app roles (application permissions), this should match the id property of an app role in the appRoles collection of the resource application''s service principal.'
           format: uuid
         type:
           type: string
-          description: 'Specifies whether the id property references an oauth2PermissionScopes or an appRole. The possible values are: Scope (for OAuth 2.0 permission scopes) or Role (for app roles).'
+          description: 'Specifies whether the id property references a delegated permission or an app role (application permission). The possible values are: Scope (for delegated permissions) or Role (for app roles).'
           nullable: true
       additionalProperties:
         type: object
@@ -22587,6 +22641,7 @@ components:
         - passwordLifetime
         - symmetricKeyAddition
         - symmetricKeyLifetime
+        - customPasswordAddition
         - unknownFutureValue
       type: string
     microsoft.graph.synchronizationError:

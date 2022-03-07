@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtTask
 
 ## SYNOPSIS
-Create new navigation property to deviceAppManagementTasks for deviceAppManagement
+Device app management tasks.
 
 ## SYNTAX
 
@@ -27,27 +27,9 @@ New-MgDeviceAppMgtTask -BodyParameter <IMicrosoftGraphDeviceAppManagementTask> [
 ```
 
 ## DESCRIPTION
-Create new navigation property to deviceAppManagementTasks for deviceAppManagement
+Device app management tasks.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -83,7 +65,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 A device app management task.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDeviceAppManagementTask
@@ -98,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -Category
-deviceAppManagementTaskCategory
+Device app management task category.
 
 ```yaml
 Type: System.String
@@ -218,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-deviceAppManagementTaskPriority
+Device app management task priority.
 
 ```yaml
 Type: System.String
@@ -233,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-deviceAppManagementTaskStatus
+Device app management task status.
 
 ```yaml
 Type: System.String
@@ -304,15 +286,15 @@ BODYPARAMETER <IMicrosoftGraphDeviceAppManagementTask>: A device app management 
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AssignedTo <String>]`: The name or email of the admin this task is assigned to.
-  - `[Category <String>]`: deviceAppManagementTaskCategory
+  - `[Category <String>]`: Device app management task category.
   - `[CreatedDateTime <DateTime?>]`: The created date.
   - `[Creator <String>]`: The email address of the creator.
   - `[CreatorNotes <String>]`: Notes from the creator.
   - `[Description <String>]`: The description.
   - `[DisplayName <String>]`: The name.
   - `[DueDateTime <DateTime?>]`: The due date.
-  - `[Priority <String>]`: deviceAppManagementTaskPriority
-  - `[Status <String>]`: deviceAppManagementTaskStatus
+  - `[Priority <String>]`: Device app management task priority.
+  - `[Status <String>]`: Device app management task status.
 
 ## RELATED LINKS
 

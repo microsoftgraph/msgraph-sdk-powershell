@@ -4,17 +4,15 @@
 parameters:
   - name: Branch
     type: string
-    default: "WeeklyOpenApiDocsDownload"
   - name: BaseBranch
     type: string
-    default: "dev"
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindows
     displayName: Build Agent
 
 jobs:
   - job: GetLatestDocs
     displayName: Download OpenApiDocs
+    timeoutInMinutes: 240
     pool: $(BuildAgent)
     steps:
       - template: ./checkout.yml
@@ -129,9 +127,9 @@ jobs:
           script: |
             git status
             git add .
-            git commit -m 'Weekly OpenApiDocs Download'
+            git commit -m 'Weekly OpenApiDocs Download. [run ci]'
             git status
-            git push --set-upstream origin $(ComputeBranch.WeeklyBranch)
+            git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.WeeklyBranch)
             git status
 
 # References

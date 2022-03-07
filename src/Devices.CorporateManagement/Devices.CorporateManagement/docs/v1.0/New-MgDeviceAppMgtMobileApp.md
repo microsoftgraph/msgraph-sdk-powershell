@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtMobileApp
 
 ## SYNOPSIS
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## SYNTAX
 
@@ -29,27 +29,9 @@ New-MgDeviceAppMgtMobileApp -BodyParameter <IMicrosoftGraphMobileApp1> [-Confirm
 ```
 
 ## DESCRIPTION
-Create new navigation property to mobileApps for deviceAppManagement
+The mobile apps.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -70,7 +52,7 @@ Accept wildcard characters: False
 
 ### -Assignments
 The list of group assignments for this mobile app.
-To construct, see NOTES section for ASSIGNMENTS properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for ASSIGNMENTS properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppAssignment1[]
@@ -86,7 +68,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 An abstract class containing the base properties for Intune mobile apps.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileApp1
@@ -102,7 +84,7 @@ Accept wildcard characters: False
 
 ### -Categories
 The list of categories for this app.
-To construct, see NOTES section for CATEGORIES properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for CATEGORIES properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMobileAppCategory[]
@@ -223,7 +205,7 @@ Accept wildcard characters: False
 
 ### -LargeIcon
 Contains properties for a generic mime content.
-To construct, see NOTES section for LARGEICON properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for LARGEICON properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMimeContent
@@ -313,7 +295,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishingState
-mobileAppPublishingState
+Indicates the publishing state of an app.
 
 ```yaml
 Type: System.String
@@ -382,7 +364,7 @@ To create the parameters described below, construct a hash table containing the 
 
 ASSIGNMENTS <IMicrosoftGraphMobileAppAssignment1[]>: The list of group assignments for this mobile app.
   - `[Id <String>]`: Read-only.
-  - `[Intent <String>]`: installIntent
+  - `[Intent <String>]`: Possible values for the install intent chosen by the admin.
   - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -393,7 +375,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
   - `[Id <String>]`: Read-only.
   - `[Assignments <IMicrosoftGraphMobileAppAssignment1[]>]`: The list of group assignments for this mobile app.
     - `[Id <String>]`: Read-only.
-    - `[Intent <String>]`: installIntent
+    - `[Intent <String>]`: Possible values for the install intent chosen by the admin.
     - `[Settings <IMicrosoftGraphMobileAppAssignmentSettings>]`: Abstract class to contain properties used to assign a mobile app to a group.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Target <IMicrosoftGraphDeviceAndAppManagementAssignmentTarget1>]`: Base type for assignment targets.
@@ -417,7 +399,7 @@ BODYPARAMETER <IMicrosoftGraphMobileApp1>: An abstract class containing the base
   - `[Owner <String>]`: The owner of the app.
   - `[PrivacyInformationUrl <String>]`: The privacy statement Url.
   - `[Publisher <String>]`: The publisher of the app.
-  - `[PublishingState <String>]`: mobileAppPublishingState
+  - `[PublishingState <String>]`: Indicates the publishing state of an app.
 
 CATEGORIES <IMicrosoftGraphMobileAppCategory[]>: The list of categories for this app.
   - `[Id <String>]`: Read-only.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 
 ## SYNOPSIS
-Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+Windows information protection wipe actions.
 
 ## SYNTAX
 
@@ -28,27 +28,9 @@ New-MgDeviceAppMgtWindowInformationProtectionWipeAction
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+Windows information protection wipe actions.
 
 ## EXAMPLES
-
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
 
 ## PARAMETERS
 
@@ -69,7 +51,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWindowsInformationProtectionWipeAction
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-actionState
+State of the action on the device
 
 ```yaml
 Type: System.String
@@ -245,7 +227,7 @@ BODYPARAMETER <IMicrosoftGraphWindowsInformationProtectionWipeAction>: Represent
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[LastCheckInDateTime <DateTime?>]`: Last checkin time of the device that was targeted by this wipe action.
-  - `[Status <String>]`: actionState
+  - `[Status <String>]`: State of the action on the device
   - `[TargetedDeviceMacAddress <String>]`: Targeted device Mac address.
   - `[TargetedDeviceName <String>]`: Targeted device name.
   - `[TargetedDeviceRegistrationId <String>]`: The DeviceRegistrationId being targeted by this wipe action.

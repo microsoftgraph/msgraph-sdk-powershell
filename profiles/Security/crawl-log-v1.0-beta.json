@@ -17,15 +17,23 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/alerts_v2": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/security/alerts_v2/{alert_v2-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
     "/security/attackSimulation": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/{simulationAutomationRun-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -69,19 +77,39 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/incidents": {
+    "/security/informationProtection": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/incidents/{incident-id}": {
+    "/security/informationProtection/labelPolicySettings": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/incidents/{incident-id}/alerts": {
+    "/security/informationProtection/sensitivityLabels": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
-    "/security/incidents/{incident-id}/alerts/$ref": {
+    "/security/informationProtection/sensitivityLabels/{sensitivityLabel-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/informationProtection/sensitivityLabels/{sensitivityLabel-id}/parent": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateApplication": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateClassificationResults": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateRemoval": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
@@ -90,10 +118,6 @@
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
     "/security/ipSecurityProfiles/{ipSecurityProfile-id}": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Security.yml"
-    },
-    "/security/microsoft.graph.runHuntingQuery": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },

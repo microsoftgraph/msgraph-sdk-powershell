@@ -53,5 +53,5 @@ steps:
     targetType: inline
     script: |
       git status
-      git push --set-upstream origin $(ComputeBranch.DocsBranch)
+      git push --set-upstream "https://$(GITHUB_TOKEN)@github.com/microsoftgraph/msgraph-sdk-powershell.git" $(ComputeBranch.DocsBranch)
       git status

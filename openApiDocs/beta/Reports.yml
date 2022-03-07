@@ -2782,6 +2782,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_ListUserRegistrationDetails
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2880,6 +2881,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_CreateUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -2903,6 +2905,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Get userRegistrationDetails from reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2959,6 +2962,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_UpdateUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -2985,6 +2989,7 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
+      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_DeleteUserRegistrationDetails
       parameters:
         - name: userRegistrationDetails-id
@@ -4256,6 +4261,78 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserDistributionUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserDistributionUserCounts
+      operationId: reports_getBrowserDistributionUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserUserCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserUserCounts
+      operationId: reports_getBrowserUserCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getBrowserUserDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getBrowserUserDetail
+      operationId: reports_getBrowserUserDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6176,6 +6253,104 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityCounts
+      operationId: reports_getTeamsTeamActivityCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDetail(date={date})':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDetail
+      operationId: reports_getTeamsTeamActivityDetail
+      parameters:
+        - name: date
+          in: path
+          description: 'Usage: date={date}'
+          required: true
+          schema:
+            pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$'
+            type: string
+            format: date
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDetail(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDetail
+      operationId: reports_getTeamsTeamActivityDetail
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsTeamActivityDistributionCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsTeamActivityDistributionCounts
+      operationId: reports_getTeamsTeamActivityDistributionCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getTeamsUserActivityCounts(period=''{period}'')':
     get:
       tags:
@@ -6254,6 +6429,30 @@ paths:
         - reports.Functions
       summary: Invoke function getTeamsUserActivityTotalCounts
       operationId: reports_getTeamsUserActivityTotalCounts
+      parameters:
+        - name: period
+          in: path
+          description: 'Usage: period={period}'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  '/reports/microsoft.graph.getTeamsUserActivityTotalDistributionCounts(period=''{period}'')':
+    get:
+      tags:
+        - reports.Functions
+      summary: Invoke function getTeamsUserActivityTotalDistributionCounts
+      operationId: reports_getTeamsUserActivityTotalDistributionCounts
       parameters:
         - name: period
           in: path
@@ -8222,6 +8421,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationContext'
+              description: Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
             authenticationDetails:
               type: array
               items:
@@ -8258,10 +8458,11 @@ components:
               nullable: true
             azureResourceId:
               type: string
+              description: Contains a fully qualified Azure Resource Manager ID of an Azure resource accessed during the sign-in.
               nullable: true
             clientAppUsed:
               type: string
-              description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange Active Sync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).'
+              description: 'Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).'
               nullable: true
             conditionalAccessStatus:
               $ref: '#/components/schemas/microsoft.graph.conditionalAccessStatus'
@@ -8280,6 +8481,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.deviceDetail'
             federatedCredentialId:
               type: string
+              description: 'Contains the identifier of an application''s federated identity credential, if a federated identity credential was used to sign in.'
               nullable: true
             flaggedForReview:
               type: boolean
@@ -8343,6 +8545,7 @@ components:
               nullable: true
             resourceServicePrincipalId:
               type: string
+              description: The identifier of the service principal representing the target resource in the sign-in event.
               nullable: true
             resourceTenantId:
               type: string
@@ -8381,6 +8584,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sessionLifetimePolicy'
+              description: Any conditional access session management policies that were applied during the sign-in event.
             signInEventTypes:
               type: array
               items:
@@ -8628,6 +8832,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+              description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
           additionalProperties:
             type: object
     microsoft.graph.userRegistrationFeatureSummary:
@@ -8693,25 +8898,34 @@ components:
           properties:
             isMfaCapable:
               type: boolean
+              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
             isMfaRegistered:
               type: boolean
+              description: Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
             isPasswordlessCapable:
               type: boolean
+              description: 'Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).'
             isSsprCapable:
               type: boolean
+              description: Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
             isSsprEnabled:
               type: boolean
+              description: Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
             isSsprRegistered:
               type: boolean
+              description: Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
             methodsRegistered:
               type: array
               items:
                 type: string
                 nullable: true
+              description: 'Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).'
             userDisplayName:
               type: string
+              description: 'The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.'
             userPrincipalName:
               type: string
+              description: 'The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.'
           additionalProperties:
             type: object
     microsoft.graph.credentialUserRegistrationDetails:
@@ -9877,6 +10091,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.authenticationContextDetail'
         id:
           type: string
+          description: The identifier of a authentication context in your tenant.
           nullable: true
       additionalProperties:
         type: object
@@ -10084,6 +10299,8 @@ components:
         - hidden
         - adminConfirmedUserCompromised
         - unknownFutureValue
+        - adminConfirmedServicePrincipalCompromised
+        - adminDismissedAllRiskForServicePrincipal
       type: string
     microsoft.graph.riskLevel:
       title: riskLevel
@@ -10112,6 +10329,7 @@ components:
       properties:
         detail:
           type: string
+          description: The human-readable details of the conditional access session management policy applied to the sign-in.
           nullable: true
         expirationRequirement:
           $ref: '#/components/schemas/microsoft.graph.expirationRequirement'

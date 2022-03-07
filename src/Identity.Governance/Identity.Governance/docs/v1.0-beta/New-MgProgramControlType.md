@@ -29,24 +29,6 @@ Add new entity to programControlTypes
 
 ## EXAMPLES
 
-### Example 1: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
-### Example 2: {{ Add title here }}
-```powershell
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-```
-
-{{ Add description here }}
-
 ## PARAMETERS
 
 ### -AdditionalProperties
@@ -66,7 +48,7 @@ Accept wildcard characters: False
 
 ### -BodyParameter
 programControlType
-To construct, see NOTES section for BODYPARAMETER properties and create a hash table.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProgramControlType
@@ -96,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+The name of the program control type
 
 ```yaml
 Type: System.String
@@ -180,7 +162,7 @@ BODYPARAMETER <IMicrosoftGraphProgramControlType>: programControlType
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[ControlTypeGroupId <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[DisplayName <String>]`: The name of the program control type
 
 ## RELATED LINKS
 

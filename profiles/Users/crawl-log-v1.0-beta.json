@@ -285,6 +285,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
+    "/users/{user-id}/settings/contactMergeSuggestions": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
     "/users/{user-id}/settings/itemInsights": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
