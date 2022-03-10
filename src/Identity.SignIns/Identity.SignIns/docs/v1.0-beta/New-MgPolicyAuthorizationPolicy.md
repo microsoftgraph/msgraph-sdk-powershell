@@ -177,7 +177,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -240,7 +241,6 @@ Accept wildcard characters: False
 
 ### -GuestUserRoleId
 Represents role templateId for the role that should be granted to guest user.
-Refer to List unifiedRoleDefinitions to find the list of available role templates.
 Currently following roles are supported: User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 
 ```yaml
@@ -342,7 +342,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy>: authorizationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
@@ -353,7 +353,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy>: authorizationPolicy
     - `[Id <String>]`: Read-only.
     - `[IsDefault <Boolean?>]`: 
     - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: 
-      - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
+      - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
       - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
       - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
   - `[DefaultUserRolePermissions <IMicrosoftGraphDefaultUserRolePermissions>]`: defaultUserRolePermissions
@@ -362,14 +362,14 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy>: authorizationPolicy
     - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
   - `[EnabledPreviewFeatures <String[]>]`: List of features enabled for private preview on the tenant.
-  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
   - `[PermissionGrantPolicyIdsAssignedToDefaultUserRole <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
 
 DEFAULTUSERROLEOVERRIDES <IMicrosoftGraphDefaultUserRoleOverride[]>: .
   - `[Id <String>]`: Read-only.
   - `[IsDefault <Boolean?>]`: 
   - `[RolePermissions <IMicrosoftGraphUnifiedRolePermission[]>]`: 
-    - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource.
+    - `[AllowedResourceActions <String[]>]`: Set of tasks that can be performed on a resource. Required.
     - `[Condition <String>]`: Optional constraints that must be met for the permission to be effective.
     - `[ExcludedResourceActions <String[]>]`: Set of tasks that may not be performed on a resource. Not yet supported.
 

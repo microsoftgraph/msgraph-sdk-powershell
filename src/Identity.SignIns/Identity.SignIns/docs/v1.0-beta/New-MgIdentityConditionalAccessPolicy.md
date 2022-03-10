@@ -10,7 +10,7 @@ schema: 2.0.0
 ## SYNOPSIS
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ New-MgIdentityConditionalAccessPolicy -BodyParameter <IMicrosoftGraphConditional
 ## DESCRIPTION
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ## EXAMPLES
 
@@ -277,8 +277,8 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
     - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
     - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ExcludeServicePrincipals <String[]>]`: 
-      - `[IncludeServicePrincipals <String[]>]`: 
+      - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
+      - `[IncludeServicePrincipals <String[]>]`: Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
     - `[DeviceStates <IMicrosoftGraphConditionalAccessDeviceStates>]`: conditionalAccessDeviceStates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeStates <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
@@ -288,7 +288,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
       - `[DeviceFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Mode <String>]`: filterMode
-        - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+        - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
       - `[ExcludeDeviceStates <String[]>]`: 
       - `[ExcludeDevices <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
       - `[IncludeDeviceStates <String[]>]`: 
@@ -301,6 +301,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
       - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+    - `[ServicePrincipalRiskLevels <String[]>]`: Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
     - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
@@ -317,7 +318,7 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy>: conditionalAccessPolicy
   - `[GrantControls <IMicrosoftGraphConditionalAccessGrantControls>]`: conditionalAccessGrantControls
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-    - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
+    - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
     - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.
     - `[TermsOfUse <String[]>]`: List of terms of use IDs required by the policy.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
@@ -356,8 +357,8 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
   - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
   - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ExcludeServicePrincipals <String[]>]`: 
-    - `[IncludeServicePrincipals <String[]>]`: 
+    - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
+    - `[IncludeServicePrincipals <String[]>]`: Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
   - `[DeviceStates <IMicrosoftGraphConditionalAccessDeviceStates>]`: conditionalAccessDeviceStates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeStates <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
@@ -367,7 +368,7 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
     - `[DeviceFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Mode <String>]`: filterMode
-      - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory. For details, see rules with multiple expressions
+      - `[Rule <String>]`: Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
     - `[ExcludeDeviceStates <String[]>]`: 
     - `[ExcludeDevices <String[]>]`: States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.
     - `[IncludeDeviceStates <String[]>]`: 
@@ -380,6 +381,7 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
     - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+  - `[ServicePrincipalRiskLevels <String[]>]`: Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
   - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
   - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
   - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
@@ -394,7 +396,7 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet>: conditionalAccessCond
 GRANTCONTROLS <IMicrosoftGraphConditionalAccessGrantControls>: conditionalAccessGrantControls
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[BuiltInControls <String[]>]`: List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-  - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).
+  - `[CustomAuthenticationFactors <String[]>]`: List of custom controls IDs required by the policy. For more information, see Custom controls.
   - `[Operator <String>]`: Defines the relationship of the grant controls. Possible values: AND, OR.
   - `[TermsOfUse <String[]>]`: List of terms of use IDs required by the policy.
 
