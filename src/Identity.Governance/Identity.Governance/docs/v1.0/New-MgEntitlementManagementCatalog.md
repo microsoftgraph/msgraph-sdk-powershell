@@ -22,7 +22,7 @@ New-MgEntitlementManagementCatalog [-AccessPackages <IMicrosoftGraphAccessPackag
 
 ### Create
 ```
-New-MgEntitlementManagementCatalog -BodyParameter <IMicrosoftGraphAccessPackageCatalog> [-Confirm] [-WhatIf]
+New-MgEntitlementManagementCatalog -BodyParameter <IMicrosoftGraphAccessPackageCatalog1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -37,7 +37,6 @@ Represents a group of access packages.
 The access packages in this catalog.
 Read-only.
 Nullable.
-Supports $expand.
 To construct, please use Get-Help -Online and see NOTES section for ACCESSPACKAGES properties and create a hash table.
 
 ```yaml
@@ -72,7 +71,7 @@ accessPackageCatalog
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
 Parameter Sets: Create
 Aliases:
 
@@ -132,7 +131,6 @@ Accept wildcard characters: False
 
 ### -DisplayName
 The display name of the access package catalog.
-Supports $filter (eq, contains).
 
 ```yaml
 Type: System.String
@@ -244,11 +242,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
 
 ## NOTES
 
@@ -259,16 +257,16 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this catalog. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
-  - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+  - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
     - `[CatalogType <String>]`: accessPackageCatalogType
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package catalog.
-    - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+    - `[DisplayName <String>]`: The display name of the access package catalog.
     - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[State <String>]`: accessPackageCatalogState
@@ -278,12 +276,12 @@ ACCESSPACKAGES <IMicrosoftGraphAccessPackage1[]>: The access packages in this ca
   - `[IsHidden <Boolean?>]`: Whether the access package is hidden from the requestor.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 
-BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
+BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
-    - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+    - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package.
     - `[DisplayName <String>]`: The display name of the access package. Supports $filter (eq, contains).
@@ -292,7 +290,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
   - `[CatalogType <String>]`: accessPackageCatalogType
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the access package catalog.
-  - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+  - `[DisplayName <String>]`: The display name of the access package catalog.
   - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[State <String>]`: accessPackageCatalogState

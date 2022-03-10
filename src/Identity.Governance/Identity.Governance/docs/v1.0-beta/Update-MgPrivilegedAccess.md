@@ -347,8 +347,8 @@ BODYPARAMETER <IMicrosoftGraphPrivilegedAccess>: privilegedAccess
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -407,6 +407,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -417,6 +418,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -424,7 +427,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -488,8 +490,8 @@ RESOURCES <IMicrosoftGraphGovernanceResource[]>: A collection of resources for t
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Status <String>]`: 
       - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
       - `[SubStatus <String>]`: 
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -598,8 +600,8 @@ ROLEASSIGNMENTREQUESTS <IMicrosoftGraphGovernanceRoleAssignmentRequest[]>: A col
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Status <String>]`: 
     - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[SubStatus <String>]`: 
   - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
   - `[SubjectId <String>]`: Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
@@ -664,8 +666,8 @@ ROLEASSIGNMENTS <IMicrosoftGraphGovernanceRoleAssignment[]>: A collection of rol
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -721,8 +723,8 @@ ROLEDEFINITIONS <IMicrosoftGraphGovernanceRoleDefinition[]>: A collection of rol
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -816,8 +818,8 @@ ROLESETTINGS <IMicrosoftGraphGovernanceRoleSetting[]>: A collection of role sett
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Status <String>]`: 
         - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
         - `[SubStatus <String>]`: 
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
