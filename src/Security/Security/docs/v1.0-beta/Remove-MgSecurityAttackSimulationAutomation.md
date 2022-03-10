@@ -1,87 +1,45 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/new-mgsecurityincidentalertbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecurityattacksimulationautomation
 schema: 2.0.0
 ---
 
-# New-MgSecurityIncidentAlertByRef
+# Remove-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Create new navigation property ref to alerts for security
+Delete navigation property simulationAutomations for security
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Delete (Default)
 ```
-New-MgSecurityIncidentAlertByRef -IncidentId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Create
-```
-New-MgSecurityIncidentAlertByRef -IncidentId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### DeleteViaIdentity
 ```
-New-MgSecurityIncidentAlertByRef -InputObject <ISecurityIdentity> -BodyParameter <Hashtable> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgSecurityIncidentAlertByRef -InputObject <ISecurityIdentity> [-AdditionalProperties <Hashtable>]
+Remove-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Create new navigation property ref to alerts for security
+Delete navigation property simulationAutomations for security
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -IncidentId
-key: id of incident
+### -IfMatch
+ETag
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -94,13 +52,43 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SimulationAutomationId
+key: id of simulationAutomation
+
+```yaml
+Type: System.String
+Parameter Sets: Delete
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -142,11 +130,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPaths1Kkbdg2SecurityIncidentsIncidentIdAlertsRefPostResponses201ContentApplicationJsonSchema
+### System.Boolean
 
 ## NOTES
 
@@ -164,11 +150,13 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
   - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile

@@ -12,7 +12,7 @@ Create new navigation property to secureScores for security
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties <Hashtable>]
  [-AverageComparativeScores <IMicrosoftGraphAverageComparativeScore[]>] [-AzureTenantId <String>]
@@ -21,7 +21,7 @@ New-MgSecuritySecureScore [-ActiveUserCount <Int32>] [-AdditionalProperties <Has
  [-VendorInformation <IMicrosoftGraphSecurityVendorInformation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgSecuritySecureScore -BodyParameter <IMicrosoftGraphSecureScore> [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -39,7 +39,7 @@ Active user count of the given tenant.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for AVERAGECOMPA
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAverageComparativeScore[]
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -85,7 +85,7 @@ GUID string for tenant ID.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -101,7 +101,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecureScore
-Parameter Sets: Create
+Parameter Sets: Create1
 Aliases:
 
 Required: True
@@ -117,7 +117,7 @@ To construct, please use Get-Help -Online and see NOTES section for CONTROLSCORE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphControlScore[]
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -132,7 +132,7 @@ The date when the entity is created.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -147,7 +147,7 @@ Tenant current attained score on specified date.
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -162,7 +162,7 @@ Microsoft-provided services for the tenant (for example, Exchange online, Skype,
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -177,7 +177,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -192,7 +192,7 @@ Licensed user count of the given tenant.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -207,7 +207,7 @@ Tenant maximum possible score on specified date.
 
 ```yaml
 Type: System.Double
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False
@@ -223,7 +223,7 @@ To construct, please use Get-Help -Online and see NOTES section for VENDORINFORM
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
-Parameter Sets: CreateExpanded
+Parameter Sets: CreateExpanded1
 Aliases:
 
 Required: False

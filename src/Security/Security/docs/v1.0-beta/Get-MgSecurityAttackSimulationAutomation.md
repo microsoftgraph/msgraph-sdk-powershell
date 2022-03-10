@@ -1,25 +1,38 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityincidentalert
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityattacksimulationautomation
 schema: 2.0.0
 ---
 
-# Get-MgSecurityIncidentAlert
+# Get-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Get alerts from security
+Get simulationAutomations from security
 
 ## SYNTAX
 
+### List (Default)
 ```
-Get-MgSecurityIncidentAlert -IncidentId <String> [-ExpandProperty <String[]>] [-Filter <String>]
+Get-MgSecurityAttackSimulationAutomation [-ExpandProperty <String[]>] [-Filter <String>]
  [-Property <String[]>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All]
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
+### Get
+```
+Get-MgSecurityAttackSimulationAutomation -SimulationAutomationId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Get alerts from security
+Get simulationAutomations from security
 
 ## EXAMPLES
 
@@ -30,7 +43,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -46,7 +59,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: CV
 
 Required: False
@@ -76,7 +89,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -86,18 +99,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IncidentId
-key: id of incident
+### -InputObject
+Identity Parameter
+To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -106,7 +120,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -136,10 +150,25 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SimulationAutomationId
+key: id of simulationAutomation
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -151,7 +180,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -166,7 +195,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: OrderBy
 
 Required: False
@@ -181,7 +210,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases: Limit
 
 Required: False
@@ -196,13 +225,38 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Graph.PowerShell.Models.ISecurityIdentity
+
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertV2
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSimulationAutomation
 
 ## NOTES
 
 ALIASES
+
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+
+INPUTOBJECT <ISecurityIdentity>: Identity Parameter
+  - `[AlertId <String>]`: key: id of alert
+  - `[CloudAppSecurityProfileId <String>]`: key: id of cloudAppSecurityProfile
+  - `[DomainSecurityProfileId <String>]`: key: id of domainSecurityProfile
+  - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
+  - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
+  - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
+  - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
+  - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
+  - `[SecureScoreId <String>]`: key: id of secureScore
+  - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
+  - `[SimulationId <String>]`: key: id of simulation
+  - `[TiIndicatorId <String>]`: key: id of tiIndicator
+  - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
 
 ## RELATED LINKS
 

@@ -1,60 +1,45 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Security
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/remove-mgsecurityincident
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security/get-mgsecurityinformationprotectionsensitivitylabelparent
 schema: 2.0.0
 ---
 
-# Remove-MgSecurityIncident
+# Get-MgSecurityInformationProtectionSensitivityLabelParent
 
 ## SYNOPSIS
-Delete navigation property incidents for security
+Get parent from security
 
 ## SYNTAX
 
-### Delete (Default)
+### Get (Default)
 ```
-Remove-MgSecurityIncident -IncidentId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSecurityInformationProtectionSensitivityLabelParent -SensitivityLabelId <String>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### GetViaIdentity
 ```
-Remove-MgSecurityIncident -InputObject <ISecurityIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgSecurityInformationProtectionSensitivityLabelParent -InputObject <ISecurityIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete navigation property incidents for security
+Get parent from security
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -IfMatch
-ETag
+### -ExpandProperty
+Expand related entities
 
 ```yaml
-Type: System.String
+Type: System.String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: Expand
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -IncidentId
-key: id of incident
-
-```yaml
-Type: System.String
-Parameter Sets: Delete
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -67,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISecurityIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -77,46 +62,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String[]
 Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SensitivityLabelId
+key: id of sensitivityLabel
+
+```yaml
+Type: System.String
+Parameter Sets: Get
 Aliases:
 
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -132,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecuritySensitivityLabel
 
 ## NOTES
 
@@ -150,11 +119,13 @@ INPUTOBJECT <ISecurityIdentity>: Identity Parameter
   - `[FileSecurityProfileId <String>]`: key: id of fileSecurityProfile
   - `[HostSecurityProfileId <String>]`: key: id of hostSecurityProfile
   - `[IPSecurityProfileId <String>]`: key: id of ipSecurityProfile
-  - `[IncidentId <String>]`: key: id of incident
   - `[ProviderTenantSettingId <String>]`: key: id of providerTenantSetting
   - `[SecureScoreControlProfileId <String>]`: key: id of secureScoreControlProfile
   - `[SecureScoreId <String>]`: key: id of secureScore
   - `[SecurityActionId <String>]`: key: id of securityAction
+  - `[SensitivityLabelId <String>]`: key: id of sensitivityLabel
+  - `[SimulationAutomationId <String>]`: key: id of simulationAutomation
+  - `[SimulationAutomationRunId <String>]`: key: id of simulationAutomationRun
   - `[SimulationId <String>]`: key: id of simulation
   - `[TiIndicatorId <String>]`: key: id of tiIndicator
   - `[UserSecurityProfileId <String>]`: key: id of userSecurityProfile
