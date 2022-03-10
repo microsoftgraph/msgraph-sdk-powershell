@@ -1,50 +1,35 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.ChangeNotifications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/remove-mgsubscription
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.changenotifications/invoke-mgreauthorizesubscription
 schema: 2.0.0
 ---
 
-# Remove-MgSubscription
+# Invoke-MgReauthorizeSubscription
 
 ## SYNOPSIS
-Delete entity from subscriptions
+Invoke action reauthorize
 
 ## SYNTAX
 
-### Delete (Default)
+### Reauthorize (Default)
 ```
-Remove-MgSubscription -SubscriptionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
+Invoke-MgReauthorizeSubscription -SubscriptionId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### ReauthorizeViaIdentity
 ```
-Remove-MgSubscription -InputObject <IChangeNotificationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Invoke-MgReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Delete entity from subscriptions
+Invoke action reauthorize
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -IfMatch
-ETag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -52,7 +37,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: ReauthorizeViaIdentity
 Aliases:
 
 Required: True
@@ -82,7 +67,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Reauthorize
 Aliases:
 
 Required: True
