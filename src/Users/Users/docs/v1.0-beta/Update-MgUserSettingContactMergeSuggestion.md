@@ -1,47 +1,43 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# Update-MgUserExtension
+# Update-MgUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded (Default)
 ```
-Update-MgUserExtension -ExtensionId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgUserExtension -ExtensionId <String> -UserId <String> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSettingContactMergeSuggestion -UserId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
+ [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### Update
 ```
-Update-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgUserSettingContactMergeSuggestion -UserId <String>
+ -BodyParameter <IMicrosoftGraphContactMergeSuggestions> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentity
 ```
-Update-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity>
+ -BodyParameter <IMicrosoftGraphContactMergeSuggestions> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>]
+ [-Id <String>] [-IsEnabled] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## EXAMPLES
 
@@ -52,7 +48,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -63,11 +59,12 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-extension
+contactMergeSuggestions
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update1, UpdateViaIdentity1
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
+Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
 Required: True
@@ -77,27 +74,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ExtensionId
-key: id of extension
-
-```yaml
-Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Id
 Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -113,13 +95,29 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IsEnabled
+true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled.
+Default value is true.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -143,7 +141,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update, UpdateExpanded
 Aliases:
 
 Required: True
@@ -189,9 +187,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Graph.PowerShell.Models.IUsersIdentity
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
 
-### System.Collections.Hashtable
+### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
 ## OUTPUTS
 
@@ -205,6 +203,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IMicrosoftGraphContactMergeSuggestions>: contactMergeSuggestions
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[IsEnabled <Boolean?>]`: true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
 
 INPUTOBJECT <IUsersIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment

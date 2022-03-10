@@ -1,103 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/update-mguserextension
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/remove-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# Update-MgUserExtension
+# Remove-MgUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### Delete (Default)
 ```
-Update-MgUserExtension -ExtensionId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
- [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update1
-```
-Update-MgUserExtension -ExtensionId <String> -UserId <String> -BodyParameter <Hashtable> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity1
-```
-Update-MgUserExtension -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
+Remove-MgUserSettingContactMergeSuggestion -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### DeleteViaIdentity
 ```
-Update-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the user.
-Read-only.
-Nullable.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-extension
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Update1, UpdateViaIdentity1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ExtensionId
-key: id of extension
+### -IfMatch
+ETag
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -113,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -143,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -190,8 +129,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
-
-### System.Collections.Hashtable
 
 ## OUTPUTS
 

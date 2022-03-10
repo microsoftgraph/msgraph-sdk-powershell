@@ -1,80 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/new-mgusermemberofbyref
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users/get-mgusersettingcontactmergesuggestion
 schema: 2.0.0
 ---
 
-# New-MgUserMemberOfByRef
+# Get-MgUserSettingContactMergeSuggestion
 
 ## SYNOPSIS
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### Get (Default)
 ```
-New-MgUserMemberOfByRef -UserId <String> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
+Get-MgUserSettingContactMergeSuggestion -UserId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
 ```
 
-### Create
+### GetViaIdentity
 ```
-New-MgUserMemberOfByRef -UserId <String> -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> -BodyParameter <Hashtable> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentityExpanded
-```
-New-MgUserMemberOfByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Hashtable>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgUserSettingContactMergeSuggestion -InputObject <IUsersIdentity> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The groups and directory roles that the user is a member of.
-Read-only.
-Nullable.
-Supports $expand.
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -ExpandProperty
+Expand related entities
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
-Aliases:
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -84,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -94,46 +62,30 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -147,17 +99,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IUsersIdentity
 
-### System.Collections.Hashtable
-
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IPathsU8Jh5VUsersUserIdMemberofRefPostResponses201ContentApplicationJsonSchema
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContactMergeSuggestions
 
 ## NOTES
 
 ALIASES
-
-### New-MgUserMemberByRef
 
 COMPLEX PARAMETER PROPERTIES
 
