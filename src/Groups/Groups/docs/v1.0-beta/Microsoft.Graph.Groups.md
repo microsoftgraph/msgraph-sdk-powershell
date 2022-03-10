@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Groups
-Module Guid: afc1e372-8199-4650-9c1f-12bb085bd540
+Module Guid: 3ec4ba3b-8ece-48ef-99c7-fef703acf916
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.groups
 Help Version: 1.0.0.0
 Locale: en-US
@@ -72,7 +72,6 @@ Read-only.
 Nullable.
 
 ### [Get-MgGroupConversationThreadPostAttachment](Get-MgGroupConversationThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -98,12 +97,12 @@ Nullable.
 
 ### [Get-MgGroupCreatedOnBehalfOf](Get-MgGroupCreatedOnBehalfOf.md)
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ### [Get-MgGroupCreatedOnBehalfOfByRef](Get-MgGroupCreatedOnBehalfOfByRef.md)
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ### [Get-MgGroupDelta](Get-MgGroupDelta.md)
@@ -126,14 +125,14 @@ Nullable.
 Get entity from groupLifecyclePolicies by key
 
 ### [Get-MgGroupMember](Get-MgGroupMember.md)
-Members of this group, who can be users, devices, other groups, or service principals.
+UMembers of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupMemberByRef](Get-MgGroupMemberByRef.md)
-Members of this group, who can be users, devices, other groups, or service principals.
+UMembers of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
@@ -146,14 +145,14 @@ Invoke action getMemberGroups
 Invoke action getMemberObjects
 
 ### [Get-MgGroupMemberOf](Get-MgGroupMemberOf.md)
-Groups and administrative units that this group is a member of.
+Groups that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.
 Supports $expand.
 
 ### [Get-MgGroupMemberOfByRef](Get-MgGroupMemberOfByRef.md)
-Groups and administrative units that this group is a member of.
+Groups that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.
@@ -174,28 +173,30 @@ Invoke action getNotebookFromWebUrl
 Invoke function getRecentNotebooks
 
 ### [Get-MgGroupOwner](Get-MgGroupOwner.md)
-The owners of the group who can be users or service principals.
+The owners of the group.
+Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupOwnerByRef](Get-MgGroupOwnerByRef.md)
-The owners of the group who can be users or service principals.
+The owners of the group.
+Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [Get-MgGroupPermissionGrant](Get-MgGroupPermissionGrant.md)
-The permissions that have been granted for a group to a specific application.
+The permission that has been granted for a group to a specific application.
 Supports $expand.
 
 ### [Get-MgGroupPhoto](Get-MgGroupPhoto.md)
-The group's profile photo.
+The group's profile photo
 
 ### [Get-MgGroupPhotoContent](Get-MgGroupPhotoContent.md)
-The group's profile photo.
+The group's profile photo
 
 ### [Get-MgGroupRejectedSender](Get-MgGroupRejectedSender.md)
 The list of users or groups that are not allowed to create posts or calendar events in this group.
@@ -218,7 +219,6 @@ Read-only.
 Nullable.
 
 ### [Get-MgGroupThreadPostAttachment](Get-MgGroupThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -366,7 +366,6 @@ Read-only.
 Nullable.
 
 ### [New-MgGroupConversationThreadPostAttachment](New-MgGroupConversationThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -410,14 +409,14 @@ Add new entity to groupLifecyclePolicies
 Add a member to an Office 365 group or security group through the members navigation property.
 
 ### [New-MgGroupMemberByRef](New-MgGroupMemberByRef.md)
-Members of this group, who can be users, devices, other groups, or service principals.
+UMembers of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
 
 ### [New-MgGroupMemberOfByRef](New-MgGroupMemberOfByRef.md)
-Groups and administrative units that this group is a member of.
+Groups that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.
@@ -428,14 +427,15 @@ A list of group members with license errors from this group-based license assign
 Read-only.
 
 ### [New-MgGroupOwnerByRef](New-MgGroupOwnerByRef.md)
-The owners of the group who can be users or service principals.
+The owners of the group.
+Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $expand including nested $select.
 For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
 
 ### [New-MgGroupPermissionGrant](New-MgGroupPermissionGrant.md)
-The permissions that have been granted for a group to a specific application.
+The permission that has been granted for a group to a specific application.
 Supports $expand.
 
 ### [New-MgGroupPhoto](New-MgGroupPhoto.md)
@@ -460,7 +460,6 @@ Read-only.
 Nullable.
 
 ### [New-MgGroupThreadPostAttachment](New-MgGroupThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -514,7 +513,6 @@ Read-only.
 Nullable.
 
 ### [Remove-MgGroupConversationThreadPostAttachment](Remove-MgGroupConversationThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -540,7 +538,7 @@ Nullable.
 
 ### [Remove-MgGroupCreatedOnBehalfOfByRef](Remove-MgGroupCreatedOnBehalfOfByRef.md)
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ### [Remove-MgGroupEndpoint](Remove-MgGroupEndpoint.md)
@@ -563,11 +561,11 @@ Invoke action removeGroup
 Delete entity from groupLifecyclePolicies
 
 ### [Remove-MgGroupPermissionGrant](Remove-MgGroupPermissionGrant.md)
-The permissions that have been granted for a group to a specific application.
+The permission that has been granted for a group to a specific application.
 Supports $expand.
 
 ### [Remove-MgGroupPhoto](Remove-MgGroupPhoto.md)
-The group's profile photo.
+The group's profile photo
 
 ### [Remove-MgGroupSetting](Remove-MgGroupSetting.md)
 Settings that can govern this group's behavior, like whether members can invite guest users to the group.
@@ -582,7 +580,6 @@ Read-only.
 Nullable.
 
 ### [Remove-MgGroupThreadPostAttachment](Remove-MgGroupThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -618,14 +615,14 @@ Invoke action restore
 
 ### [Set-MgGroupCreatedOnBehalfOfByRef](Set-MgGroupCreatedOnBehalfOfByRef.md)
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ### [Set-MgGroupLicense](Set-MgGroupLicense.md)
 Invoke action assignLicense
 
 ### [Set-MgGroupPhotoContent](Set-MgGroupPhotoContent.md)
-The group's profile photo.
+The group's profile photo
 
 ### [Stop-MgGroupCalendarEvent](Stop-MgGroupCalendarEvent.md)
 Invoke action cancel
@@ -656,7 +653,6 @@ Read-only.
 Nullable.
 
 ### [Update-MgGroupConversationThreadPostAttachment](Update-MgGroupConversationThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -697,11 +693,11 @@ Update entity in groupLifecyclePolicies
 Invoke action onenotePatchContent
 
 ### [Update-MgGroupPermissionGrant](Update-MgGroupPermissionGrant.md)
-The permissions that have been granted for a group to a specific application.
+The permission that has been granted for a group to a specific application.
 Supports $expand.
 
 ### [Update-MgGroupPhoto](Update-MgGroupPhoto.md)
-The group's profile photo.
+The group's profile photo
 
 ### [Update-MgGroupSetting](Update-MgGroupSetting.md)
 Settings that can govern this group's behavior, like whether members can invite guest users to the group.
@@ -716,7 +712,6 @@ Read-only.
 Nullable.
 
 ### [Update-MgGroupThreadPostAttachment](Update-MgGroupThreadPostAttachment.md)
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
