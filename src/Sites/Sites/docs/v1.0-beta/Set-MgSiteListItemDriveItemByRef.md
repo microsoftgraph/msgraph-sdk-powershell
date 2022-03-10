@@ -1,35 +1,77 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemdriveitemcontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/set-mgsitelistitemdriveitembyref
 schema: 2.0.0
 ---
 
-# Get-MgSiteListItemDriveItemContent
+# Set-MgSiteListItemDriveItemByRef
 
 ## SYNOPSIS
-Get media content for the navigation property driveItem from sites
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## SYNTAX
 
-### Get (Default)
+### SetExpanded (Default)
 ```
-Get-MgSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String> -OutFile <String>
- [-PassThru] [<CommonParameters>]
+Set-MgSiteListItemDriveItemByRef -ListId <String> -ListItemId <String> -SiteId <String>
+ [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### Set
 ```
-Get-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -OutFile <String> [-PassThru]
- [<CommonParameters>]
+Set-MgSiteListItemDriveItemByRef -ListId <String> -ListItemId <String> -SiteId <String>
+ -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgSiteListItemDriveItemByRef -InputObject <ISitesIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded
+```
+Set-MgSiteListItemDriveItemByRef -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property driveItem from sites
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BodyParameter
+.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Set, SetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -37,7 +79,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -52,7 +94,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -67,22 +109,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -112,10 +139,41 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -128,6 +186,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
+
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
@@ -146,7 +206,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -165,13 +224,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

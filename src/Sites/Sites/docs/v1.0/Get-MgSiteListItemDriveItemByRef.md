@@ -1,52 +1,33 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitelistdrive
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitelistitemdriveitembyref
 schema: 2.0.0
 ---
 
-# Remove-MgSiteListDrive
+# Get-MgSiteListItemDriveItemByRef
 
 ## SYNOPSIS
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Get1 (Default)
 ```
-Remove-MgSiteListDrive -ListId <String> -SiteId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSiteListItemDriveItemByRef -ListId <String> -ListItemId <String> -SiteId <String> [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### GetViaIdentity1
 ```
-Remove-MgSiteListDrive -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSiteListItemDriveItemByRef -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Only present on document libraries.
-Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
 
 ## EXAMPLES
 
 ## PARAMETERS
-
-### -IfMatch
-ETag
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -InputObject
 Identity Parameter
@@ -54,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -69,7 +50,7 @@ key: id of list
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -79,15 +60,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -ListItemId
+key: id of listItem
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: Get1
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -99,41 +80,10 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Get1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -149,7 +99,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### System.String
 
 ## NOTES
 
@@ -164,7 +114,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -183,13 +132,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

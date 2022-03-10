@@ -1,38 +1,31 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/remove-mgsitedrive
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitedrivebyref
 schema: 2.0.0
 ---
 
-# Remove-MgSiteDrive
+# Get-MgSiteDriveByRef
 
 ## SYNOPSIS
 The default drive (document library) for this site.
 
 ## SYNTAX
 
-### Delete2 (Default)
+### Get1 (Default)
 ```
-Remove-MgSiteDrive -SiteId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Delete3
-```
-Remove-MgSiteDrive -DriveId <String> -SiteId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSiteDriveByRef -SiteId <String> [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
+### GetViaIdentity1
 ```
-Remove-MgSiteDrive -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSiteDriveByRef -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
-### DeleteViaIdentity3
+### List1
 ```
-Remove-MgSiteDrive -InputObject <ISitesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgSiteDriveByRef -SiteId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,27 +35,43 @@ The default drive (document library) for this site.
 
 ## PARAMETERS
 
-### -DriveId
-key: id of drive
+### -All
+List all pages.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete3
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List1
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -78,7 +87,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -88,12 +97,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -PageSize
+Sets the page size of results.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Search
+Search items by search phrases
+
+```yaml
+Type: System.String
+Parameter Sets: List1
 Aliases:
 
 Required: False
@@ -108,7 +132,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Get1, List1
 Aliases:
 
 Required: True
@@ -118,13 +142,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Skip
+Skip the first n items
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
+Type: System.Int32
+Parameter Sets: List1
+Aliases:
 
 Required: False
 Position: Named
@@ -133,14 +157,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+### -Sort
+Order items by property values
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Type: System.String[]
+Parameter Sets: List1
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List1
+Aliases: Limit
 
 Required: False
 Position: Named
@@ -158,7 +196,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### System.String
 
 ## NOTES
 
@@ -173,7 +211,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -192,13 +229,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

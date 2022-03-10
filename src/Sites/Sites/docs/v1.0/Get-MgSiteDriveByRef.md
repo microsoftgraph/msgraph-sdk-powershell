@@ -1,62 +1,80 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Sites
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/set-mgsitelistitemdriveitemcontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.sites/get-mgsitedrivebyref
 schema: 2.0.0
 ---
 
-# Set-MgSiteListItemDriveItemContent
+# Get-MgSiteDriveByRef
 
 ## SYNOPSIS
-Update media content for the navigation property driveItem in sites
+The default drive (document library) for this site.
 
 ## SYNTAX
 
-### Set (Default)
+### Get (Default)
 ```
-Set-MgSiteListItemDriveItemContent -ListId <String> -ListItemId <String> -SiteId <String> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgSiteDriveByRef -SiteId <String> [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### GetViaIdentity
 ```
-Set-MgSiteListItemDriveItemContent -InputObject <ISitesIdentity> -InFile <String> [-BodyParameter <Stream>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgSiteDriveByRef -InputObject <ISitesIdentity> [<CommonParameters>]
+```
+
+### List
+```
+Get-MgSiteDriveByRef -SiteId <String> [-Filter <String>] [-Search <String>] [-Skip <Int32>] [-Sort <String[]>]
+ [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property driveItem in sites
+The default drive (document library) for this site.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -BodyParameter
-.
+### -All
+List all pages.
 
 ```yaml
-Type: System.IO.Stream
-Parameter Sets: (All)
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: List
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InFile
-The path to the file to upload.
-This should include a path and file name.
-If you omit the path, the current location will be used.
+### -CountVariable
+Specifies a count of the total number of items in a collection.
+By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: List
+Aliases: CV
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Filter
+Filter items by property values
+
+```yaml
+Type: System.String
+Parameter Sets: List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -69,7 +87,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: SetViaIdentity
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -79,42 +97,27 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -ListId
-key: id of list
+### -PageSize
+Sets the page size of results.
 
 ```yaml
-Type: System.String
-Parameter Sets: Set
+Type: System.Int32
+Parameter Sets: List
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ListItemId
-key: id of listItem
+### -Search
+Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: List
 Aliases:
 
 Required: False
@@ -129,7 +132,7 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Get, List
 Aliases:
 
 Required: True
@@ -139,13 +142,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
+### -Skip
+Skip the first n items
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
+Type: System.Int32
+Parameter Sets: List
+Aliases:
 
 Required: False
 Position: Named
@@ -154,14 +157,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+### -Sort
+Order items by property values
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Type: System.String[]
+Parameter Sets: List
+Aliases: OrderBy
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Top
+Show only the first n items
+
+```yaml
+Type: System.Int32
+Parameter Sets: List
+Aliases: Limit
 
 Required: False
 Position: Named
@@ -177,11 +194,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ISitesIdentity
 
-### System.IO.Stream
-
 ## OUTPUTS
 
-### System.Boolean
+### System.String
 
 ## NOTES
 
@@ -196,7 +211,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -215,13 +229,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS
