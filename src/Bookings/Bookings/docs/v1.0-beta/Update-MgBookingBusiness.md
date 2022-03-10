@@ -530,19 +530,19 @@ APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>: All the appointments of this
   - `[Duration <TimeSpan?>]`: The length of the appointment, denoted in ISO8601 format.
   - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
-  - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment
   - `[InvoiceAmount <Double?>]`: The billed amount on the invoice.
   - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[InvoiceId <String>]`: The ID of the invoice.
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: The URL of the invoice in Microsoft Bookings.
-  - `[IsLocationOnline <Boolean?>]`: True indicates that the appointment will be held online. Default value is false.
+  - `[IsLocationOnline <Boolean?>]`: If true, indicates that the appointment will be held online. Default value is false.
   - `[JoinWebUrl <String>]`: The URL of the online meeting for the appointment.
-  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment.
+  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[OnlineMeetingUrl <String>]`: 
-  - `[OptOutOfCustomerEmail <Boolean?>]`: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+  - `[OptOutOfCustomerEmail <Boolean?>]`: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
   - `[PostBuffer <TimeSpan?>]`: The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
   - `[PreBuffer <TimeSpan?>]`: The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
   - `[Price <Double?>]`: The regular price for an appointment for the specified bookingService.
@@ -551,12 +551,12 @@ APPOINTMENTS <IMicrosoftGraphBookingAppointment[]>: All the appointments of this
     - `[Message <String>]`: The message in the reminder.
     - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     - `[Recipients <String>]`: 
-  - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+  - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
   - `[ServiceId <String>]`: The ID of the bookingService associated with this appointment.
   - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
   - `[ServiceName <String>]`: The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
   - `[ServiceNotes <String>]`: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-  - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+  - `[SmsNotificationsEnabled <Boolean?>]`: If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
   - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
@@ -602,19 +602,19 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[Duration <TimeSpan?>]`: The length of the appointment, denoted in ISO8601 format.
     - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
-    - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment.
+      - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+      - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+    - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment
     - `[InvoiceAmount <Double?>]`: The billed amount on the invoice.
     - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[InvoiceId <String>]`: The ID of the invoice.
     - `[InvoiceStatus <String>]`: bookingInvoiceStatus
     - `[InvoiceUrl <String>]`: The URL of the invoice in Microsoft Bookings.
-    - `[IsLocationOnline <Boolean?>]`: True indicates that the appointment will be held online. Default value is false.
+    - `[IsLocationOnline <Boolean?>]`: If true, indicates that the appointment will be held online. Default value is false.
     - `[JoinWebUrl <String>]`: The URL of the online meeting for the appointment.
-    - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment.
+    - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
     - `[OnlineMeetingUrl <String>]`: 
-    - `[OptOutOfCustomerEmail <Boolean?>]`: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+    - `[OptOutOfCustomerEmail <Boolean?>]`: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
     - `[PostBuffer <TimeSpan?>]`: The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
     - `[PreBuffer <TimeSpan?>]`: The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
     - `[Price <Double?>]`: The regular price for an appointment for the specified bookingService.
@@ -623,12 +623,12 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
       - `[Message <String>]`: The message in the reminder.
       - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
       - `[Recipients <String>]`: 
-    - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+    - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
     - `[ServiceId <String>]`: The ID of the bookingService associated with this appointment.
     - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
     - `[ServiceName <String>]`: The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
     - `[ServiceNotes <String>]`: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-    - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+    - `[SmsNotificationsEnabled <Boolean?>]`: If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
     - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
     - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[BusinessHours <IMicrosoftGraphBookingWorkHours[]>]`: The hours of operation for the business.
@@ -647,7 +647,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[EmailAddress <String>]`: The email address of the person.
     - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
     - `[Id <String>]`: Read-only.
-    - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer, including home, business and other addresses.
+    - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
     - `[Phones <IMicrosoftGraphPhone[]>]`: Phone numbers associated with the customer, including home, business and mobile numbers.
       - `[Number <String>]`: The phone number.
       - `[Type <String>]`: phoneType
@@ -668,8 +668,8 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[Id <String>]`: Read-only.
     - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
     - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-      - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-      - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+      - `[IsRequired <Boolean?>]`: The ID of the custom question.
+      - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
     - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
     - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
     - `[DefaultPrice <Double?>]`: The default monetary price for the service.
@@ -678,7 +678,7 @@ BODYPARAMETER <IMicrosoftGraphBookingBusiness>: Represents a Microsot Bookings B
     - `[Description <String>]`: A text description for the service.
     - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
     - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
-    - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service.
+    - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
     - `[Notes <String>]`: Additional information about this service.
     - `[PostBuffer <TimeSpan?>]`: The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
     - `[PreBuffer <TimeSpan?>]`: The time to buffer before an appointment for this service can start.
@@ -741,19 +741,19 @@ CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>: The set of appointments of t
   - `[Duration <TimeSpan?>]`: The length of the appointment, denoted in ISO8601 format.
   - `[End <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}). For example, '2019-04-16T09:00:00'.
-    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for possible values.
-  - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment.
+    - `[DateTime <String>]`: A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
+    - `[TimeZone <String>]`: Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
+  - `[FilledAttendeesCount <Int32?>]`: The current number of customers in the appointment
   - `[InvoiceAmount <Double?>]`: The billed amount on the invoice.
   - `[InvoiceDate <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
   - `[InvoiceId <String>]`: The ID of the invoice.
   - `[InvoiceStatus <String>]`: bookingInvoiceStatus
   - `[InvoiceUrl <String>]`: The URL of the invoice in Microsoft Bookings.
-  - `[IsLocationOnline <Boolean?>]`: True indicates that the appointment will be held online. Default value is false.
+  - `[IsLocationOnline <Boolean?>]`: If true, indicates that the appointment will be held online. Default value is false.
   - `[JoinWebUrl <String>]`: The URL of the online meeting for the appointment.
-  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment.
+  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[OnlineMeetingUrl <String>]`: 
-  - `[OptOutOfCustomerEmail <Boolean?>]`: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+  - `[OptOutOfCustomerEmail <Boolean?>]`: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
   - `[PostBuffer <TimeSpan?>]`: The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
   - `[PreBuffer <TimeSpan?>]`: The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
   - `[Price <Double?>]`: The regular price for an appointment for the specified bookingService.
@@ -762,12 +762,12 @@ CALENDARVIEW <IMicrosoftGraphBookingAppointment[]>: The set of appointments of t
     - `[Message <String>]`: The message in the reminder.
     - `[Offset <TimeSpan?>]`: The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
     - `[Recipients <String>]`: 
-  - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.
+  - `[SelfServiceAppointmentId <String>]`: An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
   - `[ServiceId <String>]`: The ID of the bookingService associated with this appointment.
   - `[ServiceLocation <IMicrosoftGraphLocation>]`: location
   - `[ServiceName <String>]`: The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
   - `[ServiceNotes <String>]`: Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-  - `[SmsNotificationsEnabled <Boolean?>]`: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
+  - `[SmsNotificationsEnabled <Boolean?>]`: If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
   - `[StaffMemberIds <String[]>]`: The ID of each bookingStaffMember who is scheduled in this appointment.
   - `[Start <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
 
@@ -775,7 +775,7 @@ CUSTOMERS <IMicrosoftGraphBookingCustomer[]>: All the customers of this business
   - `[EmailAddress <String>]`: The email address of the person.
   - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
   - `[Id <String>]`: Read-only.
-  - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer, including home, business and other addresses.
+  - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: The post office box number.
@@ -817,8 +817,8 @@ SERVICES <IMicrosoftGraphBookingService[]>: All the services offered by this bus
   - `[Id <String>]`: Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-    - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-    - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+    - `[IsRequired <Boolean?>]`: The ID of the custom question.
+    - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -853,7 +853,7 @@ SERVICES <IMicrosoftGraphBookingService[]>: All the services offered by this bus
   - `[Description <String>]`: A text description for the service.
   - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
   - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
-  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service.
+  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[Notes <String>]`: Additional information about this service.
   - `[PostBuffer <TimeSpan?>]`: The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
   - `[PreBuffer <TimeSpan?>]`: The time to buffer before an appointment for this service can start.
