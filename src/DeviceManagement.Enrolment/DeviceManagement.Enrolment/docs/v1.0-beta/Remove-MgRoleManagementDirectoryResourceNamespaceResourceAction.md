@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgRoleManagementDirectoryResourceNamespaceResourceAction
 
 ## SYNOPSIS
-Delete navigation property resourceActions for roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Remove-MgRoleManagementDirectoryResourceNamespaceResourceAction
 ```
 
 ## DESCRIPTION
-Delete navigation property resourceActions for roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## EXAMPLES
 

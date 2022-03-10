@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef
 
 ## SYNOPSIS
-The assigned principal.
-Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Referencing the assigned principal.
 Read-only.
 Supports $expand.
 
@@ -28,8 +27,7 @@ Remove-MgRoleManagementDirectoryRoleAssignmentPrincipalByRef -InputObject <IDevi
 ```
 
 ## DESCRIPTION
-The assigned principal.
-Provided so that callers can get the principal using $expand at the same time as getting the role assignment.
+Referencing the assigned principal.
 Read-only.
 Supports $expand.
 
