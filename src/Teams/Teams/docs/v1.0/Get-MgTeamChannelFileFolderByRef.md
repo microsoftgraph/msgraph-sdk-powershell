@@ -1,34 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamprimarychannelfilefoldercontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamchannelfilefolderbyref
 schema: 2.0.0
 ---
 
-# Get-MgTeamPrimaryChannelFileFolderContent
+# Get-MgTeamChannelFileFolderByRef
 
 ## SYNOPSIS
-Get media content for the navigation property filesFolder from teams
+Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
-Get-MgTeamPrimaryChannelFileFolderContent -TeamId <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+Get-MgTeamChannelFileFolderByRef -ChannelId <String> -TeamId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
-Get-MgTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -OutFile <String> [-PassThru]
- [<CommonParameters>]
+Get-MgTeamChannelFileFolderByRef -InputObject <ITeamsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get media content for the navigation property filesFolder from teams
+Metadata for the location where the channel's files are stored.
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -ChannelId
+key: id of channel
+
+```yaml
+Type: System.String
+Parameter Sets: Get1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -36,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -46,42 +60,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutFile
-Path to write output file to
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TeamId
 key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -100,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### System.Boolean
+### System.String
 
 ## NOTES
 

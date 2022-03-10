@@ -1,45 +1,72 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamchannelfilefoldercontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamchannelfilefolderbyref
 schema: 2.0.0
 ---
 
-# Set-MgTeamChannelFileFolderContent
+# Set-MgTeamChannelFileFolderByRef
 
 ## SYNOPSIS
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
-### Set1 (Default)
+### SetExpanded (Default)
 ```
-Set-MgTeamChannelFileFolderContent -ChannelId <String> -TeamId <String> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### SetViaIdentity1
-```
-Set-MgTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String> [-BodyParameter <Stream>]
+Set-MgTeamChannelFileFolderByRef -ChannelId <String> -TeamId <String> [-AdditionalProperties <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### Set
+```
+Set-MgTeamChannelFileFolderByRef -ChannelId <String> -TeamId <String> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgTeamChannelFileFolderByRef -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded
+```
+Set-MgTeamChannelFileFolderByRef -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
+### -AdditionalProperties
+Additional Parameters
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -BodyParameter
 .
 
 ```yaml
-Type: System.IO.Stream
-Parameter Sets: (All)
+Type: System.Collections.Hashtable
+Parameter Sets: Set, SetViaIdentity
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
@@ -51,24 +78,7 @@ key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InFile
-The path to the file to upload.
-This should include a path and file name.
-If you omit the path, the current location will be used.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -84,7 +94,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SetViaIdentity1
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -114,7 +124,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -162,7 +172,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.IO.Stream
+### System.Collections.Hashtable
 
 ## OUTPUTS
 

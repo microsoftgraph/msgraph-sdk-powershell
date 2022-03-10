@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkDeviceActivity
 
 ## SYNOPSIS
-Update the navigation property activity in teamwork
+The activity properties that change based on the device usage.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgTeamworkDeviceActivity -InputObject <ITeamsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property activity in teamwork
+The activity properties that change based on the device usage.
 
 ## EXAMPLES
 
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The UTC date and time when the device activity document was created.
 
 ```yaml
 Type: System.DateTime
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+The UTC date and time when the device activity detail was last modified.
 
 ```yaml
 Type: System.DateTime
@@ -277,9 +277,9 @@ ACTIVEPERIPHERALS <IMicrosoftGraphTeamworkActivePeripherals>: teamworkActivePeri
   - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[DisplayName <String>]`: 
-    - `[ProductId <String>]`: 
-    - `[VendorId <String>]`: 
+    - `[DisplayName <String>]`: Display name for the peripheral.
+    - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
+    - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
   - `[ContentCamera <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
   - `[Microphone <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
   - `[RoomCamera <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
@@ -293,9 +293,9 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceActivity>: teamworkDeviceActivity
     - `[CommunicationSpeaker <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisplayName <String>]`: 
-      - `[ProductId <String>]`: 
-      - `[VendorId <String>]`: 
+      - `[DisplayName <String>]`: Display name for the peripheral.
+      - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
+      - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
     - `[ContentCamera <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
     - `[Microphone <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
     - `[RoomCamera <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
@@ -304,20 +304,20 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceActivity>: teamworkDeviceActivity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The UTC date and time when the device activity document was created.
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: The UTC date and time when the device activity detail was last modified.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -358,8 +358,8 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

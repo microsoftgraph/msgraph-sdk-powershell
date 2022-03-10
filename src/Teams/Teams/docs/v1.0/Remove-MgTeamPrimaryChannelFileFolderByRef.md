@@ -1,77 +1,45 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamchannelfilefoldercontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamprimarychannelfilefolderbyref
 schema: 2.0.0
 ---
 
-# Set-MgTeamChannelFileFolderContent
+# Remove-MgTeamPrimaryChannelFileFolderByRef
 
 ## SYNOPSIS
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
-### Set (Default)
+### Delete1 (Default)
 ```
-Set-MgTeamChannelFileFolderContent -ChannelId <String> -TeamId <String> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgTeamPrimaryChannelFileFolderByRef -TeamId <String> [-IfMatch <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### DeleteViaIdentity1
 ```
-Set-MgTeamChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String> [-BodyParameter <Stream>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MgTeamPrimaryChannelFileFolderByRef -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -BodyParameter
-.
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.IO.Stream
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -ChannelId
-key: id of channel
-
-```yaml
-Type: System.String
-Parameter Sets: Set
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -InFile
-The path to the file to upload.
-This should include a path and file name.
-If you omit the path, the current location will be used.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -84,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SetViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -114,7 +82,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Set
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -161,8 +129,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-
-### System.IO.Stream
 
 ## OUTPUTS
 

@@ -1,59 +1,40 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamprimarychannelfilefoldercontent
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/get-mgteamchannelfilefolderbyref
 schema: 2.0.0
 ---
 
-# Set-MgTeamPrimaryChannelFileFolderContent
+# Get-MgTeamChannelFileFolderByRef
 
 ## SYNOPSIS
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
-### Set1 (Default)
+### Get (Default)
 ```
-Set-MgTeamPrimaryChannelFileFolderContent -TeamId <String> -InFile <String> [-BodyParameter <Stream>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgTeamChannelFileFolderByRef -ChannelId <String> -TeamId <String> [<CommonParameters>]
 ```
 
-### SetViaIdentity1
+### GetViaIdentity
 ```
-Set-MgTeamPrimaryChannelFileFolderContent -InputObject <ITeamsIdentity> -InFile <String>
- [-BodyParameter <Stream>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgTeamChannelFileFolderByRef -InputObject <ITeamsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update media content for the navigation property filesFolder in teams
+Metadata for the location where the channel's files are stored.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -BodyParameter
-.
-
-```yaml
-Type: System.IO.Stream
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -InFile
-The path to the file to upload.
-This should include a path and file name.
-If you omit the path, the current location will be used.
+### -ChannelId
+key: id of channel
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -69,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -79,61 +60,15 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -TeamId
 key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1
+Parameter Sets: Get
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -147,11 +82,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
 
-### System.IO.Stream
-
 ## OUTPUTS
 
-### System.Boolean
+### System.String
 
 ## NOTES
 

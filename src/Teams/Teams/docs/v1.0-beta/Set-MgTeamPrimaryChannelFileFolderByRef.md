@@ -1,27 +1,39 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Teams
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/remove-mgteamprimarychannelfilefolder
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams/set-mgteamprimarychannelfilefolderbyref
 schema: 2.0.0
 ---
 
-# Remove-MgTeamPrimaryChannelFileFolder
+# Set-MgTeamPrimaryChannelFileFolderByRef
 
 ## SYNOPSIS
 Metadata for the location where the channel's files are stored.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### SetExpanded (Default)
 ```
-Remove-MgTeamPrimaryChannelFileFolder -TeamId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-MgTeamPrimaryChannelFileFolderByRef -TeamId <String> [-AdditionalProperties <Hashtable>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### Set
 ```
-Remove-MgTeamPrimaryChannelFileFolder -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
+Set-MgTeamPrimaryChannelFileFolderByRef -TeamId <String> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-MgTeamPrimaryChannelFileFolderByRef -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded
+```
+Set-MgTeamPrimaryChannelFileFolderByRef -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -31,12 +43,12 @@ Metadata for the location where the channel's files are stored.
 
 ## PARAMETERS
 
-### -IfMatch
-ETag
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.Collections.Hashtable
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -46,13 +58,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -BodyParameter
+.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: Set, SetViaIdentity
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -82,7 +109,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -129,6 +156,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### Microsoft.Graph.PowerShell.Models.ITeamsIdentity
+
+### System.Collections.Hashtable
 
 ## OUTPUTS
 
