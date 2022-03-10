@@ -228,7 +228,7 @@ BODYPARAMETER <IPaths5ShjyeUsersUserIdInsightsSharedSharedinsightIdLastsharedmet
       - `[Left <Int32?>]`: The margin in microns from the left edge.
       - `[Right <Int32?>]`: The margin in microns from the right edge.
       - `[Top <Int32?>]`: The margin in microns from the top edge.
-    - `[MediaSize <String>]`: The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+    - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
     - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
     - `[MultipageLayout <String>]`: printMultipageLayout
     - `[Orientation <String>]`: printOrientation
@@ -258,7 +258,7 @@ CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>: printJobConfiguration
     - `[Left <Int32?>]`: The margin in microns from the left edge.
     - `[Right <Int32?>]`: The margin in microns from the right edge.
     - `[Top <Int32?>]`: The margin in microns from the top edge.
-  - `[MediaSize <String>]`: The media sizeto use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
+  - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
   - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
   - `[MultipageLayout <String>]`: printMultipageLayout
   - `[Orientation <String>]`: printOrientation
@@ -273,6 +273,7 @@ CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>: printJobConfiguration
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask
