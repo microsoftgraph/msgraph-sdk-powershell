@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgOrganizationExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ## SYNTAX
@@ -38,7 +39,8 @@ Update-MgOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ## EXAMPLES
