@@ -1,33 +1,50 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertodolisttaskdelta
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgfilteruserpendingaccessreviewinstancestage
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskDelta
+# Invoke-MgFilterUserPendingAccessReviewInstanceStage
 
 ## SYNOPSIS
-Invoke function delta
+Invoke function filterByCurrentUser
 
 ## SYNTAX
 
-### Delta1 (Default)
+### Filter (Default)
 ```
-Get-MgUserTodoListTaskDelta -TodoTaskListId <String> -UserId <String> [<CommonParameters>]
+Invoke-MgFilterUserPendingAccessReviewInstanceStage -AccessReviewInstanceId <String> -On <String>
+ -UserId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity1
+### FilterViaIdentity
 ```
-Get-MgUserTodoListTaskDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Invoke-MgFilterUserPendingAccessReviewInstanceStage -InputObject <IUsersFunctionsIdentity>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function delta
+Invoke function filterByCurrentUser
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -AccessReviewInstanceId
+key: id of accessReviewInstance
+
+```yaml
+Type: System.String
+Parameter Sets: Filter
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -35,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity1
+Parameter Sets: FilterViaIdentity
 Aliases:
 
 Required: True
@@ -45,12 +62,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -TodoTaskListId
-key: id of todoTaskList
+### -On
+Usage: on={on}
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Filter
 Aliases:
 
 Required: True
@@ -65,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Filter
 Aliases:
 
 Required: True
@@ -84,7 +101,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessReviewStage
 
 ## NOTES
 

@@ -1,29 +1,29 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusertodolisttaskdelta
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusermanageddeviceoemwarranty
 schema: 2.0.0
 ---
 
-# Get-MgUserTodoListTaskDelta
+# Get-MgUserManagedDeviceOemWarranty
 
 ## SYNOPSIS
-Invoke function delta
+Invoke function getOemWarranty
 
 ## SYNTAX
 
-### Delta1 (Default)
+### Get (Default)
 ```
-Get-MgUserTodoListTaskDelta -TodoTaskListId <String> -UserId <String> [<CommonParameters>]
+Get-MgUserManagedDeviceOemWarranty -ManagedDeviceId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity1
+### GetViaIdentity
 ```
-Get-MgUserTodoListTaskDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserManagedDeviceOemWarranty -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function delta
+Invoke function getOemWarranty
 
 ## EXAMPLES
 
@@ -35,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -45,12 +45,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -TodoTaskListId
-key: id of todoTaskList
+### -ManagedDeviceId
+key: id of managedDevice
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -65,7 +65,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTodoTask
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphOemWarranty
 
 ## NOTES
 
