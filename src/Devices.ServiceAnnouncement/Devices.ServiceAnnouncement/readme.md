@@ -46,7 +46,6 @@ directive:
     set:
       subject: $1ServiceAnnouncement$2
 ```
-
 ### Versioning
 
 ``` yaml
