@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDeviceActivity
 
 ## SYNOPSIS
-Delete navigation property activity for teamwork
+The activity properties that change based on the device usage.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDeviceActivity -InputObject <ITeamsIdentity> [-IfMatch <String>
 ```
 
 ## DESCRIPTION
-Delete navigation property activity for teamwork
+The activity properties that change based on the device usage.
 
 ## EXAMPLES
 

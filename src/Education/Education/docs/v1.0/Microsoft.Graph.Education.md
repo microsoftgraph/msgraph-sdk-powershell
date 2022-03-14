@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Education
-Module Guid: db2acbe2-a990-4439-8057-9db12cc01430
+Module Guid: 0594cb09-cbc8-408a-b459-d66c4e0d54fd
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.education
 Help Version: 1.0.0.0
 Locale: en-US
@@ -97,8 +97,7 @@ Invoke function delta
 Get me from education
 
 ### [Get-MgEducationMeAssignment](Get-MgEducationMeAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Get-MgEducationMeAssignmentCategory](Get-MgEducationMeAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -210,8 +209,7 @@ Invoke function delta
 Get users from education
 
 ### [Get-MgEducationUserAssignment](Get-MgEducationUserAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Get-MgEducationUserAssignmentCategory](Get-MgEducationUserAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -353,8 +351,7 @@ All teachers in the class.
 Nullable.
 
 ### [New-MgEducationMeAssignment](New-MgEducationMeAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [New-MgEducationMeAssignmentCategory](New-MgEducationMeAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -411,8 +408,7 @@ Nullable.
 Create new navigation property to users for education
 
 ### [New-MgEducationUserAssignment](New-MgEducationUserAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [New-MgEducationUserAssignmentCategory](New-MgEducationUserAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -510,8 +506,7 @@ The underlying Microsoft 365 group object.
 Delete navigation property me for education
 
 ### [Remove-MgEducationMeAssignment](Remove-MgEducationMeAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Remove-MgEducationMeAssignmentCategory](Remove-MgEducationMeAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -558,8 +553,7 @@ The underlying administrativeUnit for this school.
 Delete navigation property users for education
 
 ### [Remove-MgEducationUserAssignment](Remove-MgEducationUserAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Remove-MgEducationUserAssignmentCategory](Remove-MgEducationUserAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -679,8 +673,7 @@ Nullable.
 Update the navigation property me in education
 
 ### [Update-MgEducationMeAssignment](Update-MgEducationMeAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Update-MgEducationMeAssignmentCategory](Update-MgEducationMeAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.
@@ -724,8 +717,7 @@ Update the navigation property schools in education
 Update the navigation property users in education
 
 ### [Update-MgEducationUserAssignment](Update-MgEducationUserAssignment.md)
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ### [Update-MgEducationUserAssignmentCategory](Update-MgEducationUserAssignmentCategory.md)
 When set, enables users to easily find assignments of a given type.

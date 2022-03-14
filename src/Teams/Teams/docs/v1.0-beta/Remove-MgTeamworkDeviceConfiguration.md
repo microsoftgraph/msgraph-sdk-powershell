@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDeviceConfiguration
 
 ## SYNOPSIS
-Delete navigation property configuration for teamwork
+The configuration properties of the device.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDeviceConfiguration -InputObject <ITeamsIdentity> [-IfMatch <St
 ```
 
 ## DESCRIPTION
-Delete navigation property configuration for teamwork
+The configuration properties of the device.
 
 ## EXAMPLES
 

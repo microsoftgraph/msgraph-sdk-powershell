@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgGroupPhotoContent
 
 ## SYNOPSIS
-The group's profile photo.
+The group's profile photo
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Set-MgGroupPhotoContent -InputObject <IGroupsIdentity> -InFile <String> [-BodyPa
 ```
 
 ## DESCRIPTION
-The group's profile photo.
+The group's profile photo
 
 ## EXAMPLES
 

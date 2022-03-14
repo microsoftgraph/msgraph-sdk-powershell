@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDevice
 
 ## SYNOPSIS
-Get devices from teamwork
+The Teams devices provisioned for the tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkDevice -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get devices from teamwork
+The Teams devices provisioned for the tenant.
 
 ## EXAMPLES
 

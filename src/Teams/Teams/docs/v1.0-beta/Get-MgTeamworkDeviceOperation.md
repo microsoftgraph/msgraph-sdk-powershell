@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceOperation
 
 ## SYNOPSIS
-Get operations from teamwork
+The async operations on the device.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-ExpandProperty <St
 ```
 
 ## DESCRIPTION
-Get operations from teamwork
+The async operations on the device.
 
 ## EXAMPLES
 

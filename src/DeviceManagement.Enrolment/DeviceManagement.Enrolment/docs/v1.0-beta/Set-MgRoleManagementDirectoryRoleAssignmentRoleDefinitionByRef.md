@@ -9,9 +9,8 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The roleDefinition the assignment is for.
-Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
-roleDefinition.id will be auto expanded.
 Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ## SYNTAX
 
@@ -43,9 +42,8 @@ Set-MgRoleManagementDirectoryRoleAssignmentRoleDefinitionByRef
 
 ## DESCRIPTION
 The roleDefinition the assignment is for.
-Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.
-roleDefinition.id will be auto expanded.
 Supports $expand.
+roleDefinition.Id will be auto expanded.
 
 ## EXAMPLES
 

@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ## SYNTAX
@@ -28,7 +28,7 @@ Get-MgGroupCreatedOnBehalfOf -InputObject <IGroupsIdentity> [-ExpandProperty <St
 
 ## DESCRIPTION
 The user (or application) that created the group.
-Note: This is not set if the user is an administrator.
+NOTE: This is not set if the user is an administrator.
 Read-only.
 
 ## EXAMPLES

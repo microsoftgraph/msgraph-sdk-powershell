@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgChatTab
 
 ## SYNOPSIS
-Delete navigation property tabs for chats
+A collection of all the tabs in the chat.
+Nullable.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgChatTab -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [
 ```
 
 ## DESCRIPTION
-Delete navigation property tabs for chats
+A collection of all the tabs in the chat.
+Nullable.
 
 ## EXAMPLES
 

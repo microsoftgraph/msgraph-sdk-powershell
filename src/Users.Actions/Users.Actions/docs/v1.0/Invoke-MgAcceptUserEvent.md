@@ -12,27 +12,27 @@ Invoke action accept
 
 ## SYNTAX
 
-### AcceptExpanded (Default)
+### AcceptExpanded1 (Default)
 ```
 Invoke-MgAcceptUserEvent -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Accept
+### Accept1
 ```
 Invoke-MgAcceptUserEvent -EventId <String> -UserId <String>
  -BodyParameter <IPaths1SpvidmUsersUserIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AcceptViaIdentity
+### AcceptViaIdentity1
 ```
 Invoke-MgAcceptUserEvent -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1SpvidmUsersUserIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AcceptViaIdentityExpanded
+### AcceptViaIdentityExpanded1
 ```
 Invoke-MgAcceptUserEvent -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1SpvidmUsersUserIdEventsEventIdMicrosoftGraphAcceptPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Accept, AcceptViaIdentity
+Parameter Sets: Accept1, AcceptViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -96,7 +96,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept, AcceptExpanded
+Parameter Sets: Accept1, AcceptExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AcceptViaIdentity, AcceptViaIdentityExpanded
+Parameter Sets: AcceptViaIdentity1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -157,7 +157,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept, AcceptExpanded
+Parameter Sets: Accept1, AcceptExpanded1
 Aliases:
 
 Required: True
@@ -228,6 +228,7 @@ BODYPARAMETER <IPaths1SpvidmUsersUserIdEventsEventIdMicrosoftGraphAcceptPostRequ
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask

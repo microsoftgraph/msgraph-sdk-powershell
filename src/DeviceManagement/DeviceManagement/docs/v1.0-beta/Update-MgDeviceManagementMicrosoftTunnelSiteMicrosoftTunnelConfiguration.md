@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableUdpConnections
-When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -407,7 +407,7 @@ BODYPARAMETER <IMicrosoftGraphMicrosoftTunnelConfiguration>: Entity that represe
     - `[Value <String>]`: Value for this key-value pair
   - `[DefaultDomainSuffix <String>]`: The Default Domain appendix that will be used by the clients
   - `[Description <String>]`: The MicrosoftTunnelConfiguration's description
-  - `[DisableUdpConnections <Boolean?>]`: When DisableUDPConnections is set, the clients and VPN server will not use DTLS connctions to tansfer data.
+  - `[DisableUdpConnections <Boolean?>]`: When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
   - `[DisplayName <String>]`: The MicrosoftTunnelConfiguration's display name
   - `[DnsServers <String[]>]`: The DNS servers that will be used by the clients
   - `[LastUpdateDateTime <DateTime?>]`: When the MicrosoftTunnelConfiguration was last updated
@@ -531,6 +531,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
   - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
   - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
   - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary

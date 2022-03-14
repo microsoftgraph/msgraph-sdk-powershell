@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The application that is linked to the tab.
+This cannot be changed after tab creation.
 
 ## SYNTAX
 
@@ -26,6 +27,7 @@ Remove-MgTeamChannelTabTeamAppByRef -InputObject <ITeamsIdentity> [-IfMatch <Str
 
 ## DESCRIPTION
 The application that is linked to the tab.
+This cannot be changed after tab creation.
 
 ## EXAMPLES
 

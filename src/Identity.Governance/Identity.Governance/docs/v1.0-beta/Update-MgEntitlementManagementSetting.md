@@ -79,7 +79,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExternalUserLifecycleAction
-One of None, BlockSignIn, or BlockSignInAndDelete.
+Automatic action that the service should take when an external user's last access package assignment is removed.
+The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
 
 ```yaml
 Type: System.String
@@ -178,7 +179,7 @@ BODYPARAMETER <IMicrosoftGraphEntitlementManagementSettings>: entitlementManagem
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[DaysUntilExternalUserDeletedAfterBlocked <Int32?>]`: If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.
-  - `[ExternalUserLifecycleAction <String>]`: One of None, BlockSignIn, or BlockSignInAndDelete.
+  - `[ExternalUserLifecycleAction <String>]`: Automatic action that the service should take when an external user's last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.
 
 ## RELATED LINKS
 

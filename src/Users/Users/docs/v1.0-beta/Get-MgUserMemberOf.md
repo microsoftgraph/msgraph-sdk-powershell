@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserMemberOf
 
 ## SYNOPSIS
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
@@ -22,7 +22,7 @@ Get-MgUserMemberOf -UserId <String> [-ExpandProperty <String[]>] [-Filter <Strin
 ```
 
 ## DESCRIPTION
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
