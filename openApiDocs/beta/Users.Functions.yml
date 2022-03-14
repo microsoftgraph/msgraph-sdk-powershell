@@ -5014,6 +5014,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usageRight'
+              description: Represents the usage rights a user has been granted.
             informationProtection:
               $ref: '#/components/schemas/microsoft.graph.informationProtection'
             appRoleAssignments:
@@ -7481,6 +7482,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               format: date-time
               nullable: true
           additionalProperties:
@@ -7546,12 +7548,12 @@ components:
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''Exchange''.'
+          description: 'The name of the service; for example, exchange.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: A GUID that identifies the service plan.
+          description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
       additionalProperties:
@@ -7880,7 +7882,7 @@ components:
             creationTimestamp:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             principalDisplayName:
@@ -7890,12 +7892,12 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
               format: uuid
               nullable: true
             principalType:
               type: string
-              description: 'The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.'
+              description: 'The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.'
               nullable: true
             resourceDisplayName:
               type: string
@@ -8284,7 +8286,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directorySetting'
-              description: Read-only. Nullable.
+              description: 'Settings that can govern this group''s behavior, like whether members can invite guest users to the group. Nullable.'
             transitiveMemberOf:
               type: array
               items:
@@ -11166,7 +11168,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.settingValue'
-              description: Collection of name value pairs. Must contain and set all the settings defined in the template.
+              description: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
           additionalProperties:
             type: object
     microsoft.graph.conversation:
@@ -12493,6 +12495,7 @@ components:
           properties:
             isEnabled:
               type: boolean
+              description: true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.
               nullable: true
           additionalProperties:
             type: object
@@ -15666,7 +15669,7 @@ components:
           properties:
             applicationId:
               type: string
-              description: Identifier of the application used to create the subscription. Read-only.
+              description: Optional. Identifier of the application used to create the subscription. Read-only.
               nullable: true
             changeType:
               type: string
@@ -15677,11 +15680,11 @@ components:
               nullable: true
             creatorId:
               type: string
-              description: 'Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
+              description: 'Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.'
               nullable: true
             encryptionCertificate:
               type: string
-              description: A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
+              description: Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
               nullable: true
             encryptionCertificateId:
               type: string
@@ -15698,7 +15701,7 @@ components:
               nullable: true
             latestSupportedTlsVersion:
               type: string
-              description: 'Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
+              description: 'Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.'
               nullable: true
             lifecycleNotificationUrl:
               type: string
@@ -15706,17 +15709,18 @@ components:
               nullable: true
             notificationContentType:
               type: string
-              description: Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
+              description: Optional. Desired content-type for Microsoft Graph change notifications for supported resource types. The default content-type is application/json.
               nullable: true
             notificationQueryOptions:
               type: string
-              description: 'OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
+              description: 'Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.'
               nullable: true
             notificationUrl:
               type: string
               description: Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
             notificationUrlAppId:
               type: string
+              description: Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
               nullable: true
             resource:
               type: string

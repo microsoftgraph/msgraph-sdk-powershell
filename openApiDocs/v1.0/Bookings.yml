@@ -2486,7 +2486,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The maximum number of customers allowed in an appointment.
+              description: 'The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
               format: int32
             optOutOfCustomerEmail:
               type: boolean
@@ -2621,7 +2621,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The maximum number of customers allowed in a service.
+              description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
               format: int32
             notes:
               type: string
