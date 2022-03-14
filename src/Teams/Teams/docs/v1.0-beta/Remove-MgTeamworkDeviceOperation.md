@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDeviceOperation
 
 ## SYNOPSIS
-Delete navigation property operations for teamwork
+The async operations on the device.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-IfMatch <String
 ```
 
 ## DESCRIPTION
-Delete navigation property operations for teamwork
+The async operations on the device.
 
 ## EXAMPLES
 

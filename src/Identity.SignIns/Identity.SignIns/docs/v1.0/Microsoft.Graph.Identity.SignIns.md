@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 2a394737-8756-4147-b513-7c415ba2e006
+Module Guid: 3a04e785-db4a-488f-a888-183e4ea3e8f8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,7 +22,7 @@ Returns a collection of the specified named locations.
 ### [Get-MgIdentityConditionalAccessPolicy](Get-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Get-MgIdentityProvider](Get-MgIdentityProvider.md)
 Get entity from identityProviders by key
@@ -124,6 +124,9 @@ Get windowsHelloForBusinessMethods from users
 
 ### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ### [Invoke-MgAvailableIdentityProviderType](Invoke-MgAvailableIdentityProviderType.md)
 Invoke function availableProviderTypes
@@ -139,7 +142,7 @@ Returns a collection of the specified named locations.
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
 Add new entity to identityProviders
@@ -221,7 +224,7 @@ Returns a collection of the specified named locations.
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
 Delete entity from identityProviders
@@ -309,6 +312,9 @@ Delete navigation property windowsHelloForBusinessMethods for users
 
 ### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ### [Update-MgDataPolicyOperation](Update-MgDataPolicyOperation.md)
 Update entity in dataPolicyOperations
@@ -321,7 +327,7 @@ Returns a collection of the specified named locations.
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
 Update entity in identityProviders
@@ -412,4 +418,7 @@ Update the navigation property windowsHelloForBusinessMethods in users
 
 ### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 

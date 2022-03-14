@@ -157,8 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -Values
-Collection of name value pairs.
-Must contain and set all the settings defined in the template.
+Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
 To construct, please use Get-Help -Online and see NOTES section for VALUES properties and create a hash table.
 
 ```yaml
@@ -231,8 +230,8 @@ BODYPARAMETER <IMicrosoftGraphDirectorySetting>: directorySetting
   - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: Display name of this group of settings, which comes from the associated template. Read-only.
   - `[TemplateId <String>]`: Unique identifier for the template used to create this group of settings. Read-only.
-  - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name value pairs. Must contain and set all the settings defined in the template.
-    - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+  - `[Values <IMicrosoftGraphSettingValue[]>]`: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
+    - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
     - `[Value <String>]`: Value of the setting.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
@@ -258,8 +257,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[User <String>]`: Usage: User={User}
   - `[UserId <String>]`: key: id of user
 
-VALUES <IMicrosoftGraphSettingValue[]>: Collection of name value pairs. Must contain and set all the settings defined in the template.
-  - `[Name <String>]`: Name of the setting (as defined by the directorySettingTemplate).
+VALUES <IMicrosoftGraphSettingValue[]>: Collection of name-value pairs corresponding to the name and defaultValue properties in the referenced directorySettingTemplates object.
+  - `[Name <String>]`: Name of the setting (as defined by the groupSettingTemplate).
   - `[Value <String>]`: Value of the setting.
 
 ## RELATED LINKS

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 2a394737-8756-4147-b513-7c415ba2e006
+Module Guid: 3a04e785-db4a-488f-a888-183e4ea3e8f8
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -33,7 +33,7 @@ Returns a collection of the specified named locations.
 ### [Get-MgIdentityConditionalAccessPolicy](Get-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Get-MgIdentityProvider](Get-MgIdentityProvider.md)
 Get entity from identityProviders by key
@@ -97,10 +97,10 @@ The policy by which consent requests are created and managed for the entire tena
 The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 
 ### [Get-MgPolicyAppManagementPolicyApplyTo](Get-MgPolicyAppManagementPolicyApplyTo.md)
-Collection of application and service principals to which a policy is applied.
+Get appliesTo from policies
 
 ### [Get-MgPolicyAppManagementPolicyApplyToByRef](Get-MgPolicyAppManagementPolicyApplyToByRef.md)
-Collection of application and service principals to which a policy is applied.
+Get ref of appliesTo from policies
 
 ### [Get-MgPolicyAuthenticationFlowPolicy](Get-MgPolicyAuthenticationFlowPolicy.md)
 The policy configuration of the self-service sign-up experience of external users.
@@ -119,6 +119,15 @@ The Azure AD B2C policies that define how end users register via local accounts.
 
 ### [Get-MgPolicyClaimMappingPolicy](Get-MgPolicyClaimMappingPolicy.md)
 The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+
+### [Get-MgPolicyCrossTenantAccessPolicy](Get-MgPolicyCrossTenantAccessPolicy.md)
+The custom rules that define an access scenario when interacting with external Azure AD tenants.
+
+### [Get-MgPolicyCrossTenantAccessPolicyDefault](Get-MgPolicyCrossTenantAccessPolicyDefault.md)
+Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+
+### [Get-MgPolicyCrossTenantAccessPolicyPartner](Get-MgPolicyCrossTenantAccessPolicyPartner.md)
+Defines partner-specific configurations for external Azure Active Directory organizations.
 
 ### [Get-MgPolicyDefaultAppManagementPolicy](Get-MgPolicyDefaultAppManagementPolicy.md)
 The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -261,6 +270,9 @@ Get windowsHelloForBusinessMethods from users
 
 ### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ### [Get-MgUserInformationProtection](Get-MgUserInformationProtection.md)
 Get informationProtection from users
@@ -308,7 +320,7 @@ Returns a collection of the specified named locations.
 ### [New-MgIdentityConditionalAccessPolicy](New-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [New-MgIdentityProvider](New-MgIdentityProvider.md)
 Add new entity to identityProviders
@@ -350,7 +362,7 @@ The policy that controls the idle time out for web sessions for applications.
 The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
 
 ### [New-MgPolicyAppManagementPolicyApplyToByRef](New-MgPolicyAppManagementPolicyApplyToByRef.md)
-Collection of application and service principals to which a policy is applied.
+Create new navigation property ref to appliesTo for policies
 
 ### [New-MgPolicyAuthorizationPolicy](New-MgPolicyAuthorizationPolicy.md)
 The policy that controls Azure AD authorization settings.
@@ -360,6 +372,9 @@ Create new navigation property to defaultUserRoleOverrides for policies
 
 ### [New-MgPolicyClaimMappingPolicy](New-MgPolicyClaimMappingPolicy.md)
 The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+
+### [New-MgPolicyCrossTenantAccessPolicyPartner](New-MgPolicyCrossTenantAccessPolicyPartner.md)
+Defines partner-specific configurations for external Azure Active Directory organizations.
 
 ### [New-MgPolicyFeatureRolloutPolicy](New-MgPolicyFeatureRolloutPolicy.md)
 The feature rollout policy associated with a directory object.
@@ -482,7 +497,7 @@ Returns a collection of the specified named locations.
 ### [Remove-MgIdentityConditionalAccessPolicy](Remove-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Remove-MgIdentityProvider](Remove-MgIdentityProvider.md)
 Delete entity from identityProviders
@@ -548,6 +563,15 @@ The Azure AD B2C policies that define how end users register via local accounts.
 
 ### [Remove-MgPolicyClaimMappingPolicy](Remove-MgPolicyClaimMappingPolicy.md)
 The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+
+### [Remove-MgPolicyCrossTenantAccessPolicy](Remove-MgPolicyCrossTenantAccessPolicy.md)
+The custom rules that define an access scenario when interacting with external Azure AD tenants.
+
+### [Remove-MgPolicyCrossTenantAccessPolicyDefault](Remove-MgPolicyCrossTenantAccessPolicyDefault.md)
+Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+
+### [Remove-MgPolicyCrossTenantAccessPolicyPartner](Remove-MgPolicyCrossTenantAccessPolicyPartner.md)
+Defines partner-specific configurations for external Azure Active Directory organizations.
 
 ### [Remove-MgPolicyDefaultAppManagementPolicy](Remove-MgPolicyDefaultAppManagementPolicy.md)
 The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -678,9 +702,15 @@ Delete navigation property windowsHelloForBusinessMethods for users
 
 ### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ### [Remove-MgUserInformationProtection](Remove-MgUserInformationProtection.md)
 Delete navigation property informationProtection for users
+
+### [Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault](Reset-MgPolicyCrossTenantAccessPolicyDefaultToSystemDefault.md)
+Invoke action resetToSystemDefault
 
 ### [Set-MgPolicyRoleManagementPolicyAssignmentPolicyByRef](Set-MgPolicyRoleManagementPolicyAssignmentPolicyByRef.md)
 The policy for the assignment.
@@ -716,7 +746,7 @@ Returns a collection of the specified named locations.
 ### [Update-MgIdentityConditionalAccessPolicy](Update-MgIdentityConditionalAccessPolicy.md)
 Read-only.
 Nullable.
-Returns a collection of the specified Conditional Access policies.
+Returns a collection of the specified Conditional Access (CA) policies.
 
 ### [Update-MgIdentityProvider](Update-MgIdentityProvider.md)
 Update entity in identityProviders
@@ -785,6 +815,15 @@ The Azure AD B2C policies that define how end users register via local accounts.
 
 ### [Update-MgPolicyClaimMappingPolicy](Update-MgPolicyClaimMappingPolicy.md)
 The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
+
+### [Update-MgPolicyCrossTenantAccessPolicy](Update-MgPolicyCrossTenantAccessPolicy.md)
+The custom rules that define an access scenario when interacting with external Azure AD tenants.
+
+### [Update-MgPolicyCrossTenantAccessPolicyDefault](Update-MgPolicyCrossTenantAccessPolicyDefault.md)
+Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+
+### [Update-MgPolicyCrossTenantAccessPolicyPartner](Update-MgPolicyCrossTenantAccessPolicyPartner.md)
+Defines partner-specific configurations for external Azure Active Directory organizations.
 
 ### [Update-MgPolicyDefaultAppManagementPolicy](Update-MgPolicyDefaultAppManagementPolicy.md)
 The tenant-wide policy that enforces app management restrictions for all applications and service principals.
@@ -912,6 +951,9 @@ Update the navigation property windowsHelloForBusinessMethods in users
 
 ### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ### [Update-MgUserInformationProtection](Update-MgUserInformationProtection.md)
 Update the navigation property informationProtection in users

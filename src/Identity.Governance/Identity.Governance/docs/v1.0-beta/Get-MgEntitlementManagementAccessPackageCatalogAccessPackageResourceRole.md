@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole
 
 ## SYNOPSIS
-Get accessPackageResourceRoles from identityGovernance
+The roles in each resource in a catalog.
+Read-only.
 
 ## SYNTAX
 
@@ -19,7 +20,8 @@ Get-MgEntitlementManagementAccessPackageCatalogAccessPackageResourceRole -Access
 ```
 
 ## DESCRIPTION
-Get accessPackageResourceRoles from identityGovernance
+The roles in each resource in a catalog.
+Read-only.
 
 ## EXAMPLES
 

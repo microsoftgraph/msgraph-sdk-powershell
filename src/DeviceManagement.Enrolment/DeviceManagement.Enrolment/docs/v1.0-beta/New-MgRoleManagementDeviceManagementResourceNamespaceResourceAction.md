@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
 
 ## SYNOPSIS
-Create new navigation property to resourceActions for roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## SYNTAX
 
@@ -43,14 +43,15 @@ New-MgRoleManagementDeviceManagementResourceNamespaceResourceAction
 ```
 
 ## DESCRIPTION
-Create new navigation property to resourceActions for roleManagement
+Operations that an authorized principal are allowed to perform.
 
 ## EXAMPLES
 
 ## PARAMETERS
 
 ### -ActionVerb
-.
+HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null.
+Supports $filter (eq) but not for null values.
 
 ```yaml
 Type: System.String
@@ -96,7 +97,8 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description for the action.
+Supports $filter (eq).
 
 ```yaml
 Type: System.String
@@ -142,7 +144,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name for the action within the resource namespace, such as microsoft.insights/programs/update.
+Can include slash character (/).
+Case insensitive.
+Required.
+Supports $filter (eq).
 
 ```yaml
 Type: System.String
@@ -173,7 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceScopeId
-.
+Not implemented.
 
 ```yaml
 Type: System.String
@@ -258,16 +264,16 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphUnifiedRbacResourceAction>: unifiedRbacResourceAction
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ActionVerb <String>]`: 
-  - `[Description <String>]`: 
-  - `[Name <String>]`: 
+  - `[ActionVerb <String>]`: HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.
+  - `[Description <String>]`: Description for the action. Supports $filter (eq).
+  - `[Name <String>]`: Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
   - `[ResourceScope <IMicrosoftGraphUnifiedRbacResourceScope>]`: unifiedRbacResourceScope
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[DisplayName <String>]`: 
     - `[Scope <String>]`: 
     - `[Type <String>]`: 
-  - `[ResourceScopeId <String>]`: 
+  - `[ResourceScopeId <String>]`: Not implemented.
 
 INPUTOBJECT <IDeviceManagementEnrolmentIdentity>: Identity Parameter
   - `[AndroidDeviceOwnerEnrollmentProfileId <String>]`: key: id of androidDeviceOwnerEnrollmentProfile

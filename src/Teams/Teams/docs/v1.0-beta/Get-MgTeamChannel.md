@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamChannel
 
 ## SYNOPSIS
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
 ```
 
 ## DESCRIPTION
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## EXAMPLES
 

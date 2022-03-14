@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamChannel
 
 ## SYNOPSIS
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamChannel -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThr
 ```
 
 ## DESCRIPTION
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## EXAMPLES
 

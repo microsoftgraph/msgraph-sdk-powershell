@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDevice
 
 ## SYNOPSIS
-Delete navigation property devices for teamwork
+The Teams devices provisioned for the tenant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDevice -InputObject <ITeamsIdentity> [-IfMatch <String>] [-Pass
 ```
 
 ## DESCRIPTION
-Delete navigation property devices for teamwork
+The Teams devices provisioned for the tenant.
 
 ## EXAMPLES
 

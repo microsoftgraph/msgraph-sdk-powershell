@@ -149,8 +149,8 @@ Accept wildcard characters: False
 
 ### -ExpirationDate
 The date the profile should be considered expired and cease syncing.
-When null.
-the profile will never expire.
+Provide the date in YYYY-MM-DD format, following ISO 8601.
+Maximum value is 18 months from profile creation.
 (optional)
 
 ```yaml
@@ -355,7 +355,7 @@ BODYPARAMETER <IMicrosoftGraphEducationSynchronizationProfile>: educationSynchro
     - `[JoiningValue <String>]`: The unique identifier for the entry.
     - `[RecordedDateTime <DateTime?>]`: The time of occurrence of this error.
     - `[ReportableIdentifier <String>]`: The identifier of this error entry.
-  - `[ExpirationDate <DateTime?>]`: The date the profile should be considered expired and cease syncing. When null. the profile will never expire. (optional)
+  - `[ExpirationDate <DateTime?>]`: The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
   - `[HandleSpecialCharacterConstraint <Boolean?>]`: Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
   - `[IdentitySynchronizationConfiguration <IMicrosoftGraphEducationIdentitySynchronizationConfiguration>]`: educationIdentitySynchronizationConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

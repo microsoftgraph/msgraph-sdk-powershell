@@ -82,7 +82,7 @@ Accept wildcard characters: False
 
 ### -ExpiredDateTime
 The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
-For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -229,14 +229,14 @@ To create the parameters described below, construct a hash table containing the 
 ACCESSPACKAGE <IMicrosoftGraphAccessPackage1>: accessPackage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+  - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
     - `[CatalogType <String>]`: accessPackageCatalogType
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package catalog.
-    - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+    - `[DisplayName <String>]`: The display name of the access package catalog.
     - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[State <String>]`: accessPackageCatalogState
@@ -252,14 +252,14 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignment1>: accessPackageAssignment
   - `[AccessPackage <IMicrosoftGraphAccessPackage1>]`: accessPackage
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+    - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+      - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
       - `[CatalogType <String>]`: accessPackageCatalogType
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[Description <String>]`: The description of the access package catalog.
-      - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+      - `[DisplayName <String>]`: The display name of the access package catalog.
       - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
       - `[State <String>]`: accessPackageCatalogState
@@ -268,7 +268,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignment1>: accessPackageAssignment
     - `[DisplayName <String>]`: The display name of the access package. Supports $filter (eq, contains).
     - `[IsHidden <Boolean?>]`: Whether the access package is hidden from the requestor.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-  - `[ExpiredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[ExpiredDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Schedule <IMicrosoftGraphEntitlementManagementSchedule>]`: entitlementManagementSchedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Expiration <IMicrosoftGraphExpirationPattern>]`: expirationPattern
@@ -308,7 +308,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageAssignment1>: accessPackageAssignment
       - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
       - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
         - `[Id <String>]`: Read-only.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
       - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
       - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -358,7 +358,7 @@ TARGET <IMicrosoftGraphAccessPackageSubject1>: accessPackageSubject
     - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
       - `[Id <String>]`: Read-only.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.

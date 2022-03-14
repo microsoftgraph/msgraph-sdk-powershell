@@ -15,7 +15,7 @@ Represents access package objects.
 ### CreateExpanded1 (Default)
 ```
 New-MgEntitlementManagementAccessPackage [-AdditionalProperties <Hashtable>]
- [-Catalog <IMicrosoftGraphAccessPackageCatalog>] [-CreatedDateTime <DateTime>] [-Description <String>]
+ [-Catalog <IMicrosoftGraphAccessPackageCatalog1>] [-CreatedDateTime <DateTime>] [-Description <String>]
  [-DisplayName <String>] [-Id <String>] [-IsHidden] [-ModifiedDateTime <DateTime>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -69,7 +69,7 @@ accessPackageCatalog
 To construct, please use Get-Help -Online and see NOTES section for CATALOG properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAccessPackageCatalog1
 Parameter Sets: CreateExpanded1
 Aliases:
 
@@ -229,14 +229,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+  - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+    - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
     - `[CatalogType <String>]`: accessPackageCatalogType
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package catalog.
-    - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+    - `[DisplayName <String>]`: The display name of the access package catalog.
     - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
     - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[State <String>]`: accessPackageCatalogState
@@ -246,12 +246,12 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage1>: accessPackage
   - `[IsHidden <Boolean?>]`: Whether the access package is hidden from the requestor.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 
-CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
+CATALOG <IMicrosoftGraphAccessPackageCatalog1>: accessPackageCatalog
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable. Supports $expand.
+  - `[AccessPackages <IMicrosoftGraphAccessPackage1[]>]`: The access packages in this catalog. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
-    - `[Catalog <IMicrosoftGraphAccessPackageCatalog>]`: accessPackageCatalog
+    - `[Catalog <IMicrosoftGraphAccessPackageCatalog1>]`: accessPackageCatalog
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
     - `[Description <String>]`: The description of the access package.
     - `[DisplayName <String>]`: The display name of the access package. Supports $filter (eq, contains).
@@ -260,7 +260,7 @@ CATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
   - `[CatalogType <String>]`: accessPackageCatalogType
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[Description <String>]`: The description of the access package catalog.
-  - `[DisplayName <String>]`: The display name of the access package catalog. Supports $filter (eq, contains).
+  - `[DisplayName <String>]`: The display name of the access package catalog.
   - `[IsExternallyVisible <Boolean?>]`: Whether the access packages in this catalog can be requested by users outside of the tenant.
   - `[ModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[State <String>]`: accessPackageCatalogState

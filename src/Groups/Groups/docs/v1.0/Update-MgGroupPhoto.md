@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgGroupPhoto
 
 ## SYNOPSIS
-The group's profile photo.
+The group's profile photo
 
 ## SYNTAX
 
@@ -61,7 +61,7 @@ Update-MgGroupPhoto -InputObject <IGroupsIdentity> [-AdditionalProperties <Hasht
 ```
 
 ## DESCRIPTION
-The group's profile photo.
+The group's profile photo
 
 ## EXAMPLES
 

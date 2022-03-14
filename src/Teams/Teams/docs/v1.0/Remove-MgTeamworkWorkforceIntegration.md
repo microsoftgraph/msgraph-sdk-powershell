@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkWorkforceIntegration
 
 ## SYNOPSIS
-Delete navigation property workforceIntegrations for teamwork
+A workforce integration with shifts.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-IfMatch <S
 ```
 
 ## DESCRIPTION
-Delete navigation property workforceIntegrations for teamwork
+A workforce integration with shifts.
 
 ## EXAMPLES
 

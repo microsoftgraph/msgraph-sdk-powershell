@@ -9,6 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ## SYNTAX
@@ -38,6 +39,7 @@ New-MgUserExtension -InputObject <IUsersIdentity> [-AdditionalProperties <Hashta
 
 ## DESCRIPTION
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ## EXAMPLES
