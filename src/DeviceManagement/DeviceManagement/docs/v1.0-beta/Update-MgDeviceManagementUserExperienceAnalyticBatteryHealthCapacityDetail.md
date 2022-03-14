@@ -16,7 +16,8 @@ User Experience Analytics Battery Health Capacity Details
 ```
 Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthCapacityDetail [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-BatteryCapacityFair <Int32>] [-BatteryCapacityGood <Int32>]
- [-BatteryCapacityPoor <Int32>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BatteryCapacityPoor <Int32>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -143,6 +144,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LastRefreshedDateTime
+Recorded date time of this capacity details instance.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 Returns true when the command succeeds
 
@@ -216,6 +232,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthCapacityDetail
   - `[BatteryCapacityFair <Int32?>]`: Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
   - `[BatteryCapacityGood <Int32?>]`: Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
   - `[BatteryCapacityPoor <Int32?>]`: Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+  - `[LastRefreshedDateTime <DateTime?>]`: Recorded date time of this capacity details instance.
 
 ## RELATED LINKS
 

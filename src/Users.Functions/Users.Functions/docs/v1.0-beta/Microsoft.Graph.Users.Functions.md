@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Functions
-Module Guid: c5158979-0dfc-4741-aab6-22ed08e90bdd
+Module Guid: 34a3c7e4-5a46-4fc9-b09d-b44a7dedcde5
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -80,6 +80,9 @@ Invoke function getFileVaultKey
 ### [Get-MgUserManagedDeviceNonCompliantSetting](Get-MgUserManagedDeviceNonCompliantSetting.md)
 Invoke function getNonCompliantSettings
 
+### [Get-MgUserManagedDeviceOemWarranty](Get-MgUserManagedDeviceOemWarranty.md)
+Invoke function getOemWarranty
+
 ### [Get-MgUserManagedDeviceWithAppFailure](Get-MgUserManagedDeviceWithAppFailure.md)
 Retrieves the list of devices with failed apps
 
@@ -126,6 +129,12 @@ Invoke function filterByCurrentUser
 Invoke function filterByCurrentUser
 
 ### [Invoke-MgFilterUserPendingAccessReviewInstanceDecision](Invoke-MgFilterUserPendingAccessReviewInstanceDecision.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserPendingAccessReviewInstanceStage](Invoke-MgFilterUserPendingAccessReviewInstanceStage.md)
+Invoke function filterByCurrentUser
+
+### [Invoke-MgFilterUserPendingAccessReviewInstanceStageDecision](Invoke-MgFilterUserPendingAccessReviewInstanceStageDecision.md)
 Invoke function filterByCurrentUser
 
 ### [Invoke-MgPendingUserApp](Invoke-MgPendingUserApp.md)

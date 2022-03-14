@@ -17,7 +17,7 @@ User experience analytics model scores
 New-MgDeviceManagementUserExperienceAnalyticModelScore [-AdditionalProperties <Hashtable>]
  [-AppReliabilityScore <Double>] [-EndpointAnalyticsScore <Double>] [-HealthStatus <String>] [-Id <String>]
  [-Manufacturer <String>] [-Model <String>] [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WorkFromAnywhereScore <Double>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -188,6 +188,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WorkFromAnywhereScore
+The user experience analytics model work from anywhere score.
+Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+```yaml
+Type: System.Double
+Parameter Sets: CreateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -249,6 +265,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsModelScores>: The user expe
   - `[Model <String>]`: A unique identifier of the user experience analytics model scores: device model.
   - `[ModelDeviceCount <Int64?>]`: The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
   - `[StartupPerformanceScore <Double?>]`: The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 ## RELATED LINKS
 

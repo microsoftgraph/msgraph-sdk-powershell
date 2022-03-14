@@ -8,7 +8,8 @@ schema: 2.0.0
 # Get-MgGroupOwnerByRef
 
 ## SYNOPSIS
-The owners of the group who can be users or service principals.
+The owners of the group.
+Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $expand including nested $select.
@@ -22,7 +23,8 @@ Get-MgGroupOwnerByRef -GroupId <String> [-Filter <String>] [-Search <String>] [-
 ```
 
 ## DESCRIPTION
-The owners of the group who can be users or service principals.
+The owners of the group.
+Limited to 100 owners.
 Nullable.
 If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.
 Supports $expand including nested $select.

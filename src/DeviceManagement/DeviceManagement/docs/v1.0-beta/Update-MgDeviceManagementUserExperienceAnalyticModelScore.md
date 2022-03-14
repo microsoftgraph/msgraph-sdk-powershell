@@ -17,8 +17,8 @@ User experience analytics model scores
 Update-MgDeviceManagementUserExperienceAnalyticModelScore -UserExperienceAnalyticsModelScoresId <String>
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-EndpointAnalyticsScore <Double>]
  [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>]
- [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -40,8 +40,8 @@ Update-MgDeviceManagementUserExperienceAnalyticModelScore -InputObject <IDeviceM
 Update-MgDeviceManagementUserExperienceAnalyticModelScore -InputObject <IDeviceManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-AppReliabilityScore <Double>] [-EndpointAnalyticsScore <Double>]
  [-HealthStatus <String>] [-Id <String>] [-Manufacturer <String>] [-Model <String>]
- [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-ModelDeviceCount <Int64>] [-StartupPerformanceScore <Double>] [-WorkFromAnywhereScore <Double>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -252,6 +252,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WorkFromAnywhereScore
+The user experience analytics model work from anywhere score.
+Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+
+```yaml
+Type: System.Double
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -315,6 +331,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsModelScores>: The user expe
   - `[Model <String>]`: A unique identifier of the user experience analytics model scores: device model.
   - `[ModelDeviceCount <Int64?>]`: The user experience analytics model device count. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
   - `[StartupPerformanceScore <Double?>]`: The user experience analytics model startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+  - `[WorkFromAnywhereScore <Double?>]`: The user experience analytics model work from anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
 
 INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[AdvancedThreatProtectionOnboardingDeviceSettingStateId <String>]`: key: id of advancedThreatProtectionOnboardingDeviceSettingState
@@ -429,6 +446,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
   - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
   - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
   - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary

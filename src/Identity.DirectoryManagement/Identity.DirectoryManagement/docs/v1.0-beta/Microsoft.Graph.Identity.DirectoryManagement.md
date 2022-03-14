@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: b5d670c9-9350-4198-8710-6a3e8607f8c7
+Module Guid: d346f578-73bb-473f-86a5-bce3a2e9a76a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -251,12 +251,12 @@ Nullable.
 Supports $expand.
 
 ### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
 ### [Get-MgDeviceTransitiveMemberOfByRef](Get-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
@@ -421,7 +421,8 @@ Get branding from organization
 Invoke action getByIds
 
 ### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
@@ -565,7 +566,7 @@ Nullable.
 Supports $expand.
 
 ### [New-MgDeviceTransitiveMemberOfByRef](New-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
@@ -669,7 +670,8 @@ Read-only, Nullable
 Add new entity to organization
 
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [New-MgOrganizationSettingProfileCardProperty](New-MgOrganizationSettingProfileCardProperty.md)
@@ -815,7 +817,8 @@ Delete entity from organization
 Delete navigation property branding for organization
 
 ### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Remove-MgOrganizationSetting](Remove-MgOrganizationSetting.md)
@@ -1021,7 +1024,8 @@ Update entity in organization
 Update the navigation property branding in organization
 
 ### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Update-MgOrganizationSetting](Update-MgOrganizationSetting.md)

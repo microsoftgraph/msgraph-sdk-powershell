@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupMemberOfByRef
 
 ## SYNOPSIS
-Groups and administrative units that this group is a member of.
+Groups that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.
@@ -22,7 +22,7 @@ Get-MgGroupMemberOfByRef -GroupId <String> [-Filter <String>] [-Search <String>]
 ```
 
 ## DESCRIPTION
-Groups and administrative units that this group is a member of.
+Groups that this group is a member of.
 HTTP Methods: GET (supported for all groups).
 Read-only.
 Nullable.

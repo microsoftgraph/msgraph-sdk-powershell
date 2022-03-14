@@ -8,36 +8,25 @@ schema: 2.0.0
 # Remove-MgUserDrive
 
 ## SYNOPSIS
-The user's OneDrive.
+A collection of drives available for this user.
 Read-only.
 
 ## SYNTAX
 
-### Delete2 (Default)
-```
-Remove-MgUserDrive -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Delete3
+### Delete1 (Default)
 ```
 Remove-MgUserDrive -DriveId <String> -UserId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
-```
-Remove-MgUserDrive -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### DeleteViaIdentity3
+### DeleteViaIdentity1
 ```
 Remove-MgUserDrive -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The user's OneDrive.
+A collection of drives available for this user.
 Read-only.
 
 ## EXAMPLES
@@ -49,7 +38,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -80,7 +69,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -110,7 +99,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -187,6 +176,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

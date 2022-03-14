@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgOrganizationExtension
 
 ## SYNOPSIS
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ## SYNTAX
@@ -26,7 +27,8 @@ Remove-MgOrganizationExtension -InputObject <IIdentityDirectoryManagementIdentit
 ```
 
 ## DESCRIPTION
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ## EXAMPLES

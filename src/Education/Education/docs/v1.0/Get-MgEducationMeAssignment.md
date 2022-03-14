@@ -8,8 +8,7 @@ schema: 2.0.0
 # Get-MgEducationMeAssignment
 
 ## SYNOPSIS
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ## SYNTAX
 
@@ -33,8 +32,7 @@ Get-MgEducationMeAssignment -InputObject <IEducationIdentity> [-ExpandProperty <
 ```
 
 ## DESCRIPTION
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ## EXAMPLES
 

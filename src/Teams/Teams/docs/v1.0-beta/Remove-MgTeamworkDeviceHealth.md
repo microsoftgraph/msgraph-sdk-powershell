@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgTeamworkDeviceHealth
 
 ## SYNOPSIS
-Delete navigation property health for teamwork
+The health properties of the device.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgTeamworkDeviceHealth -InputObject <ITeamsIdentity> [-IfMatch <String>] 
 ```
 
 ## DESCRIPTION
-Delete navigation property health for teamwork
+The health properties of the device.
 
 ## EXAMPLES
 

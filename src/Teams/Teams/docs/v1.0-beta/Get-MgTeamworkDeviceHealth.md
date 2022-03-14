@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkDeviceHealth
 
 ## SYNOPSIS
-Get health from teamwork
+The health properties of the device.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Get-MgTeamworkDeviceHealth -InputObject <ITeamsIdentity> [-ExpandProperty <Strin
 ```
 
 ## DESCRIPTION
-Get health from teamwork
+The health properties of the device.
 
 ## EXAMPLES
 

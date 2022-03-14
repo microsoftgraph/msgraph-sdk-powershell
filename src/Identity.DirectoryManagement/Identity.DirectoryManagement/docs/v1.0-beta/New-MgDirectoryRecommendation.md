@@ -388,8 +388,8 @@ BODYPARAMETER <IMicrosoftGraphRecommendation>: recommendation
     - `[Id <String>]`: Read-only.
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Owner <String>]`: 
@@ -410,8 +410,8 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
   - `[Id <String>]`: Read-only.
   - `[AddedDateTime <DateTime?>]`: 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
+    - `[Key <String>]`: Key for the key-value pair.
+    - `[Value <String>]`: Value for the key-value pair.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
   - `[Owner <String>]`: 

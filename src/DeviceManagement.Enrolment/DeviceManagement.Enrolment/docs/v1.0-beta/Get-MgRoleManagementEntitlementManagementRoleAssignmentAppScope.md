@@ -8,8 +8,9 @@ schema: 2.0.0
 # Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope
 
 ## SYNOPSIS
-Details of the app specific scope when the assignment scope is app specific.
+Read-only property with details of the app specific scope when the assignment scope is app specific.
 Containment entity.
+Supports $expand.
 
 ## SYNTAX
 
@@ -27,8 +28,9 @@ Get-MgRoleManagementEntitlementManagementRoleAssignmentAppScope
 ```
 
 ## DESCRIPTION
-Details of the app specific scope when the assignment scope is app specific.
+Read-only property with details of the app specific scope when the assignment scope is app specific.
 Containment entity.
+Supports $expand.
 
 ## EXAMPLES
 

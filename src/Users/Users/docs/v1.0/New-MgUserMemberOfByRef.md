@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserMemberOfByRef
 
 ## SYNOPSIS
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
@@ -39,7 +39,7 @@ New-MgUserMemberOfByRef -InputObject <IUsersIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.

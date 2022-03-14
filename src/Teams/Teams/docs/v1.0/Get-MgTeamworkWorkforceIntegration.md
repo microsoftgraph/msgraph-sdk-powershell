@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamworkWorkforceIntegration
 
 ## SYNOPSIS
-Get workforceIntegrations from teamwork
+A workforce integration with shifts.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgTeamworkWorkforceIntegration -InputObject <ITeamsIdentity> [-ExpandPropert
 ```
 
 ## DESCRIPTION
-Get workforceIntegrations from teamwork
+A workforce integration with shifts.
 
 ## EXAMPLES
 
