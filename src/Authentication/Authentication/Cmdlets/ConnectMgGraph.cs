@@ -76,12 +76,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         [Parameter(ParameterSetName = Constants.AppParameterSet)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
-            Position = 5,
-            HelpMessage = "Forces the command to get a new access token silently.")]
-        public SwitchParameter ForceRefresh { get; set; }
-
-        [Parameter(ParameterSetName = Constants.AppParameterSet)]
-        [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false,
             HelpMessage = "Determines the scope of authentication context. This accepts `Process` for the current process, or `CurrentUser` for all sessions started by user.")]
         public ContextScope ContextScope { get; set; }
@@ -182,7 +176,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case Constants.UserParameterSet:
                         {
                             // 2 mins timeout. 1 min < HTTP timeout.
-                            TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxDeviceCodeTimeOut);
+                            TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxAuthenticationTimeOut);
                             // To avoid re-initializing the tokenSource, use CancelAfter
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             if (!string.IsNullOrWhiteSpace(ClientId))
@@ -190,17 +184,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
+                            // Use process scope when on WSL. WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
                             if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
-                            {
-                                // Use process scope when on WSL.
-                                // WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
                                 authContext.ContextScope = ContextScope.Process;
-                            }
                             else
-                            {
                                 // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            }
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
                         }
                         break;
@@ -230,10 +219,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token);
-                    // TODO: Clean me up!
-                    //GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, ForceRefresh,
-                    //    _cancellationTokenSource.Token,
-                    //    () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
                 catch (Exception ex)
                 {
@@ -279,38 +264,27 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     {
                         // Client Id
                         if (string.IsNullOrEmpty(ClientId))
-                        {
                             this.ThrowParameterError(nameof(ClientId));
-                        }
 
                         // Certificate Thumbprint, Name or Actual Certificate
                         if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && Certificate == null)
-                        {
                             this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
-                        }
 
                         // A thumbprint will always have 40 characters since thumbprints are dynamically calculated as a SHA-1 hash of a certificate's binary data. A SHA-1 hash has a length of 40 hexadecimal numbers (160-bit = 20-byte).
                         // See https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509certificate2.thumbprint?view=net-5.0#remarks.
                         if (!string.IsNullOrEmpty(CertificateThumbprint) && CertificateThumbprint.Length != 40)
-                        {
                             this.ThrowError(string.Format(ErrorConstants.Message.InvalidCertificateThumbprint, nameof(CertificateThumbprint)), ErrorCategory.InvalidArgument);
-                        }
 
                         // Tenant Id
                         if (string.IsNullOrEmpty(TenantId))
-                        {
                             this.ThrowParameterError(nameof(TenantId));
-                        }
-
                     }
                     break;
                 case Constants.AccessTokenParameterSet:
                     {
                         // AccessToken
                         if (string.IsNullOrEmpty(AccessToken))
-                        {
                             this.ThrowParameterError(nameof(AccessToken));
-                        }
                     }
                     break;
             }

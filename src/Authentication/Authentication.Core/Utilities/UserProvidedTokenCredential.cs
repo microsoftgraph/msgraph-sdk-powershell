@@ -21,8 +21,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
         public override AccessToken GetToken(TokenRequestContext requestContext, CancellationToken cancellationToken)
         {
-            // TODO: Inteligently extract expiresOn from provided token.
-            return new AccessToken(_userProvidedToken.Password, DateTimeOffset.Now.AddHours(1));
+            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(_userProvidedToken.Password);
+            var exp = jwtPayload?.Exp == null ? DateTimeOffset.Now.AddMinutes(55) : DateTimeOffset.FromUnixTimeSeconds(jwtPayload.Exp);
+            return new AccessToken(_userProvidedToken.Password, exp);
         }
 
         public override ValueTask<AccessToken> GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)

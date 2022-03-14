@@ -542,7 +542,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns></returns>
         private IAuthenticationProvider GetAuthProvider()
         {
-            // TODO: Merge tith authentication utils implementation. CODE DUPLICATE!
+            // TODO: Merge with authentication utils implementation. CODE DUPLICATE!
             if (Authentication == GraphRequestAuthenticationType.Default)
             {
                 return AuthenticationHelpers.GetAuthenticationProvider(GraphSession.Instance.AuthContext);
