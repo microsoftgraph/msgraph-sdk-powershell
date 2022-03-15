@@ -19,7 +19,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         {
             base.ProcessRecord();
             IAuthContext authConfig = GraphSession.Instance.AuthContext;
-            WriteObject(authConfig as IAuthContext);
+            WriteObject(authConfig);
         }
 
         protected override void EndProcessing()

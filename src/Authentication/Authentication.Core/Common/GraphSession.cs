@@ -5,6 +5,7 @@
 namespace Microsoft.Graph.PowerShell.Authentication
 {
     using Microsoft.Graph.PowerShell.Authentication.Core;
+    using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 
     using System;
@@ -19,7 +20,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
     {
         static GraphSession _instance;
         static bool _initialized = false;
-        static ReaderWriterLockSlim sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        static readonly ReaderWriterLockSlim sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         internal Guid _graphSessionId;
 
         // Checks if an instance of <see cref="GraphSession"/> exists.
@@ -46,6 +47,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
             get { return msalToken ?? new byte[0]; }
             set { msalToken = value; }
         }
+
+        public InMemoryTokenCache InMemoryTokenCache { get; set; }
 
         /// <summary>
         /// Gets or Sets a user provided access token for calling Microsoft Graph service.

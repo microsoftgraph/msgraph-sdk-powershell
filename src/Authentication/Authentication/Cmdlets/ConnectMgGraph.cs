@@ -17,6 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
@@ -136,7 +137,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
-                    // Init output to this Cmdlet
                     GraphSessionInitializer.InitializeOutput(asyncCommandRuntime);
                     asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
                 }
@@ -171,24 +171,25 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
+                if (GraphSession.Instance.InMemoryTokenCache is null)
+                    GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
+
                 switch (ParameterSetName)
                 {
                     case Constants.UserParameterSet:
                         {
-                            // 2 mins timeout. 1 min < HTTP timeout.
                             TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxAuthenticationTimeOut);
-                            // To avoid re-initializing the tokenSource, use CancelAfter
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             if (!string.IsNullOrWhiteSpace(ClientId))
                                 authContext.ClientId = ClientId;
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
-                            // Use process scope when on WSL. WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
-                            if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
+                            if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCultureIgnoreCase))
+                                // Use process scope when on WSL. WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
                                 authContext.ContextScope = ContextScope.Process;
                             else
-                                // Default to CurrentUser but allow the customer to change this via `ContextScope` param.
+                                // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
                         }

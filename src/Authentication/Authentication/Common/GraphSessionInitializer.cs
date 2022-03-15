@@ -9,7 +9,6 @@ using Microsoft.Graph.PowerShell.Authentication.Models;
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
     using System.Management.Automation;
-
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 
     public static class GraphSessionInitializer

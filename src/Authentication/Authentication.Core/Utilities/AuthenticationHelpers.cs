@@ -24,18 +24,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     public static class AuthenticationHelpers
     {
         /// <summary>
-        /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
-        /// </summary>
-        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
-        public static async Task LogoutAsync(IAuthContext authContext)
-        {
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-                GraphSession.Instance.UserProvidedToken = null;
-            else
-                await DeleteAuthRecordAsync().ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// Gets a <see cref="TokenCredential"/> using the provide <see cref="IAuthContext"/>.
         /// </summary>
         /// <param name="authContext">The <see cref="IAuthContext"/> to get a token credential for.</param>
@@ -66,27 +54,26 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            InteractiveBrowserCredential interactiveBrowserCredential;
             var interactiveOptions = new InteractiveBrowserCredentialOptions
             {
                 ClientId = authContext.ClientId,
                 TenantId = authContext.TenantId,
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName }
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
             };
 
             if (!File.Exists(Constants.AuthRecordPath))
             {
-                interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                var interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
                 var authRecord = await interactiveBrowserCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                return interactiveBrowserCredential;
             }
             else
             {
                 interactiveOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
-                interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveOptions);
+                return new InteractiveBrowserCredential(interactiveOptions);
             }
-            return interactiveBrowserCredential;
         }
 
         private static async Task<DeviceCodeCredential> GetDeviceCodeCredentialAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
@@ -94,13 +81,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
-            DeviceCodeCredential deviceCodeCredential;
             var deviceCodeOptions = new DeviceCodeCredentialOptions
             {
                 ClientId = authContext.ClientId,
                 TenantId = authContext.TenantId,
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName },
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext),
                 DeviceCodeCallback = (code, cancellation) =>
                 {
                     GraphSession.Instance.OutputWriter.WriteObject(code.Message);
@@ -110,16 +96,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 
             if (!File.Exists(Constants.AuthRecordPath))
             {
-                deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
+                var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
                 var authRecord = await deviceCodeCredential.AuthenticateAsync(new TokenRequestContext(authContext.Scopes), cancellationToken);
                 await WriteAuthRecordAsync(authRecord).ConfigureAwait(false);
+                return deviceCodeCredential;
             }
             else
             {
                 deviceCodeOptions.AuthenticationRecord = await ReadAuthRecordAsync().ConfigureAwait(false);
-                deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
+                return new DeviceCodeCredential(deviceCodeOptions);
             }
-            return deviceCodeCredential;
         }
 
         private static async Task<ClientCertificateCredential> GetClientCertificateCredentialAsync(IAuthContext authContext)
@@ -130,9 +116,17 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             var clientCredentialOptions = new ClientCertificateCredentialOptions
             {
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
-                TokenCachePersistenceOptions = new TokenCachePersistenceOptions { Name = Constants.CacheName },
+                TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
             };
             return await Task.FromResult(new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions));
+        }
+
+        private static TokenCachePersistenceOptions GetTokenCachePersistenceOptions(IAuthContext authContext)
+        {
+            if (authContext.ContextScope == ContextScope.Process)
+                return GraphSession.Instance.InMemoryTokenCache.GetTokenCachePersistenceOptions();
+            else
+                return new TokenCachePersistenceOptions { Name = Constants.CacheName };
         }
 
         /// <summary>
@@ -144,7 +138,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            // TODO: See if module class has a cancelation token we can tap on.
             return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext, default).GetAwaiter().GetResult(), authContext.Scopes);
         }
 
@@ -159,23 +152,31 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
                 return authContext;
             }
-            catch (AuthenticationException authEx)
+            catch (AuthenticationFailedException authEx)
             {
-                if (authEx.InnerException is TaskCanceledException && cancellationToken.IsCancellationRequested)
+                switch (authEx.InnerException)
                 {
-                    throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOut));
+                    case MsalClientException msalClientEx:
+                        if (msalClientEx.ErrorCode == MsalError.LinuxXdgOpen)
+                        {
+                            // Retry with device code authentication.
+                            authContext.AuthType = AuthenticationType.Delegated; // TODO: Use auth type to derive auth provider type.
+                            authContext.AuthProviderType = AuthProviderType.DeviceCodeProvider;
+                            return await AuthenticateAsync(authContext, cancellationToken);
+                        }
+                        break;
+                    case MsalServiceException msalServiceEx:
+                        if (msalServiceEx.StatusCode == 400 && msalServiceEx.ErrorCode == "invalid_scope" && string.IsNullOrWhiteSpace(authContext.TenantId)
+                           && (authContext.AuthProviderType == AuthProviderType.DeviceCodeProvider || authContext.AuthProviderType == AuthProviderType.DeviceCodeProviderFallBack))
+                        {
+                            // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
+                            throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
+                        }
+                        break;
+                    case TaskCanceledException taskCanceledEx:
+                        throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOut), taskCanceledEx);
                 }
-                else if (authEx.InnerException is MsalServiceException msalServiceEx
-                      && msalServiceEx.StatusCode == 400
-                      && msalServiceEx.ErrorCode == "invalid_scope"
-                      && string.IsNullOrWhiteSpace(authContext.TenantId)
-                      && (authContext.AuthProviderType == AuthProviderType.DeviceCodeProvider
-                      || authContext.AuthProviderType == AuthProviderType.DeviceCodeProviderFallBack))
-                {
-                    // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
-                    throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
-                }
-                throw authEx.InnerException ?? authEx;
+                throw authEx;
             }
             catch (Exception ex)
             {
@@ -283,12 +284,20 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             }
             return xCertificate;
         }
-
-        private static bool IsUnableToOpenWebPageError(Exception exception)
+        
+        /// <summary>
+        /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
+        /// </summary>
+        /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
+        public static async Task LogoutAsync(IAuthContext authContext)
         {
-            return exception.InnerException is MsalClientException clientException &&
-                   clientException?.ErrorCode == MsalError.LinuxXdgOpen ||
-                   (exception.Message?.ToLower()?.Contains("unable to open a web page") ?? false);
+            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
+                GraphSession.Instance.UserProvidedToken = null;
+            else
+            {
+                GraphSession.Instance.InMemoryTokenCache.ClearCache();
+                await DeleteAuthRecordAsync().ConfigureAwait(false);
+            }
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
@@ -305,9 +314,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             // Try to create directory if it doesn't exist.
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
-            using(var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+            using (var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
                 await authRecord.SerializeAsync(authRecordStream);
         }
+
 
         public static Task DeleteAuthRecordAsync()
         {
