@@ -2383,6 +2383,30 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcLaunchInfo()':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getCloudPcLaunchInfo
+      operationId: deviceManagement.virtualEndpoint.cloudPCs_getCloudPcLaunchInfo
+      parameters:
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcLaunchInfo'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages():
     get:
       tags:
@@ -3359,6 +3383,18 @@ components:
           additionalProperties:
             type: object
           description: The user experience analytics resource performance entity.
+    microsoft.graph.cloudPcLaunchInfo:
+      title: cloudPcLaunchInfo
+      type: object
+      properties:
+        cloudPcId:
+          type: string
+          nullable: true
+        cloudPcLaunchUrl:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.cloudPcSourceDeviceImage:
       title: cloudPcSourceDeviceImage
       type: object
@@ -3370,6 +3406,12 @@ components:
         id:
           type: string
           description: The ID of the source image.
+          nullable: true
+        subscriptionDisplayName:
+          type: string
+          nullable: true
+        subscriptionId:
+          type: string
           nullable: true
       additionalProperties:
         type: object
