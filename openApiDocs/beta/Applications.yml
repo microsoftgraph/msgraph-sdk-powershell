@@ -20014,14 +20014,12 @@ components:
           properties:
             isEnabled:
               type: boolean
-              description: Denotes whether the policy is enabled.
             restrictions:
               $ref: '#/components/schemas/microsoft.graph.appManagementConfiguration'
             appliesTo:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Collection of application and service principals to which a policy is applied.
           additionalProperties:
             type: object
     microsoft.graph.connectorGroup:
@@ -20061,6 +20059,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               format: date-time
               nullable: true
           additionalProperties:
@@ -20589,7 +20588,7 @@ components:
             creationTimestamp:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+              description: 'The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             principalDisplayName:
@@ -20599,12 +20598,12 @@ components:
             principalId:
               pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
               type: string
-              description: 'The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.'
+              description: 'The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.'
               format: uuid
               nullable: true
             principalType:
               type: string
-              description: 'The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.'
+              description: 'The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.'
               nullable: true
             resourceDisplayName:
               type: string
@@ -22269,7 +22268,7 @@ components:
         restrictForAppsCreatedAfterDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.'
+          description: 'Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.'
           format: date-time
           nullable: true
         restrictionType:
