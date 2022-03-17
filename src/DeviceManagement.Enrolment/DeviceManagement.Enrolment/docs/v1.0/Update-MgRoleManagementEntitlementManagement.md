@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgRoleManagementEntitlementManagement
 
 ## SYNOPSIS
-Container for all entitlement management resources in Azure AD identity governance.
+Container for roles and assignments for entitlement management resources.
 
 ## SYNTAX
 
@@ -27,7 +27,7 @@ Update-MgRoleManagementEntitlementManagement -BodyParameter <IMicrosoftGraphRbac
 ```
 
 ## DESCRIPTION
-Container for all entitlement management resources in Azure AD identity governance.
+Container for roles and assignments for entitlement management resources.
 
 ## EXAMPLES
 

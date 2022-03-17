@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionId
-The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
 Required on create.
 Does not support $filter.
 
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionName
-The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal.
+The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal.
 Does not support $filter.
 
 ```yaml
@@ -229,8 +229,8 @@ BODYPARAMETER <IMicrosoftGraphDelegatedPermissionClassification>: delegatedPermi
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[Classification <String>]`: permissionClassificationType
-  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.
+  - `[PermissionId <String>]`: The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
+  - `[PermissionName <String>]`: The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment

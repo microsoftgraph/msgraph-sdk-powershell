@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgServicePrincipalTokenLifetimePolicyByRef -InputObject <IApplicationsIdenti
 
 ## DESCRIPTION
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ## EXAMPLES
 

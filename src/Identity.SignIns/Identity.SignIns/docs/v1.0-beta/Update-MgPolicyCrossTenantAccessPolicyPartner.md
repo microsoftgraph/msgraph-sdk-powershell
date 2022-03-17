@@ -247,6 +247,7 @@ Accept wildcard characters: False
 ### -TenantId
 The tenant identifier for the partner Azure AD organization.
 Read-only.
+Key.
 
 ```yaml
 Type: System.String
@@ -374,7 +375,7 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner>: cros
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Azure AD organizations is trusted.
   - `[Id <String>]`: Read-only.
   - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-  - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only.
+  - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
 
 INBOUNDTRUST <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>: crossTenantAccessPolicyInboundTrust
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

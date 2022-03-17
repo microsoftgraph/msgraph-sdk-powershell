@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgApplicationSynchronizationTemplate
 
 ## SYNOPSIS
-Update the navigation property templates in applications
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgApplicationSynchronizationTemplate -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property templates in applications
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 

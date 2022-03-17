@@ -11,6 +11,7 @@ schema: 2.0.0
 PDFs linked to this agreement.
 This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ## SYNTAX
 
@@ -46,6 +47,7 @@ New-MgAgreementFile -InputObject <IIdentityGovernanceIdentity> [-AdditionalPrope
 PDFs linked to this agreement.
 This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ## EXAMPLES
 
