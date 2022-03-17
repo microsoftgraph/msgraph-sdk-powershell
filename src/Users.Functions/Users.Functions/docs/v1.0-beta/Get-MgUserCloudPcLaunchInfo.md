@@ -1,47 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Users.Functions
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/invoke-mgrangeuserinsightsharedlastsharedmethodmicrosoftgraphworkbookrangeused
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.functions/get-mgusercloudpclaunchinfo
 schema: 2.0.0
 ---
 
-# Invoke-MgRangeUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeUsed
+# Get-MgUserCloudPcLaunchInfo
 
 ## SYNOPSIS
-Invoke function usedRange
+Invoke function getCloudPcLaunchInfo
 
 ## SYNTAX
 
-### Range (Default)
+### Get (Default)
 ```
-Invoke-MgRangeUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeUsed -SharedInsightId <String>
- -UserId <String> [<CommonParameters>]
-```
-
-### Range1
-```
-Invoke-MgRangeUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeUsed -SharedInsightId <String>
- -UserId <String> -ValuesOnly [<CommonParameters>]
+Get-MgUserCloudPcLaunchInfo -CloudPcId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### RangeViaIdentity
+### GetViaIdentity
 ```
-Invoke-MgRangeUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeUsed
- -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
-```
-
-### RangeViaIdentity1
-```
-Invoke-MgRangeUserInsightSharedLastSharedMethodMicrosoftGraphWorkbookRangeUsed
- -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
+Get-MgUserCloudPcLaunchInfo -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Invoke function usedRange
+Invoke function getCloudPcLaunchInfo
 
 ## EXAMPLES
 
 ## PARAMETERS
+
+### -CloudPcId
+key: id of cloudPC
+
+```yaml
+Type: System.String
+Parameter Sets: Get
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -InputObject
 Identity Parameter
@@ -49,7 +50,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: RangeViaIdentity, RangeViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -59,42 +60,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -SharedInsightId
-key: id of sharedInsight
-
-```yaml
-Type: System.String
-Parameter Sets: Range, Range1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -UserId
 key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Range, Range1
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ValuesOnly
-Usage: valuesOnly={valuesOnly}
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: Range1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -113,7 +84,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphWorkbookRange
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcLaunchInfo
 
 ## NOTES
 
