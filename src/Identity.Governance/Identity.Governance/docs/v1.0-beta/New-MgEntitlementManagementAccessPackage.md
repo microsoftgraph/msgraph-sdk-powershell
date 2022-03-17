@@ -1205,6 +1205,44 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
               - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
             - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
           - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+          - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+            - `[Id <String>]`: Read-only.
+            - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            - `[DisplayName <String>]`: The display name of the Cloud PC.
+            - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+            - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+            - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+              - `[ActionState <String>]`: actionState
+              - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+              - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+              - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+              - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+              - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+                  - `[Name <String>]`: Name for this key-value pair
+                  - `[Value <String>]`: Value for this key-value pair
+                - `[Code <String>]`: The code associated with the Cloud PC status.
+                - `[Message <String>]`: The status message.
+            - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+            - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+            - `[OSVersion <String>]`: cloudPcOperatingSystem
+            - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+            - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+            - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+            - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+            - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+            - `[ServicePlanType <String>]`: cloudPcServicePlanType
+            - `[Status <String>]`: cloudPcStatus
+            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+            - `[UserAccountType <String>]`: cloudPcUserAccountType
+            - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
           - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
           - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -1308,8 +1346,6 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
           - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
             - `[Id <String>]`: Read-only.
             - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-              - `[Name <String>]`: Name for this key-value pair
-              - `[Value <String>]`: Value for this key-value pair
             - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
             - `[EventDateTime <DateTime?>]`: Time when the event occurred .
             - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -2453,7 +2489,7 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -2470,8 +2506,17 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
                 - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
                 - `[ReplyRestriction <String>]`: replyRestriction
                 - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+              - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+                - `[DisplayName <String>]`: 
+                - `[Team <IMicrosoftGraphTeam>]`: team
+                - `[TenantId <String>]`: 
+                - `[Id <String>]`: Read-only.
+                - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+                - `[IsHostTeam <Boolean?>]`: 
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+              - `[TenantId <String>]`: 
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -2490,6 +2535,7 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
             - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -2704,9 +2750,9 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
             - `[Specialization <String>]`: teamSpecialization
             - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[GuestsCount <Int32?>]`: 
-              - `[MembersCount <Int32?>]`: 
-              - `[OwnersCount <Int32?>]`: 
+              - `[GuestsCount <Int32?>]`: Count of guests in a team.
+              - `[MembersCount <Int32?>]`: Count of members in a team.
+              - `[OwnersCount <Int32?>]`: Count of owners in a team.
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: Read-only.
               - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -2722,6 +2768,7 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: Read-only.
+            - `[TenantId <String>]`: 
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -2941,17 +2988,6 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
               - `[Value <String>]`: Value of the property
               - `[ValueType <String>]`: Type of the value
             - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-              - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-              - `[ActionState <String>]`: actionState
-              - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-              - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-              - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-              - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-              - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                - `[Code <String>]`: The code associated with the Cloud PC status.
-                - `[Message <String>]`: The status message.
             - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
             - `[ComplianceState <String>]`: Compliance state.
             - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -4260,15 +4296,20 @@ ACCESSPACKAGEASSIGNMENTPOLICIES <IMicrosoftGraphAccessPackageAssignmentPolicy[]>
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus_v2
-              - `[TextBody <String>]`: 
+              - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
               - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Categories <String[]>]`: 
+                - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
                 - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
           - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
+            - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[Team <IMicrosoftGraphTeam>]`: team
+              - `[TenantId <String>]`: 
+              - `[Id <String>]`: Read-only.
             - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
@@ -5344,6 +5385,44 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
               - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
             - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
           - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+          - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+            - `[Id <String>]`: Read-only.
+            - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+            - `[DisplayName <String>]`: The display name of the Cloud PC.
+            - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+            - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+            - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+            - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+              - `[ActionState <String>]`: actionState
+              - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+              - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+              - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+              - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+              - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+                  - `[Name <String>]`: Name for this key-value pair
+                  - `[Value <String>]`: Value for this key-value pair
+                - `[Code <String>]`: The code associated with the Cloud PC status.
+                - `[Message <String>]`: The status message.
+            - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+            - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+            - `[OSVersion <String>]`: cloudPcOperatingSystem
+            - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+            - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+            - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+            - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+            - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+            - `[ServicePlanType <String>]`: cloudPcServicePlanType
+            - `[Status <String>]`: cloudPcStatus
+            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+            - `[UserAccountType <String>]`: cloudPcUserAccountType
+            - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
           - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
           - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -5447,8 +5526,6 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
           - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
             - `[Id <String>]`: Read-only.
             - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-              - `[Name <String>]`: Name for this key-value pair
-              - `[Value <String>]`: Value for this key-value pair
             - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
             - `[EventDateTime <DateTime?>]`: Time when the event occurred .
             - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -6592,7 +6669,7 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
           - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
           - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
             - `[Id <String>]`: Read-only.
-            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+            - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
               - `[Description <String>]`: Optional textual description for the channel.
@@ -6609,8 +6686,17 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
                 - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
                 - `[ReplyRestriction <String>]`: replyRestriction
                 - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+              - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+                - `[DisplayName <String>]`: 
+                - `[Team <IMicrosoftGraphTeam>]`: team
+                - `[TenantId <String>]`: 
+                - `[Id <String>]`: Read-only.
+                - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+                - `[IsHostTeam <Boolean?>]`: 
               - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+              - `[TenantId <String>]`: 
               - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+            - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
             - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
             - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
             - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -6629,6 +6715,7 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
               - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+            - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
             - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
             - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
             - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -6843,9 +6930,9 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
             - `[Specialization <String>]`: teamSpecialization
             - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[GuestsCount <Int32?>]`: 
-              - `[MembersCount <Int32?>]`: 
-              - `[OwnersCount <Int32?>]`: 
+              - `[GuestsCount <Int32?>]`: Count of guests in a team.
+              - `[MembersCount <Int32?>]`: Count of members in a team.
+              - `[OwnersCount <Int32?>]`: Count of owners in a team.
             - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
               - `[Id <String>]`: Read-only.
               - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -6861,6 +6948,7 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
             - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: Read-only.
+            - `[TenantId <String>]`: 
             - `[Visibility <String>]`: teamVisibilityType
             - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
           - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -7080,17 +7168,6 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
               - `[Value <String>]`: Value of the property
               - `[ValueType <String>]`: Type of the value
             - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-              - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-              - `[ActionState <String>]`: actionState
-              - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-              - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-              - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-              - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-              - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-                - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-                - `[Code <String>]`: The code associated with the Cloud PC status.
-                - `[Message <String>]`: The status message.
             - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
             - `[ComplianceState <String>]`: Compliance state.
             - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -8399,15 +8476,20 @@ ACCESSPACKAGECATALOG <IMicrosoftGraphAccessPackageCatalog>: accessPackageCatalog
               - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
               - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
               - `[Status <String>]`: taskStatus_v2
-              - `[TextBody <String>]`: 
+              - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
               - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[Categories <String[]>]`: 
+                - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
                 - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
           - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
+            - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[Team <IMicrosoftGraphTeam>]`: team
+              - `[TenantId <String>]`: 
+              - `[Id <String>]`: Read-only.
             - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
@@ -9509,6 +9591,44 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
             - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
           - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
         - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+          - `[Id <String>]`: Read-only.
+          - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+          - `[DisplayName <String>]`: The display name of the Cloud PC.
+          - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+          - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+          - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+            - `[ActionState <String>]`: actionState
+            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+                - `[Name <String>]`: Name for this key-value pair
+                - `[Value <String>]`: Value for this key-value pair
+              - `[Code <String>]`: The code associated with the Cloud PC status.
+              - `[Message <String>]`: The status message.
+          - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+          - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+          - `[OSVersion <String>]`: cloudPcOperatingSystem
+          - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+          - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+          - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+          - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+          - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+          - `[ServicePlanType <String>]`: cloudPcServicePlanType
+          - `[Status <String>]`: cloudPcStatus
+          - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+          - `[UserAccountType <String>]`: cloudPcUserAccountType
+          - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
         - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -9612,8 +9732,6 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
         - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: Read-only.
           - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
           - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
           - `[EventDateTime <DateTime?>]`: Time when the event occurred .
           - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -10757,7 +10875,7 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
         - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
         - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
-          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+          - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
             - `[Description <String>]`: Optional textual description for the channel.
@@ -10774,8 +10892,17 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
               - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
               - `[ReplyRestriction <String>]`: replyRestriction
               - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+            - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[Team <IMicrosoftGraphTeam>]`: team
+              - `[TenantId <String>]`: 
+              - `[Id <String>]`: Read-only.
+              - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+              - `[IsHostTeam <Boolean?>]`: 
             - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+            - `[TenantId <String>]`: 
             - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
           - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
           - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
           - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -10794,6 +10921,7 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+          - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
           - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -11008,9 +11136,9 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
           - `[Specialization <String>]`: teamSpecialization
           - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[GuestsCount <Int32?>]`: 
-            - `[MembersCount <Int32?>]`: 
-            - `[OwnersCount <Int32?>]`: 
+            - `[GuestsCount <Int32?>]`: Count of guests in a team.
+            - `[MembersCount <Int32?>]`: Count of members in a team.
+            - `[OwnersCount <Int32?>]`: Count of owners in a team.
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: Read-only.
             - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -11026,6 +11154,7 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
+          - `[TenantId <String>]`: 
           - `[Visibility <String>]`: teamVisibilityType
           - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -11245,17 +11374,6 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
             - `[Value <String>]`: Value of the property
             - `[ValueType <String>]`: Type of the value
           - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-            - `[ActionState <String>]`: actionState
-            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-              - `[Code <String>]`: The code associated with the Cloud PC status.
-              - `[Message <String>]`: The status message.
           - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
           - `[ComplianceState <String>]`: Compliance state.
           - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -12564,15 +12682,20 @@ ACCESSPACKAGESINCOMPATIBLEWITH <IMicrosoftGraphAccessPackage[]>: The access pack
             - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: taskStatus_v2
-            - `[TextBody <String>]`: 
+            - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
             - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Categories <String[]>]`: 
+              - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
         - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
+          - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[Team <IMicrosoftGraphTeam>]`: team
+            - `[TenantId <String>]`: 
+            - `[Id <String>]`: Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
@@ -13602,6 +13725,44 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
             - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
           - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
         - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+          - `[Id <String>]`: Read-only.
+          - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+          - `[DisplayName <String>]`: The display name of the Cloud PC.
+          - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+          - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+          - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+            - `[ActionState <String>]`: actionState
+            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+                - `[Name <String>]`: Name for this key-value pair
+                - `[Value <String>]`: Value for this key-value pair
+              - `[Code <String>]`: The code associated with the Cloud PC status.
+              - `[Message <String>]`: The status message.
+          - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+          - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+          - `[OSVersion <String>]`: cloudPcOperatingSystem
+          - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+          - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+          - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+          - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+          - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+          - `[ServicePlanType <String>]`: cloudPcServicePlanType
+          - `[Status <String>]`: cloudPcStatus
+          - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+          - `[UserAccountType <String>]`: cloudPcUserAccountType
+          - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
         - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -13705,8 +13866,6 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
         - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: Read-only.
           - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
           - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
           - `[EventDateTime <DateTime?>]`: Time when the event occurred .
           - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -14850,7 +15009,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
         - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
         - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
-          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+          - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
             - `[Description <String>]`: Optional textual description for the channel.
@@ -14867,8 +15026,17 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
               - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
               - `[ReplyRestriction <String>]`: replyRestriction
               - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+            - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[Team <IMicrosoftGraphTeam>]`: team
+              - `[TenantId <String>]`: 
+              - `[Id <String>]`: Read-only.
+              - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+              - `[IsHostTeam <Boolean?>]`: 
             - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+            - `[TenantId <String>]`: 
             - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
           - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
           - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
           - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -14887,6 +15055,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+          - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
           - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -15101,9 +15270,9 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
           - `[Specialization <String>]`: teamSpecialization
           - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[GuestsCount <Int32?>]`: 
-            - `[MembersCount <Int32?>]`: 
-            - `[OwnersCount <Int32?>]`: 
+            - `[GuestsCount <Int32?>]`: Count of guests in a team.
+            - `[MembersCount <Int32?>]`: Count of members in a team.
+            - `[OwnersCount <Int32?>]`: Count of owners in a team.
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: Read-only.
             - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -15119,6 +15288,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
+          - `[TenantId <String>]`: 
           - `[Visibility <String>]`: teamVisibilityType
           - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -15338,17 +15508,6 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
             - `[Value <String>]`: Value of the property
             - `[ValueType <String>]`: Type of the value
           - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-            - `[ActionState <String>]`: actionState
-            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-              - `[Code <String>]`: The code associated with the Cloud PC status.
-              - `[Message <String>]`: The status message.
           - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
           - `[ComplianceState <String>]`: Compliance state.
           - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -16657,15 +16816,20 @@ BODYPARAMETER <IMicrosoftGraphAccessPackage>: accessPackage
             - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: taskStatus_v2
-            - `[TextBody <String>]`: 
+            - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
             - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Categories <String[]>]`: 
+              - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
         - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
+          - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[Team <IMicrosoftGraphTeam>]`: team
+            - `[TenantId <String>]`: 
+            - `[Id <String>]`: Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
@@ -17694,6 +17858,44 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
             - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
           - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
         - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+          - `[Id <String>]`: Read-only.
+          - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+          - `[DisplayName <String>]`: The display name of the Cloud PC.
+          - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+          - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+          - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+          - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+            - `[ActionState <String>]`: actionState
+            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+                - `[Name <String>]`: Name for this key-value pair
+                - `[Value <String>]`: Value for this key-value pair
+              - `[Code <String>]`: The code associated with the Cloud PC status.
+              - `[Message <String>]`: The status message.
+          - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+          - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+          - `[OSVersion <String>]`: cloudPcOperatingSystem
+          - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+          - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+          - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+          - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+          - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+          - `[ServicePlanType <String>]`: cloudPcServicePlanType
+          - `[Status <String>]`: cloudPcStatus
+          - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+          - `[UserAccountType <String>]`: cloudPcUserAccountType
+          - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
         - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
         - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -17797,8 +17999,6 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
         - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: Read-only.
           - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-            - `[Name <String>]`: Name for this key-value pair
-            - `[Value <String>]`: Value for this key-value pair
           - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
           - `[EventDateTime <DateTime?>]`: Time when the event occurred .
           - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -18942,7 +19142,7 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
         - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
         - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
-          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+          - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
             - `[Description <String>]`: Optional textual description for the channel.
@@ -18959,8 +19159,17 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
               - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
               - `[ReplyRestriction <String>]`: replyRestriction
               - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+            - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+              - `[DisplayName <String>]`: 
+              - `[Team <IMicrosoftGraphTeam>]`: team
+              - `[TenantId <String>]`: 
+              - `[Id <String>]`: Read-only.
+              - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+              - `[IsHostTeam <Boolean?>]`: 
             - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+            - `[TenantId <String>]`: 
             - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+          - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
           - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
           - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
           - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -18979,6 +19188,7 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
             - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+          - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
           - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
           - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
           - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -19193,9 +19403,9 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
           - `[Specialization <String>]`: teamSpecialization
           - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[GuestsCount <Int32?>]`: 
-            - `[MembersCount <Int32?>]`: 
-            - `[OwnersCount <Int32?>]`: 
+            - `[GuestsCount <Int32?>]`: Count of guests in a team.
+            - `[MembersCount <Int32?>]`: Count of members in a team.
+            - `[OwnersCount <Int32?>]`: Count of owners in a team.
           - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
             - `[Id <String>]`: Read-only.
             - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -19211,6 +19421,7 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
           - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
+          - `[TenantId <String>]`: 
           - `[Visibility <String>]`: teamVisibilityType
           - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
         - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -19430,17 +19641,6 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
             - `[Value <String>]`: Value of the property
             - `[ValueType <String>]`: Type of the value
           - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-            - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-            - `[ActionState <String>]`: actionState
-            - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-            - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-            - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-            - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-              - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-              - `[Code <String>]`: The code associated with the Cloud PC status.
-              - `[Message <String>]`: The status message.
           - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
           - `[ComplianceState <String>]`: Compliance state.
           - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -20749,15 +20949,20 @@ INCOMPATIBLEACCESSPACKAGES <IMicrosoftGraphAccessPackage[]>: The access packages
             - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
             - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
             - `[Status <String>]`: taskStatus_v2
-            - `[TextBody <String>]`: 
+            - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
             - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Categories <String[]>]`: 
+              - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
               - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
         - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
+          - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[Team <IMicrosoftGraphTeam>]`: team
+            - `[TenantId <String>]`: 
+            - `[Id <String>]`: Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
@@ -21628,6 +21833,44 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
           - `[LastMessageReadDateTime <DateTime?>]`: Represents the dateTime up until which the current user has read chatMessages in a specific chat.
         - `[WebUrl <String>]`: The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
       - `[City <String>]`: The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+      - `[CloudPCs <IMicrosoftGraphCloudPc[]>]`: 
+        - `[Id <String>]`: Read-only.
+        - `[AadDeviceId <String>]`: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+        - `[DisplayName <String>]`: The display name of the Cloud PC.
+        - `[GracePeriodEndDateTime <DateTime?>]`: The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[ImageDisplayName <String>]`: Name of the OS image that's on the Cloud PC.
+        - `[LastLoginResult <IMicrosoftGraphCloudPcLoginResult>]`: cloudPcLoginResult
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Time <DateTime?>]`: The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'. Read-only.
+        - `[LastModifiedDateTime <DateTime?>]`: The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        - `[LastRemoteActionResult <IMicrosoftGraphCloudPcRemoteActionResult>]`: cloudPcRemoteActionResult
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
+          - `[ActionState <String>]`: actionState
+          - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+          - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+          - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
+          - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+          - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
+              - `[Name <String>]`: Name for this key-value pair
+              - `[Value <String>]`: Value for this key-value pair
+            - `[Code <String>]`: The code associated with the Cloud PC status.
+            - `[Message <String>]`: The status message.
+        - `[ManagedDeviceId <String>]`: The Intune device ID of the Cloud PC.
+        - `[ManagedDeviceName <String>]`: The Intune device name of the Cloud PC.
+        - `[OSVersion <String>]`: cloudPcOperatingSystem
+        - `[OnPremisesConnectionName <String>]`: The on-premises connection that is applied during the provisioning of Cloud PCs.
+        - `[ProvisioningPolicyId <String>]`: The provisioning policy ID of the Cloud PC.
+        - `[ProvisioningPolicyName <String>]`: The provisioning policy that is applied during the provisioning of Cloud PCs.
+        - `[ServicePlanId <String>]`: The service plan ID of the Cloud PC.
+        - `[ServicePlanName <String>]`: The service plan name of the Cloud PC.
+        - `[ServicePlanType <String>]`: cloudPcServicePlanType
+        - `[Status <String>]`: cloudPcStatus
+        - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
+        - `[UserAccountType <String>]`: cloudPcUserAccountType
+        - `[UserPrincipalName <String>]`: The user principal name (UPN) of the user assigned to the Cloud PC.
       - `[CompanyName <String>]`: The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[ConsentProvidedForMinor <String>]`: Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
       - `[ContactFolders <IMicrosoftGraphContactFolder[]>]`: The user's contacts folders. Read-only. Nullable.
@@ -21731,8 +21974,6 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
       - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
         - `[Id <String>]`: Read-only.
         - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
-          - `[Name <String>]`: Name for this key-value pair
-          - `[Value <String>]`: Value for this key-value pair
         - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
         - `[EventDateTime <DateTime?>]`: Time when the event occurred .
         - `[EventName <String>]`: Event Name corresponding to the Troubleshooting Event. It is an Optional field
@@ -22876,7 +23117,7 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
       - `[JoinedGroups <IMicrosoftGraphGroup[]>]`: Read-only. Nullable.
       - `[JoinedTeams <IMicrosoftGraphTeam[]>]`: The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
-        - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
+        - `[AllChannels <IMicrosoftGraphChannel[]>]`: 
           - `[Id <String>]`: Read-only.
           - `[CreatedDateTime <DateTime?>]`: Read only. Timestamp at which the channel was created.
           - `[Description <String>]`: Optional textual description for the channel.
@@ -22893,8 +23134,17 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
             - `[AllowNewMessageFromConnectors <Boolean?>]`: Indicates whether connectors are allowed to post messages.
             - `[ReplyRestriction <String>]`: replyRestriction
             - `[UserNewMessageRestriction <String>]`: userNewMessageRestriction
+          - `[SharedWithTeams <IMicrosoftGraphSharedWithChannelTeamInfo[]>]`: 
+            - `[DisplayName <String>]`: 
+            - `[Team <IMicrosoftGraphTeam>]`: team
+            - `[TenantId <String>]`: 
+            - `[Id <String>]`: Read-only.
+            - `[AllowedMembers <IMicrosoftGraphConversationMember[]>]`: 
+            - `[IsHostTeam <Boolean?>]`: 
           - `[Tabs <IMicrosoftGraphTeamsTab[]>]`: A collection of all the tabs in the channel. A navigation property.
+          - `[TenantId <String>]`: 
           - `[WebUrl <String>]`: A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+        - `[Channels <IMicrosoftGraphChannel[]>]`: The collection of channels and messages associated with the team.
         - `[Classification <String>]`: An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant's directory.
         - `[CreatedDateTime <DateTime?>]`: Timestamp at which the team was created.
         - `[Description <String>]`: An optional description for the team. Maximum length: 1024 characters.
@@ -22913,6 +23163,7 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowCreateUpdateChannels <Boolean?>]`: If set to true, guests can add and update channels.
           - `[AllowDeleteChannels <Boolean?>]`: If set to true, guests can delete channels.
+        - `[IncomingChannels <IMicrosoftGraphChannel[]>]`: 
         - `[InstalledApps <IMicrosoftGraphTeamsAppInstallation[]>]`: The apps installed in this team.
         - `[InternalId <String>]`: A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
         - `[IsArchived <Boolean?>]`: Whether this team is in read-only mode.
@@ -23127,9 +23378,9 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
         - `[Specialization <String>]`: teamSpecialization
         - `[Summary <IMicrosoftGraphTeamSummary>]`: teamSummary
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[GuestsCount <Int32?>]`: 
-          - `[MembersCount <Int32?>]`: 
-          - `[OwnersCount <Int32?>]`: 
+          - `[GuestsCount <Int32?>]`: Count of guests in a team.
+          - `[MembersCount <Int32?>]`: Count of members in a team.
+          - `[OwnersCount <Int32?>]`: Count of owners in a team.
         - `[Tags <IMicrosoftGraphTeamworkTag[]>]`: The tags associated with the team.
           - `[Id <String>]`: Read-only.
           - `[Description <String>]`: Tag description as it will appear to the user in Microsoft Teams.
@@ -23145,6 +23396,7 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
         - `[Template <IMicrosoftGraphTeamsTemplate>]`: teamsTemplate
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
+        - `[TenantId <String>]`: 
         - `[Visibility <String>]`: teamVisibilityType
         - `[WebUrl <String>]`: A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
       - `[LastPasswordChangeDateTime <DateTime?>]`: The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -23364,17 +23616,6 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
           - `[Value <String>]`: Value of the property
           - `[ValueType <String>]`: Type of the value
         - `[CloudPcRemoteActionResults <IMicrosoftGraphCloudPcRemoteActionResult[]>]`: 
-          - `[ActionName <String>]`: The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.
-          - `[ActionState <String>]`: actionState
-          - `[CloudPcId <String>]`: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-          - `[LastUpdatedDateTime <DateTime?>]`: Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-          - `[ManagedDeviceId <String>]`: The ID of the Intune managed device on which the remote action is performed. Read-only.
-          - `[StartDateTime <DateTime?>]`: Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
-          - `[StatusDetails <IMicrosoftGraphCloudPcStatusDetails>]`: cloudPcStatusDetails
-            - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: Any additional information about the Cloud PC status.
-            - `[Code <String>]`: The code associated with the Cloud PC status.
-            - `[Message <String>]`: The status message.
         - `[ComplianceGracePeriodExpirationDateTime <DateTime?>]`: The DateTime when device compliance grace period expires. This property is read-only.
         - `[ComplianceState <String>]`: Compliance state.
         - `[ConfigurationManagerClientEnabledFeatures <IMicrosoftGraphConfigurationManagerClientEnabledFeatures>]`: configuration Manager client enabled features
@@ -24683,15 +24924,20 @@ INCOMPATIBLEGROUPS <IMicrosoftGraphGroup[]>: The groups whose members are inelig
           - `[Recurrence <IMicrosoftGraphPatternedRecurrence>]`: patternedRecurrence
           - `[StartDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
           - `[Status <String>]`: taskStatus_v2
-          - `[TextBody <String>]`: 
+          - `[TextBody <String>]`: The task body in text format that typically contains information about the task.
           - `[Viewpoint <IMicrosoftGraphTaskViewpoint>]`: taskViewpoint
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[Categories <String[]>]`: 
+            - `[Categories <String[]>]`: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
             - `[ReminderDateTime <IMicrosoftGraphDateTimeZone>]`: dateTimeTimeZone
         - `[Lists <IMicrosoftGraphBaseTaskList[]>]`: The task lists in the users mailbox.
       - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
+        - `[AssociatedTeams <IMicrosoftGraphAssociatedTeamInfo[]>]`: 
+          - `[DisplayName <String>]`: 
+          - `[Team <IMicrosoftGraphTeam>]`: team
+          - `[TenantId <String>]`: 
+          - `[Id <String>]`: Read-only.
         - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
           - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
           - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition

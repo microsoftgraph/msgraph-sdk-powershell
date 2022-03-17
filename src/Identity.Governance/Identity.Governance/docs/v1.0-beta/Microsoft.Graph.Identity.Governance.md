@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: d87fa2f5-51b7-4a24-bb9b-da93e24fb6e4
+Module Guid: ace982b6-b979-437f-9cf3-f354dd1d23ea
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -389,6 +389,7 @@ Information about acceptances of this agreement.
 PDFs linked to this agreement.
 This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ### [New-MgAgreementFileLocalization](New-MgAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -598,7 +599,7 @@ Nullable.
 Represents the grant of an access package to a subject (user or group).
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Delete navigation property accessPackageAssignmentApprovals for identityGovernance
+Approval stages for assignment requests.
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStep](Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Delete navigation property steps for identityGovernance
@@ -896,7 +897,7 @@ Represents access package objects.
 Invoke action reprocess
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApproval](Update-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Update the navigation property accessPackageAssignmentApprovals in identityGovernance
+Approval stages for assignment requests.
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStep.md)
 Update the navigation property steps in identityGovernance
