@@ -1,59 +1,103 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Applications
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/remove-mgserviceprincipalapproleassignedto
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications/add-mgserviceprincipaltokensigningcertificate
 schema: 2.0.0
 ---
 
-# Remove-MgServicePrincipalAppRoleAssignedTo
+# Add-MgServicePrincipalTokenSigningCertificate
 
 ## SYNOPSIS
-App role assignments for this app or service, granted to users, groups, and other service principals.
-Supports $expand.
+Invoke action addTokenSigningCertificate
 
 ## SYNTAX
 
-### Delete1 (Default)
+### AddExpanded1 (Default)
 ```
-Remove-MgServicePrincipalAppRoleAssignedTo -AppRoleAssignmentId <String> -ServicePrincipalId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgServicePrincipalTokenSigningCertificate -ServicePrincipalId <String> [-AdditionalProperties <Hashtable>]
+ [-DisplayName <String>] [-EndDateTime <DateTime>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### Add1
 ```
-Remove-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Add-MgServicePrincipalTokenSigningCertificate -ServicePrincipalId <String>
+ -BodyParameter <IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### AddViaIdentity1
+```
+Add-MgServicePrincipalTokenSigningCertificate -InputObject <IApplicationsIdentity>
+ -BodyParameter <IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema>
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### AddViaIdentityExpanded1
+```
+Add-MgServicePrincipalTokenSigningCertificate -InputObject <IApplicationsIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisplayName <String>] [-EndDateTime <DateTime>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-App role assignments for this app or service, granted to users, groups, and other service principals.
-Supports $expand.
+Invoke action addTokenSigningCertificate
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AppRoleAssignmentId
-key: id of appRoleAssignment
+### -AdditionalProperties
+Additional Parameters
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete1
+Type: System.Collections.Hashtable
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IfMatch
-ETag
+### -BodyParameter
+.
+To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema
+Parameter Sets: Add1, AddViaIdentity1
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DisplayName
+.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EndDateTime
+.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: AddExpanded1, AddViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -69,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: AddViaIdentity1, AddViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -79,27 +123,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ServicePrincipalId
 key: id of servicePrincipal
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Add1, AddExpanded1
 Aliases:
 
 Required: True
@@ -147,9 +176,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IApplicationsIdentity
 
+### Microsoft.Graph.PowerShell.Models.IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema
+
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSelfSignedCertificate
 
 ## NOTES
 
@@ -159,6 +190,11 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
+
+BODYPARAMETER <IPathsEyijssServiceprincipalsServiceprincipalIdMicrosoftGraphAddtokensigningcertificatePostRequestbodyContentApplicationJsonSchema>: .
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[DisplayName <String>]`: 
+  - `[EndDateTime <DateTime?>]`: 
 
 INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[AppRoleAssignmentId <String>]`: key: id of appRoleAssignment

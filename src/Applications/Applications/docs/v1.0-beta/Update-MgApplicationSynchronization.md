@@ -125,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -Jobs
-.
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 To construct, please use Get-Help -Online and see NOTES section for JOBS properties and create a hash table.
 
 ```yaml
@@ -156,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -Secrets
-.
+Represents a collection of credentials to access provisioned cloud applications.
 To construct, please use Get-Help -Online and see NOTES section for SECRETS properties and create a hash table.
 
 ```yaml
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -Templates
-.
+Pre-configured synchronization settings for a particular application.
 To construct, please use Get-Help -Online and see NOTES section for TEMPLATES properties and create a hash table.
 
 ```yaml
@@ -243,7 +243,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphSynchronization>: synchronization
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: 
+  - `[Jobs <IMicrosoftGraphSynchronizationJob[]>]`: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
     - `[Id <String>]`: Read-only.
     - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -376,10 +376,10 @@ BODYPARAMETER <IMicrosoftGraphSynchronization>: synchronization
       - `[Name <String>]`: Name for this key-value pair
       - `[Value <String>]`: Value for this key-value pair
     - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
-  - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: 
+  - `[Secrets <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>]`: Represents a collection of credentials to access provisioned cloud applications.
     - `[Key <String>]`: synchronizationSecret
     - `[Value <String>]`: The value of the secret.
-  - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: 
+  - `[Templates <IMicrosoftGraphSynchronizationTemplate[]>]`: Pre-configured synchronization settings for a particular application.
     - `[Id <String>]`: Read-only.
     - `[ApplicationId <String>]`: Identifier of the application this template belongs to.
     - `[Default <Boolean?>]`: true if this template is recommended to be the default for the application.
@@ -414,7 +414,7 @@ INPUTOBJECT <IApplicationsIdentity>: Identity Parameter
   - `[SynchronizationTemplateId <String>]`: key: id of synchronizationTemplate
   - `[UserId <String>]`: key: id of user
 
-JOBS <IMicrosoftGraphSynchronizationJob[]>: .
+JOBS <IMicrosoftGraphSynchronizationJob[]>: Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
   - `[Id <String>]`: Read-only.
   - `[Schedule <IMicrosoftGraphSynchronizationSchedule>]`: synchronizationSchedule
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -548,11 +548,11 @@ JOBS <IMicrosoftGraphSynchronizationJob[]>: .
     - `[Value <String>]`: Value for this key-value pair
   - `[TemplateId <String>]`: Identifier of the synchronization template this job is based on.
 
-SECRETS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>: .
+SECRETS <IMicrosoftGraphSynchronizationSecretKeyStringValuePair[]>: Represents a collection of credentials to access provisioned cloud applications.
   - `[Key <String>]`: synchronizationSecret
   - `[Value <String>]`: The value of the secret.
 
-TEMPLATES <IMicrosoftGraphSynchronizationTemplate[]>: .
+TEMPLATES <IMicrosoftGraphSynchronizationTemplate[]>: Pre-configured synchronization settings for a particular application.
   - `[Id <String>]`: Read-only.
   - `[ApplicationId <String>]`: Identifier of the application this template belongs to.
   - `[Default <Boolean?>]`: true if this template is recommended to be the default for the application.

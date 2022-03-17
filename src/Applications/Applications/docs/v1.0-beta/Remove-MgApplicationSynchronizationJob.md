@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgApplicationSynchronizationJob
 
 ## SYNOPSIS
-Delete navigation property jobs for applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgApplicationSynchronizationJob -InputObject <IApplicationsIdentity> [-If
 ```
 
 ## DESCRIPTION
-Delete navigation property jobs for applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ## EXAMPLES
 
