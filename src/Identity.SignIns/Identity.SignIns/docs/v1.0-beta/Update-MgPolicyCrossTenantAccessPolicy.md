@@ -277,7 +277,7 @@ BODYPARAMETER <IMicrosoftGraphCrossTenantAccessPolicy>: crossTenantAccessPolicy
     - `[InboundTrust <IMicrosoftGraphCrossTenantAccessPolicyInboundTrust>]`: crossTenantAccessPolicyInboundTrust
     - `[Id <String>]`: Read-only.
     - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-    - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only.
+    - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
 
 DEFAULT <IMicrosoftGraphCrossTenantAccessPolicyConfigurationDefault>: crossTenantAccessPolicyConfigurationDefault
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -321,7 +321,7 @@ PARTNERS <IMicrosoftGraphCrossTenantAccessPolicyConfigurationPartner[]>: Defines
     - `[IsMfaAccepted <Boolean?>]`: Specifies whether MFA from external Azure AD organizations is trusted.
   - `[Id <String>]`: Read-only.
   - `[IsServiceProvider <Boolean?>]`: Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-  - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only.
+  - `[TenantId <String>]`: The tenant identifier for the partner Azure AD organization. Read-only. Key.
 
 ## RELATED LINKS
 
