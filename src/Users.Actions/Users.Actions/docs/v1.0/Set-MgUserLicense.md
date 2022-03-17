@@ -12,28 +12,28 @@ Invoke action assignLicense
 
 ## SYNTAX
 
-### AssignExpanded (Default)
+### AssignExpanded1 (Default)
 ```
 Set-MgUserLicense -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### Assign
+### Assign1
 ```
 Set-MgUserLicense -UserId <String>
  -BodyParameter <IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AssignViaIdentity
+### AssignViaIdentity1
 ```
 Set-MgUserLicense -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AssignViaIdentityExpanded
+### AssignViaIdentityExpanded1
 ```
 Set-MgUserLicense -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-AddLicenses <IMicrosoftGraphAssignedLicense[]>] [-RemoveLicenses <String[]>] [-Confirm] [-WhatIf]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
+Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for ADDLICENSES 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAssignedLicense[]
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
+Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -84,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsBfhtneUsersUserIdMicrosoftGraphAssignlicensePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Assign, AssignViaIdentity
+Parameter Sets: Assign1, AssignViaIdentity1
 Aliases:
 
 Required: True
@@ -100,7 +100,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AssignViaIdentity, AssignViaIdentityExpanded
+Parameter Sets: AssignViaIdentity1, AssignViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String[]
-Parameter Sets: AssignExpanded, AssignViaIdentityExpanded
+Parameter Sets: AssignExpanded1, AssignViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -130,7 +130,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Assign, AssignExpanded
+Parameter Sets: Assign1, AssignExpanded1
 Aliases:
 
 Required: True
@@ -213,6 +213,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

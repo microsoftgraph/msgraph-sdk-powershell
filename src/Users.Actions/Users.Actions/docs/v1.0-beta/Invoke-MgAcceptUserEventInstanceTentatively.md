@@ -12,28 +12,28 @@ Invoke action tentativelyAccept
 
 ## SYNTAX
 
-### AcceptExpanded (Default)
+### AcceptExpanded1 (Default)
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
  [-SendResponse] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Accept
+### Accept1
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AcceptViaIdentity
+### AcceptViaIdentity1
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AcceptViaIdentityExpanded
+### AcceptViaIdentityExpanded1
 ```
 Invoke-MgAcceptUserEventInstanceTentatively -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-Comment <String>] [-ProposedNewTime <IMicrosoftGraphTimeSlot>]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths14D4S5WUsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphTentativelyacceptPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Accept, AcceptViaIdentity
+Parameter Sets: Accept1, AcceptViaIdentity1
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -98,7 +98,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept, AcceptExpanded
+Parameter Sets: Accept1, AcceptExpanded1
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept, AcceptExpanded
+Parameter Sets: Accept1, AcceptExpanded1
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AcceptViaIdentity, AcceptViaIdentityExpanded
+Parameter Sets: AcceptViaIdentity1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -160,7 +160,7 @@ To construct, please use Get-Help -Online and see NOTES section for PROPOSEDNEWT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTimeSlot
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: AcceptExpanded, AcceptViaIdentityExpanded
+Parameter Sets: AcceptExpanded1, AcceptViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -190,7 +190,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept, AcceptExpanded
+Parameter Sets: Accept1, AcceptExpanded1
 Aliases:
 
 Required: True
@@ -274,6 +274,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

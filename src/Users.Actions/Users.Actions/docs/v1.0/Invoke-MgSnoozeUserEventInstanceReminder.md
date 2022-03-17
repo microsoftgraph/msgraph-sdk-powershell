@@ -12,28 +12,28 @@ Invoke action snoozeReminder
 
 ## SYNTAX
 
-### SnoozeExpanded1 (Default)
+### SnoozeExpanded (Default)
 ```
 Invoke-MgSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### Snooze1
+### Snooze
 ```
 Invoke-MgSnoozeUserEventInstanceReminder -EventId <String> -EventId1 <String> -UserId <String>
  -BodyParameter <IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SnoozeViaIdentity1
+### SnoozeViaIdentity
 ```
 Invoke-MgSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SnoozeViaIdentityExpanded1
+### SnoozeViaIdentityExpanded
 ```
 Invoke-MgSnoozeUserEventInstanceReminder -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-NewReminderTime <IMicrosoftGraphDateTimeZone>] [-PassThru] [-Confirm]
@@ -52,7 +52,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -68,7 +68,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths42Qvm9UsersUserIdEventsEventIdInstancesEventId1MicrosoftGraphSnoozereminderPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Snooze1, SnoozeViaIdentity1
+Parameter Sets: Snooze, SnoozeViaIdentity
 Aliases:
 
 Required: True
@@ -83,7 +83,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Snooze1, SnoozeExpanded1
+Parameter Sets: Snooze, SnoozeExpanded
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Snooze1, SnoozeExpanded1
+Parameter Sets: Snooze, SnoozeExpanded
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: SnoozeViaIdentity1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeViaIdentity, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -130,7 +130,7 @@ To construct, please use Get-Help -Online and see NOTES section for NEWREMINDERT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDateTimeZone
-Parameter Sets: SnoozeExpanded1, SnoozeViaIdentityExpanded1
+Parameter Sets: SnoozeExpanded, SnoozeViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -160,7 +160,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Snooze1, SnoozeExpanded1
+Parameter Sets: Snooze, SnoozeExpanded
 Aliases:
 
 Required: True
@@ -239,6 +239,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
