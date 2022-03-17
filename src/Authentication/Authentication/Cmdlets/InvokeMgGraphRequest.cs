@@ -1,3 +1,7 @@
+// ------------------------------------------------------------------------------
+//  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
+// ------------------------------------------------------------------------------
+
 using System;
 using System.Collections;
 using System.Globalization;
@@ -30,20 +34,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private RequestUserAgent _graphRequestUserAgent;
-        private IGraphEnvironment _originalEnvironment;
         private string _originalFilePath;
-
-        public InvokeMgGraphRequest()
-        {
-            Authentication = GraphRequestAuthenticationType.Default;
-        }
 
         /// <summary>
         ///     Http Method
         /// </summary>
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 1,
-            HelpMessage = "Http Method")]
+            HelpMessage = "HTTP Method")]
         public GraphRequestMethod Method { get; set; } = GraphRequestMethod.GET;
 
         /// <summary>
@@ -58,7 +56,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public Uri Uri { get; set; }
 
         /// <summary>
-        ///     Optional Http Body
+        ///     Optional HTTP Body
         /// </summary>
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Position = 3,
@@ -116,15 +114,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public SwitchParameter PassThru { get; set; }
 
         /// <summary>
-        ///     OAuth or Bearer Token to use instead of already acquired token
-        /// </summary>
-        [Parameter(Mandatory = false,
-            ParameterSetName = Constants.UserParameterSet,
-            Position = 9,
-            HelpMessage = "OAuth or Bearer Token to use instead of already acquired token")]
-        public SecureString Token { get; set; }
-
-        /// <summary>
         ///     Add headers to Request Header collection without validation
         /// </summary>
         [Parameter(Mandatory = false,
@@ -141,15 +130,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 11,
             HelpMessage = "Custom Content Type")]
         public virtual string ContentType { get; set; }
-
-        /// <summary>
-        ///     Graph Authentication Type
-        /// </summary>
-        [Parameter(Mandatory = false,
-            ParameterSetName = Constants.UserParameterSet,
-            Position = 12,
-            HelpMessage = "Graph Authentication Type")]
-        public GraphRequestAuthenticationType Authentication { get; set; }
 
         /// <summary>
         ///     Specifies a web request session. Enter the variable name, including the dollar sign ($).
@@ -185,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         ///     Gets or sets whether to skip checking HTTP status for error codes.
         /// </summary>
         [Parameter(Position = 16, ParameterSetName = Constants.UserParameterSet, Mandatory = false,
-            HelpMessage = "Skip Checking Http Errors")]
+            HelpMessage = "Skip Checking HTTP Errors")]
         public virtual SwitchParameter SkipHttpErrorCheck { get; set; }
 
         /// <summary>
@@ -537,37 +517,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         }
 
         /// <summary>
-        ///     Gets a Custom AuthProvider or configured default provided depending on Auth Scheme specified.
-        /// </summary>
-        /// <returns></returns>
-        private IAuthenticationProvider GetAuthProvider()
-        {
-            // TODO: Merge with authentication utils implementation. CODE DUPLICATE!
-            if (Authentication == GraphRequestAuthenticationType.Default)
-            {
-                return AuthenticationHelpers.GetAuthenticationProvider(GraphSession.Instance.AuthContext);
-            }
-            else if (Authentication == GraphRequestAuthenticationType.UserProvidedToken)
-            {
-                return new TokenCredentialAuthProvider(new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphRequestSession.Token)));
-            }
-
-            throw new ArgumentNullException(Resources.MissingAuthenticationContext.FormatCurrentCulture(nameof(GraphSession.Instance.AuthContext)),
-                nameof(GraphSession.Instance.AuthContext));
-        }
-
-        /// <summary>
-        ///     Gets a Graph HttpClient with a custom or default auth provider.
-        /// </summary>
-        /// <returns></returns>
-        private HttpClient GetHttpClient()
-        {
-            var provider = GetAuthProvider();
-            var client = HttpHelpers.GetGraphHttpClient(provider, GraphSession.Instance.AuthContext.ClientTimeout);
-            return client;
-        }
-
-        /// <summary>
         ///     Executes the HTTP Request and returns a response
         /// </summary>
         /// <param name="client"></param>
@@ -836,21 +785,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         internal virtual void PrepareSession()
         {
-            // Swap current GraphSession environment with a temporary environment for this request.
-            // This only occurs when a customer has provided an absolute url and an access token.
-            if (MyInvocation.BoundParameters.ContainsKey(nameof(Uri))
-                && MyInvocation.BoundParameters.ContainsKey(nameof(Token))
-                && Uri.IsAbsoluteUri)
-            {
-                _originalEnvironment = GraphSession.Instance.Environment;
-                GraphSession.Instance.Environment = new GraphEnvironment
-                {
-                    Name = "MSGraphInvokeGraphRequest",
-                    GraphEndpoint = Uri.GetBaseUrl()
-                    // No need to set AAD endpoint since a token is provided.
-                };
-            }
-
             // Create a new GraphRequestSession object to work with if one is not supplied
             GraphRequestSession = GraphRequestSession ?? new GraphRequestSession();
             if (SessionVariable != null)
@@ -859,16 +793,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 var vi = SessionState.PSVariable;
                 vi.Set(SessionVariable, GraphRequestSession);
             }
-
-            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && Token != null)
-            {
-                GraphRequestSession.Token = Token;
-                GraphRequestSession.AuthenticationType = Authentication;
-            }
-
-            //
+            
             // Handle Custom User Agents
-            //
             GraphRequestSession.UserAgent = UserAgent ?? _graphRequestUserAgent.UserAgent;
 
             // Store the other supplied headers
@@ -888,10 +814,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
             }
         }
-
-        /// <summary>
-        ///     Validate the Request Uri must have the same Host as GraphHttpClient BaseAddress.
-        /// </summary>
+        
         private void ValidateRequestUri()
         {
             if (Uri == null)
@@ -913,9 +836,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             }
         }
 
-        /// <summary>
-        ///     Validate Passed In Parameters
-        /// </summary>
         private void ValidateParameters()
         {
             if (GraphRequestSession != null && SessionVariable != null)
@@ -932,34 +852,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     Resources.PassThruWithOutputFilePathMissing,
                     ErrorConstants.Codes.InvokeGraphRequestOutFileMissingException,
                     nameof(PassThru), nameof(OutputFilePath));
-                ThrowTerminatingError(error);
-            }
-
-            if (Authentication == GraphRequestAuthenticationType.Default && Token != null)
-            {
-                var error = GetValidationError(
-                    Resources.AuthenticationTokenConflict,
-                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
-                    Authentication, nameof(Token));
-                ThrowTerminatingError(error);
-            }
-
-            if (Authentication == GraphRequestAuthenticationType.Default && GraphSession.Instance.AuthContext == null)
-            {
-                var error = GetValidationError(
-                    Resources.NotConnectedToGraphException,
-                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
-                    Authentication, nameof(Token));
-                ThrowTerminatingError(error);
-            }
-
-            // Token shouldn't be null when UserProvidedToken is specified
-            if (Authentication == GraphRequestAuthenticationType.UserProvidedToken && Token == null)
-            {
-                var error = GetValidationError(
-                    Resources.AuthenticationCredentialNotSupplied,
-                    ErrorConstants.Codes.InvokeGraphRequestAuthenticationTokenConflictException,
-                    Authentication, nameof(Token));
                 ThrowTerminatingError(error);
             }
 
@@ -1047,14 +939,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <summary>
         ///     Composes a validation error
         /// </summary>
-        /// <param name="msg"></param>
-        /// <param name="errorId"></param>
-        /// <returns></returns>
         private ErrorRecord GetValidationError(string msg, string errorId)
         {
             var ex = new ValidationMetadataException(msg);
-            var error = new ErrorRecord(ex, errorId, ErrorCategory.InvalidArgument, this);
-            return error;
+            return new ErrorRecord(ex, errorId, ErrorCategory.InvalidArgument, this);
         }
 
         /// <summary>
@@ -1083,14 +971,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             return resolvedFilePath;
         }
 
-        /// <summary>
-        ///     Resets GraphSession environment back to its original state.
-        /// </summary>
-        private void ResetGraphSessionEnvironment()
-        {
-            GraphSession.Instance.Environment = _originalEnvironment;
-        }
-
         #region CmdLet LifeCycle
 
         protected override void BeginProcessing()
@@ -1111,7 +991,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     PrepareSession();
-                    using (var client = GetHttpClient())
+                    using (var client = HttpHelpers.GetGraphHttpClient(this.MyInvocation))
                     {
                         ValidateRequestUri();
                         using (var httpRequestMessage = GetRequest(client, Uri))
@@ -1150,7 +1030,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 catch (HttpRequestException httpRequestException)
                 {
                     var errorRecord = new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
-                        ErrorCategory.InvalidResult, null);
+                        ErrorCategory.ConnectionError, null);
                     ThrowTerminatingError(errorRecord);
                 }
                 catch (Exception exception)
@@ -1201,13 +1081,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         protected override void EndProcessing()
         {
-            ResetGraphSessionEnvironment();
             base.EndProcessing();
         }
 
         protected override void StopProcessing()
         {
-            ResetGraphSessionEnvironment();
             _cancellationTokenSource.Cancel();
             base.StopProcessing();
         }

@@ -46,11 +46,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         [Alias("AppId")]
         public string ClientId { get; set; }
 
+        // TODO: clean-up help message once we add local store and user store support.
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
-            HelpMessage = "The name of your certificate. The Certificate will be retrieved from the current user's certificate store.")]
+            HelpMessage = "The subject distinguished name from a certificate. The Certificate will be retrieved from the current user's certificate store.")]
         [Alias("CertificateSubject")]
-        public string CertificateName { get; set; }
+        public string CertificateSubjectName { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 3,
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         public string Environment { get; set; }
 
         [Parameter(ParameterSetName = Constants.UserParameterSet,
-            Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control")]
+            Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control.")]
         [Alias("DeviceCode", "DeviceAuth", "Device")]
         public SwitchParameter UseDeviceAuthentication { get; set; }
 
@@ -102,17 +103,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "Sets the HTTP client timeout in seconds.")]
         [ValidateNotNullOrEmpty]
         public double ClientTimeout { get; set; }
-        /// <summary>
-        ///     Wait for .NET debugger to attach
-        /// </summary>
+        
         [Parameter(Mandatory = false,
             DontShow = true,
             HelpMessage = "Wait for .NET debugger to attach")]
         public SwitchParameter Break { get; set; }
 
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-
         private IGraphEnvironment environment;
+        
         protected override void BeginProcessing()
         {
             if (Break)
@@ -169,7 +168,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
-                // Set selected environment to the session object.
+                
                 GraphSession.Instance.Environment = environment;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
@@ -180,7 +179,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         {
                             TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxAuthenticationTimeOut);
                             _cancellationTokenSource.CancelAfter(authTimeout);
-                            if (!string.IsNullOrWhiteSpace(ClientId))
+                            if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientId)))
                                 authContext.ClientId = ClientId;
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             else
                                 // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
+                            authContext.TokenCredentialType = UseDeviceAuthentication ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -199,20 +198,19 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.AppOnly;
                             authContext.ClientId = ClientId;
                             authContext.CertificateThumbprint = CertificateThumbprint;
-                            authContext.CertificateName = CertificateName;
+                            authContext.CertificateSubjectName = CertificateSubjectName;
                             authContext.Certificate = Certificate;
-                            // Default to Process but allow the customer to change this via `ContextScope` param.
+                            // Default to Process but allow the customer to change this via `-ContextScope`.
                             authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.Process;
-                            authContext.AuthProviderType = AuthProviderType.ClientCredentialProvider;
+                            authContext.TokenCredentialType = TokenCredentialType.ClientCertificate;
                         }
                         break;
                     case Constants.AccessTokenParameterSet:
                         {
                             authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
                             authContext.ContextScope = ContextScope.Process;
-                            // Store user provided access token to a session object.
                             GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
-                            authContext.AuthProviderType = AuthProviderType.UserProvidedToken;
+                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedTokenCredential;
                         }
                         break;
                 }
@@ -267,9 +265,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                         if (string.IsNullOrEmpty(ClientId))
                             this.ThrowParameterError(nameof(ClientId));
 
-                        // Certificate Thumbprint, Name or Actual Certificate
-                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateName) && Certificate == null)
-                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateName)} or {nameof(Certificate)}");
+                        // Certificate thumbprint, subject name or actual Certificate
+                        if (string.IsNullOrEmpty(CertificateThumbprint) && string.IsNullOrEmpty(CertificateSubjectName) && Certificate == null)
+                            this.ThrowParameterError($"{nameof(CertificateThumbprint)} or {nameof(CertificateSubjectName)} or {nameof(Certificate)}");
 
                         // A thumbprint will always have 40 characters since thumbprints are dynamically calculated as a SHA-1 hash of a certificate's binary data. A SHA-1 hash has a length of 40 hexadecimal numbers (160-bit = 20-byte).
                         // See https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509certificate2.thumbprint?view=net-5.0#remarks.

@@ -56,7 +56,7 @@
                 AuthType = AuthenticationType.Delegated,
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
-                AuthProviderType = AuthProviderType.DeviceCodeProvider
+                TokenCredentialType = TokenCredentialType.DeviceCode
             };
 
             // Act
@@ -77,7 +77,7 @@
                 AuthType = AuthenticationType.Delegated,
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
-                AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack
+                TokenCredentialType = TokenCredentialType.DeviceCode
             };
 
             // Act
@@ -141,10 +141,10 @@
             {
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
-                CertificateName = "cn=dummyCert",
+                CertificateSubjectName = "cn=dummyCert",
                 ContextScope = ContextScope.Process
             };
-            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateName);
+            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
 
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -153,7 +153,7 @@
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             // reset
-            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateName);
+            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
             GraphSession.Reset();
 
         }
@@ -191,7 +191,7 @@
             {
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
-                CertificateName = dummyCertName,
+                CertificateSubjectName = dummyCertName,
                 Certificate = inMemoryCertificate,
                 ContextScope = ContextScope.Process
             };
@@ -202,7 +202,7 @@
             Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             //CleanUp
-            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateName);
+            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
             GraphSession.Reset();
         }
 
@@ -242,11 +242,11 @@
             {
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
-                CertificateName = dummyCertName,
+                CertificateSubjectName = dummyCertName,
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
+            async void action() => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             //Assert
             Assert.ThrowsAny<Exception>(action);
@@ -264,7 +264,7 @@
                 ContextScope = ContextScope.Process
             };
             // Act
-            Action action = async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
+            async void action() => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             //Assert
             Assert.Throws<ArgumentNullException>(action);
@@ -306,41 +306,37 @@
 
         private static void DeleteSelfSignedCertByName(string certificateName)
         {
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
-            {
-                xStore.Open(OpenFlags.ReadWrite);
+            using X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+            xStore.Open(OpenFlags.ReadWrite);
 
-                X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                   .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                   .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
+            X509Certificate2Collection unexpiredCerts = xStore.Certificates
+               .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
+               .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
 
-                // Only return current cert.
-                var xCertificate = unexpiredCerts
-                    .OfType<X509Certificate2>()
-                    .OrderByDescending(c => c.NotBefore)
-                    .FirstOrDefault();
+            // Only return current cert.
+            var xCertificate = unexpiredCerts
+                .OfType<X509Certificate2>()
+                .OrderByDescending(c => c.NotBefore)
+                .FirstOrDefault();
 
-                xStore.Remove(xCertificate);
-            }
+            xStore.Remove(xCertificate);
         }
         private static void DeleteSelfSignedCertByThumbprint(string certificateThumbPrint)
         {
-            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
-            {
-                xStore.Open(OpenFlags.ReadWrite);
+            using X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+            xStore.Open(OpenFlags.ReadWrite);
 
-                X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                    .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                    .Find(X509FindType.FindByThumbprint, certificateThumbPrint, false);
+            X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
+                .Find(X509FindType.FindByThumbprint, certificateThumbPrint, false);
 
-                // Only return current cert.
-                var xCertificate = unexpiredCerts
-                    .OfType<X509Certificate2>()
-                    .OrderByDescending(c => c.NotBefore)
-                    .FirstOrDefault();
+            // Only return current cert.
+            var xCertificate = unexpiredCerts
+                .OfType<X509Certificate2>()
+                .OrderByDescending(c => c.NotBefore)
+                .FirstOrDefault();
 
-                xStore.Remove(xCertificate);
-            }
+            xStore.Remove(xCertificate);
         }
 #endif
 

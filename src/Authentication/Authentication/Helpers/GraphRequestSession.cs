@@ -28,16 +28,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         public string UserAgent { get; set; }
 
         /// <summary>
-        /// Gets or Sets a User Specified JWT Token
-        /// </summary>
-        public SecureString Token { get; set; }
-
-        /// <summary>
-        /// Gets or Sets the AuthenticationType to be used for the current Session
-        /// </summary>
-        public GraphRequestAuthenticationType AuthenticationType { get; set; }
-
-        /// <summary>
         /// Construct a new instance of a WebRequestSession object.
         /// </summary>
         public GraphRequestSession()

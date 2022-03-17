@@ -36,7 +36,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             switch (authContext.AuthType)
             {
                 case AuthenticationType.Delegated:
-                    if (authContext.AuthProviderType == AuthProviderType.InteractiveAuthenticationProvider)
+                    if (authContext.TokenCredentialType == TokenCredentialType.InteractiveBrowser)
                         return await GetInteractiveBrowserCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
                     else
                         return await GetDeviceCodeCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 case AuthenticationType.UserProvidedAccessToken:
                     return new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken));
                 default:
-                    return null;
+                    throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
         }
 
@@ -93,7 +93,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                     return Task.CompletedTask;
                 }
             };
-
             if (!File.Exists(Constants.AuthRecordPath))
             {
                 var deviceCodeCredential = new DeviceCodeCredential(deviceCodeOptions);
@@ -160,14 +159,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         if (msalClientEx.ErrorCode == MsalError.LinuxXdgOpen)
                         {
                             // Retry with device code authentication.
-                            authContext.AuthType = AuthenticationType.Delegated; // TODO: Use auth type to derive auth provider type.
-                            authContext.AuthProviderType = AuthProviderType.DeviceCodeProvider;
+                            authContext.TokenCredentialType = TokenCredentialType.DeviceCode;
                             return await AuthenticateAsync(authContext, cancellationToken);
                         }
                         break;
                     case MsalServiceException msalServiceEx:
-                        if (msalServiceEx.StatusCode == 400 && msalServiceEx.ErrorCode == "invalid_scope" && string.IsNullOrWhiteSpace(authContext.TenantId)
-                           && (authContext.AuthProviderType == AuthProviderType.DeviceCodeProvider || authContext.AuthProviderType == AuthProviderType.DeviceCodeProviderFallBack))
+                        if (msalServiceEx.StatusCode == 400 && msalServiceEx.ErrorCode == "invalid_scope"
+                            && string.IsNullOrWhiteSpace(authContext.TenantId)
+                            && authContext.TokenCredentialType == TokenCredentialType.DeviceCode)
                         {
                             // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
                             throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
@@ -212,15 +211,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
 
             X509Certificate2 certificate;
-            if (!string.IsNullOrWhiteSpace(authContext.CertificateName))
-                certificate = GetCertificateByName(authContext.CertificateName);
+            if (!string.IsNullOrWhiteSpace(authContext.CertificateSubjectName))
+                certificate = GetCertificateByName(authContext.CertificateSubjectName);
             else if (!string.IsNullOrWhiteSpace(authContext.CertificateThumbprint))
                 certificate = GetCertificateByThumbprint(authContext.CertificateThumbprint);
             else
                 certificate = authContext.Certificate;
 
             if (certificate is null)
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, Name {authContext.CertificateName} or In-Memory could not be found");
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, Name {authContext.CertificateSubjectName} or In-Memory could not be found");
 
             return certificate;
         }
@@ -284,7 +283,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             }
             return xCertificate;
         }
-        
+
         /// <summary>
         /// Signs out of the current session using the provided <see cref="IAuthContext"/>.
         /// </summary>
@@ -306,18 +305,21 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
             if (!File.Exists(Constants.AuthRecordPath))
                 return null;
-            using (var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
+            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
+            {
                 return await AuthenticationRecord.DeserializeAsync(authRecordStream);
+            }
         }
 
         public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord)
         {
             // Try to create directory if it doesn't exist.
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
-            using (var authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+            using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
+            {
                 await authRecord.SerializeAsync(authRecordStream);
+            }
         }
-
 
         public static Task DeleteAuthRecordAsync()
         {
