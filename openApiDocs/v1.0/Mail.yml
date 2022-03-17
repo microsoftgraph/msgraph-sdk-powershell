@@ -13,7 +13,12 @@ paths:
       operationId: Get.Count.tabs-b645
       responses:
         '200':
-          $ref: '#/components/responses/ODataCountResponse'
+          content:
+            text/plain:
+              schema:
+                type: number
+                format: int32
+                description: The number of the resources in the collection.
         4XX:
           $ref: '#/components/responses/error'
         5XX:
