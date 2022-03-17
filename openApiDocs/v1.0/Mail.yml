@@ -6,6 +6,18 @@ servers:
   - url: https://graph.microsoft.com/v1.0/
     description: Core
 paths:
+  '/users/$count':
+    description: Provides operations to count the resources in the collection.
+    get:
+      summary: Get the number of the resource
+      operationId: Get.Count.tabs-b645
+      responses:
+        '200':
+          $ref: '#/components/responses/ODataCountResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
   '/users/{user-id}/inferenceClassification':
     get:
       tags:
