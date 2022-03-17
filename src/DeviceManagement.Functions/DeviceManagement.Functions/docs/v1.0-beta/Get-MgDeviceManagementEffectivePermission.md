@@ -90,6 +90,7 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IDeviceManagementFunctionsIdentity>: Identity Parameter
   - `[Category <String>]`: Usage: category={category}
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DepOnboardingSettingId <String>]`: key: id of depOnboardingSetting
   - `[DeviceAndAppManagementAssignmentFilterId <String>]`: key: id of deviceAndAppManagementAssignmentFilter
   - `[DeviceAndAppManagementRoleAssignmentId <String>]`: key: id of deviceAndAppManagementRoleAssignment
