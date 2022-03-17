@@ -12,13 +12,13 @@ Invoke action reauthorize
 
 ## SYNTAX
 
-### Reauthorize (Default)
+### Reauthorize1 (Default)
 ```
 Invoke-MgReauthorizeSubscription -SubscriptionId <String> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### ReauthorizeViaIdentity
+### ReauthorizeViaIdentity1
 ```
 Invoke-MgReauthorizeSubscription -InputObject <IChangeNotificationsIdentity> [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -37,7 +37,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
-Parameter Sets: ReauthorizeViaIdentity
+Parameter Sets: ReauthorizeViaIdentity1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Reauthorize
+Parameter Sets: Reauthorize1
 Aliases:
 
 Required: True

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgEntitlementManagementAccessPackageAssignmentApproval
 
 ## SYNOPSIS
-Delete navigation property accessPackageAssignmentApprovals for identityGovernance
+Approval stages for assignment requests.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIde
 ```
 
 ## DESCRIPTION
-Delete navigation property accessPackageAssignmentApprovals for identityGovernance
+Approval stages for assignment requests.
 
 ## EXAMPLES
 

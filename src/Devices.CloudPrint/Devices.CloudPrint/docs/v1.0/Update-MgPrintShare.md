@@ -2279,7 +2279,7 @@ ALLOWEDGROUPS <IMicrosoftGraphGroup[]>: The groups whose users have access to pr
         - `[TotalItemCount <Int32?>]`: The number of items in the mailFolder.
         - `[UnreadItemCount <Int32?>]`: The number of items in the mailFolder marked as unread.
       - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-      - `[MailboxSettings <IMicrosoftGraphMailboxSettings>]`: mailboxSettings
+      - `[MailboxSettings <IMicrosoftGraphMailboxSettings1>]`: mailboxSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ArchiveFolder <String>]`: Folder ID of an archive folder for the user.
         - `[AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]`: automaticRepliesSetting
@@ -4944,7 +4944,7 @@ ALLOWEDUSERS <IMicrosoftGraphUser1[]>: The users who have access to print using 
     - `[TotalItemCount <Int32?>]`: The number of items in the mailFolder.
     - `[UnreadItemCount <Int32?>]`: The number of items in the mailFolder marked as unread.
   - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[MailboxSettings <IMicrosoftGraphMailboxSettings>]`: mailboxSettings
+  - `[MailboxSettings <IMicrosoftGraphMailboxSettings1>]`: mailboxSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ArchiveFolder <String>]`: Folder ID of an archive folder for the user.
     - `[AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]`: automaticRepliesSetting
@@ -7408,7 +7408,7 @@ BODYPARAMETER <IMicrosoftGraphPrinterShare>: printerShare
           - `[TotalItemCount <Int32?>]`: The number of items in the mailFolder.
           - `[UnreadItemCount <Int32?>]`: The number of items in the mailFolder marked as unread.
         - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[MailboxSettings <IMicrosoftGraphMailboxSettings>]`: mailboxSettings
+        - `[MailboxSettings <IMicrosoftGraphMailboxSettings1>]`: mailboxSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ArchiveFolder <String>]`: Folder ID of an archive folder for the user.
           - `[AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]`: automaticRepliesSetting
@@ -10257,7 +10257,7 @@ PRINTER <IMicrosoftGraphPrinter>: printer
             - `[TotalItemCount <Int32?>]`: The number of items in the mailFolder.
             - `[UnreadItemCount <Int32?>]`: The number of items in the mailFolder marked as unread.
           - `[MailNickname <String>]`: The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[MailboxSettings <IMicrosoftGraphMailboxSettings>]`: mailboxSettings
+          - `[MailboxSettings <IMicrosoftGraphMailboxSettings1>]`: mailboxSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ArchiveFolder <String>]`: Folder ID of an archive folder for the user.
             - `[AutomaticRepliesSetting <IMicrosoftGraphAutomaticRepliesSetting>]`: automaticRepliesSetting

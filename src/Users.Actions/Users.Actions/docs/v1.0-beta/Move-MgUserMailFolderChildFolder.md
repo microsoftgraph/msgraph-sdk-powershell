@@ -12,27 +12,27 @@ Invoke action move
 
 ## SYNTAX
 
-### MoveExpanded (Default)
+### MoveExpanded1 (Default)
 ```
 Move-MgUserMailFolderChildFolder -MailFolderId <String> -MailFolderId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Move
+### Move1
 ```
 Move-MgUserMailFolderChildFolder -MailFolderId <String> -MailFolderId1 <String> -UserId <String>
  -BodyParameter <IPaths1Ekxa5VUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MoveViaIdentity
+### MoveViaIdentity1
 ```
 Move-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Ekxa5VUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### MoveViaIdentityExpanded
+### MoveViaIdentityExpanded1
 ```
 Move-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: MoveExpanded, MoveViaIdentityExpanded
+Parameter Sets: MoveExpanded1, MoveViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Ekxa5VUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphMovePostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Move, MoveViaIdentity
+Parameter Sets: Move1, MoveViaIdentity1
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: MoveExpanded, MoveViaIdentityExpanded
+Parameter Sets: MoveExpanded1, MoveViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: MoveViaIdentity, MoveViaIdentityExpanded
+Parameter Sets: MoveViaIdentity1, MoveViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Move, MoveExpanded
+Parameter Sets: Move1, MoveExpanded1
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Move, MoveExpanded
+Parameter Sets: Move1, MoveExpanded1
 Aliases:
 
 Required: True
@@ -142,7 +142,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Move, MoveExpanded
+Parameter Sets: Move1, MoveExpanded1
 Aliases:
 
 Required: True
@@ -218,6 +218,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

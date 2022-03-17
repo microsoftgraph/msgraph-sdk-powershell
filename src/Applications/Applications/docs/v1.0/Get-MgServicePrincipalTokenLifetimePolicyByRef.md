@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ## SYNTAX
 
@@ -21,7 +20,6 @@ Get-MgServicePrincipalTokenLifetimePolicyByRef -ServicePrincipalId <String> [-Fi
 
 ## DESCRIPTION
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ## EXAMPLES
 

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement.Actions
-Module Guid: 9f5cd7fb-906a-49bb-bd41-7244940320bf
+Module Guid: 63c88fa2-fb09-4848-abd4-900335809cad
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -68,6 +68,9 @@ Invoke action disable
 ### [Disable-MgDeviceManagementManagedDeviceLostMode](Disable-MgDeviceManagementManagedDeviceLostMode.md)
 Disable lost mode
 
+### [Disable-MgDeviceManagementOemWarrantyInformationOnboarding](Disable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
+Invoke action disable
+
 ### [Disable-MgDeviceManagementScriptDeviceRunStateManagedDevice](Disable-MgDeviceManagementScriptDeviceRunStateManagedDevice.md)
 Invoke action disable
 
@@ -103,6 +106,9 @@ Invoke action enableLegacyPcManagement
 
 ### [Enable-MgDeviceManagementManagedDeviceLostMode](Enable-MgDeviceManagementManagedDeviceLostMode.md)
 Enable lost mode
+
+### [Enable-MgDeviceManagementOemWarrantyInformationOnboarding](Enable-MgDeviceManagementOemWarrantyInformationOnboarding.md)
+Invoke action enable
 
 ### [Enable-MgDeviceManagementScriptDeviceRunStateManagedDeviceLostMode](Enable-MgDeviceManagementScriptDeviceRunStateManagedDeviceLostMode.md)
 Enable lost mode
@@ -181,8 +187,14 @@ Invoke action getCompliancePolicyNonComplianceSummaryReport
 ### [Get-MgDeviceManagementReportCompliancePolicyReport](Get-MgDeviceManagementReportCompliancePolicyReport.md)
 Invoke action getCompliancePoliciesReportForDevice
 
+### [Get-MgDeviceManagementReportComplianceSettingDetailReport](Get-MgDeviceManagementReportComplianceSettingDetailReport.md)
+Invoke action getComplianceSettingDetailsReport
+
 ### [Get-MgDeviceManagementReportComplianceSettingNonComplianceReport](Get-MgDeviceManagementReportComplianceSettingNonComplianceReport.md)
 Invoke action getComplianceSettingNonComplianceReport
+
+### [Get-MgDeviceManagementReportComplianceSettingReport](Get-MgDeviceManagementReportComplianceSettingReport.md)
+Invoke action getComplianceSettingsReport
 
 ### [Get-MgDeviceManagementReportConfigManagerDevicePolicyStatusReport](Get-MgDeviceManagementReportConfigManagerDevicePolicyStatusReport.md)
 Invoke action getConfigManagerDevicePolicyStatusReport

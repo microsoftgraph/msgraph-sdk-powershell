@@ -9,7 +9,6 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ## SYNTAX
 
@@ -39,7 +38,6 @@ New-MgServicePrincipalTokenIssuancePolicyByRef -InputObject <IApplicationsIdenti
 
 ## DESCRIPTION
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ## EXAMPLES
 

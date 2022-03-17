@@ -758,11 +758,11 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
   - `[Grade <String>]`: Grade level of the class.
   - `[Group <IMicrosoftGraphGroup>]`: group
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: Read-only.
     - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       - `[Id <String>]`: Read-only.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[AccessType <String>]`: groupAccessType
     - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
     - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
@@ -1001,7 +1001,7 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedByUser <IMicrosoftGraphUser>]`: user
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
         - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -1108,8 +1108,8 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
         - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
           - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-          - `[Service <String>]`: The name of the service; for example, 'Exchange'.
-          - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
+          - `[Service <String>]`: The name of the service; for example, exchange.
+          - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
         - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
@@ -1132,7 +1132,7 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
             - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
             - `[Device <IMicrosoftGraphDevice1>]`: device
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[DeletedDateTime <DateTime?>]`: 
+              - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: Read-only.
               - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
               - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -1419,7 +1419,7 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
             - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
             - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
           - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
-            - `[DeletedDateTime <DateTime?>]`: 
+            - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
             - `[Id <String>]`: Read-only.
             - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
             - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
@@ -4595,7 +4595,7 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
     - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
     - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
       - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -4727,7 +4727,7 @@ BODYPARAMETER <IMicrosoftGraphEducationClass>: educationClass
       - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
         - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -4794,11 +4794,11 @@ CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
 
 GROUP <IMicrosoftGraphGroup>: group
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
     - `[Id <String>]`: Read-only.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[AccessType <String>]`: groupAccessType
   - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
   - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
@@ -5044,7 +5044,7 @@ GROUP <IMicrosoftGraphGroup>: group
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedByUser <IMicrosoftGraphUser>]`: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
       - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -5151,8 +5151,8 @@ GROUP <IMicrosoftGraphGroup>: group
       - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
         - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-        - `[Service <String>]`: The name of the service; for example, 'Exchange'.
-        - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
+        - `[Service <String>]`: The name of the service; for example, exchange.
+        - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
       - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
@@ -5175,7 +5175,7 @@ GROUP <IMicrosoftGraphGroup>: group
           - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
           - `[Device <IMicrosoftGraphDevice1>]`: device
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
-            - `[DeletedDateTime <DateTime?>]`: 
+            - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
             - `[Id <String>]`: Read-only.
             - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
             - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -5462,7 +5462,7 @@ GROUP <IMicrosoftGraphGroup>: group
           - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
           - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
         - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
-          - `[DeletedDateTime <DateTime?>]`: 
+          - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: Read-only.
           - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
           - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
@@ -8638,7 +8638,7 @@ GROUP <IMicrosoftGraphGroup>: group
     - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
   - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
   - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: Read-only.
     - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
     - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -8746,8 +8746,8 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.
     - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-    - `[Service <String>]`: The name of the service; for example, 'Exchange'.
-    - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
+    - `[Service <String>]`: The name of the service; for example, exchange.
+    - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
   - `[Assignments <IMicrosoftGraphEducationAssignment[]>]`: Assignments belonging to the user.
     - `[Id <String>]`: Read-only.
     - `[AddToCalendarAction <String>]`: educationAddToCalendarOptions
@@ -8875,11 +8875,11 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
     - `[Grade <String>]`: Grade level of the class.
     - `[Group <IMicrosoftGraphGroup>]`: group
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[Id <String>]`: Read-only.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[AccessType <String>]`: groupAccessType
       - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
@@ -9116,7 +9116,7 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DeletedDateTime <DateTime?>]`: 
+          - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: Read-only.
           - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
           - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -9243,7 +9243,7 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice1>]`: device
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DeletedDateTime <DateTime?>]`: 
+                - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
                 - `[Id <String>]`: Read-only.
                 - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
                 - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -9530,7 +9530,7 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
-              - `[DeletedDateTime <DateTime?>]`: 
+              - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: Read-only.
               - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
               - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
@@ -12706,7 +12706,7 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
         - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -12801,7 +12801,7 @@ MEMBERS <IMicrosoftGraphEducationUser[]>: All users in the class. Nullable.
       - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
         - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -12896,7 +12896,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
     - `[Type <String>]`: physicalAddressType
   - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit>]`: administrativeUnit
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: Read-only.
     - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
     - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -12904,7 +12904,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
       - `[Id <String>]`: Read-only.
     - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
       - `[Id <String>]`: Read-only.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this administrative unit.
       - `[Id <String>]`: Read-only.
       - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
@@ -13036,7 +13036,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
     - `[Grade <String>]`: Grade level of the class.
     - `[Group <IMicrosoftGraphGroup>]`: group
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
       - `[AccessType <String>]`: groupAccessType
@@ -13268,7 +13268,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DeletedDateTime <DateTime?>]`: 
+          - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: Read-only.
           - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
           - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -13375,8 +13375,8 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
           - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
             - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-            - `[Service <String>]`: The name of the service; for example, 'Exchange'.
-            - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
+            - `[Service <String>]`: The name of the service; for example, exchange.
+            - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
           - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
@@ -13399,7 +13399,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice1>]`: device
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DeletedDateTime <DateTime?>]`: 
+                - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
                 - `[Id <String>]`: Read-only.
                 - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
                 - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -13686,7 +13686,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
-              - `[DeletedDateTime <DateTime?>]`: 
+              - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: Read-only.
               - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
               - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
@@ -16858,7 +16858,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool[]>: All schools that this class is assoc
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
         - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -17030,8 +17030,8 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
   - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable.
     - `[AssignedDateTime <DateTime?>]`: The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-    - `[Service <String>]`: The name of the service; for example, 'Exchange'.
-    - `[ServicePlanId <String>]`: A GUID that identifies the service plan.
+    - `[Service <String>]`: The name of the service; for example, exchange.
+    - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
   - `[Assignments <IMicrosoftGraphEducationAssignment[]>]`: Assignments belonging to the user.
     - `[Id <String>]`: Read-only.
     - `[AddToCalendarAction <String>]`: educationAddToCalendarOptions
@@ -17159,11 +17159,11 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
     - `[Grade <String>]`: Grade level of the class.
     - `[Group <IMicrosoftGraphGroup>]`: group
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[Id <String>]`: Read-only.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[AccessType <String>]`: groupAccessType
       - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
       - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
@@ -17400,7 +17400,7 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DeletedDateTime <DateTime?>]`: 
+          - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
           - `[Id <String>]`: Read-only.
           - `[AboutMe <String>]`: A freeform text entry field for the user to describe themselves. Returned only on $select.
           - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
@@ -17527,7 +17527,7 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice1>]`: device
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
-                - `[DeletedDateTime <DateTime?>]`: 
+                - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
                 - `[Id <String>]`: Read-only.
                 - `[AccountEnabled <Boolean?>]`: true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
                 - `[AlternativeSecurityIds <IMicrosoftGraphAlternativeSecurityId[]>]`: For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
@@ -17814,7 +17814,7 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
               - `[TargetResourceId <String>]`: The ID of the object that's created or modified as result of this async operation, typically a team.
               - `[TargetResourceLocation <String>]`: The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
             - `[PermissionGrants <IMicrosoftGraphResourceSpecificPermissionGrant[]>]`: A collection of permissions granted to apps for the chat.
-              - `[DeletedDateTime <DateTime?>]`: 
+              - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               - `[Id <String>]`: Read-only.
               - `[ClientAppId <String>]`: ID of the service principal of the Azure AD app that has been granted access. Read-only.
               - `[ClientId <String>]`: ID of the Azure AD app that has been granted access. Read-only.
@@ -20990,7 +20990,7 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
       - `[Drives <IMicrosoftGraphDrive[]>]`: The group's drives. Read-only.
       - `[Endpoints <IMicrosoftGraphEndpoint[]>]`: Endpoints for the group. Read-only. Nullable.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Capability <String>]`: Describes the capability that is associated with this resource. (e.g. Messages, Conversations, etc.)  Not nullable. Read-only.
         - `[ProviderId <String>]`: Application id of the publishing underlying service. Not nullable. Read-only.
@@ -21085,7 +21085,7 @@ TEACHERS <IMicrosoftGraphEducationUser[]>: All teachers in the class. Nullable.
       - `[Address <IMicrosoftGraphPhysicalAddress>]`: physicalAddress
       - `[AdministrativeUnit <IMicrosoftGraphAdministrativeUnit>]`: administrativeUnit
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
         - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.

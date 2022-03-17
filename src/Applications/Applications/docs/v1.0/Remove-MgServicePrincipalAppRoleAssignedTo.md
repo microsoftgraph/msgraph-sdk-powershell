@@ -8,7 +8,8 @@ schema: 2.0.0
 # Remove-MgServicePrincipalAppRoleAssignedTo
 
 ## SYNOPSIS
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## SYNTAX
 
@@ -25,7 +26,8 @@ Remove-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity> 
 ```
 
 ## DESCRIPTION
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## EXAMPLES
 
