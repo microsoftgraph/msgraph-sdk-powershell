@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPhotoContent
 
 ## SYNOPSIS
-The group's profile photo.
+The group's profile photo
 
 ## SYNTAX
 
@@ -34,7 +34,7 @@ Get-MgGroupPhotoContent -InputObject <IGroupsIdentity> -OutFile <String> [-PassT
 ```
 
 ## DESCRIPTION
-The group's profile photo.
+The group's profile photo
 
 ## EXAMPLES
 

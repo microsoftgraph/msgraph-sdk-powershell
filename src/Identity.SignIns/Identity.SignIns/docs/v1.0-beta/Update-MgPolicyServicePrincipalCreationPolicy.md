@@ -83,7 +83,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -294,7 +295,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipalCreationPolicy>: servicePrincipalC
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[Excludes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>]`: 
     - `[Id <String>]`: Read-only.
@@ -302,6 +303,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipalCreationPolicy>: servicePrincipalC
     - `[ApplicationPublisherIds <String[]>]`: 
     - `[ApplicationTenantIds <String[]>]`: 
     - `[ApplicationsFromVerifiedPublisherOnly <Boolean?>]`: 
+    - `[CertifiedApplicationsOnly <Boolean?>]`: 
   - `[Includes <IMicrosoftGraphServicePrincipalCreationConditionSet[]>]`: 
   - `[IsBuiltIn <Boolean?>]`: 
 
@@ -311,6 +313,7 @@ EXCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
   - `[ApplicationPublisherIds <String[]>]`: 
   - `[ApplicationTenantIds <String[]>]`: 
   - `[ApplicationsFromVerifiedPublisherOnly <Boolean?>]`: 
+  - `[CertifiedApplicationsOnly <Boolean?>]`: 
 
 INCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
   - `[Id <String>]`: Read-only.
@@ -318,6 +321,7 @@ INCLUDES <IMicrosoftGraphServicePrincipalCreationConditionSet[]>: .
   - `[ApplicationPublisherIds <String[]>]`: 
   - `[ApplicationTenantIds <String[]>]`: 
   - `[ApplicationsFromVerifiedPublisherOnly <Boolean?>]`: 
+  - `[CertifiedApplicationsOnly <Boolean?>]`: 
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
@@ -328,6 +332,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

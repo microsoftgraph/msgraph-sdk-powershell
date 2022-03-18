@@ -5,6 +5,7 @@
 using System;
 using System.Globalization;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 
 using Microsoft.Graph.PowerShell.Authentication.Models;
@@ -183,7 +184,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                          || CheckIsJson(contentType);
 
             // Further content type analysis is available on Windows
-            if (OperatingSystem.IsWindows() && !isText)
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) && !isText)
             {
                 // Media types registered with Windows as having a perceived type of text, are text
                 using (var contentTypeKey = Registry.ClassesRoot.OpenSubKey(@"MIME\Database\Content Type\" + contentType))

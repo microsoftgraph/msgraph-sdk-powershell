@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgGroupPhoto
 
 ## SYNOPSIS
-The group's profile photo.
+The group's profile photo
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Get-MgGroupPhoto -GroupId <String> [-Filter <String>] [-Property <String[]>] [-S
 ```
 
 ## DESCRIPTION
-The group's profile photo.
+The group's profile photo
 
 ## EXAMPLES
 

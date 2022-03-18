@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkDeviceOperation
 
 ## SYNOPSIS
-Update the navigation property operations in teamwork
+The async operations on the device.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgTeamworkDeviceOperation -InputObject <ITeamsIdentity> [-AdditionalPrope
 ```
 
 ## DESCRIPTION
-Update the navigation property operations in teamwork
+The async operations on the device.
 
 ## EXAMPLES
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -CompletedDateTime
-.
+Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
 
 ```yaml
 Type: System.DateTime
@@ -112,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The UTC date and time when the device operation was created.
 
 ```yaml
 Type: System.DateTime
@@ -190,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastActionDateTime
-.
+The UTC date and time when the device operation was last modified.
 
 ```yaml
 Type: System.DateTime
@@ -235,7 +235,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartedDateTime
-.
+Time at which the operation was started.
 
 ```yaml
 Type: System.DateTime
@@ -250,7 +250,7 @@ Accept wildcard characters: False
 ```
 
 ### -Status
-.
+The current status of the async operation, for example, Queued, Scheduled, InProgress, Successful, Cancelled, and Failed.
 
 ```yaml
 Type: System.String
@@ -350,32 +350,32 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamworkDeviceOperation>: teamworkDeviceOperation
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CompletedDateTime <DateTime?>]`: 
+  - `[CompletedDateTime <DateTime?>]`: Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The UTC date and time when the device operation was created.
   - `[Error <IMicrosoftGraphOperationError>]`: operationError
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Code <String>]`: Operation error code.
     - `[Message <String>]`: Operation error message.
   - `[LastActionBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastActionDateTime <DateTime?>]`: 
+  - `[LastActionDateTime <DateTime?>]`: The UTC date and time when the device operation was last modified.
   - `[OperationType <String>]`: teamworkDeviceOperationType
-  - `[StartedDateTime <DateTime?>]`: 
-  - `[Status <String>]`: 
+  - `[StartedDateTime <DateTime?>]`: Time at which the operation was started.
+  - `[Status <String>]`: The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -421,8 +421,8 @@ LASTACTIONBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 

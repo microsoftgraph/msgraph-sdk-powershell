@@ -8,11 +8,12 @@ schema: 2.0.0
 # New-MgSecurityAlert
 
 ## SYNOPSIS
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgSecurityAlert [-ActivityGroupName <String>] [-AdditionalProperties <Hashtable>]
  [-AlertDetections <IMicrosoftGraphAlertDetection[]>] [-AssignedTo <String>] [-AzureSubscriptionId <String>]
@@ -35,13 +36,14 @@ New-MgSecurityAlert [-ActivityGroupName <String>] [-AdditionalProperties <Hashta
  [-VulnerabilityStates <IMicrosoftGraphVulnerabilityState[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgSecurityAlert -BodyParameter <IMicrosoftGraphAlert> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ## EXAMPLES
 
@@ -52,7 +54,7 @@ Name or alias of the activity group (attacker) this alert is attributed to.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -67,7 +69,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -83,7 +85,7 @@ To construct, please use Get-Help -Online and see NOTES section for ALERTDETECTI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertDetection[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -98,7 +100,7 @@ Name of the analyst the alert is assigned to for triage, investigation, or remed
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -113,7 +115,7 @@ Azure subscription ID, present if this alert is related to an Azure resource.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -129,7 +131,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -145,7 +147,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlert
-Parameter Sets: Create1
+Parameter Sets: Create
 Aliases:
 
 Required: True
@@ -160,7 +162,7 @@ Category of the alert (for example, credentialTheft, ransomware, etc.).
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -177,7 +179,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z (supports updat
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -193,7 +195,7 @@ To construct, please use Get-Help -Online and see NOTES section for CLOUDAPPSTAT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudAppSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -208,7 +210,7 @@ Customer-provided comments on alert (for customer alert management) (supports up
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -223,7 +225,7 @@ Confidence of the detection logic (percentage between 1-100).
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -241,7 +243,7 @@ Required.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -256,7 +258,7 @@ Alert description.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -271,7 +273,7 @@ Set of alerts related to this alert entity (each alert is pushed to the SIEM as 
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -289,7 +291,7 @@ Required.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -304,7 +306,7 @@ alertFeedback
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -320,7 +322,7 @@ To construct, please use Get-Help -Online and see NOTES section for FILESTATES p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphFileSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -336,7 +338,7 @@ To construct, please use Get-Help -Online and see NOTES section for HISTORYSTATE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertHistoryState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -352,7 +354,7 @@ To construct, please use Get-Help -Online and see NOTES section for HOSTSTATES p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphHostSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -367,7 +369,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -382,7 +384,7 @@ IDs of incidents related to current alert.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -398,7 +400,7 @@ To construct, please use Get-Help -Online and see NOTES section for INVESTIGATIO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInvestigationSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -413,7 +415,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -430,7 +432,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -446,7 +448,7 @@ To construct, please use Get-Help -Online and see NOTES section for MALWARESTATE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMalwareState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -462,7 +464,7 @@ To construct, please use Get-Help -Online and see NOTES section for MESSAGESECUR
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessageSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -478,7 +480,7 @@ To construct, please use Get-Help -Online and see NOTES section for NETWORKCONNE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphNetworkConnection[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -494,7 +496,7 @@ To construct, please use Get-Help -Online and see NOTES section for PROCESSES pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphProcess[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -509,7 +511,7 @@ Vendor/provider recommended action(s) to take as a result of the alert (for exam
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -525,7 +527,7 @@ To construct, please use Get-Help -Online and see NOTES section for REGISTRYKEYS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphRegistryKeyState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -542,7 +544,7 @@ To construct, please use Get-Help -Online and see NOTES section for SECURITYRESO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityResource[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -557,7 +559,7 @@ alertSeverity
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -572,7 +574,7 @@ Hyperlinks (URIs) to the source material related to the alert, for example, prov
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -587,7 +589,7 @@ alertStatus
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -602,7 +604,7 @@ User-definable labels that can be applied to an alert and can serve as filter co
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -618,7 +620,7 @@ Required.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -636,7 +638,7 @@ To construct, please use Get-Help -Online and see NOTES section for TRIGGERS pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAlertTrigger[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -652,7 +654,7 @@ To construct, please use Get-Help -Online and see NOTES section for URICLICKSECU
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUriClickSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -668,7 +670,7 @@ To construct, please use Get-Help -Online and see NOTES section for USERSTATES p
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphUserSecurityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -684,7 +686,7 @@ To construct, please use Get-Help -Online and see NOTES section for VENDORINFORM
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphSecurityVendorInformation
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -700,7 +702,7 @@ To construct, please use Get-Help -Online and see NOTES section for VULNERABILIT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphVulnerabilityState[]
-Parameter Sets: CreateExpanded1
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -839,7 +841,7 @@ BODYPARAMETER <IMicrosoftGraphAlert>: alert
     - `[MessageSubject <String>]`: 
     - `[NetworkMessageId <String>]`: 
   - `[NetworkConnections <IMicrosoftGraphNetworkConnection[]>]`: Security-related stateful information generated by the provider about the network connection(s) related to this alert.
-    - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+    - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook or SMTP).
     - `[DestinationAddress <String>]`: Destination IP address (of the network connection).
     - `[DestinationDomain <String>]`: Destination domain portion of the destination URL. (for example 'www.contoso.com').
     - `[DestinationLocation <String>]`: Location (by IP address mapping) associated with the destination of a network connection.
@@ -986,7 +988,7 @@ MESSAGESECURITYSTATES <IMicrosoftGraphMessageSecurityState[]>: .
   - `[NetworkMessageId <String>]`: 
 
 NETWORKCONNECTIONS <IMicrosoftGraphNetworkConnection[]>: Security-related stateful information generated by the provider about the network connection(s) related to this alert.
-  - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook, SMTP, etc.).
+  - `[ApplicationName <String>]`: Name of the application managing the network connection (for example, Facebook or SMTP).
   - `[DestinationAddress <String>]`: Destination IP address (of the network connection).
   - `[DestinationDomain <String>]`: Destination domain portion of the destination URL. (for example 'www.contoso.com').
   - `[DestinationLocation <String>]`: Location (by IP address mapping) associated with the destination of a network connection.

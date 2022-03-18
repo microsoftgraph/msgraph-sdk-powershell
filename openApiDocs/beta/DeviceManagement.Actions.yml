@@ -15839,6 +15839,46 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.disable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action disable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_disable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/deviceManagement/oemWarrantyInformationOnboarding/{oemWarrantyInformationOnboarding-id}/microsoft.graph.enable':
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action enable
+      operationId: deviceManagement.oemWarrantyInformationOnboarding_enable
+      parameters:
+        - name: oemWarrantyInformationOnboarding-id
+          in: path
+          description: 'key: id of oemWarrantyInformationOnboarding'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: oemWarrantyInformationOnboarding
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner-id}/microsoft.graph.beginOnboarding':
     post:
       tags:
@@ -16679,12 +16719,146 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingDetailsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingDetailsReport
+      operationId: deviceManagement.reports_getComplianceSettingDetailsReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /deviceManagement/reports/microsoft.graph.getComplianceSettingNonComplianceReport:
     post:
       tags:
         - deviceManagement.Actions
       summary: Invoke action getComplianceSettingNonComplianceReport
       operationId: deviceManagement.reports_getComplianceSettingNonComplianceReport
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  nullable: true
+                select:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                search:
+                  type: string
+                  nullable: true
+                groupBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                orderBy:
+                  type: array
+                  items:
+                    type: string
+                    nullable: true
+                skip:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                top:
+                  maximum: 2147483647
+                  minimum: -2147483648
+                  type: integer
+                  format: int32
+                  nullable: true
+                sessionId:
+                  type: string
+                  nullable: true
+                filter:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: string
+                format: base64url
+                nullable: true
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /deviceManagement/reports/microsoft.graph.getComplianceSettingsReport:
+    post:
+      tags:
+        - deviceManagement.Actions
+      summary: Invoke action getComplianceSettingsReport
+      operationId: deviceManagement.reports_getComplianceSettingsReport
       requestBody:
         description: Action parameters
         content:
@@ -21108,21 +21282,25 @@ components:
           items:
             type: string
             nullable: true
+          description: A list of all the Intune managed device IDs that completed the bulk action with a failure.
         notFoundDeviceIds:
           type: array
           items:
             type: string
             nullable: true
+          description: A list of all the Intune managed device IDs that were not found when the bulk action was attempted.
         notSupportedDeviceIds:
           type: array
           items:
             type: string
             nullable: true
+          description: A list of all the Intune managed device IDs that were identified as unsupported for the bulk action.
         successfulDeviceIds:
           type: array
           items:
             type: string
             nullable: true
+          description: A list of all the Intune managed device IDs that completed the bulk action successfully.
       additionalProperties:
         type: object
     microsoft.graph.managedDeviceRemoteAction:
@@ -21219,7 +21397,7 @@ components:
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Policy creation date and time. This property is read-only.
+              description: Policy creation date and time
               format: date-time
             creationSource:
               type: string
@@ -21235,7 +21413,7 @@ components:
             lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: Policy last modification date and time. This property is read-only.
+              description: Policy last modification date and time
               format: date-time
             name:
               type: string
@@ -21253,7 +21431,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Number of settings. This property is read-only.
+              description: Number of settings
               format: int32
             technologies:
               $ref: '#/components/schemas/microsoft.graph.deviceManagementConfigurationTechnologies'
@@ -22019,6 +22197,12 @@ components:
       title: assignmentFilterEvaluateRequest
       type: object
       properties:
+        orderBy:
+          type: array
+          items:
+            type: string
+            nullable: true
+          description: Order the devices should be sorted in. Default is ascending on device name.
         platform:
           $ref: '#/components/schemas/microsoft.graph.devicePlatformType'
         rule:
@@ -22516,6 +22700,8 @@ components:
         - macOS
         - windows10X
         - windows10
+        - linux
+        - unknownFutureValue
       type: string
       description: Supported platform types.
     microsoft.graph.deviceManagementConfigurationTechnologies:
@@ -23954,6 +24140,10 @@ components:
             displayName:
               type: string
               description: The localized friendly name of the ADMX file.
+              nullable: true
+            fileName:
+              type: string
+              description: 'The file name of the ADMX file without the path. For example: edge.admx'
               nullable: true
             languageCodes:
               type: array

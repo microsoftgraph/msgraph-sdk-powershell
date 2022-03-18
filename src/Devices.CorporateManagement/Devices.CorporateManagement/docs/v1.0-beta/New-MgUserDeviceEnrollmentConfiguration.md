@@ -16,9 +16,9 @@ Get enrollment configurations targeted to the user
 ```
 New-MgUserDeviceEnrollmentConfiguration -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>] [-CreatedDateTime <DateTime>]
- [-Description <String>] [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>]
- [-Priority <Int32>] [-RoleScopeTagIds <String[]>] [-Version <Int32>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+ [-Description <String>] [-DeviceEnrollmentConfigurationType <String>] [-DisplayName <String>] [-Id <String>]
+ [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-RoleScopeTagIds <String[]>] [-Version <Int32>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -37,9 +37,9 @@ New-MgUserDeviceEnrollmentConfiguration -InputObject <IDevicesCorporateManagemen
 ```
 New-MgUserDeviceEnrollmentConfiguration -InputObject <IDevicesCorporateManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Assignments <IMicrosoftGraphEnrollmentConfigurationAssignment[]>]
- [-CreatedDateTime <DateTime>] [-Description <String>] [-DisplayName <String>] [-Id <String>]
- [-LastModifiedDateTime <DateTime>] [-Priority <Int32>] [-RoleScopeTagIds <String[]>] [-Version <Int32>]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-CreatedDateTime <DateTime>] [-Description <String>] [-DeviceEnrollmentConfigurationType <String>]
+ [-DisplayName <String>] [-Id <String>] [-LastModifiedDateTime <DateTime>] [-Priority <Int32>]
+ [-RoleScopeTagIds <String[]>] [-Version <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -113,6 +113,21 @@ Accept wildcard characters: False
 
 ### -Description
 The description of the device enrollment configuration
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeviceEnrollmentConfigurationType
+Describes the TemplateFamily for the Template entity
 
 ```yaml
 Type: System.String
@@ -323,6 +338,7 @@ BODYPARAMETER <IMicrosoftGraphDeviceEnrollmentConfiguration>: The Base Class of 
       - `[DeviceAndAppManagementAssignmentFilterType <String>]`: Represents type of the assignment filter.
   - `[CreatedDateTime <DateTime?>]`: Created date time in UTC of the device enrollment configuration
   - `[Description <String>]`: The description of the device enrollment configuration
+  - `[DeviceEnrollmentConfigurationType <String>]`: Describes the TemplateFamily for the Template entity
   - `[DisplayName <String>]`: The display name of the device enrollment configuration
   - `[LastModifiedDateTime <DateTime?>]`: Last modified date time in UTC of the device enrollment configuration
   - `[Priority <Int32?>]`: Priority is used when a user exists in multiple groups that are assigned enrollment configuration. Users are subject only to the configuration with the lowest priority value.

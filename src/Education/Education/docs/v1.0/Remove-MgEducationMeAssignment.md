@@ -8,8 +8,7 @@ schema: 2.0.0
 # Remove-MgEducationMeAssignment
 
 ## SYNOPSIS
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ## SYNTAX
 
@@ -26,8 +25,7 @@ Remove-MgEducationMeAssignment -InputObject <IEducationIdentity> [-IfMatch <Stri
 ```
 
 ## DESCRIPTION
-List of assignments for the user.
-Nullable.
+Assignments belonging to the user.
 
 ## EXAMPLES
 

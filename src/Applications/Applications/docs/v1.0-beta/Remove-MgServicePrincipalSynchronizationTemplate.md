@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
-Delete navigation property templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIden
 ```
 
 ## DESCRIPTION
-Delete navigation property templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 

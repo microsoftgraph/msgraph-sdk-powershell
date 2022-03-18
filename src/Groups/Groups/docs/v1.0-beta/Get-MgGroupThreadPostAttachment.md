@@ -8,7 +8,6 @@ schema: 2.0.0
 # Get-MgGroupThreadPostAttachment
 
 ## SYNOPSIS
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -35,7 +34,6 @@ Get-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-ExpandProperty 
 ```
 
 ## DESCRIPTION
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.

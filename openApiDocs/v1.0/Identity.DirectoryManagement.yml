@@ -3052,7 +3052,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3135,7 +3135,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Get ref of transitiveMemberOf from devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_ListGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -3192,7 +3192,7 @@ paths:
       tags:
         - devices.directoryObject
       summary: Create new navigation property ref to transitiveMemberOf for devices
-      description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+      description: Groups that the device is a member of. This operation is transitive. Supports $expand.
       operationId: devices_CreateGraphRefTransitiveMemberOf
       parameters:
         - name: device-id
@@ -7389,7 +7389,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_ListExtensions
       parameters:
         - name: organization-id
@@ -7468,7 +7468,7 @@ paths:
       tags:
         - organization.extension
       summary: Create new navigation property to extensions for organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_CreateExtensions
       parameters:
         - name: organization-id
@@ -7500,7 +7500,7 @@ paths:
       tags:
         - organization.extension
       summary: Get extensions from organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_GetExtensions
       parameters:
         - name: organization-id
@@ -7555,7 +7555,7 @@ paths:
       tags:
         - organization.extension
       summary: Update the navigation property extensions in organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_UpdateExtensions
       parameters:
         - name: organization-id
@@ -7589,7 +7589,7 @@ paths:
       tags:
         - organization.extension
       summary: Delete navigation property extensions for organization
-      description: The collection of open extensions defined for the organization resource. Nullable.
+      description: The collection of open extensions defined for the organization. Read-only. Nullable.
       operationId: organization_DeleteExtensions
       parameters:
         - name: organization-id
@@ -8468,6 +8468,7 @@ components:
             deletedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
               format: date-time
               nullable: true
           additionalProperties:
@@ -8487,7 +8488,7 @@ components:
               description: Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
             isSyncedFromOnPremises:
               type: boolean
-              description: Indicates if this extension property was sycned from onpremises directory using Azure AD Connect. Read-only.
+              description: Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
               nullable: true
             name:
               type: string
@@ -8533,7 +8534,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -8554,7 +8555,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -8599,7 +8600,7 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
+              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
@@ -8617,7 +8618,7 @@ components:
               description: List of labels applied to the device by the system.
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             memberOf:
               type: array
@@ -8638,7 +8639,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this device is a member of. This operation is transitive. Supports $expand.
+              description: Groups that the device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
@@ -8687,7 +8688,7 @@ components:
               nullable: true
             visibility:
               type: string
-              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
+              description: 'Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.'
               nullable: true
             members:
               type: array
@@ -8822,7 +8823,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
+              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
             domainNameReferences:
               type: array
               items:
@@ -8913,12 +8914,12 @@ components:
             onPremisesLastSyncDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
-              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              description: 'The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
               format: date-time
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
-              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null if this object has never been synced from an on-premises directory (default).
+              description: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
               nullable: true
             postalCode:
               type: string
@@ -8926,7 +8927,7 @@ components:
               nullable: true
             preferredLanguage:
               type: string
-              description: The preferred language for the organization. Should follow ISO 639-1 Code; for example en.
+              description: 'The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.'
               nullable: true
             privacyProfile:
               $ref: '#/components/schemas/microsoft.graph.privacyProfile'
@@ -8977,7 +8978,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-              description: The collection of open extensions defined for the organization resource. Nullable.
+              description: The collection of open extensions defined for the organization. Read-only. Nullable.
           additionalProperties:
             type: object
     microsoft.graph.organizationalBranding:
@@ -9142,11 +9143,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object
@@ -9177,21 +9178,21 @@ components:
         assignedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time at which the plan was assigned; for example: 2013-01-02T19:32:30Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z'
+          description: 'The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
           format: date-time
           nullable: true
         capabilityStatus:
           type: string
-          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut.'
+          description: 'Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.'
           nullable: true
         service:
           type: string
-          description: 'The name of the service; for example, ''Exchange''.'
+          description: 'The name of the service; for example, exchange.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
           type: string
-          description: A GUID that identifies the service plan.
+          description: 'A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.'
           format: uuid
           nullable: true
       additionalProperties:
@@ -9369,11 +9370,11 @@ components:
       properties:
         appliesTo:
           type: string
-          description: The object the service plan can be assigned to. Possible values:'User' - service plan can be assigned to individual users.'Company' - service plan can be assigned to the entire tenant.
+          description: The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
           nullable: true
         provisioningStatus:
           type: string
-          description: 'The provisioning status of the service plan. Possible values:''Success'' - Service is fully provisioned.''Disabled'' - Service has been disabled.''PendingInput'' - Service is not yet provisioned; awaiting service confirmation.''PendingActivation'' - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan).''PendingProvisioning'' - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
+          description: 'The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.'
           nullable: true
         servicePlanId:
           pattern: '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'

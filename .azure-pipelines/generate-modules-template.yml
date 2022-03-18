@@ -37,7 +37,7 @@ parameters:
 jobs:
 - job: MsGraphPSSDKServiceModulesGeneration
   displayName: Microsoft Graph PowerShell SDK Service Module Generation
-  timeoutInMinutes: 600
+  timeoutInMinutes: 840
 
   steps:
   - template: ./common-templates/install-tools-template.yml

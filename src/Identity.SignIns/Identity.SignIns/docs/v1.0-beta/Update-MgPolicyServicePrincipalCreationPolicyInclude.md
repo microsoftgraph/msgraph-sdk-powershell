@@ -17,7 +17,8 @@ Update the navigation property includes in policies
 Update-MgPolicyServicePrincipalCreationPolicyInclude -ServicePrincipalCreationConditionSetId <String>
  -ServicePrincipalCreationPolicyId <String> [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>]
  [-ApplicationPublisherIds <String[]>] [-ApplicationsFromVerifiedPublisherOnly]
- [-ApplicationTenantIds <String[]>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly] [-Id <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -39,8 +40,8 @@ Update-MgPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySign
 ```
 Update-MgPolicyServicePrincipalCreationPolicyInclude -InputObject <IIdentitySignInsIdentity>
  [-AdditionalProperties <Hashtable>] [-ApplicationIds <String[]>] [-ApplicationPublisherIds <String[]>]
- [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-Id <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-ApplicationsFromVerifiedPublisherOnly] [-ApplicationTenantIds <String[]>] [-CertifiedApplicationsOnly]
+ [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,6 +139,21 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -CertifiedApplicationsOnly
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -277,6 +293,7 @@ BODYPARAMETER <IMicrosoftGraphServicePrincipalCreationConditionSet>: servicePrin
   - `[ApplicationPublisherIds <String[]>]`: 
   - `[ApplicationTenantIds <String[]>]`: 
   - `[ApplicationsFromVerifiedPublisherOnly <Boolean?>]`: 
+  - `[CertifiedApplicationsOnly <Boolean?>]`: 
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
@@ -287,6 +304,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

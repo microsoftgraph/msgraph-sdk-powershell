@@ -93,6 +93,12 @@ directive:
     - microsoft.graph.groupPolicyDefinition
     - microsoft.graph.groupPolicyDefinitionValue
     - microsoft.graph.synchronizationLinkedObjects
+    - microsoft.graph.security.security
+    - microsoft.graph.teamSummary
+    - microsoft.graph.security.informationProtection
+    - microsoft.graph.security.informationProtectionPolicySetting
+    - microsoft.graph.security.sensitivityLabel
+    - microsoft.graph.taskViewpoint
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -671,6 +677,13 @@ directive:
         // Changes excludes hashset to a case-insensitive hashset.
         let fromJsonRegex = /(\s*FromJson<\w*>\s*\(JsonObject\s*json\s*,\s*System\.Collections\.Generic\.IDictionary.*)(\s*)({)/gm
         $ = $.replace(fromJsonRegex, '$1$2$3\n$2 if (excludes != null){ excludes = new System.Collections.Generic.HashSet<string>(excludes, global::System.StringComparer.OrdinalIgnoreCase);}');
+
+        let toFirstUpperImplementation = 'internal static string ToFirstCharacterLowerCase(this string text) => String.IsNullOrEmpty(text) ? text : $"{char.ToLowerInvariant(text[0])}{text.Substring(1)}";'
+        let classRegex = /(internal\sstatic\sclass\sJsonSerializable(\s*){)/gm
+        $ = $.replace(classRegex, `$1$2${toFirstUpperImplementation}`)
+
+        let directoryKeyRegex = /(container\.Add\(key\.Key)(,)/gm
+        $ = $.replace(directoryKeyRegex, '$1.ToFirstCharacterLowerCase()$2')
 
         return $;
       }

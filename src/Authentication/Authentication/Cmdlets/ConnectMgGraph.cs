@@ -16,14 +16,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
     using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
-
-    using Microsoft.Graph.Authentication.Core;
     using Microsoft.Graph.PowerShell.Authentication.Common;
+    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using Microsoft.Graph.PowerShell.Authentication.Extensions;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Microsoft.Graph.PowerShell.Authentication.Interfaces;
     using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Microsoft.Graph.PowerShell.Authentication.Properties;
     using Microsoft.Graph.PowerShell.Authentication.Utilities;
 
     using static AsyncHelpers;
@@ -123,19 +121,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         protected override void BeginProcessing()
         {
             if (Break)
-            {
                 this.Break();
-            }
             base.BeginProcessing();
             ValidateParameters();
 
             if (MyInvocation.BoundParameters.ContainsKey(nameof(Environment)))
             {
-                GraphSettings settings = this.GetContextSettings();
-                if (!settings.TryGetEnvironment(Environment, out environment))
-                {
+                if (!this.GetContextSettings().TryGetEnvironment(Environment, out environment))
                     throw new PSInvalidOperationException(string.Format(ErrorConstants.Message.InvalidEnvironment, Environment));
-                }
             }
             else
             {
@@ -161,16 +154,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     var errorRecords = innerException.Data;
                     if (errorRecords.Count > 1)
-                    {
                         foreach (DictionaryEntry dictionaryEntry in errorRecords)
-                        {
                             WriteError((ErrorRecord)dictionaryEntry.Value);
-                        }
-                    }
                     else
-                    {
                         WriteError(new ErrorRecord(innerException, string.Empty, ErrorCategory.NotSpecified, null));
-                    }
                 }
             }
             catch (Exception exception) when (exception as PipelineStoppedException == null ||
@@ -186,7 +173,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             using (NoSynchronizationContext)
             {
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
-                if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout))) { authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout); }
+                if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
+                    authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
                 // Set selected environment to the session object.
                 GraphSession.Instance.Environment = environment;
                 switch (ParameterSetName)
@@ -197,12 +185,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxDeviceCodeTimeOut);
                             // To avoid re-initializing the tokenSource, use CancelAfter
                             _cancellationTokenSource.CancelAfter(authTimeout);
+                            if (!string.IsNullOrWhiteSpace(ClientId))
+                                authContext.ClientId = ClientId;
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
-                            authContext.Scopes = processedScopes.Length == 0 ? new[] { "User.Read" } : processedScopes;
+                            authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
                             if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCulture))
                             {
-                                // Use process scope when on WSL. WSL does not have secret service  that the we use to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
+                                // Use process scope when on WSL.
+                                // WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
                                 authContext.ContextScope = ContextScope.Process;
                             }
                             else
@@ -211,10 +202,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                                 authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
                             }
                             authContext.AuthProviderType = UseDeviceAuthentication ? AuthProviderType.DeviceCodeProvider : AuthProviderType.InteractiveAuthenticationProvider;
-                            if (!string.IsNullOrWhiteSpace(ClientId))
-                            {
-                                authContext.ClientId = ClientId;
-                            }
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -242,9 +229,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    GraphSession.Instance.AuthContext = await Authenticator.AuthenticateAsync(authContext, ForceRefresh,
-                        _cancellationTokenSource.Token,
-                        () => { WriteWarning(Resources.DeviceCodeFallback); });
+                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token);
+                    // TODO: Clean me up!
+                    //GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, ForceRefresh,
+                    //    _cancellationTokenSource.Token,
+                    //    () => { WriteWarning(Resources.DeviceCodeFallback); });
                 }
                 catch (Exception ex)
                 {
@@ -266,10 +255,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// <returns>A formated array of scopes.</returns>
         private string[] ProcessScopes(string[] scopes)
         {
-            if (scopes == null)
-            {
+            if (scopes is null)
                 return new string[0];
-            }
 
             List<string> formatedScopes = new List<string>();
             foreach (string scope in scopes)

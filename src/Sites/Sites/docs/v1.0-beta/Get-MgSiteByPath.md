@@ -12,7 +12,12 @@ Invoke function getByPath
 
 ## SYNTAX
 
-### Get (Default)
+### Get3 (Default)
+```
+Get-MgSiteByPath -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### Get
 ```
 Get-MgSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
 ```
@@ -22,6 +27,12 @@ Get-MgSiteByPath -Path <String> -SiteId <String> [<CommonParameters>]
 Get-MgSiteByPath -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
+### GetViaIdentity3
+```
+Get-MgSiteByPath -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Invoke function getByPath
 
@@ -29,13 +40,28 @@ Invoke function getByPath
 
 ## PARAMETERS
 
+### -ExpandProperty
+Expand related entities
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get3, GetViaIdentity3
+Aliases: Expand
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity3
 Aliases:
 
 Required: True
@@ -60,12 +86,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Property
+Select properties to be returned
+
+```yaml
+Type: System.String[]
+Parameter Sets: Get3, GetViaIdentity3
+Aliases: Select
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -SiteId
 key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, Get3
 Aliases:
 
 Required: True
@@ -99,7 +140,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -118,13 +158,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

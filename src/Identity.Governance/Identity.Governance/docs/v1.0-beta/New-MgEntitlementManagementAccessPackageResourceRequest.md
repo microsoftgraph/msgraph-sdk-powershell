@@ -348,15 +348,15 @@ ACCESSPACKAGERESOURCE <IMicrosoftGraphAccessPackageResource>: accessPackageResou
     - `[OriginSystem <String>]`: The origin system for the scope.
     - `[RoleOriginId <String>]`: The origin system for the role, if different.
     - `[Url <String>]`: A resource locator for the scope.
-  - `[AddedBy <String>]`: Read-only.
+  - `[AddedBy <String>]`: The name of the user or application that first added this resource. Read-only.
   - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+  - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
     - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AttributeName <String>]`: The name of the attribute in the end system.
+    - `[AttributeName <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
     - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Id <String>]`: Unique identifier for the attribute.
+    - `[Id <String>]`: Unique identifier for the attribute on the access package resource. Read-only.
     - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
     - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
   - `[Description <String>]`: A description for the resource.
@@ -406,15 +406,15 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRequest>: accessPackageResour
       - `[OriginSystem <String>]`: The origin system for the scope.
       - `[RoleOriginId <String>]`: The origin system for the role, if different.
       - `[Url <String>]`: A resource locator for the scope.
-    - `[AddedBy <String>]`: Read-only.
+    - `[AddedBy <String>]`: The name of the user or application that first added this resource. Read-only.
     - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
       - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AttributeName <String>]`: The name of the attribute in the end system.
+      - `[AttributeName <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
       - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Unique identifier for the attribute.
+      - `[Id <String>]`: Unique identifier for the attribute on the access package resource. Read-only.
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
@@ -445,7 +445,7 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRequest>: accessPackageResour
       - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
       - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
         - `[Id <String>]`: Read-only.
-        - `[DeletedDateTime <DateTime?>]`: 
+        - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
       - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
       - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.
@@ -472,7 +472,7 @@ REQUESTOR <IMicrosoftGraphAccessPackageSubject>: accessPackageSubject
     - `[DisplayName <String>]`: The display name of the connected organization. Supports $filter (eq).
     - `[ExternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
       - `[Id <String>]`: Read-only.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[IdentitySources <IMicrosoftGraphIdentitySource[]>]`: The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
     - `[InternalSponsors <IMicrosoftGraphDirectoryObject[]>]`: Nullable.
     - `[ModifiedBy <String>]`: UPN of the user who last modified this resource. Read-only.

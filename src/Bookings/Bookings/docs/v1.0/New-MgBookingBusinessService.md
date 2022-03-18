@@ -309,6 +309,8 @@ Accept wildcard characters: False
 
 ### -MaximumAttendeesCount
 The maximum number of customers allowed in a service.
+If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.
+To create a customer, use the Create bookingCustomer operation.
 
 ```yaml
 Type: System.Int32
@@ -487,8 +489,8 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
   - `[Id <String>]`: Read-only.
   - `[AdditionalInformation <String>]`: Additional information that is sent to the customer when an appointment is confirmed.
   - `[CustomQuestions <IMicrosoftGraphBookingQuestionAssignment[]>]`: Contains the set of custom questions associated with a particular service.
-    - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-    - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+    - `[IsRequired <Boolean?>]`: The ID of the custom question.
+    - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
   - `[DefaultDuration <TimeSpan?>]`: The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.
   - `[DefaultLocation <IMicrosoftGraphLocation1>]`: location
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -522,7 +524,7 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
   - `[DisplayName <String>]`: A service name.
   - `[IsHiddenFromCustomers <Boolean?>]`: True means this service is not available to customers for booking.
   - `[IsLocationOnline <Boolean?>]`: True indicates that the appointments for the service will be held online. Default value is false.
-  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service.
+  - `[MaximumAttendeesCount <Int32?>]`: The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
   - `[Notes <String>]`: Additional information about this service.
   - `[PostBuffer <TimeSpan?>]`: The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.
   - `[PreBuffer <TimeSpan?>]`: The time to buffer before an appointment for this service can start.
@@ -538,8 +540,8 @@ BODYPARAMETER <IMicrosoftGraphBookingService1>: Represents a particular service 
   - `[WebUrl <String>]`: The URL a customer uses to access the service.
 
 CUSTOMQUESTIONS <IMicrosoftGraphBookingQuestionAssignment[]>: Contains the set of custom questions associated with a particular service.
-  - `[IsRequired <Boolean?>]`: Indicates whether it is mandatory to answer the custom question.
-  - `[QuestionId <String>]`: If it is mandatory to answer the custom question.
+  - `[IsRequired <Boolean?>]`: The ID of the custom question.
+  - `[QuestionId <String>]`: Indicates whether it is mandatory to answer the custom question.
 
 DEFAULTLOCATION <IMicrosoftGraphLocation1>: location
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users
-Module Guid: 8883c73b-6ed7-4476-84c1-e56dbededcbb
+Module Guid: a3492439-369f-4150-a15e-348b6364c07b
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users
 Help Version: 1.0.0.0
 Locale: en-US
@@ -38,6 +38,7 @@ Supports $expand.
 
 ### [Get-MgUserExtension](Get-MgUserExtension.md)
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ### [Get-MgUserLicenseDetail](Get-MgUserLicenseDetail.md)
@@ -57,13 +58,13 @@ Read-only.
 Supports $expand.
 
 ### [Get-MgUserMemberOf](Get-MgUserMemberOf.md)
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
 
 ### [Get-MgUserMemberOfByRef](Get-MgUserMemberOfByRef.md)
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
@@ -217,6 +218,9 @@ Supports $expand.
 Read-only.
 Nullable.
 
+### [Get-MgUserSettingContactMergeSuggestion](Get-MgUserSettingContactMergeSuggestion.md)
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+
 ### [Get-MgUserSettingItemInsight](Get-MgUserSettingItemInsight.md)
 The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites.
 Get userInsightsSettings through this navigation property.
@@ -276,10 +280,11 @@ Supports $expand.
 
 ### [New-MgUserExtension](New-MgUserExtension.md)
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ### [New-MgUserMemberOfByRef](New-MgUserMemberOfByRef.md)
-The groups, directory roles and administrative units that the user is a member of.
+The groups and directory roles that the user is a member of.
 Read-only.
 Nullable.
 Supports $expand.
@@ -435,6 +440,7 @@ Delete entity from users
 
 ### [Remove-MgUserExtension](Remove-MgUserExtension.md)
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ### [Remove-MgUserLicenseDetail](Remove-MgUserLicenseDetail.md)
@@ -550,6 +556,9 @@ Read-only.
 Read-only.
 Nullable.
 
+### [Remove-MgUserSettingContactMergeSuggestion](Remove-MgUserSettingContactMergeSuggestion.md)
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+
 ### [Remove-MgUserSettingItemInsight](Remove-MgUserSettingItemInsight.md)
 The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites.
 Get userInsightsSettings through this navigation property.
@@ -594,6 +603,7 @@ Update entity in users
 
 ### [Update-MgUserExtension](Update-MgUserExtension.md)
 The collection of open extensions defined for the user.
+Read-only.
 Nullable.
 
 ### [Update-MgUserLicenseDetail](Update-MgUserLicenseDetail.md)
@@ -702,6 +712,9 @@ Read-only.
 ### [Update-MgUserSetting](Update-MgUserSetting.md)
 Read-only.
 Nullable.
+
+### [Update-MgUserSettingContactMergeSuggestion](Update-MgUserSettingContactMergeSuggestion.md)
+The user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
 
 ### [Update-MgUserSettingItemInsight](Update-MgUserSettingItemInsight.md)
 The user's settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites.

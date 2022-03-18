@@ -8,7 +8,6 @@ schema: 2.0.0
 # Remove-MgGroupThreadPostAttachment
 
 ## SYNOPSIS
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.
@@ -28,7 +27,6 @@ Remove-MgGroupThreadPostAttachment -InputObject <IGroupsIdentity> [-IfMatch <Str
 ```
 
 ## DESCRIPTION
-The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post.
 Read-only.
 Nullable.
 Supports $expand.

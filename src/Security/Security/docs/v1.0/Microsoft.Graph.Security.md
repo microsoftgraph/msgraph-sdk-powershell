@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 36dd0f6d-61b0-48f6-abdb-636146418c56
+Module Guid: 10562be3-9e28-48e0-8f91-13908a0eec29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -12,7 +12,8 @@ Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.Security Cmdlets
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Get-MgSecuritySecureScore](Get-MgSecuritySecureScore.md)
 Get secureScores from security
@@ -21,7 +22,8 @@ Get secureScores from security
 Get secureScoreControlProfiles from security
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [New-MgSecuritySecureScore](New-MgSecuritySecureScore.md)
 Create new navigation property to secureScores for security
@@ -30,7 +32,8 @@ Create new navigation property to secureScores for security
 Create new navigation property to secureScoreControlProfiles for security
 
 ### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Remove-MgSecuritySecureScore](Remove-MgSecuritySecureScore.md)
 Delete navigation property secureScores for security
@@ -39,7 +42,8 @@ Delete navigation property secureScores for security
 Delete navigation property secureScoreControlProfiles for security
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Update-MgSecuritySecureScore](Update-MgSecuritySecureScore.md)
 Update the navigation property secureScores in security

@@ -32,7 +32,7 @@ parameters:
 jobs:
   - job: GenerateServiceModules
     displayName: Service module generation
-    timeoutInMinutes: 600
+    timeoutInMinutes: 840
     condition: and(succeeded(), ne(stageDependencies.DownloadOpenAPIDocs.GetLatestDocs.outputs['OpenAPIDocDiff.ModulesWithChanges'], ''))
     variables:
       Branch: ${{ parameters.Branch }}

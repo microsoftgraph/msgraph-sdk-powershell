@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: 36dd0f6d-61b0-48f6-abdb-636146418c56
+Module Guid: 10562be3-9e28-48e0-8f91-13908a0eec29
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -15,10 +15,17 @@ Microsoft Graph PowerShell Cmdlets
 Get securityActions from security
 
 ### [Get-MgSecurityAlert](Get-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
 Represent attack simulation and training campaign of a tenant.
+
+### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
+Get simulationAutomations from security
+
+### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
+Get runs from security
 
 ### [Get-MgSecurityCloudAppSecurityProfile](Get-MgSecurityCloudAppSecurityProfile.md)
 Get cloudAppSecurityProfiles from security
@@ -32,14 +39,17 @@ Get fileSecurityProfiles from security
 ### [Get-MgSecurityHostSecurityProfile](Get-MgSecurityHostSecurityProfile.md)
 Get hostSecurityProfiles from security
 
-### [Get-MgSecurityIncident](Get-MgSecurityIncident.md)
-Get incidents from security
+### [Get-MgSecurityInformationProtection](Get-MgSecurityInformationProtection.md)
+Get informationProtection from security
 
-### [Get-MgSecurityIncidentAlert](Get-MgSecurityIncidentAlert.md)
-Get alerts from security
+### [Get-MgSecurityInformationProtectionLabelPolicySetting](Get-MgSecurityInformationProtectionLabelPolicySetting.md)
+Get labelPolicySettings from security
 
-### [Get-MgSecurityIncidentAlertByRef](Get-MgSecurityIncidentAlertByRef.md)
-Get ref of alerts from security
+### [Get-MgSecurityInformationProtectionSensitivityLabel](Get-MgSecurityInformationProtectionSensitivityLabel.md)
+Get sensitivityLabels from security
+
+### [Get-MgSecurityInformationProtectionSensitivityLabelParent](Get-MgSecurityInformationProtectionSensitivityLabelParent.md)
+Get parent from security
 
 ### [Get-MgSecurityIPSecurityProfile](Get-MgSecurityIPSecurityProfile.md)
 Get ipSecurityProfiles from security
@@ -59,14 +69,24 @@ Get tiIndicators from security
 ### [Get-MgSecurityUserSecurityProfile](Get-MgSecurityUserSecurityProfile.md)
 Get userSecurityProfiles from security
 
+### [Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel](Invoke-MgExtractSecurityInformationProtectionSensitivityLabelContentLabel.md)
+Invoke action extractContentLabel
+
 ### [New-MgSecurityAction](New-MgSecurityAction.md)
 Create new navigation property to securityActions for security
 
 ### [New-MgSecurityAlert](New-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
 Represent attack simulation and training campaign of a tenant.
+
+### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
+Create new navigation property to simulationAutomations for security
+
+### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
+Create new navigation property to runs for security
 
 ### [New-MgSecurityCloudAppSecurityProfile](New-MgSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
@@ -80,11 +100,8 @@ Create new navigation property to fileSecurityProfiles for security
 ### [New-MgSecurityHostSecurityProfile](New-MgSecurityHostSecurityProfile.md)
 Create new navigation property to hostSecurityProfiles for security
 
-### [New-MgSecurityIncident](New-MgSecurityIncident.md)
-Create new navigation property to incidents for security
-
-### [New-MgSecurityIncidentAlertByRef](New-MgSecurityIncidentAlertByRef.md)
-Create new navigation property ref to alerts for security
+### [New-MgSecurityInformationProtectionSensitivityLabel](New-MgSecurityInformationProtectionSensitivityLabel.md)
+Create new navigation property to sensitivityLabels for security
 
 ### [New-MgSecurityIPSecurityProfile](New-MgSecurityIPSecurityProfile.md)
 Create new navigation property to ipSecurityProfiles for security
@@ -108,10 +125,17 @@ Create new navigation property to userSecurityProfiles for security
 Delete navigation property securityActions for security
 
 ### [Remove-MgSecurityAlert](Remove-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Remove-MgSecurityAttackSimulation](Remove-MgSecurityAttackSimulation.md)
 Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
+
+### [Remove-MgSecurityAttackSimulationAutomation](Remove-MgSecurityAttackSimulationAutomation.md)
+Delete navigation property simulationAutomations for security
+
+### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
+Delete navigation property runs for security
 
 ### [Remove-MgSecurityCloudAppSecurityProfile](Remove-MgSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
@@ -125,8 +149,17 @@ Delete navigation property fileSecurityProfiles for security
 ### [Remove-MgSecurityHostSecurityProfile](Remove-MgSecurityHostSecurityProfile.md)
 Delete navigation property hostSecurityProfiles for security
 
-### [Remove-MgSecurityIncident](Remove-MgSecurityIncident.md)
-Delete navigation property incidents for security
+### [Remove-MgSecurityInformationProtection](Remove-MgSecurityInformationProtection.md)
+Delete navigation property informationProtection for security
+
+### [Remove-MgSecurityInformationProtectionLabelPolicySetting](Remove-MgSecurityInformationProtectionLabelPolicySetting.md)
+Delete navigation property labelPolicySettings for security
+
+### [Remove-MgSecurityInformationProtectionSensitivityLabel](Remove-MgSecurityInformationProtectionSensitivityLabel.md)
+Delete navigation property sensitivityLabels for security
+
+### [Remove-MgSecurityInformationProtectionSensitivityLabelParent](Remove-MgSecurityInformationProtectionSensitivityLabelParent.md)
+Delete navigation property parent for security
 
 ### [Remove-MgSecurityIPSecurityProfile](Remove-MgSecurityIPSecurityProfile.md)
 Delete navigation property ipSecurityProfiles for security
@@ -152,23 +185,36 @@ Invoke action deleteTiIndicators
 ### [Remove-MgSecurityUserSecurityProfile](Remove-MgSecurityUserSecurityProfile.md)
 Delete navigation property userSecurityProfiles for security
 
-### [Start-MgSecurityHuntingQuery](Start-MgSecurityHuntingQuery.md)
-Invoke action runHuntingQuery
-
 ### [Stop-MgSecurityAction](Stop-MgSecurityAction.md)
 Invoke action cancelSecurityAction
 
 ### [Submit-MgSecurityTiIndicator](Submit-MgSecurityTiIndicator.md)
 Invoke action submitTiIndicators
 
+### [Test-MgSecurityInformationProtectionSensitivityLabelApplication](Test-MgSecurityInformationProtectionSensitivityLabelApplication.md)
+Invoke action evaluateApplication
+
+### [Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult](Test-MgSecurityInformationProtectionSensitivityLabelClassificationResult.md)
+Invoke action evaluateClassificationResults
+
+### [Test-MgSecurityInformationProtectionSensitivityLabelRemoval](Test-MgSecurityInformationProtectionSensitivityLabelRemoval.md)
+Invoke action evaluateRemoval
+
 ### [Update-MgSecurityAction](Update-MgSecurityAction.md)
 Update the navigation property securityActions in security
 
 ### [Update-MgSecurityAlert](Update-MgSecurityAlert.md)
-Notifications for suspicious or potential security issues in a customer’s tenant.
+Read-only.
+Nullable.
 
 ### [Update-MgSecurityAlertMultiple](Update-MgSecurityAlertMultiple.md)
 Invoke action updateAlerts
+
+### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
+Update the navigation property simulationAutomations in security
+
+### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
+Update the navigation property runs in security
 
 ### [Update-MgSecurityCloudAppSecurityProfile](Update-MgSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security
@@ -182,8 +228,17 @@ Update the navigation property fileSecurityProfiles in security
 ### [Update-MgSecurityHostSecurityProfile](Update-MgSecurityHostSecurityProfile.md)
 Update the navigation property hostSecurityProfiles in security
 
-### [Update-MgSecurityIncident](Update-MgSecurityIncident.md)
-Update the navigation property incidents in security
+### [Update-MgSecurityInformationProtection](Update-MgSecurityInformationProtection.md)
+Update the navigation property informationProtection in security
+
+### [Update-MgSecurityInformationProtectionLabelPolicySetting](Update-MgSecurityInformationProtectionLabelPolicySetting.md)
+Update the navigation property labelPolicySettings in security
+
+### [Update-MgSecurityInformationProtectionSensitivityLabel](Update-MgSecurityInformationProtectionSensitivityLabel.md)
+Update the navigation property sensitivityLabels in security
+
+### [Update-MgSecurityInformationProtectionSensitivityLabelParent](Update-MgSecurityInformationProtectionSensitivityLabelParent.md)
+Update the navigation property parent in security
 
 ### [Update-MgSecurityIPSecurityProfile](Update-MgSecurityIPSecurityProfile.md)
 Update the navigation property ipSecurityProfiles in security

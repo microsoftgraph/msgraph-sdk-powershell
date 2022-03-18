@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgGroupMemberByRef
 
 ## SYNOPSIS
-Members of this group, who can be users, devices, other groups, or service principals.
+UMembers of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.
@@ -40,7 +40,7 @@ New-MgGroupMemberByRef -InputObject <IGroupsIdentity> [-AdditionalProperties <Ha
 ```
 
 ## DESCRIPTION
-Members of this group, who can be users, devices, other groups, or service principals.
+UMembers of this group, who can be users, devices, other groups, or service principals.
 Supports the List members, Add member, and Remove member operations.
 Nullable.
 Supports $expand including nested $select.

@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -Files
 PDFs linked to this agreement.
-Note: This property is in the process of being deprecated.
+This property is in the process of being deprecated.
 Use the file property instead.
 To construct, please use Get-Help -Online and see NOTES section for FILES properties and create a hash table.
 
@@ -195,8 +195,8 @@ Accept wildcard characters: False
 ```
 
 ### -IsPerDeviceAcceptanceRequired
-This setting enables you to require end users to accept this agreement on every device that they are accessing it from.
-The end user will be required to register their device in Azure AD, if they haven't already done so.
+Indicates whether end users are required to accept this agreement on every device that they access it from.
+The end user is required to register their device in Azure AD, if they haven't already done so.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -327,18 +327,18 @@ To create the parameters described below, construct a hash table containing the 
 
 ACCEPTANCES <IMicrosoftGraphAgreementAcceptance[]>: Read-only. Information about acceptances of this agreement.
   - `[Id <String>]`: Read-only.
-  - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-  - `[AgreementId <String>]`: ID of the agreement.
+  - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+  - `[AgreementId <String>]`: The identifier of the agreement.
   - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
   - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-  - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-  - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+  - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+  - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[State <String>]`: agreementAcceptanceState
   - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
   - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-  - `[UserId <String>]`: ID of the user who accepted the agreement.
+  - `[UserId <String>]`: The identifier of the user who accepted the agreement.
   - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
 
 BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
@@ -346,18 +346,18 @@ BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
   - `[Id <String>]`: Read-only.
   - `[Acceptances <IMicrosoftGraphAgreementAcceptance[]>]`: Read-only. Information about acceptances of this agreement.
     - `[Id <String>]`: Read-only.
-    - `[AgreementFileId <String>]`: ID of the agreement file accepted by the user.
-    - `[AgreementId <String>]`: ID of the agreement.
+    - `[AgreementFileId <String>]`: The identifier of the agreement file accepted by the user.
+    - `[AgreementId <String>]`: The identifier of the agreement.
     - `[DeviceDisplayName <String>]`: The display name of the device used for accepting the agreement.
     - `[DeviceId <String>]`: The unique identifier of the device used for accepting the agreement.
-    - `[DeviceOSType <String>]`: The operating system used for accepting the agreement.
-    - `[DeviceOSVersion <String>]`: The operating system version of the device used for accepting the agreement.
-    - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+    - `[DeviceOSType <String>]`: The operating system used to accept the agreement.
+    - `[DeviceOSVersion <String>]`: The operating system version of the device used to accept the agreement.
+    - `[ExpirationDateTime <DateTime?>]`: The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+    - `[RecordedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
     - `[State <String>]`: agreementAcceptanceState
     - `[UserDisplayName <String>]`: Display name of the user when the acceptance was recorded.
     - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
-    - `[UserId <String>]`: ID of the user who accepted the agreement.
+    - `[UserId <String>]`: The identifier of the user who accepted the agreement.
     - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
   - `[DisplayName <String>]`: Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement.
   - `[File <IMicrosoftGraphAgreementFile>]`: agreementFile
@@ -390,8 +390,8 @@ BODYPARAMETER <IMicrosoftGraphAgreement>: agreement
         - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
         - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
         - `[Id <String>]`: Read-only.
-  - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
-  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: This setting enables you to require end users to accept this agreement on every device that they are accessing it from. The end user will be required to register their device in Azure AD, if they haven't already done so.
+  - `[Files <IMicrosoftGraphAgreementFileLocalization[]>]`: PDFs linked to this agreement. This property is in the process of being deprecated. Use the  file property instead.
+  - `[IsPerDeviceAcceptanceRequired <Boolean?>]`: Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so.
   - `[IsViewingBeforeAcceptanceRequired <Boolean?>]`: Indicates whether the user has to expand the agreement before accepting.
   - `[TermsExpiration <IMicrosoftGraphTermsExpiration>]`: termsExpiration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -430,7 +430,7 @@ FILE <IMicrosoftGraphAgreementFile>: agreementFile
       - `[Language <String>]`: The language of the agreement file in the format 'languagecode2-country/regioncode2'. 'languagecode2' is a lowercase two-letter code derived from ISO 639-1, while 'country/regioncode2' is derived from ISO 3166 and usually consists of two uppercase letters, or a BCP-47 language tag. For example, U.S. English is en-US. Read-only.
       - `[Id <String>]`: Read-only.
 
-FILES <IMicrosoftGraphAgreementFileLocalization[]>: PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the file property instead.
+FILES <IMicrosoftGraphAgreementFileLocalization[]>: PDFs linked to this agreement. This property is in the process of being deprecated. Use the file property instead.
   - `[CreatedDateTime <DateTime?>]`: The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
@@ -474,6 +474,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -484,6 +485,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -491,7 +494,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

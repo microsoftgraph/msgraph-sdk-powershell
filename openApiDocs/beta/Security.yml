@@ -25,8 +25,7 @@ paths:
               enum:
                 - id
                 - providerStatus
-                - alerts_v2
-                - incidents
+                - informationProtection
                 - attackSimulation
                 - alerts
                 - cloudAppSecurityProfiles
@@ -52,8 +51,7 @@ paths:
             items:
               enum:
                 - '*'
-                - alerts_v2
-                - incidents
+                - informationProtection
                 - attackSimulation
                 - alerts
                 - cloudAppSecurityProfiles
@@ -76,10 +74,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.security'
           links:
-            alerts_v2:
-              operationId: security.ListAlerts_v2
-            incidents:
-              operationId: security.ListIncidents
+            informationProtection:
+              operationId: security.GetInformationProtection
             attackSimulation:
               operationId: security.GetAttackSimulation
             alerts:
@@ -132,7 +128,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_ListAlerts
       parameters:
         - $ref: '#/components/parameters/top'
@@ -321,7 +317,7 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
@@ -345,7 +341,7 @@ paths:
       tags:
         - security.alert
       summary: Get alerts from security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_GetAlerts
       parameters:
         - name: alert-id
@@ -432,7 +428,7 @@ paths:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_UpdateAlerts
       parameters:
         - name: alert-id
@@ -459,7 +455,7 @@ paths:
       tags:
         - security.alert
       summary: Delete navigation property alerts for security
-      description: Notifications for suspicious or potential security issues in a customer’s tenant.
+      description: Read-only. Nullable.
       operationId: security_DeleteAlerts
       parameters:
         - name: alert-id
@@ -512,298 +508,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
-  /security/alerts_v2:
-    get:
-      tags:
-        - security.alert_v2
-      summary: Get alerts_v2 from security
-      operationId: security_ListAlerts_v2
-      parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - aadTenantId
-                - aadTenantId desc
-                - actorDisplayName
-                - actorDisplayName desc
-                - alertWebUrl
-                - alertWebUrl desc
-                - assignedTo
-                - assignedTo desc
-                - category
-                - category desc
-                - classification
-                - classification desc
-                - comments
-                - comments desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - detectorId
-                - detectorId desc
-                - determination
-                - determination desc
-                - firstActivityDateTime
-                - firstActivityDateTime desc
-                - incidentId
-                - incidentId desc
-                - incidentWebUrl
-                - incidentWebUrl desc
-                - lastActivityDateTime
-                - lastActivityDateTime desc
-                - lastUpdateDateTime
-                - lastUpdateDateTime desc
-                - mitreTechniques
-                - mitreTechniques desc
-                - providerAlertId
-                - providerAlertId desc
-                - resolvedDateTime
-                - resolvedDateTime desc
-                - serviceSource
-                - serviceSource desc
-                - severity
-                - severity desc
-                - status
-                - status desc
-                - threatDisplayName
-                - threatDisplayName desc
-                - threatFamilyName
-                - threatFamilyName desc
-                - title
-                - title desc
-              type: string
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - aadTenantId
-                - actorDisplayName
-                - alertWebUrl
-                - assignedTo
-                - category
-                - classification
-                - comments
-                - createdDateTime
-                - description
-                - detectorId
-                - determination
-                - firstActivityDateTime
-                - incidentId
-                - incidentWebUrl
-                - lastActivityDateTime
-                - lastUpdateDateTime
-                - mitreTechniques
-                - providerAlertId
-                - resolvedDateTime
-                - serviceSource
-                - severity
-                - status
-                - threatDisplayName
-                - threatFamilyName
-                - title
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of alert_v2
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.alert_v2'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - security.alert_v2
-      summary: Create new navigation property to alerts_v2 for security
-      operationId: security_CreateAlerts_v2
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.alert_v2'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.alert_v2'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/security/alerts_v2/{alert_v2-id}':
-    get:
-      tags:
-        - security.alert_v2
-      summary: Get alerts_v2 from security
-      operationId: security_GetAlerts_v2
-      parameters:
-        - name: alert_v2-id
-          in: path
-          description: 'key: id of alert_v2'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert_v2
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - aadTenantId
-                - actorDisplayName
-                - alertWebUrl
-                - assignedTo
-                - category
-                - classification
-                - comments
-                - createdDateTime
-                - description
-                - detectorId
-                - determination
-                - firstActivityDateTime
-                - incidentId
-                - incidentWebUrl
-                - lastActivityDateTime
-                - lastUpdateDateTime
-                - mitreTechniques
-                - providerAlertId
-                - resolvedDateTime
-                - serviceSource
-                - severity
-                - status
-                - threatDisplayName
-                - threatFamilyName
-                - title
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.alert_v2'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - security.alert_v2
-      summary: Update the navigation property alerts_v2 in security
-      operationId: security_UpdateAlerts_v2
-      parameters:
-        - name: alert_v2-id
-          in: path
-          description: 'key: id of alert_v2'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert_v2
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.alert_v2'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - security.alert_v2
-      summary: Delete navigation property alerts_v2 for security
-      operationId: security_DeleteAlerts_v2
-      parameters:
-        - name: alert_v2-id
-          in: path
-          description: 'key: id of alert_v2'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert_v2
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   /security/attackSimulation:
     get:
       tags:
@@ -823,6 +527,7 @@ paths:
             items:
               enum:
                 - id
+                - simulationAutomations
                 - simulations
               type: string
         - name: $expand
@@ -836,6 +541,7 @@ paths:
             items:
               enum:
                 - '*'
+                - simulationAutomations
                 - simulations
               type: string
       responses:
@@ -846,6 +552,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
           links:
+            simulationAutomations:
+              operationId: security.AttackSimulation.ListSimulationAutomations
             simulations:
               operationId: security.AttackSimulation.ListSimulations
         default:
@@ -888,6 +596,487 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /security/attackSimulation/simulationAutomations:
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get simulationAutomations from security
+      operationId: security.attackSimulation_ListSimulationAutomations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - createdBy
+                - createdBy desc
+                - createdDateTime
+                - createdDateTime desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+                - lastModifiedBy
+                - lastModifiedBy desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - lastRunDateTime
+                - lastRunDateTime desc
+                - nextRunDateTime
+                - nextRunDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - lastRunDateTime
+                - nextRunDateTime
+                - status
+                - runs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - runs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of simulationAutomation
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.attackSimulationRoot
+      summary: Create new navigation property to simulationAutomations for security
+      operationId: security.attackSimulation_CreateSimulationAutomations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get simulationAutomations from security
+      operationId: security.attackSimulation_GetSimulationAutomations
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - createdBy
+                - createdDateTime
+                - description
+                - displayName
+                - lastModifiedBy
+                - lastModifiedDateTime
+                - lastRunDateTime
+                - nextRunDateTime
+                - status
+                - runs
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - runs
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+          links:
+            runs:
+              operationId: security.attackSimulation.SimulationAutomations.ListRuns
+              parameters:
+                simulationAutomation-id: $request.path.simulationAutomation-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.attackSimulationRoot
+      summary: Update the navigation property simulationAutomations in security
+      operationId: security.attackSimulation_UpdateSimulationAutomations
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.attackSimulationRoot
+      summary: Delete navigation property simulationAutomations for security
+      operationId: security.attackSimulation_DeleteSimulationAutomations
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get runs from security
+      operationId: security.attackSimulation.simulationAutomations_ListRuns
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - endDateTime
+                - endDateTime desc
+                - simulationId
+                - simulationId desc
+                - startDateTime
+                - startDateTime desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - simulationId
+                - startDateTime
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of simulationAutomationRun
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - security.attackSimulationRoot
+      summary: Create new navigation property to runs for security
+      operationId: security.attackSimulation.simulationAutomations_CreateRuns
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/attackSimulation/simulationAutomations/{simulationAutomation-id}/runs/{simulationAutomationRun-id}':
+    get:
+      tags:
+        - security.attackSimulationRoot
+      summary: Get runs from security
+      operationId: security.attackSimulation.simulationAutomations_GetRuns
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - name: simulationAutomationRun-id
+          in: path
+          description: 'key: id of simulationAutomationRun'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomationRun
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - endDateTime
+                - simulationId
+                - startDateTime
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.attackSimulationRoot
+      summary: Update the navigation property runs in security
+      operationId: security.attackSimulation.simulationAutomations_UpdateRuns
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - name: simulationAutomationRun-id
+          in: path
+          description: 'key: id of simulationAutomationRun'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomationRun
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.attackSimulationRoot
+      summary: Delete navigation property runs for security
+      operationId: security.attackSimulation.simulationAutomations_DeleteRuns
+      parameters:
+        - name: simulationAutomation-id
+          in: path
+          description: 'key: id of simulationAutomation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomation
+        - name: simulationAutomationRun-id
+          in: path
+          description: 'key: id of simulationAutomationRun'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: simulationAutomationRun
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /security/attackSimulation/simulations:
     get:
       tags:
@@ -917,8 +1106,8 @@ paths:
                 - attackTechnique desc
                 - attackType
                 - attackType desc
-                - cleanupArtifacts
-                - cleanupArtifacts desc
+                - automationId
+                - automationId desc
                 - completionDateTime
                 - completionDateTime desc
                 - createdBy
@@ -929,10 +1118,6 @@ paths:
                 - description desc
                 - displayName
                 - displayName desc
-                - enableRegionTimezoneDelivery
-                - enableRegionTimezoneDelivery desc
-                - includeAllAccountTargets
-                - includeAllAccountTargets desc
                 - isAutomated
                 - isAutomated desc
                 - lastModifiedBy
@@ -943,18 +1128,10 @@ paths:
                 - launchDateTime desc
                 - payloadDeliveryPlatform
                 - payloadDeliveryPlatform desc
-                - payloadSource
-                - payloadSource desc
                 - report
                 - report desc
                 - status
                 - status desc
-                - trainingAssignmentPreference
-                - trainingAssignmentPreference desc
-                - trainingContentPreference
-                - trainingContentPreference desc
-                - trainingDueDateTime
-                - trainingDueDateTime desc
               type: string
         - name: $select
           in: query
@@ -969,25 +1146,19 @@ paths:
                 - id
                 - attackTechnique
                 - attackType
-                - cleanupArtifacts
+                - automationId
                 - completionDateTime
                 - createdBy
                 - createdDateTime
                 - description
                 - displayName
-                - enableRegionTimezoneDelivery
-                - includeAllAccountTargets
                 - isAutomated
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - launchDateTime
                 - payloadDeliveryPlatform
-                - payloadSource
                 - report
                 - status
-                - trainingAssignmentPreference
-                - trainingContentPreference
-                - trainingDueDateTime
               type: string
         - name: $expand
           in: query
@@ -1075,25 +1246,19 @@ paths:
                 - id
                 - attackTechnique
                 - attackType
-                - cleanupArtifacts
+                - automationId
                 - completionDateTime
                 - createdBy
                 - createdDateTime
                 - description
                 - displayName
-                - enableRegionTimezoneDelivery
-                - includeAllAccountTargets
                 - isAutomated
                 - lastModifiedBy
                 - lastModifiedDateTime
                 - launchDateTime
                 - payloadDeliveryPlatform
-                - payloadSource
                 - report
                 - status
-                - trainingAssignmentPreference
-                - trainingContentPreference
-                - trainingDueDateTime
               type: string
         - name: $expand
           in: query
@@ -2197,55 +2362,13 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /security/incidents:
+  /security/informationProtection:
     get:
       tags:
-        - security.incident
-      summary: Get incidents from security
-      operationId: security_ListIncidents
+        - security.informationProtection
+      summary: Get informationProtection from security
+      operationId: security_GetInformationProtection
       parameters:
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - assignedTo
-                - assignedTo desc
-                - classification
-                - classification desc
-                - comments
-                - comments desc
-                - createdDateTime
-                - createdDateTime desc
-                - determination
-                - determination desc
-                - displayName
-                - displayName desc
-                - incidentWebUrl
-                - incidentWebUrl desc
-                - lastUpdateDateTime
-                - lastUpdateDateTime desc
-                - redirectIncidentId
-                - redirectIncidentId desc
-                - severity
-                - severity desc
-                - status
-                - status desc
-                - tags
-                - tags desc
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2257,19 +2380,8 @@ paths:
             items:
               enum:
                 - id
-                - assignedTo
-                - classification
-                - comments
-                - createdDateTime
-                - determination
-                - displayName
-                - incidentWebUrl
-                - lastUpdateDateTime
-                - redirectIncidentId
-                - severity
-                - status
-                - tags
-                - alerts
+                - labelPolicySettings
+                - sensitivityLabels
               type: string
         - name: $expand
           in: query
@@ -2282,7 +2394,8 @@ paths:
             items:
               enum:
                 - '*'
-                - alerts
+                - labelPolicySettings
+                - sensitivityLabels
               type: string
       responses:
         '200':
@@ -2290,131 +2403,26 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of incident
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.incident'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - security.incident
-      summary: Create new navigation property to incidents for security
-      operationId: security_CreateIncidents
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.incident'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.incident'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/security/incidents/{incident-id}':
-    get:
-      tags:
-        - security.incident
-      summary: Get incidents from security
-      operationId: security_GetIncidents
-      parameters:
-        - name: incident-id
-          in: path
-          description: 'key: id of incident'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: incident
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - assignedTo
-                - classification
-                - comments
-                - createdDateTime
-                - determination
-                - displayName
-                - incidentWebUrl
-                - lastUpdateDateTime
-                - redirectIncidentId
-                - severity
-                - status
-                - tags
-                - alerts
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - alerts
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.incident'
+                $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
           links:
-            alerts:
-              operationId: security.Incidents.ListAlerts
-              parameters:
-                incident-id: $request.path.incident-id
+            labelPolicySettings:
+              operationId: security.InformationProtection.GetLabelPolicySettings
+            sensitivityLabels:
+              operationId: security.InformationProtection.ListSensitivityLabels
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
-        - security.incident
-      summary: Update the navigation property incidents in security
-      operationId: security_UpdateIncidents
-      parameters:
-        - name: incident-id
-          in: path
-          description: 'key: id of incident'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: incident
+        - security.informationProtection
+      summary: Update the navigation property informationProtection in security
+      operationId: security_UpdateInformationProtection
       requestBody:
         description: New navigation property values
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.incident'
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
         required: true
       responses:
         '204':
@@ -2424,17 +2432,10 @@ paths:
       x-ms-docs-operation-type: operation
     delete:
       tags:
-        - security.incident
-      summary: Delete navigation property incidents for security
-      operationId: security_DeleteIncidents
+        - security.informationProtection
+      summary: Delete navigation property informationProtection for security
+      operationId: security_DeleteInformationProtection
       parameters:
-        - name: incident-id
-          in: path
-          description: 'key: id of incident'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: incident
         - name: If-Match
           in: header
           description: ETag
@@ -2446,88 +2447,13 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/security/incidents/{incident-id}/alerts':
+  /security/informationProtection/labelPolicySettings:
     get:
       tags:
-        - security.incident
-      summary: Get alerts from security
-      operationId: security.incidents_ListAlerts
+        - security.informationProtection
+      summary: Get labelPolicySettings from security
+      operationId: security.informationProtection_GetLabelPolicySettings
       parameters:
-        - name: incident-id
-          in: path
-          description: 'key: id of incident'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: incident
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - aadTenantId
-                - aadTenantId desc
-                - actorDisplayName
-                - actorDisplayName desc
-                - alertWebUrl
-                - alertWebUrl desc
-                - assignedTo
-                - assignedTo desc
-                - category
-                - category desc
-                - classification
-                - classification desc
-                - comments
-                - comments desc
-                - createdDateTime
-                - createdDateTime desc
-                - description
-                - description desc
-                - detectorId
-                - detectorId desc
-                - determination
-                - determination desc
-                - firstActivityDateTime
-                - firstActivityDateTime desc
-                - incidentId
-                - incidentId desc
-                - incidentWebUrl
-                - incidentWebUrl desc
-                - lastActivityDateTime
-                - lastActivityDateTime desc
-                - lastUpdateDateTime
-                - lastUpdateDateTime desc
-                - mitreTechniques
-                - mitreTechniques desc
-                - providerAlertId
-                - providerAlertId desc
-                - resolvedDateTime
-                - resolvedDateTime desc
-                - serviceSource
-                - serviceSource desc
-                - severity
-                - severity desc
-                - status
-                - status desc
-                - threatDisplayName
-                - threatDisplayName desc
-                - threatFamilyName
-                - threatFamilyName desc
-                - title
-                - title desc
-              type: string
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2539,31 +2465,10 @@ paths:
             items:
               enum:
                 - id
-                - aadTenantId
-                - actorDisplayName
-                - alertWebUrl
-                - assignedTo
-                - category
-                - classification
-                - comments
-                - createdDateTime
-                - description
-                - detectorId
-                - determination
-                - firstActivityDateTime
-                - incidentId
-                - incidentWebUrl
-                - lastActivityDateTime
-                - lastUpdateDateTime
-                - mitreTechniques
-                - providerAlertId
-                - resolvedDateTime
-                - serviceSource
-                - severity
-                - status
-                - threatDisplayName
-                - threatFamilyName
-                - title
+                - defaultLabelId
+                - isDowngradeJustificationRequired
+                - isMandatory
+                - moreInfoUrl
               type: string
         - name: $expand
           in: query
@@ -2583,37 +2488,52 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of alert_v2
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.alert_v2'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+                $ref: '#/components/schemas/microsoft.graph.security.informationProtectionPolicySetting'
         default:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
       x-ms-docs-operation-type: operation
-  '/security/incidents/{incident-id}/alerts/$ref':
-    get:
+    patch:
       tags:
-        - security.incident
-      summary: Get ref of alerts from security
-      operationId: security.incidents_ListGraphRefAlerts
+        - security.informationProtection
+      summary: Update the navigation property labelPolicySettings in security
+      operationId: security.informationProtection_UpdateLabelPolicySettings
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtectionPolicySetting'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.informationProtection
+      summary: Delete navigation property labelPolicySettings for security
+      operationId: security.informationProtection_DeleteLabelPolicySettings
       parameters:
-        - name: incident-id
-          in: path
-          description: 'key: id of incident'
-          required: true
+        - name: If-Match
+          in: header
+          description: ETag
           schema:
             type: string
-          x-ms-docs-key-type: incident
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/informationProtection/sensitivityLabels:
+    get:
+      tags:
+        - security.informationProtection
+      summary: Get sensitivityLabels from security
+      operationId: security.informationProtection_ListSensitivityLabels
+      parameters:
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2631,70 +2551,73 @@ paths:
               enum:
                 - id
                 - id desc
-                - aadTenantId
-                - aadTenantId desc
-                - actorDisplayName
-                - actorDisplayName desc
-                - alertWebUrl
-                - alertWebUrl desc
-                - assignedTo
-                - assignedTo desc
-                - category
-                - category desc
-                - classification
-                - classification desc
-                - comments
-                - comments desc
-                - createdDateTime
-                - createdDateTime desc
+                - color
+                - color desc
+                - contentFormats
+                - contentFormats desc
                 - description
                 - description desc
-                - detectorId
-                - detectorId desc
-                - determination
-                - determination desc
-                - firstActivityDateTime
-                - firstActivityDateTime desc
-                - incidentId
-                - incidentId desc
-                - incidentWebUrl
-                - incidentWebUrl desc
-                - lastActivityDateTime
-                - lastActivityDateTime desc
-                - lastUpdateDateTime
-                - lastUpdateDateTime desc
-                - mitreTechniques
-                - mitreTechniques desc
-                - providerAlertId
-                - providerAlertId desc
-                - resolvedDateTime
-                - resolvedDateTime desc
-                - serviceSource
-                - serviceSource desc
-                - severity
-                - severity desc
-                - status
-                - status desc
-                - threatDisplayName
-                - threatDisplayName desc
-                - threatFamilyName
-                - threatFamilyName desc
-                - title
-                - title desc
+                - hasProtection
+                - hasProtection desc
+                - isActive
+                - isActive desc
+                - isAppliable
+                - isAppliable desc
+                - name
+                - name desc
+                - sensitivity
+                - sensitivity desc
+                - tooltip
+                - tooltip desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - color
+                - contentFormats
+                - description
+                - hasProtection
+                - isActive
+                - isAppliable
+                - name
+                - sensitivity
+                - tooltip
+                - parent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - parent
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of alert_v2
+                title: Collection of sensitivityLabel
                 type: object
                 properties:
                   value:
                     type: array
                     items:
-                      type: string
+                      $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
                   '@odata.nextLink':
                     type: string
                 additionalProperties:
@@ -2707,38 +2630,380 @@ paths:
       x-ms-docs-operation-type: operation
     post:
       tags:
-        - security.incident
-      summary: Create new navigation property ref to alerts for security
-      operationId: security.incidents_CreateGraphRefAlerts
+        - security.informationProtection
+      summary: Create new navigation property to sensitivityLabels for security
+      operationId: security.informationProtection_CreateSensitivityLabels
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/informationProtection/sensitivityLabels/{sensitivityLabel-id}':
+    get:
+      tags:
+        - security.informationProtection
+      summary: Get sensitivityLabels from security
+      operationId: security.informationProtection_GetSensitivityLabels
       parameters:
-        - name: incident-id
+        - name: sensitivityLabel-id
           in: path
-          description: 'key: id of incident'
+          description: 'key: id of sensitivityLabel'
           required: true
           schema:
             type: string
-          x-ms-docs-key-type: incident
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - color
+                - contentFormats
+                - description
+                - hasProtection
+                - isActive
+                - isAppliable
+                - name
+                - sensitivity
+                - tooltip
+                - parent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - parent
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+          links:
+            parent:
+              operationId: security.informationProtection.SensitivityLabels.GetParent
+              parameters:
+                sensitivityLabel-id: $request.path.sensitivityLabel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.informationProtection
+      summary: Update the navigation property sensitivityLabels in security
+      operationId: security.informationProtection_UpdateSensitivityLabels
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
       requestBody:
-        description: New navigation property ref value
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.informationProtection
+      summary: Delete navigation property sensitivityLabels for security
+      operationId: security.informationProtection_DeleteSensitivityLabels
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/security/informationProtection/sensitivityLabels/{sensitivityLabel-id}/parent':
+    get:
+      tags:
+        - security.informationProtection
+      summary: Get parent from security
+      operationId: security.informationProtection.sensitivityLabels_GetParent
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - color
+                - contentFormats
+                - description
+                - hasProtection
+                - isActive
+                - isAppliable
+                - name
+                - sensitivity
+                - tooltip
+                - parent
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - parent
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+          links:
+            parent:
+              operationId: security.informationProtection.sensitivityLabels.Parent.GetParent
+              parameters:
+                sensitivityLabel-id: $request.path.sensitivityLabel-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - security.informationProtection
+      summary: Update the navigation property parent in security
+      operationId: security.informationProtection.sensitivityLabels_UpdateParent
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - security.informationProtection
+      summary: Delete navigation property parent for security
+      operationId: security.informationProtection.sensitivityLabels_DeleteParent
+      parameters:
+        - name: sensitivityLabel-id
+          in: path
+          description: 'key: id of sensitivityLabel'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: sensitivityLabel
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateApplication:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action evaluateApplication
+      operationId: security.informationProtection.sensitivityLabels_evaluateApplication
+      requestBody:
+        description: Action parameters
         content:
           application/json:
             schema:
               type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.security.contentInfo'
+                labelingOptions:
+                  $ref: '#/components/schemas/microsoft.graph.security.labelingOptions'
               additionalProperties:
                 type: object
         required: true
       responses:
-        '201':
-          description: Created navigation property link.
+        '200':
+          description: Success
           content:
             application/json:
               schema:
-                type: object
-                additionalProperties:
-                  type: object
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
         default:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+      x-ms-docs-operation-type: action
+  /security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateClassificationResults:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action evaluateClassificationResults
+      operationId: security.informationProtection.sensitivityLabels_evaluateClassificationResults
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.security.contentInfo'
+                classificationResults:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/microsoft.graph.security.classificationResult'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/informationProtection/sensitivityLabels/microsoft.graph.security.evaluateRemoval:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action evaluateRemoval
+      operationId: security.informationProtection.sensitivityLabels_evaluateRemoval
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.security.contentInfo'
+                downgradeJustification:
+                  $ref: '#/components/schemas/microsoft.graph.security.downgradeJustification'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/microsoft.graph.security.informationProtectionAction'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  /security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel:
+    post:
+      tags:
+        - security.Actions
+      summary: Invoke action extractContentLabel
+      operationId: security.informationProtection.sensitivityLabels_extractContentLabel
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contentInfo:
+                  $ref: '#/components/schemas/microsoft.graph.security.contentInfo'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.security.contentLabel'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   /security/ipSecurityProfiles:
     get:
       tags:
@@ -2983,35 +3248,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  /security/microsoft.graph.runHuntingQuery:
-    post:
-      tags:
-        - security.Actions
-      summary: Invoke action runHuntingQuery
-      operationId: security_runHuntingQuery
-      requestBody:
-        description: Action parameters
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                query:
-                  type: string
-                  nullable: true
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.huntingQueryResults'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /security/providerTenantSettings:
     get:
       tags:
@@ -4790,21 +5026,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.securityProviderStatus'
-            alerts_v2:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.alert_v2'
-            incidents:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.incident'
+            informationProtection:
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtection'
             attackSimulation:
               $ref: '#/components/schemas/microsoft.graph.attackSimulationRoot'
             alerts:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.alert'
-              description: Notifications for suspicious or potential security issues in a customer’s tenant.
+              description: Read-only. Nullable.
             cloudAppSecurityProfiles:
               type: array
               items:
@@ -5042,33 +5272,31 @@ components:
               description: Threat intelligence pertaining to one or more vulnerabilities related to this alert.
           additionalProperties:
             type: object
-    microsoft.graph.alert_v2:
+    microsoft.graph.attackSimulationRoot:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: alert_v2
+        - title: attackSimulationRoot
           type: object
           properties:
-            aadTenantId:
-              type: string
-              nullable: true
-            actorDisplayName:
-              type: string
-              nullable: true
-            alertWebUrl:
-              type: string
-              nullable: true
-            assignedTo:
-              type: string
-              nullable: true
-            category:
-              type: string
-              nullable: true
-            classification:
-              $ref: '#/components/schemas/microsoft.graph.alertClassification_v2'
-            comments:
+            simulationAutomations:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.alertComment_v2'
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomation'
+            simulations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.simulation'
+              description: Represent attack simulation and training campaign of a tenant.
+          additionalProperties:
+            type: object
+    microsoft.graph.simulationAutomation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: simulationAutomation
+          type: object
+          properties:
+            createdBy:
+              $ref: '#/components/schemas/microsoft.graph.emailIdentity'
             createdDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -5077,73 +5305,55 @@ components:
             description:
               type: string
               nullable: true
-            detectorId:
+            displayName:
               type: string
               nullable: true
-            determination:
-              $ref: '#/components/schemas/microsoft.graph.alertDetermination_v2'
-            firstActivityDateTime:
+            lastModifiedBy:
+              $ref: '#/components/schemas/microsoft.graph.emailIdentity'
+            lastModifiedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
-            incidentId:
-              type: string
-              nullable: true
-            incidentWebUrl:
-              type: string
-              nullable: true
-            lastActivityDateTime:
+            lastRunDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
-            lastUpdateDateTime:
+            nextRunDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
               format: date-time
               nullable: true
-            mitreTechniques:
+            status:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomationStatus'
+            runs:
               type: array
               items:
-                type: string
-                nullable: true
-            providerAlertId:
-              type: string
-              nullable: true
-            resolvedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-              nullable: true
-            serviceSource:
-              $ref: '#/components/schemas/microsoft.graph.serviceSource'
-            severity:
-              $ref: '#/components/schemas/microsoft.graph.alertSeverity_v2'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.alertStatus_v2'
-            threatDisplayName:
-              type: string
-              nullable: true
-            threatFamilyName:
-              type: string
-              nullable: true
-            title:
-              type: string
-              nullable: true
+                $ref: '#/components/schemas/microsoft.graph.simulationAutomationRun'
           additionalProperties:
             type: object
-    microsoft.graph.attackSimulationRoot:
+    microsoft.graph.simulationAutomationRun:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: attackSimulationRoot
+        - title: simulationAutomationRun
           type: object
           properties:
-            simulations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.simulation'
-              description: Represent attack simulation and training campaign of a tenant.
+            endDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            simulationId:
+              type: string
+              nullable: true
+            startDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              format: date-time
+              nullable: true
+            status:
+              $ref: '#/components/schemas/microsoft.graph.simulationAutomationRunStatus'
           additionalProperties:
             type: object
     microsoft.graph.simulation:
@@ -5156,9 +5366,8 @@ components:
               $ref: '#/components/schemas/microsoft.graph.simulationAttackTechnique'
             attackType:
               $ref: '#/components/schemas/microsoft.graph.simulationAttackType'
-            cleanupArtifacts:
-              type: boolean
-              description: Flag representing if artifacts were cleaned up in the attack simulation and training campaign.
+            automationId:
+              type: string
               nullable: true
             completionDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5182,14 +5391,6 @@ components:
               type: string
               description: Display name of the attack simulation and training campaign. Supports $filter and $orderby.
               nullable: true
-            enableRegionTimezoneDelivery:
-              type: boolean
-              description: Flag representing whether to enable or disable timezone-aware delivery of phishing payload in the attack simulation and training campaign.
-              nullable: true
-            includeAllAccountTargets:
-              type: boolean
-              description: Flag representing inclusion of all the users of a tenant in the attack simulation and training campaign.
-              nullable: true
             isAutomated:
               type: boolean
               description: Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
@@ -5210,22 +5411,10 @@ components:
               nullable: true
             payloadDeliveryPlatform:
               $ref: '#/components/schemas/microsoft.graph.payloadDeliveryPlatform'
-            payloadSource:
-              $ref: '#/components/schemas/microsoft.graph.payloadSource'
             report:
               $ref: '#/components/schemas/microsoft.graph.simulationReport'
             status:
               $ref: '#/components/schemas/microsoft.graph.simulationStatus'
-            trainingAssignmentPreference:
-              $ref: '#/components/schemas/microsoft.graph.trainingAssignmentPreference'
-            trainingContentPreference:
-              $ref: '#/components/schemas/microsoft.graph.trainingContentPreference'
-            trainingDueDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time before which the trainings need to be completed by users in the attack simulation and training campaign.
-              format: date-time
-              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.cloudAppSecurityProfile:
@@ -5495,55 +5684,160 @@ components:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
           additionalProperties:
             type: object
-    microsoft.graph.incident:
+    microsoft.graph.security.informationProtection:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: incident
+        - title: informationProtection
           type: object
           properties:
-            assignedTo:
-              type: string
-              nullable: true
-            classification:
-              $ref: '#/components/schemas/microsoft.graph.alertClassification_v2'
-            comments:
+            labelPolicySettings:
+              $ref: '#/components/schemas/microsoft.graph.security.informationProtectionPolicySetting'
+            sensitivityLabels:
               type: array
               items:
-                $ref: '#/components/schemas/microsoft.graph.alertComment_v2'
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            determination:
-              $ref: '#/components/schemas/microsoft.graph.alertDetermination_v2'
-            displayName:
-              type: string
-              nullable: true
-            incidentWebUrl:
-              type: string
-              nullable: true
-            lastUpdateDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              format: date-time
-            redirectIncidentId:
+                $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
+          additionalProperties:
+            type: object
+    microsoft.graph.security.informationProtectionPolicySetting:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: informationProtectionPolicySetting
+          type: object
+          properties:
+            defaultLabelId:
               type: string
               nullable: true
-            severity:
-              $ref: '#/components/schemas/microsoft.graph.alertSeverity_v2'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.incidentStatus'
-            tags:
+            isDowngradeJustificationRequired:
+              type: boolean
+            isMandatory:
+              type: boolean
+            moreInfoUrl:
+              type: string
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.security.sensitivityLabel:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: sensitivityLabel
+          type: object
+          properties:
+            color:
+              type: string
+              nullable: true
+            contentFormats:
               type: array
               items:
                 type: string
                 nullable: true
-            alerts:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.alert_v2'
+            description:
+              type: string
+              nullable: true
+            hasProtection:
+              type: boolean
+            isActive:
+              type: boolean
+            isAppliable:
+              type: boolean
+            name:
+              type: string
+              nullable: true
+            sensitivity:
+              maximum: 2147483647
+              minimum: -2147483648
+              type: integer
+              format: int32
+            tooltip:
+              type: string
+              nullable: true
+            parent:
+              $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
           additionalProperties:
             type: object
+    microsoft.graph.security.contentInfo:
+      title: contentInfo
+      type: object
+      properties:
+        contentFormat:
+          type: string
+          nullable: true
+        identifier:
+          type: string
+          nullable: true
+        metadata:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.keyValuePair'
+        state:
+          $ref: '#/components/schemas/microsoft.graph.security.contentState'
+      additionalProperties:
+        type: object
+    microsoft.graph.security.labelingOptions:
+      title: labelingOptions
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.security.assignmentMethod'
+        downgradeJustification:
+          $ref: '#/components/schemas/microsoft.graph.security.downgradeJustification'
+        extendedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.security.keyValuePair'
+        labelId:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.security.informationProtectionAction:
+      title: informationProtectionAction
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.security.classificationResult:
+      title: classificationResult
+      type: object
+      properties:
+        confidenceLevel:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        count:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          format: int32
+        sensitiveTypeId:
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.security.downgradeJustification:
+      title: downgradeJustification
+      type: object
+      properties:
+        isDowngradeJustified:
+          type: boolean
+        justificationMessage:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.contentLabel:
+      title: contentLabel
+      type: object
+      properties:
+        assignmentMethod:
+          $ref: '#/components/schemas/microsoft.graph.security.assignmentMethod'
+        createdDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+        sensitivityLabelId:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.ipSecurityProfile:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5605,20 +5899,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.securityVendorInformation'
           additionalProperties:
             type: object
-    microsoft.graph.huntingQueryResults:
-      title: huntingQueryResults
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.huntingRowResult'
-        schema:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.singlePropertySchema'
-      additionalProperties:
-        type: object
     microsoft.graph.providerTenantSetting:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5667,7 +5947,7 @@ components:
               description: The collection of compliance information associated with secure score control
             controlCategory:
               type: string
-              description: 'Control action category (Account, Data, Device, Apps, Infrastructure).'
+              description: 'Control action category (Identity, Data, Device, Apps, Infrastructure).'
               nullable: true
             controlStateUpdates:
               type: array
@@ -5690,7 +5970,7 @@ components:
               nullable: true
             maxScore:
               type: number
-              description: Current obtained max score on specified date.
+              description: max attainable score for the control.
               format: double
               nullable: true
             rank:
@@ -5717,7 +5997,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).'
+              description: 'List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,'
             tier:
               type: string
               description: 'Control tier (Core, Defense in Depth, Advanced.)'
@@ -6402,7 +6682,7 @@ components:
       properties:
         applicationName:
           type: string
-          description: 'Name of the application managing the network connection (for example, Facebook, SMTP, etc.).'
+          description: 'Name of the application managing the network connection (for example, Facebook or SMTP).'
           nullable: true
         destinationAddress:
           type: string
@@ -6755,82 +7035,36 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.alertClassification_v2:
-      title: alertClassification_v2
+    microsoft.graph.emailIdentity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identity'
+        - title: emailIdentity
+          type: object
+          properties:
+            email:
+              type: string
+              description: Email address of the user.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.simulationAutomationStatus:
+      title: simulationAutomationStatus
       enum:
         - unknown
-        - falsePositive
-        - truePositive
-        - benignPositive
+        - draft
+        - notRunning
+        - running
+        - completed
         - unknownFutureValue
       type: string
-    microsoft.graph.alertComment_v2:
-      title: alertComment_v2
-      type: object
-      properties:
-        comment:
-          type: string
-          nullable: true
-        createdByDisplayName:
-          type: string
-          nullable: true
-        createdDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          format: date-time
-      additionalProperties:
-        type: object
-    microsoft.graph.alertDetermination_v2:
-      title: alertDetermination_v2
+    microsoft.graph.simulationAutomationRunStatus:
+      title: simulationAutomationRunStatus
       enum:
         - unknown
-        - apt
-        - malware
-        - securityPersonnel
-        - securityTesting
-        - unwantedSoftware
-        - other
-        - multiStagedAttack
-        - compromisedUser
-        - phishing
-        - maliciousUserActivity
-        - clean
-        - insufficientData
-        - confirmedUserActivity
-        - lineOfBusinessApplication
-        - unknownFutureValue
-      type: string
-    microsoft.graph.serviceSource:
-      title: serviceSource
-      enum:
-        - unknown
-        - microsoftDefenderForEndpoint
-        - microsoftDefenderForIdentity
-        - microsoftDefenderForCloudApps
-        - microsoftDefenderForOffice365
-        - microsoft365Defender
-        - aadIdentityProtection
-        - microsoftAppGovernance
-        - dataLossPrevention
-        - unknownFutureValue
-      type: string
-    microsoft.graph.alertSeverity_v2:
-      title: alertSeverity_v2
-      enum:
-        - unknown
-        - informational
-        - low
-        - medium
-        - high
-        - unknownFutureValue
-      type: string
-    microsoft.graph.alertStatus_v2:
-      title: alertStatus_v2
-      enum:
-        - unknown
-        - new
-        - inProgress
-        - resolved
+        - running
+        - succeeded
+        - failed
+        - skipped
         - unknownFutureValue
       type: string
     microsoft.graph.simulationAttackTechnique:
@@ -6853,18 +7087,6 @@ components:
         - endpoint
         - unknownFutureValue
       type: string
-    microsoft.graph.emailIdentity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.identity'
-        - title: emailIdentity
-          type: object
-          properties:
-            email:
-              type: string
-              description: Email address of the user.
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.payloadDeliveryPlatform:
       title: payloadDeliveryPlatform
       enum:
@@ -6872,14 +7094,6 @@ components:
         - sms
         - email
         - teams
-        - unknownFutureValue
-      type: string
-    microsoft.graph.payloadSource:
-      title: payloadSource
-      enum:
-        - unknown
-        - global
-        - tenant
         - unknownFutureValue
       type: string
     microsoft.graph.simulationReport:
@@ -6900,32 +7114,12 @@ components:
       enum:
         - unknown
         - draft
-        - inProgress
+        - running
         - scheduled
-        - completed
-        - partiallyCompleted
+        - succeeded
         - failed
         - cancelled
         - excluded
-        - deleted
-        - included
-        - unknownFutureValue
-      type: string
-    microsoft.graph.trainingAssignmentPreference:
-      title: trainingAssignmentPreference
-      enum:
-        - unknown
-        - auto
-        - manual
-        - unknownFutureValue
-      type: string
-    microsoft.graph.trainingContentPreference:
-      title: trainingContentPreference
-      enum:
-        - unknown
-        - microsoft
-        - custom
-        - noTraining
         - unknownFutureValue
       type: string
     microsoft.graph.applicationPermissionsRequired:
@@ -7047,13 +7241,30 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.incidentStatus:
-      title: incidentStatus
+    microsoft.graph.security.keyValuePair:
+      title: keyValuePair
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.security.contentState:
+      title: contentState
       enum:
-        - active
-        - resolved
-        - redirected
-        - unknownFutureValue
+        - rest
+        - motion
+        - use
+      type: string
+    microsoft.graph.security.assignmentMethod:
+      title: assignmentMethod
+      enum:
+        - standard
+        - privileged
+        - auto
       type: string
     microsoft.graph.ipCategory:
       title: ipCategory
@@ -7095,23 +7306,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.huntingRowResult:
-      title: huntingRowResult
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.singlePropertySchema:
-      title: singlePropertySchema
-      type: object
-      properties:
-        name:
-          type: string
-          nullable: true
-        type:
-          type: string
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.complianceInformation:
       title: complianceInformation
       type: object
@@ -7133,19 +7327,24 @@ components:
       properties:
         assignedTo:
           type: string
+          description: Assigns the control to the user who will take the action.
           nullable: true
         comment:
           type: string
+          description: Provides optional comment about the control.
           nullable: true
         state:
           type: string
+          description: 'State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).'
           nullable: true
         updatedBy:
           type: string
+          description: ID of the user who updated tenant state.
           nullable: true
         updatedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
+          description: Time at which the control state was updated.
           format: date-time
           nullable: true
       additionalProperties:
@@ -7444,11 +7643,11 @@ components:
       properties:
         displayName:
           type: string
-          description: The display name of the identity. This property is read-only.
+          description: 'The identity''s display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won''t show up as having changed when using delta.'
           nullable: true
         id:
           type: string
-          description: The identifier of the identity. This property is read-only.
+          description: Unique identifier for the identity.
           nullable: true
       additionalProperties:
         type: object

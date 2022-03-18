@@ -15,7 +15,7 @@ Invoke action addToReviewSet
 ### AddExpanded (Default)
 ```
 Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -CaseId <String> -ReviewSetId <String>
- [-AdditionalData <String>] [-AdditionalProperties <Hashtable>]
+ [-AdditionalDataOptions <String>] [-AdditionalProperties <Hashtable>]
  [-SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -37,7 +37,7 @@ Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIden
 ### AddViaIdentityExpanded
 ```
 Add-MgComplianceEdiscoveryCaseReviewSetToReviewSet -InputObject <IComplianceIdentity>
- [-AdditionalData <String>] [-AdditionalProperties <Hashtable>]
+ [-AdditionalDataOptions <String>] [-AdditionalProperties <Hashtable>]
  [-SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -49,7 +49,7 @@ Invoke action addToReviewSet
 
 ## PARAMETERS
 
-### -AdditionalData
+### -AdditionalDataOptions
 additionalDataOptions
 
 ```yaml
@@ -227,7 +227,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetIdMicrosoftGraphEdiscoveryAddtoreviewsetPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AdditionalData <String>]`: additionalDataOptions
+  - `[AdditionalDataOptions <String>]`: additionalDataOptions
   - `[SourceCollection <IMicrosoftGraphEdiscoverySourceCollection>]`: sourceCollection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
@@ -239,8 +239,8 @@ BODYPARAMETER <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetId
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-          - `[Id <String>]`: The identifier of the identity. This property is read-only.
+          - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+          - `[Id <String>]`: Unique identifier for the identity.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
       - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -272,6 +272,7 @@ BODYPARAMETER <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetId
       - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
       - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
+      - `[HoldStatus <String>]`: dataSourceHoldStatus
     - `[ContentQuery <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the sourceCollection was created.
@@ -301,6 +302,7 @@ BODYPARAMETER <IPaths1N6Pr05ComplianceEdiscoveryCasesCaseIdReviewsetsReviewsetId
     - `[NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>]`: noncustodialDataSource sources that are included in the sourceCollection
       - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
       - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
+      - `[HoldStatus <String>]`: dataSourceHoldStatus
       - `[LastIndexOperation <IMicrosoftGraphEdiscoveryCaseIndexOperation>]`: caseIndexOperation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Action <String>]`: caseAction
@@ -344,8 +346,8 @@ SOURCECOLLECTION <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The date and time the operation was created.
@@ -377,6 +379,7 @@ SOURCECOLLECTION <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The date and time the dataSource was created.
     - `[DisplayName <String>]`: The display name of the dataSource. This will be the name of the SharePoint site.
+    - `[HoldStatus <String>]`: dataSourceHoldStatus
   - `[ContentQuery <String>]`: The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:'Quarterly Financials' AND Date>=06/01/2016 AND Date<=07/01/2016.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[CreatedDateTime <DateTime?>]`: The date and time the sourceCollection was created.
@@ -406,6 +409,7 @@ SOURCECOLLECTION <IMicrosoftGraphEdiscoverySourceCollection>: sourceCollection
   - `[NoncustodialSources <IMicrosoftGraphEdiscoveryNoncustodialDataSource[]>]`: noncustodialDataSource sources that are included in the sourceCollection
     - `[CreatedDateTime <DateTime?>]`: Created date and time of the dataSourceContainer entity.
     - `[DisplayName <String>]`: Display name of the dataSourceContainer entity.
+    - `[HoldStatus <String>]`: dataSourceHoldStatus
     - `[LastIndexOperation <IMicrosoftGraphEdiscoveryCaseIndexOperation>]`: caseIndexOperation
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Action <String>]`: caseAction

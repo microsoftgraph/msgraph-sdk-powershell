@@ -6,6 +6,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
     using System;
     using System.Net.Http;
     using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using Microsoft.Graph.PowerShell.Authentication.Helpers;
     using Xunit;
 
@@ -40,7 +41,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process
             };
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProvider(authContext);
 
             HttpClient httpClient = HttpHelpers.GetGraphHttpClient(authProvider, timeSpan);
 

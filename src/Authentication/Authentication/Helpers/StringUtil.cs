@@ -69,15 +69,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         }
 
         /// <summary>
-        ///     Convert a JSON string back to an object of type <see cref="System.Management.Automation.PSObject"/> or
-        ///     <see cref="System.Collections.Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
+        ///     Convert a JSON string back to an object of type <see cref="PSObject"/> or
+        ///     <see cref="Hashtable"/> depending on parameter <paramref name="returnHashtable"/>.
         /// </summary>
         /// <param name="jsonString">The JSON text to convert.</param>
-        /// <param name="returnHashtable">True if the result should be returned as a <see cref="System.Collections.Hashtable"/>
-        /// instead of a <see cref="System.Management.Automation.PSObject"/>.</param>
+        /// <param name="returnHashtable">True if the result should be returned as a <see cref="Hashtable"/>
+        /// instead of a <see cref="PSObject"/>.</param>
         /// <param name="maxDepth">The max depth allowed when deserializing the json jsonString. Set to null for no maximum.</param>
         /// <param name="error">An error record if the conversion failed.</param>
-        /// <returns>A <see cref="System.Management.Automation.PSObject"/> or a <see cref="System.Collections.Hashtable"/>
+        /// <returns>A <see cref="PSObject"/> or a <see cref="Hashtable"/>
         /// if the <paramref name="returnHashtable"/> parameter is true.</returns>
         public static object ConvertFromJson(this string jsonString, bool returnHashtable, int? maxDepth, out ErrorRecord error)
         {

@@ -65,7 +65,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             using (fileProvider)
             {
                 string contents = fileProvider.CreateReader().ReadToEnd();
-                if (TryDeserializeObject<GraphSettings>(contents, out GraphSettings contextSettings, new GraphSettingsConverter()))
+                if (TryDeserializeObject(contents, out GraphSettings contextSettings, new GraphSettingsConverter()))
                 {
                     Initialize(contextSettings);
                 }
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// </summary>
         public void Save()
         {
-            Save(Constants.SettingFilePath);
+            Save(Constants.ContextSettingsPath);
         }
 
         /// <summary>
