@@ -9,7 +9,7 @@ parameters:
     type: string
     default: ""
   - name: BUILDAGENT
-    default: MsGraphBuildAgentsWindows
+    default: MsGraphBuildAgentsWindowsPsSDK
     displayName: Build Agent
 
 steps:
