@@ -8,6 +8,10 @@
     "/subscriptions/{subscription-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/ChangeNotifications.yml"
+    },
+    "/subscriptions/{subscription-id}/microsoft.graph.reauthorize": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/ChangeNotifications.yml"
     }
   }
 }

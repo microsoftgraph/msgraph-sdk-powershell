@@ -276,6 +276,7 @@ INPUTOBJECT <IDeviceManagementActionsIdentity>: Identity Parameter
   - `[MicrosoftTunnelSiteId <String>]`: key: id of microsoftTunnelSite
   - `[MobileAppTroubleshootingEventId <String>]`: key: id of mobileAppTroubleshootingEvent
   - `[NotificationMessageTemplateId <String>]`: key: id of notificationMessageTemplate
+  - `[OemWarrantyInformationOnboardingId <String>]`: key: id of oemWarrantyInformationOnboarding
   - `[RemoteAssistancePartnerId <String>]`: key: id of remoteAssistancePartner
   - `[RoleScopeTagId <String>]`: key: id of roleScopeTag
   - `[WindowsAutopilotDeploymentProfileId <String>]`: key: id of windowsAutopilotDeploymentProfile

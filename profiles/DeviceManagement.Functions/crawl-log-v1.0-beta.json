@@ -333,6 +333,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
     },
+    "/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC-id}/microsoft.graph.getCloudPcLaunchInfo()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"
+    },
     "/deviceManagement/virtualEndpoint/deviceImages/microsoft.graph.getSourceImages()": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/DeviceManagement.Functions.yml"

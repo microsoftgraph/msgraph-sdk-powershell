@@ -8647,6 +8647,207 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.changeUserAccountType':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action changeUserAccountType
+      operationId: users.cloudPCs_changeUserAccountType
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userAccountType:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.endGracePeriod':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action endGracePeriod
+      operationId: users.cloudPCs_endGracePeriod
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.reboot':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action reboot
+      operationId: users.cloudPCs_reboot
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.rename':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action rename
+      operationId: users.cloudPCs_rename
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.reprovision':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action reprovision
+      operationId: users.cloudPCs_reprovision
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userAccountType:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+                osVersion:
+                  $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
+  '/users/{user-id}/cloudPCs/{cloudPC-id}/microsoft.graph.troubleshoot':
+    post:
+      tags:
+        - users.Actions
+      summary: Invoke action troubleshoot
+      operationId: users.cloudPCs_troubleshoot
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: cloudPC-id
+          in: path
+          description: 'key: id of cloudPC'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: cloudPC
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/users/{user-id}/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration-id}/microsoft.graph.assign':
     post:
       tags:
@@ -17965,6 +18166,20 @@ components:
           $ref: '#/components/schemas/microsoft.graph.emailAddress'
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcUserAccountType:
+      title: cloudPcUserAccountType
+      enum:
+        - standardUser
+        - administrator
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcOperatingSystem:
+      title: cloudPcOperatingSystem
+      enum:
+        - windows10
+        - windows11
+        - unknownFutureValue
+      type: string
     microsoft.graph.enrollmentConfigurationAssignment:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -18848,6 +19063,10 @@ components:
               description: A list for the user to enumerate their skills. Returned only on $select.
             analytics:
               $ref: '#/components/schemas/microsoft.graph.userAnalytics'
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
             usageRights:
               type: array
               items:
@@ -19724,6 +19943,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
             textBody:
               type: string
+              description: The task body in text format that typically contains information about the task.
               nullable: true
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
@@ -20697,6 +20917,83 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
               description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the Cloud PC.
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: Name of the OS image that's on the Cloud PC.
+              nullable: true
+            lastLoginResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            lastRemoteActionResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+            managedDeviceId:
+              type: string
+              description: The Intune device ID of the Cloud PC.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune device name of the Cloud PC.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            osVersion:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID of the Cloud PC.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            servicePlanId:
+              type: string
+              description: The service plan ID of the Cloud PC.
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name of the Cloud PC.
+              nullable: true
+            servicePlanType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
+            statusDetails:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+            userAccountType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userPrincipalName:
+              type: string
+              description: The user principal name (UPN) of the user assigned to the Cloud PC.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.usageRight:
@@ -23173,12 +23470,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
             summary:
               $ref: '#/components/schemas/microsoft.graph.teamSummary'
+            tenantId:
+              type: string
+              nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
+            allChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
             channels:
               type: array
               items:
@@ -23186,6 +23490,10 @@ components:
               description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
+            incomingChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
             installedApps:
               type: array
               items:
@@ -23232,6 +23540,10 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            associatedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
             installedApps:
               type: array
               items:
@@ -23735,6 +24047,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
         reminderDateTime:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
       additionalProperties:
@@ -24303,6 +24616,93 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcLoginResult:
+      title: cloudPcLoginResult
+      type: object
+      properties:
+        time:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''. Read-only.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcServicePlanType:
+      title: cloudPcServicePlanType
+      enum:
+        - enterprise
+        - business
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcStatus:
+      title: cloudPcStatus
+      enum:
+        - notProvisioned
+        - provisioning
+        - provisioned
+        - inGracePeriod
+        - deprovisioning
+        - failed
+        - provisionedWithWarnings
+        - resizing
+        - restoring
+        - pendingProvision
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the Cloud PC status.
+        code:
+          type: string
+          description: The code associated with the Cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.usageRightState:
       title: usageRightState
       enum:
@@ -25894,40 +26294,6 @@ components:
         - unknownFutureValue
       type: string
       description: Describes the TemplateFamily for the Template entity
-    microsoft.graph.cloudPcRemoteActionResult:
-      title: cloudPcRemoteActionResult
-      type: object
-      properties:
-        actionName:
-          type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
-          nullable: true
-        actionState:
-          $ref: '#/components/schemas/microsoft.graph.actionState'
-        cloudPcId:
-          type: string
-          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-          nullable: true
-        lastUpdatedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        managedDeviceId:
-          type: string
-          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        statusDetails:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
-      additionalProperties:
-        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -28844,18 +29210,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a team.
           format: int32
           nullable: true
       additionalProperties:
@@ -28899,6 +29268,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            tenantId:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -28915,6 +29287,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
+            sharedWithTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
             tabs:
               type: array
               items:
@@ -29054,6 +29430,13 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.timeOff'
               description: The instances of times off in the schedule.
+          additionalProperties:
+            type: object
+    microsoft.graph.associatedTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: associatedTeamInfo
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -29463,6 +29846,17 @@ components:
         - Focus
         - Chat
         - Call
+      type: string
+    microsoft.graph.actionState:
+      title: actionState
+      enum:
+        - none
+        - pending
+        - canceled
+        - active
+        - done
+        - failed
+        - notSupported
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -31391,36 +31785,6 @@ components:
               $ref: '#/components/schemas/microsoft.graph.security.sensitivityLabel'
           additionalProperties:
             type: object
-    microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
-      type: string
-    microsoft.graph.cloudPcStatusDetails:
-      title: cloudPcStatusDetails
-      type: object
-      properties:
-        additionalInformation:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the Cloud PC status.
-        code:
-          type: string
-          description: The code associated with the Cloud PC status.
-          nullable: true
-        message:
-          type: string
-          description: The status message.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.configurationManagerClientState:
       title: configurationManagerClientState
       enum:
@@ -32883,6 +33247,21 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
+    microsoft.graph.sharedWithChannelTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: sharedWithChannelTeamInfo
+          type: object
+          properties:
+            isHostTeam:
+              type: boolean
+              nullable: true
+            allowedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+          additionalProperties:
+            type: object
     microsoft.graph.teamworkTagType:
       title: teamworkTagType
       enum:
@@ -33116,6 +33495,22 @@ components:
               type: string
               description: ID of the user assigned to the timeOff. Required.
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.teamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamInfo
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            team:
+              $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
             type: object
     microsoft.graph.wellknownListName:

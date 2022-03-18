@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: c6061b4e-c0fa-4102-a8ed-7d15bcdcf776
+Module Guid: cb9b0f8b-1d92-43be-8654-3f95bd83b588
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -22,6 +22,9 @@ Invoke action addKey
 
 ### [Add-MgServicePrincipalPassword](Add-MgServicePrincipalPassword.md)
 Invoke action addPassword
+
+### [Add-MgServicePrincipalTokenSigningCertificate](Add-MgServicePrincipalTokenSigningCertificate.md)
+Invoke action addTokenSigningCertificate
 
 ### [Clear-MgApplicationVerifiedPublisher](Clear-MgApplicationVerifiedPublisher.md)
 Invoke action unsetVerifiedPublisher
@@ -110,7 +113,8 @@ Supports $expand.
 Get entity from servicePrincipals by key
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Get-MgServicePrincipalAppRoleAssignment](Get-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -212,19 +216,15 @@ Supports $expand.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicy](Get-MgServicePrincipalTokenIssuancePolicy.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicyByRef](Get-MgServicePrincipalTokenIssuancePolicyByRef.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicy](Get-MgServicePrincipalTokenLifetimePolicy.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
 Get transitiveMemberOf from servicePrincipals
@@ -273,7 +273,8 @@ Supports $expand.
 Add new entity to servicePrincipals
 
 ### [New-MgServicePrincipalAppRoleAssignedTo](New-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [New-MgServicePrincipalAppRoleAssignment](New-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -326,11 +327,9 @@ Supports $expand.
 
 ### [New-MgServicePrincipalTokenIssuancePolicyByRef](New-MgServicePrincipalTokenIssuancePolicyByRef.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [New-MgServicePrincipalTransitiveMemberOfByRef](New-MgServicePrincipalTransitiveMemberOfByRef.md)
 Create new navigation property ref to transitiveMemberOf for servicePrincipals
@@ -366,7 +365,8 @@ Supports $expand.
 Delete entity from servicePrincipals
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Remove-MgServicePrincipalAppRoleAssignment](Remove-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -430,7 +430,8 @@ Supports $expand.
 Update entity in servicePrincipals
 
 ### [Update-MgServicePrincipalAppRoleAssignedTo](Update-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Update-MgServicePrincipalAppRoleAssignment](Update-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.

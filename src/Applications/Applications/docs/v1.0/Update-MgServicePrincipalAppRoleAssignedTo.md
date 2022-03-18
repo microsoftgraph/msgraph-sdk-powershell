@@ -8,7 +8,8 @@ schema: 2.0.0
 # Update-MgServicePrincipalAppRoleAssignedTo
 
 ## SYNOPSIS
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## SYNTAX
 
@@ -43,7 +44,8 @@ Update-MgServicePrincipalAppRoleAssignedTo -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -114,7 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
+The time when the app role assignment was created.
+The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 Read-only.
 
@@ -131,7 +134,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -209,7 +213,7 @@ Accept wildcard characters: False
 ```
 
 ### -PrincipalId
-The unique identifier (id) for the user, group or service principal being granted the app role.
+The unique identifier (id) for the user, group, or service principal being granted the app role.
 Required on create.
 
 ```yaml
@@ -226,7 +230,7 @@ Accept wildcard characters: False
 
 ### -PrincipalType
 The type of the assigned principal.
-This can either be User, Group or ServicePrincipal.
+This can either be User, Group, or ServicePrincipal.
 Read-only.
 
 ```yaml
@@ -343,13 +347,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphAppRoleAssignment>: appRoleAssignment
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
-  - `[CreatedDateTime <DateTime?>]`: The time when the app role assignment was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+  - `[CreatedDateTime <DateTime?>]`: The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
   - `[PrincipalDisplayName <String>]`: The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
-  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group or service principal being granted the app role. Required on create.
-  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group or ServicePrincipal. Read-only.
+  - `[PrincipalId <String>]`: The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.
+  - `[PrincipalType <String>]`: The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
   - `[ResourceDisplayName <String>]`: The display name of the resource app's service principal to which the assignment is made.
   - `[ResourceId <String>]`: The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
 

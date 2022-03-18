@@ -12,27 +12,27 @@ Invoke action reply
 
 ## SYNTAX
 
-### ReplyExpanded2 (Default)
+### ReplyExpanded (Default)
 ```
 Invoke-MgReplyUserMessage -MessageId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Reply2
+### Reply
 ```
 Invoke-MgReplyUserMessage -MessageId <String> -UserId <String>
  -BodyParameter <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReplyViaIdentity2
+### ReplyViaIdentity
 ```
 Invoke-MgReplyUserMessage -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ReplyViaIdentityExpanded2
+### ReplyViaIdentityExpanded
 ```
 Invoke-MgReplyUserMessage -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-Comment <String>] [-Message <IMicrosoftGraphMessage>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
+Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Inq4EUsersUserIdMessagesMessageIdMicrosoftGraphReplyPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Reply2, ReplyViaIdentity2
+Parameter Sets: Reply, ReplyViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
+Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: ReplyViaIdentity2, ReplyViaIdentityExpanded2
+Parameter Sets: ReplyViaIdentity, ReplyViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -113,7 +113,7 @@ To construct, please use Get-Help -Online and see NOTES section for MESSAGE prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMessage
-Parameter Sets: ReplyExpanded2, ReplyViaIdentityExpanded2
+Parameter Sets: ReplyExpanded, ReplyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -128,7 +128,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Reply2, ReplyExpanded2
+Parameter Sets: Reply, ReplyExpanded
 Aliases:
 
 Required: True
@@ -158,7 +158,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Reply2, ReplyExpanded2
+Parameter Sets: Reply, ReplyExpanded
 Aliases:
 
 Required: True
@@ -314,6 +314,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event
