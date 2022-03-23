@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Reports
-Module Guid: fa55ba4f-e53b-4749-a0ca-406b3b2da803
+Module Guid: fcd421b5-3e77-4cb2-94fa-0b7204993624
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports
 Help Version: 1.0.0.0
 Locale: en-US
@@ -53,7 +53,7 @@ Invoke function getAttackSimulationSimulationUserCoverage
 Container for navigation properties for Azure AD authentication methods resources.
 
 ### [Get-MgReportAuthenticationMethodUserRegistrationDetail](Get-MgReportAuthenticationMethodUserRegistrationDetail.md)
-Get userRegistrationDetails from reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ### [Get-MgReportAzureAdApplicationSign](Get-MgReportAzureAdApplicationSign.md)
 Invoke function getAzureADApplicationSignInSummary
@@ -66,6 +66,15 @@ Invoke function getAzureADLicenseUsage
 
 ### [Get-MgReportAzureAdUserFeatureUsage](Get-MgReportAzureAdUserFeatureUsage.md)
 Invoke function getAzureADUserFeatureUsage
+
+### [Get-MgReportBrowserDistributionUserCount](Get-MgReportBrowserDistributionUserCount.md)
+Invoke function getBrowserDistributionUserCounts
+
+### [Get-MgReportBrowserUserCount](Get-MgReportBrowserUserCount.md)
+Invoke function getBrowserUserCounts
+
+### [Get-MgReportBrowserUserDetail](Get-MgReportBrowserUserDetail.md)
+Invoke function getBrowserUserDetail
 
 ### [Get-MgReportCredentialUsageSummary](Get-MgReportCredentialUsageSummary.md)
 Invoke function getCredentialUsageSummary
@@ -250,6 +259,15 @@ Invoke function getSharePointSiteUsageStorage
 ### [Get-MgReportSkype](Get-MgReportSkype.md)
 Invoke function getSkypeForBusinessActivityCounts
 
+### [Get-MgReportTeamActivityCount](Get-MgReportTeamActivityCount.md)
+Invoke function getTeamsTeamActivityCounts
+
+### [Get-MgReportTeamActivityDetail](Get-MgReportTeamActivityDetail.md)
+Invoke function getTeamsTeamActivityDetail
+
+### [Get-MgReportTeamActivityDistributionCount](Get-MgReportTeamActivityDistributionCount.md)
+Invoke function getTeamsTeamActivityDistributionCounts
+
 ### [Get-MgReportTeamDeviceUsageDistributionTotalUserCount](Get-MgReportTeamDeviceUsageDistributionTotalUserCount.md)
 Invoke function getTeamsDeviceUsageDistributionTotalUserCounts
 
@@ -276,6 +294,9 @@ Invoke function getTeamsUserActivityDistributionUserCounts
 
 ### [Get-MgReportTeamUserActivityTotalCount](Get-MgReportTeamUserActivityTotalCount.md)
 Invoke function getTeamsUserActivityTotalCounts
+
+### [Get-MgReportTeamUserActivityTotalDistributionCount](Get-MgReportTeamUserActivityTotalDistributionCount.md)
+Invoke function getTeamsUserActivityTotalDistributionCounts
 
 ### [Get-MgReportTeamUserActivityTotalUserCount](Get-MgReportTeamUserActivityTotalUserCount.md)
 Invoke function getTeamsUserActivityTotalUserCounts
@@ -323,17 +344,17 @@ Invoke function getYammerGroupsActivityGroupCounts
 Invoke function usersRegisteredByFeature
 
 ### [New-MgReportAuthenticationMethodUserRegistrationDetail](New-MgReportAuthenticationMethodUserRegistrationDetail.md)
-Create new navigation property to userRegistrationDetails for reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ### [Remove-MgDeviceManagementReport](Remove-MgDeviceManagementReport.md)
 Reports singleton
 
 ### [Remove-MgReportAuthenticationMethodUserRegistrationDetail](Remove-MgReportAuthenticationMethodUserRegistrationDetail.md)
-Delete navigation property userRegistrationDetails for reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ### [Update-MgDeviceManagementReport](Update-MgDeviceManagementReport.md)
 Reports singleton
 
 ### [Update-MgReportAuthenticationMethodUserRegistrationDetail](Update-MgReportAuthenticationMethodUserRegistrationDetail.md)
-Update the navigation property userRegistrationDetails in reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 

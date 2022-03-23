@@ -1,45 +1,55 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Reports
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/remove-mgreportauthenticationmethoduserregistrationdetail
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.reports/get-mgreportteamactivitydetail
 schema: 2.0.0
 ---
 
-# Remove-MgReportAuthenticationMethodUserRegistrationDetail
+# Get-MgReportTeamActivityDetail
 
 ## SYNOPSIS
-Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+Invoke function getTeamsTeamActivityDetail
 
 ## SYNTAX
 
-### Delete (Default)
+### Get (Default)
 ```
-Remove-MgReportAuthenticationMethodUserRegistrationDetail -UserRegistrationDetailsId <String>
- [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgReportTeamActivityDetail -Date <DateTime> -OutFile <String> [-PassThru] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### Get1
 ```
-Remove-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReportsIdentity> [-IfMatch <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Get-MgReportTeamActivityDetail -Period <String> -OutFile <String> [-PassThru] [<CommonParameters>]
+```
+
+### GetViaIdentity
+```
+Get-MgReportTeamActivityDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgReportTeamActivityDetail -InputObject <IReportsIdentity> -OutFile <String> [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
+Invoke function getTeamsTeamActivityDetail
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -IfMatch
-ETag
+### -Date
+Usage: date={date}
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: System.DateTime
+Parameter Sets: Get
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -52,13 +62,28 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IReportsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -OutFile
+Path to write output file to
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -77,46 +102,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UserRegistrationDetailsId
-key: id of userRegistrationDetails
+### -Period
+Usage: period={period}
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Get1
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
