@@ -558,6 +558,10 @@ BASE <IMicrosoftGraphContentType1>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -628,8 +632,6 @@ BASE <IMicrosoftGraphContentType1>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -743,6 +745,10 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -813,8 +819,6 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -929,6 +933,10 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -999,8 +1007,6 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -1110,6 +1116,10 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1240,6 +1250,10 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1380,6 +1394,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.

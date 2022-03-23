@@ -12,25 +12,25 @@ The source column for the content type column.
 
 ## SYNTAX
 
-### SetExpanded1 (Default)
+### SetExpanded (Default)
 ```
 Set-MgDriveListColumnSourceColumnByRef -ColumnDefinitionId <String> -DriveId <String>
  [-AdditionalProperties <Hashtable>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Set1
+### Set
 ```
 Set-MgDriveListColumnSourceColumnByRef -ColumnDefinitionId <String> -DriveId <String>
  -BodyParameter <Hashtable> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity1
+### SetViaIdentity
 ```
 Set-MgDriveListColumnSourceColumnByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded1
+### SetViaIdentityExpanded
 ```
 Set-MgDriveListColumnSourceColumnByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -48,7 +48,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Set1, SetViaIdentity1
+Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ key: id of columnDefinition
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1, SetExpanded1
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Set1, SetExpanded1
+Parameter Sets: Set, SetExpanded
 Aliases:
 
 Required: True
@@ -109,7 +109,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
 Aliases:
 
 Required: True
