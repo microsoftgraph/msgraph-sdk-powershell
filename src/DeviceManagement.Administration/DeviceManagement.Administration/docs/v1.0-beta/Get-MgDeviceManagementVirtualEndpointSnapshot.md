@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceManagementVirtualEndpointSnapshot
 
 ## SYNOPSIS
-Get snapshots from deviceManagement
+Cloud PC snapshots.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManagementAdm
 ```
 
 ## DESCRIPTION
-Get snapshots from deviceManagement
+Cloud PC snapshots.
 
 ## EXAMPLES
 

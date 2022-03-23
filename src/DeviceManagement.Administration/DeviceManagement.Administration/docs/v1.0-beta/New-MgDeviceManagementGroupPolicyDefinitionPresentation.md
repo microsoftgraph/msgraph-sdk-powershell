@@ -238,6 +238,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyPresentation>: The base entity for the 
         - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
         - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
         - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
+        - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
         - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
         - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
         - `[PolicyType <String>]`: Type of Group Policy File or Definition.
@@ -281,6 +282,7 @@ DEFINITION <IMicrosoftGraphGroupPolicyDefinition>: The entity describes all of t
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
       - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
       - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
+      - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
       - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[PolicyType <String>]`: Type of Group Policy File or Definition.
