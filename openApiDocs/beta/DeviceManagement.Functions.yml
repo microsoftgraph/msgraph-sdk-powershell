@@ -3409,9 +3409,11 @@ components:
           nullable: true
         subscriptionDisplayName:
           type: string
+          description: The display name of subscription that hosts the source image.
           nullable: true
         subscriptionId:
           type: string
+          description: The ID of subscription that hosts the source image.
           nullable: true
       additionalProperties:
         type: object

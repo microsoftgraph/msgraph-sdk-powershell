@@ -13465,6 +13465,8 @@ paths:
                 - healthCheckStatusDetails desc
                 - inUse
                 - inUse desc
+                - managedBy
+                - managedBy desc
                 - organizationalUnit
                 - organizationalUnit desc
                 - resourceGroupId
@@ -13498,6 +13500,7 @@ paths:
                 - healthCheckStatus
                 - healthCheckStatusDetails
                 - inUse
+                - managedBy
                 - organizationalUnit
                 - resourceGroupId
                 - subnetId
@@ -13597,6 +13600,7 @@ paths:
                 - healthCheckStatus
                 - healthCheckStatusDetails
                 - inUse
+                - managedBy
                 - organizationalUnit
                 - resourceGroupId
                 - subnetId
@@ -13801,6 +13805,8 @@ paths:
                 - microsoftManagedDesktop desc
                 - onPremisesConnectionId
                 - onPremisesConnectionId desc
+                - windowsSettings
+                - windowsSettings desc
               type: string
         - name: $select
           in: query
@@ -13821,6 +13827,7 @@ paths:
                 - imageType
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
+                - windowsSettings
                 - assignments
               type: string
         - name: $expand
@@ -13916,6 +13923,7 @@ paths:
                 - imageType
                 - microsoftManagedDesktop
                 - onPremisesConnectionId
+                - windowsSettings
                 - assignments
               type: string
         - name: $expand
@@ -17330,6 +17338,9 @@ components:
             inUse:
               type: boolean
               description: 'When true, the on-premises connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an on-premises connection, including healthCheckStatusDetails. Read-only.'
+              nullable: true
+            managedBy:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcManagementService'
             organizationalUnit:
               type: string
               description: 'The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.'
@@ -17398,6 +17409,8 @@ components:
               type: string
               description: 'The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.'
               nullable: true
+            windowsSettings:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcWindowsSettings'
             assignments:
               type: array
               items:
@@ -18443,6 +18456,13 @@ components:
           format: date-time
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcManagementService:
+      title: cloudPcManagementService
+      enum:
+        - windows365
+        - devBox
+        - unknownFutureValue
+      type: string
     microsoft.graph.cloudPcOnPremisesConnectionType:
       title: cloudPcOnPremisesConnectionType
       enum:
@@ -18482,6 +18502,16 @@ components:
           nullable: true
         type:
           $ref: '#/components/schemas/microsoft.graph.microsoftManagedDesktopType'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcWindowsSettings:
+      title: cloudPcWindowsSettings
+      type: object
+      properties:
+        language:
+          type: string
+          description: 'The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).'
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.cloudPcManagementAssignmentTarget:
