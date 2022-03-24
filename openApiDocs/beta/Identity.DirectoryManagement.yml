@@ -16176,7 +16176,7 @@ components:
           properties:
             disabledForGroup:
               type: string
-              description: 'The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.'
+              description: 'The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.'
               nullable: true
             isEnabledInOrganization:
               type: boolean
