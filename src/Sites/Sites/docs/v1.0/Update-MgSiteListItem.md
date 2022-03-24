@@ -1158,7 +1158,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
                       - `[Key <String>]`: Key for the key-value pair.
                       - `[Value <String>]`: Value for the key-value pair.
-                    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                    - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
                       - `[Id <String>]`: Read-only.
                       - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                       - `[Relationship <String>]`: 
@@ -1181,7 +1181,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                           - `[Scope <String>]`: 
                           - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
                         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
                         - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
                       - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                     - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -2381,9 +2381,9 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[AllowMeetingChat <String>]`: meetingChatMode
             - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
             - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-            - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+            - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
               - `[Id <String>]`: Read-only.
-              - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+              - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
                 - `[Id <String>]`: Read-only.
                 - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
                   - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -2430,11 +2430,11 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[Scope <String>]`: lobbyBypassScope
             - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: onlineMeetingRole
+                - `[Role <String>]`: 
                 - `[Upn <String>]`: User principal name of the participant.
-              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
             - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
             - `[Subject <String>]`: The subject of the online meeting.
@@ -4110,7 +4110,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
                 - `[Key <String>]`: Key for the key-value pair.
                 - `[Value <String>]`: Value for the key-value pair.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+              - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
                 - `[Id <String>]`: Read-only.
                 - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                 - `[Relationship <String>]`: 
@@ -4133,7 +4133,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
                     - `[Scope <String>]`: 
                     - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
                   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                  - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
                   - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
                 - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
               - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -5255,9 +5255,9 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
           - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
             - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -5304,11 +5304,11 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[Scope <String>]`: lobbyBypassScope
       - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
-        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
@@ -6638,7 +6638,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
               - `[Key <String>]`: Key for the key-value pair.
               - `[Value <String>]`: Value for the key-value pair.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
               - `[Id <String>]`: Read-only.
               - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
               - `[Relationship <String>]`: 
@@ -6661,7 +6661,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
                   - `[Scope <String>]`: 
                   - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
                 - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
                 - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
               - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
             - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -7781,9 +7781,9 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[AllowMeetingChat <String>]`: meetingChatMode
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: Read-only.
-      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: Read-only.
         - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
           - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -7830,11 +7830,11 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Scope <String>]`: lobbyBypassScope
     - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
-      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.
@@ -8621,7 +8621,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
               - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
                 - `[Key <String>]`: Key for the key-value pair.
                 - `[Value <String>]`: Value for the key-value pair.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+              - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
                 - `[Id <String>]`: Read-only.
                 - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
                 - `[Relationship <String>]`: 
@@ -8644,7 +8644,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
                     - `[Scope <String>]`: 
                     - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
                   - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                  - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
                   - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
                 - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
               - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -9873,9 +9873,9 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
           - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
             - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -9922,11 +9922,11 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[Scope <String>]`: lobbyBypassScope
       - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
-        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
       - `[Subject <String>]`: The subject of the online meeting.
@@ -11655,7 +11655,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
             - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
               - `[Key <String>]`: Key for the key-value pair.
               - `[Value <String>]`: Value for the key-value pair.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+            - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
               - `[Id <String>]`: Read-only.
               - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
               - `[Relationship <String>]`: 
@@ -11678,7 +11678,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
                   - `[Scope <String>]`: 
                   - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
                 - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
                 - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
               - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
             - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -12798,9 +12798,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[AllowMeetingChat <String>]`: meetingChatMode
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: Read-only.
-      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: Read-only.
         - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
           - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -12847,11 +12847,11 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[Scope <String>]`: lobbyBypassScope
     - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
-      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
+      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
     - `[Subject <String>]`: The subject of the online meeting.

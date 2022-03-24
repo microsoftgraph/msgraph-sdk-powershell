@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Files
-Module Guid: 18b41321-dd1e-4bf2-bba2-237bc13f97e9
+Module Guid: 4d1a9989-ca29-40b4-b601-5717e5d481b6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.files
 Help Version: 1.0.0.0
 Locale: en-US
@@ -42,15 +42,17 @@ Get entity from drives by key
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
 Only in personal OneDrive.
 
-### [Get-MgDriveBundleContent](Get-MgDriveBundleContent.md)
-Get media content for the navigation property bundles from drives
+### [Get-MgDriveBundleByRef](Get-MgDriveBundleByRef.md)
+Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
+Only in personal OneDrive.
 
 ### [Get-MgDriveFollowing](Get-MgDriveFollowing.md)
 The list of items the user is following.
 Only in OneDrive for Business.
 
-### [Get-MgDriveFollowingContent](Get-MgDriveFollowingContent.md)
-Get media content for the navigation property following from drives
+### [Get-MgDriveFollowingByRef](Get-MgDriveFollowingByRef.md)
+The list of items the user is following.
+Only in OneDrive for Business.
 
 ### [Get-MgDriveItem](Get-MgDriveItem.md)
 All items contained in the drive.
@@ -157,8 +159,10 @@ Collection of common folders available in OneDrive.
 Read-only.
 Nullable.
 
-### [Get-MgDriveSpecialContent](Get-MgDriveSpecialContent.md)
-Get media content for the navigation property special from drives
+### [Get-MgDriveSpecialByRef](Get-MgDriveSpecialByRef.md)
+Collection of common folders available in OneDrive.
+Read-only.
+Nullable.
 
 ### [Get-MgGroupDrive](Get-MgGroupDrive.md)
 The group's default drive.
@@ -317,11 +321,11 @@ Invoke action associateWithHubSites
 ### [New-MgDrive](New-MgDrive.md)
 Add new entity to drives
 
-### [New-MgDriveBundle](New-MgDriveBundle.md)
+### [New-MgDriveBundleByRef](New-MgDriveBundleByRef.md)
 Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
 Only in personal OneDrive.
 
-### [New-MgDriveFollowing](New-MgDriveFollowing.md)
+### [New-MgDriveFollowingByRef](New-MgDriveFollowingByRef.md)
 The list of items the user is following.
 Only in OneDrive for Business.
 
@@ -357,7 +361,7 @@ The list of previous versions of the list item.
 ### [New-MgDriveListSubscription](New-MgDriveListSubscription.md)
 The set of subscriptions on the list.
 
-### [New-MgDriveSpecial](New-MgDriveSpecial.md)
+### [New-MgDriveSpecialByRef](New-MgDriveSpecialByRef.md)
 Collection of common folders available in OneDrive.
 Read-only.
 Nullable.
@@ -419,14 +423,6 @@ Invoke action publish
 ### [Remove-MgDrive](Remove-MgDrive.md)
 Delete entity from drives
 
-### [Remove-MgDriveBundle](Remove-MgDriveBundle.md)
-Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
-Only in personal OneDrive.
-
-### [Remove-MgDriveFollowing](Remove-MgDriveFollowing.md)
-The list of items the user is following.
-Only in OneDrive for Business.
-
 ### [Remove-MgDriveItem](Remove-MgDriveItem.md)
 All items contained in the drive.
 Read-only.
@@ -486,11 +482,6 @@ The set of subscriptions on the list.
 ### [Remove-MgDriveRoot](Remove-MgDriveRoot.md)
 The root folder of the drive.
 Read-only.
-
-### [Remove-MgDriveSpecial](Remove-MgDriveSpecial.md)
-Collection of common folders available in OneDrive.
-Read-only.
-Nullable.
 
 ### [Remove-MgGroupDrive](Remove-MgGroupDrive.md)
 The group's drives.
@@ -582,12 +573,6 @@ Invoke action restoreVersion
 ### [Search-MgDrive](Search-MgDrive.md)
 Invoke function search
 
-### [Set-MgDriveBundleContent](Set-MgDriveBundleContent.md)
-Update media content for the navigation property bundles in drives
-
-### [Set-MgDriveFollowingContent](Set-MgDriveFollowingContent.md)
-Update media content for the navigation property following in drives
-
 ### [Set-MgDriveItemContent](Set-MgDriveItemContent.md)
 Update media content for the navigation property items in drives
 
@@ -612,9 +597,6 @@ For document libraries, the driveItem relationship exposes the listItem as a [dr
 
 ### [Set-MgDriveRootContent](Set-MgDriveRootContent.md)
 Update media content for the navigation property root in drives
-
-### [Set-MgDriveSpecialContent](Set-MgDriveSpecialContent.md)
-Update media content for the navigation property special in drives
 
 ### [Set-MgGroupDriveByRef](Set-MgGroupDriveByRef.md)
 The group's default drive.
@@ -680,14 +662,6 @@ Invoke action unpublish
 ### [Update-MgDrive](Update-MgDrive.md)
 Update entity in drives
 
-### [Update-MgDriveBundle](Update-MgDriveBundle.md)
-Collection of [bundles][bundle] (albums and multi-select-shared sets of items).
-Only in personal OneDrive.
-
-### [Update-MgDriveFollowing](Update-MgDriveFollowing.md)
-The list of items the user is following.
-Only in OneDrive for Business.
-
 ### [Update-MgDriveItem](Update-MgDriveItem.md)
 All items contained in the drive.
 Read-only.
@@ -728,11 +702,6 @@ The set of subscriptions on the list.
 ### [Update-MgDriveRoot](Update-MgDriveRoot.md)
 The root folder of the drive.
 Read-only.
-
-### [Update-MgDriveSpecial](Update-MgDriveSpecial.md)
-Collection of common folders available in OneDrive.
-Read-only.
-Nullable.
 
 ### [Update-MgGroupDrive](Update-MgGroupDrive.md)
 The group's drives.

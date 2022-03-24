@@ -1796,7 +1796,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[DeviceId <String>]`: 
         - `[KeyMaterial <Byte[]>]`: 
         - `[KeyType <String>]`: 
-      - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+      - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
         - `[Id <String>]`: Read-only.
         - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
         - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -1929,10 +1929,58 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
             - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+            - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: The id of the content type.
+              - `[Name <String>]`: The name of the content type.
             - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+              - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: Read-only.
+                - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+                - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+                - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+                  - `[Description <String>]`: The description in the localized language.
+                  - `[LanguageTag <String>]`: The language tag for the label.
+                - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+                  - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+                  - `[LanguageTag <String>]`: The language tag for the label.
+                  - `[Name <String>]`: The name of the label.
+                - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+                - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+                  - `[Key <String>]`: Key for the key-value pair.
+                  - `[Value <String>]`: Value for the key-value pair.
+                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                  - `[Id <String>]`: Read-only.
+                  - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                  - `[Relationship <String>]`: 
+                  - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: Read-only.
+                    - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                    - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                    - `[Description <String>]`: Description that gives details on the term usage.
+                    - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                      - `[LanguageTag <String>]`: The language tag for the label.
+                      - `[Name <String>]`: The name in the localized language.
+                    - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                      - `[Id <String>]`: Read-only.
+                      - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                      - `[Description <String>]`: Description that gives details on the term usage.
+                      - `[DisplayName <String>]`: Name of the group.
+                      - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                      - `[Scope <String>]`: 
+                      - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                    - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                    - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+                  - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
               - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+              - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
             - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -1964,8 +2012,6 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
             - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-                - `[Id <String>]`: The id of the content type.
-                - `[Name <String>]`: The name of the content type.
               - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
                 - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
                 - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -2332,45 +2378,6 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[Id <String>]`: Read-only.
           - `[DefaultLanguageTag <String>]`: Default language of the term store.
           - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-            - `[Id <String>]`: Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-            - `[Description <String>]`: Description that gives details on the term usage.
-            - `[DisplayName <String>]`: Name of the group.
-            - `[ParentSiteId <String>]`: ID of the parent site of this group.
-            - `[Scope <String>]`: 
-            - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-              - `[Id <String>]`: Read-only.
-              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-                - `[Id <String>]`: Read-only.
-                - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-                - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-                - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-                  - `[Description <String>]`: The description in the localized language.
-                  - `[LanguageTag <String>]`: The language tag for the label.
-                - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-                  - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-                  - `[LanguageTag <String>]`: The language tag for the label.
-                  - `[Name <String>]`: The name of the label.
-                - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-                - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-                  - `[Key <String>]`: Key for the key-value pair.
-                  - `[Value <String>]`: Value for the key-value pair.
-                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-                  - `[Id <String>]`: Read-only.
-                  - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                  - `[Relationship <String>]`: 
-                  - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                  - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-              - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-              - `[Description <String>]`: Description that gives details on the term usage.
-              - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-                - `[LanguageTag <String>]`: The language tag for the label.
-                - `[Name <String>]`: The name in the localized language.
-              - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-              - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
           - `[LanguageTags <String[]>]`: List of languages for the term store.
           - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
       - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -3241,7 +3248,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-      - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+      - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
         - `[Id <String>]`: Read-only.
         - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3668,7 +3675,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
         - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
         - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-        - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+        - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
         - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
       - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
       - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -3691,9 +3698,9 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
         - `[AllowedPresenters <String>]`: onlineMeetingPresenters
         - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-        - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+        - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
           - `[Id <String>]`: Read-only.
-          - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+          - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
             - `[Id <String>]`: Read-only.
             - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
               - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -3701,6 +3708,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
               - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
             - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
             - `[Identity <IMicrosoftGraphIdentity>]`: identity
+            - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
             - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
             - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
           - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -3753,16 +3761,16 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
           - `[Scope <String>]`: lobbyBypassScope
-        - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+        - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
         - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-          - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+          - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
             - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-            - `[Role <String>]`: onlineMeetingRole
+            - `[Role <String>]`: 
             - `[Upn <String>]`: User principal name of the participant.
-          - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-          - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-          - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+          - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+          - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+          - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
         - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
         - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
         - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -3980,7 +3988,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
         - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
       - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
       - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-      - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+      - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
         - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -4393,7 +4401,7 @@ ACTIVITIES <IMicrosoftGraphItemActivityOld[]>: The list of recent activities tha
             - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
             - `[Sensitivity <Int32?>]`: 
             - `[Tooltip <String>]`: 
-      - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+      - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
         - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -5746,7 +5754,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[DeviceId <String>]`: 
             - `[KeyMaterial <Byte[]>]`: 
             - `[KeyType <String>]`: 
-          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
             - `[Id <String>]`: Read-only.
             - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
             - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -5958,10 +5966,55 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
                 - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
                 - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
                 - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+                - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
                 - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+                  - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: Read-only.
+                    - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+                    - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+                    - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+                      - `[Description <String>]`: The description in the localized language.
+                      - `[LanguageTag <String>]`: The language tag for the label.
+                    - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+                      - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+                      - `[LanguageTag <String>]`: The language tag for the label.
+                      - `[Name <String>]`: The name of the label.
+                    - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+                    - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+                      - `[Key <String>]`: Key for the key-value pair.
+                      - `[Value <String>]`: Value for the key-value pair.
+                    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                      - `[Id <String>]`: Read-only.
+                      - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                      - `[Relationship <String>]`: 
+                      - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                        - `[Id <String>]`: Read-only.
+                        - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                        - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                        - `[Description <String>]`: Description that gives details on the term usage.
+                        - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                          - `[LanguageTag <String>]`: The language tag for the label.
+                          - `[Name <String>]`: The name in the localized language.
+                        - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                          - `[Id <String>]`: Read-only.
+                          - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                          - `[Description <String>]`: Description that gives details on the term usage.
+                          - `[DisplayName <String>]`: Name of the group.
+                          - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                          - `[Scope <String>]`: 
+                          - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                        - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                        - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+                      - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                    - `[Set <IMicrosoftGraphTermStoreSet>]`: set
                   - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+                  - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
                 - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -6298,45 +6351,6 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[Id <String>]`: Read-only.
               - `[DefaultLanguageTag <String>]`: Default language of the term store.
               - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-                - `[Id <String>]`: Read-only.
-                - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-                - `[Description <String>]`: Description that gives details on the term usage.
-                - `[DisplayName <String>]`: Name of the group.
-                - `[ParentSiteId <String>]`: ID of the parent site of this group.
-                - `[Scope <String>]`: 
-                - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-                  - `[Id <String>]`: Read-only.
-                  - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-                    - `[Id <String>]`: Read-only.
-                    - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-                    - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-                    - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-                      - `[Description <String>]`: The description in the localized language.
-                      - `[LanguageTag <String>]`: The language tag for the label.
-                    - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-                      - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-                      - `[LanguageTag <String>]`: The language tag for the label.
-                      - `[Name <String>]`: The name of the label.
-                    - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-                    - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-                      - `[Key <String>]`: Key for the key-value pair.
-                      - `[Value <String>]`: Value for the key-value pair.
-                    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-                      - `[Id <String>]`: Read-only.
-                      - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                      - `[Relationship <String>]`: 
-                      - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                      - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                    - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                  - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-                  - `[Description <String>]`: Description that gives details on the term usage.
-                  - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-                    - `[LanguageTag <String>]`: The language tag for the label.
-                    - `[Name <String>]`: The name in the localized language.
-                  - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-                  - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-                  - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
               - `[LanguageTags <String[]>]`: List of languages for the term store.
               - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
           - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -7207,7 +7221,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
             - `[Id <String>]`: Read-only.
             - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -7634,7 +7648,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
             - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
             - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
             - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
           - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -7657,9 +7671,9 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
             - `[AllowedPresenters <String>]`: onlineMeetingPresenters
             - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-            - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+            - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
               - `[Id <String>]`: Read-only.
-              - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+              - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
                 - `[Id <String>]`: Read-only.
                 - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
                   - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -7667,6 +7681,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
                   - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
                 - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
                 - `[Identity <IMicrosoftGraphIdentity>]`: identity
+                - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
                 - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
                 - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
               - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -7719,16 +7734,16 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
               - `[Scope <String>]`: lobbyBypassScope
-            - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+            - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
             - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
-              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+              - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: onlineMeetingRole
+                - `[Role <String>]`: 
                 - `[Upn <String>]`: User principal name of the participant.
-              - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-              - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+              - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+              - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+              - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
             - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
             - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -7946,7 +7961,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
             - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-          - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+          - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -8359,7 +8374,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics>: itemAnalytics
                 - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
                 - `[Sensitivity <Int32?>]`: 
                 - `[Tooltip <String>]`: 
-          - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+          - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -9722,7 +9737,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
       - `[DeviceId <String>]`: 
       - `[KeyMaterial <Byte[]>]`: 
       - `[KeyType <String>]`: 
-    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
       - `[Id <String>]`: Read-only.
       - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
       - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -9963,10 +9978,55 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
           - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+          - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
           - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+            - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+                - `[Description <String>]`: The description in the localized language.
+                - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+                - `[LanguageTag <String>]`: The language tag for the label.
+                - `[Name <String>]`: The name of the label.
+              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+                - `[Key <String>]`: Key for the key-value pair.
+                - `[Value <String>]`: Value for the key-value pair.
+              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                - `[Id <String>]`: Read-only.
+                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                - `[Relationship <String>]`: 
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: Read-only.
+                  - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                  - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                  - `[Description <String>]`: Description that gives details on the term usage.
+                  - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                    - `[LanguageTag <String>]`: The language tag for the label.
+                    - `[Name <String>]`: The name in the localized language.
+                  - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: Read-only.
+                    - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                    - `[Description <String>]`: Description that gives details on the term usage.
+                    - `[DisplayName <String>]`: Name of the group.
+                    - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                    - `[Scope <String>]`: 
+                    - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                  - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                  - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+            - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
           - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -10303,45 +10363,6 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
         - `[Id <String>]`: Read-only.
         - `[DefaultLanguageTag <String>]`: Default language of the term store.
         - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-          - `[Id <String>]`: Read-only.
-          - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-          - `[Description <String>]`: Description that gives details on the term usage.
-          - `[DisplayName <String>]`: Name of the group.
-          - `[ParentSiteId <String>]`: ID of the parent site of this group.
-          - `[Scope <String>]`: 
-          - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-            - `[Id <String>]`: Read-only.
-            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-              - `[Id <String>]`: Read-only.
-              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-                - `[Description <String>]`: The description in the localized language.
-                - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-                - `[LanguageTag <String>]`: The language tag for the label.
-                - `[Name <String>]`: The name of the label.
-              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-                - `[Key <String>]`: Key for the key-value pair.
-                - `[Value <String>]`: Value for the key-value pair.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-                - `[Id <String>]`: Read-only.
-                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                - `[Relationship <String>]`: 
-                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description that gives details on the term usage.
-            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-              - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Name <String>]`: The name in the localized language.
-            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -11212,7 +11233,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
         - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
       - `[Id <String>]`: Read-only.
       - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11639,7 +11660,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
       - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
       - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
       - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -11662,9 +11683,9 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
           - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
             - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -11672,6 +11693,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
             - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
           - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
           - `[Identity <IMicrosoftGraphIdentity>]`: identity
+          - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
           - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
           - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
         - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -11724,16 +11746,16 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         - `[Scope <String>]`: lobbyBypassScope
-      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
       - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
-        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-        - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+        - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
       - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -11951,7 +11973,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
       - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-    - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+    - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -12364,7 +12386,7 @@ BODYPARAMETER <IMicrosoftGraphDriveItem>: driveItem
           - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
           - `[Sensitivity <Int32?>]`: 
           - `[Tooltip <String>]`: 
-    - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+    - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -13701,7 +13723,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
       - `[DeviceId <String>]`: 
       - `[KeyMaterial <Byte[]>]`: 
       - `[KeyType <String>]`: 
-    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
       - `[Id <String>]`: Read-only.
       - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
       - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -13942,10 +13964,55 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
           - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+          - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
           - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+            - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+                - `[Description <String>]`: The description in the localized language.
+                - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+                - `[LanguageTag <String>]`: The language tag for the label.
+                - `[Name <String>]`: The name of the label.
+              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+                - `[Key <String>]`: Key for the key-value pair.
+                - `[Value <String>]`: Value for the key-value pair.
+              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                - `[Id <String>]`: Read-only.
+                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                - `[Relationship <String>]`: 
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: Read-only.
+                  - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                  - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                  - `[Description <String>]`: Description that gives details on the term usage.
+                  - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                    - `[LanguageTag <String>]`: The language tag for the label.
+                    - `[Name <String>]`: The name in the localized language.
+                  - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: Read-only.
+                    - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                    - `[Description <String>]`: Description that gives details on the term usage.
+                    - `[DisplayName <String>]`: Name of the group.
+                    - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                    - `[Scope <String>]`: 
+                    - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                  - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                  - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+            - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
           - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -14282,45 +14349,6 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
         - `[Id <String>]`: Read-only.
         - `[DefaultLanguageTag <String>]`: Default language of the term store.
         - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-          - `[Id <String>]`: Read-only.
-          - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-          - `[Description <String>]`: Description that gives details on the term usage.
-          - `[DisplayName <String>]`: Name of the group.
-          - `[ParentSiteId <String>]`: ID of the parent site of this group.
-          - `[Scope <String>]`: 
-          - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-            - `[Id <String>]`: Read-only.
-            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-              - `[Id <String>]`: Read-only.
-              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-                - `[Description <String>]`: The description in the localized language.
-                - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-                - `[LanguageTag <String>]`: The language tag for the label.
-                - `[Name <String>]`: The name of the label.
-              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-                - `[Key <String>]`: Key for the key-value pair.
-                - `[Value <String>]`: Value for the key-value pair.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-                - `[Id <String>]`: Read-only.
-                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                - `[Relationship <String>]`: 
-                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description that gives details on the term usage.
-            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-              - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Name <String>]`: The name in the localized language.
-            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -15191,7 +15219,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
         - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
       - `[Id <String>]`: Read-only.
       - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -15618,7 +15646,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
       - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
       - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
       - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -15641,9 +15669,9 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
           - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
             - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -15651,6 +15679,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
             - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
           - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
           - `[Identity <IMicrosoftGraphIdentity>]`: identity
+          - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
           - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
           - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
         - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -15703,16 +15732,16 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         - `[Scope <String>]`: lobbyBypassScope
-      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
       - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
-        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-        - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+        - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
       - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -15930,7 +15959,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
       - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-    - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+    - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -16343,7 +16372,7 @@ CHILDREN <IMicrosoftGraphDriveItem[]>: Collection containing Item objects for th
           - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
           - `[Sensitivity <Int32?>]`: 
           - `[Tooltip <String>]`: 
-    - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+    - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -17680,7 +17709,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[DeviceId <String>]`: 
     - `[KeyMaterial <Byte[]>]`: 
     - `[KeyType <String>]`: 
-  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
     - `[Id <String>]`: Read-only.
     - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
     - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -18381,10 +18410,55 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
         - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+        - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+          - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+            - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+              - `[Description <String>]`: The description in the localized language.
+              - `[LanguageTag <String>]`: The language tag for the label.
+            - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+              - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name of the label.
+            - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+              - `[Key <String>]`: Key for the key-value pair.
+              - `[Value <String>]`: Value for the key-value pair.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+              - `[Id <String>]`: Read-only.
+              - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[Relationship <String>]`: 
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: Read-only.
+                - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                - `[Description <String>]`: Description that gives details on the term usage.
+                - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                  - `[LanguageTag <String>]`: The language tag for the label.
+                  - `[Name <String>]`: The name in the localized language.
+                - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: Read-only.
+                  - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                  - `[Description <String>]`: Description that gives details on the term usage.
+                  - `[DisplayName <String>]`: Name of the group.
+                  - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                  - `[Scope <String>]`: 
+                  - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+              - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+            - `[Set <IMicrosoftGraphTermStoreSet>]`: set
           - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+          - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
         - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -18669,45 +18743,6 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[Id <String>]`: Read-only.
       - `[DefaultLanguageTag <String>]`: Default language of the term store.
       - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-        - `[Id <String>]`: Read-only.
-        - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-        - `[Description <String>]`: Description that gives details on the term usage.
-        - `[DisplayName <String>]`: Name of the group.
-        - `[ParentSiteId <String>]`: ID of the parent site of this group.
-        - `[Scope <String>]`: 
-        - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-          - `[Id <String>]`: Read-only.
-          - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-            - `[Id <String>]`: Read-only.
-            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-            - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-            - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-              - `[Description <String>]`: The description in the localized language.
-              - `[LanguageTag <String>]`: The language tag for the label.
-            - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-              - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-              - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Name <String>]`: The name of the label.
-            - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-              - `[Key <String>]`: Key for the key-value pair.
-              - `[Value <String>]`: Value for the key-value pair.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-              - `[Id <String>]`: Read-only.
-              - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-              - `[Relationship <String>]`: 
-              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-              - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-            - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-          - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description that gives details on the term usage.
-          - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-            - `[LanguageTag <String>]`: The language tag for the label.
-            - `[Name <String>]`: The name in the localized language.
-          - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-          - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-          - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
       - `[LanguageTags <String[]>]`: List of languages for the term store.
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -19574,7 +19609,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
     - `[Id <String>]`: Read-only.
     - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -20001,7 +20036,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
     - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
     - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -20024,9 +20059,9 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
     - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: Read-only.
-      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: Read-only.
         - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
           - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -20034,6 +20069,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
           - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
         - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
         - `[Identity <IMicrosoftGraphIdentity>]`: identity
+        - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
         - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
       - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -20086,16 +20122,16 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
       - `[Scope <String>]`: lobbyBypassScope
-    - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+    - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
     - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
-      - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-      - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+      - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+      - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
     - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -20313,7 +20349,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
     - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
   - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-  - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+  - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -20726,7 +20762,7 @@ CREATEDBYUSER <IMicrosoftGraphUser>: user
         - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
         - `[Sensitivity <Int32?>]`: 
         - `[Tooltip <String>]`: 
-  - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+  - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -21716,7 +21752,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[DeviceId <String>]`: 
     - `[KeyMaterial <Byte[]>]`: 
     - `[KeyType <String>]`: 
-  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
     - `[Id <String>]`: Read-only.
     - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
     - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -22417,10 +22453,55 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
         - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+        - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+          - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+            - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+              - `[Description <String>]`: The description in the localized language.
+              - `[LanguageTag <String>]`: The language tag for the label.
+            - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+              - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name of the label.
+            - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+              - `[Key <String>]`: Key for the key-value pair.
+              - `[Value <String>]`: Value for the key-value pair.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+              - `[Id <String>]`: Read-only.
+              - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[Relationship <String>]`: 
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                - `[Id <String>]`: Read-only.
+                - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                - `[Description <String>]`: Description that gives details on the term usage.
+                - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                  - `[LanguageTag <String>]`: The language tag for the label.
+                  - `[Name <String>]`: The name in the localized language.
+                - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: Read-only.
+                  - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                  - `[Description <String>]`: Description that gives details on the term usage.
+                  - `[DisplayName <String>]`: Name of the group.
+                  - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                  - `[Scope <String>]`: 
+                  - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+              - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+            - `[Set <IMicrosoftGraphTermStoreSet>]`: set
           - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+          - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
         - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -22705,45 +22786,6 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[Id <String>]`: Read-only.
       - `[DefaultLanguageTag <String>]`: Default language of the term store.
       - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-        - `[Id <String>]`: Read-only.
-        - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-        - `[Description <String>]`: Description that gives details on the term usage.
-        - `[DisplayName <String>]`: Name of the group.
-        - `[ParentSiteId <String>]`: ID of the parent site of this group.
-        - `[Scope <String>]`: 
-        - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-          - `[Id <String>]`: Read-only.
-          - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-            - `[Id <String>]`: Read-only.
-            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-            - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-            - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-              - `[Description <String>]`: The description in the localized language.
-              - `[LanguageTag <String>]`: The language tag for the label.
-            - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-              - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-              - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Name <String>]`: The name of the label.
-            - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-              - `[Key <String>]`: Key for the key-value pair.
-              - `[Value <String>]`: Value for the key-value pair.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-              - `[Id <String>]`: Read-only.
-              - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-              - `[Relationship <String>]`: 
-              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-              - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-            - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-          - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description that gives details on the term usage.
-          - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-            - `[LanguageTag <String>]`: The language tag for the label.
-            - `[Name <String>]`: The name in the localized language.
-          - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-          - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-          - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
       - `[LanguageTags <String[]>]`: List of languages for the term store.
       - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
   - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -23610,7 +23652,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
     - `[Id <String>]`: Read-only.
     - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -24037,7 +24079,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
     - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
     - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -24060,9 +24102,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
     - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: Read-only.
-      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+      - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: Read-only.
         - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
           - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -24070,6 +24112,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
           - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
         - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
         - `[Identity <IMicrosoftGraphIdentity>]`: identity
+        - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
         - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
         - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
       - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -24122,16 +24165,16 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
       - `[Scope <String>]`: lobbyBypassScope
-    - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+    - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
     - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+      - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
-      - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-      - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+      - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+      - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+      - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
     - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
     - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -24349,7 +24392,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
     - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
   - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-  - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+  - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -24762,7 +24805,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser>: user
         - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
         - `[Sensitivity <Int32?>]`: 
         - `[Tooltip <String>]`: 
-  - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+  - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
@@ -25692,7 +25735,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[DeviceId <String>]`: 
       - `[KeyMaterial <Byte[]>]`: 
       - `[KeyType <String>]`: 
-    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+    - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
       - `[Id <String>]`: Read-only.
       - `[AdditionalInformation <IMicrosoftGraphKeyValuePair[]>]`: A set of string key and string value pairs which provides additional information on the Troubleshooting event
       - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
@@ -26362,10 +26405,58 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+          - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The id of the content type.
+            - `[Name <String>]`: The name of the content type.
           - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+            - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+                - `[Description <String>]`: The description in the localized language.
+                - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+                - `[LanguageTag <String>]`: The language tag for the label.
+                - `[Name <String>]`: The name of the label.
+              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+                - `[Key <String>]`: Key for the key-value pair.
+                - `[Value <String>]`: Value for the key-value pair.
+              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+                - `[Id <String>]`: Read-only.
+                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+                - `[Relationship <String>]`: 
+                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: Read-only.
+                  - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+                  - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+                  - `[Description <String>]`: Description that gives details on the term usage.
+                  - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+                    - `[LanguageTag <String>]`: The language tag for the label.
+                    - `[Name <String>]`: The name in the localized language.
+                  - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+                    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                    - `[Id <String>]`: Read-only.
+                    - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+                    - `[Description <String>]`: Description that gives details on the term usage.
+                    - `[DisplayName <String>]`: Name of the group.
+                    - `[ParentSiteId <String>]`: ID of the parent site of this group.
+                    - `[Scope <String>]`: 
+                    - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+                  - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+                  - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+                  - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
             - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+            - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
           - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -26397,8 +26488,6 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-              - `[Id <String>]`: The id of the content type.
-              - `[Name <String>]`: The name of the content type.
             - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
               - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -26652,45 +26741,6 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[Id <String>]`: Read-only.
         - `[DefaultLanguageTag <String>]`: Default language of the term store.
         - `[Groups <IMicrosoftGraphTermStoreGroup[]>]`: Collection of all groups available in the term store.
-          - `[Id <String>]`: Read-only.
-          - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
-          - `[Description <String>]`: Description that gives details on the term usage.
-          - `[DisplayName <String>]`: Name of the group.
-          - `[ParentSiteId <String>]`: ID of the parent site of this group.
-          - `[Scope <String>]`: 
-          - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
-            - `[Id <String>]`: Read-only.
-            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
-              - `[Id <String>]`: Read-only.
-              - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
-              - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
-              - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
-                - `[Description <String>]`: The description in the localized language.
-                - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
-                - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
-                - `[LanguageTag <String>]`: The language tag for the label.
-                - `[Name <String>]`: The name of the label.
-              - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
-              - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-                - `[Key <String>]`: Key for the key-value pair.
-                - `[Value <String>]`: Value for the key-value pair.
-              - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
-                - `[Id <String>]`: Read-only.
-                - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
-                - `[Relationship <String>]`: 
-                - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-                - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
-              - `[Set <IMicrosoftGraphTermStoreSet>]`: set
-            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-            - `[Description <String>]`: Description that gives details on the term usage.
-            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
-              - `[LanguageTag <String>]`: The language tag for the label.
-              - `[Name <String>]`: The name in the localized language.
-            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
-            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
-            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
         - `[LanguageTags <String[]>]`: List of languages for the term store.
         - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: Collection of all sets available in the term store.
     - `[GivenName <String>]`: The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -27557,7 +27607,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+    - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
       - `[Id <String>]`: Read-only.
       - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -27984,7 +28034,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[ExpiryTime <DateTime?>]`: Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
       - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
       - `[StartTime <DateTime?>]`: Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -28007,9 +28057,9 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
       - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+        - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
           - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
             - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -28017,6 +28067,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
             - `[LeaveDateTime <DateTime?>]`: The time the attendee left in UTC.
           - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
           - `[Identity <IMicrosoftGraphIdentity>]`: identity
+          - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
           - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
           - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
         - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -28069,16 +28120,16 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         - `[Scope <String>]`: lobbyBypassScope
-      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+      - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
       - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+        - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
-        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-        - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+        - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+        - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+        - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
       - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
       - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -28296,7 +28347,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
       - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
     - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
     - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-    - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+    - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[All <IMicrosoftGraphPlannerDelta[]>]`: 
@@ -28709,7 +28760,7 @@ LISTITEM <IMicrosoftGraphListItem>: listItem
           - `[Parent <IMicrosoftGraphSecuritySensitivityLabel>]`: sensitivityLabel
           - `[Sensitivity <Int32?>]`: 
           - `[Tooltip <String>]`: 
-    - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+    - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[ContactMergeSuggestions <IMicrosoftGraphContactMergeSuggestions>]`: contactMergeSuggestions
