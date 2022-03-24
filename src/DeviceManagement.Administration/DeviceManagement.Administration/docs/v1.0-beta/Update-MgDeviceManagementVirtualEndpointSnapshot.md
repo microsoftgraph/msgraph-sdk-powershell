@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgDeviceManagementVirtualEndpointSnapshot
 
 ## SYNOPSIS
-Update the navigation property snapshots in deviceManagement
+Cloud PC snapshots.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgDeviceManagementVirtualEndpointSnapshot -InputObject <IDeviceManagement
 ```
 
 ## DESCRIPTION
-Update the navigation property snapshots in deviceManagement
+Cloud PC snapshots.
 
 ## EXAMPLES
 
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -CloudPcId
-.
+The unique identifier for the Cloud PC.
 
 ```yaml
 Type: System.String
@@ -107,7 +107,9 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The date and time at which the snapshot was taken.
+The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC).
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -153,7 +155,9 @@ Accept wildcard characters: False
 ```
 
 ### -LastRestoredDateTime
-.
+The date and time at which the snapshot was last used to restore the Cloud PC device.
+The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC).
+For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
@@ -253,9 +257,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphCloudPcSnapshot>: cloudPcSnapshot
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CloudPcId <String>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[LastRestoredDateTime <DateTime?>]`: 
+  - `[CloudPcId <String>]`: The unique identifier for the Cloud PC.
+  - `[CreatedDateTime <DateTime?>]`: The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+  - `[LastRestoredDateTime <DateTime?>]`: The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
   - `[Status <String>]`: cloudPcSnapshotStatus
 
 INPUTOBJECT <IDeviceManagementAdministrationIdentity>: Identity Parameter

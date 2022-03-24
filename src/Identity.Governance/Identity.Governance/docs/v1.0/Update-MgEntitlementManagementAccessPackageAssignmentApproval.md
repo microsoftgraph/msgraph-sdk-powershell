@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgEntitlementManagementAccessPackageAssignmentApproval
 
 ## SYNOPSIS
-Update the navigation property accessPackageAssignmentApprovals in identityGovernance
+Approval stages for assignment requests.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ Update-MgEntitlementManagementAccessPackageAssignmentApproval -InputObject <IIde
 ```
 
 ## DESCRIPTION
-Update the navigation property accessPackageAssignmentApprovals in identityGovernance
+Approval stages for assignment requests.
 
 ## EXAMPLES
 

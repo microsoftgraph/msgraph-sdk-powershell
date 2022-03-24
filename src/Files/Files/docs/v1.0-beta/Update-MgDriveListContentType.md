@@ -588,10 +588,58 @@ BASE <IMicrosoftGraphContentType>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+      - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+        - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+        - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+          - `[Description <String>]`: The description in the localized language.
+          - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+          - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+          - `[LanguageTag <String>]`: The language tag for the label.
+          - `[Name <String>]`: The name of the label.
+        - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+        - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+          - `[Id <String>]`: Read-only.
+          - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+          - `[Relationship <String>]`: 
+          - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name in the localized language.
+            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+              - `[Description <String>]`: Description that gives details on the term usage.
+              - `[DisplayName <String>]`: Name of the group.
+              - `[ParentSiteId <String>]`: ID of the parent site of this group.
+              - `[Scope <String>]`: 
+              - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+          - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+      - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
     - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -614,8 +662,6 @@ BASE <IMicrosoftGraphContentType>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -729,10 +775,58 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+      - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+        - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+        - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+          - `[Description <String>]`: The description in the localized language.
+          - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+          - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+          - `[LanguageTag <String>]`: The language tag for the label.
+          - `[Name <String>]`: The name of the label.
+        - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+        - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+          - `[Id <String>]`: Read-only.
+          - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+          - `[Relationship <String>]`: 
+          - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name in the localized language.
+            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+              - `[Description <String>]`: Description that gives details on the term usage.
+              - `[DisplayName <String>]`: Name of the group.
+              - `[ParentSiteId <String>]`: ID of the parent site of this group.
+              - `[Scope <String>]`: 
+              - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+          - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+      - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
     - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -755,8 +849,6 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -871,10 +963,58 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+      - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+        - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+        - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+          - `[Description <String>]`: The description in the localized language.
+          - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+          - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+          - `[LanguageTag <String>]`: The language tag for the label.
+          - `[Name <String>]`: The name of the label.
+        - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+        - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+          - `[Id <String>]`: Read-only.
+          - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+          - `[Relationship <String>]`: 
+          - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name in the localized language.
+            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+              - `[Description <String>]`: Description that gives details on the term usage.
+              - `[DisplayName <String>]`: Name of the group.
+              - `[ParentSiteId <String>]`: ID of the parent site of this group.
+              - `[Scope <String>]`: 
+              - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+          - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+      - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
     - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -897,8 +1037,6 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
@@ -1008,10 +1146,58 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition[]>: Column order information in
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+    - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+      - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+      - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+        - `[Description <String>]`: The description in the localized language.
+        - `[LanguageTag <String>]`: The language tag for the label.
+      - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+        - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+        - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Name <String>]`: The name of the label.
+      - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+      - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
+      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Id <String>]`: Read-only.
+        - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Relationship <String>]`: 
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: Read-only.
+          - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+          - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+          - `[Description <String>]`: Description that gives details on the term usage.
+          - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+            - `[LanguageTag <String>]`: The language tag for the label.
+            - `[Name <String>]`: The name in the localized language.
+          - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[DisplayName <String>]`: Name of the group.
+            - `[ParentSiteId <String>]`: ID of the parent site of this group.
+            - `[Scope <String>]`: 
+            - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+          - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+        - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+      - `[Set <IMicrosoftGraphTermStoreSet>]`: set
     - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+    - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
   - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -1094,10 +1280,58 @@ COLUMNS <IMicrosoftGraphColumnDefinition[]>: The collection of column definition
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+    - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: Read-only.
+      - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+      - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+      - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+        - `[Description <String>]`: The description in the localized language.
+        - `[LanguageTag <String>]`: The language tag for the label.
+      - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+        - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+        - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Name <String>]`: The name of the label.
+      - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+      - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
+      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Id <String>]`: Read-only.
+        - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Relationship <String>]`: 
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+          - `[(Any) <Object>]`: This indicates any property can be added to this object.
+          - `[Id <String>]`: Read-only.
+          - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+          - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+          - `[Description <String>]`: Description that gives details on the term usage.
+          - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+            - `[LanguageTag <String>]`: The language tag for the label.
+            - `[Name <String>]`: The name in the localized language.
+          - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[DisplayName <String>]`: Name of the group.
+            - `[ParentSiteId <String>]`: ID of the parent site of this group.
+            - `[Scope <String>]`: 
+            - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+          - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+        - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+      - `[Set <IMicrosoftGraphTermStoreSet>]`: set
     - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+    - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
   - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.
@@ -1190,10 +1424,55 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet>: documentSet
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
+      - `[ParentTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[(Any) <Object>]`: This indicates any property can be added to this object.
+        - `[Id <String>]`: Read-only.
+        - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children of current term.
+        - `[CreatedDateTime <DateTime?>]`: Date and time of term creation. Read-only.
+        - `[Descriptions <IMicrosoftGraphTermStoreLocalizedDescription[]>]`: Description about term that is dependent on the languageTag.
+          - `[Description <String>]`: The description in the localized language.
+          - `[LanguageTag <String>]`: The language tag for the label.
+        - `[Labels <IMicrosoftGraphTermStoreLocalizedLabel[]>]`: Label metadata for a term.
+          - `[IsDefault <Boolean?>]`: Indicates whether the label is the default label.
+          - `[LanguageTag <String>]`: The language tag for the label.
+          - `[Name <String>]`: The name of the label.
+        - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
+        - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
+        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+          - `[Id <String>]`: Read-only.
+          - `[FromTerm <IMicrosoftGraphTermStoreTerm>]`: term
+          - `[Relationship <String>]`: 
+          - `[Set <IMicrosoftGraphTermStoreSet>]`: set
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: Read-only.
+            - `[Children <IMicrosoftGraphTermStoreTerm[]>]`: Children terms of set in term [store].
+            - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
+              - `[LanguageTag <String>]`: The language tag for the label.
+              - `[Name <String>]`: The name in the localized language.
+            - `[ParentGroup <IMicrosoftGraphTermStoreGroup>]`: group
+              - `[(Any) <Object>]`: This indicates any property can be added to this object.
+              - `[Id <String>]`: Read-only.
+              - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+              - `[Description <String>]`: Description that gives details on the term usage.
+              - `[DisplayName <String>]`: Name of the group.
+              - `[ParentSiteId <String>]`: ID of the parent site of this group.
+              - `[Scope <String>]`: 
+              - `[Sets <IMicrosoftGraphTermStoreSet[]>]`: All sets under the group in a term [store].
+            - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
+            - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+            - `[Terms <IMicrosoftGraphTermStoreTerm[]>]`: All the terms under the set.
+          - `[ToTerm <IMicrosoftGraphTermStoreTerm>]`: term
+        - `[Set <IMicrosoftGraphTermStoreSet>]`: set
       - `[ShowFullyQualifiedName <Boolean?>]`: Specifies whether to display the entire term path or only the term label.
+      - `[TermSet <IMicrosoftGraphTermStoreSet>]`: set
     - `[Text <IMicrosoftGraphTextColumn>]`: textColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleLines <Boolean?>]`: Whether to allow multiple lines of text.

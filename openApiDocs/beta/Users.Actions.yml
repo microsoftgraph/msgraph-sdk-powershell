@@ -21132,7 +21132,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -25750,6 +25750,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -29514,6 +29516,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.broadcastMeetingAudience:
       title: broadcastMeetingAudience
@@ -29571,6 +29574,10 @@ components:
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrantId:
+              type: string
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -31151,6 +31158,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -31163,6 +31184,10 @@ components:
           type: boolean
           description: Specifies whether to display the entire term path or only the term label.
           nullable: true
+        parentTerm:
+          $ref: '#/components/schemas/microsoft.graph.termStore.term'
+        termSet:
+          $ref: '#/components/schemas/microsoft.graph.termStore.set'
       additionalProperties:
         type: object
     microsoft.graph.textColumn:
@@ -31347,20 +31372,6 @@ components:
         target:
           type: string
           description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
           nullable: true
       additionalProperties:
         type: object
@@ -34212,6 +34223,53 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
           additionalProperties:
             type: object
+    microsoft.graph.termStore.term:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: term
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of term creation. Read-only.
+              format: date-time
+              nullable: true
+            descriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
+              description: Description about term that is dependent on the languageTag.
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
+              description: Label metadata for a term.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last date and time of term modification. Read-only.
+              format: date-time
+              nullable: true
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Collection of properties on the term.
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: Children of current term.
+            relations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
+              description: To indicate which terms are related to the current term as either pinned or reused.
+            set:
+              $ref: '#/components/schemas/microsoft.graph.termStore.set'
+          additionalProperties:
+            type: object
     microsoft.graph.displayNameLocalization:
       title: displayNameLocalization
       type: object
@@ -34319,53 +34377,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.termStore.term:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: term
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of term creation. Read-only.
-              format: date-time
-              nullable: true
-            descriptions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
-              description: Description about term that is dependent on the languageTag.
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
-              description: Label metadata for a term.
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last date and time of term modification. Read-only.
-              format: date-time
-              nullable: true
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Collection of properties on the term.
-            children:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: Children of current term.
-            relations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
-              description: To indicate which terms are related to the current term as either pinned or reused.
-            set:
-              $ref: '#/components/schemas/microsoft.graph.termStore.set'
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
