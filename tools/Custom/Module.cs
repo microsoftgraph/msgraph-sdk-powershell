@@ -62,6 +62,10 @@ namespace Microsoft.Graph.PowerShell
                 case Events.CmdletBeginProcessing:
                     await OnCmdletBeginProcessing(id, cancellationToken, getEventData, signal, invocationInfo);
                     break;
+                case Events.BeforeCall:
+                    if (IsNetFramework())
+                        await OnBeforeCall(id, cancellationToken, getEventData, signal);
+                    break;
                 case Events.ResponseCreated:
                     await OnResponseCreated(id, cancellationToken, getEventData, signal);
                     break;
@@ -97,6 +101,20 @@ namespace Microsoft.Graph.PowerShell
             }
         }
 
+        private async Task OnBeforeCall(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
+        {
+            using (Extensions.NoSynchronizationContext)
+            {
+                var eventData = EventDataConverter.ConvertFrom(getEventData());
+                var request = eventData?.RequestMessage as HttpRequestMessage;
+                if (request != null)
+                {
+                    await signal(Events.Debug, cancellationToken,
+                        () => EventFactory.CreateLogEvent(HttpMessageLogFormatter.GetHttpRequestLogAsync(request)));
+                }
+            }
+        }
+
         private async Task OnResponseCreated(string id, CancellationToken cancellationToken, Func<EventArgs> getEventData, Func<string, CancellationToken, Func<EventArgs>, Task> signal)
         {
             using (Extensions.NoSynchronizationContext)
@@ -111,16 +129,19 @@ namespace Microsoft.Graph.PowerShell
                         await signal(Events.Warning, cancellationToken,
                             () => EventFactory.CreateWarningEvent(warningHeader));
                     }
-                    // Log request after response since all our request header are set via middleware pipeline.
-                    var request = response?.RequestMessage;
-                    if (request != null)
+                    if (!IsNetFramework())
                     {
-                        await signal(Events.Debug, cancellationToken,
-                            () => EventFactory.CreateLogEvent(HttpMessageLogFormatter.GetHttpRequestLog(request)));
+                        // Log request after response since all our request header are set via middleware pipeline.
+                        var request = response?.RequestMessage;
+                        if (request != null)
+                        {
+                            await signal(Events.Debug, cancellationToken,
+                                () => EventFactory.CreateLogEvent(HttpMessageLogFormatter.GetHttpRequestLogAsync(request)));
+                        }
                     }
 
                     await signal(Events.Debug, cancellationToken,
-                        () => EventFactory.CreateLogEvent(HttpMessageLogFormatter.GetHttpResponseLog(response)));
+                        () => EventFactory.CreateLogEvent(HttpMessageLogFormatter.GetHttpResponseLogAsync(response)));
                 }
             }
         }
@@ -148,6 +169,11 @@ namespace Microsoft.Graph.PowerShell
                     await signal(Events.Debug, cancellationToken, () => EventFactory.CreateLogEvent($"[{id}]: - {invocationInfo.MyCommand.Name} end processing."));
                 }
             }
+        }
+
+        private bool IsNetFramework()
+        {
+            return System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription.Contains("Framework");
         }
     }
 }
