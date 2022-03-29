@@ -1,0 +1,38 @@
+{
+  "Get-MgSecurityAlert+[NoContext]+ShouldGetACollectionOfSecurityAlerts+$GET+https://graph.microsoft.com/v1.0/security/alerts+1": {
+    "Request": {
+      "Method": "GET",
+      "RequestUri": "https://graph.microsoft.com/v1.0/security/alerts",
+      "Content": null,
+      "Headers": {
+        "SdkVersion": ["graph-powershell/1.9.4", "Graph-dotnet-1.25.1"],
+        "FeatureFlag": ["00000047"],
+        "Cache-Control": ["no-store, no-cache"],
+        "User-Agent": [
+          "Mozilla/5.0",
+          "(Windows NT 10.0; Microsoft Windows 10.0.22000; en-US)",
+          "PowerShell/Get-MgSecurityAlert_List"
+        ],
+        "Authorization": ["[Filtered]"],
+        "Accept-Encoding": ["gzip"]
+      },
+      "ContentHeaders": {}
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["2f51d1cc-1e67-4adf-88bb-779699673f21"],
+        "client-request-id": ["2f51d1cc-1e67-4adf-88bb-779699673f21"],
+        "Date": ["Tue, 29 Mar 2022 20:49:50 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\n\"value\":[\n{\n\"activityGroupName\":\"activityGroupName-value\",\n\"assignedTo\":\"assignedTo-value\",\n\"azureSubscriptionId\":\"azureSubscriptionId-value\",\n\"azureTenantId\":\"azureTenantId-value\",\n\"category\":\"category-value\",\n\"closedDateTime\":\"datetime-value\"\n}\n]\n}"
+    }
+  }
+}

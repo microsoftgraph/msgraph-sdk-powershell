@@ -1,0 +1,70 @@
+{
+  "New-MgSearchAcronym+[NoContext]+[NoScenario]+$POST+https://graph.microsoft.com/beta/search/acronyms+1": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/beta/search/acronyms",
+      "Content": "{\r\n  \"description\": \"A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers.\",\r\n  \"displayName\": \"DNN\",\r\n  \"webUrl\": \"http://microsoft.com/deep-neural-network\",\r\n  \"standsFor\": \"Deep Neural Network\",\r\n  \"state\": \"draft\"\r\n}",
+      "Headers": {},
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Length": ["288"]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["1c3f51aa-e666-4405-b643-53750fd46110"],
+        "client-request-id": ["1c3f51aa-e666-4405-b643-53750fd46110"],
+        "x-ms-ags-diagnostic": [
+          "{\"ServerInfo\":{\"DataCenter\":\"West Central US\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"CY4PEPF00005443\"}}"
+        ],
+        "WWW-Authenticate": [
+          "Bearer realm=\"\", authorization_uri=\"https://login.microsoftonline.com/common/oauth2/authorize\", client_id=\"00000003-0000-0000-c000-000000000000\""
+        ],
+        "Date": ["Tue, 29 Mar 2022 23:07:09 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\r\"id\":\"733b26d5-af76-4eea-ac69-1a0ce8716897\"\r}"
+    }
+  },
+  "New-MgSearchAcronym+[NoContext]+[NoScenario]+$POST+https://graph.microsoft.com/beta/search/acronyms+2": {
+    "Request": {
+      "Method": "POST",
+      "RequestUri": "https://graph.microsoft.com/beta/search/acronyms",
+      "Content": "{\r\n  \"description\": \"A deep neural network is a neural network with a certain level of complexity, a neural network with more than two layers.\",\r\n  \"displayName\": \"DNN\",\r\n  \"webUrl\": \"http://microsoft.com/deep-neural-network\",\r\n  \"standsFor\": \"Deep Neural Network\",\r\n  \"state\": \"draft\"\r\n}",
+      "Headers": {},
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Length": ["288"]
+      }
+    },
+    "Response": {
+      "StatusCode": 201,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["80cd953c-b369-49f8-a3dc-d81a91a19537"],
+        "client-request-id": ["80cd953c-b369-49f8-a3dc-d81a91a19537"],
+        "x-ms-ags-diagnostic": [
+          "{\"ServerInfo\":{\"DataCenter\":\"West Central US\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"001\",\"RoleInstance\":\"CY4PEPF00005445\"}}"
+        ],
+        "WWW-Authenticate": [
+          "Bearer realm=\"\", authorization_uri=\"https://login.microsoftonline.com/common/oauth2/authorize\", client_id=\"00000003-0000-0000-c000-000000000000\""
+        ],
+        "Date": ["Tue, 29 Mar 2022 23:07:09 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\r\"id\":\"733b26d5-af76-4eea-ac69-1a0ce8716897\"\r}"
+    }
+  }
+}
