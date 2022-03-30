@@ -1399,6 +1399,7 @@ components:
             nullable: true
         trimDuplicates:
           type: boolean
+          description: Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
           nullable: true
       additionalProperties:
         type: object
@@ -1728,6 +1729,7 @@ components:
           nullable: true
         queryTemplate:
           type: string
+          description: Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
           nullable: true
         query_string:
           $ref: '#/components/schemas/microsoft.graph.searchQueryString'
