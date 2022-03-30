@@ -63,7 +63,7 @@ namespace Microsoft.Graph.PowerShell
                     await OnCmdletBeginProcessing(id, cancellationToken, getEventData, signal, invocationInfo);
                     break;
                 case Events.BeforeCall:
-                    if (IsNetFramework())
+                    if (!IsPsCore())
                         await OnBeforeCall(id, cancellationToken, getEventData, signal);
                     break;
                 case Events.ResponseCreated:
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.PowerShell
                         await signal(Events.Warning, cancellationToken,
                             () => EventFactory.CreateWarningEvent(warningHeader));
                     }
-                    if (!IsNetFramework())
+                    if (IsPsCore())
                     {
                         // Log request after response since all our request header are set via middleware pipeline.
                         var request = response?.RequestMessage;
@@ -171,9 +171,10 @@ namespace Microsoft.Graph.PowerShell
             }
         }
 
-        private bool IsNetFramework()
+        private bool IsPsCore()
         {
-            return System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription.Contains("Framework");
+            var psCoreVersion = new Version(6,0,0);
+            return GraphSession.Instance.AuthContext.PSHostVersion >= psCoreVersion;
         }
     }
 }
