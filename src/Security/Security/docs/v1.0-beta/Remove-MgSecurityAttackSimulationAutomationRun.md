@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityAttackSimulationAutomationRun
 
 ## SYNOPSIS
-Delete navigation property runs for security
+A collection of simulation automation runs.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity> 
 ```
 
 ## DESCRIPTION
-Delete navigation property runs for security
+A collection of simulation automation runs.
 
 ## EXAMPLES
 
