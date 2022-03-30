@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchAcronym
 
 ## SYNOPSIS
-Delete navigation property acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchAcronym -InputObject <ISearchIdentity> [-IfMatch <String>] [-Pass
 ```
 
 ## DESCRIPTION
-Delete navigation property acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchBookmark
 
 ## SYNOPSIS
-Delete navigation property bookmarks for search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSearchBookmark -InputObject <ISearchIdentity> [-IfMatch <String>] [-Pas
 ```
 
 ## DESCRIPTION
-Delete navigation property bookmarks for search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ## EXAMPLES
 
