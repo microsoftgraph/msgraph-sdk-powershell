@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Delete navigation property emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Create new navigation property to temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignIns
 ```
 
 ## DESCRIPTION
-Create new navigation property to temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 

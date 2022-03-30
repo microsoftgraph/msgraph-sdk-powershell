@@ -115,10 +115,9 @@ Accept wildcard characters: False
 ```
 
 ### -EffectiveRules
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 To construct, please use Get-Help -Online and see NOTES section for EFFECTIVERULES properties and create a hash table.
 
 ```yaml
@@ -227,7 +226,7 @@ Accept wildcard characters: False
 ```
 
 ### -Rules
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 To construct, please use Get-Help -Online and see NOTES section for RULES properties and create a hash table.
 
 ```yaml
@@ -244,8 +243,8 @@ Accept wildcard characters: False
 
 ### -ScopeId
 The id of the scope where the policy is created.
-E.g.
-'/', groupId, etc.
+Can be / for the tenant or a group ID.
+Required.
 
 ```yaml
 Type: System.String
@@ -261,7 +260,8 @@ Accept wildcard characters: False
 
 ### -ScopeType
 The type of the scope where the policy is created.
-One of Directory, DirectoryRole, Group.
+One of Directory, DirectoryRole.
+Required.
 
 ```yaml
 Type: System.String
@@ -348,7 +348,7 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicy>: unifiedRoleManagemen
   - `[Id <String>]`: Read-only.
   - `[Description <String>]`: Description for the policy.
   - `[DisplayName <String>]`: Display name for the policy.
-  - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+  - `[EffectiveRules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
     - `[Id <String>]`: Read-only.
     - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -366,11 +366,11 @@ BODYPARAMETER <IMicrosoftGraphUnifiedRoleManagementPolicy>: unifiedRoleManagemen
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
   - `[LastModifiedDateTime <DateTime?>]`: The time when the role setting was last modified.
-  - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rule, expiration rule, etc.
-  - `[ScopeId <String>]`: The id of the scope where the policy is created. E.g. '/', groupId, etc.
-  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole, Group.
+  - `[Rules <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>]`: The collection of rules like approval rules and expiration rules.
+  - `[ScopeId <String>]`: The id of the scope where the policy is created. Can be / for the tenant or a group ID. Required.
+  - `[ScopeType <String>]`: The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
 
-EFFECTIVERULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: The list of effective rules like approval rule, expiration rule, etc. evaluated based on inherited referenced rules. E.g. If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+EFFECTIVERULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: Not implemented. The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules. For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
   - `[Id <String>]`: Read-only.
   - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -441,7 +441,7 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentity>: identity
   - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
   - `[Id <String>]`: Unique identifier for the identity.
 
-RULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: The collection of rules like approval rule, expiration rule, etc.
+RULES <IMicrosoftGraphUnifiedRoleManagementPolicyRule[]>: The collection of rules like approval rules and expiration rules.
   - `[Id <String>]`: Read-only.
   - `[Target <IMicrosoftGraphUnifiedRoleManagementPolicyRuleTarget>]`: unifiedRoleManagementPolicyRuleTarget
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

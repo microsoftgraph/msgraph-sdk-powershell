@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Update the navigation property emailMethods in users
+Represents the email addresses registered to a user for authentication.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property emailMethods in users
+Represents the email addresses registered to a user for authentication.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationMethod
 
 ## SYNOPSIS
-Update the navigation property methods in users
+Represents all authentication methods registered to a user.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Update-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-Addi
 ```
 
 ## DESCRIPTION
-Update the navigation property methods in users
+Represents all authentication methods registered to a user.
 
 ## EXAMPLES
 
