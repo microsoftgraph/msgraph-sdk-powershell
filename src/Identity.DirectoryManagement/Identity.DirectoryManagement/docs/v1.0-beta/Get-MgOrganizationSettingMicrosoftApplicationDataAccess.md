@@ -1,79 +1,48 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryoutboundshareduserprofiletenant
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/get-mgorganizationsettingmicrosoftapplicationdataaccess
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryOutboundSharedUserProfileTenant
+# Get-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Update the navigation property tenants in directory
+Get microsoftApplicationDataAccess from organization
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Get (Default)
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Get-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String> [-ExpandProperty <String[]>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### GetViaIdentity
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Get-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
+ [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property tenants in directory
+Get microsoftApplicationDataAccess from organization
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -ExpandProperty
+Expand related entities
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
+Type: System.String[]
+Parameter Sets: (All)
+Aliases: Expand
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -BodyParameter
-tenantReference
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -83,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -93,12 +62,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutboundSharedUserProfileUserId
-key: userId of outboundSharedUserProfile
+### -OrganizationId
+key: id of organization
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -108,74 +77,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PassThru
-Returns true when the command succeeds
+### -Property
+Select properties to be returned
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: System.String[]
 Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantReferenceTenantId
-key: tenantId of tenantReference
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Confirm
-Prompts you for confirmation before running the cmdlet.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: cf
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -WhatIf
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases: wi
+Aliases: Select
 
 Required: False
 Position: Named
@@ -191,11 +99,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
-
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 
 ## NOTES
 
@@ -205,10 +111,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphTenantReference>: tenantReference
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TenantId <String>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit

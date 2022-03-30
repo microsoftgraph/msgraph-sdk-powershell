@@ -1,57 +1,42 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryoutboundshareduserprofiletenant
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/remove-mgorganizationsettingmicrosoftapplicationdataaccess
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryOutboundSharedUserProfileTenant
+# Remove-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Update the navigation property tenants in directory
+Delete navigation property microsoftApplicationDataAccess for organization
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### Delete (Default)
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Remove-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String> [-IfMatch <String>]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### DeleteViaIdentity
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentityExpanded
-```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
+ [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property tenants in directory
+Delete navigation property microsoftApplicationDataAccess for organization
 
 ## EXAMPLES
 
 ## PARAMETERS
 
-### -AdditionalProperties
-Additional Parameters
+### -IfMatch
+ETag
 
 ```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Type: System.String
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -61,29 +46,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -BodyParameter
-tenantReference
-To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -InputObject
 Identity Parameter
 To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -93,12 +62,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutboundSharedUserProfileUserId
-key: userId of outboundSharedUserProfile
+### -OrganizationId
+key: id of organization
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -117,36 +86,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantReferenceTenantId
-key: tenantId of tenantReference
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -191,8 +130,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
-
 ## OUTPUTS
 
 ### System.Boolean
@@ -205,10 +142,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODYPARAMETER <IMicrosoftGraphTenantReference>: tenantReference
-  - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TenantId <String>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit

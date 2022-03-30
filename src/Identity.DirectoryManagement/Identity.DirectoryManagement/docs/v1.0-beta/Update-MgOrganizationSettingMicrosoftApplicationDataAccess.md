@@ -1,46 +1,47 @@
 ---
 external help file:
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgdirectoryoutboundshareduserprofiletenant
+online version: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement/update-mgorganizationsettingmicrosoftapplicationdataaccess
 schema: 2.0.0
 ---
 
-# Update-MgDirectoryOutboundSharedUserProfileTenant
+# Update-MgOrganizationSettingMicrosoftApplicationDataAccess
 
 ## SYNOPSIS
-Update the navigation property tenants in directory
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String>
+ [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>] [-Id <String>]
+ [-IsEnabledForAllMicrosoftApplications] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+Update-MgOrganizationSettingMicrosoftApplicationDataAccess -OrganizationId <String>
+ -BodyParameter <IMicrosoftGraphMicrosoftApplicationDataAccessSettings> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentity
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- -BodyParameter <IMicrosoftGraphTenantReference> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
+ -BodyParameter <IMicrosoftGraphMicrosoftApplicationDataAccessSettings> [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
-Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-MgOrganizationSettingMicrosoftApplicationDataAccess -InputObject <IIdentityDirectoryManagementIdentity>
+ [-AdditionalProperties <Hashtable>] [-DisabledForGroup <String>] [-Id <String>]
+ [-IsEnabledForAllMicrosoftApplications] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Update the navigation property tenants in directory
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ## EXAMPLES
 
@@ -62,11 +63,11 @@ Accept wildcard characters: False
 ```
 
 ### -BodyParameter
-tenantReference
+microsoftApplicationDataAccessSettings
 To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 Parameter Sets: Update, UpdateViaIdentity
 Aliases:
 
@@ -74,6 +75,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -DisabledForGroup
+.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Id
+Read-only.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -93,8 +124,23 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -OutboundSharedUserProfileUserId
-key: userId of outboundSharedUserProfile
+### -IsEnabledForAllMicrosoftApplications
+.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OrganizationId
+key: id of organization
 
 ```yaml
 Type: System.String
@@ -117,36 +163,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TenantReferenceTenantId
-key: tenantId of tenantReference
-
-```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -191,7 +207,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Graph.PowerShell.Models.IIdentityDirectoryManagementIdentity
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphTenantReference
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 
 ## OUTPUTS
 
@@ -206,9 +222,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODYPARAMETER <IMicrosoftGraphTenantReference>: tenantReference
+BODYPARAMETER <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>: microsoftApplicationDataAccessSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[TenantId <String>]`: 
+  - `[Id <String>]`: Read-only.
+  - `[DisabledForGroup <String>]`: 
+  - `[IsEnabledForAllMicrosoftApplications <Boolean?>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter
   - `[AdministrativeUnitId <String>]`: key: id of administrativeUnit
