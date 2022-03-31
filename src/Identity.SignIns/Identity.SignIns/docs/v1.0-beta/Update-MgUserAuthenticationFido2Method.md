@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationFido2Method
 
 ## SYNOPSIS
-Update the navigation property fido2Methods in users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Update the navigation property fido2Methods in users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ## EXAMPLES
 

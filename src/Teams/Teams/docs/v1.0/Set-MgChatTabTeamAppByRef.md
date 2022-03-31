@@ -13,25 +13,25 @@ This cannot be changed after tab creation.
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgChatTabTeamAppByRef -ChatId <String> -TeamsTabId <String> [-AdditionalProperties <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Set
+### Set1
 ```
 Set-MgChatTabTeamAppByRef -ChatId <String> -TeamsTabId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgChatTabTeamAppByRef -InputObject <ITeamsIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### SetViaIdentityExpanded1
 ```
 Set-MgChatTabTeamAppByRef -InputObject <ITeamsIdentity> [-AdditionalProperties <Hashtable>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -65,7 +65,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -80,7 +80,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -126,7 +126,7 @@ key: id of teamsTab
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True

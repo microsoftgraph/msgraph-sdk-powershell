@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Get-MgSecurityAttackSimulation [-ExpandProperty <String[]>] [-Filter <String>] [
 ```
 
 ## DESCRIPTION
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ## EXAMPLES
 

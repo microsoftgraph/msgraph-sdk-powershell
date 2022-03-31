@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchQna
 
 ## SYNOPSIS
-Get qnas from search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ## SYNTAX
 
@@ -31,7 +31,7 @@ Get-MgSearchQna -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] [-Pr
 ```
 
 ## DESCRIPTION
-Get qnas from search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ## EXAMPLES
 

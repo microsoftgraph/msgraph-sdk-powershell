@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulation
 
 ## SYNOPSIS
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSecurityAttackSimulation -BodyParameter <IMicrosoftGraphSimulation> [-Conf
 ```
 
 ## DESCRIPTION
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ## EXAMPLES
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutomationId
-.
+Unique identifier for the attack simulation automation.
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ BODYPARAMETER <IMicrosoftGraphSimulation>: simulation
   - `[Id <String>]`: Read-only.
   - `[AttackTechnique <String>]`: simulationAttackTechnique
   - `[AttackType <String>]`: simulationAttackType
-  - `[AutomationId <String>]`: 
+  - `[AutomationId <String>]`: Unique identifier for the attack simulation automation.
   - `[CompletionDateTime <DateTime?>]`: Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.
   - `[CreatedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.

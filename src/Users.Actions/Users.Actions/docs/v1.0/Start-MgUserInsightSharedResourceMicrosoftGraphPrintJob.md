@@ -117,7 +117,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJobStatus
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJobStatus1
 
 ## NOTES
 

@@ -8,17 +8,16 @@ schema: 2.0.0
 # Get-MgChatMessage
 
 ## SYNOPSIS
-A collection of all the messages in the chat.
-Nullable.
+Invoke function getAllMessages
 
 ## SYNTAX
 
-### Get3 (Default)
+### Get (Default)
 ```
 Get-MgChatMessage [<CommonParameters>]
 ```
 
-### Get2
+### Get3
 ```
 Get-MgChatMessage -ChatId <String> -ChatMessageId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -38,8 +37,7 @@ Get-MgChatMessage -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String
 ```
 
 ## DESCRIPTION
-A collection of all the messages in the chat.
-Nullable.
+Invoke function getAllMessages
 
 ## EXAMPLES
 
@@ -65,7 +63,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: True
@@ -80,7 +78,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -111,7 +109,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity1, List1
+Parameter Sets: Get3, GetViaIdentity1, List1
 Aliases: Expand
 
 Required: False
@@ -172,7 +170,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity1, List1
+Parameter Sets: Get3, GetViaIdentity1, List1
 Aliases: Select
 
 Required: False

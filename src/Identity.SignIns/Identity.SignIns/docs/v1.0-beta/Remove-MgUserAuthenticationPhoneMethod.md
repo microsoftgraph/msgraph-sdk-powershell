@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Delete navigation property phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ## EXAMPLES
 

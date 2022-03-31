@@ -1167,7 +1167,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[IsOnlineMeeting <Boolean?>]`: 
           - `[IsOrganizer <Boolean?>]`: 
           - `[IsReminderOn <Boolean?>]`: 
-          - `[Location <IMicrosoftGraphLocation1>]`: location
+          - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -1189,11 +1189,11 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[LocationUri <String>]`: Optional URI representing the location.
             - `[UniqueId <String>]`: For internal use only.
             - `[UniqueIdType <String>]`: locationUniqueIdType
-          - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+          - `[Locations <IMicrosoftGraphLocation[]>]`: 
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             - `[Id <String>]`: Read-only.
             - `[Value <String[]>]`: A collection of property values.
-          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The ID of the conference.
             - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -1368,10 +1368,10 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
           - `[AssignedLicenses <IMicrosoftGraphAssignedLicense[]>]`: The licenses that are assigned to the user, including inherited (group-based) licenses.  Not nullable. Returned only on $select. Supports $filter (eq and not).
           - `[AssignedPlans <IMicrosoftGraphAssignedPlan[]>]`: The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-          - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+          - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
-            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
               - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -1379,9 +1379,9 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
               - `[DisplayName <String>]`: The display name of the key as given by the user.
               - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
               - `[Id <String>]`: Read-only.
-            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -1418,7 +1418,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[DeviceTag <String>]`: Tags containing app metadata.
               - `[DisplayName <String>]`: The name of the device on which this app is registered.
               - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -1435,7 +1435,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[Name <String>]`: The group name.
           - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
           - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-          - `[Chats <IMicrosoftGraphChat1[]>]`: 
+          - `[Chats <IMicrosoftGraphChat[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -1625,7 +1625,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
           - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
           - `[DeviceEnrollmentLimit <Int32?>]`: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
             - `[Id <String>]`: Read-only.
             - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
             - `[EventDateTime <DateTime?>]`: Time when the event occurred .
@@ -2250,6 +2250,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
               - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
               - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+              - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -2335,7 +2336,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
                   - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
                 - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
                 - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-                - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+                - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
                 - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
               - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -2959,7 +2960,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
             - `[Id <String>]`: Read-only.
             - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3144,7 +3145,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
             - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
             - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
           - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
           - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -3177,7 +3178,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
             - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -3235,7 +3236,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: onlineMeetingRole
+                - `[Role <String>]`: 
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -3276,7 +3277,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
               - `[Class <String>]`: The type of data source, such as Person.
               - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
             - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-            - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+            - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
             - `[Profession <String>]`: The person's profession.
             - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
               - `[Address <String>]`: The email address.
@@ -3292,7 +3293,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-          - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+          - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -3371,7 +3372,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
           - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
-          - `[Presence <IMicrosoftGraphPresence1>]`: presence
+          - `[Presence <IMicrosoftGraphPresence>]`: presence
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -3389,7 +3390,7 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
             - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
             - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
             - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
-          - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+          - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -3412,14 +3413,14 @@ BODYPARAMETER <IMicrosoftGraphEducationUser1>: educationUser
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+          - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
               - `[Id <String>]`: Read-only.
-              - `[Chat <IMicrosoftGraphChat1>]`: chat
+              - `[Chat <IMicrosoftGraphChat>]`: chat
           - `[Todo <IMicrosoftGraphTodo>]`: todo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
@@ -3855,7 +3856,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[IsOnlineMeeting <Boolean?>]`: 
         - `[IsOrganizer <Boolean?>]`: 
         - `[IsReminderOn <Boolean?>]`: 
-        - `[Location <IMicrosoftGraphLocation1>]`: location
+        - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -3877,11 +3878,11 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[LocationUri <String>]`: Optional URI representing the location.
           - `[UniqueId <String>]`: For internal use only.
           - `[UniqueIdType <String>]`: locationUniqueIdType
-        - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+        - `[Locations <IMicrosoftGraphLocation[]>]`: 
         - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[Value <String[]>]`: A collection of property values.
-        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ConferenceId <String>]`: The ID of the conference.
           - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -4060,10 +4061,10 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
           - `[Service <String>]`: The name of the service; for example, exchange.
           - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-        - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+        - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
             - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -4071,9 +4072,9 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
             - `[DisplayName <String>]`: The display name of the key as given by the user.
             - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-          - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+          - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
             - `[Id <String>]`: Read-only.
-          - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+          - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
             - `[Device <IMicrosoftGraphDevice>]`: device
@@ -4110,7 +4111,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[DeviceTag <String>]`: Tags containing app metadata.
             - `[DisplayName <String>]`: The name of the device on which this app is registered.
             - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-          - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+          - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
             - `[Device <IMicrosoftGraphDevice>]`: device
@@ -4127,7 +4128,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[Name <String>]`: The group name.
         - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
         - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-        - `[Chats <IMicrosoftGraphChat1[]>]`: 
+        - `[Chats <IMicrosoftGraphChat[]>]`: 
           - `[Id <String>]`: Read-only.
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -4317,7 +4318,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
         - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
         - `[DeviceEnrollmentLimit <Int32?>]`: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-        - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+        - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: Read-only.
           - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
           - `[EventDateTime <DateTime?>]`: Time when the event occurred .
@@ -4942,6 +4943,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+            - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -5027,7 +5029,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
                 - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
               - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
               - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-              - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+              - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
               - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
             - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -5651,7 +5653,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-        - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+        - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
           - `[Id <String>]`: Read-only.
           - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -5836,7 +5838,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
           - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
           - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-          - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+          - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
         - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
         - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -5869,7 +5871,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
           - `[Id <String>]`: Read-only.
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -5927,7 +5929,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
               - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[Role <String>]`: onlineMeetingRole
+              - `[Role <String>]`: 
               - `[Upn <String>]`: User principal name of the participant.
             - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
           - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -5968,7 +5970,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
             - `[Class <String>]`: The type of data source, such as Person.
             - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
           - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-          - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+          - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
           - `[Profession <String>]`: The person's profession.
           - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
             - `[Address <String>]`: The email address.
@@ -5984,7 +5986,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-        - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+        - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -6063,7 +6065,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
         - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
-        - `[Presence <IMicrosoftGraphPresence1>]`: presence
+        - `[Presence <IMicrosoftGraphPresence>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -6081,7 +6083,7 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
           - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
           - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
           - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
-        - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+        - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -6104,14 +6106,14 @@ CLASSES <IMicrosoftGraphEducationClass1[]>: Classes to which the user belongs. N
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+        - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: Read-only.
-            - `[Chat <IMicrosoftGraphChat1>]`: chat
+            - `[Chat <IMicrosoftGraphChat>]`: chat
         - `[Todo <IMicrosoftGraphTodo>]`: todo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
@@ -6675,7 +6677,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[IsOnlineMeeting <Boolean?>]`: 
           - `[IsOrganizer <Boolean?>]`: 
           - `[IsReminderOn <Boolean?>]`: 
-          - `[Location <IMicrosoftGraphLocation1>]`: location
+          - `[Location <IMicrosoftGraphLocation>]`: location
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[Coordinates <IMicrosoftGraphOutlookGeoCoordinates>]`: outlookGeoCoordinates
@@ -6691,11 +6693,11 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[LocationUri <String>]`: Optional URI representing the location.
             - `[UniqueId <String>]`: For internal use only.
             - `[UniqueIdType <String>]`: locationUniqueIdType
-          - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+          - `[Locations <IMicrosoftGraphLocation[]>]`: 
           - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
             - `[Id <String>]`: Read-only.
             - `[Value <String[]>]`: A collection of property values.
-          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+          - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[ConferenceId <String>]`: The ID of the conference.
             - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -6874,10 +6876,10 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
             - `[Service <String>]`: The name of the service; for example, exchange.
             - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-          - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+          - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
-            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
               - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -6885,9 +6887,9 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
               - `[DisplayName <String>]`: The display name of the key as given by the user.
               - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
               - `[Id <String>]`: Read-only.
-            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -6924,7 +6926,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[DeviceTag <String>]`: Tags containing app metadata.
               - `[DisplayName <String>]`: The name of the device on which this app is registered.
               - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -6941,7 +6943,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[Name <String>]`: The group name.
           - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
           - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-          - `[Chats <IMicrosoftGraphChat1[]>]`: 
+          - `[Chats <IMicrosoftGraphChat[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[ChatType <String>]`: chatType
             - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -7131,7 +7133,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
           - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
           - `[DeviceEnrollmentLimit <Int32?>]`: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+          - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
             - `[Id <String>]`: Read-only.
             - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
             - `[EventDateTime <DateTime?>]`: Time when the event occurred .
@@ -7756,6 +7758,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
               - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
               - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+              - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -7841,7 +7844,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
                   - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
                 - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
                 - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-                - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+                - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
                 - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
                 - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
               - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -8465,7 +8468,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
                 - `[(Any) <Object>]`: This indicates any property can be added to this object.
                 - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+          - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
             - `[Id <String>]`: Read-only.
             - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -8650,7 +8653,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
             - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
             - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
           - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
           - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -8683,7 +8686,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
           - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
           - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+          - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
             - `[Id <String>]`: Read-only.
             - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
             - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -8741,7 +8744,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: onlineMeetingRole
+                - `[Role <String>]`: 
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -8782,7 +8785,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
               - `[Class <String>]`: The type of data source, such as Person.
               - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
             - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-            - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+            - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
             - `[Profession <String>]`: The person's profession.
             - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
               - `[Address <String>]`: The email address.
@@ -8798,7 +8801,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
             - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
           - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
           - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-          - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+          - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -8877,7 +8880,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
           - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
-          - `[Presence <IMicrosoftGraphPresence1>]`: presence
+          - `[Presence <IMicrosoftGraphPresence>]`: presence
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -8891,7 +8894,7 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[Responsibilities <String[]>]`: A list for the user to enumerate their responsibilities. Returned only on $select.
           - `[Schools <String[]>]`: A list for the user to enumerate the schools they have attended. Returned only on $select.
           - `[ScopedRoleMemberOf <IMicrosoftGraphScopedRoleMembership[]>]`: The scoped-role administrative unit memberships for this user. Read-only. Nullable.
-          - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+          - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -8914,14 +8917,14 @@ SCHOOLS <IMicrosoftGraphEducationSchool1[]>: Schools to which the user belongs. 
           - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-          - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+          - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
               - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
               - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
               - `[Id <String>]`: Read-only.
-              - `[Chat <IMicrosoftGraphChat1>]`: chat
+              - `[Chat <IMicrosoftGraphChat>]`: chat
           - `[Todo <IMicrosoftGraphTodo>]`: todo
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
@@ -9356,7 +9359,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[IsOnlineMeeting <Boolean?>]`: 
         - `[IsOrganizer <Boolean?>]`: 
         - `[IsReminderOn <Boolean?>]`: 
-        - `[Location <IMicrosoftGraphLocation1>]`: location
+        - `[Location <IMicrosoftGraphLocation>]`: location
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -9378,11 +9381,11 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[LocationUri <String>]`: Optional URI representing the location.
           - `[UniqueId <String>]`: For internal use only.
           - `[UniqueIdType <String>]`: locationUniqueIdType
-        - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+        - `[Locations <IMicrosoftGraphLocation[]>]`: 
         - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
           - `[Id <String>]`: Read-only.
           - `[Value <String[]>]`: A collection of property values.
-        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+        - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ConferenceId <String>]`: The ID of the conference.
           - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -9561,10 +9564,10 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
           - `[Service <String>]`: The name of the service; for example, exchange.
           - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-        - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+        - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+          - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
             - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -9572,9 +9575,9 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
             - `[DisplayName <String>]`: The display name of the key as given by the user.
             - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-          - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+          - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
             - `[Id <String>]`: Read-only.
-          - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+          - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
             - `[Device <IMicrosoftGraphDevice>]`: device
@@ -9611,7 +9614,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[DeviceTag <String>]`: Tags containing app metadata.
             - `[DisplayName <String>]`: The name of the device on which this app is registered.
             - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-          - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+          - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
             - `[Id <String>]`: Read-only.
             - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
             - `[Device <IMicrosoftGraphDevice>]`: device
@@ -9628,7 +9631,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[Name <String>]`: The group name.
         - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
         - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-        - `[Chats <IMicrosoftGraphChat1[]>]`: 
+        - `[Chats <IMicrosoftGraphChat[]>]`: 
           - `[Id <String>]`: Read-only.
           - `[ChatType <String>]`: chatType
           - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -9818,7 +9821,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
         - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
         - `[DeviceEnrollmentLimit <Int32?>]`: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-        - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+        - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
           - `[Id <String>]`: Read-only.
           - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
           - `[EventDateTime <DateTime?>]`: Time when the event occurred .
@@ -10443,6 +10446,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
             - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
             - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+            - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
             - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -10528,7 +10532,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
                 - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
               - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
               - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-              - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+              - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
               - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
             - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -11152,7 +11156,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-        - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+        - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
           - `[Id <String>]`: Read-only.
           - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -11337,7 +11341,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
           - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
           - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-          - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+          - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
         - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
         - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -11370,7 +11374,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
         - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+        - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
           - `[Id <String>]`: Read-only.
           - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
           - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -11428,7 +11432,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
               - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-              - `[Role <String>]`: onlineMeetingRole
+              - `[Role <String>]`: 
               - `[Upn <String>]`: User principal name of the participant.
             - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
           - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -11469,7 +11473,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
             - `[Class <String>]`: The type of data source, such as Person.
             - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
           - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-          - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+          - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
           - `[Profession <String>]`: The person's profession.
           - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
             - `[Address <String>]`: The email address.
@@ -11485,7 +11489,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
         - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
         - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-        - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+        - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -11564,7 +11568,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
         - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
-        - `[Presence <IMicrosoftGraphPresence1>]`: presence
+        - `[Presence <IMicrosoftGraphPresence>]`: presence
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -11582,7 +11586,7 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
           - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
           - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
           - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
-        - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+        - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -11605,14 +11609,14 @@ TAUGHTCLASSES <IMicrosoftGraphEducationClass1[]>: Classes for which the user is 
         - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+        - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
             - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
             - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
             - `[Id <String>]`: Read-only.
-            - `[Chat <IMicrosoftGraphChat1>]`: chat
+            - `[Chat <IMicrosoftGraphChat>]`: chat
         - `[Todo <IMicrosoftGraphTodo>]`: todo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
@@ -11928,10 +11932,10 @@ USER <IMicrosoftGraphUser1>: user
     - `[CapabilityStatus <String>]`: Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
     - `[Service <String>]`: The name of the service; for example, exchange.
     - `[ServicePlanId <String>]`: A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-  - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
+  - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
       - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -11939,9 +11943,9 @@ USER <IMicrosoftGraphUser1>: user
       - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
       - `[DisplayName <String>]`: The display name of the key as given by the user.
       - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
       - `[Id <String>]`: Read-only.
-    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -11981,7 +11985,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[DeviceTag <String>]`: Tags containing app metadata.
       - `[DisplayName <String>]`: The name of the device on which this app is registered.
       - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -12050,7 +12054,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[IsOnlineMeeting <Boolean?>]`: 
       - `[IsOrganizer <Boolean?>]`: 
       - `[IsReminderOn <Boolean?>]`: 
-      - `[Location <IMicrosoftGraphLocation1>]`: location
+      - `[Location <IMicrosoftGraphLocation>]`: location
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Address <IMicrosoftGraphPhysicalAddress1>]`: physicalAddress
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -12072,11 +12076,11 @@ USER <IMicrosoftGraphUser1>: user
         - `[LocationUri <String>]`: Optional URI representing the location.
         - `[UniqueId <String>]`: For internal use only.
         - `[UniqueIdType <String>]`: locationUniqueIdType
-      - `[Locations <IMicrosoftGraphLocation1[]>]`: 
+      - `[Locations <IMicrosoftGraphLocation[]>]`: 
       - `[MultiValueExtendedProperties <IMicrosoftGraphMultiValueLegacyExtendedProperty[]>]`: The collection of multi-value extended properties defined for the event. Read-only. Nullable.
         - `[Id <String>]`: Read-only.
         - `[Value <String[]>]`: A collection of property values.
-      - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo1>]`: onlineMeetingInfo
+      - `[OnlineMeeting <IMicrosoftGraphOnlineMeetingInfo>]`: onlineMeetingInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ConferenceId <String>]`: The ID of the conference.
         - `[JoinUrl <String>]`: The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
@@ -12151,7 +12155,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[Name <String>]`: The group name.
   - `[CalendarView <IMicrosoftGraphEvent1[]>]`: The calendar view for the calendar. Read-only. Nullable.
   - `[Calendars <IMicrosoftGraphCalendar1[]>]`: The user's calendars. Read-only. Nullable.
-  - `[Chats <IMicrosoftGraphChat1[]>]`: 
+  - `[Chats <IMicrosoftGraphChat[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[ChatType <String>]`: chatType
     - `[CreatedDateTime <DateTime?>]`: Date and time at which the chat was created. Read-only.
@@ -12348,7 +12352,7 @@ USER <IMicrosoftGraphUser1>: user
   - `[CreationType <String>]`: Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
   - `[Department <String>]`: The name for the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
   - `[DeviceEnrollmentLimit <Int32?>]`: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent1[]>]`: The list of troubleshooting events for this user.
+  - `[DeviceManagementTroubleshootingEvents <IMicrosoftGraphDeviceManagementTroubleshootingEvent[]>]`: The list of troubleshooting events for this user.
     - `[Id <String>]`: Read-only.
     - `[CorrelationId <String>]`: Id used for tracing the failure in the service.
     - `[EventDateTime <DateTime?>]`: Time when the event occurred .
@@ -12976,6 +12980,7 @@ USER <IMicrosoftGraphUser1>: user
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
         - `[SourceColumn <IMicrosoftGraphColumnDefinition>]`: columnDefinition
+        - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -13061,7 +13066,7 @@ USER <IMicrosoftGraphUser1>: user
             - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
           - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
           - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-          - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+          - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
           - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
           - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
         - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -13917,7 +13922,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[TimeZone <IMicrosoftGraphTimeZoneBase>]`: timeZoneBase
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Name <String>]`: The name of a time zone. It can be a standard time zone name such as 'Hawaii-Aleutian Standard Time', or 'Customized Time Zone' for a custom time zone.
-  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration1[]>]`: Zero or more managed app registrations that belong to the user.
+  - `[ManagedAppRegistrations <IMicrosoftGraphManagedAppRegistration[]>]`: Zero or more managed app registrations that belong to the user.
     - `[Id <String>]`: Read-only.
     - `[AppIdentifier <IMicrosoftGraphMobileAppIdentifier>]`: The identifier for a mobile app.
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -14102,7 +14107,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
     - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
     - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
   - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -14131,7 +14136,7 @@ USER <IMicrosoftGraphUser1>: user
   - `[OnPremisesSyncEnabled <Boolean?>]`: true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
   - `[OnPremisesUserPrincipalName <String>]`: Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
   - `[Onenote <IMicrosoftGraphOnenote1>]`: onenote
-  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting1[]>]`: 
+  - `[OnlineMeetings <IMicrosoftGraphOnlineMeeting[]>]`: 
     - `[Id <String>]`: Read-only.
     - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
     - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
@@ -14189,7 +14194,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -14230,7 +14235,7 @@ USER <IMicrosoftGraphUser1>: user
       - `[Class <String>]`: The type of data source, such as Person.
       - `[Subclass <String>]`: The secondary type of data source, such as OrganizationUser.
     - `[Phones <IMicrosoftGraphPhone[]>]`: The person's phone numbers.
-    - `[PostalAddresses <IMicrosoftGraphLocation1[]>]`: The person's addresses.
+    - `[PostalAddresses <IMicrosoftGraphLocation[]>]`: The person's addresses.
     - `[Profession <String>]`: The person's profession.
     - `[ScoredEmailAddresses <IMicrosoftGraphScoredEmailAddress[]>]`: The person's email addresses.
       - `[Address <String>]`: The email address.
@@ -14246,7 +14251,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[YomiCompany <String>]`: The phonetic Japanese name of the person's company.
   - `[Photo <IMicrosoftGraphProfilePhoto>]`: profilePhoto
   - `[Photos <IMicrosoftGraphProfilePhoto[]>]`: Read-only. Nullable.
-  - `[Planner <IMicrosoftGraphPlannerUser1>]`: plannerUser
+  - `[Planner <IMicrosoftGraphPlannerUser>]`: plannerUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[Plans <IMicrosoftGraphPlannerPlan[]>]`: Read-only. Nullable. Returns the plannerTasks assigned to the user.
@@ -14254,7 +14259,7 @@ USER <IMicrosoftGraphUser1>: user
   - `[PostalCode <String>]`: The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[PreferredLanguage <String>]`: The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
   - `[PreferredName <String>]`: The preferred name for the user. Returned only on $select.
-  - `[Presence <IMicrosoftGraphPresence1>]`: presence
+  - `[Presence <IMicrosoftGraphPresence>]`: presence
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[Activity <String>]`: The supplemental information to a user's availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive, InAMeeting, Offline, OffWork, OutOfOffice, PresenceUnknown, Presenting, UrgentInterruptionsOnly.
@@ -14272,7 +14277,7 @@ USER <IMicrosoftGraphUser1>: user
     - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
-  - `[Settings <IMicrosoftGraphUserSettings1>]`: userSettings
+  - `[Settings <IMicrosoftGraphUserSettings>]`: userSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[ContributionToContentDiscoveryAsOrganizationDisabled <Boolean?>]`: Reflects the Office Delve organization level setting. When set to true, the organization doesn't have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
@@ -14295,14 +14300,14 @@ USER <IMicrosoftGraphUser1>: user
   - `[State <String>]`: The state or province in the user's address. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[StreetAddress <String>]`: The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[Surname <String>]`: The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-  - `[Teamwork <IMicrosoftGraphUserTeamwork1>]`: userTeamwork
+  - `[Teamwork <IMicrosoftGraphUserTeamwork>]`: userTeamwork
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[InstalledApps <IMicrosoftGraphUserScopeTeamsAppInstallation[]>]`: The apps installed in the personal scope of this user.
       - `[TeamsApp <IMicrosoftGraphTeamsApp>]`: teamsApp
       - `[TeamsAppDefinition <IMicrosoftGraphTeamsAppDefinition>]`: teamsAppDefinition
       - `[Id <String>]`: Read-only.
-      - `[Chat <IMicrosoftGraphChat1>]`: chat
+      - `[Chat <IMicrosoftGraphChat>]`: chat
   - `[Todo <IMicrosoftGraphTodo>]`: todo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.

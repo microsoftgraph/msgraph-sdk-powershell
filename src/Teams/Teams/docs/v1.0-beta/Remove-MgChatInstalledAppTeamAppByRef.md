@@ -12,13 +12,13 @@ The app that is installed.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgChatInstalledAppTeamAppByRef -ChatId <String> -TeamsAppInstallationId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgChatInstalledAppTeamAppByRef -InputObject <ITeamsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ITeamsIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -97,7 +97,7 @@ key: id of teamsAppInstallation
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True

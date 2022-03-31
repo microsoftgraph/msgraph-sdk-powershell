@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgPolicyRoleManagementPolicyRule
 
 ## SYNOPSIS
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> 
 ```
 
 ## DESCRIPTION
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## EXAMPLES
 

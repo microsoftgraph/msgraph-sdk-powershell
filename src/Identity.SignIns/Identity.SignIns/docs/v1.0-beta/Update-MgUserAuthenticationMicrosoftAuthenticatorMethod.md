@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Update the navigation property microsoftAuthenticatorMethods in users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentityS
 ```
 
 ## DESCRIPTION
-Update the navigation property microsoftAuthenticatorMethods in users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## EXAMPLES
 

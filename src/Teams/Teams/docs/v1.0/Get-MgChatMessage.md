@@ -13,12 +13,12 @@ Nullable.
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get2 (Default)
 ```
 Get-MgChatMessage [<CommonParameters>]
 ```
 
-### Get
+### Get1
 ```
 Get-MgChatMessage -ChatId <String> -ChatMessageId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -65,7 +65,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get1, List
 Aliases:
 
 Required: True
@@ -80,7 +80,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -111,7 +111,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: Get1, GetViaIdentity, List
 Aliases: Expand
 
 Required: False
@@ -172,7 +172,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get, GetViaIdentity, List
+Parameter Sets: Get1, GetViaIdentity, List
 Aliases: Select
 
 Required: False
