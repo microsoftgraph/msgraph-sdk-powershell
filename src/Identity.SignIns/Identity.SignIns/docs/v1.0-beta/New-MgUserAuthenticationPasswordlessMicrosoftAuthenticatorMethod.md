@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod -InputObject <I
 ```
 
 ## DESCRIPTION
-Create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## EXAMPLES
 

@@ -1042,6 +1042,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -1089,6 +1091,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -1221,6 +1224,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -1381,6 +1385,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -2939,6 +2944,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -2986,6 +2993,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -3118,6 +3126,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -3283,6 +3293,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -3330,6 +3342,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -3476,6 +3489,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -3658,6 +3672,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4595,6 +4610,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -4642,6 +4659,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4767,6 +4785,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -5274,6 +5294,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -5321,6 +5343,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -5467,6 +5490,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -5649,6 +5673,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -7413,6 +7438,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -7460,6 +7487,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -7599,6 +7627,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -7778,6 +7808,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -7825,6 +7857,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -7985,6 +8018,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -8189,6 +8223,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -41846,6 +41881,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -43005,6 +43042,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -43122,7 +43173,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
@@ -43235,20 +43286,6 @@ components:
         template:
           type: string
           description: 'An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
           nullable: true
       additionalProperties:
         type: object
@@ -45561,7 +45598,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
           additionalProperties:
             type: object
@@ -46932,18 +46969,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.chat:

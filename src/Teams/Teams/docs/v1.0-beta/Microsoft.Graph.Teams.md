@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Teams
-Module Guid: 9a2313d2-1118-48d8-88f7-fa159b9cd6a1
+Module Guid: cded1f8d-b676-4cf9-8b13-1fa3bd30f2ee
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.teams
 Help Version: 1.0.0.0
 Locale: en-US
@@ -94,8 +94,7 @@ A collection of all the members in the chat.
 Nullable.
 
 ### [Get-MgChatMessage](Get-MgChatMessage.md)
-A collection of all the messages in the chat.
-Nullable.
+Invoke function getAllMessages
 
 ### [Get-MgChatMessageDelta](Get-MgChatMessageDelta.md)
 Invoke function delta
@@ -436,6 +435,24 @@ Invoke function allMessages
 
 ### [Invoke-MgShareTeamSchedule](Invoke-MgShareTeamSchedule.md)
 Invoke action share
+
+### [Invoke-MgSoftChatMessageDelete](Invoke-MgSoftChatMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftChatMessageReplyDelete](Invoke-MgSoftChatMessageReplyDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamChannelMessageDelete](Invoke-MgSoftTeamChannelMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamChannelMessageReplyDelete](Invoke-MgSoftTeamChannelMessageReplyDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamPrimaryChannelMessageDelete](Invoke-MgSoftTeamPrimaryChannelMessageDelete.md)
+Invoke action softDelete
+
+### [Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete](Invoke-MgSoftTeamPrimaryChannelMessageReplyDelete.md)
+Invoke action softDelete
 
 ### [Invoke-MgUnarchiveTeam](Invoke-MgUnarchiveTeam.md)
 Invoke action unarchive
@@ -902,6 +919,24 @@ Invoke action runDiagnostics
 
 ### [Stop-MgTeamScheduleTimeCardBreak](Stop-MgTeamScheduleTimeCardBreak.md)
 Invoke action endBreak
+
+### [Undo-MgChatMessageReplySoftDelete](Undo-MgChatMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgChatMessageSoftDelete](Undo-MgChatMessageSoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamChannelMessageReplySoftDelete](Undo-MgTeamChannelMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamChannelMessageSoftDelete](Undo-MgTeamChannelMessageSoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamPrimaryChannelMessageReplySoftDelete](Undo-MgTeamPrimaryChannelMessageReplySoftDelete.md)
+Invoke action undoSoftDelete
+
+### [Undo-MgTeamPrimaryChannelMessageSoftDelete](Undo-MgTeamPrimaryChannelMessageSoftDelete.md)
+Invoke action undoSoftDelete
 
 ### [Update-MgAppCatalogTeamApp](Update-MgAppCatalogTeamApp.md)
 Update the navigation property teamsApps in appCatalogs

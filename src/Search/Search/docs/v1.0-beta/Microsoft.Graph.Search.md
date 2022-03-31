@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Search
-Module Guid: b4817045-a0de-4b95-ba53-0209d04d51dc
+Module Guid: d9e348d1-744f-41f1-bb22-e11fd1ad13f6
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.search
 Help Version: 1.0.0.0
 Locale: en-US
@@ -18,16 +18,16 @@ Get external
 Get connections from external
 
 ### [Get-MgSearchAcronym](Get-MgSearchAcronym.md)
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ### [Get-MgSearchBookmark](Get-MgSearchBookmark.md)
-Get bookmarks from search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ### [Get-MgSearchEntity](Get-MgSearchEntity.md)
 Get search
 
 ### [Get-MgSearchQna](Get-MgSearchQna.md)
-Get qnas from search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Invoke-MgQuerySearch](Invoke-MgQuerySearch.md)
 Invoke action query
@@ -36,25 +36,25 @@ Invoke action query
 Create new navigation property to connections for external
 
 ### [New-MgSearchAcronym](New-MgSearchAcronym.md)
-Create new navigation property to acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ### [New-MgSearchBookmark](New-MgSearchBookmark.md)
-Create new navigation property to bookmarks for search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ### [New-MgSearchQna](New-MgSearchQna.md)
-Create new navigation property to qnas for search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Remove-MgExternalConnection](Remove-MgExternalConnection.md)
 Delete navigation property connections for external
 
 ### [Remove-MgSearchAcronym](Remove-MgSearchAcronym.md)
-Delete navigation property acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ### [Remove-MgSearchBookmark](Remove-MgSearchBookmark.md)
-Delete navigation property bookmarks for search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ### [Remove-MgSearchQna](Remove-MgSearchQna.md)
-Delete navigation property qnas for search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ### [Update-MgExternal](Update-MgExternal.md)
 Update external
@@ -63,14 +63,14 @@ Update external
 Update the navigation property connections in external
 
 ### [Update-MgSearchAcronym](Update-MgSearchAcronym.md)
-Update the navigation property acronyms in search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ### [Update-MgSearchBookmark](Update-MgSearchBookmark.md)
-Update the navigation property bookmarks in search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ### [Update-MgSearchEntity](Update-MgSearchEntity.md)
 Update search
 
 ### [Update-MgSearchQna](Update-MgSearchQna.md)
-Update the navigation property qnas in search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 

@@ -8717,18 +8717,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.chat:
@@ -13655,7 +13659,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Get windowsHelloForBusinessMethods from users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get windowsHelloForBusinessMethods from users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

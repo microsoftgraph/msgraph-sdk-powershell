@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Get microsoftAuthenticatorMethods from users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Get microsoftAuthenticatorMethods from users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## EXAMPLES
 

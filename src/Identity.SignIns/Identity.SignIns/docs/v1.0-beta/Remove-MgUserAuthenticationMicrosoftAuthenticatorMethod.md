@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Delete navigation property microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentityS
 ```
 
 ## DESCRIPTION
-Delete navigation property microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## EXAMPLES
 

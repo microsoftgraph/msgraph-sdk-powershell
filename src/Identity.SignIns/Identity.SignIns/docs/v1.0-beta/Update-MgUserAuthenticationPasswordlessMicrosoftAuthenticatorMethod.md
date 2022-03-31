@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Update the navigation property passwordlessMicrosoftAuthenticatorMethods in users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## SYNTAX
 
@@ -45,7 +45,7 @@ Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod -InputObject
 ```
 
 ## DESCRIPTION
-Update the navigation property passwordlessMicrosoftAuthenticatorMethods in users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## EXAMPLES
 
