@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Update the navigation property temporaryAccessPassMethods in users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Update the navigation property temporaryAccessPassMethods in users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 

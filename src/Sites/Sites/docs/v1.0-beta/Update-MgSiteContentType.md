@@ -668,7 +668,7 @@ BASE <IMicrosoftGraphContentType>: contentType
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -855,7 +855,7 @@ BASETYPES <IMicrosoftGraphContentType[]>: The collection of content types that a
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1043,7 +1043,7 @@ BODYPARAMETER <IMicrosoftGraphContentType>: contentType
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1490,7 +1490,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet>: documentSet
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
-  - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+  - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
   - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
   - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
 

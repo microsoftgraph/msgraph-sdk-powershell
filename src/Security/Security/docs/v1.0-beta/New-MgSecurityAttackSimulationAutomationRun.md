@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulationAutomationRun
 
 ## SYNOPSIS
-Create new navigation property to runs for security
+A collection of simulation automation runs.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to runs for security
+A collection of simulation automation runs.
 
 ## EXAMPLES
 
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndDateTime
-.
+Date and time when the run ends in an attack simulation automation.
 
 ```yaml
 Type: System.DateTime
@@ -138,7 +138,7 @@ Accept wildcard characters: False
 ```
 
 ### -SimulationId
-.
+Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
 
 ```yaml
 Type: System.String
@@ -153,7 +153,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartDateTime
-.
+Date and time when the run starts in an attack simulation automation.
 
 ```yaml
 Type: System.DateTime
@@ -238,9 +238,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphSimulationAutomationRun>: simulationAutomationRun
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[EndDateTime <DateTime?>]`: 
-  - `[SimulationId <String>]`: 
-  - `[StartDateTime <DateTime?>]`: 
+  - `[EndDateTime <DateTime?>]`: Date and time when the run ends in an attack simulation automation.
+  - `[SimulationId <String>]`: Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
+  - `[StartDateTime <DateTime?>]`: Date and time when the run starts in an attack simulation automation.
   - `[Status <String>]`: simulationAutomationRunStatus
 
 INPUTOBJECT <ISecurityIdentity>: Identity Parameter

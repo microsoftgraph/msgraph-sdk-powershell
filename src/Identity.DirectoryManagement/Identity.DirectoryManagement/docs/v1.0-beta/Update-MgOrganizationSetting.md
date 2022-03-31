@@ -16,7 +16,9 @@ Nullable.
 ### UpdateExpanded (Default)
 ```
 Update-MgOrganizationSetting -OrganizationId <String> [-AdditionalProperties <Hashtable>] [-Id <String>]
- [-ItemInsights <IMicrosoftGraphInsightsSettings>] [-PeopleInsights <IMicrosoftGraphInsightsSettings>]
+ [-ItemInsights <IMicrosoftGraphInsightsSettings>]
+ [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
+ [-PeopleInsights <IMicrosoftGraphInsightsSettings>]
  [-ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -37,6 +39,7 @@ Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
 ```
 Update-MgOrganizationSetting -InputObject <IIdentityDirectoryManagementIdentity>
  [-AdditionalProperties <Hashtable>] [-Id <String>] [-ItemInsights <IMicrosoftGraphInsightsSettings>]
+ [-MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]
  [-PeopleInsights <IMicrosoftGraphInsightsSettings>]
  [-ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -118,6 +121,22 @@ To construct, please use Get-Help -Online and see NOTES section for ITEMINSIGHTS
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphInsightsSettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MicrosoftApplicationDataAccess
+microsoftApplicationDataAccessSettings
+To construct, please use Get-Help -Online and see NOTES section for MICROSOFTAPPLICATIONDATAACCESS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMicrosoftApplicationDataAccessSettings
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -252,6 +271,11 @@ BODYPARAMETER <IMicrosoftGraphOrganizationSettings>: organizationSettings
     - `[Id <String>]`: Read-only.
     - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
     - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+  - `[MicrosoftApplicationDataAccess <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>]`: microsoftApplicationDataAccessSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: Read-only.
+    - `[DisabledForGroup <String>]`: 
+    - `[IsEnabledForAllMicrosoftApplications <Boolean?>]`: 
   - `[PeopleInsights <IMicrosoftGraphInsightsSettings>]`: insightsSettings
   - `[ProfileCardProperties <IMicrosoftGraphProfileCardProperty[]>]`: Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
     - `[Id <String>]`: Read-only.
@@ -301,6 +325,12 @@ ITEMINSIGHTS <IMicrosoftGraphInsightsSettings>: insightsSettings
   - `[Id <String>]`: Read-only.
   - `[DisabledForGroup <String>]`: The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
   - `[IsEnabledInOrganization <Boolean?>]`: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+
+MICROSOFTAPPLICATIONDATAACCESS <IMicrosoftGraphMicrosoftApplicationDataAccessSettings>: microsoftApplicationDataAccessSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: Read-only.
+  - `[DisabledForGroup <String>]`: 
+  - `[IsEnabledForAllMicrosoftApplications <Boolean?>]`: 
 
 PEOPLEINSIGHTS <IMicrosoftGraphInsightsSettings>: insightsSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

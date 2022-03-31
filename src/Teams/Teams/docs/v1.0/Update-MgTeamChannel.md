@@ -467,7 +467,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
         - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
         - `[UserId <String>]`: The identifier of the user who accepted the agreement.
         - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
-      - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+      - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
         - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
         - `[Id <String>]`: Read-only.
         - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -488,7 +488,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
       - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+        - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
           - `[Id <String>]`: Read-only.
           - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
           - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -496,9 +496,9 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
           - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
           - `[DisplayName <String>]`: The display name of the key as given by the user.
           - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-        - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+        - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
           - `[Id <String>]`: Read-only.
-        - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+        - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
           - `[Id <String>]`: Read-only.
           - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
           - `[Device <IMicrosoftGraphDevice>]`: device
@@ -538,7 +538,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
           - `[DeviceTag <String>]`: Tags containing app metadata.
           - `[DisplayName <String>]`: The name of the device on which this app is registered.
           - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-        - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+        - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           - `[Id <String>]`: Read-only.
           - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
           - `[Device <IMicrosoftGraphDevice>]`: device
@@ -1106,7 +1106,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
                 - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
               - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
               - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-              - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+              - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
               - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
               - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
             - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1125,7 +1125,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
           - `[DisplayName <String>]`: The displayable title of the list.
           - `[Drive <IMicrosoftGraphDrive1>]`: drive
-          - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
+          - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
             - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
             - `[CreatedByUser <IMicrosoftGraphUser>]`: user
             - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -1138,7 +1138,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
             - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
             - `[Id <String>]`: Read-only.
-            - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+            - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Id <String>]`: Read-only.
               - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
@@ -1189,7 +1189,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[Hidden <Boolean?>]`: If true, indicates that the list is not normally visible in the SharePoint user experience.
             - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
           - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-          - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
+          - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
             - `[Id <String>]`: Read-only.
             - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
             - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -1248,7 +1248,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
         - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
         - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
         - `[Id <String>]`: Read-only.
-        - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+        - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
         - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
         - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types defined for this site.
         - `[DisplayName <String>]`: The full title for the site. Read-only.
@@ -1270,7 +1270,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
           - `[Message <String>]`: A non-localized message for the developer.
           - `[Target <String>]`: The target of the error.
         - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-        - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection can't be enumerated.
+        - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection can't be enumerated.
           - `[Id <String>]`: Read-only.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -1374,7 +1374,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
             - `[ContentUrl <String>]`: The URL for downloading the content
           - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
           - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-        - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+        - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
           - `[Id <String>]`: Read-only.
           - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
           - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -1514,7 +1514,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
           - `[Id <String>]`: Read-only.
           - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
           - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+          - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
           - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
             - `[DisplayName <String>]`: The display name of the label. Read-only.
             - `[LabelId <String>]`: The unique identifier of the label.
@@ -2488,7 +2488,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
     - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
     - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
     - `[Id <String>]`: Read-only.
-    - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+    - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
     - `[Audio <IMicrosoftGraphAudio>]`: audio
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Album <String>]`: The title of the album for this audio file.
@@ -2546,7 +2546,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
       - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-    - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
+    - `[ListItem <IMicrosoftGraphListItem>]`: listItem
     - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
@@ -2563,7 +2563,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
       - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-    - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+    - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
     - `[Photo <IMicrosoftGraphPhoto>]`: photo
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[CameraMake <String>]`: Camera manufacturer. Read-only.
@@ -2623,7 +2623,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
     - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
     - `[Size <Int64?>]`: Size of the item in bytes. Read-only.
     - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-    - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+    - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
     - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
@@ -2645,7 +2645,7 @@ BODYPARAMETER <IMicrosoftGraphChannel1>: channel
       - `[Size <Int64?>]`: Indicates the size of the content stream for this version of the item.
     - `[Video <IMicrosoftGraphVideo>]`: video
     - `[WebDavUrl <String>]`: WebDAV compatible URL for the item.
-    - `[Workbook <IMicrosoftGraphWorkbook1>]`: workbook
+    - `[Workbook <IMicrosoftGraphWorkbook>]`: workbook
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[Application <IMicrosoftGraphWorkbookApplication>]`: workbookApplication
@@ -2951,7 +2951,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
       - `[UserEmail <String>]`: Email of the user when the acceptance was recorded.
       - `[UserId <String>]`: The identifier of the user who accepted the agreement.
       - `[UserPrincipalName <String>]`: UPN of the user when the acceptance was recorded.
-    - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
+    - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a user has been granted for an application. Supports $expand.
       - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
       - `[Id <String>]`: Read-only.
       - `[AppRoleId <String>]`: The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
@@ -2972,7 +2972,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
     - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
         - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -2980,9 +2980,9 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
         - `[DisplayName <String>]`: The display name of the key as given by the user.
         - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
         - `[Id <String>]`: Read-only.
-      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -3022,7 +3022,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[DeviceTag <String>]`: Tags containing app metadata.
         - `[DisplayName <String>]`: The name of the device on which this app is registered.
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -3590,7 +3590,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
               - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
             - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
             - `[SharedColumns <IMicrosoftGraphColumnDefinition[]>]`: 
-            - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+            - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
             - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition[]>]`: 
             - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
           - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -3609,7 +3609,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
         - `[DisplayName <String>]`: The displayable title of the list.
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
-        - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
+        - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[CreatedByUser <IMicrosoftGraphUser>]`: user
           - `[CreatedDateTime <DateTime?>]`: Date and time of item creation. Read-only.
@@ -3622,7 +3622,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
           - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
           - `[Id <String>]`: Read-only.
-          - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+          - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
@@ -3673,7 +3673,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[Hidden <Boolean?>]`: If true, indicates that the list is not normally visible in the SharePoint user experience.
           - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
+        - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
           - `[Id <String>]`: Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -3732,7 +3732,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
       - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
       - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
       - `[Id <String>]`: Read-only.
-      - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+      - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
       - `[Columns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions reusable across lists under this site.
       - `[ContentTypes <IMicrosoftGraphContentType1[]>]`: The collection of content types defined for this site.
       - `[DisplayName <String>]`: The full title for the site. Read-only.
@@ -3754,7 +3754,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Message <String>]`: A non-localized message for the developer.
         - `[Target <String>]`: The target of the error.
       - `[ExternalColumns <IMicrosoftGraphColumnDefinition[]>]`: The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
-      - `[Items <IMicrosoftGraphBaseItem1[]>]`: Used to address any item contained in this site. This collection can't be enumerated.
+      - `[Items <IMicrosoftGraphBaseItem[]>]`: Used to address any item contained in this site. This collection can't be enumerated.
         - `[Id <String>]`: Read-only.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser>]`: user
@@ -3858,7 +3858,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
           - `[ContentUrl <String>]`: The URL for downloading the content
         - `[SectionGroups <IMicrosoftGraphSectionGroup1[]>]`: The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
         - `[Sections <IMicrosoftGraphOnenoteSection1[]>]`: The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-      - `[Permissions <IMicrosoftGraphPermission1[]>]`: The permissions associated with the site. Nullable.
+      - `[Permissions <IMicrosoftGraphPermission[]>]`: The permissions associated with the site. Nullable.
         - `[Id <String>]`: Read-only.
         - `[ExpirationDateTime <DateTime?>]`: A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
         - `[GrantedTo <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -4010,7 +4010,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
         - `[Id <String>]`: Read-only.
         - `[AcceptedSenders <IMicrosoftGraphDirectoryObject[]>]`: The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         - `[AllowExternalSenders <Boolean?>]`: Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment1[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
+        - `[AppRoleAssignments <IMicrosoftGraphAppRoleAssignment[]>]`: Represents the app roles a group has been granted for an application. Supports $expand.
         - `[AssignedLabels <IMicrosoftGraphAssignedLabel[]>]`: The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. Read-only.
           - `[DisplayName <String>]`: The display name of the label. Read-only.
           - `[LabelId <String>]`: The unique identifier of the label.
@@ -4984,7 +4984,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
   - `[ParentReference <IMicrosoftGraphItemReference>]`: itemReference
   - `[WebUrl <String>]`: URL that displays the resource in the browser. Read-only.
   - `[Id <String>]`: Read-only.
-  - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
+  - `[Analytics <IMicrosoftGraphItemAnalytics>]`: itemAnalytics
   - `[Audio <IMicrosoftGraphAudio>]`: audio
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Album <String>]`: The title of the album for this audio file.
@@ -5042,7 +5042,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
     - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-  - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
+  - `[ListItem <IMicrosoftGraphListItem>]`: listItem
   - `[Location <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
@@ -5059,7 +5059,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
     - `[PendingContentUpdate <IMicrosoftGraphPendingContentUpdate>]`: pendingContentUpdate
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[QueuedDateTime <DateTime?>]`: Date and time the pending binary operation was queued in UTC time. Read-only.
-  - `[Permissions <IMicrosoftGraphPermission1[]>]`: The set of permissions for the item. Read-only. Nullable.
+  - `[Permissions <IMicrosoftGraphPermission[]>]`: The set of permissions for the item. Read-only. Nullable.
   - `[Photo <IMicrosoftGraphPhoto>]`: photo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CameraMake <String>]`: Camera manufacturer. Read-only.
@@ -5119,7 +5119,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
   - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
   - `[Size <Int64?>]`: Size of the item in bytes. Read-only.
   - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-  - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+  - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
   - `[Thumbnails <IMicrosoftGraphThumbnailSet[]>]`: Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Large <IMicrosoftGraphThumbnail>]`: thumbnail
@@ -5141,7 +5141,7 @@ FILESFOLDER <IMicrosoftGraphDriveItem1>: driveItem
     - `[Size <Int64?>]`: Indicates the size of the content stream for this version of the item.
   - `[Video <IMicrosoftGraphVideo>]`: video
   - `[WebDavUrl <String>]`: WebDAV compatible URL for the item.
-  - `[Workbook <IMicrosoftGraphWorkbook1>]`: workbook
+  - `[Workbook <IMicrosoftGraphWorkbook>]`: workbook
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[Application <IMicrosoftGraphWorkbookApplication>]`: workbookApplication

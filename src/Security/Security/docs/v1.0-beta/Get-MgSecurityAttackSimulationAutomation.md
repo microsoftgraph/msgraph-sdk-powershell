@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Get simulationAutomations from security
+Represents simulation automations created to run on a tenant.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-Expa
 ```
 
 ## DESCRIPTION
-Get simulationAutomations from security
+Represents simulation automations created to run on a tenant.
 
 ## EXAMPLES
 

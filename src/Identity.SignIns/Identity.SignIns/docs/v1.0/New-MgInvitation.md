@@ -394,7 +394,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
     - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: 
+      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
         - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -402,9 +402,9 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
         - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
         - `[DisplayName <String>]`: The display name of the key as given by the user.
         - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
         - `[Id <String>]`: Read-only.
-      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod1[]>]`: 
+      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod1[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
         - `[Device <IMicrosoftGraphDevice1>]`: device
@@ -444,7 +444,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
         - `[DeviceTag <String>]`: Tags containing app metadata.
         - `[DisplayName <String>]`: The name of the device on which this app is registered.
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod1[]>]`: 
+      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod1[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
         - `[Device <IMicrosoftGraphDevice1>]`: device
@@ -864,7 +864,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
         - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[AllTime <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+          - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[Access <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -889,8 +889,8 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
             - `[IsTrending <Boolean?>]`: Indicates whether the item is 'trending.' Read-only.
             - `[Move <IMicrosoftGraphItemActionStat>]`: itemActionStat
             - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
-          - `[ItemActivityStats <IMicrosoftGraphItemActivityStat1[]>]`: 
-          - `[LastSevenDays <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+          - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
+          - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
         - `[Audio <IMicrosoftGraphAudio>]`: audio
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Album <String>]`: The title of the album for this audio file.
@@ -948,7 +948,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
           - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-        - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
+        - `[ListItem <IMicrosoftGraphListItem>]`: listItem
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
           - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -1092,7 +1092,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
         - `[Size <Int64?>]`: Size of the item in bytes. Read-only.
         - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-        - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+        - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
           - `[Id <String>]`: Read-only.
           - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
           - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -1129,7 +1129,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
           - `[Size <Int64?>]`: Indicates the size of the content stream for this version of the item.
         - `[Video <IMicrosoftGraphVideo>]`: video
         - `[WebDavUrl <String>]`: WebDAV compatible URL for the item.
-        - `[Workbook <IMicrosoftGraphWorkbook1>]`: workbook
+        - `[Workbook <IMicrosoftGraphWorkbook>]`: workbook
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Application <IMicrosoftGraphWorkbookApplication>]`: workbookApplication
@@ -1525,7 +1525,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
               - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
             - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
             - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-            - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+            - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
             - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
             - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
           - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1544,14 +1544,14 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
           - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
         - `[DisplayName <String>]`: The displayable title of the list.
         - `[Drive <IMicrosoftGraphDrive1>]`: drive
-        - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
+        - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
         - `[List <IMicrosoftGraphListInfo>]`: listInfo
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
           - `[Hidden <Boolean?>]`: If true, indicates that the list is not normally visible in the SharePoint user experience.
           - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
         - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-        - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
+        - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
         - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -2602,7 +2602,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
       - `[AllowMeetingChat <String>]`: meetingChatMode
       - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
       - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+      - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
         - `[Id <String>]`: Read-only.
         - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
           - `[Id <String>]`: Read-only.
@@ -2653,7 +2653,7 @@ BODYPARAMETER <IMicrosoftGraphInvitation1>: invitation
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -2894,7 +2894,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
   - `[Authentication <IMicrosoftGraphAuthentication1>]`: authentication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: 
+    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod1[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
       - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -2902,9 +2902,9 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
       - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
       - `[DisplayName <String>]`: The display name of the key as given by the user.
       - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
       - `[Id <String>]`: Read-only.
-    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod1[]>]`: 
+    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod1[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
       - `[Device <IMicrosoftGraphDevice1>]`: device
@@ -2944,7 +2944,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
       - `[DeviceTag <String>]`: Tags containing app metadata.
       - `[DisplayName <String>]`: The name of the device on which this app is registered.
       - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod1[]>]`: 
+    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod1[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
       - `[Device <IMicrosoftGraphDevice1>]`: device
@@ -3364,7 +3364,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
       - `[Analytics <IMicrosoftGraphItemAnalytics1>]`: itemAnalytics
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[AllTime <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+        - `[AllTime <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
           - `[Access <IMicrosoftGraphItemActionStat>]`: itemActionStat
@@ -3389,8 +3389,8 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
           - `[IsTrending <Boolean?>]`: Indicates whether the item is 'trending.' Read-only.
           - `[Move <IMicrosoftGraphItemActionStat>]`: itemActionStat
           - `[StartDateTime <DateTime?>]`: When the interval starts. Read-only.
-        - `[ItemActivityStats <IMicrosoftGraphItemActivityStat1[]>]`: 
-        - `[LastSevenDays <IMicrosoftGraphItemActivityStat1>]`: itemActivityStat
+        - `[ItemActivityStats <IMicrosoftGraphItemActivityStat[]>]`: 
+        - `[LastSevenDays <IMicrosoftGraphItemActivityStat>]`: itemActivityStat
       - `[Audio <IMicrosoftGraphAudio>]`: audio
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Album <String>]`: The title of the album for this audio file.
@@ -3448,7 +3448,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Height <Int32?>]`: Optional. Height of the image, in pixels. Read-only.
         - `[Width <Int32?>]`: Optional. Width of the image, in pixels. Read-only.
-      - `[ListItem <IMicrosoftGraphListItem1>]`: listItem
+      - `[ListItem <IMicrosoftGraphListItem>]`: listItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[CreatedByUser <IMicrosoftGraphUser1>]`: user
@@ -3592,7 +3592,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
       - `[Size <Int64?>]`: Size of the item in bytes. Read-only.
       - `[SpecialFolder <IMicrosoftGraphSpecialFolder>]`: specialFolder
-      - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
+      - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the item. Only supported on the root of a drive.
         - `[Id <String>]`: Read-only.
         - `[ApplicationId <String>]`: Optional. Identifier of the application used to create the subscription. Read-only.
         - `[ChangeType <String>]`: Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType.
@@ -3629,7 +3629,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
         - `[Size <Int64?>]`: Indicates the size of the content stream for this version of the item.
       - `[Video <IMicrosoftGraphVideo>]`: video
       - `[WebDavUrl <String>]`: WebDAV compatible URL for the item.
-      - `[Workbook <IMicrosoftGraphWorkbook1>]`: workbook
+      - `[Workbook <IMicrosoftGraphWorkbook>]`: workbook
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
         - `[Application <IMicrosoftGraphWorkbookApplication>]`: workbookApplication
@@ -4025,7 +4025,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
             - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
           - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
           - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-          - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+          - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
           - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
           - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
         - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -4044,14 +4044,14 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
         - `[Sealed <Boolean?>]`: If true, the content type can't be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.
       - `[DisplayName <String>]`: The displayable title of the list.
       - `[Drive <IMicrosoftGraphDrive1>]`: drive
-      - `[Items <IMicrosoftGraphListItem1[]>]`: All items contained in the list.
+      - `[Items <IMicrosoftGraphListItem[]>]`: All items contained in the list.
       - `[List <IMicrosoftGraphListInfo>]`: listInfo
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[ContentTypesEnabled <Boolean?>]`: If true, indicates that content types are enabled for this list.
         - `[Hidden <Boolean?>]`: If true, indicates that the list is not normally visible in the SharePoint user experience.
         - `[Template <String>]`: An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
       - `[SharepointIds <IMicrosoftGraphSharepointIds>]`: sharepointIds
-      - `[Subscriptions <IMicrosoftGraphSubscription1[]>]`: The set of subscriptions on the list.
+      - `[Subscriptions <IMicrosoftGraphSubscription[]>]`: The set of subscriptions on the list.
       - `[System <IMicrosoftGraphSystemFacet>]`: systemFacet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Owner <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -5102,7 +5102,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
     - `[AllowMeetingChat <String>]`: meetingChatMode
     - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
     - `[AllowedPresenters <String>]`: onlineMeetingPresenters
-    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+    - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
       - `[Id <String>]`: Read-only.
       - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
         - `[Id <String>]`: Read-only.
@@ -5153,7 +5153,7 @@ INVITEDUSER <IMicrosoftGraphUser1>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
