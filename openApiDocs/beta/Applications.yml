@@ -4884,6 +4884,8 @@ paths:
                 - displayName desc
                 - homePageUrl
                 - homePageUrl desc
+                - informationalUrls
+                - informationalUrls desc
                 - logoUrl
                 - logoUrl desc
                 - publisher
@@ -4908,6 +4910,7 @@ paths:
                 - description
                 - displayName
                 - homePageUrl
+                - informationalUrls
                 - logoUrl
                 - publisher
                 - supportedProvisioningTypes
@@ -4999,6 +5002,7 @@ paths:
                 - description
                 - displayName
                 - homePageUrl
+                - informationalUrls
                 - logoUrl
                 - publisher
                 - supportedProvisioningTypes
@@ -20542,6 +20546,8 @@ components:
               type: string
               description: The home page URL of the application.
               nullable: true
+            informationalUrls:
+              $ref: '#/components/schemas/microsoft.graph.informationalUrls'
             logoUrl:
               type: string
               description: The URL to get the logo for this application.
@@ -21951,6 +21957,18 @@ components:
             $ref: '#/components/schemas/microsoft.graph.stringKeyAttributeMappingSourceValuePair'
         type:
           $ref: '#/components/schemas/microsoft.graph.attributeMappingSourceType'
+      additionalProperties:
+        type: object
+    microsoft.graph.informationalUrls:
+      title: informationalUrls
+      type: object
+      properties:
+        appSignUpUrl:
+          type: string
+          nullable: true
+        singleSignOnDocumentationUrl:
+          type: string
+          nullable: true
       additionalProperties:
         type: object
     microsoft.graph.hybridAgentUpdaterConfiguration:

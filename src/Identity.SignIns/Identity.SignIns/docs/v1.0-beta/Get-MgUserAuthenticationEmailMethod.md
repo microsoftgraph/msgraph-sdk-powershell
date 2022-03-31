@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Get emailMethods from users
+Represents the email addresses registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get emailMethods from users
+Represents the email addresses registered to a user for authentication.
 
 ## EXAMPLES
 

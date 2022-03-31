@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSecurityAttackSimulationAutomationRun
 
 ## SYNOPSIS
-Get runs from security
+A collection of simulation automation runs.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSecurityAttackSimulationAutomationRun -InputObject <ISecurityIdentity> [-E
 ```
 
 ## DESCRIPTION
-Get runs from security
+A collection of simulation automation runs.
 
 ## EXAMPLES
 

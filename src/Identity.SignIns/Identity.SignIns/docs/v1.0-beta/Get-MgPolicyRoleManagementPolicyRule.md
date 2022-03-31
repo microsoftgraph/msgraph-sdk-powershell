@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyRoleManagementPolicyRule
 
 ## SYNOPSIS
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> [-E
 ```
 
 ## DESCRIPTION
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## EXAMPLES
 

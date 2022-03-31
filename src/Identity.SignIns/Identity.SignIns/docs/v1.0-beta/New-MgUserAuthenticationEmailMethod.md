@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationEmailMethod
 
 ## SYNOPSIS
-Create new navigation property to emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ New-MgUserAuthenticationEmailMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ## EXAMPLES
 

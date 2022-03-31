@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Delete navigation property windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

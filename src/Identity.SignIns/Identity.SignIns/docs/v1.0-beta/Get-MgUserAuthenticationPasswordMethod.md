@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPasswordMethod
 
 ## SYNOPSIS
-Get passwordMethods from users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Get passwordMethods from users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

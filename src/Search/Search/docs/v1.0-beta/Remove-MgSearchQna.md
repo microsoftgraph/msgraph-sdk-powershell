@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSearchQna
 
 ## SYNOPSIS
-Delete navigation property qnas for search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ## SYNTAX
 
@@ -24,7 +24,7 @@ Remove-MgSearchQna -InputObject <ISearchIdentity> [-IfMatch <String>] [-PassThru
 ```
 
 ## DESCRIPTION
-Delete navigation property qnas for search
+Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
 
 ## EXAMPLES
 
