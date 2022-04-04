@@ -184,7 +184,7 @@ directive:
       subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
     remove: true
   - where:
-      verb: Get|New|Remove|Update|Set
+      verb: Get|New|Remove|Update|Set|Invoke
       subject: (.*)(EntitlementManagement)CatalogAccessPackage
     remove: true
   - where:
