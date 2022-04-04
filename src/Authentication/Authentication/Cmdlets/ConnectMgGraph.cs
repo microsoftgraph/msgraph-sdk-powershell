@@ -208,9 +208,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case Constants.AccessTokenParameterSet:
                         {
                             authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
+                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedTokenCredential;
                             authContext.ContextScope = ContextScope.Process;
                             GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
-                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedTokenCredential;
                         }
                         break;
                 }

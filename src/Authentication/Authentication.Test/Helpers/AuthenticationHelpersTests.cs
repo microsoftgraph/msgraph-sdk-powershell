@@ -3,6 +3,7 @@
     using Azure.Core;
     using Azure.Identity;
     using Microsoft.Graph.PowerShell.Authentication;
+    using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
     using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
     using System;
     using System.Linq;
@@ -18,6 +19,7 @@
         public AuthenticationHelpersTests()
         {
             GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
         }
 
         [Fact]
@@ -39,7 +41,7 @@
             await authProvider.AuthenticateRequestAsync(requestMessage);
 
             // Assert
-            Assert.IsType<DelegateAuthenticationProvider>(authProvider);
+            Assert.IsType<TokenCredentialAuthProvider>(authProvider);
             Assert.Equal("Bearer", requestMessage.Headers.Authorization.Scheme);
             Assert.Equal(accessToken, requestMessage.Headers.Authorization.Parameter);
 
