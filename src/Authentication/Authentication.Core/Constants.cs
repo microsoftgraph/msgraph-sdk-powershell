@@ -14,6 +14,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         internal const int TokenExpirationBufferInMinutes = 5;
         internal const string DefaulAdTenant = "common";
         internal const string DefaultAzureADEndpoint = "https://login.microsoftonline.com";
+        internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";
         internal const string CacheName = "mg.mssal.cache";
         internal const string AuthRecordName = "mg.authrecord.json";
         internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);

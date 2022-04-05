@@ -78,17 +78,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 string decodedJWT = Decode(jwtString);
                 if (decodedJWT == null)
-                    return default(T);
+                    return default;
                 return JsonConvert.DeserializeObject<T>(decodedJWT);
             }
             catch (Exception ex)
             {
-                throw new AuthenticationException(
-                        new Error
-                        {
-                            Code = ErrorConstants.Codes.InvalidJWT,
-                            Message = ErrorConstants.Message.InvalidJWT
-                        }, ex);
+                throw new AuthenticationException(ErrorConstants.Message.InvalidJWT, ex);
             }
         }
 

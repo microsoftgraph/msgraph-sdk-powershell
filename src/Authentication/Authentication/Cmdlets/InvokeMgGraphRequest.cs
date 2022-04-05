@@ -8,17 +8,12 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management.Automation;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
-using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
 using Microsoft.Graph.PowerShell.Authentication.Properties;
 using Microsoft.PowerShell.Commands;
@@ -855,6 +850,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 ThrowTerminatingError(error);
             }
 
+            if (GraphSession.Instance.AuthContext == null)
+            {
+                var errorRecord = new ErrorRecord(new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext),
+                    ErrorCategory.AuthenticationError.ToString(),
+                    ErrorCategory.AuthenticationError, null);
+                ThrowTerminatingError(errorRecord);
+            }
+
             // Only Body or InputFilePath can be specified at a time
             if (Body != null && !string.IsNullOrWhiteSpace(InputFilePath))
             {
@@ -1031,6 +1034,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     var errorRecord = new ErrorRecord(httpRequestException, ErrorCategory.ConnectionError.ToString(),
                         ErrorCategory.ConnectionError, null);
+                    ThrowTerminatingError(errorRecord);
+                }
+                catch (AuthenticationException authenticationException)
+                {
+                    var errorRecord = new ErrorRecord(authenticationException, ErrorCategory.AuthenticationError.ToString(),
+                        ErrorCategory.AuthenticationError, null);
                     ThrowTerminatingError(errorRecord);
                 }
                 catch (Exception exception)

@@ -10,11 +10,6 @@ namespace Microsoft.Graph.PowerShell.Authentication
     internal static class GraphEnvironmentConstants
     {
         /// <summary>
-        /// The default AD Tenant value
-        /// </summary>
-        public const string CommonAdTenant = "common";
-
-        /// <summary>
         /// Collection of predefined environment/cloud names for Microsoft Graph.
         /// </summary>
         public static class EnvironmentName

@@ -34,13 +34,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
         /// <summary>
         /// Dependencies that need to be loaded per framework.
         /// </summary>
-        private static IList<string> MultiFrameworkDependencies = new List<string> {
+        private static readonly IList<string> MultiFrameworkDependencies = new List<string> {
             "Microsoft.Identity.Client",
             "System.Security.Cryptography.ProtectedData"
         };
 
         // Set up the path to our dependency directory within the module.
-        private static string DependenciesDirPath = Path.GetFullPath(Path.Combine(
+        private static readonly string DependenciesDirPath = Path.GetFullPath(Path.Combine(
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Dependencies"));
 
         /// <summary>

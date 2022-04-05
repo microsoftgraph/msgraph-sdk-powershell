@@ -8,7 +8,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     using System.Linq;
     using System.Net.Http;
     using System.Reflection;
-    using System.Security.Authentication;
     using Microsoft.Graph.PowerShell.Authentication.Handlers;
     using System.Management.Automation;
     using System;
@@ -20,10 +19,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
     public static class HttpHelpers
     {
         /// The version for current assembly.
-        private static AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
+        private static readonly AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
 
         /// The value for the Auth module version header.
-        private static string AuthModuleVersionHeaderValue =
+        private static readonly string AuthModuleVersionHeaderValue =
             string.Format(Constants.SDKHeaderValue,
                 AssemblyInfo.Version.Major,
                 AssemblyInfo.Version.Minor,

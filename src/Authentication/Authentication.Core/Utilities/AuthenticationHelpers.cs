@@ -16,8 +16,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
     using System.Threading;
     using System.Threading.Tasks;
 
-    using AuthenticationException = System.Security.Authentication.AuthenticationException;
-
     /// <summary>
     /// Helper class for authentication.
     /// </summary>
@@ -117,7 +115,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 AuthorityHost = new Uri(GetAuthorityUrl(authContext)),
                 TokenCachePersistenceOptions = GetTokenCachePersistenceOptions(authContext)
             };
-            return await Task.FromResult(new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions));
+            var clientCertificateCredential = new ClientCertificateCredential(authContext.TenantId, authContext.ClientId, GetCertificate(authContext), clientCredentialOptions);
+            return await Task.FromResult(clientCertificateCredential);
         }
 
         private static TokenCachePersistenceOptions GetTokenCachePersistenceOptions(IAuthContext authContext)
@@ -137,7 +136,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext, default).GetAwaiter().GetResult(), authContext.Scopes);
+            return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext, default).GetAwaiter().GetResult(), GetScopes(authContext));
         }
 
         public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
@@ -147,7 +146,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             try
             {
                 var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken);
-                var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(authContext.Scopes), cancellationToken).ConfigureAwait(false);
+                var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
                 JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
                 return authContext;
             }
@@ -181,6 +180,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             {
                 throw ex.InnerException ?? ex;
             }
+        }
+
+        private static string[] GetScopes(IAuthContext authContext)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            if (authContext.AuthType == AuthenticationType.AppOnly)
+                return new[] { $"{GraphSession.Instance.Environment?.GraphEndpoint ?? Constants.DefaultGraphEndpoint}/.default" };
+            else
+                return authContext.Scopes;
         }
 
         /// <summary>
