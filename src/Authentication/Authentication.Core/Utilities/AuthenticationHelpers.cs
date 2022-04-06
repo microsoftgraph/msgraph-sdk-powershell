@@ -240,7 +240,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns></returns>
         private static X509Certificate2 GetCertificateByThumbprint(string certificateThumbprint)
         {
-            // TODO: Perform certificate lookup in both CurrentUser and LocalMachine. LocalMachine takes precedence.
             X509Certificate2 xCertificate = null;
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {
@@ -270,7 +269,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <returns></returns>
         private static X509Certificate2 GetCertificateByName(string certificateName)
         {
-            // TODO: Perform certificate lookup in both CurrentUser and LocalMachine. LocalMachine takes precedence.
             X509Certificate2 xCertificate = null;
             using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
             {

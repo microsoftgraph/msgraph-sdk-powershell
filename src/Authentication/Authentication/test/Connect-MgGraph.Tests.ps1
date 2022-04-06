@@ -12,13 +12,44 @@ BeforeAll {
         Install-Module Az.Accounts -Repository PSGallery -Scope CurrentUser -Force
     }
 }
-Describe 'Connect-MgGraph In Delegated Mode' {
-    It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' {
-        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -Scopes 'User.Read.All' -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*Tenant 'thisdomaindoesnotexist.com' not found*"
+Describe 'Connect-MgGraph Cmdlet Info' {
+    BeforeAll {
+        $ConnectMgGraphCommand = Get-Command Connect-MgGraph
+    }
+    it 'ShouldHaveParameterSets' {
+        $ConnectMgGraphCommand | Should -Not -BeNullOrEmpty
+        $ConnectMgGraphCommand.ParameterSets | Should -HaveCount 3
+    }
+    It 'ShouldHaveUserParameterSet' {
+        $UserParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'UserParameterSet'
+        $UserParameterSet | Should -Not -BeNull
+        $UserParameterSet.IsDefault | Should -BeTrue
+        $UserParameterSet.Parameters | Where-Object IsMandatory | Should -HaveCount 0
+        @('ClientId', 'TenantId', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $UserParameterSet.Parameters.Name
     }
 
-    It 'ShouldThrowExceptionWhenInvalidScopeIsSpecified' {
-        { Connect-MgGraph -Scopes 'User.Read.XYZ' -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*The scope 'User.Read.XYZ offline_access profile openid' does not exist*"
+    It 'ShouldHaveAppParameterSet' {
+        $AppParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AppParameterSet'
+        $AppParameterSet | Should -Not -BeNull
+        @('ClientId', 'TenantId', 'CertificateSubjectName', 'CertificateThumbprint', 'ContextScope', 'Environment', 'ClientTimeout') | Should -BeIn $AppParameterSet.Parameters.Name
+        $MandatoryParameters = $AppParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 1
+        $MandatoryParameters.Name | Should -Be 'ClientId'
+    }
+
+    It 'ShouldHaveAccessTokenParameterSet' {
+        $AccessTokenParameterSet = $ConnectMgGraphCommand.ParameterSets | Where-Object Name -eq 'AccessTokenParameterSet'
+        $AccessTokenParameterSet | Should -Not -BeNull
+        @('AccessToken', 'Environment', 'ClientTimeout') | Should -BeIn $AccessTokenParameterSet.Parameters.Name
+        $MandatoryParameters = $AccessTokenParameterSet.Parameters | Where-Object IsMandatory
+        $MandatoryParameters | Should -HaveCount 1
+        $MandatoryParameters.Name | Should -Be 'AccessToken'
+    }
+}
+
+Describe 'Connect-MgGraph In Delegated Mode' {
+    It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' -skip {
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*Tenant 'thisdomaindoesnotexist.com' not found*"
     }
 }
 
@@ -35,6 +66,6 @@ Describe 'Connect-MgGraph In App Mode' {
 Describe 'Connect-MgGraph Dependency Resolution' {
     It 'ShouldLoadMgModuleSideBySideWithAzModule.' {
         { Connect-AzAccount -ApplicationId $RandomClientId -CertificateThumbprint "Invalid" -Tenant "Invalid" -ErrorAction Stop } | Should -Throw -ExpectedMessage "*Could not find tenant id*"
-        { Connect-MgGraph -Scopes "invalid.scope" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS70011:*"
+        { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*"
     }
 }

@@ -10,7 +10,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
     using System.Reflection;
     public static class DependencyAssemblyResolver
     {
-        // TODO: Move to JSON config for dependabot upgrades.
         // Catalog our dependencies here to ensure we don't load anything else.
         private static IReadOnlyDictionary<string, Version> Dependencies = new Dictionary<string, Version>
         {

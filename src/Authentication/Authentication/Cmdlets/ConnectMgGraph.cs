@@ -45,11 +45,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "The client id of your application.")]
         [Alias("AppId")]
         public string ClientId { get; set; }
-
-        // TODO: clean-up help message once we add local store and user store support.
+        
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
-            HelpMessage = "The subject distinguished name from a certificate. The Certificate will be retrieved from the current user's certificate store.")]
+            HelpMessage = "The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.")]
         [Alias("CertificateSubject")]
         public string CertificateSubjectName { get; set; }
 
@@ -65,6 +64,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet,
             Position = 1,
+            Mandatory = true,
             HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
         public string AccessToken { get; set; }
 
