@@ -54,18 +54,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.auditLogRoot'
-          links:
-            directoryAudits:
-              operationId: auditLogs.ListDirectoryAudits
-            directoryProvisioning:
-              operationId: auditLogs.ListDirectoryProvisioning
-            provisioning:
-              operationId: auditLogs.ListProvisioning
-            restrictedSignIns:
-              operationId: auditLogs.ListRestrictedSignIns
-            signIns:
-              operationId: auditLogs.ListSignIns
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -83,7 +74,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /auditLogs/directoryAudits:
@@ -174,22 +167,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryAudit
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryAuditCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -199,7 +180,6 @@ paths:
       tags:
         - auditLogs.directoryAudit
       summary: Create new navigation property to directoryAudits for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_CreateDirectoryAudits
       requestBody:
         description: New navigation property
@@ -215,7 +195,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/auditLogs/directoryAudits/{directoryAudit-id}':
@@ -226,13 +208,6 @@ paths:
       description: Read-only. Nullable.
       operationId: auditLogs_GetDirectoryAudits
       parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
         - name: $select
           in: query
           description: Select properties to be returned
@@ -276,23 +251,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryAudit'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.directoryAudit
       summary: Update the navigation property directoryAudits in auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_UpdateDirectoryAudits
-      parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
       requestBody:
         description: New navigation property values
         content:
@@ -303,23 +271,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - auditLogs.directoryAudit
       summary: Delete navigation property directoryAudits for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_DeleteDirectoryAudits
       parameters:
-        - name: directoryAudit-id
-          in: path
-          description: 'key: id of directoryAudit'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryAudit
         - name: If-Match
           in: header
           description: ETag
@@ -328,7 +290,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /auditLogs/directoryProvisioning:
@@ -436,22 +400,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of provisioningObjectSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.provisioningObjectSummaryCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -476,7 +428,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/auditLogs/directoryProvisioning/{provisioningObjectSummary-id}':
@@ -486,13 +440,6 @@ paths:
       summary: Get directoryProvisioning from auditLogs
       operationId: auditLogs_GetDirectoryProvisioning
       parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
         - name: $select
           in: query
           description: Select properties to be returned
@@ -542,7 +489,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -550,14 +499,6 @@ paths:
         - auditLogs.provisioningObjectSummary
       summary: Update the navigation property directoryProvisioning in auditLogs
       operationId: auditLogs_UpdateDirectoryProvisioning
-      parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
       requestBody:
         description: New navigation property values
         content:
@@ -568,7 +509,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -577,13 +520,6 @@ paths:
       summary: Delete navigation property directoryProvisioning for auditLogs
       operationId: auditLogs_DeleteDirectoryProvisioning
       parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
         - name: If-Match
           in: header
           description: ETag
@@ -592,7 +528,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /auditLogs/provisioning:
@@ -700,22 +638,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of provisioningObjectSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.provisioningObjectSummaryCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -740,7 +666,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/auditLogs/provisioning/{provisioningObjectSummary-id}':
@@ -750,13 +678,6 @@ paths:
       summary: Get provisioning from auditLogs
       operationId: auditLogs_GetProvisioning
       parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
         - name: $select
           in: query
           description: Select properties to be returned
@@ -806,7 +727,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -814,14 +737,6 @@ paths:
         - auditLogs.provisioningObjectSummary
       summary: Update the navigation property provisioning in auditLogs
       operationId: auditLogs_UpdateProvisioning
-      parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
       requestBody:
         description: New navigation property values
         content:
@@ -832,7 +747,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -841,13 +758,6 @@ paths:
       summary: Delete navigation property provisioning for auditLogs
       operationId: auditLogs_DeleteProvisioning
       parameters:
-        - name: provisioningObjectSummary-id
-          in: path
-          description: 'key: id of provisioningObjectSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: provisioningObjectSummary
         - name: If-Match
           in: header
           description: ETag
@@ -856,7 +766,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /auditLogs/restrictedSignIns:
@@ -1090,22 +1002,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of restrictedSignIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.restrictedSignInCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1130,7 +1030,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/auditLogs/restrictedSignIns/{restrictedSignIn-id}':
@@ -1140,13 +1042,6 @@ paths:
       summary: Get restrictedSignIns from auditLogs
       operationId: auditLogs_GetRestrictedSignIns
       parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1238,7 +1133,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1246,14 +1143,6 @@ paths:
         - auditLogs.restrictedSignIn
       summary: Update the navigation property restrictedSignIns in auditLogs
       operationId: auditLogs_UpdateRestrictedSignIns
-      parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
       requestBody:
         description: New navigation property values
         content:
@@ -1264,7 +1153,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -1273,13 +1164,6 @@ paths:
       summary: Delete navigation property restrictedSignIns for auditLogs
       operationId: auditLogs_DeleteRestrictedSignIns
       parameters:
-        - name: restrictedSignIn-id
-          in: path
-          description: 'key: id of restrictedSignIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: restrictedSignIn
         - name: If-Match
           in: header
           description: ETag
@@ -1288,7 +1172,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /auditLogs/signIns:
@@ -1520,22 +1406,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of signIn
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.signIn'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.signInCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1545,7 +1419,6 @@ paths:
       tags:
         - auditLogs.signIn
       summary: Create new navigation property to signIns for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_CreateSignIns
       requestBody:
         description: New navigation property
@@ -1561,7 +1434,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/auditLogs/signIns/{signIn-id}':
@@ -1572,13 +1447,6 @@ paths:
       description: Read-only. Nullable.
       operationId: auditLogs_GetSignIns
       parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1669,23 +1537,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.signIn'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - auditLogs.signIn
       summary: Update the navigation property signIns in auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_UpdateSignIns
-      parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
       requestBody:
         description: New navigation property values
         content:
@@ -1696,23 +1557,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - auditLogs.signIn
       summary: Delete navigation property signIns for auditLogs
-      description: Read-only. Nullable.
       operationId: auditLogs_DeleteSignIns
       parameters:
-        - name: signIn-id
-          in: path
-          description: 'key: id of signIn'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: signIn
         - name: If-Match
           in: header
           description: ETag
@@ -1721,7 +1576,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /deviceManagement/reports:
@@ -1767,19 +1624,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementReports'
-          links:
-            cachedReportConfigurations:
-              operationId: deviceManagement.Reports.ListCachedReportConfigurations
-            exportJobs:
-              operationId: deviceManagement.Reports.ListExportJobs
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property reports in deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_UpdateReports
       requestBody:
         description: New navigation property values
@@ -1791,14 +1644,15 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property reports for deviceManagement
-      description: Reports singleton
       operationId: deviceManagement_DeleteReports
       parameters:
         - name: If-Match
@@ -1809,7 +1663,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /deviceManagement/reports/cachedReportConfigurations:
@@ -1888,22 +1744,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementCachedReportConfiguration
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1913,7 +1757,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to cachedReportConfigurations for deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_CreateCachedReportConfigurations
       requestBody:
         description: New navigation property
@@ -1929,7 +1772,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/deviceManagement/reports/cachedReportConfigurations/{deviceManagementCachedReportConfiguration-id}':
@@ -1940,13 +1785,6 @@ paths:
       description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_GetCachedReportConfigurations
       parameters:
-        - name: deviceManagementCachedReportConfiguration-id
-          in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementCachedReportConfiguration
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1986,23 +1824,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property cachedReportConfigurations in deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_UpdateCachedReportConfigurations
-      parameters:
-        - name: deviceManagementCachedReportConfiguration-id
-          in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementCachedReportConfiguration
       requestBody:
         description: New navigation property values
         content:
@@ -2013,23 +1844,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property cachedReportConfigurations for deviceManagement
-      description: Entity representing the configuration of a cached report
       operationId: deviceManagement.reports_DeleteCachedReportConfigurations
       parameters:
-        - name: deviceManagementCachedReportConfiguration-id
-          in: path
-          description: 'key: id of deviceManagementCachedReportConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementCachedReportConfiguration
         - name: If-Match
           in: header
           description: ETag
@@ -2038,7 +1863,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /deviceManagement/reports/exportJobs:
@@ -2123,22 +1950,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deviceManagementExportJob
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.deviceManagementExportJobCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2148,7 +1963,6 @@ paths:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Create new navigation property to exportJobs for deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_CreateExportJobs
       requestBody:
         description: New navigation property
@@ -2164,7 +1978,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/deviceManagement/reports/exportJobs/{deviceManagementExportJob-id}':
@@ -2175,13 +1991,6 @@ paths:
       description: Entity representing a job to export a report
       operationId: deviceManagement.reports_GetExportJobs
       parameters:
-        - name: deviceManagementExportJob-id
-          in: path
-          description: 'key: id of deviceManagementExportJob'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExportJob
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2223,23 +2032,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Update the navigation property exportJobs in deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_UpdateExportJobs
-      parameters:
-        - name: deviceManagementExportJob-id
-          in: path
-          description: 'key: id of deviceManagementExportJob'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExportJob
       requestBody:
         description: New navigation property values
         content:
@@ -2250,23 +2052,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - deviceManagement.deviceManagementReports
       summary: Delete navigation property exportJobs for deviceManagement
-      description: Entity representing a job to export a report
       operationId: deviceManagement.reports_DeleteExportJobs
       parameters:
-        - name: deviceManagementExportJob-id
-          in: path
-          description: 'key: id of deviceManagementExportJob'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExportJob
         - name: If-Match
           in: header
           description: ETag
@@ -2275,7 +2071,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports:
@@ -2340,32 +2138,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.reportRoot'
-          links:
-            applicationSignInDetailedSummary:
-              operationId: reports.ListApplicationSignInDetailedSummary
-            authenticationMethods:
-              operationId: reports.GetAuthenticationMethods
-            credentialUserRegistrationDetails:
-              operationId: reports.ListCredentialUserRegistrationDetails
-            userCredentialUsageDetails:
-              operationId: reports.ListUserCredentialUsageDetails
-            dailyPrintUsageByPrinter:
-              operationId: reports.ListDailyPrintUsageByPrinter
-            dailyPrintUsageByUser:
-              operationId: reports.ListDailyPrintUsageByUser
-            dailyPrintUsageSummariesByPrinter:
-              operationId: reports.ListDailyPrintUsageSummariesByPrinter
-            dailyPrintUsageSummariesByUser:
-              operationId: reports.ListDailyPrintUsageSummariesByUser
-            monthlyPrintUsageByPrinter:
-              operationId: reports.ListMonthlyPrintUsageByPrinter
-            monthlyPrintUsageByUser:
-              operationId: reports.ListMonthlyPrintUsageByUser
-            monthlyPrintUsageSummariesByPrinter:
-              operationId: reports.ListMonthlyPrintUsageSummariesByPrinter
-            monthlyPrintUsageSummariesByUser:
-              operationId: reports.ListMonthlyPrintUsageSummariesByUser
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2383,7 +2158,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/applicationSignInDetailedSummary:
@@ -2453,22 +2230,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of applicationSignInDetailedSummary
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.applicationSignInDetailedSummaryCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2478,7 +2243,6 @@ paths:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Create new navigation property to applicationSignInDetailedSummary for reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_CreateApplicationSignInDetailedSummary
       requestBody:
         description: New navigation property
@@ -2494,7 +2258,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/applicationSignInDetailedSummary/{applicationSignInDetailedSummary-id}':
@@ -2505,13 +2271,6 @@ paths:
       description: Represents a detailed summary of an application sign-in.
       operationId: reports_GetApplicationSignInDetailedSummary
       parameters:
-        - name: applicationSignInDetailedSummary-id
-          in: path
-          description: 'key: id of applicationSignInDetailedSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationSignInDetailedSummary
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2548,23 +2307,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Update the navigation property applicationSignInDetailedSummary in reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_UpdateApplicationSignInDetailedSummary
-      parameters:
-        - name: applicationSignInDetailedSummary-id
-          in: path
-          description: 'key: id of applicationSignInDetailedSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationSignInDetailedSummary
       requestBody:
         description: New navigation property values
         content:
@@ -2575,23 +2327,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - reports.applicationSignInDetailedSummary
       summary: Delete navigation property applicationSignInDetailedSummary for reports
-      description: Represents a detailed summary of an application sign-in.
       operationId: reports_DeleteApplicationSignInDetailedSummary
       parameters:
-        - name: applicationSignInDetailedSummary-id
-          in: path
-          description: 'key: id of applicationSignInDetailedSummary'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: applicationSignInDetailedSummary
         - name: If-Match
           in: header
           description: ETag
@@ -2600,7 +2346,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/authenticationMethods:
@@ -2644,17 +2392,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethodsRoot'
-          links:
-            userRegistrationDetails:
-              operationId: reports.AuthenticationMethods.ListUserRegistrationDetails
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property authenticationMethods in reports
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_UpdateAuthenticationMethods
       requestBody:
         description: New navigation property values
@@ -2666,14 +2412,15 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property authenticationMethods for reports
-      description: Container for navigation properties for Azure AD authentication methods resources.
       operationId: reports_DeleteAuthenticationMethods
       parameters:
         - name: If-Match
@@ -2684,7 +2431,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature():
@@ -2703,7 +2452,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})':
+  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByFeature(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
         - reports.Functions
@@ -2712,13 +2461,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
-          description: 'Usage: includedUserTypes={includedUserTypes}'
+          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
-          description: 'Usage: includedUserRoles={includedUserRoles}'
+          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -2748,7 +2497,7 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes={includedUserTypes},includedUserRoles={includedUserRoles})':
+  '/reports/authenticationMethods/microsoft.graph.usersRegisteredByMethod(includedUserTypes=''{includedUserTypes}'',includedUserRoles=''{includedUserRoles}'')':
     get:
       tags:
         - reports.Functions
@@ -2757,13 +2506,13 @@ paths:
       parameters:
         - name: includedUserTypes
           in: path
-          description: 'Usage: includedUserTypes={includedUserTypes}'
+          description: 'Usage: includedUserTypes=''{includedUserTypes}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserTypes'
         - name: includedUserRoles
           in: path
-          description: 'Usage: includedUserRoles={includedUserRoles}'
+          description: 'Usage: includedUserRoles=''{includedUserRoles}'''
           required: true
           schema:
             $ref: '#/components/schemas/microsoft.graph.includedUserRoles'
@@ -2856,22 +2605,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userRegistrationDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.userRegistrationDetailsCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2881,7 +2618,6 @@ paths:
       tags:
         - reports.authenticationMethodsRoot
       summary: Create new navigation property to userRegistrationDetails for reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_CreateUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -2897,7 +2633,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/authenticationMethods/userRegistrationDetails/{userRegistrationDetails-id}':
@@ -2908,13 +2646,6 @@ paths:
       description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_GetUserRegistrationDetails
       parameters:
-        - name: userRegistrationDetails-id
-          in: path
-          description: 'key: id of userRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userRegistrationDetails
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2955,23 +2686,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.authenticationMethodsRoot
       summary: Update the navigation property userRegistrationDetails in reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_UpdateUserRegistrationDetails
-      parameters:
-        - name: userRegistrationDetails-id
-          in: path
-          description: 'key: id of userRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userRegistrationDetails
       requestBody:
         description: New navigation property values
         content:
@@ -2982,23 +2706,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - reports.authenticationMethodsRoot
       summary: Delete navigation property userRegistrationDetails for reports
-      description: 'Represents the state of a user''s authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).'
       operationId: reports.authenticationMethods_DeleteUserRegistrationDetails
       parameters:
-        - name: userRegistrationDetails-id
-          in: path
-          description: 'key: id of userRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userRegistrationDetails
         - name: If-Match
           in: header
           description: ETag
@@ -3007,7 +2725,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/credentialUserRegistrationDetails:
@@ -3083,22 +2803,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of credentialUserRegistrationDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3108,7 +2816,6 @@ paths:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Create new navigation property to credentialUserRegistrationDetails for reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_CreateCredentialUserRegistrationDetails
       requestBody:
         description: New navigation property
@@ -3124,7 +2831,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/credentialUserRegistrationDetails/{credentialUserRegistrationDetails-id}':
@@ -3135,13 +2844,6 @@ paths:
       description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_GetCredentialUserRegistrationDetails
       parameters:
-        - name: credentialUserRegistrationDetails-id
-          in: path
-          description: 'key: id of credentialUserRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: credentialUserRegistrationDetails
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3180,23 +2882,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Update the navigation property credentialUserRegistrationDetails in reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_UpdateCredentialUserRegistrationDetails
-      parameters:
-        - name: credentialUserRegistrationDetails-id
-          in: path
-          description: 'key: id of credentialUserRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: credentialUserRegistrationDetails
       requestBody:
         description: New navigation property values
         content:
@@ -3207,23 +2902,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - reports.credentialUserRegistrationDetails
       summary: Delete navigation property credentialUserRegistrationDetails for reports
-      description: Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
       operationId: reports_DeleteCredentialUserRegistrationDetails
       parameters:
-        - name: credentialUserRegistrationDetails-id
-          in: path
-          description: 'key: id of credentialUserRegistrationDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: credentialUserRegistrationDetails
         - name: If-Match
           in: header
           description: ETag
@@ -3232,7 +2921,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageByPrinter:
@@ -3301,22 +2992,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3341,7 +3020,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageByPrinter/{printUsageByPrinter-id}':
@@ -3351,13 +3032,6 @@ paths:
       summary: Get dailyPrintUsageByPrinter from reports
       operationId: reports_GetDailyPrintUsageByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3394,7 +3068,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3402,14 +3078,6 @@ paths:
         - reports.printUsageByPrinter
       summary: Update the navigation property dailyPrintUsageByPrinter in reports
       operationId: reports_UpdateDailyPrintUsageByPrinter
-      parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
@@ -3420,7 +3088,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3429,13 +3099,6 @@ paths:
       summary: Delete navigation property dailyPrintUsageByPrinter for reports
       operationId: reports_DeleteDailyPrintUsageByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -3444,7 +3107,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageByUser:
@@ -3513,22 +3178,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3553,7 +3206,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageByUser/{printUsageByUser-id}':
@@ -3563,13 +3218,6 @@ paths:
       summary: Get dailyPrintUsageByUser from reports
       operationId: reports_GetDailyPrintUsageByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3606,7 +3254,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3614,14 +3264,6 @@ paths:
         - reports.printUsageByUser
       summary: Update the navigation property dailyPrintUsageByUser in reports
       operationId: reports_UpdateDailyPrintUsageByUser
-      parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
@@ -3632,7 +3274,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3641,13 +3285,6 @@ paths:
       summary: Delete navigation property dailyPrintUsageByUser for reports
       operationId: reports_DeleteDailyPrintUsageByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -3656,7 +3293,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageSummariesByPrinter:
@@ -3725,22 +3364,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3765,7 +3392,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
@@ -3775,13 +3404,6 @@ paths:
       summary: Get dailyPrintUsageSummariesByPrinter from reports
       operationId: reports_GetDailyPrintUsageSummariesByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3818,7 +3440,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3826,14 +3450,6 @@ paths:
         - reports.printUsageByPrinter
       summary: Update the navigation property dailyPrintUsageSummariesByPrinter in reports
       operationId: reports_UpdateDailyPrintUsageSummariesByPrinter
-      parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
@@ -3844,7 +3460,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3853,13 +3471,6 @@ paths:
       summary: Delete navigation property dailyPrintUsageSummariesByPrinter for reports
       operationId: reports_DeleteDailyPrintUsageSummariesByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -3868,7 +3479,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/dailyPrintUsageSummariesByUser:
@@ -3937,22 +3550,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3977,7 +3578,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/dailyPrintUsageSummariesByUser/{printUsageByUser-id}':
@@ -3987,13 +3590,6 @@ paths:
       summary: Get dailyPrintUsageSummariesByUser from reports
       operationId: reports_GetDailyPrintUsageSummariesByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4030,7 +3626,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4038,14 +3636,6 @@ paths:
         - reports.printUsageByUser
       summary: Update the navigation property dailyPrintUsageSummariesByUser in reports
       operationId: reports_UpdateDailyPrintUsageSummariesByUser
-      parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
@@ -4056,7 +3646,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4065,13 +3657,6 @@ paths:
       summary: Delete navigation property dailyPrintUsageSummariesByUser for reports
       operationId: reports_DeleteDailyPrintUsageSummariesByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -4080,7 +3665,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/microsoft.graph.deviceConfigurationDeviceActivity():
@@ -4129,9 +3716,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationRepeatOffender'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4147,9 +3740,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationSimulationUserCoverage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4165,9 +3764,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.attackSimulationTrainingUserCoverage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4180,7 +3785,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4190,9 +3795,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.applicationSignInSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4205,7 +3816,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4215,9 +3826,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADFeatureUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4230,7 +3847,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4240,9 +3857,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADLicenseUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4258,9 +3881,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.azureADUserFeatureUsage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4273,7 +3902,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4283,8 +3912,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4297,7 +3931,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4307,8 +3941,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4321,7 +3960,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4331,8 +3970,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4345,7 +3989,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4355,9 +3999,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.credentialUsageSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4373,9 +4023,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationCount'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4388,7 +4044,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4398,8 +4054,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4412,7 +4073,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4422,8 +4083,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4448,8 +4114,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4462,7 +4133,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4472,8 +4143,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4486,7 +4162,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4496,8 +4172,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4510,7 +4191,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4520,8 +4201,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4546,8 +4232,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4560,7 +4251,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4570,8 +4261,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4584,7 +4280,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4594,12 +4290,17 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getGroupArchivedPrintJobs(groupId=''{groupId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -4608,14 +4309,14 @@ paths:
       parameters:
         - name: groupId
           in: path
-          description: 'Usage: groupId={groupId}'
+          description: 'Usage: groupId=''{groupId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4624,7 +4325,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -4637,9 +4338,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4652,7 +4359,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4675,7 +4382,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4723,7 +4430,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4746,7 +4453,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4756,8 +4463,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4770,7 +4482,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4780,8 +4492,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4794,7 +4511,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4804,8 +4521,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4818,7 +4540,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4828,8 +4550,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4845,8 +4572,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4862,8 +4594,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4879,8 +4616,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4893,7 +4635,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4903,9 +4645,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4930,9 +4678,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4945,7 +4699,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4955,9 +4709,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ActiveUserDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -4970,7 +4730,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -4980,9 +4740,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5007,9 +4773,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5022,7 +4794,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5032,9 +4804,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityDetail'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5047,7 +4825,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5057,9 +4835,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityFileCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5072,7 +4856,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5082,9 +4866,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityGroupCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5097,7 +4887,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5107,9 +4897,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365GroupsActivityStorage'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5122,7 +4918,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5132,9 +4928,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.office365ServicesUserCounts'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5147,7 +4949,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5157,8 +4959,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5171,7 +4978,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5181,8 +4988,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5207,8 +5019,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5221,7 +5038,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5231,8 +5048,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5245,7 +5067,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5255,8 +5077,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5281,8 +5108,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5295,7 +5127,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5305,8 +5137,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5319,7 +5156,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5329,8 +5166,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5343,7 +5185,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5353,12 +5195,17 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getPrinterArchivedPrintJobs(printerId=''{printerId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -5367,14 +5214,14 @@ paths:
       parameters:
         - name: printerId
           in: path
-          description: 'Usage: printerId={printerId}'
+          description: 'Usage: printerId=''{printerId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5383,7 +5230,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -5396,9 +5243,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5411,7 +5264,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5421,9 +5274,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.relyingPartyDetailedSummary'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5436,7 +5295,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5446,8 +5305,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5460,7 +5324,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5470,8 +5334,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5484,7 +5353,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5494,8 +5363,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5520,8 +5394,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5534,7 +5413,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5544,8 +5423,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5570,8 +5454,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5584,7 +5473,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5594,8 +5483,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5608,7 +5502,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5618,8 +5512,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5632,7 +5531,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5642,8 +5541,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5656,7 +5560,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5666,8 +5570,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5680,7 +5589,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5690,8 +5599,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5704,7 +5618,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5714,8 +5628,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5728,7 +5647,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5738,8 +5657,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5764,8 +5688,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5778,7 +5707,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5788,8 +5717,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5802,7 +5736,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5812,8 +5746,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5826,7 +5765,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5836,8 +5775,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5862,8 +5806,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5876,7 +5825,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5886,8 +5835,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5900,7 +5854,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5910,8 +5864,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5924,7 +5883,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5934,8 +5893,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5948,7 +5912,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5958,8 +5922,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5972,7 +5941,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -5982,8 +5951,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -5996,7 +5970,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6006,8 +5980,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6020,7 +5999,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6030,8 +6009,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6044,7 +6028,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6054,8 +6038,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6068,7 +6057,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6078,8 +6067,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6092,7 +6086,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6102,8 +6096,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6116,7 +6115,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6126,8 +6125,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6140,7 +6144,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6150,8 +6154,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6164,7 +6173,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6174,8 +6183,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6188,7 +6202,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6198,8 +6212,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6224,8 +6243,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6238,7 +6262,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6248,8 +6272,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6262,7 +6291,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6272,8 +6301,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6298,8 +6332,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6312,7 +6351,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6322,8 +6361,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6336,7 +6380,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6346,8 +6390,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6360,7 +6409,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6370,8 +6419,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6384,7 +6438,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6394,8 +6448,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6408,7 +6467,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6418,8 +6477,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6432,7 +6496,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6442,8 +6506,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6456,7 +6525,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6466,8 +6535,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6480,7 +6554,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6490,8 +6564,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6504,7 +6583,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6514,8 +6593,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6540,8 +6624,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6554,7 +6643,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6564,12 +6653,17 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
+  '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime=''{startDateTime}'',endDateTime=''{endDateTime}'')':
     get:
       tags:
         - reports.Functions
@@ -6578,14 +6672,14 @@ paths:
       parameters:
         - name: userId
           in: path
-          description: 'Usage: userId={userId}'
+          description: 'Usage: userId=''{userId}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: startDateTime
           in: path
-          description: 'Usage: startDateTime={startDateTime}'
+          description: 'Usage: startDateTime=''{startDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6594,7 +6688,7 @@ paths:
             nullable: true
         - name: endDateTime
           in: path
-          description: 'Usage: endDateTime={endDateTime}'
+          description: 'Usage: endDateTime=''{endDateTime}'''
           required: true
           schema:
             pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -6607,9 +6701,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                title: Collection of reportRoot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.archivedPrintJob'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6622,7 +6722,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6632,8 +6732,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6646,7 +6751,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6656,8 +6761,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6682,8 +6792,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6696,7 +6811,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6706,8 +6821,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6720,7 +6840,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6730,8 +6850,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6744,7 +6869,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6754,8 +6879,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6780,8 +6910,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6794,7 +6929,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6804,8 +6939,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6818,7 +6958,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6828,8 +6968,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6854,8 +6999,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6868,7 +7018,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6878,8 +7028,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6892,7 +7047,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -6902,8 +7057,13 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -6937,14 +7097,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -6989,14 +7149,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -7056,14 +7216,14 @@ paths:
             nullable: true
         - name: filter
           in: path
-          description: 'Usage: filter={filter}'
+          description: 'Usage: filter=''{filter}'''
           required: true
           schema:
             type: string
             nullable: true
         - name: skipToken
           in: path
-          description: 'Usage: skipToken={skipToken}'
+          description: 'Usage: skipToken=''{skipToken}'''
           required: true
           schema:
             type: string
@@ -7120,7 +7280,7 @@ paths:
       parameters:
         - name: period
           in: path
-          description: 'Usage: period={period}'
+          description: 'Usage: period=''{period}'''
           required: true
           schema:
             type: string
@@ -7201,22 +7361,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -7241,7 +7389,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageByPrinter/{printUsageByPrinter-id}':
@@ -7251,13 +7401,6 @@ paths:
       summary: Get monthlyPrintUsageByPrinter from reports
       operationId: reports_GetMonthlyPrintUsageByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7294,7 +7437,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -7302,14 +7447,6 @@ paths:
         - reports.printUsageByPrinter
       summary: Update the navigation property monthlyPrintUsageByPrinter in reports
       operationId: reports_UpdateMonthlyPrintUsageByPrinter
-      parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
@@ -7320,7 +7457,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -7329,13 +7468,6 @@ paths:
       summary: Delete navigation property monthlyPrintUsageByPrinter for reports
       operationId: reports_DeleteMonthlyPrintUsageByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -7344,7 +7476,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageByUser:
@@ -7413,22 +7547,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -7453,7 +7575,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageByUser/{printUsageByUser-id}':
@@ -7463,13 +7587,6 @@ paths:
       summary: Get monthlyPrintUsageByUser from reports
       operationId: reports_GetMonthlyPrintUsageByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7506,7 +7623,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -7514,14 +7633,6 @@ paths:
         - reports.printUsageByUser
       summary: Update the navigation property monthlyPrintUsageByUser in reports
       operationId: reports_UpdateMonthlyPrintUsageByUser
-      parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
@@ -7532,7 +7643,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -7541,13 +7654,6 @@ paths:
       summary: Delete navigation property monthlyPrintUsageByUser for reports
       operationId: reports_DeleteMonthlyPrintUsageByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -7556,7 +7662,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageSummariesByPrinter:
@@ -7625,22 +7733,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByPrinter
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByPrinterCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -7665,7 +7761,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageSummariesByPrinter/{printUsageByPrinter-id}':
@@ -7675,13 +7773,6 @@ paths:
       summary: Get monthlyPrintUsageSummariesByPrinter from reports
       operationId: reports_GetMonthlyPrintUsageSummariesByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7718,7 +7809,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -7726,14 +7819,6 @@ paths:
         - reports.printUsageByPrinter
       summary: Update the navigation property monthlyPrintUsageSummariesByPrinter in reports
       operationId: reports_UpdateMonthlyPrintUsageSummariesByPrinter
-      parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
       requestBody:
         description: New navigation property values
         content:
@@ -7744,7 +7829,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -7753,13 +7840,6 @@ paths:
       summary: Delete navigation property monthlyPrintUsageSummariesByPrinter for reports
       operationId: reports_DeleteMonthlyPrintUsageSummariesByPrinter
       parameters:
-        - name: printUsageByPrinter-id
-          in: path
-          description: 'key: id of printUsageByPrinter'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByPrinter
         - name: If-Match
           in: header
           description: ETag
@@ -7768,7 +7848,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/monthlyPrintUsageSummariesByUser:
@@ -7837,22 +7919,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printUsageByUser
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printUsageByUserCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -7877,7 +7947,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/monthlyPrintUsageSummariesByUser/{printUsageByUser-id}':
@@ -7887,13 +7959,6 @@ paths:
       summary: Get monthlyPrintUsageSummariesByUser from reports
       operationId: reports_GetMonthlyPrintUsageSummariesByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: $select
           in: query
           description: Select properties to be returned
@@ -7930,7 +7995,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -7938,14 +8005,6 @@ paths:
         - reports.printUsageByUser
       summary: Update the navigation property monthlyPrintUsageSummariesByUser in reports
       operationId: reports_UpdateMonthlyPrintUsageSummariesByUser
-      parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
       requestBody:
         description: New navigation property values
         content:
@@ -7956,7 +8015,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -7965,13 +8026,6 @@ paths:
       summary: Delete navigation property monthlyPrintUsageSummariesByUser for reports
       operationId: reports_DeleteMonthlyPrintUsageSummariesByUser
       parameters:
-        - name: printUsageByUser-id
-          in: path
-          description: 'key: id of printUsageByUser'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printUsageByUser
         - name: If-Match
           in: header
           description: ETag
@@ -7980,7 +8034,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /reports/userCredentialUsageDetails:
@@ -8056,22 +8112,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userCredentialUsageDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.userCredentialUsageDetailsCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -8081,7 +8125,6 @@ paths:
       tags:
         - reports.userCredentialUsageDetails
       summary: Create new navigation property to userCredentialUsageDetails for reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_CreateUserCredentialUsageDetails
       requestBody:
         description: New navigation property
@@ -8097,7 +8140,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/reports/userCredentialUsageDetails/{userCredentialUsageDetails-id}':
@@ -8108,13 +8153,6 @@ paths:
       description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_GetUserCredentialUsageDetails
       parameters:
-        - name: userCredentialUsageDetails-id
-          in: path
-          description: 'key: id of userCredentialUsageDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userCredentialUsageDetails
         - name: $select
           in: query
           description: Select properties to be returned
@@ -8153,23 +8191,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - reports.userCredentialUsageDetails
       summary: Update the navigation property userCredentialUsageDetails in reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_UpdateUserCredentialUsageDetails
-      parameters:
-        - name: userCredentialUsageDetails-id
-          in: path
-          description: 'key: id of userCredentialUsageDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userCredentialUsageDetails
       requestBody:
         description: New navigation property values
         content:
@@ -8180,23 +8211,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - reports.userCredentialUsageDetails
       summary: Delete navigation property userCredentialUsageDetails for reports
-      description: Represents the self-service password reset (SSPR) usage for a given tenant.
       operationId: reports_DeleteUserCredentialUsageDetails
       parameters:
-        - name: userCredentialUsageDetails-id
-          in: path
-          description: 'key: id of userCredentialUsageDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userCredentialUsageDetails
         - name: If-Match
           in: header
           description: ETag
@@ -8205,7 +8230,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -10367,6 +10394,25 @@ components:
         - failed
       type: string
       description: Possible statuses associated with a generated report
+      x-ms-enum:
+        name: deviceManagementReportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Report generation status is unknown
+            name: unknown
+          - value: notStarted
+            description: Report generation has not started
+            name: notStarted
+          - value: inProgress
+            description: Report generation is in progress
+            name: inProgress
+          - value: completed
+            description: Report generation is completed
+            name: completed
+          - value: failed
+            description: Report generation has failed
+            name: failed
     microsoft.graph.deviceManagementReportFileFormat:
       title: deviceManagementReportFileFormat
       enum:
@@ -10374,6 +10420,16 @@ components:
         - pdf
       type: string
       description: Possible values for the file format of a report
+      x-ms-enum:
+        name: deviceManagementReportFileFormat
+        modelAsString: false
+        values:
+          - value: csv
+            description: Comma-separated values
+            name: csv
+          - value: pdf
+            description: Portable Document Format
+            name: pdf
     microsoft.graph.deviceManagementExportJobLocalizationType:
       title: deviceManagementExportJobLocalizationType
       enum:
@@ -10381,6 +10437,16 @@ components:
         - replaceLocalizableValues
       type: string
       description: Configures how the requested export job is localized
+      x-ms-enum:
+        name: deviceManagementExportJobLocalizationType
+        modelAsString: false
+        values:
+          - value: localizedValuesAsAdditionalColumn
+            description: Configures the export job to expose localized values as an additional column
+            name: localizedValuesAsAdditionalColumn
+          - value: replaceLocalizableValues
+            description: Configures the export job to replace enumerable values with their localized values
+            name: replaceLocalizableValues
     microsoft.graph.userRegistrationFeatureCount:
       title: userRegistrationFeatureCount
       type: object
@@ -10625,13 +10691,157 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryAuditCollectionResponse:
+      title: Collection of directoryAudit
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryAudit'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.provisioningObjectSummaryCollectionResponse:
+      title: Collection of provisioningObjectSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.restrictedSignInCollectionResponse:
+      title: Collection of restrictedSignIn
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.restrictedSignIn'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.signInCollectionResponse:
+      title: Collection of signIn
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.signIn'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse:
+      title: Collection of deviceManagementCachedReportConfiguration
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfiguration'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceManagementExportJobCollectionResponse:
+      title: Collection of deviceManagementExportJob
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJob'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.applicationSignInDetailedSummaryCollectionResponse:
+      title: Collection of applicationSignInDetailedSummary
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummary'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userRegistrationDetailsCollectionResponse:
+      title: Collection of userRegistrationDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.credentialUserRegistrationDetailsCollectionResponse:
+      title: Collection of credentialUserRegistrationDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetails'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printUsageByPrinterCollectionResponse:
+      title: Collection of printUsageByPrinter
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByPrinter'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printUsageByUserCollectionResponse:
+      title: Collection of printUsageByUser
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByUser'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userCredentialUsageDetailsCollectionResponse:
+      title: Collection of userCredentialUsageDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetails'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.appIdentity:
@@ -10911,7 +11121,7 @@ components:
         - mfaRegistered
         - unknownFutureValue
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -10923,15 +11133,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.provisioningStatusErrorCategory:
@@ -10969,7 +11177,7 @@ components:
         - deviceFilterIncludeRuleNotMatched
         - allDeviceStates
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -10981,15 +11189,93 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.directoryAuditCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryAuditCollectionResponse'
+    microsoft.graph.provisioningObjectSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.provisioningObjectSummaryCollectionResponse'
+    microsoft.graph.restrictedSignInCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.restrictedSignInCollectionResponse'
+    microsoft.graph.signInCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.signInCollectionResponse'
+    microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementCachedReportConfigurationCollectionResponse'
+    microsoft.graph.deviceManagementExportJobCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceManagementExportJobCollectionResponse'
+    microsoft.graph.applicationSignInDetailedSummaryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.applicationSignInDetailedSummaryCollectionResponse'
+    microsoft.graph.userRegistrationDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userRegistrationDetailsCollectionResponse'
+    microsoft.graph.credentialUserRegistrationDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.credentialUserRegistrationDetailsCollectionResponse'
+    microsoft.graph.printUsageByPrinterCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByPrinterCollectionResponse'
+    microsoft.graph.printUsageByUserCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printUsageByUserCollectionResponse'
+    microsoft.graph.userCredentialUsageDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userCredentialUsageDetailsCollectionResponse'
   parameters:
     top:
       name: $top

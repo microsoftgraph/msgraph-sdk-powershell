@@ -56,20 +56,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.print'
-          links:
-            connectors:
-              operationId: print.ListConnectors
-            operations:
-              operationId: print.ListOperations
-            printers:
-              operationId: print.ListPrinters
-            services:
-              operationId: print.ListServices
-            shares:
-              operationId: print.ListShares
-            taskDefinitions:
-              operationId: print.ListTaskDefinitions
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -87,7 +76,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /print/connectors:
@@ -160,22 +151,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printConnector
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printConnector'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printConnectorCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -185,7 +164,6 @@ paths:
       tags:
         - print.printConnector
       summary: Create new navigation property to connectors for print
-      description: The list of available print connectors.
       operationId: print_CreateConnectors
       requestBody:
         description: New navigation property
@@ -201,7 +179,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printConnector'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/connectors/{printConnector-id}':
@@ -212,13 +192,6 @@ paths:
       description: The list of available print connectors.
       operationId: print_GetConnectors
       parameters:
-        - name: printConnector-id
-          in: path
-          description: 'key: id of printConnector'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printConnector
         - name: $select
           in: query
           description: Select properties to be returned
@@ -256,23 +229,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printConnector'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printConnector
       summary: Update the navigation property connectors in print
-      description: The list of available print connectors.
       operationId: print_UpdateConnectors
-      parameters:
-        - name: printConnector-id
-          in: path
-          description: 'key: id of printConnector'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printConnector
       requestBody:
         description: New navigation property values
         content:
@@ -283,23 +249,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printConnector
       summary: Delete navigation property connectors for print
-      description: The list of available print connectors.
       operationId: print_DeleteConnectors
       parameters:
-        - name: printConnector-id
-          in: path
-          description: 'key: id of printConnector'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printConnector
         - name: If-Match
           in: header
           description: ETag
@@ -308,7 +268,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /print/operations:
@@ -369,22 +331,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printOperation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printOperation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printOperationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -394,7 +344,6 @@ paths:
       tags:
         - print.printOperation
       summary: Create new navigation property to operations for print
-      description: The list of print long running operations.
       operationId: print_CreateOperations
       requestBody:
         description: New navigation property
@@ -410,7 +359,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printOperation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/operations/{printOperation-id}':
@@ -421,13 +372,6 @@ paths:
       description: The list of print long running operations.
       operationId: print_GetOperations
       parameters:
-        - name: printOperation-id
-          in: path
-          description: 'key: id of printOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printOperation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -461,23 +405,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printOperation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printOperation
       summary: Update the navigation property operations in print
-      description: The list of print long running operations.
       operationId: print_UpdateOperations
-      parameters:
-        - name: printOperation-id
-          in: path
-          description: 'key: id of printOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printOperation
       requestBody:
         description: New navigation property values
         content:
@@ -488,23 +425,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printOperation
       summary: Delete navigation property operations for print
-      description: The list of print long running operations.
       operationId: print_DeleteOperations
       parameters:
-        - name: printOperation-id
-          in: path
-          description: 'key: id of printOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printOperation
         - name: If-Match
           in: header
           description: ETag
@@ -513,7 +444,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /print/printers:
@@ -612,22 +545,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printer
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printer'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printerCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -637,7 +558,6 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to printers for print
-      description: The list of printers registered in the tenant.
       operationId: print_CreatePrinters
       requestBody:
         description: New navigation property
@@ -653,7 +573,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}':
@@ -664,13 +586,6 @@ paths:
       description: The list of printers registered in the tenant.
       operationId: print_GetPrinters
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
         - name: $select
           in: query
           description: Select properties to be returned
@@ -722,40 +637,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
-          links:
-            jobs:
-              operationId: print.Printers.ListJobs
-              parameters:
-                printer-id: $request.path.printer-id
-            connectors:
-              operationId: print.Printers.ListConnectors
-              parameters:
-                printer-id: $request.path.printer-id
-            shares:
-              operationId: print.Printers.ListShares
-              parameters:
-                printer-id: $request.path.printer-id
-            taskTriggers:
-              operationId: print.Printers.ListTaskTriggers
-              parameters:
-                printer-id: $request.path.printer-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printer
       summary: Update the navigation property printers in print
-      description: The list of printers registered in the tenant.
       operationId: print_UpdatePrinters
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
       requestBody:
         description: New navigation property values
         content:
@@ -766,23 +657,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printer
       summary: Delete navigation property printers for print
-      description: The list of printers registered in the tenant.
       operationId: print_DeletePrinters
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
         - name: If-Match
           in: header
           description: ETag
@@ -791,7 +676,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/connectors':
@@ -802,13 +689,6 @@ paths:
       description: The connectors that are associated with the printer.
       operationId: print.printers_ListConnectors
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -871,50 +751,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printConnector
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printConnector'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printConnectorCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/print/printers/{printer-id}/connectors/$ref':
+  '/print/printers/{printer-id}/connectors/{printConnector-id}':
     get:
       tags:
         - print.printer
-      summary: Get ref of connectors from print
+      summary: Get connectors from print
       description: The connectors that are associated with the printer.
-      operationId: print.printers_ListGraphRefConnectors
+      operationId: print.printers_GetConnectors
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -923,76 +779,35 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - appVersion
-                - appVersion desc
                 - displayName
-                - displayName desc
                 - fullyQualifiedDomainName
-                - fullyQualifiedDomainName desc
                 - location
-                - location desc
                 - operatingSystem
-                - operatingSystem desc
                 - registeredDateTime
-                - registeredDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of printConnector
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.printConnector'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - print.printer
-      summary: Create new navigation property ref to connectors for print
-      description: The connectors that are associated with the printer.
-      operationId: print.printers_CreateGraphRefConnectors
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/microsoft.graph.restoreFactoryDefaults':
@@ -1000,15 +815,7 @@ paths:
       tags:
         - print.Actions
       summary: Invoke action restoreFactoryDefaults
-      operationId: print.printers_restoreFactoryDefaults
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
+      operationId: print.printers.printer_restoreFactoryDefaults
       responses:
         '204':
           description: Success
@@ -1023,13 +830,6 @@ paths:
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
       operationId: print.printers_ListShares
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1112,50 +912,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printerShare
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printerShare'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/print/printers/{printer-id}/shares/$ref':
+  '/print/printers/{printer-id}/shares/{printerShare-id}':
     get:
       tags:
         - print.printer
-      summary: Get ref of shares from print
+      summary: Get shares from print
       description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printers_ListGraphRefShares
+      operationId: print.printers_GetShares
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -1164,84 +940,47 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - capabilities
-                - capabilities desc
                 - defaults
-                - defaults desc
                 - displayName
-                - displayName desc
                 - isAcceptingJobs
-                - isAcceptingJobs desc
                 - location
-                - location desc
                 - manufacturer
-                - manufacturer desc
                 - model
-                - model desc
                 - status
-                - status desc
                 - allowAllUsers
-                - allowAllUsers desc
                 - createdDateTime
-                - createdDateTime desc
+                - jobs
+                - allowedGroups
+                - allowedUsers
+                - printer
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - jobs
+                - allowedGroups
+                - allowedUsers
+                - printer
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of printerShare
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.printerShare'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - print.printer
-      summary: Create new navigation property ref to shares for print
-      description: 'The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.'
-      operationId: print.printers_CreateGraphRefShares
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/taskTriggers':
@@ -1252,13 +991,6 @@ paths:
       description: A list of task triggers that are associated with the printer.
       operationId: print.printers_ListTaskTriggers
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1308,22 +1040,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printTaskTrigger
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printTaskTriggerCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1333,16 +1053,7 @@ paths:
       tags:
         - print.printer
       summary: Create new navigation property to taskTriggers for print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_CreateTaskTriggers
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
       requestBody:
         description: New navigation property
         content:
@@ -1357,7 +1068,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}':
@@ -1368,20 +1081,6 @@ paths:
       description: A list of task triggers that are associated with the printer.
       operationId: print.printers_GetTaskTriggers
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1416,36 +1115,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-          links:
-            definition:
-              operationId: print.printers.TaskTriggers.GetDefinition
-              parameters:
-                printer-id: $request.path.printer-id
-                printTaskTrigger-id: $request.path.printTaskTrigger-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printer
       summary: Update the navigation property taskTriggers in print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_UpdateTaskTriggers
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
       requestBody:
         description: New navigation property values
         content:
@@ -1456,30 +1135,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printer
       summary: Delete navigation property taskTriggers for print
-      description: A list of task triggers that are associated with the printer.
       operationId: print.printers_DeleteTaskTriggers
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
         - name: If-Match
           in: header
           description: ETag
@@ -1488,7 +1154,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}/definition':
@@ -1499,20 +1167,6 @@ paths:
       description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
       operationId: print.printers.taskTriggers_GetDefinition
       parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1548,119 +1202,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.printers.taskTriggers.Definition.ListTasks
-              parameters:
-                printer-id: $request.path.printer-id
-                printTaskTrigger-id: $request.path.printTaskTrigger-id
-        default:
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/print/printers/{printer-id}/taskTriggers/{printTaskTrigger-id}/definition/$ref':
-    get:
-      tags:
-        - print.printer
-      summary: Get ref of definition from print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
-      operationId: print.printers.taskTriggers_GetGraphRefDefinition
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            tasks:
-              operationId: print.printers.taskTriggers.Definition.ListTasks
-              parameters:
-                printer-id: $request.path.printer-id
-                printTaskTrigger-id: $request.path.printTaskTrigger-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - print.printer
-      summary: Update the ref of navigation property definition in print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
-      operationId: print.printers.taskTriggers_SetGraphRefDefinition
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - print.printer
-      summary: Delete ref of navigation property definition for print
-      description: An abstract definition that will be used to create a printTask when triggered by a print event. Read-only.
-      operationId: print.printers.taskTriggers_DeleteGraphRefDefinition
-      parameters:
-        - name: printer-id
-          in: path
-          description: 'key: id of printer'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printer
-        - name: printTaskTrigger-id
-          in: path
-          description: 'key: id of printTaskTrigger'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskTrigger
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /print/printers/microsoft.graph.create:
@@ -1757,22 +1301,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printService
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printService'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printServiceCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1782,7 +1314,6 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to services for print
-      description: The list of available Universal Print service endpoints.
       operationId: print_CreateServices
       requestBody:
         description: New navigation property
@@ -1798,7 +1329,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printService'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/services/{printService-id}':
@@ -1809,13 +1342,6 @@ paths:
       description: The list of available Universal Print service endpoints.
       operationId: print_GetServices
       parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1849,28 +1375,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printService'
-          links:
-            endpoints:
-              operationId: print.Services.ListEndpoints
-              parameters:
-                printService-id: $request.path.printService-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printService
       summary: Update the navigation property services in print
-      description: The list of available Universal Print service endpoints.
       operationId: print_UpdateServices
-      parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
       requestBody:
         description: New navigation property values
         content:
@@ -1881,23 +1395,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printService
       summary: Delete navigation property services for print
-      description: The list of available Universal Print service endpoints.
       operationId: print_DeleteServices
       parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
         - name: If-Match
           in: header
           description: ETag
@@ -1906,7 +1414,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/services/{printService-id}/endpoints':
@@ -1917,13 +1427,6 @@ paths:
       description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_ListEndpoints
       parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1974,22 +1477,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printServiceEndpoint
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printServiceEndpointCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1999,16 +1490,7 @@ paths:
       tags:
         - print.printService
       summary: Create new navigation property to endpoints for print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_CreateEndpoints
-      parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
       requestBody:
         description: New navigation property
         content:
@@ -2023,7 +1505,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/services/{printService-id}/endpoints/{printServiceEndpoint-id}':
@@ -2034,20 +1518,6 @@ paths:
       description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_GetEndpoints
       parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
-        - name: printServiceEndpoint-id
-          in: path
-          description: 'key: id of printServiceEndpoint'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printServiceEndpoint
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2081,30 +1551,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printService
       summary: Update the navigation property endpoints in print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_UpdateEndpoints
-      parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
-        - name: printServiceEndpoint-id
-          in: path
-          description: 'key: id of printServiceEndpoint'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printServiceEndpoint
       requestBody:
         description: New navigation property values
         content:
@@ -2115,30 +1571,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printService
       summary: Delete navigation property endpoints for print
-      description: Endpoints that can be used to access the service. Read-only. Nullable.
       operationId: print.services_DeleteEndpoints
       parameters:
-        - name: printService-id
-          in: path
-          description: 'key: id of printService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printService
-        - name: printServiceEndpoint-id
-          in: path
-          description: 'key: id of printServiceEndpoint'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printServiceEndpoint
         - name: If-Match
           in: header
           description: ETag
@@ -2147,7 +1590,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /print/shares:
@@ -2240,22 +1685,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printerShare
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printerShare'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printerShareCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2265,7 +1698,6 @@ paths:
       tags:
         - print.printerShare
       summary: Create new navigation property to shares for print
-      description: The list of printer shares registered in the tenant.
       operationId: print_CreateShares
       requestBody:
         description: New navigation property
@@ -2281,7 +1713,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/shares/{printerShare-id}':
@@ -2292,13 +1726,6 @@ paths:
       description: The list of printer shares registered in the tenant.
       operationId: print_GetShares
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2348,40 +1775,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printerShare'
-          links:
-            jobs:
-              operationId: print.Shares.ListJobs
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            allowedGroups:
-              operationId: print.Shares.ListAllowedGroups
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            allowedUsers:
-              operationId: print.Shares.ListAllowedUsers
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            printer:
-              operationId: print.Shares.GetPrinter
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printerShare
       summary: Update the navigation property shares in print
-      description: The list of printer shares registered in the tenant.
       operationId: print_UpdateShares
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
       requestBody:
         description: New navigation property values
         content:
@@ -2392,23 +1795,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printerShare
       summary: Delete navigation property shares for print
-      description: The list of printer shares registered in the tenant.
       operationId: print_DeleteShares
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
         - name: If-Match
           in: header
           description: ETag
@@ -2417,7 +1814,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/shares/{printerShare-id}/allowedGroups':
@@ -2428,13 +1827,6 @@ paths:
       description: The groups whose users have access to print using the printer.
       operationId: print.shares_ListAllowedGroups
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2650,50 +2042,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of group
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.group'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.groupCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/print/shares/{printerShare-id}/allowedGroups/$ref':
+  '/print/shares/{printerShare-id}/allowedGroups/{group-id}':
     get:
       tags:
         - print.printerShare
-      summary: Get ref of allowedGroups from print
+      summary: Get allowedGroups from print
       description: The groups whose users have access to print using the printer.
-      operationId: print.shares_ListGraphRefAllowedGroups
+      operationId: print.shares_GetAllowedGroups
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -2702,142 +2070,122 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
                 - assignedLabels
-                - assignedLabels desc
                 - assignedLicenses
-                - assignedLicenses desc
                 - classification
-                - classification desc
                 - createdDateTime
-                - createdDateTime desc
                 - description
-                - description desc
                 - displayName
-                - displayName desc
                 - expirationDateTime
-                - expirationDateTime desc
                 - groupTypes
-                - groupTypes desc
                 - hasMembersWithLicenseErrors
-                - hasMembersWithLicenseErrors desc
                 - isAssignableToRole
-                - isAssignableToRole desc
                 - licenseProcessingState
-                - licenseProcessingState desc
                 - mail
-                - mail desc
                 - mailEnabled
-                - mailEnabled desc
                 - mailNickname
-                - mailNickname desc
                 - membershipRule
-                - membershipRule desc
                 - membershipRuleProcessingState
-                - membershipRuleProcessingState desc
                 - onPremisesDomainName
-                - onPremisesDomainName desc
                 - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
                 - onPremisesNetBiosName
-                - onPremisesNetBiosName desc
                 - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
                 - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
                 - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
                 - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
                 - preferredDataLocation
-                - preferredDataLocation desc
                 - preferredLanguage
-                - preferredLanguage desc
                 - proxyAddresses
-                - proxyAddresses desc
                 - renewedDateTime
-                - renewedDateTime desc
                 - securityEnabled
-                - securityEnabled desc
                 - securityIdentifier
-                - securityIdentifier desc
                 - theme
-                - theme desc
                 - visibility
-                - visibility desc
                 - allowExternalSenders
-                - allowExternalSenders desc
                 - autoSubscribeNewMembers
-                - autoSubscribeNewMembers desc
                 - hideFromAddressLists
-                - hideFromAddressLists desc
                 - hideFromOutlookClients
-                - hideFromOutlookClients desc
                 - isSubscribedByMail
-                - isSubscribedByMail desc
                 - unseenCount
-                - unseenCount desc
                 - isArchived
-                - isArchived desc
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - photo
+                - photos
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - team
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appRoleAssignments
+                - createdOnBehalfOf
+                - memberOf
+                - members
+                - membersWithLicenseErrors
+                - owners
+                - permissionGrants
+                - settings
+                - transitiveMemberOf
+                - transitiveMembers
+                - acceptedSenders
+                - calendar
+                - calendarView
+                - conversations
+                - events
+                - photo
+                - photos
+                - rejectedSenders
+                - threads
+                - drive
+                - drives
+                - sites
+                - extensions
+                - groupLifecyclePolicies
+                - planner
+                - onenote
+                - team
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of group
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.group'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - print.printerShare
-      summary: Create new navigation property ref to allowedGroups for print
-      description: The groups whose users have access to print using the printer.
-      operationId: print.shares_CreateGraphRefAllowedGroups
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/shares/{printerShare-id}/allowedUsers':
@@ -2848,13 +2196,6 @@ paths:
       description: The users who have access to print using the printer.
       operationId: print.shares_ListAllowedUsers
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2966,6 +2307,8 @@ paths:
                 - passwordProfile desc
                 - postalCode
                 - postalCode desc
+                - preferredDataLocation
+                - preferredDataLocation desc
                 - preferredLanguage
                 - preferredLanguage desc
                 - provisionedPlans
@@ -3071,6 +2414,213 @@ paths:
                 - passwordPolicies
                 - passwordProfile
                 - postalCode
+                - preferredDataLocation
+                - preferredLanguage
+                - provisionedPlans
+                - proxyAddresses
+                - showInAddressList
+                - signInSessionsValidFromDateTime
+                - state
+                - streetAddress
+                - surname
+                - usageLocation
+                - userPrincipalName
+                - userType
+                - mailboxSettings
+                - deviceEnrollmentLimit
+                - aboutMe
+                - birthday
+                - hireDate
+                - interests
+                - mySite
+                - pastProjects
+                - preferredName
+                - responsibilities
+                - schools
+                - skills
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - transitiveMemberOf
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - agreementAcceptances
+                - managedDevices
+                - managedAppRegistrations
+                - deviceManagementTroubleshootingEvents
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - activities
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - teamwork
+                - todo
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - appRoleAssignments
+                - createdObjects
+                - directReports
+                - licenseDetails
+                - manager
+                - memberOf
+                - oauth2PermissionGrants
+                - ownedDevices
+                - ownedObjects
+                - registeredDevices
+                - scopedRoleMemberOf
+                - transitiveMemberOf
+                - calendar
+                - calendarGroups
+                - calendars
+                - calendarView
+                - contactFolders
+                - contacts
+                - events
+                - inferenceClassification
+                - mailFolders
+                - messages
+                - outlook
+                - people
+                - drive
+                - drives
+                - followedSites
+                - extensions
+                - agreementAcceptances
+                - managedDevices
+                - managedAppRegistrations
+                - deviceManagementTroubleshootingEvents
+                - planner
+                - insights
+                - settings
+                - onenote
+                - photo
+                - photos
+                - activities
+                - onlineMeetings
+                - presence
+                - authentication
+                - chats
+                - joinedTeams
+                - teamwork
+                - todo
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/print/shares/{printerShare-id}/allowedUsers/{user-id}':
+    get:
+      tags:
+        - print.printerShare
+      summary: Get allowedUsers from print
+      description: The users who have access to print using the printer.
+      operationId: print.shares_GetAllowedUsers
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+                - accountEnabled
+                - ageGroup
+                - assignedLicenses
+                - assignedPlans
+                - businessPhones
+                - city
+                - companyName
+                - consentProvidedForMinor
+                - country
+                - createdDateTime
+                - creationType
+                - department
+                - displayName
+                - employeeHireDate
+                - employeeId
+                - employeeOrgData
+                - employeeType
+                - externalUserState
+                - externalUserStateChangeDateTime
+                - faxNumber
+                - givenName
+                - identities
+                - imAddresses
+                - isResourceAccount
+                - jobTitle
+                - lastPasswordChangeDateTime
+                - legalAgeGroupClassification
+                - licenseAssignmentStates
+                - mail
+                - mailNickname
+                - mobilePhone
+                - officeLocation
+                - onPremisesDistinguishedName
+                - onPremisesDomainName
+                - onPremisesExtensionAttributes
+                - onPremisesImmutableId
+                - onPremisesLastSyncDateTime
+                - onPremisesProvisioningErrors
+                - onPremisesSamAccountName
+                - onPremisesSecurityIdentifier
+                - onPremisesSyncEnabled
+                - onPremisesUserPrincipalName
+                - otherMails
+                - passwordPolicies
+                - passwordProfile
+                - postalCode
+                - preferredDataLocation
                 - preferredLanguage
                 - provisionedPlans
                 - proxyAddresses
@@ -3205,252 +2755,10 @@ paths:
           content:
             application/json:
               schema:
-                title: Collection of user
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.user'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.user'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-  '/print/shares/{printerShare-id}/allowedUsers/$ref':
-    get:
-      tags:
-        - print.printerShare
-      summary: Get ref of allowedUsers from print
-      description: The users who have access to print using the printer.
-      operationId: print.shares_ListGraphRefAllowedUsers
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
-          in: query
-          description: Order items by property values
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
-                - accountEnabled
-                - accountEnabled desc
-                - ageGroup
-                - ageGroup desc
-                - assignedLicenses
-                - assignedLicenses desc
-                - assignedPlans
-                - assignedPlans desc
-                - businessPhones
-                - businessPhones desc
-                - city
-                - city desc
-                - companyName
-                - companyName desc
-                - consentProvidedForMinor
-                - consentProvidedForMinor desc
-                - country
-                - country desc
-                - createdDateTime
-                - createdDateTime desc
-                - creationType
-                - creationType desc
-                - department
-                - department desc
-                - displayName
-                - displayName desc
-                - employeeHireDate
-                - employeeHireDate desc
-                - employeeId
-                - employeeId desc
-                - employeeOrgData
-                - employeeOrgData desc
-                - employeeType
-                - employeeType desc
-                - externalUserState
-                - externalUserState desc
-                - externalUserStateChangeDateTime
-                - externalUserStateChangeDateTime desc
-                - faxNumber
-                - faxNumber desc
-                - givenName
-                - givenName desc
-                - identities
-                - identities desc
-                - imAddresses
-                - imAddresses desc
-                - isResourceAccount
-                - isResourceAccount desc
-                - jobTitle
-                - jobTitle desc
-                - lastPasswordChangeDateTime
-                - lastPasswordChangeDateTime desc
-                - legalAgeGroupClassification
-                - legalAgeGroupClassification desc
-                - licenseAssignmentStates
-                - licenseAssignmentStates desc
-                - mail
-                - mail desc
-                - mailNickname
-                - mailNickname desc
-                - mobilePhone
-                - mobilePhone desc
-                - officeLocation
-                - officeLocation desc
-                - onPremisesDistinguishedName
-                - onPremisesDistinguishedName desc
-                - onPremisesDomainName
-                - onPremisesDomainName desc
-                - onPremisesExtensionAttributes
-                - onPremisesExtensionAttributes desc
-                - onPremisesImmutableId
-                - onPremisesImmutableId desc
-                - onPremisesLastSyncDateTime
-                - onPremisesLastSyncDateTime desc
-                - onPremisesProvisioningErrors
-                - onPremisesProvisioningErrors desc
-                - onPremisesSamAccountName
-                - onPremisesSamAccountName desc
-                - onPremisesSecurityIdentifier
-                - onPremisesSecurityIdentifier desc
-                - onPremisesSyncEnabled
-                - onPremisesSyncEnabled desc
-                - onPremisesUserPrincipalName
-                - onPremisesUserPrincipalName desc
-                - otherMails
-                - otherMails desc
-                - passwordPolicies
-                - passwordPolicies desc
-                - passwordProfile
-                - passwordProfile desc
-                - postalCode
-                - postalCode desc
-                - preferredLanguage
-                - preferredLanguage desc
-                - provisionedPlans
-                - provisionedPlans desc
-                - proxyAddresses
-                - proxyAddresses desc
-                - showInAddressList
-                - showInAddressList desc
-                - signInSessionsValidFromDateTime
-                - signInSessionsValidFromDateTime desc
-                - state
-                - state desc
-                - streetAddress
-                - streetAddress desc
-                - surname
-                - surname desc
-                - usageLocation
-                - usageLocation desc
-                - userPrincipalName
-                - userPrincipalName desc
-                - userType
-                - userType desc
-                - mailboxSettings
-                - mailboxSettings desc
-                - deviceEnrollmentLimit
-                - deviceEnrollmentLimit desc
-                - aboutMe
-                - aboutMe desc
-                - birthday
-                - birthday desc
-                - hireDate
-                - hireDate desc
-                - interests
-                - interests desc
-                - mySite
-                - mySite desc
-                - pastProjects
-                - pastProjects desc
-                - preferredName
-                - preferredName desc
-                - responsibilities
-                - responsibilities desc
-                - schools
-                - schools desc
-                - skills
-                - skills desc
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property links
-          content:
-            application/json:
-              schema:
-                title: Collection of links of user
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - print.printerShare
-      summary: Create new navigation property ref to allowedUsers for print
-      description: The users who have access to print using the printer.
-      operationId: print.shares_CreateGraphRefAllowedUsers
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/shares/{printerShare-id}/printer':
@@ -3461,13 +2769,6 @@ paths:
       description: The printer that this printer share is related to.
       operationId: print.shares_GetPrinter
       parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3519,142 +2820,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printer'
-          links:
-            jobs:
-              operationId: print.shares.Printer.ListJobs
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            connectors:
-              operationId: print.shares.Printer.ListConnectors
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            shares:
-              operationId: print.shares.Printer.ListShares
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            taskTriggers:
-              operationId: print.shares.Printer.ListTaskTriggers
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/print/shares/{printerShare-id}/printer/$ref':
-    get:
-      tags:
-        - print.printerShare
-      summary: Get ref of printer from print
-      description: The printer that this printer share is related to.
-      operationId: print.shares_GetGraphRefPrinter
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            jobs:
-              operationId: print.shares.Printer.ListJobs
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            connectors:
-              operationId: print.shares.Printer.ListConnectors
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            shares:
-              operationId: print.shares.Printer.ListShares
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-            taskTriggers:
-              operationId: print.shares.Printer.ListTaskTriggers
-              parameters:
-                printerShare-id: $request.path.printerShare-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - print.printerShare
-      summary: Update the ref of navigation property printer in print
-      description: The printer that this printer share is related to.
-      operationId: print.shares_SetGraphRefPrinter
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - print.printerShare
-      summary: Delete ref of navigation property printer for print
-      description: The printer that this printer share is related to.
-      operationId: print.shares_DeleteGraphRefPrinter
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/print/shares/{printerShare-id}/printer/microsoft.graph.restoreFactoryDefaults':
-    post:
-      tags:
-        - print.Actions
-      summary: Invoke action restoreFactoryDefaults
-      operationId: print.shares.printer_restoreFactoryDefaults
-      parameters:
-        - name: printerShare-id
-          in: path
-          description: 'key: id of printerShare'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printerShare
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: action
   /print/taskDefinitions:
     get:
       tags:
@@ -3715,22 +2885,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printTaskDefinition
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printTaskDefinitionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3740,7 +2898,6 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to taskDefinitions for print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_CreateTaskDefinitions
       requestBody:
         description: New navigation property
@@ -3756,7 +2913,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/taskDefinitions/{printTaskDefinition-id}':
@@ -3767,13 +2926,6 @@ paths:
       description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_GetTaskDefinitions
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3809,28 +2961,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.TaskDefinitions.ListTasks
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property taskDefinitions in print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_UpdateTaskDefinitions
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
       requestBody:
         description: New navigation property values
         content:
@@ -3841,23 +2981,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property taskDefinitions for print
-      description: List of abstract definition for a task that can be triggered when various events occur within Universal Print.
       operationId: print_DeleteTaskDefinitions
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
         - name: If-Match
           in: header
           description: ETag
@@ -3866,7 +3000,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/taskDefinitions/{printTaskDefinition-id}/tasks':
@@ -3877,13 +3013,6 @@ paths:
       description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_ListTasks
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3938,22 +3067,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of printTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.printTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.printTaskCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3963,16 +3080,7 @@ paths:
       tags:
         - print.printTaskDefinition
       summary: Create new navigation property to tasks for print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_CreateTasks
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
       requestBody:
         description: New navigation property
         content:
@@ -3987,7 +3095,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}':
@@ -3998,20 +3108,6 @@ paths:
       description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_GetTasks
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4049,41 +3145,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTask'
-          links:
-            definition:
-              operationId: print.taskDefinitions.Tasks.GetDefinition
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-            trigger:
-              operationId: print.taskDefinitions.Tasks.GetTrigger
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - print.printTaskDefinition
       summary: Update the navigation property tasks in print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_UpdateTasks
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
       requestBody:
         description: New navigation property values
         content:
@@ -4094,30 +3165,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - print.printTaskDefinition
       summary: Delete navigation property tasks for print
-      description: A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
       operationId: print.taskDefinitions_DeleteTasks
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
         - name: If-Match
           in: header
           description: ETag
@@ -4126,7 +3184,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/definition':
@@ -4137,20 +3197,6 @@ paths:
       description: The printTaskDefinition that was used to create this task. Read-only.
       operationId: print.taskDefinitions.tasks_GetDefinition
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4186,119 +3232,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
-          links:
-            tasks:
-              operationId: print.taskDefinitions.tasks.Definition.ListTasks
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-        default:
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/definition/$ref':
-    get:
-      tags:
-        - print.printTaskDefinition
-      summary: Get ref of definition from print
-      description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinitions.tasks_GetGraphRefDefinition
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            tasks:
-              operationId: print.taskDefinitions.tasks.Definition.ListTasks
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - print.printTaskDefinition
-      summary: Update the ref of navigation property definition in print
-      description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinitions.tasks_SetGraphRefDefinition
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - print.printTaskDefinition
-      summary: Delete ref of navigation property definition for print
-      description: The printTaskDefinition that was used to create this task. Read-only.
-      operationId: print.taskDefinitions.tasks_DeleteGraphRefDefinition
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/trigger':
@@ -4309,20 +3245,6 @@ paths:
       description: The printTaskTrigger that triggered this task's execution. Read-only.
       operationId: print.taskDefinitions.tasks_GetTrigger
       parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4357,119 +3279,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
-          links:
-            definition:
-              operationId: print.taskDefinitions.tasks.Trigger.GetDefinition
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-        default:
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/print/taskDefinitions/{printTaskDefinition-id}/tasks/{printTask-id}/trigger/$ref':
-    get:
-      tags:
-        - print.printTaskDefinition
-      summary: Get ref of trigger from print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinitions.tasks_GetGraphRefTrigger
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            definition:
-              operationId: print.taskDefinitions.tasks.Trigger.GetDefinition
-              parameters:
-                printTaskDefinition-id: $request.path.printTaskDefinition-id
-                printTask-id: $request.path.printTask-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - print.printTaskDefinition
-      summary: Update the ref of navigation property trigger in print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinitions.tasks_SetGraphRefTrigger
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - print.printTaskDefinition
-      summary: Delete ref of navigation property trigger for print
-      description: The printTaskTrigger that triggered this task's execution. Read-only.
-      operationId: print.taskDefinitions.tasks_DeleteGraphRefTrigger
-      parameters:
-        - name: printTaskDefinition-id
-          in: path
-          description: 'key: id of printTaskDefinition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTaskDefinition
-        - name: printTask-id
-          in: path
-          description: 'key: id of printTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: printTask
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -4735,7 +3547,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).'
@@ -4791,7 +3603,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.
+              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -4799,7 +3611,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -4861,6 +3673,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: When a group is associated with a team this property deternunes whether the team is in read-only mode.
               nullable: true
             appRoleAssignments:
               type: array
@@ -4878,7 +3691,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -5154,7 +3967,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -5178,6 +3991,10 @@ components:
             postalCode:
               type: string
               description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              nullable: true
+            preferredDataLocation:
+              type: string
+              description: 'The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.'
               nullable: true
             preferredLanguage:
               type: string
@@ -7941,13 +6758,145 @@ components:
           $ref: '#/components/schemas/microsoft.graph.printTaskProcessingState'
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.printConnectorCollectionResponse:
+      title: Collection of printConnector
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printConnector'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printOperationCollectionResponse:
+      title: Collection of printOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printerCollectionResponse:
+      title: Collection of printer
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printer'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printerShareCollectionResponse:
+      title: Collection of printerShare
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskTriggerCollectionResponse:
+      title: Collection of printTaskTrigger
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printTaskTrigger'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printServiceCollectionResponse:
+      title: Collection of printService
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printService'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printServiceEndpointCollectionResponse:
+      title: Collection of printServiceEndpoint
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printServiceEndpoint'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.groupCollectionResponse:
+      title: Collection of group
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.group'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userCollectionResponse:
+      title: Collection of user
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.user'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskDefinitionCollectionResponse:
+      title: Collection of printTaskDefinition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printTaskDefinition'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.printTaskCollectionResponse:
+      title: Collection of printTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printTask'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.printOperationProcessingState:
@@ -10086,6 +9035,31 @@ components:
         - configManager
       type: string
       description: Compliance state.
+      x-ms-enum:
+        name: complianceState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: compliant
+            description: Compliant.
+            name: compliant
+          - value: noncompliant
+            description: Device is non-compliant and is blocked from corporate resources.
+            name: noncompliant
+          - value: conflict
+            description: Conflict with other rules.
+            name: conflict
+          - value: error
+            description: Error.
+            name: error
+          - value: inGracePeriod
+            description: Device is non-compliant but still has access to corporate resources
+            name: inGracePeriod
+          - value: configManager
+            description: Managed by Config Manager
+            name: configManager
     microsoft.graph.configurationManagerClientEnabledFeatures:
       title: configurationManagerClientEnabledFeatures
       type: object
@@ -10152,6 +9126,49 @@ components:
         - appleUserEnrollmentWithServiceAccount
       type: string
       description: Possible ways of adding a mobile device to management.
+      x-ms-enum:
+        name: deviceEnrollmentType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: 'Default value, enrollment type was not collected.'
+            name: unknown
+          - value: userEnrollment
+            description: User driven enrollment through BYOD channel.
+            name: userEnrollment
+          - value: deviceEnrollmentManager
+            description: User enrollment with a device enrollment manager account.
+            name: deviceEnrollmentManager
+          - value: appleBulkWithUser
+            description: 'Apple bulk enrollment with user challenge. (DEP, Apple Configurator)'
+            name: appleBulkWithUser
+          - value: appleBulkWithoutUser
+            description: 'Apple bulk enrollment without user challenge. (DEP, Apple Configurator, Mobile Config)'
+            name: appleBulkWithoutUser
+          - value: windowsAzureADJoin
+            description: Windows 10 Azure AD Join.
+            name: windowsAzureADJoin
+          - value: windowsBulkUserless
+            description: Windows 10 Bulk enrollment through ICD with certificate.
+            name: windowsBulkUserless
+          - value: windowsAutoEnrollment
+            description: Windows 10 automatic enrollment. (Add work account)
+            name: windowsAutoEnrollment
+          - value: windowsBulkAzureDomainJoin
+            description: Windows 10 bulk Azure AD Join.
+            name: windowsBulkAzureDomainJoin
+          - value: windowsCoManagement
+            description: Windows 10 Co-Management triggered by AutoPilot or Group Policy.
+            name: windowsCoManagement
+          - value: windowsAzureADJoinUsingDeviceAuth
+            description: Windows 10 Azure AD Join using Device Auth.
+            name: windowsAzureADJoinUsingDeviceAuth
+          - value: appleUserEnrollment
+            description: Device managed by Apple user enrollment
+            name: appleUserEnrollment
+          - value: appleUserEnrollmentWithServiceAccount
+            description: Device managed by Apple user enrollment with service account
+            name: appleUserEnrollmentWithServiceAccount
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -10300,6 +9317,34 @@ components:
         - unknown
       type: string
       description: Device registration status.
+      x-ms-enum:
+        name: deviceRegistrationState
+        modelAsString: false
+        values:
+          - value: notRegistered
+            description: The device is not registered.
+            name: notRegistered
+          - value: registered
+            description: The device is registered.
+            name: registered
+          - value: revoked
+            description: 'The device has been blocked, wiped or retired.'
+            name: revoked
+          - value: keyConflict
+            description: The device has a key conflict.
+            name: keyConflict
+          - value: approvalPending
+            description: The device is pending approval.
+            name: approvalPending
+          - value: certificateReset
+            description: The device certificate has been reset.
+            name: certificateReset
+          - value: notRegisteredPendingEnrollment
+            description: The device is not registered and pending enrollment.
+            name: notRegisteredPendingEnrollment
+          - value: unknown
+            description: The device registration status is unknown.
+            name: unknown
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
       enum:
@@ -10310,6 +9355,25 @@ components:
         - quarantined
       type: string
       description: Device Exchange Access State.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessState
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state discovered from Exchange
+            name: none
+          - value: unknown
+            description: Device access state to Exchange is unknown
+            name: unknown
+          - value: allowed
+            description: Device has access to Exchange
+            name: allowed
+          - value: blocked
+            description: Device is Blocked in Exchange
+            name: blocked
+          - value: quarantined
+            description: Device is Quarantined in Exchange
+            name: quarantined
     microsoft.graph.deviceManagementExchangeAccessStateReason:
       title: deviceManagementExchangeAccessStateReason
       enum:
@@ -10331,6 +9395,58 @@ components:
         - deviceNotKnownWithManagedApp
       type: string
       description: Device Exchange Access State Reason.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessStateReason
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state reason discovered from Exchange
+            name: none
+          - value: unknown
+            description: Unknown access state reason
+            name: unknown
+          - value: exchangeGlobalRule
+            description: Access state determined by Exchange Global rule
+            name: exchangeGlobalRule
+          - value: exchangeIndividualRule
+            description: Access state determined by Exchange Individual rule
+            name: exchangeIndividualRule
+          - value: exchangeDeviceRule
+            description: Access state determined by Exchange Device rule
+            name: exchangeDeviceRule
+          - value: exchangeUpgrade
+            description: Access state due to Exchange upgrade
+            name: exchangeUpgrade
+          - value: exchangeMailboxPolicy
+            description: Access state determined by Exchange Mailbox Policy
+            name: exchangeMailboxPolicy
+          - value: other
+            description: Access state determined by Exchange
+            name: other
+          - value: compliant
+            description: Access state granted by compliance challenge
+            name: compliant
+          - value: notCompliant
+            description: Access state revoked by compliance challenge
+            name: notCompliant
+          - value: notEnrolled
+            description: Access state revoked by management challenge
+            name: notEnrolled
+          - value: unknownLocation
+            description: Access state due to unknown location
+            name: unknownLocation
+          - value: mfaRequired
+            description: Access state due to MFA challenge
+            name: mfaRequired
+          - value: azureADBlockDueToAccessPolicy
+            description: Access State revoked by AAD Access Policy
+            name: azureADBlockDueToAccessPolicy
+          - value: compromisedPassword
+            description: Access State revoked by compromised password
+            name: compromisedPassword
+          - value: deviceNotKnownWithManagedApp
+            description: Access state revoked by managed application challenge
+            name: deviceNotKnownWithManagedApp
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:
@@ -10339,6 +9455,19 @@ components:
         - personal
       type: string
       description: Owner type of device.
+      x-ms-enum:
+        name: managedDeviceOwnerType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: company
+            description: Owned by company.
+            name: company
+          - value: personal
+            description: Owned by person.
+            name: personal
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -10356,6 +9485,46 @@ components:
         - microsoft365ManagedMdm
         - msSense
       type: string
+      x-ms-enum:
+        name: managementAgentType
+        modelAsString: false
+        values:
+          - value: eas
+            description: The device is managed by Exchange server.
+            name: eas
+          - value: mdm
+            description: The device is managed by Intune MDM.
+            name: mdm
+          - value: easMdm
+            description: The device is managed by both Exchange server and Intune MDM.
+            name: easMdm
+          - value: intuneClient
+            description: Intune client managed.
+            name: intuneClient
+          - value: easIntuneClient
+            description: The device is EAS and Intune client dual managed.
+            name: easIntuneClient
+          - value: configurationManagerClient
+            description: The device is managed by Configuration Manager.
+            name: configurationManagerClient
+          - value: configurationManagerClientMdm
+            description: The device is managed by Configuration Manager and MDM.
+            name: configurationManagerClientMdm
+          - value: configurationManagerClientMdmEas
+            description: 'The device is managed by Configuration Manager, MDM and Eas.'
+            name: configurationManagerClientMdmEas
+          - value: unknown
+            description: Unknown management agent type.
+            name: unknown
+          - value: jamf
+            description: The device attributes are fetched from Jamf.
+            name: jamf
+          - value: googleCloudDevicePolicyController
+            description: The device is managed by Google's CloudDPC.
+            name: googleCloudDevicePolicyController
+          - value: microsoft365ManagedMdm
+            description: This device is managed by Microsoft 365 through Intune.
+            name: microsoft365ManagedMdm
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -10371,6 +9540,40 @@ components:
         - misconfigured
       type: string
       description: Available health states for the Device Health API
+      x-ms-enum:
+        name: managedDevicePartnerReportedHealthState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Device health state is not yet reported
+            name: unknown
+          - value: activated
+            description: 'Device has been activated by a mobile threat defense partner, but has not yet reported health.'
+            name: activated
+          - value: deactivated
+            description: Device has been deactivated by a mobile threat defense partner. The device health is not known.
+            name: deactivated
+          - value: secured
+            description: Device is considered secured by the mobile threat defense partner.
+            name: secured
+          - value: lowSeverity
+            description: Device is considered low threat by the mobile threat defense partner.
+            name: lowSeverity
+          - value: mediumSeverity
+            description: Device is considered medium threat by the mobile threat defense partner.
+            name: mediumSeverity
+          - value: highSeverity
+            description: Device is considered high threat by the mobile threat defense partner.
+            name: highSeverity
+          - value: unresponsive
+            description: Device is considered unresponsive by the mobile threat defense partner. The device health is not known.
+            name: unresponsive
+          - value: compromised
+            description: Device is considered compromised by the Threat Defense partner. This means the device has an active Threat or Risk which cannot be easily remediated by the end user and the user should contact their IT Admin.
+            name: compromised
+          - value: misconfigured
+            description: Device is considered misconfigured with the Threat Defense partner. This means the device is missing a required profile or configuration for the Threat Defense Partner to function properly and is thus threat or risk analysis is not able to complete.
+            name: misconfigured
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -10467,6 +9670,16 @@ components:
         - rootedDevice
       type: string
       description: The reason for which a user has been flagged
+      x-ms-enum:
+        name: managedAppFlaggedReason
+        modelAsString: false
+        values:
+          - value: none
+            description: No issue.
+            name: none
+          - value: rootedDevice
+            description: The app registration is running on a rooted/unlocked device.
+            name: rootedDevice
     microsoft.graph.managedAppPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11219,7 +10432,7 @@ components:
         - aborted
         - unknownFutureValue
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -11231,15 +10444,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.printColorMode:
@@ -14498,6 +13709,31 @@ components:
         - notSupported
       type: string
       description: State of the action on the device
+      x-ms-enum:
+        name: actionState
+        modelAsString: false
+        values:
+          - value: none
+            description: Not a valid action state
+            name: none
+          - value: pending
+            description: Action is pending
+            name: pending
+          - value: canceled
+            description: Action has been cancelled.
+            name: canceled
+          - value: active
+            description: Action is active.
+            name: active
+          - value: done
+            description: Action completed without errors.
+            name: done
+          - value: failed
+            description: Action failed
+            name: failed
+          - value: notSupported
+            description: Action is not supported.
+            name: notSupported
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -14511,6 +13747,34 @@ components:
         - all
       type: string
       description: Supported platform types for policies.
+      x-ms-enum:
+        name: policyPlatformType
+        modelAsString: false
+        values:
+          - value: android
+            description: Android.
+            name: android
+          - value: androidForWork
+            description: AndroidForWork.
+            name: androidForWork
+          - value: iOS
+            description: iOS.
+            name: iOS
+          - value: macOS
+            description: MacOS.
+            name: macOS
+          - value: windowsPhone81
+            description: WindowsPhone 8.1.
+            name: windowsPhone81
+          - value: windows81AndLater
+            description: Windows 8.1 and later
+            name: windows81AndLater
+          - value: windows10AndLater
+            description: Windows 10 and later.
+            name: windows10AndLater
+          - value: all
+            description: All platforms.
+            name: all
     microsoft.graph.deviceCompliancePolicySettingState:
       title: deviceCompliancePolicySettingState
       type: object
@@ -15289,7 +14553,7 @@ components:
               description: A collection of resources linked to the task.
           additionalProperties:
             type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -15301,8 +14565,14 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
     microsoft.graph.printMargin:
       title: printMargin
       type: object
@@ -17121,7 +16391,73 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.printConnectorCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printConnectorCollectionResponse'
+    microsoft.graph.printOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printOperationCollectionResponse'
+    microsoft.graph.printerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printerCollectionResponse'
+    microsoft.graph.printerShareCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printerShareCollectionResponse'
+    microsoft.graph.printTaskTriggerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printTaskTriggerCollectionResponse'
+    microsoft.graph.printServiceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printServiceCollectionResponse'
+    microsoft.graph.printServiceEndpointCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printServiceEndpointCollectionResponse'
+    microsoft.graph.groupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.groupCollectionResponse'
+    microsoft.graph.userCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userCollectionResponse'
+    microsoft.graph.printTaskDefinitionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printTaskDefinitionCollectionResponse'
+    microsoft.graph.printTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.printTaskCollectionResponse'
   parameters:
     top:
       name: $top

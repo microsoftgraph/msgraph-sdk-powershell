@@ -61,23 +61,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
     "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
     "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
-    "/roleManagement/directory/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
@@ -117,23 +105,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
-    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/directoryScope/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
     "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/principal": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },
-    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/principal/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
     "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
-    },
-    "/roleManagement/entitlementManagement/roleAssignments/{unifiedRoleAssignment-id}/roleDefinition/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/DeviceManagement.Enrolment.yml"
     },

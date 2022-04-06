@@ -13,13 +13,6 @@ paths:
       summary: Get analytics from users
       operationId: users_GetAnalytics
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -54,12 +47,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAnalytics'
-          links:
-            activityStatistics:
-              operationId: users.Analytics.ListActivityStatistics
-              parameters:
-                user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -67,14 +57,6 @@ paths:
         - users.userAnalytics
       summary: Update the navigation property analytics in users
       operationId: users_UpdateAnalytics
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -85,7 +67,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -94,13 +78,6 @@ paths:
       summary: Delete navigation property analytics for users
       operationId: users_DeleteAnalytics
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -109,7 +86,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics':
@@ -120,13 +99,6 @@ paths:
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_ListActivityStatistics
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -186,22 +158,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of activityStatistics
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.activityStatistics'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.activityStatisticsCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -211,16 +171,7 @@ paths:
       tags:
         - users.userAnalytics
       summary: Create new navigation property to activityStatistics for users
-      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_CreateActivityStatistics
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -235,7 +186,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/analytics/activityStatistics/{activityStatistics-id}':
@@ -246,20 +199,6 @@ paths:
       description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_GetActivityStatistics
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: activityStatistics-id
-          in: path
-          description: 'key: id of activityStatistics'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityStatistics
         - name: $select
           in: query
           description: Select properties to be returned
@@ -296,30 +235,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userAnalytics
       summary: Update the navigation property activityStatistics in users
-      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_UpdateActivityStatistics
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: activityStatistics-id
-          in: path
-          description: 'key: id of activityStatistics'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityStatistics
       requestBody:
         description: New navigation property values
         content:
@@ -330,30 +255,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.userAnalytics
       summary: Delete navigation property activityStatistics for users
-      description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
       operationId: users.analytics_DeleteActivityStatistics
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: activityStatistics-id
-          in: path
-          description: 'key: id of activityStatistics'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityStatistics
         - name: If-Match
           in: header
           description: ETag
@@ -362,7 +274,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/people':
@@ -373,13 +287,6 @@ paths:
       description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_ListPeople
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -472,22 +379,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of person
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.person'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -497,16 +392,7 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -521,7 +407,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.person'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/people/{person-id}':
@@ -532,20 +420,6 @@ paths:
       description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_GetPeople
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: person
         - name: $select
           in: query
           description: Select properties to be returned
@@ -585,30 +459,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.person'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.person
       summary: Update the navigation property people in users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: person
       requestBody:
         description: New navigation property values
         content:
@@ -619,30 +479,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.person
       summary: Delete navigation property people for users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: person-id
-          in: path
-          description: 'key: id of person'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: person
         - name: If-Match
           in: header
           description: ETag
@@ -651,7 +498,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile':
@@ -662,13 +511,6 @@ paths:
       description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_GetProfile
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -738,100 +580,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profile'
-          links:
-            account:
-              operationId: users.Profile.ListAccount
-              parameters:
-                user-id: $request.path.user-id
-            addresses:
-              operationId: users.Profile.ListAddresses
-              parameters:
-                user-id: $request.path.user-id
-            anniversaries:
-              operationId: users.Profile.ListAnniversaries
-              parameters:
-                user-id: $request.path.user-id
-            awards:
-              operationId: users.Profile.ListAwards
-              parameters:
-                user-id: $request.path.user-id
-            certifications:
-              operationId: users.Profile.ListCertifications
-              parameters:
-                user-id: $request.path.user-id
-            educationalActivities:
-              operationId: users.Profile.ListEducationalActivities
-              parameters:
-                user-id: $request.path.user-id
-            emails:
-              operationId: users.Profile.ListEmails
-              parameters:
-                user-id: $request.path.user-id
-            interests:
-              operationId: users.Profile.ListInterests
-              parameters:
-                user-id: $request.path.user-id
-            languages:
-              operationId: users.Profile.ListLanguages
-              parameters:
-                user-id: $request.path.user-id
-            names:
-              operationId: users.Profile.ListNames
-              parameters:
-                user-id: $request.path.user-id
-            notes:
-              operationId: users.Profile.ListNotes
-              parameters:
-                user-id: $request.path.user-id
-            patents:
-              operationId: users.Profile.ListPatents
-              parameters:
-                user-id: $request.path.user-id
-            phones:
-              operationId: users.Profile.ListPhones
-              parameters:
-                user-id: $request.path.user-id
-            positions:
-              operationId: users.Profile.ListPositions
-              parameters:
-                user-id: $request.path.user-id
-            projects:
-              operationId: users.Profile.ListProjects
-              parameters:
-                user-id: $request.path.user-id
-            publications:
-              operationId: users.Profile.ListPublications
-              parameters:
-                user-id: $request.path.user-id
-            skills:
-              operationId: users.Profile.ListSkills
-              parameters:
-                user-id: $request.path.user-id
-            webAccounts:
-              operationId: users.Profile.ListWebAccounts
-              parameters:
-                user-id: $request.path.user-id
-            websites:
-              operationId: users.Profile.ListWebsites
-              parameters:
-                user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property profile in users
-      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_UpdateProfile
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -842,23 +600,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property profile for users
-      description: Represents properties that are descriptive of a user in a tenant.
       operationId: users_DeleteProfile
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -867,7 +619,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account':
@@ -877,13 +631,6 @@ paths:
       summary: Get account from users
       operationId: users.profile_ListAccount
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -964,22 +711,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userAccountInformation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.userAccountInformationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -990,14 +725,6 @@ paths:
         - users.profile
       summary: Create new navigation property to account for users
       operationId: users.profile_CreateAccount
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1012,7 +739,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/account/{userAccountInformation-id}':
@@ -1022,20 +751,6 @@ paths:
       summary: Get account from users
       operationId: users.profile_GetAccount
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userAccountInformation-id
-          in: path
-          description: 'key: id of userAccountInformation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userAccountInformation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1079,7 +794,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1087,21 +804,6 @@ paths:
         - users.profile
       summary: Update the navigation property account in users
       operationId: users.profile_UpdateAccount
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userAccountInformation-id
-          in: path
-          description: 'key: id of userAccountInformation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userAccountInformation
       requestBody:
         description: New navigation property values
         content:
@@ -1112,7 +814,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -1121,20 +825,6 @@ paths:
       summary: Delete navigation property account for users
       operationId: users.profile_DeleteAccount
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userAccountInformation-id
-          in: path
-          description: 'key: id of userAccountInformation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userAccountInformation
         - name: If-Match
           in: header
           description: ETag
@@ -1143,7 +833,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses':
@@ -1154,13 +846,6 @@ paths:
       description: Represents details of addresses associated with the user.
       operationId: users.profile_ListAddresses
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1238,22 +923,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemAddress
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemAddress'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.itemAddressCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1263,16 +936,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to addresses for users
-      description: Represents details of addresses associated with the user.
       operationId: users.profile_CreateAddresses
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1287,7 +951,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/addresses/{itemAddress-id}':
@@ -1298,20 +964,6 @@ paths:
       description: Represents details of addresses associated with the user.
       operationId: users.profile_GetAddresses
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemAddress-id
-          in: path
-          description: 'key: id of itemAddress'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemAddress
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1354,30 +1006,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemAddress'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property addresses in users
-      description: Represents details of addresses associated with the user.
       operationId: users.profile_UpdateAddresses
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemAddress-id
-          in: path
-          description: 'key: id of itemAddress'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemAddress
       requestBody:
         description: New navigation property values
         content:
@@ -1388,30 +1026,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property addresses for users
-      description: Represents details of addresses associated with the user.
       operationId: users.profile_DeleteAddresses
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemAddress-id
-          in: path
-          description: 'key: id of itemAddress'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemAddress
         - name: If-Match
           in: header
           description: ETag
@@ -1420,7 +1045,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries':
@@ -1431,13 +1058,6 @@ paths:
       description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_ListAnniversaries
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1515,22 +1135,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personAnnualEvent
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personAnnualEventCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1540,16 +1148,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to anniversaries for users
-      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_CreateAnniversaries
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1564,7 +1163,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/anniversaries/{personAnnualEvent-id}':
@@ -1575,20 +1176,6 @@ paths:
       description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_GetAnniversaries
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnualEvent-id
-          in: path
-          description: 'key: id of personAnnualEvent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnualEvent
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1631,30 +1218,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property anniversaries in users
-      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_UpdateAnniversaries
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnualEvent-id
-          in: path
-          description: 'key: id of personAnnualEvent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnualEvent
       requestBody:
         description: New navigation property values
         content:
@@ -1665,30 +1238,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property anniversaries for users
-      description: Represents the details of meaningful dates associated with a person.
       operationId: users.profile_DeleteAnniversaries
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnualEvent-id
-          in: path
-          description: 'key: id of personAnnualEvent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnualEvent
         - name: If-Match
           in: header
           description: ETag
@@ -1697,7 +1257,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards':
@@ -1708,13 +1270,6 @@ paths:
       description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_ListAwards
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1801,22 +1356,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personAward
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personAward'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personAwardCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1826,16 +1369,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to awards for users
-      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_CreateAwards
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1850,7 +1384,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/awards/{personAward-id}':
@@ -1861,20 +1397,6 @@ paths:
       description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_GetAwards
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAward-id
-          in: path
-          description: 'key: id of personAward'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAward
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1920,30 +1442,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAward'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property awards in users
-      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_UpdateAwards
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAward-id
-          in: path
-          description: 'key: id of personAward'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAward
       requestBody:
         description: New navigation property values
         content:
@@ -1954,30 +1462,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property awards for users
-      description: Represents the details of awards or honors associated with a person.
       operationId: users.profile_DeleteAwards
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAward-id
-          in: path
-          description: 'key: id of personAward'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAward
         - name: If-Match
           in: header
           description: ETag
@@ -1986,7 +1481,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications':
@@ -1997,13 +1494,6 @@ paths:
       description: Represents the details of certifications associated with a person.
       operationId: users.profile_ListCertifications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2102,22 +1592,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personCertification
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personCertification'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personCertificationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2127,16 +1605,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to certifications for users
-      description: Represents the details of certifications associated with a person.
       operationId: users.profile_CreateCertifications
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -2151,7 +1620,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/certifications/{personCertification-id}':
@@ -2162,20 +1633,6 @@ paths:
       description: Represents the details of certifications associated with a person.
       operationId: users.profile_GetCertifications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personCertification-id
-          in: path
-          description: 'key: id of personCertification'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personCertification
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2225,30 +1682,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personCertification'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property certifications in users
-      description: Represents the details of certifications associated with a person.
       operationId: users.profile_UpdateCertifications
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personCertification-id
-          in: path
-          description: 'key: id of personCertification'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personCertification
       requestBody:
         description: New navigation property values
         content:
@@ -2259,30 +1702,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property certifications for users
-      description: Represents the details of certifications associated with a person.
       operationId: users.profile_DeleteCertifications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personCertification-id
-          in: path
-          description: 'key: id of personCertification'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personCertification
         - name: If-Match
           in: header
           description: ETag
@@ -2291,7 +1721,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities':
@@ -2302,13 +1734,6 @@ paths:
       description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_ListEducationalActivities
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2392,22 +1817,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of educationalActivity
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.educationalActivity'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.educationalActivityCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2417,16 +1830,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to educationalActivities for users
-      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_CreateEducationalActivities
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -2441,7 +1845,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/educationalActivities/{educationalActivity-id}':
@@ -2452,20 +1858,6 @@ paths:
       description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_GetEducationalActivities
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: educationalActivity-id
-          in: path
-          description: 'key: id of educationalActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationalActivity
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2510,30 +1902,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.educationalActivity'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property educationalActivities in users
-      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_UpdateEducationalActivities
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: educationalActivity-id
-          in: path
-          description: 'key: id of educationalActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationalActivity
       requestBody:
         description: New navigation property values
         content:
@@ -2544,30 +1922,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property educationalActivities for users
-      description: 'Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.'
       operationId: users.profile_DeleteEducationalActivities
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: educationalActivity-id
-          in: path
-          description: 'key: id of educationalActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: educationalActivity
         - name: If-Match
           in: header
           description: ETag
@@ -2576,7 +1941,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails':
@@ -2587,13 +1954,6 @@ paths:
       description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_ListEmails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2671,22 +2031,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemEmail
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemEmail'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.itemEmailCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2696,16 +2044,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to emails for users
-      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_CreateEmails
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -2720,7 +2059,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/emails/{itemEmail-id}':
@@ -2731,20 +2072,6 @@ paths:
       description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_GetEmails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemEmail-id
-          in: path
-          description: 'key: id of itemEmail'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemEmail
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2787,30 +2114,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemEmail'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property emails in users
-      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_UpdateEmails
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemEmail-id
-          in: path
-          description: 'key: id of itemEmail'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemEmail
       requestBody:
         description: New navigation property values
         content:
@@ -2821,30 +2134,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property emails for users
-      description: Represents detailed information about email addresses associated with the user.
       operationId: users.profile_DeleteEmails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemEmail-id
-          in: path
-          description: 'key: id of itemEmail'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemEmail
         - name: If-Match
           in: header
           description: ETag
@@ -2853,7 +2153,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests':
@@ -2864,13 +2166,6 @@ paths:
       description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_ListInterests
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2957,22 +2252,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personInterest
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personInterest'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personInterestCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2982,16 +2265,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to interests for users
-      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_CreateInterests
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3006,7 +2280,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/interests/{personInterest-id}':
@@ -3017,20 +2293,6 @@ paths:
       description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_GetInterests
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personInterest-id
-          in: path
-          description: 'key: id of personInterest'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personInterest
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3076,30 +2338,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personInterest'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property interests in users
-      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_UpdateInterests
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personInterest-id
-          in: path
-          description: 'key: id of personInterest'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personInterest
       requestBody:
         description: New navigation property values
         content:
@@ -3110,30 +2358,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property interests for users
-      description: Provides detailed information about interests the user has associated with themselves in various services.
       operationId: users.profile_DeleteInterests
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personInterest-id
-          in: path
-          description: 'key: id of personInterest'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personInterest
         - name: If-Match
           in: header
           description: ETag
@@ -3142,7 +2377,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages':
@@ -3153,13 +2390,6 @@ paths:
       description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_ListLanguages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3249,22 +2479,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of languageProficiency
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.languageProficiency'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.languageProficiencyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3274,16 +2492,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to languages for users
-      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_CreateLanguages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3298,7 +2507,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/languages/{languageProficiency-id}':
@@ -3309,20 +2520,6 @@ paths:
       description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_GetLanguages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: languageProficiency-id
-          in: path
-          description: 'key: id of languageProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: languageProficiency
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3369,30 +2566,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.languageProficiency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property languages in users
-      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_UpdateLanguages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: languageProficiency-id
-          in: path
-          description: 'key: id of languageProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: languageProficiency
       requestBody:
         description: New navigation property values
         content:
@@ -3403,30 +2586,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property languages for users
-      description: Represents detailed information about languages that a user has added to their profile.
       operationId: users.profile_DeleteLanguages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: languageProficiency-id
-          in: path
-          description: 'key: id of languageProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: languageProficiency
         - name: If-Match
           in: header
           description: ETag
@@ -3435,7 +2605,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names':
@@ -3446,13 +2618,6 @@ paths:
       description: Represents the names a user has added to their profile.
       operationId: users.profile_ListNames
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3554,22 +2719,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personName
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personName'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personNameCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3579,16 +2732,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to names for users
-      description: Represents the names a user has added to their profile.
       operationId: users.profile_CreateNames
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3603,7 +2747,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personName'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/names/{personName-id}':
@@ -3614,20 +2760,6 @@ paths:
       description: Represents the names a user has added to their profile.
       operationId: users.profile_GetNames
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personName-id
-          in: path
-          description: 'key: id of personName'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personName
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3678,30 +2810,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personName'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property names in users
-      description: Represents the names a user has added to their profile.
       operationId: users.profile_UpdateNames
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personName-id
-          in: path
-          description: 'key: id of personName'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personName
       requestBody:
         description: New navigation property values
         content:
@@ -3712,30 +2830,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property names for users
-      description: Represents the names a user has added to their profile.
       operationId: users.profile_DeleteNames
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personName-id
-          in: path
-          description: 'key: id of personName'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personName
         - name: If-Match
           in: header
           description: ETag
@@ -3744,7 +2849,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes':
@@ -3755,13 +2862,6 @@ paths:
       description: Represents notes that a user has added to their profile.
       operationId: users.profile_ListNotes
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3839,22 +2939,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personAnnotation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personAnnotation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personAnnotationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3864,16 +2952,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to notes for users
-      description: Represents notes that a user has added to their profile.
       operationId: users.profile_CreateNotes
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3888,7 +2967,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/notes/{personAnnotation-id}':
@@ -3899,20 +2980,6 @@ paths:
       description: Represents notes that a user has added to their profile.
       operationId: users.profile_GetNotes
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnotation-id
-          in: path
-          description: 'key: id of personAnnotation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnotation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3955,30 +3022,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personAnnotation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property notes in users
-      description: Represents notes that a user has added to their profile.
       operationId: users.profile_UpdateNotes
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnotation-id
-          in: path
-          description: 'key: id of personAnnotation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnotation
       requestBody:
         description: New navigation property values
         content:
@@ -3989,30 +3042,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property notes for users
-      description: Represents notes that a user has added to their profile.
       operationId: users.profile_DeleteNotes
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personAnnotation-id
-          in: path
-          description: 'key: id of personAnnotation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personAnnotation
         - name: If-Match
           in: header
           description: ETag
@@ -4021,7 +3061,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents':
@@ -4032,13 +3074,6 @@ paths:
       description: Represents patents that a user has added to their profile.
       operationId: users.profile_ListPatents
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4128,22 +3163,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemPatent
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemPatent'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.itemPatentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4153,16 +3176,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to patents for users
-      description: Represents patents that a user has added to their profile.
       operationId: users.profile_CreatePatents
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -4177,7 +3191,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/patents/{itemPatent-id}':
@@ -4188,20 +3204,6 @@ paths:
       description: Represents patents that a user has added to their profile.
       operationId: users.profile_GetPatents
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPatent-id
-          in: path
-          description: 'key: id of itemPatent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPatent
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4248,30 +3250,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPatent'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property patents in users
-      description: Represents patents that a user has added to their profile.
       operationId: users.profile_UpdatePatents
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPatent-id
-          in: path
-          description: 'key: id of itemPatent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPatent
       requestBody:
         description: New navigation property values
         content:
@@ -4282,30 +3270,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property patents for users
-      description: Represents patents that a user has added to their profile.
       operationId: users.profile_DeletePatents
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPatent-id
-          in: path
-          description: 'key: id of itemPatent'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPatent
         - name: If-Match
           in: header
           description: ETag
@@ -4314,7 +3289,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones':
@@ -4325,13 +3302,6 @@ paths:
       description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_ListPhones
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4409,22 +3379,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemPhone
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemPhone'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.itemPhoneCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4434,16 +3392,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to phones for users
-      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_CreatePhones
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -4458,7 +3407,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/phones/{itemPhone-id}':
@@ -4469,20 +3420,6 @@ paths:
       description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_GetPhones
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPhone-id
-          in: path
-          description: 'key: id of itemPhone'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPhone
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4525,30 +3462,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPhone'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property phones in users
-      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_UpdatePhones
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPhone-id
-          in: path
-          description: 'key: id of itemPhone'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPhone
       requestBody:
         description: New navigation property values
         content:
@@ -4559,30 +3482,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property phones for users
-      description: Represents detailed information about phone numbers associated with a user in various services.
       operationId: users.profile_DeletePhones
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPhone-id
-          in: path
-          description: 'key: id of itemPhone'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPhone
         - name: If-Match
           in: header
           description: ETag
@@ -4591,7 +3501,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions':
@@ -4602,13 +3514,6 @@ paths:
       description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_ListPositions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4692,22 +3597,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of workPosition
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.workPosition'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.workPositionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4717,16 +3610,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to positions for users
-      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_CreatePositions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -4741,7 +3625,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/positions/{workPosition-id}':
@@ -4752,20 +3638,6 @@ paths:
       description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_GetPositions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: workPosition-id
-          in: path
-          description: 'key: id of workPosition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: workPosition
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4810,30 +3682,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.workPosition'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property positions in users
-      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_UpdatePositions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: workPosition-id
-          in: path
-          description: 'key: id of workPosition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: workPosition
       requestBody:
         description: New navigation property values
         content:
@@ -4844,30 +3702,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property positions for users
-      description: Represents detailed information about work positions associated with a user's profile.
       operationId: users.profile_DeletePositions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: workPosition-id
-          in: path
-          description: 'key: id of workPosition'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: workPosition
         - name: If-Match
           in: header
           description: ETag
@@ -4876,7 +3721,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects':
@@ -4887,13 +3734,6 @@ paths:
       description: Represents detailed information about projects associated with a user.
       operationId: users.profile_ListProjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4986,22 +3826,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of projectParticipation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.projectParticipation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.projectParticipationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -5011,16 +3839,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to projects for users
-      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_CreateProjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -5035,7 +3854,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/projects/{projectParticipation-id}':
@@ -5046,20 +3867,6 @@ paths:
       description: Represents detailed information about projects associated with a user.
       operationId: users.profile_GetProjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: projectParticipation-id
-          in: path
-          description: 'key: id of projectParticipation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: projectParticipation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5107,30 +3914,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.projectParticipation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property projects in users
-      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_UpdateProjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: projectParticipation-id
-          in: path
-          description: 'key: id of projectParticipation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: projectParticipation
       requestBody:
         description: New navigation property values
         content:
@@ -5141,30 +3934,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property projects for users
-      description: Represents detailed information about projects associated with a user.
       operationId: users.profile_DeleteProjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: projectParticipation-id
-          in: path
-          description: 'key: id of projectParticipation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: projectParticipation
         - name: If-Match
           in: header
           description: ETag
@@ -5173,7 +3953,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications':
@@ -5184,13 +3966,6 @@ paths:
       description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_ListPublications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5277,22 +4052,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of itemPublication
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.itemPublication'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.itemPublicationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -5302,16 +4065,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to publications for users
-      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_CreatePublications
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -5326,7 +4080,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/publications/{itemPublication-id}':
@@ -5337,20 +4093,6 @@ paths:
       description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_GetPublications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPublication-id
-          in: path
-          description: 'key: id of itemPublication'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPublication
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5396,30 +4138,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.itemPublication'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property publications in users
-      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_UpdatePublications
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPublication-id
-          in: path
-          description: 'key: id of itemPublication'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPublication
       requestBody:
         description: New navigation property values
         content:
@@ -5430,30 +4158,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property publications for users
-      description: Represents details of any publications a user has added to their profile.
       operationId: users.profile_DeletePublications
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: itemPublication-id
-          in: path
-          description: 'key: id of itemPublication'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: itemPublication
         - name: If-Match
           in: header
           description: ETag
@@ -5462,7 +4177,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills':
@@ -5473,13 +4190,6 @@ paths:
       description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_ListSkills
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5566,22 +4276,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of skillProficiency
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.skillProficiency'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.skillProficiencyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -5591,16 +4289,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to skills for users
-      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_CreateSkills
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -5615,7 +4304,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/skills/{skillProficiency-id}':
@@ -5626,20 +4317,6 @@ paths:
       description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_GetSkills
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: skillProficiency-id
-          in: path
-          description: 'key: id of skillProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: skillProficiency
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5685,30 +4362,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.skillProficiency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property skills in users
-      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_UpdateSkills
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: skillProficiency-id
-          in: path
-          description: 'key: id of skillProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: skillProficiency
       requestBody:
         description: New navigation property values
         content:
@@ -5719,30 +4382,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property skills for users
-      description: Represents detailed information about skills associated with a user in various services.
       operationId: users.profile_DeleteSkills
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: skillProficiency-id
-          in: path
-          description: 'key: id of skillProficiency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: skillProficiency
         - name: If-Match
           in: header
           description: ETag
@@ -5751,7 +4401,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts':
@@ -5762,13 +4414,6 @@ paths:
       description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_ListWebAccounts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5855,22 +4500,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of webAccount
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.webAccount'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.webAccountCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -5880,16 +4513,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to webAccounts for users
-      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_CreateWebAccounts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -5904,7 +4528,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/webAccounts/{webAccount-id}':
@@ -5915,20 +4541,6 @@ paths:
       description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_GetWebAccounts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: webAccount-id
-          in: path
-          description: 'key: id of webAccount'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: webAccount
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5974,30 +4586,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.webAccount'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property webAccounts in users
-      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_UpdateWebAccounts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: webAccount-id
-          in: path
-          description: 'key: id of webAccount'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: webAccount
       requestBody:
         description: New navigation property values
         content:
@@ -6008,30 +4606,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property webAccounts for users
-      description: Represents web accounts the user has indicated they use or has added to their user profile.
       operationId: users.profile_DeleteWebAccounts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: webAccount-id
-          in: path
-          description: 'key: id of webAccount'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: webAccount
         - name: If-Match
           in: header
           description: ETag
@@ -6040,7 +4625,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites':
@@ -6051,13 +4638,6 @@ paths:
       description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_ListWebsites
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -6141,22 +4721,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of personWebsite
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.personWebsite'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.personWebsiteCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -6166,16 +4734,7 @@ paths:
       tags:
         - users.profile
       summary: Create new navigation property to websites for users
-      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_CreateWebsites
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -6190,7 +4749,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/profile/websites/{personWebsite-id}':
@@ -6201,20 +4762,6 @@ paths:
       description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_GetWebsites
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personWebsite-id
-          in: path
-          description: 'key: id of personWebsite'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personWebsite
         - name: $select
           in: query
           description: Select properties to be returned
@@ -6259,30 +4806,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.personWebsite'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profile
       summary: Update the navigation property websites in users
-      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_UpdateWebsites
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personWebsite-id
-          in: path
-          description: 'key: id of personWebsite'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personWebsite
       requestBody:
         description: New navigation property values
         content:
@@ -6293,30 +4826,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profile
       summary: Delete navigation property websites for users
-      description: Represents detailed information about websites associated with a user in various services.
       operationId: users.profile_DeleteWebsites
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: personWebsite-id
-          in: path
-          description: 'key: id of personWebsite'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: personWebsite
         - name: If-Match
           in: header
           description: ETag
@@ -6325,7 +4845,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -7580,13 +6102,265 @@ components:
           description: Contains the URL for the service being referenced.
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.activityStatisticsCollectionResponse:
+      title: Collection of activityStatistics
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityStatistics'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personCollectionResponse:
+      title: Collection of person
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.person'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.userAccountInformationCollectionResponse:
+      title: Collection of userAccountInformation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userAccountInformation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemAddressCollectionResponse:
+      title: Collection of itemAddress
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemAddress'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personAnnualEventCollectionResponse:
+      title: Collection of personAnnualEvent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personAnnualEvent'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personAwardCollectionResponse:
+      title: Collection of personAward
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personAward'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personCertificationCollectionResponse:
+      title: Collection of personCertification
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personCertification'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.educationalActivityCollectionResponse:
+      title: Collection of educationalActivity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.educationalActivity'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemEmailCollectionResponse:
+      title: Collection of itemEmail
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemEmail'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personInterestCollectionResponse:
+      title: Collection of personInterest
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personInterest'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.languageProficiencyCollectionResponse:
+      title: Collection of languageProficiency
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.languageProficiency'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personNameCollectionResponse:
+      title: Collection of personName
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personName'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personAnnotationCollectionResponse:
+      title: Collection of personAnnotation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personAnnotation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemPatentCollectionResponse:
+      title: Collection of itemPatent
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemPatent'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemPhoneCollectionResponse:
+      title: Collection of itemPhone
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemPhone'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.workPositionCollectionResponse:
+      title: Collection of workPosition
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.workPosition'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.projectParticipationCollectionResponse:
+      title: Collection of projectParticipation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.projectParticipation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.itemPublicationCollectionResponse:
+      title: Collection of itemPublication
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.itemPublication'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.skillProficiencyCollectionResponse:
+      title: Collection of skillProficiency
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.skillProficiency'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.webAccountCollectionResponse:
+      title: Collection of webAccount
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.webAccount'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personWebsiteCollectionResponse:
+      title: Collection of personWebsite
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.personWebsite'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.outlookGeoCoordinates:
@@ -7736,7 +6510,7 @@ components:
         - other
         - unknownFutureValue
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -7748,15 +6522,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.identity:
@@ -7773,7 +6545,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -7785,15 +6557,147 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.activityStatisticsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.activityStatisticsCollectionResponse'
+    microsoft.graph.personCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personCollectionResponse'
+    microsoft.graph.userAccountInformationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userAccountInformationCollectionResponse'
+    microsoft.graph.itemAddressCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemAddressCollectionResponse'
+    microsoft.graph.personAnnualEventCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personAnnualEventCollectionResponse'
+    microsoft.graph.personAwardCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personAwardCollectionResponse'
+    microsoft.graph.personCertificationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personCertificationCollectionResponse'
+    microsoft.graph.educationalActivityCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.educationalActivityCollectionResponse'
+    microsoft.graph.itemEmailCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemEmailCollectionResponse'
+    microsoft.graph.personInterestCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personInterestCollectionResponse'
+    microsoft.graph.languageProficiencyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.languageProficiencyCollectionResponse'
+    microsoft.graph.personNameCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personNameCollectionResponse'
+    microsoft.graph.personAnnotationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personAnnotationCollectionResponse'
+    microsoft.graph.itemPatentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemPatentCollectionResponse'
+    microsoft.graph.itemPhoneCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemPhoneCollectionResponse'
+    microsoft.graph.workPositionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.workPositionCollectionResponse'
+    microsoft.graph.projectParticipationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.projectParticipationCollectionResponse'
+    microsoft.graph.itemPublicationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.itemPublicationCollectionResponse'
+    microsoft.graph.skillProficiencyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.skillProficiencyCollectionResponse'
+    microsoft.graph.webAccountCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.webAccountCollectionResponse'
+    microsoft.graph.personWebsiteCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personWebsiteCollectionResponse'
   parameters:
     top:
       name: $top

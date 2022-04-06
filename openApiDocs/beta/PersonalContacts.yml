@@ -14,13 +14,6 @@ paths:
       description: The user's contacts folders. Read-only. Nullable.
       operationId: users_ListContactFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -65,22 +58,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contactFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contactFolder'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.contactFolderCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -90,16 +71,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contactFolders for users
-      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_CreateContactFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -114,7 +86,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}':
@@ -125,20 +99,6 @@ paths:
       description: The user's contacts folders. Read-only. Nullable.
       operationId: users_GetContactFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - name: $select
           in: query
           description: Select properties to be returned
@@ -165,51 +125,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-          links:
-            childFolders:
-              operationId: users.ContactFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-            contacts:
-              operationId: users.ContactFolders.ListContacts
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-            multiValueExtendedProperties:
-              operationId: users.ContactFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-            singleValueExtendedProperties:
-              operationId: users.ContactFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property contactFolders in users
-      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_UpdateContactFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property values
         content:
@@ -220,30 +145,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property contactFolders for users
-      description: The user's contacts folders. Read-only. Nullable.
       operationId: users_DeleteContactFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - name: If-Match
           in: header
           description: ETag
@@ -252,7 +164,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders':
@@ -263,20 +177,6 @@ paths:
       description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -337,22 +237,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contactFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contactFolder'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.contactFolderCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -362,23 +250,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to childFolders for users
-      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_CreateChildFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property
         content:
@@ -393,7 +265,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}':
@@ -404,27 +278,6 @@ paths:
       description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - name: $select
           in: query
           description: Select properties to be returned
@@ -467,62 +320,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contactFolder'
-          links:
-            childFolders:
-              operationId: users.contactFolders.ChildFolders.ListChildFolders
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-            contacts:
-              operationId: users.contactFolders.ChildFolders.ListContacts
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-            multiValueExtendedProperties:
-              operationId: users.contactFolders.ChildFolders.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-            singleValueExtendedProperties:
-              operationId: users.contactFolders.ChildFolders.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contactFolder-id1: $request.path.contactFolder-id1
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property childFolders in users
-      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_UpdateChildFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property values
         content:
@@ -533,37 +340,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property childFolders for users
-      description: The collection of child folders in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_DeleteChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contactFolder-id1
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - name: If-Match
           in: header
           description: ETag
@@ -572,7 +359,1308 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_ListContacts
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - assistantName
+                - assistantName desc
+                - birthday
+                - birthday desc
+                - children
+                - children desc
+                - companyName
+                - companyName desc
+                - department
+                - department desc
+                - displayName
+                - displayName desc
+                - emailAddresses
+                - emailAddresses desc
+                - fileAs
+                - fileAs desc
+                - flag
+                - flag desc
+                - gender
+                - gender desc
+                - generation
+                - generation desc
+                - givenName
+                - givenName desc
+                - imAddresses
+                - imAddresses desc
+                - initials
+                - initials desc
+                - isFavorite
+                - isFavorite desc
+                - jobTitle
+                - jobTitle desc
+                - manager
+                - manager desc
+                - middleName
+                - middleName desc
+                - nickName
+                - nickName desc
+                - officeLocation
+                - officeLocation desc
+                - parentFolderId
+                - parentFolderId desc
+                - personalNotes
+                - personalNotes desc
+                - phones
+                - phones desc
+                - postalAddresses
+                - postalAddresses desc
+                - profession
+                - profession desc
+                - spouseName
+                - spouseName desc
+                - surname
+                - surname desc
+                - title
+                - title desc
+                - websites
+                - websites desc
+                - weddingAnniversary
+                - weddingAnniversary desc
+                - yomiCompanyName
+                - yomiCompanyName desc
+                - yomiGivenName
+                - yomiGivenName desc
+                - yomiSurname
+                - yomiSurname desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - changeKey
+                - createdDateTime
+                - lastModifiedDateTime
+                - assistantName
+                - birthday
+                - children
+                - companyName
+                - department
+                - displayName
+                - emailAddresses
+                - fileAs
+                - flag
+                - gender
+                - generation
+                - givenName
+                - imAddresses
+                - initials
+                - isFavorite
+                - jobTitle
+                - manager
+                - middleName
+                - nickName
+                - officeLocation
+                - parentFolderId
+                - personalNotes
+                - phones
+                - postalAddresses
+                - profession
+                - spouseName
+                - surname
+                - title
+                - websites
+                - weddingAnniversary
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to contacts for users
+      operationId: users.contactFolders.childFolders_CreateContacts
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contact'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get contacts from users
+      description: The contacts in the folder. Navigation property. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_GetContacts
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - changeKey
+                - createdDateTime
+                - lastModifiedDateTime
+                - assistantName
+                - birthday
+                - children
+                - companyName
+                - department
+                - displayName
+                - emailAddresses
+                - fileAs
+                - flag
+                - gender
+                - generation
+                - givenName
+                - imAddresses
+                - initials
+                - isFavorite
+                - jobTitle
+                - manager
+                - middleName
+                - nickName
+                - officeLocation
+                - parentFolderId
+                - personalNotes
+                - phones
+                - postalAddresses
+                - profession
+                - spouseName
+                - surname
+                - title
+                - websites
+                - weddingAnniversary
+                - yomiCompanyName
+                - yomiGivenName
+                - yomiSurname
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - extensions
+                - multiValueExtendedProperties
+                - photo
+                - singleValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contact'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property contacts in users
+      operationId: users.contactFolders.childFolders_UpdateContacts
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contact'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property contacts for users
+      operationId: users.contactFolders.childFolders_DeleteContacts
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/extensions':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_ListExtensions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to extensions for users
+      operationId: users.contactFolders.childFolders.contacts_CreateExtensions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_GetExtensions
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property extensions in users
+      operationId: users.contactFolders.childFolders.contacts_UpdateExtensions
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property extensions for users
+      operationId: users.contactFolders.childFolders.contacts_DeleteExtensions
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/multiValueExtendedProperties':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_ListMultiValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to multiValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders.contacts_CreateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_GetMultiValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property multiValueExtendedProperties in users
+      operationId: users.contactFolders.childFolders.contacts_UpdateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders.contacts_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/photo':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get photo from users
+      description: Optional contact picture. You can get or set a photo for a contact.
+      operationId: users.contactFolders.childFolders.contacts_GetPhoto
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - height
+                - width
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property photo in users
+      operationId: users.contactFolders.childFolders.contacts_UpdatePhoto
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property photo for users
+      operationId: users.contactFolders.childFolders.contacts_DeletePhoto
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/photo/$value':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get media content for the navigation property photo from users
+      operationId: users.contactFolders.childFolders.contacts_GetPhotoContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.contactFolder
+      summary: Update media content for the navigation property photo in users
+      operationId: users.contactFolders.childFolders.contacts_SetPhotoContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/singleValueExtendedProperties':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_ListSingleValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to singleValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders.contacts_CreateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders.contacts_GetSingleValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property singleValueExtendedProperties in users
+      operationId: users.contactFolders.childFolders.contacts_UpdateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders.contacts_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/multiValueExtendedProperties':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_ListMultiValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to multiValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders_CreateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_GetMultiValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property multiValueExtendedProperties in users
+      operationId: users.contactFolders.childFolders_UpdateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/singleValueExtendedProperties':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_ListSingleValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.contactFolder
+      summary: Create new navigation property to singleValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders_CreateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/contactFolders/{contactFolder-id}/childFolders/{contactFolder-id1}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.contactFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
+      operationId: users.contactFolders.childFolders_GetSingleValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.contactFolder
+      summary: Update the navigation property singleValueExtendedProperties in users
+      operationId: users.contactFolders.childFolders_UpdateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.contactFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.contactFolders.childFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts':
@@ -583,20 +1671,6 @@ paths:
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_ListContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -759,22 +1833,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contact
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contact'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -784,23 +1846,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to contacts for users
-      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_CreateContacts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property
         content:
@@ -815,7 +1861,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}':
@@ -826,27 +1874,6 @@ paths:
       description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_GetContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: $select
           in: query
           description: Select properties to be returned
@@ -923,62 +1950,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-          links:
-            extensions:
-              operationId: users.contactFolders.Contacts.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-            multiValueExtendedProperties:
-              operationId: users.contactFolders.Contacts.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-            photo:
-              operationId: users.contactFolders.Contacts.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-            singleValueExtendedProperties:
-              operationId: users.contactFolders.Contacts.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contactFolder-id: $request.path.contactFolder-id
-                contact-id: $request.path.contact-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property contacts in users
-      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_UpdateContacts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property values
         content:
@@ -989,37 +1970,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property contacts for users
-      description: The contacts in the folder. Navigation property. Read-only. Nullable.
       operationId: users.contactFolders_DeleteContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
@@ -1028,7 +1989,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions':
@@ -1039,27 +2002,6 @@ paths:
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -1103,22 +2045,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1128,30 +2058,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -1166,7 +2073,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/extensions/{extension-id}':
@@ -1177,34 +2086,6 @@ paths:
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1236,44 +2117,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -1284,44 +2137,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -1330,7 +2156,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties':
@@ -1341,27 +2169,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1409,22 +2216,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1434,30 +2229,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -1472,7 +2244,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -1483,34 +2257,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1543,44 +2289,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -1591,44 +2309,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -1637,7 +2328,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo':
@@ -1648,27 +2341,6 @@ paths:
       description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_GetPhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1690,37 +2362,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_UpdatePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property values
         content:
@@ -1731,37 +2382,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property photo for users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contactFolders.contacts_DeletePhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
@@ -1770,7 +2401,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/photo/$value':
@@ -1778,30 +2411,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Get media content for the navigation property photo from users
-      description: The user's profile photo. Read-only.
       operationId: users.contactFolders.contacts_GetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       responses:
         '200':
           description: Retrieved media content
@@ -1810,37 +2420,16 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contactFolder
       summary: Update media content for the navigation property photo in users
-      description: The user's profile photo. Read-only.
       operationId: users.contactFolders.contacts_SetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New media content.
         content:
@@ -1852,7 +2441,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties':
@@ -1863,27 +2454,6 @@ paths:
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1931,22 +2501,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1956,30 +2514,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -1994,7 +2529,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -2005,34 +2542,6 @@ paths:
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2065,44 +2574,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -2113,44 +2594,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contactFolders.contacts_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -2159,7 +2613,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties':
@@ -2170,20 +2626,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2231,22 +2673,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2256,23 +2686,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property
         content:
@@ -2287,7 +2701,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -2298,27 +2714,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2351,37 +2746,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -2392,37 +2766,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -2431,7 +2785,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties':
@@ -2442,20 +2798,6 @@ paths:
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2503,22 +2845,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2528,23 +2858,7 @@ paths:
       tags:
         - users.contactFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
       requestBody:
         description: New navigation property
         content:
@@ -2559,7 +2873,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contactFolders/{contactFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -2570,27 +2886,6 @@ paths:
       description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2623,37 +2918,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contactFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -2664,37 +2938,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contactFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
       operationId: users.contactFolders_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contactFolder-id
-          in: path
-          description: 'key: id of contactFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contactFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -2703,7 +2957,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts':
@@ -2714,13 +2970,6 @@ paths:
       description: The user's contacts. Read-only. Nullable.
       operationId: users_ListContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2868,22 +3117,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of contact
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.contact'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.contactCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2893,16 +3130,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to contacts for users
-      description: The user's contacts. Read-only. Nullable.
       operationId: users_CreateContacts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -2917,7 +3145,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}':
@@ -2928,20 +3158,6 @@ paths:
       description: The user's contacts. Read-only. Nullable.
       operationId: users_GetContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3002,51 +3218,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.contact'
-          links:
-            extensions:
-              operationId: users.Contacts.ListExtensions
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-            multiValueExtendedProperties:
-              operationId: users.Contacts.ListMultiValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-            photo:
-              operationId: users.Contacts.GetPhoto
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-            singleValueExtendedProperties:
-              operationId: users.Contacts.ListSingleValueExtendedProperties
-              parameters:
-                user-id: $request.path.user-id
-                contact-id: $request.path.contact-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
       summary: Update the navigation property contacts in users
-      description: The user's contacts. Read-only. Nullable.
       operationId: users_UpdateContacts
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property values
         content:
@@ -3057,30 +3238,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contact
       summary: Delete navigation property contacts for users
-      description: The user's contacts. Read-only. Nullable.
       operationId: users_DeleteContacts
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
@@ -3089,7 +3257,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/extensions':
@@ -3100,20 +3270,6 @@ paths:
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -3157,22 +3313,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3182,23 +3326,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -3213,7 +3341,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/extensions/{extension-id}':
@@ -3224,27 +3354,6 @@ paths:
       description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3276,37 +3385,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -3317,37 +3405,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contact
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -3356,7 +3424,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties':
@@ -3367,20 +3437,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3428,22 +3484,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3453,23 +3497,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -3484,7 +3512,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -3495,27 +3525,6 @@ paths:
       description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3548,37 +3557,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -3589,37 +3577,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contact
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -3628,7 +3596,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/photo':
@@ -3639,20 +3609,6 @@ paths:
       description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_GetPhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3674,30 +3630,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
       summary: Update the navigation property photo in users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_UpdatePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property values
         content:
@@ -3708,30 +3650,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contact
       summary: Delete navigation property photo for users
-      description: Optional contact picture. You can get or set a photo for a contact.
       operationId: users.contacts_DeletePhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - name: If-Match
           in: header
           description: ETag
@@ -3740,7 +3669,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/photo/$value':
@@ -3748,23 +3679,7 @@ paths:
       tags:
         - users.contact
       summary: Get media content for the navigation property photo from users
-      description: The user's profile photo. Read-only.
       operationId: users.contacts_GetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       responses:
         '200':
           description: Retrieved media content
@@ -3773,30 +3688,16 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
       tags:
         - users.contact
       summary: Update media content for the navigation property photo in users
-      description: The user's profile photo. Read-only.
       operationId: users.contacts_SetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New media content.
         content:
@@ -3808,7 +3709,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties':
@@ -3819,20 +3722,6 @@ paths:
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3880,22 +3769,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3905,23 +3782,7 @@ paths:
       tags:
         - users.contact
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
       requestBody:
         description: New navigation property
         content:
@@ -3936,7 +3797,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/contacts/{contact-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -3947,27 +3810,6 @@ paths:
       description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4000,37 +3842,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.contact
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -4041,37 +3862,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.contact
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the contact. Read-only. Nullable.
       operationId: users.contacts_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: contact-id
-          in: path
-          description: 'key: id of contact'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: contact
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -4080,7 +3881,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -4453,13 +4256,73 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.contactFolderCollectionResponse:
+      title: Collection of contactFolder
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.contactFolder'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.contactCollectionResponse:
+      title: Collection of contact
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.contact'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.extensionCollectionResponse:
+      title: Collection of extension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
+      title: Collection of multiValueLegacyExtendedProperty
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
+      title: Collection of singleValueLegacyExtendedProperty
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.emailAddress:
@@ -4536,7 +4399,7 @@ components:
         - blog
         - profile
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -4548,18 +4411,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -4571,15 +4432,51 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.contactFolderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.contactFolderCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.contactCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.contactCollectionResponse'
+    microsoft.graph.extensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
   parameters:
     top:
       name: $top
