@@ -48,6 +48,7 @@ Describe 'Connect-MgGraph Cmdlet Info' {
 }
 
 Describe 'Connect-MgGraph In Delegated Mode' {
+    # We'll skip this test until https://github.com/Azure/azure-sdk-for-net/issues/28036 is fixed.
     It 'ShouldThrowExceptionWhenInvalidTenantIdIsSpecified' -skip {
         { Connect-MgGraph -TenantId "thisdomaindoesnotexist.com" -ErrorAction Stop -UseDeviceAuthentication } | Should -Throw -ExpectedMessage "*AADSTS90002*Tenant 'thisdomaindoesnotexist.com' not found*"
     }
