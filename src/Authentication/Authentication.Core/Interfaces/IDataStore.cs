@@ -2,11 +2,11 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System.IO;
+using System.Text;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Interfaces
 {
-    using System.IO;
-    using System.Text;
-
     /// <summary>
     /// An interface for a file system.
     /// </summary>

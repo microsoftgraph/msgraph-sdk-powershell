@@ -4,9 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Security;
-using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-using Microsoft.Graph.PowerShell.Authentication.Models;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {

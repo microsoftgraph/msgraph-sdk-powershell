@@ -1,19 +1,20 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Helpers
+﻿using Azure.Core;
+using Azure.Identity;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using System;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    using Azure.Core;
-    using Azure.Identity;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
-    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-    using System;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Runtime.InteropServices;
-    using System.Security.Cryptography;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Threading.Tasks;
-    using Xunit;
     public class AuthenticationHelpersTests
     {
         public AuthenticationHelpersTests()

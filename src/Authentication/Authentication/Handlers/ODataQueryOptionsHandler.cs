@@ -2,15 +2,15 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// A <see cref="DelegatingHandler"/> implementation that is used to properly format OData query parameters.
     /// </summary>

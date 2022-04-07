@@ -432,7 +432,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             WriteObject(responseString);
                             break;
                         default:
-                            throw new ArgumentOutOfRangeException();
+                            throw new ArgumentOutOfRangeException(nameof(OutputType));
                     }
                 }
                 else if (returnType == RestReturnType.Image)
@@ -1058,7 +1058,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
-                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
+                    asyncCommandRuntime.Wait(ProcessRecordAsync());
                 }
             }
             catch (AggregateException aggregateException)

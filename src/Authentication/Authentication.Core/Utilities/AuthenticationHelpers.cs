@@ -1,21 +1,20 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Azure.Core;
+using Azure.Identity;
+using Microsoft.Identity.Client;
+using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
-    using Azure.Core;
-    using Azure.Identity;
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Identity.Client;
-    using System;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Net;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Threading;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Helper class for authentication.
     /// </summary>
@@ -172,9 +171,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                         }
                         break;
                     case TaskCanceledException taskCanceledEx:
-                        throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOut), taskCanceledEx);
+                        throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
                 }
-                throw authEx;
+                throw;
             }
             catch (Exception ex)
             {
@@ -201,7 +200,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            string audience = authContext.TenantId ?? Constants.DefaulAdTenant;
+            string audience = authContext.TenantId ?? Constants.DefaultTenant;
             if (GraphSession.Instance.Environment != null)
                 return $"{GraphSession.Instance.Environment.AzureADEndpoint}/{audience}";
             else
@@ -313,9 +312,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             if (!File.Exists(Constants.AuthRecordPath))
                 return null;
             using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Open, FileAccess.Read))
-            {
                 return await AuthenticationRecord.DeserializeAsync(authRecordStream);
-            }
         }
 
         public static async Task WriteAuthRecordAsync(AuthenticationRecord authRecord)
@@ -323,9 +320,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             // Try to create directory if it doesn't exist.
             Directory.CreateDirectory(Constants.GraphDirectoryPath);
             using (FileStream authRecordStream = new FileStream(Constants.AuthRecordPath, FileMode.Create, FileAccess.Write))
-            {
                 await authRecord.SerializeAsync(authRecordStream);
-            }
         }
 
         public static Task DeleteAuthRecordAsync()

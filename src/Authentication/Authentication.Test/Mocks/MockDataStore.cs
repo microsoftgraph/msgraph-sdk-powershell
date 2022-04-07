@@ -1,15 +1,15 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Mocks
-{
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using System;
-    using System.Collections.Concurrent;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
-    using System.Text.RegularExpressions;
-    using System.Threading;
+﻿using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 
+namespace Microsoft.Graph.Authentication.Test.Mocks
+{
     public class MockDataStore : IDataStore
     {
         private const string FolderName = "Folder";

@@ -2,15 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Identity.Client;
+using Newtonsoft.Json;
+using System;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Identity.Client;
-    using Newtonsoft.Json;
-    using System;
-    using System.Globalization;
-    using System.IdentityModel.Tokens.Jwt;
-
     /// <summary>
     /// A JwtHelpers class.
     /// </summary>

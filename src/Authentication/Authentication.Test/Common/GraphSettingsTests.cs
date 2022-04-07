@@ -1,13 +1,13 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Common
-{
-    using Microsoft.Graph.Authentication.Test.Mocks;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System.Linq;
-    using Xunit;
+﻿using Microsoft.Graph.Authentication.Test.Mocks;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System.Linq;
+using Xunit;
 
+namespace Microsoft.Graph.Authentication.Test.Common
+{
     public class GraphSettingsTests
     {
         [Fact]

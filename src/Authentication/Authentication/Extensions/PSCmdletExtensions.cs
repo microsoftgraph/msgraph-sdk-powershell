@@ -1,18 +1,19 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Management.Automation;
+
 namespace Microsoft.Graph.PowerShell
 {
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Extensions;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.Management.Automation;
     public static class PSCmdletExtensions
     {
         /// <summary>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.PowerShell
         {
             List<T> output = new List<T>();
 
-            using (PowerShell powershell = PowerShell.Create(RunspaceMode.CurrentRunspace))
+            using (System.Management.Automation.PowerShell powershell = System.Management.Automation.PowerShell.Create(RunspaceMode.CurrentRunspace))
             {
                 powershell.AddScript(contents);
                 Collection<T> result = powershell.Invoke<T>();
@@ -117,12 +118,10 @@ namespace Microsoft.Graph.PowerShell
         /// <param name="cmdlet">The calling cmdlet.</param>
         /// <returns>A new instance of <see cref="GraphSettings"/>.</returns>
         internal static GraphSettings GetContextSettings(this PSCmdlet cmdlet)
-        {
-            return new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
-        }
+            => new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
 
         internal static IEnumerable<T> RunScript<T>(string script)
-            => PowerShell.Create().AddScript(script).Invoke<T>();
+            => System.Management.Automation.PowerShell.Create().AddScript(script).Invoke<T>();
 
         internal static IEnumerable<T> RunScript<T>(this PSCmdlet cmdlet, string script)
           => cmdlet?.InvokeCommand.RunScript<T>(script) ?? RunScript<T>(script);

@@ -2,13 +2,13 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Handlers
 {
-    using System;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// A <see cref="DelegatingHandler"/> implementation that switches the base URL of a request based on the specified environment\cloud.
     /// </summary>

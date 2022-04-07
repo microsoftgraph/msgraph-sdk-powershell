@@ -2,15 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+using System.Linq;
+using System.Management.Automation;
+using static Microsoft.Graph.PowerShell.Authentication.Common.GraphProfile;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Extensions;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-    using System.Linq;
-    using System.Management.Automation;
-    using static Microsoft.Graph.PowerShell.Authentication.Common.GraphProfile;
-
     [Cmdlet(VerbsCommon.Get, "MgProfile")]
     [OutputType(typeof(PSGraphServiceProfile))]
     public class GetMgProfile: PSCmdlet
@@ -29,7 +28,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             {
                 bool isModuleNameBound = this.IsParameterBound(nameof(ModuleName));
                 bool isListAvailableBound = this.IsParameterBound(nameof(ListAvailable));
-                string[] moduleNames = isModuleNameBound ? ModuleName : new string[] { };
+                string[] moduleNames = isModuleNameBound ? ModuleName : Array.Empty<string>();
                 string[] profiles = isModuleNameBound || isListAvailableBound
                     ? GetProfiles(InvokeCommand, isListAvailableBound, moduleNames)
                     : new string[] { GraphSession.Instance.SelectedProfile };

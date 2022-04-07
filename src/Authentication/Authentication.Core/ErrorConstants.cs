@@ -1,7 +1,6 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
-using System;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Core
 {
@@ -9,13 +8,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
     {
         internal static class Codes
         {
-            internal const string SessionNotInitialized = "sessionNotInitialized";
-            internal const string SessionLockReadRecursion = "sessionLockReadRecursion";
-            internal const string SessionLockReadDisposed = "sessionLockReadDisposed";
-            internal const string SessionLockWriteDisposed = "sessionLockWriteDisposed";
-            internal const string SessionLockWriteRecursion = "sessionLockWriteRecursion";
-            internal const string InvalidJWT = "invalidJWT";
-            internal const string OutputNotInitialized = "outputNotInitialized";
+            internal const string SessionNotInitialized = nameof(SessionNotInitialized);
+            internal const string SessionLockReadRecursion = nameof(SessionLockReadRecursion);
+            internal const string SessionLockReadDisposed = nameof(SessionLockReadDisposed);
+            internal const string SessionLockWriteDisposed = nameof(SessionLockWriteDisposed);
+            internal const string SessionLockWriteRecursion = nameof(SessionLockWriteRecursion);
+            internal const string InvalidJWT = nameof(InvalidJWT);
+            internal const string OutputNotInitialized = nameof(OutputNotInitialized);
         }
 
         public static class Message

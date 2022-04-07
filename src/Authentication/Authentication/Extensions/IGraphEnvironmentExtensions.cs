@@ -2,12 +2,12 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using System;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Extensions
 {
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using System;
-
     public static class IGraphEnvironmentExtensions
     {
         /// <summary>

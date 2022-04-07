@@ -1,15 +1,15 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using System;
+using System.Management.Automation;
+using System.Threading;
+using System.Threading.Tasks;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using System;
-    using System.Management.Automation;
-    using System.Threading;
-    using System.Threading.Tasks;
-
     [Cmdlet(VerbsCommunications.Disconnect, "MgGraph")]
     [Alias("Disconnect-Graph")]
     public class DisconnectMgGraph : PSCmdlet
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             try
             {
                 using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
-                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
+                    asyncCommandRuntime.Wait(ProcessRecordAsync());
             }
             catch (Exception exception)
             {

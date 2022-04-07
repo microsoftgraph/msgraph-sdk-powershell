@@ -1,15 +1,15 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using System;
+using System.Net.Http;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Xunit;
+
 namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    using System;
-    using System.Net.Http;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Xunit;
-
     public class HttpHelpersTests
     {
         [Fact]

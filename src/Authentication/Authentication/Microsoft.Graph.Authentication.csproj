@@ -12,6 +12,10 @@
     <NuspecFile>Microsoft.Graph.Authentication.nuspec</NuspecFile>
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
   </PropertyGroup>
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />

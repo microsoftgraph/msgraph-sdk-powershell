@@ -12,7 +12,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
 {
     public class InMemoryTokenCacheOptions : UnsafeTokenCacheOptions
     {
-        private readonly ReaderWriterLockSlim sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+        private readonly ReaderWriterLockSlim _sessionLock = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
         internal ReadOnlyMemory<byte> TokenCache { get; private set; }
         public InMemoryTokenCacheOptions() : this(ReadOnlyMemory<byte>.Empty) { }
         public InMemoryTokenCacheOptions(ReadOnlyMemory<byte> token)
@@ -21,34 +21,34 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
         }
         protected override async Task<ReadOnlyMemory<byte>> RefreshCacheAsync()
         {
-            sessionLock.EnterReadLock();
+            _sessionLock.EnterReadLock();
             try
             {
                 return await Task.FromResult(TokenCache);
             }
             finally
             {
-                sessionLock.ExitReadLock();
+                _sessionLock.ExitReadLock();
             }
         }
 
         protected override Task TokenCacheUpdatedAsync(TokenCacheUpdatedArgs tokenCacheUpdatedArgs)
         {
-            sessionLock.EnterWriteLock();
+            _sessionLock.EnterWriteLock();
             try
             {
                 TokenCache = tokenCacheUpdatedArgs.UnsafeCacheData;
             }
             finally
             {
-                sessionLock.ExitWriteLock();
+                _sessionLock.ExitWriteLock();
             }
             return Task.CompletedTask;
         }
 
         internal void Serialize(Stream stream)
         {
-            sessionLock.EnterReadLock();
+            _sessionLock.EnterReadLock();
             try
             {
                 if (!TokenCache.IsEmpty)
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             }
             finally
             {
-                sessionLock.ExitReadLock();
+                _sessionLock.ExitReadLock();
             }
         }
 

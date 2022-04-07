@@ -2,31 +2,29 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using AsyncHelpers = Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Management.Automation;
+using System.Net;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Graph.PowerShell.Authentication.Common;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using Microsoft.Graph.PowerShell.Authentication.Helpers;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using Microsoft.Graph.PowerShell.Authentication.Utilities;
+
+using static Microsoft.Graph.PowerShell.Authentication.Helpers.AsyncHelpers;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Management.Automation;
-    using System.Net;
-    using System.Runtime.InteropServices;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Graph.PowerShell.Authentication.Common;
-    using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
-    using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-    using Microsoft.Graph.PowerShell.Authentication.Extensions;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Microsoft.Graph.PowerShell.Authentication.Utilities;
-
-    using static AsyncHelpers;
-
     [Cmdlet(VerbsCommunications.Connect, "MgGraph", DefaultParameterSetName = Constants.UserParameterSet)]
     [Alias("Connect-Graph")]
     public class ConnectMgGraph : PSCmdlet, IModuleAssemblyInitializer, IModuleAssemblyCleanup
@@ -137,7 +135,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 using (var asyncCommandRuntime = new CustomAsyncCommandRuntime(this, _cancellationTokenSource.Token))
                 {
                     GraphSessionInitializer.InitializeOutput(asyncCommandRuntime);
-                    asyncCommandRuntime.Wait(ProcessRecordAsync(), _cancellationTokenSource.Token);
+                    asyncCommandRuntime.Wait(ProcessRecordAsync());
                 }
             }
             catch (AggregateException aggregateException)
@@ -177,7 +175,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     case Constants.UserParameterSet:
                         {
-                            TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxAuthenticationTimeOut);
+                            TimeSpan authTimeout = new TimeSpan(0, 0, Core.Constants.MaxAuthenticationTimeOutInSeconds);
                             _cancellationTokenSource.CancelAfter(authTimeout);
                             if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientId)))
                                 authContext.ClientId = ClientId;
@@ -219,9 +217,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 {
                     GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    throw ex;
+                    throw;
                 }
                 WriteObject("Welcome To Microsoft Graph!");
             }
@@ -237,10 +235,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
         /// </summary>
         /// <param name="scopes">An array of scopes.</param>
         /// <returns>A formated array of scopes.</returns>
-        private string[] ProcessScopes(string[] scopes)
+        private static string[] ProcessScopes(string[] scopes)
         {
             if (scopes is null)
-                return new string[0];
+                return Array.Empty<string>();
 
             List<string> formatedScopes = new List<string>();
             foreach (string scope in scopes)
