@@ -13,6 +13,7 @@ Param(
     [switch] $Publish,
     [switch] $EnableSigning,
     [switch] $SkipVersionCheck,
+    [switch] $SkipGeneration,
     [switch] $ExcludeExampleTemplates,
     [switch] $ExcludeNotesSection,
     [switch] $Isolated
@@ -74,10 +75,13 @@ if ($ModulePreviewNumber -eq -1) {
     $AllowPreRelease = $false
 }
 
-# Build AutoREST.PowerShell submodule.
-Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
-rush update
-rush build
+if (!$SkipGeneration)
+{
+    # Build AutoREST.PowerShell submodule.
+    Set-Location (Join-Path $ScriptRoot "../autorest.powershell")
+    rush update
+    rush build
+}
 
 # Install module locally in order to specify it as a dependency for other modules down the generation pipeline.
 # https://stackoverflow.com/questions/46216038/how-do-i-define-requiredmodules-in-a-powershell-module-manifest-psd1.
@@ -163,12 +167,15 @@ $ModulesToGenerate | ForEach-Object -ThrottleLimit $NumberOfCores -Parallel {
 
         try {
             # Generate PowerShell modules.
-            & autorest --module-version:$ModuleVersion --service-name:$ModuleName --version:"3.0.6306" $ModuleLevelReadMePath --verbose
-            if ($LASTEXITCODE) {
-                Write-Error "AutoREST failed to generate '$ModuleName' module."
-                break;
+            if (!$using:SkipGeneration)
+            {
+                & autorest --module-version:$ModuleVersion --service-name:$ModuleName --version:"3.0.6306" $ModuleLevelReadMePath --verbose
+                if ($LASTEXITCODE) {
+                    Write-Error "AutoREST failed to generate '$ModuleName' module."
+                    break;
+                }
+                Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
             }
-            Write-Host -ForegroundColor Green "AutoRest generated '$FullyQualifiedModuleName' successfully."
 
             # Manage generated module.
             Write-Host -ForegroundColor Green "Managing '$FullyQualifiedModuleName' module..."
