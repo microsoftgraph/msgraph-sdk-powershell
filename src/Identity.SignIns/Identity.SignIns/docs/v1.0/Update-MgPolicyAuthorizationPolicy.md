@@ -160,7 +160,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -208,7 +209,6 @@ Accept wildcard characters: False
 
 ### -GuestUserRoleId
 Represents role templateId for the role that should be granted to guest user.
-Refer to List unifiedRoleDefinitions to find the list of available role templates.
 Currently following roles are supported: User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 
 ```yaml
@@ -308,7 +308,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy1>: authorizationPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[AllowEmailVerifiedUsersToJoinOrganization <Boolean?>]`: Indicates whether a user can join the tenant by email validation.
   - `[AllowInvitesFrom <String>]`: allowInvitesFrom
@@ -321,7 +321,7 @@ BODYPARAMETER <IMicrosoftGraphAuthorizationPolicy1>: authorizationPolicy
     - `[AllowedToCreateSecurityGroups <Boolean?>]`: Indicates whether the default user role can create security groups.
     - `[AllowedToReadOtherUsers <Boolean?>]`: Indicates whether the default user role can read other users.
     - `[PermissionGrantPoliciesAssigned <String[]>]`: Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
+  - `[GuestUserRoleId <String>]`: Represents role templateId for the role that should be granted to guest user. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).
 
 DEFAULTUSERROLEPERMISSIONS <IMicrosoftGraphDefaultUserRolePermissions1>: defaultUserRolePermissions
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

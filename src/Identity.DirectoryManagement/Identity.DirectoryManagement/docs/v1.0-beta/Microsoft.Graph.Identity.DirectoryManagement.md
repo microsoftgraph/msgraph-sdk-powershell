@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: b5d670c9-9350-4198-8710-6a3e8607f8c7
+Module Guid: a50d2977-5583-408e-a9a6-d89dc03e1054
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -251,12 +251,12 @@ Nullable.
 Supports $expand.
 
 ### [Get-MgDeviceTransitiveMemberOf](Get-MgDeviceTransitiveMemberOf.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
 ### [Get-MgDeviceTransitiveMemberOfByRef](Get-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
@@ -421,7 +421,8 @@ Get branding from organization
 Invoke action getByIds
 
 ### [Get-MgOrganizationExtension](Get-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Get-MgOrganizationMemberGroup](Get-MgOrganizationMemberGroup.md)
@@ -437,6 +438,9 @@ Nullable.
 ### [Get-MgOrganizationSettingItemInsight](Get-MgOrganizationSettingItemInsight.md)
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
+
+### [Get-MgOrganizationSettingMicrosoftApplicationDataAccess](Get-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Get microsoftApplicationDataAccess from organization
 
 ### [Get-MgOrganizationSettingPersonInsight](Get-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
@@ -565,7 +569,7 @@ Nullable.
 Supports $expand.
 
 ### [New-MgDeviceTransitiveMemberOfByRef](New-MgDeviceTransitiveMemberOfByRef.md)
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
@@ -669,7 +673,8 @@ Read-only, Nullable
 Add new entity to organization
 
 ### [New-MgOrganizationExtension](New-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [New-MgOrganizationSettingProfileCardProperty](New-MgOrganizationSettingProfileCardProperty.md)
@@ -815,7 +820,8 @@ Delete entity from organization
 Delete navigation property branding for organization
 
 ### [Remove-MgOrganizationExtension](Remove-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Remove-MgOrganizationSetting](Remove-MgOrganizationSetting.md)
@@ -825,6 +831,9 @@ Nullable.
 ### [Remove-MgOrganizationSettingItemInsight](Remove-MgOrganizationSettingItemInsight.md)
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
+
+### [Remove-MgOrganizationSettingMicrosoftApplicationDataAccess](Remove-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Delete navigation property microsoftApplicationDataAccess for organization
 
 ### [Remove-MgOrganizationSettingPersonInsight](Remove-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
@@ -1021,7 +1030,8 @@ Update entity in organization
 Update the navigation property branding in organization
 
 ### [Update-MgOrganizationExtension](Update-MgOrganizationExtension.md)
-The collection of open extensions defined for the organization resource.
+The collection of open extensions defined for the organization.
+Read-only.
 Nullable.
 
 ### [Update-MgOrganizationSetting](Update-MgOrganizationSetting.md)
@@ -1031,6 +1041,9 @@ Nullable.
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
+
+### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.

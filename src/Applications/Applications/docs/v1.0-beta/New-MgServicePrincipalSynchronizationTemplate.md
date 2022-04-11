@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
-Create new navigation property to templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIdentit
 ```
 
 ## DESCRIPTION
-Create new navigation property to templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 

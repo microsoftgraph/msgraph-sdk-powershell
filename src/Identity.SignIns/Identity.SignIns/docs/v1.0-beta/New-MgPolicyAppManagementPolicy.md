@@ -49,7 +49,7 @@ Accept wildcard characters: False
 ```
 
 ### -AppliesTo
-Collection of application and service principals to which a policy is applied.
+.
 To construct, please use Get-Help -Online and see NOTES section for APPLIESTO properties and create a hash table.
 
 ```yaml
@@ -81,7 +81,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -143,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsEnabled
-Denotes whether the policy is enabled.
+.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -224,20 +225,20 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-APPLIESTO <IMicrosoftGraphDirectoryObject[]>: Collection of application and service principals to which a policy is applied.
+APPLIESTO <IMicrosoftGraphDirectoryObject[]>: .
   - `[Id <String>]`: Read-only.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Description <String>]`: Description for this policy. Required.
   - `[DisplayName <String>]`: Display name for this policy. Required.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
-  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Collection of application and service principals to which a policy is applied.
+  - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: 
     - `[Id <String>]`: Read-only.
-    - `[DeletedDateTime <DateTime?>]`: 
-  - `[IsEnabled <Boolean?>]`: Denotes whether the policy is enabled.
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+  - `[IsEnabled <Boolean?>]`: 
   - `[Restrictions <IMicrosoftGraphAppManagementConfiguration>]`: appManagementConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[KeyCredentials <IMicrosoftGraphKeyCredentialConfiguration[]>]`: Collection of keyCredential restrictions settings to be applied to an application or service principal.
@@ -246,7 +247,7 @@ BODYPARAMETER <IMicrosoftGraphAppManagementPolicy>: appManagementPolicy
       - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
     - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
       - `[MaxLifetime <TimeSpan?>]`: 
-      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+      - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
       - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfiguration
@@ -257,7 +258,7 @@ RESTRICTIONS <IMicrosoftGraphAppManagementConfiguration>: appManagementConfigura
     - `[RestrictionType <String>]`: appKeyCredentialRestrictionType
   - `[PasswordCredentials <IMicrosoftGraphPasswordCredentialConfiguration[]>]`: Collection of password restrictions settings to be applied to an application or service principal.
     - `[MaxLifetime <TimeSpan?>]`: 
-    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be back dated. To apply to all applications, enforcement datetime would be null.
+    - `[RestrictForAppsCreatedAfterDateTime <DateTime?>]`: Enforces the policy for an app created on or after the enforcement date. For existing applications, the enforcement date would be backdated. To apply to all applications, this date would be null.
     - `[RestrictionType <String>]`: appCredentialRestrictionType
 
 ## RELATED LINKS

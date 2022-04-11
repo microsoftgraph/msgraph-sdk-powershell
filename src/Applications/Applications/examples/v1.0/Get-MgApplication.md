@@ -58,7 +58,7 @@ To learn about other permissions for this resource, see the [permissions referen
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
-### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned users
+### Example 4: Use -Search to get all the applications whose display name contains 'Test' including a count of the returned applications
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'
@@ -76,7 +76,7 @@ To learn about other permissions for this resource, see the [permissions referen
 
 To consent to any of these permissions run `Connect-MgGraph -Scopes Permission`. For example, `Connect-MgGraph -Scopes Application.Read.All, Application.ReadWrite.All`.
 
-### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned users, with the results ordered by display name
+### Example 5: Use -Filter to get all the applications with a display name that starts with 'New' including a count of the returned applications, with the results ordered by display name
 
 ```powershell
 Connect-MgGraph -Scopes 'Application.Read.All'

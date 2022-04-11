@@ -12,14 +12,14 @@ The list of localized messages for this Notification Message Template.
 
 ## SYNTAX
 
-### Delete1 (Default)
+### Delete (Default)
 ```
 Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String> [-IfMatch <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity1
+### DeleteViaIdentity
 ```
 Remove-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
@@ -54,7 +54,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: DeleteViaIdentity1
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
 Required: True
@@ -69,7 +69,7 @@ key: id of localizedNotificationMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of notificationMessageTemplate
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete1
+Parameter Sets: Delete
 Aliases:
 
 Required: True
@@ -273,6 +273,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
   - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
   - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
   - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary

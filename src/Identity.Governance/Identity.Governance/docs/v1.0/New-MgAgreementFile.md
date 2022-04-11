@@ -9,8 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 PDFs linked to this agreement.
-Note: This property is in the process of being deprecated.
+This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ## SYNTAX
 
@@ -44,8 +45,9 @@ New-MgAgreementFile -InputObject <IIdentityGovernanceIdentity> [-AdditionalPrope
 
 ## DESCRIPTION
 PDFs linked to this agreement.
-Note: This property is in the process of being deprecated.
+This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ## EXAMPLES
 
@@ -320,7 +322,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFileLocalization>: agreementFileLocalizat
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
@@ -338,7 +340,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFileLocalization>: agreementFileLocalizat
 
 FILEDATA <IMicrosoftGraphAgreementFileData>: agreementFileData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Data <Byte[]>]`: 
+  - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -363,6 +365,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -373,6 +376,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -380,7 +385,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -399,7 +403,7 @@ VERSIONS <IMicrosoftGraphAgreementFileVersion[]>: Read-only. Customized versions
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.

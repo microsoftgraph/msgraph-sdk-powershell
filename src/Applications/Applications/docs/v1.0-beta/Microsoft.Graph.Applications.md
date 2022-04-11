@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Applications
-Module Guid: c6061b4e-c0fa-4102-a8ed-7d15bcdcf776
+Module Guid: f1ce971c-da15-4b4d-b3a3-3517dc2cf7b7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.applications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -119,7 +119,7 @@ Get synchronization from applications
 Invoke action acquireAccessToken
 
 ### [Get-MgApplicationSynchronizationJob](Get-MgApplicationSynchronizationJob.md)
-Get jobs from applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Get-MgApplicationSynchronizationJobSchema](Get-MgApplicationSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -128,7 +128,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Get-MgApplicationSynchronizationTemplate](Get-MgApplicationSynchronizationTemplate.md)
-Get templates from applications
+Pre-configured synchronization settings for a particular application.
 
 ### [Get-MgApplicationSynchronizationTemplateSchema](Get-MgApplicationSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.
@@ -244,7 +244,8 @@ The appManagementPolicy applied to this service principal.
 The appManagementPolicy applied to this service principal.
 
 ### [Get-MgServicePrincipalAppRoleAssignedTo](Get-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Get-MgServicePrincipalAppRoleAssignment](Get-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -360,7 +361,7 @@ Get synchronization from servicePrincipals
 Invoke action acquireAccessToken
 
 ### [Get-MgServicePrincipalSynchronizationJob](Get-MgServicePrincipalSynchronizationJob.md)
-Get jobs from servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Get-MgServicePrincipalSynchronizationJobSchema](Get-MgServicePrincipalSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -369,7 +370,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Get-MgServicePrincipalSynchronizationTemplate](Get-MgServicePrincipalSynchronizationTemplate.md)
-Get templates from servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ### [Get-MgServicePrincipalSynchronizationTemplateSchema](Get-MgServicePrincipalSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.
@@ -379,19 +380,15 @@ Contains the collection of directories and all of their objects.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicy](Get-MgServicePrincipalTokenIssuancePolicy.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenIssuancePolicyByRef](Get-MgServicePrincipalTokenIssuancePolicyByRef.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicy](Get-MgServicePrincipalTokenLifetimePolicy.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTokenLifetimePolicyByRef](Get-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [Get-MgServicePrincipalTransitiveMemberOf](Get-MgServicePrincipalTransitiveMemberOf.md)
 Get transitiveMemberOf from servicePrincipals
@@ -469,7 +466,7 @@ Nullable.
 Supports $expand.
 
 ### [New-MgApplicationSynchronizationJob](New-MgApplicationSynchronizationJob.md)
-Create new navigation property to jobs for applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [New-MgApplicationSynchronizationJobOnDemand](New-MgApplicationSynchronizationJobOnDemand.md)
 Invoke action provisionOnDemand
@@ -478,7 +475,7 @@ Invoke action provisionOnDemand
 Contains the collection of directories and all of their objects.
 
 ### [New-MgApplicationSynchronizationTemplate](New-MgApplicationSynchronizationTemplate.md)
-Create new navigation property to templates for applications
+Pre-configured synchronization settings for a particular application.
 
 ### [New-MgApplicationSynchronizationTemplateSchemaDirectory](New-MgApplicationSynchronizationTemplateSchemaDirectory.md)
 Contains the collection of directories and all of their objects.
@@ -570,7 +567,8 @@ Add new entity to servicePrincipals
 The appManagementPolicy applied to this service principal.
 
 ### [New-MgServicePrincipalAppRoleAssignedTo](New-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [New-MgServicePrincipalAppRoleAssignment](New-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -631,7 +629,7 @@ Supports $expand.
 Invoke action createPasswordSingleSignOnCredentials
 
 ### [New-MgServicePrincipalSynchronizationJob](New-MgServicePrincipalSynchronizationJob.md)
-Create new navigation property to jobs for servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [New-MgServicePrincipalSynchronizationJobOnDemand](New-MgServicePrincipalSynchronizationJobOnDemand.md)
 Invoke action provisionOnDemand
@@ -640,18 +638,16 @@ Invoke action provisionOnDemand
 Contains the collection of directories and all of their objects.
 
 ### [New-MgServicePrincipalSynchronizationTemplate](New-MgServicePrincipalSynchronizationTemplate.md)
-Create new navigation property to templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ### [New-MgServicePrincipalSynchronizationTemplateSchemaDirectory](New-MgServicePrincipalSynchronizationTemplateSchemaDirectory.md)
 Contains the collection of directories and all of their objects.
 
 ### [New-MgServicePrincipalTokenIssuancePolicyByRef](New-MgServicePrincipalTokenIssuancePolicyByRef.md)
 The tokenIssuancePolicies assigned to this service principal.
-Supports $expand.
 
 ### [New-MgServicePrincipalTokenLifetimePolicyByRef](New-MgServicePrincipalTokenLifetimePolicyByRef.md)
 The tokenLifetimePolicies assigned to this service principal.
-Supports $expand.
 
 ### [New-MgServicePrincipalTransitiveMemberOfByRef](New-MgServicePrincipalTransitiveMemberOfByRef.md)
 Create new navigation property ref to transitiveMemberOf for servicePrincipals
@@ -694,7 +690,7 @@ Invoke action removePassword
 Delete navigation property synchronization for applications
 
 ### [Remove-MgApplicationSynchronizationJob](Remove-MgApplicationSynchronizationJob.md)
-Delete navigation property jobs for applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Remove-MgApplicationSynchronizationJobSchema](Remove-MgApplicationSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -703,7 +699,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Remove-MgApplicationSynchronizationTemplate](Remove-MgApplicationSynchronizationTemplate.md)
-Delete navigation property templates for applications
+Pre-configured synchronization settings for a particular application.
 
 ### [Remove-MgApplicationSynchronizationTemplateSchema](Remove-MgApplicationSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.
@@ -784,7 +780,8 @@ Nullable.
 Delete entity from servicePrincipals
 
 ### [Remove-MgServicePrincipalAppRoleAssignedTo](Remove-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Remove-MgServicePrincipalAppRoleAssignment](Remove-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -811,7 +808,7 @@ Invoke action deletePasswordSingleSignOnCredentials
 Delete navigation property synchronization for servicePrincipals
 
 ### [Remove-MgServicePrincipalSynchronizationJob](Remove-MgServicePrincipalSynchronizationJob.md)
-Delete navigation property jobs for servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Remove-MgServicePrincipalSynchronizationJobSchema](Remove-MgServicePrincipalSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -820,7 +817,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Remove-MgServicePrincipalSynchronizationTemplate](Remove-MgServicePrincipalSynchronizationTemplate.md)
-Delete navigation property templates for servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ### [Remove-MgServicePrincipalSynchronizationTemplateSchema](Remove-MgServicePrincipalSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.
@@ -903,7 +900,7 @@ This object can only be retrieved on a single GET request (GET /applications/{id
 Update the navigation property synchronization in applications
 
 ### [Update-MgApplicationSynchronizationJob](Update-MgApplicationSynchronizationJob.md)
-Update the navigation property jobs in applications
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Update-MgApplicationSynchronizationJobSchema](Update-MgApplicationSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -912,7 +909,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Update-MgApplicationSynchronizationTemplate](Update-MgApplicationSynchronizationTemplate.md)
-Update the navigation property templates in applications
+Pre-configured synchronization settings for a particular application.
 
 ### [Update-MgApplicationSynchronizationTemplateSchema](Update-MgApplicationSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.
@@ -993,7 +990,8 @@ Nullable.
 Update entity in servicePrincipals
 
 ### [Update-MgServicePrincipalAppRoleAssignedTo](Update-MgServicePrincipalAppRoleAssignedTo.md)
-App role assignments for this app or service, granted to users, groups, and other service principals.Supports $expand.
+App role assignments for this app or service, granted to users, groups, and other service principals.
+Supports $expand.
 
 ### [Update-MgServicePrincipalAppRoleAssignment](Update-MgServicePrincipalAppRoleAssignment.md)
 App role assignment for another app or service, granted to this service principal.
@@ -1020,7 +1018,7 @@ Invoke action updatePasswordSingleSignOnCredentials
 Update the navigation property synchronization in servicePrincipals
 
 ### [Update-MgServicePrincipalSynchronizationJob](Update-MgServicePrincipalSynchronizationJob.md)
-Update the navigation property jobs in servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ### [Update-MgServicePrincipalSynchronizationJobSchema](Update-MgServicePrincipalSynchronizationJobSchema.md)
 The synchronization schema configured for the job.
@@ -1029,7 +1027,7 @@ The synchronization schema configured for the job.
 Contains the collection of directories and all of their objects.
 
 ### [Update-MgServicePrincipalSynchronizationTemplate](Update-MgServicePrincipalSynchronizationTemplate.md)
-Update the navigation property templates in servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ### [Update-MgServicePrincipalSynchronizationTemplateSchema](Update-MgServicePrincipalSynchronizationTemplateSchema.md)
 Default synchronization schema for the jobs based on this template.

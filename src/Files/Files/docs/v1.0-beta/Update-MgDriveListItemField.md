@@ -12,25 +12,25 @@ The values of the columns set on this list item.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
+### UpdateExpanded1 (Default)
 ```
 Update-MgDriveListItemField -DriveId <String> -ListItemId <String> [-AdditionalProperties <Hashtable>]
  [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Update1
 ```
 Update-MgDriveListItemField -DriveId <String> -ListItemId <String> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### UpdateViaIdentity1
 ```
 Update-MgDriveListItemField -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded
+### UpdateViaIdentityExpanded1
 ```
 Update-MgDriveListItemField -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -48,7 +48,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -63,7 +63,7 @@ fieldValueSet
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Update, UpdateViaIdentity
+Parameter Sets: Update1, UpdateViaIdentity1
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -93,7 +93,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -109,7 +109,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -124,7 +124,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: Update1, UpdateExpanded1
 Aliases:
 
 Required: True
@@ -218,6 +218,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

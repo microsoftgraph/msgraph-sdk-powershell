@@ -77,8 +77,8 @@ Accept wildcard characters: False
 ```
 
 ### -ClientId
-The client ID for the application obtained when registering the application with the identity provider.
-This is a required field.
+The client ID for the application.
+This is the client ID obtained when registering the application with the identity provider.
 Required.
 Not nullable.
 
@@ -95,10 +95,10 @@ Accept wildcard characters: False
 ```
 
 ### -ClientSecret
-The client secret for the application obtained when registering the application with the identity provider.
+The client secret for the application.
+This is the client secret obtained when registering the application with the identity provider.
 This is write-only.
 A read operation will return ****.
-This is a required field.
 Required.
 Not nullable.
 
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ### -Type
 The identity provider type is a required field.
 For B2B scenario: Google, Facebook.
-For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect.
+For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect.
 Not nullable.
 
 ```yaml
@@ -265,10 +265,10 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphIdentityProvider>: identityProvider
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[ClientId <String>]`: The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
-  - `[ClientSecret <String>]`: The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return ****. This is a required field. Required. Not nullable.
+  - `[ClientId <String>]`: The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
+  - `[ClientSecret <String>]`: The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
   - `[Name <String>]`: The display name of the identity provider. Not nullable.
-  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo,QQ, WeChat, OpenIDConnect. Not nullable.
+  - `[Type <String>]`: The identity provider type is a required field. For B2B scenario: Google, Facebook. For B2C scenario: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat, OpenIDConnect. Not nullable.
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[ActivityBasedTimeoutPolicyId <String>]`: key: id of activityBasedTimeoutPolicy
@@ -279,6 +279,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

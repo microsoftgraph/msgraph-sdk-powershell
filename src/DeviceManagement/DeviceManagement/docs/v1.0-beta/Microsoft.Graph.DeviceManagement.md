@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.DeviceManagement
-Module Guid: 794025dc-c5d8-4b33-9d3a-aefaf83ef34c
+Module Guid: 50e1a932-13d9-4978-aa42-d29586e982d3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.devicemanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -139,7 +139,8 @@ List of DeviceComplianceDeviceStatus.
 Device compliance devices status overview
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledAction](Get-MgDeviceManagementDeviceCompliancePolicyScheduledAction.md)
-The list of scheduled action for this rule
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ### [Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Get-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
 The list of scheduled action configurations for this compliance policy.
@@ -635,6 +636,9 @@ User experience analytics work from anywhere metrics.
 ### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice.md)
 The work from anywhere metric devices.
 
+### [Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance](Get-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance.md)
+The user experience analytics work from anywhere model performance
+
 ### [Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary](Get-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
 The windows information protection app learning summaries.
 
@@ -735,7 +739,8 @@ Compliance Setting State Device Summary
 List of DeviceComplianceDeviceStatus.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyScheduledAction](New-MgDeviceManagementDeviceCompliancePolicyScheduledAction.md)
-The list of scheduled action for this rule
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ### [New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](New-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
 The list of scheduled action configurations for this compliance policy.
@@ -1074,6 +1079,9 @@ User experience analytics work from anywhere metrics.
 ### [New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice](New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice.md)
 The work from anywhere metric devices.
 
+### [New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance](New-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance.md)
+The user experience analytics work from anywhere model performance
+
 ### [New-MgDeviceManagementWindowInformationProtectionAppLearningSummary](New-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
 The windows information protection app learning summaries.
 
@@ -1184,7 +1192,8 @@ List of DeviceComplianceDeviceStatus.
 Device compliance devices status overview
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyScheduledAction](Remove-MgDeviceManagementDeviceCompliancePolicyScheduledAction.md)
-The list of scheduled action for this rule
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ### [Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Remove-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
 The list of scheduled action configurations for this compliance policy.
@@ -1620,6 +1629,9 @@ User experience analytics work from anywhere metrics.
 ### [Remove-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice](Remove-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice.md)
 The work from anywhere metric devices.
 
+### [Remove-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance](Remove-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance.md)
+The user experience analytics work from anywhere model performance
+
 ### [Remove-MgDeviceManagementWindowInformationProtectionAppLearningSummary](Remove-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
 The windows information protection app learning summaries.
 
@@ -1778,7 +1790,8 @@ List of DeviceComplianceDeviceStatus.
 Device compliance devices status overview
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyScheduledAction](Update-MgDeviceManagementDeviceCompliancePolicyScheduledAction.md)
-The list of scheduled action for this rule
+The list of scheduled action per rule for this compliance policy.
+This is a required property when creating any individual per-platform compliance policies.
 
 ### [Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration](Update-MgDeviceManagementDeviceCompliancePolicyScheduledActionForRuleScheduledActionConfiguration.md)
 The list of scheduled action configurations for this compliance policy.
@@ -2165,6 +2178,9 @@ User experience analytics work from anywhere metrics.
 
 ### [Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice](Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereMetricDevice.md)
 The work from anywhere metric devices.
+
+### [Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance](Update-MgDeviceManagementUserExperienceAnalyticWorkFromAnywhereModelPerformance.md)
+The user experience analytics work from anywhere model performance
 
 ### [Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary](Update-MgDeviceManagementWindowInformationProtectionAppLearningSummary.md)
 The windows information protection app learning summaries.

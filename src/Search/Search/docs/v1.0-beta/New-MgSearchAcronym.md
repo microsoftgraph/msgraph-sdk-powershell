@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSearchAcronym
 
 ## SYNOPSIS
-Create new navigation property to acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ New-MgSearchAcronym -BodyParameter <IMicrosoftGraphSearchAcronym> [-Confirm] [-W
 ```
 
 ## DESCRIPTION
-Create new navigation property to acronyms for search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## EXAMPLES
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Search answer description shown on search results page.
 
 ```yaml
 Type: System.String
@@ -78,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Search answer name displayed in search results.
 
 ```yaml
 Type: System.String
@@ -124,7 +124,8 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Timestamp of when the search answer is created or edited.
+Read-only.
 
 ```yaml
 Type: System.DateTime
@@ -139,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -StandsFor
-.
+What the acronym stands for.
 
 ```yaml
 Type: System.String
@@ -169,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -WebUrl
-.
+Search answer URL link.
+When users click this search answer in search results, they will go to this URL.
 
 ```yaml
 Type: System.String
@@ -236,8 +238,8 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphSearchAcronym>: acronym
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[Description <String>]`: Search answer description shown on search results page.
+  - `[DisplayName <String>]`: Search answer name displayed in search results.
   - `[LastModifiedBy <IMicrosoftGraphSearchIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphSearchIdentity>]`: identity
@@ -246,10 +248,10 @@ BODYPARAMETER <IMicrosoftGraphSearchAcronym>: acronym
       - `[Id <String>]`: 
     - `[Device <IMicrosoftGraphSearchIdentity>]`: identity
     - `[User <IMicrosoftGraphSearchIdentity>]`: identity
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[WebUrl <String>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Timestamp of when the search answer is created or edited. Read-only.
+  - `[WebUrl <String>]`: Search answer URL link. When users click this search answer in search results, they will go to this URL.
   - `[Id <String>]`: Read-only.
-  - `[StandsFor <String>]`: 
+  - `[StandsFor <String>]`: What the acronym stands for.
   - `[State <String>]`: answerState
 
 LASTMODIFIEDBY <IMicrosoftGraphSearchIdentitySet>: identitySet

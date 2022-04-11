@@ -8,22 +8,22 @@ schema: 2.0.0
 # Get-MgDriveListColumnSourceColumnByRef
 
 ## SYNOPSIS
-The source column for content type column.
+The source column for the content type column.
 
 ## SYNTAX
 
-### Get (Default)
+### Get1 (Default)
 ```
 Get-MgDriveListColumnSourceColumnByRef -ColumnDefinitionId <String> -DriveId <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity1
 ```
 Get-MgDriveListColumnSourceColumnByRef -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The source column for content type column.
+The source column for the content type column.
 
 ## EXAMPLES
 
@@ -34,7 +34,7 @@ key: id of columnDefinition
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -49,7 +49,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -65,7 +65,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -111,6 +111,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

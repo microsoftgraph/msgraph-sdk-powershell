@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgServicePrincipalSynchronizationJob
 
 ## SYNOPSIS
-Update the navigation property jobs in servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgServicePrincipalSynchronizationJob -InputObject <IApplicationsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property jobs in servicePrincipals
+Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.
 
 ## EXAMPLES
 

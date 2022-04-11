@@ -126,10 +126,12 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AnotherRange <String>]`: Usage: anotherRange={anotherRange}
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[Column <Int32?>]`: Usage: column={column}
   - `[ColumnOffset <Int32?>]`: Usage: columnOffset={columnOffset}
   - `[ContactFolderId <String>]`: key: id of contactFolder

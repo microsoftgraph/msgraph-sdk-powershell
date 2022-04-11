@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgDeviceTransitiveMemberOf
 
 ## SYNOPSIS
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 
@@ -21,7 +21,7 @@ Get-MgDeviceTransitiveMemberOf -DeviceId <String> [-ExpandProperty <String[]>] [
 ```
 
 ## DESCRIPTION
-Groups that this device is a member of.
+Groups that the device is a member of.
 This operation is transitive.
 Supports $expand.
 

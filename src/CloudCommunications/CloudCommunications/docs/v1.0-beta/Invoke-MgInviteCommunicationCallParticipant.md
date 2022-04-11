@@ -203,21 +203,21 @@ BODYPARAMETER <IPaths1Bh76WaCommunicationsCallsCallIdParticipantsMicrosoftGraphI
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[ParticipantId <String>]`: 
     - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
-    - `[ReplacesCallId <String>]`: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+    - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 
 INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AttendanceRecordId <String>]`: key: id of attendanceRecord
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
+  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
   - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
@@ -233,13 +233,13 @@ PARTICIPANTS <IMicrosoftGraphInvitationParticipantInfo1[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[ParticipantId <String>]`: 
   - `[RemoveFromDefaultAudioRoutingGroup <Boolean?>]`: 
-  - `[ReplacesCallId <String>]`: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+  - `[ReplacesCallId <String>]`: Optional. The call which the target identity is currently a part of. This call will be dropped once the participant is added.
 
 ## RELATED LINKS
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Create new navigation property to temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ New-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignIns
 ```
 
 ## DESCRIPTION
-Create new navigation property to temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 
@@ -308,6 +308,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

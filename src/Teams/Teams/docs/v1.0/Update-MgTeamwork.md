@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkforceIntegrations
-.
+A workforce integration with shifts.
 To construct, please use Get-Help -Online and see NOTES section for WORKFORCEINTEGRATIONS properties and create a hash table.
 
 ```yaml
@@ -163,14 +163,14 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphTeamwork1>: teamwork
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration1[]>]`: 
+  - `[WorkforceIntegrations <IMicrosoftGraphWorkforceIntegration1[]>]`: A workforce integration with shifts.
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -185,14 +185,14 @@ BODYPARAMETER <IMicrosoftGraphTeamwork1>: teamwork
     - `[SupportedEntities <String>]`: 
     - `[Url <String>]`: Workforce Integration URL for callbacks from the Shifts service.
 
-WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration1[]>: .
+WORKFORCEINTEGRATIONS <IMicrosoftGraphWorkforceIntegration1[]>: A workforce integration with shifts.
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

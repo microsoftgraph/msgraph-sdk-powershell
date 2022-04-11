@@ -14,9 +14,9 @@ Create new navigation property to inboundSharedUserProfiles for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryInboundSharedUserProfile [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
- [-DisplayName <String>] [-HomeTenantId <String>] [-Id <String>] [-UserId <String>]
- [-UserPrincipalName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-MgDirectoryInboundSharedUserProfile [-AdditionalProperties <Hashtable>] [-DisplayName <String>]
+ [-HomeTenantId <String>] [-UserId <String>] [-UserPrincipalName <String>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Create
@@ -63,21 +63,6 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -DeletedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DisplayName
 .
 
@@ -95,21 +80,6 @@ Accept wildcard characters: False
 
 ### -HomeTenantId
 .
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
 
 ```yaml
 Type: System.String
@@ -206,8 +176,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphInboundSharedUserProfile>: inboundSharedUserProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: 
   - `[HomeTenantId <String>]`: 
   - `[UserId <String>]`: 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgGroupPhoto
 
 ## SYNOPSIS
-The group's profile photo.
+The group's profile photo
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ Remove-MgGroupPhoto -InputObject <IGroupsIdentity> [-IfMatch <String>] [-PassThr
 ```
 
 ## DESCRIPTION
-The group's profile photo.
+The group's profile photo
 
 ## EXAMPLES
 

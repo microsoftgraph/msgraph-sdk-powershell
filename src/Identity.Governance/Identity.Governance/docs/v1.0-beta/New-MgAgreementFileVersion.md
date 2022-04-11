@@ -13,7 +13,7 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgAgreementFileVersion -AgreementFileLocalizationId <String> -AgreementId <String>
  [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>] [-DisplayName <String>]
@@ -21,19 +21,19 @@ New-MgAgreementFileVersion -AgreementFileLocalizationId <String> -AgreementId <S
  [-IsMajorVersion] [-Language <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgAgreementFileVersion -AgreementFileLocalizationId <String> -AgreementId <String>
  -BodyParameter <Hashtable> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgAgreementFileVersion -InputObject <IIdentityGovernanceIdentity> -BodyParameter <Hashtable> [-Confirm]
  [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgAgreementFileVersion -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ key: id of agreementFileLocalization
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -84,7 +84,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -99,7 +99,7 @@ agreementFileVersion
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -115,7 +115,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -131,7 +131,7 @@ The localized display name is shown to end users who view the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -147,7 +147,7 @@ To construct, please use Get-Help -Online and see NOTES section for FILEDATA pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileData
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -163,7 +163,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -178,7 +178,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -194,7 +194,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -211,7 +211,7 @@ Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -227,7 +227,7 @@ Major version updates invalidate the agreement's acceptances on the correspondin
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -246,7 +246,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -311,7 +311,7 @@ To create the parameters described below, construct a hash table containing the 
 
 FILEDATA <IMicrosoftGraphAgreementFileData>: agreementFileData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Data <Byte[]>]`: 
+  - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -336,6 +336,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -346,6 +347,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -353,7 +356,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

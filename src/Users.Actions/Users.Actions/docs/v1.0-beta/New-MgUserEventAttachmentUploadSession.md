@@ -12,27 +12,27 @@ Invoke action createUploadSession
 
 ## SYNTAX
 
-### CreateExpanded1 (Default)
+### CreateExpanded (Default)
 ```
 New-MgUserEventAttachmentUploadSession -EventId <String> -UserId <String> [-AdditionalProperties <Hashtable>]
  [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create1
+### Create
 ```
 New-MgUserEventAttachmentUploadSession -EventId <String> -UserId <String>
  -BodyParameter <IPaths1Ly1W91UsersUserIdEventsEventIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity1
+### CreateViaIdentity
 ```
 New-MgUserEventAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1Ly1W91UsersUserIdEventsEventIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded1
+### CreateViaIdentityExpanded
 ```
 New-MgUserEventAttachmentUploadSession -InputObject <IUsersActionsIdentity>
  [-AdditionalProperties <Hashtable>] [-AttachmentItem <IMicrosoftGraphAttachmentItem>] [-Confirm] [-WhatIf]
@@ -51,7 +51,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -67,7 +67,7 @@ To construct, please use Get-Help -Online and see NOTES section for ATTACHMENTIT
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAttachmentItem
-Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -83,7 +83,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1Ly1W91UsersUserIdEventsEventIdAttachmentsMicrosoftGraphCreateuploadsessionPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Create1, CreateViaIdentity1
+Parameter Sets: Create, CreateViaIdentity
 Aliases:
 
 Required: True
@@ -98,7 +98,7 @@ key: id of event
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -114,7 +114,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
+Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -129,7 +129,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Create1, CreateExpanded1
+Parameter Sets: Create, CreateExpanded
 Aliases:
 
 Required: True
@@ -215,11 +215,13 @@ BODYPARAMETER <IPaths1Ly1W91UsersUserIdEventsEventIdAttachmentsMicrosoftGraphCre
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

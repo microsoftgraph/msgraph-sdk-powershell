@@ -12,12 +12,12 @@ Invoke function delta
 
 ## SYNTAX
 
-### Delta1 (Default)
+### Delta (Default)
 ```
 Get-MgUserMailFolderMessageDelta -MailFolderId <String> -UserId <String> [<CommonParameters>]
 ```
 
-### DeltaViaIdentity1
+### DeltaViaIdentity
 ```
 Get-MgUserMailFolderMessageDelta -InputObject <IUsersFunctionsIdentity> [<CommonParameters>]
 ```
@@ -35,7 +35,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersFunctionsIdentity
-Parameter Sets: DeltaViaIdentity1
+Parameter Sets: DeltaViaIdentity
 Aliases:
 
 Required: True
@@ -50,7 +50,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -65,7 +65,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Delta1
+Parameter Sets: Delta
 Aliases:
 
 Required: True
@@ -97,10 +97,12 @@ To create the parameters described below, construct a hash table containing the 
 
 INPUTOBJECT <IUsersFunctionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AnotherRange <String>]`: Usage: anotherRange={anotherRange}
   - `[AppConsentRequestId <String>]`: key: id of appConsentRequest
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[Column <Int32?>]`: Usage: column={column}
   - `[ColumnOffset <Int32?>]`: Usage: columnOffset={columnOffset}
   - `[ContactFolderId <String>]`: key: id of contactFolder

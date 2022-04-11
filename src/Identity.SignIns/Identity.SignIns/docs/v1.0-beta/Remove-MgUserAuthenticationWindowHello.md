@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Delete navigation property windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Delete navigation property windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## EXAMPLES
 
@@ -168,6 +168,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

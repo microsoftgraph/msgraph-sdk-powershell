@@ -262,8 +262,8 @@ APPDEFINITIONS <IMicrosoftGraphTeamsAppDefinition1[]>: The details for each vers
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[Description <String>]`: Verbose description of the application.
@@ -286,8 +286,8 @@ BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[Description <String>]`: Verbose description of the application.
@@ -302,6 +302,7 @@ BODYPARAMETER <IMicrosoftGraphTeamsApp1>: teamsApp
   - `[ExternalId <String>]`: The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
+  - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
   - `[ChannelId <String>]`: key: id of channel
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageHostedContentId <String>]`: key: id of chatMessageHostedContent
@@ -314,6 +315,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OpenShiftId <String>]`: key: id of openShift
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
+  - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
@@ -326,11 +328,14 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: Usage: userId={userId}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

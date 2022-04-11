@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSite
 
 ## SYNOPSIS
-Get entity from sites by key
+Invoke function getByPath
 
 ## SYNTAX
 
@@ -21,17 +21,16 @@ Get-MgSite [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>
 
 ### Get2
 ```
-Get-MgSite -SiteId <String> [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+Get-MgSite -Path <String> -SiteId <String> [<CommonParameters>]
 ```
 
 ### GetViaIdentity2
 ```
-Get-MgSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
+Get-MgSite -InputObject <ISitesIdentity> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get entity from sites by key
+Invoke function getByPath
 
 ## EXAMPLES
 
@@ -73,7 +72,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: List1
 Aliases: Expand
 
 Required: False
@@ -129,12 +128,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Path
+Usage: path={path}
+
+```yaml
+Type: System.String
+Parameter Sets: Get2
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Property
 Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: (All)
+Parameter Sets: List1
 Aliases: Select
 
 Required: False
@@ -243,7 +257,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -262,13 +275,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

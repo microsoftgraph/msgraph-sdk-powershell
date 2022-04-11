@@ -551,8 +551,8 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -561,8 +561,8 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[Id <String>]`: Read-only.
     - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-    - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-    - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+    - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+    - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
   - `[OfferShiftRequestsEnabled <Boolean?>]`: Indicates whether offer shift requests are enabled for the schedule.
   - `[OpenShiftChangeRequests <IMicrosoftGraphOpenShiftChangeRequest[]>]`: 
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -636,8 +636,8 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
   - `[SwapShiftsChangeRequests <IMicrosoftGraphSwapShiftsChangeRequest[]>]`: 
     - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-    - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-    - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+    - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+    - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
     - `[AssignedTo <String>]`: scheduleChangeRequestActor
     - `[ManagerActionDateTime <DateTime?>]`: 
     - `[ManagerActionMessage <String>]`: 
@@ -651,7 +651,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
     - `[Id <String>]`: Read-only.
-    - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
+    - `[RecipientShiftId <String>]`: ShiftId for the recipient user with whom the request is to swap.
   - `[SwapShiftsRequestsEnabled <Boolean?>]`: Indicates whether swap shifts requests are enabled for the schedule.
   - `[TimeCards <IMicrosoftGraphTimeCard[]>]`: 
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
@@ -688,8 +688,8 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
     - `[ApprovedLocation <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-      - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
-      - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
+      - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
+      - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
   - `[TimeOffReasons <IMicrosoftGraphTimeOffReason[]>]`: The set of reasons for a time off in the schedule.
     - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -736,6 +736,7 @@ BODYPARAMETER <IMicrosoftGraphSchedule>: schedule
   - `[WorkforceIntegrationIds <String[]>]`: 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
+  - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
   - `[ChannelId <String>]`: key: id of channel
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageHostedContentId <String>]`: key: id of chatMessageHostedContent
@@ -748,6 +749,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OpenShiftId <String>]`: key: id of openShift
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
+  - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
@@ -760,11 +762,14 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: Usage: userId={userId}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
@@ -781,8 +786,8 @@ OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -791,8 +796,8 @@ OFFERSHIFTREQUESTS <IMicrosoftGraphOfferShiftRequest[]>: .
   - `[Id <String>]`: Read-only.
   - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-  - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-  - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+  - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+  - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
 
 OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
@@ -807,8 +812,8 @@ OPENSHIFTCHANGEREQUESTS <IMicrosoftGraphOpenShiftChangeRequest[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -822,8 +827,8 @@ OPENSHIFTS <IMicrosoftGraphOpenShift[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -854,8 +859,8 @@ SCHEDULINGGROUPS <IMicrosoftGraphSchedulingGroup[]>: The logical grouping of use
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -871,8 +876,8 @@ SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -901,8 +906,8 @@ SHIFTS <IMicrosoftGraphShift[]>: The shifts in the schedule.
 SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest[]>: .
   - `[RecipientActionDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[RecipientActionMessage <String>]`: Custom message sent by recipient of the offer shift request.
-  - `[RecipientUserId <String>]`: User id of the recipient of the offer shift request.
-  - `[SenderShiftId <String>]`: User id of the sender of the offer shift request.
+  - `[RecipientUserId <String>]`: User ID of the recipient of the offer shift request.
+  - `[SenderShiftId <String>]`: User ID of the sender of the offer shift request.
   - `[AssignedTo <String>]`: scheduleChangeRequestActor
   - `[ManagerActionDateTime <DateTime?>]`: 
   - `[ManagerActionMessage <String>]`: 
@@ -915,23 +920,23 @@ SWAPSHIFTSCHANGEREQUESTS <IMicrosoftGraphSwapShiftsChangeRequest[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
   - `[LastModifiedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
   - `[Id <String>]`: Read-only.
-  - `[RecipientShiftId <String>]`: Shift ID for the recipient user with whom the request is to swap.
+  - `[RecipientShiftId <String>]`: ShiftId for the recipient user with whom the request is to swap.
 
 TIMECARDS <IMicrosoftGraphTimeCard[]>: .
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -967,16 +972,16 @@ TIMECLOCKSETTINGS <IMicrosoftGraphTimeClockSettings>: timeClockSettings
   - `[ApprovedLocation <IMicrosoftGraphGeoCoordinates>]`: geoCoordinates
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Altitude <Double?>]`: Optional. The altitude (height), in feet,  above sea level for the item. Read-only.
-    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Writable on OneDrive Personal.
-    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Writable on OneDrive Personal.
+    - `[Latitude <Double?>]`: Optional. The latitude, in decimal, for the item. Read-only.
+    - `[Longitude <Double?>]`: Optional. The longitude, in decimal, for the item. Read-only.
 
 TIMEOFFREASONS <IMicrosoftGraphTimeOffReason[]>: The set of reasons for a time off in the schedule.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1000,8 +1005,8 @@ TIMEOFFREQUESTS <IMicrosoftGraphTimeOffRequest[]>: .
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -1017,8 +1022,8 @@ TIMESOFF <IMicrosoftGraphTimeOff[]>: The instances of times off in the schedule.
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
   - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z

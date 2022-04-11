@@ -8,37 +8,25 @@ schema: 2.0.0
 # Remove-MgGroupDrive
 
 ## SYNOPSIS
-The group's default drive.
+The group's drives.
 Read-only.
 
 ## SYNTAX
 
-### Delete2 (Default)
-```
-Remove-MgGroupDrive -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Delete3
+### Delete1 (Default)
 ```
 Remove-MgGroupDrive -DriveId <String> -GroupId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity2
-```
-Remove-MgGroupDrive -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### DeleteViaIdentity3
+### DeleteViaIdentity1
 ```
 Remove-MgGroupDrive -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The group's default drive.
+The group's drives.
 Read-only.
 
 ## EXAMPLES
@@ -50,7 +38,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -65,7 +53,7 @@ key: id of group
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete2, Delete3
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -96,7 +84,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: DeleteViaIdentity2, DeleteViaIdentity3
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -188,6 +176,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

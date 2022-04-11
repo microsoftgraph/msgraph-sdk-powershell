@@ -332,7 +332,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ADMINISTRATIVEUNITS <IMicrosoftGraphAdministrativeUnit[]>: Conceptual container for user and group directory objects.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Id <String>]`: Read-only.
   - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
   - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -340,16 +340,16 @@ ADMINISTRATIVEUNITS <IMicrosoftGraphAdministrativeUnit[]>: Conceptual container 
     - `[Id <String>]`: Read-only.
   - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
     - `[Id <String>]`: Read-only.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this administrative unit.
     - `[Id <String>]`: Read-only.
     - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
     - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
     - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
-  - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
+  - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
 
 ATTRIBUTESETS <IMicrosoftGraphAttributeSet[]>: Group of related custom security attribute definitions.
   - `[Id <String>]`: Read-only.
@@ -360,7 +360,7 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
   - `[AdministrativeUnits <IMicrosoftGraphAdministrativeUnit[]>]`: Conceptual container for user and group directory objects.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[Id <String>]`: Read-only.
     - `[Description <String>]`: An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
     - `[DisplayName <String>]`: Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
@@ -368,16 +368,16 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
       - `[Id <String>]`: Read-only.
     - `[Members <IMicrosoftGraphDirectoryObject[]>]`: Users and groups that are members of this administrative unit. Supports $expand.
       - `[Id <String>]`: Read-only.
-      - `[DeletedDateTime <DateTime?>]`: 
+      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
     - `[ScopedRoleMembers <IMicrosoftGraphScopedRoleMembership[]>]`: Scoped-role members of this administrative unit.
       - `[Id <String>]`: Read-only.
       - `[AdministrativeUnitId <String>]`: Unique identifier for the administrative unit that the directory role is scoped to
       - `[RoleId <String>]`: Unique identifier for the directory role that the member is in.
       - `[RoleMemberInfo <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
-    - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
+    - `[Visibility <String>]`: Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
   - `[AttributeSets <IMicrosoftGraphAttributeSet[]>]`: Group of related custom security attribute definitions.
     - `[Id <String>]`: Read-only.
     - `[Description <String>]`: Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.
@@ -411,8 +411,8 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[Id <String>]`: Read-only.
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Owner <String>]`: 
@@ -422,18 +422,12 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[ResourceType <String>]`: 
     - `[Status <String>]`: recommendationStatus
   - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: Read-only.
     - `[DisplayName <String>]`: 
     - `[HomeTenantId <String>]`: 
     - `[UserId <String>]`: 
     - `[UserPrincipalName <String>]`: 
   - `[OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: Read-only.
     - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-      - `[DeletedDateTime <DateTime?>]`: 
-      - `[Id <String>]`: Read-only.
       - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: 
@@ -479,13 +473,13 @@ CUSTOMSECURITYATTRIBUTEDEFINITIONS <IMicrosoftGraphCustomSecurityAttributeDefini
 
 DELETEDITEMS <IMicrosoftGraphDirectoryObject[]>: Recently deleted items. Read-only. Nullable.
   - `[Id <String>]`: Read-only.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 FEATUREROLLOUTPOLICIES <IMicrosoftGraphFeatureRolloutPolicy[]>: Nullable.
   - `[Id <String>]`: Read-only.
   - `[AppliesTo <IMicrosoftGraphDirectoryObject[]>]`: Nullable. Specifies a list of directoryObjects that feature is enabled for.
     - `[Id <String>]`: Read-only.
-    - `[DeletedDateTime <DateTime?>]`: 
+    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
   - `[Description <String>]`: A description for this feature rollout policy.
   - `[DisplayName <String>]`: The display name for this  feature rollout policy.
   - `[Feature <String>]`: stagedFeatureName
@@ -500,8 +494,8 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
   - `[Id <String>]`: Read-only.
   - `[AddedDateTime <DateTime?>]`: 
   - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
+    - `[Key <String>]`: Key for the key-value pair.
+    - `[Value <String>]`: Value for the key-value pair.
   - `[ApiUrl <String>]`: 
   - `[DisplayName <String>]`: 
   - `[Owner <String>]`: 
@@ -512,19 +506,13 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
   - `[Status <String>]`: recommendationStatus
 
 INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: 
   - `[HomeTenantId <String>]`: 
   - `[UserId <String>]`: 
   - `[UserPrincipalName <String>]`: 
 
 OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: Read-only.
     - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 
@@ -547,8 +535,8 @@ RECOMMENDATIONS <IMicrosoftGraphRecommendation[]>: .
     - `[Id <String>]`: Read-only.
     - `[AddedDateTime <DateTime?>]`: 
     - `[AdditionalDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
     - `[ApiUrl <String>]`: 
     - `[DisplayName <String>]`: 
     - `[Owner <String>]`: 

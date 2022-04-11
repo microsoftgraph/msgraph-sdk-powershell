@@ -23,8 +23,9 @@ New-MgSiteColumn -SiteId <String> [-AdditionalProperties <Hashtable>] [-Boolean 
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
  [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition1>]
- [-Term <IMicrosoftGraphTermColumn1>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn1>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create1
@@ -50,8 +51,9 @@ New-MgSiteColumn -InputObject <ISitesIdentity> [-AdditionalProperties <Hashtable
  [-IsReorderable] [-IsSealed] [-Lookup <IMicrosoftGraphLookupColumn>] [-Name <String>]
  [-Number <IMicrosoftGraphNumberColumn>] [-PersonOrGroup <IMicrosoftGraphPersonOrGroupColumn>]
  [-PropagateChanges] [-ReadOnly] [-Required] [-SourceColumn <IMicrosoftGraphColumnDefinition1>]
- [-Term <IMicrosoftGraphTermColumn1>] [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>]
- [-Type <String>] [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-SourceContentType <IMicrosoftGraphContentTypeInfo>] [-Term <IMicrosoftGraphTermColumn1>]
+ [-Text <IMicrosoftGraphTextColumn>] [-Thumbnail <Hashtable>] [-Type <String>]
+ [-Validation <IMicrosoftGraphColumnValidation>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -325,7 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -Indexed
-Specifies whether the column values can used for sorting and searching.
+Specifies whether the column values can be used for sorting and searching.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -466,7 +468,7 @@ Accept wildcard characters: False
 ```
 
 ### -PropagateChanges
-If true, changes to this column will be propagated to lists that implement the column.
+If 'true', changes to this column will be propagated to lists that implement the column.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -531,6 +533,22 @@ To construct, please use Get-Help -Online and see NOTES section for SOURCECOLUMN
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceContentType
+contentTypeInfo
+To construct, please use Get-Help -Online and see NOTES section for SOURCECONTENTTYPE properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeInfo
 Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
@@ -710,7 +728,7 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
   - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-  - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+  - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
   - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
   - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
   - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -733,13 +751,17 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
     - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
     - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
     - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-  - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+  - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
@@ -754,9 +776,9 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
-      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
+      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Relationship <String>]`: 
@@ -765,21 +787,21 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
           - `[Id <String>]`: Read-only.
           - `[Children <IMicrosoftGraphTermStoreTerm1[]>]`: Children terms of set in term [store].
           - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description giving details on the term usage.
+          - `[Description <String>]`: Description that gives details on the term usage.
           - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
             - `[LanguageTag <String>]`: The language tag for the label.
             - `[Name <String>]`: The name in the localized language.
           - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time of group creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
-            - `[DisplayName <String>]`: Name of group.
-            - `[ParentSiteId <String>]`: Id of the parent site of this group.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[DisplayName <String>]`: Name of the group.
+            - `[ParentSiteId <String>]`: ID of the parent site of this group.
             - `[Scope <String>]`: 
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
           - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
         - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -801,7 +823,7 @@ BODYPARAMETER <IMicrosoftGraphColumnDefinition1>: columnDefinition
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 CALCULATED <IMicrosoftGraphCalculatedColumn>: calculatedColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -837,7 +859,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -856,13 +877,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 LOOKUP <IMicrosoftGraphLookupColumn>: lookupColumn
@@ -924,7 +945,7 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
   - `[HyperlinkOrPicture <IMicrosoftGraphHyperlinkOrPictureColumn>]`: hyperlinkOrPictureColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsPicture <Boolean?>]`: Specifies whether the display format used for URL columns is an image or a hyperlink.
-  - `[Indexed <Boolean?>]`: Specifies whether the column values can used for sorting and searching.
+  - `[Indexed <Boolean?>]`: Specifies whether the column values can be used for sorting and searching.
   - `[IsDeletable <Boolean?>]`: Indicates whether this column can be deleted.
   - `[IsReorderable <Boolean?>]`: Indicates whether values in the column can be reordered. Read-only.
   - `[IsSealed <Boolean?>]`: Specifies whether the column can be changed.
@@ -947,13 +968,17 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
     - `[AllowMultipleSelection <Boolean?>]`: Indicates whether multiple values can be selected from the source.
     - `[ChooseFromType <String>]`: Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
     - `[DisplayAs <String>]`: How to display the information about the person or group chosen. See below.
-  - `[PropagateChanges <Boolean?>]`: If true, changes to this column will be propagated to lists that implement the column.
+  - `[PropagateChanges <Boolean?>]`: If 'true', changes to this column will be propagated to lists that implement the column.
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+    - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
     - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
@@ -968,9 +993,9 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
         - `[Name <String>]`: The name of the label.
       - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
       - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
-      - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
+      - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
         - `[Id <String>]`: Read-only.
         - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
         - `[Relationship <String>]`: 
@@ -979,21 +1004,21 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
           - `[Id <String>]`: Read-only.
           - `[Children <IMicrosoftGraphTermStoreTerm1[]>]`: Children terms of set in term [store].
           - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-          - `[Description <String>]`: Description giving details on the term usage.
+          - `[Description <String>]`: Description that gives details on the term usage.
           - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
             - `[LanguageTag <String>]`: The language tag for the label.
             - `[Name <String>]`: The name in the localized language.
           - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
-            - `[CreatedDateTime <DateTime?>]`: Date and time of group creation. Read-only.
-            - `[Description <String>]`: Description giving details on the term usage.
-            - `[DisplayName <String>]`: Name of group.
-            - `[ParentSiteId <String>]`: Id of the parent site of this group.
+            - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+            - `[Description <String>]`: Description that gives details on the term usage.
+            - `[DisplayName <String>]`: Name of the group.
+            - `[ParentSiteId <String>]`: ID of the parent site of this group.
             - `[Scope <String>]`: 
             - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
           - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-          - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+          - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
           - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
         - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1015,11 +1040,16 @@ SOURCECOLUMN <IMicrosoftGraphColumnDefinition1>: columnDefinition
     - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
       - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
       - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+    - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
+
+SOURCECONTENTTYPE <IMicrosoftGraphContentTypeInfo>: contentTypeInfo
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Id <String>]`: The id of the content type.
+  - `[Name <String>]`: The name of the content type.
 
 TERM <IMicrosoftGraphTermColumn1>: termColumn
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value
+  - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
   - `[ParentTerm <IMicrosoftGraphTermStoreTerm1>]`: term
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
@@ -1034,9 +1064,9 @@ TERM <IMicrosoftGraphTermColumn1>: termColumn
       - `[Name <String>]`: The name of the label.
     - `[LastModifiedDateTime <DateTime?>]`: Last date and time of term modification. Read-only.
     - `[Properties <IMicrosoftGraphKeyValue[]>]`: Collection of properties on the term.
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: To indicate which terms are related to the current term as either pinned or reused.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
+    - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: To indicate which terms are related to the current term as either pinned or reused.
       - `[Id <String>]`: Read-only.
       - `[FromTerm <IMicrosoftGraphTermStoreTerm1>]`: term
       - `[Relationship <String>]`: 
@@ -1045,21 +1075,21 @@ TERM <IMicrosoftGraphTermColumn1>: termColumn
         - `[Id <String>]`: Read-only.
         - `[Children <IMicrosoftGraphTermStoreTerm1[]>]`: Children terms of set in term [store].
         - `[CreatedDateTime <DateTime?>]`: Date and time of set creation. Read-only.
-        - `[Description <String>]`: Description giving details on the term usage.
+        - `[Description <String>]`: Description that gives details on the term usage.
         - `[LocalizedNames <IMicrosoftGraphTermStoreLocalizedName[]>]`: Name of the set for each languageTag.
           - `[LanguageTag <String>]`: The language tag for the label.
           - `[Name <String>]`: The name in the localized language.
         - `[ParentGroup <IMicrosoftGraphTermStoreGroup1>]`: group
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[Id <String>]`: Read-only.
-          - `[CreatedDateTime <DateTime?>]`: Date and time of group creation. Read-only.
-          - `[Description <String>]`: Description giving details on the term usage.
-          - `[DisplayName <String>]`: Name of group.
-          - `[ParentSiteId <String>]`: Id of the parent site of this group.
+          - `[CreatedDateTime <DateTime?>]`: Date and time of the group creation. Read-only.
+          - `[Description <String>]`: Description that gives details on the term usage.
+          - `[DisplayName <String>]`: Name of the group.
+          - `[ParentSiteId <String>]`: ID of the parent site of this group.
           - `[Scope <String>]`: 
           - `[Sets <IMicrosoftGraphTermStoreSet1[]>]`: All sets under the group in a term [store].
         - `[Properties <IMicrosoftGraphKeyValue[]>]`: Custom properties for the set.
-        - `[Relations <IMicrosoftGraphTermStoreRelation1[]>]`: Indicates which terms have been pinned or reused directly under the set.
+        - `[Relations <IMicrosoftGraphTermStoreRelation[]>]`: Indicates which terms have been pinned or reused directly under the set.
         - `[Terms <IMicrosoftGraphTermStoreTerm1[]>]`: All the terms under the set.
       - `[ToTerm <IMicrosoftGraphTermStoreTerm1>]`: term
     - `[Set <IMicrosoftGraphTermStoreSet1>]`: set
@@ -1080,7 +1110,7 @@ VALIDATION <IMicrosoftGraphColumnValidation>: columnValidation
   - `[Descriptions <IMicrosoftGraphDisplayNameLocalization[]>]`: Localized messages that explain what is needed for this column's value to be considered valid. User will be prompted with this message if validation fails.
     - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
     - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
-  - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists
+  - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
 
 ## RELATED LINKS
 

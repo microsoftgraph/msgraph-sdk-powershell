@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Get phoneMethods from users
+Represents the phone registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get phoneMethods from users
+Represents the phone registered to a user for authentication.
 
 ## EXAMPLES
 
@@ -264,6 +264,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

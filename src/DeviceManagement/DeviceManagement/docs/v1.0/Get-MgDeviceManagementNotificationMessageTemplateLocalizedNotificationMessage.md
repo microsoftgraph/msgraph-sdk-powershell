@@ -20,14 +20,14 @@ Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get1
+### Get
 ```
 Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -LocalizedNotificationMessageId <String> -NotificationMessageTemplateId <String> [-ExpandProperty <String[]>]
  [-Property <String[]>] [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
@@ -108,7 +108,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: GetViaIdentity1
+Parameter Sets: GetViaIdentity
 Aliases:
 
 Required: True
@@ -123,7 +123,7 @@ key: id of localizedNotificationMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1
+Parameter Sets: Get
 Aliases:
 
 Required: True
@@ -138,7 +138,7 @@ key: id of notificationMessageTemplate
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, List1
+Parameter Sets: Get, List1
 Aliases:
 
 Required: True
@@ -371,6 +371,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
   - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
   - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
   - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary

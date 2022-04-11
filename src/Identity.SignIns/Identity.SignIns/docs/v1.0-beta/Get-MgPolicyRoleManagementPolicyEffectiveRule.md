@@ -8,10 +8,9 @@ schema: 2.0.0
 # Get-MgPolicyRoleManagementPolicyEffectiveRule
 
 ## SYNOPSIS
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ## SYNTAX
 
@@ -36,10 +35,9 @@ Get-MgPolicyRoleManagementPolicyEffectiveRule -InputObject <IIdentitySignInsIden
 ```
 
 ## DESCRIPTION
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ## EXAMPLES
 
@@ -271,6 +269,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

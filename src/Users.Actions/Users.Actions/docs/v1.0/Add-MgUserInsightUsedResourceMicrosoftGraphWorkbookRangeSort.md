@@ -273,13 +273,13 @@ BODYPARAMETER <IPaths1Wr3D54UsersUserIdInsightsUsedUsedinsightIdResourceMicrosof
   - `[Fields <IMicrosoftGraphWorkbookSortField[]>]`: 
     - `[Ascending <Boolean?>]`: Represents whether the sorting is done in an ascending fashion.
     - `[Color <String>]`: Represents the color that is the target of the condition if the sorting is on font or cell color.
-    - `[DataOption <String>]`: Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
+    - `[DataOption <String>]`: Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
     - `[Icon <IMicrosoftGraphWorkbookIcon>]`: workbookIcon
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Index <Int32?>]`: Represents the index of the icon in the given set.
-      - `[Set <String>]`: Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
+      - `[Set <String>]`: Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
     - `[Key <Int32?>]`: Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-    - `[SortOn <String>]`: Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
+    - `[SortOn <String>]`: Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
   - `[HasHeaders <Boolean?>]`: 
   - `[MatchCase <Boolean?>]`: 
   - `[Method <String>]`: 
@@ -288,22 +288,24 @@ BODYPARAMETER <IPaths1Wr3D54UsersUserIdInsightsUsedUsedinsightIdResourceMicrosof
 FIELDS <IMicrosoftGraphWorkbookSortField[]>: .
   - `[Ascending <Boolean?>]`: Represents whether the sorting is done in an ascending fashion.
   - `[Color <String>]`: Represents the color that is the target of the condition if the sorting is on font or cell color.
-  - `[DataOption <String>]`: Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.
+  - `[DataOption <String>]`: Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
   - `[Icon <IMicrosoftGraphWorkbookIcon>]`: workbookIcon
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Index <Int32?>]`: Represents the index of the icon in the given set.
-    - `[Set <String>]`: Represents the set that the icon is part of. Possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
+    - `[Set <String>]`: Represents the set that the icon is part of. The possible values are: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.
   - `[Key <Int32?>]`: Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).
-  - `[SortOn <String>]`: Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.
+  - `[SortOn <String>]`: Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

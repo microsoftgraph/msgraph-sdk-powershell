@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgTeamChannel
 
 ## SYNOPSIS
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## SYNTAX
 
@@ -31,8 +31,15 @@ Get-MgTeamChannel -InputObject <ITeamsIdentity> [-ExpandProperty <String[]>] [-P
  [<CommonParameters>]
 ```
 
+### List1
+```
+Get-MgTeamChannel -TeamId <String> [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
+ [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
+ [-PageSize <Int32>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
-The collection of channels & messages associated with the team.
+The collection of channels and messages associated with the team.
 
 ## EXAMPLES
 
@@ -43,7 +50,7 @@ List all pages.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -74,7 +81,7 @@ By default, this variable will be set in the global scope.
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: CV
 
 Required: False
@@ -104,7 +111,7 @@ Filter items by property values
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -135,7 +142,7 @@ Sets the page size of results.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -165,7 +172,7 @@ Search items by search phrases
 
 ```yaml
 Type: System.String
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -180,7 +187,7 @@ Skip the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases:
 
 Required: False
@@ -195,7 +202,7 @@ Order items by property values
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: OrderBy
 
 Required: False
@@ -210,7 +217,7 @@ key: id of team
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: True
@@ -225,7 +232,7 @@ Show only the first n items
 
 ```yaml
 Type: System.Int32
-Parameter Sets: List
+Parameter Sets: List, List1
 Aliases: Limit
 
 Required: False
@@ -256,6 +263,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
+  - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
   - `[ChannelId <String>]`: key: id of channel
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageHostedContentId <String>]`: key: id of chatMessageHostedContent
@@ -268,6 +276,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OpenShiftId <String>]`: key: id of openShift
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
+  - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
@@ -280,11 +289,14 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: Usage: userId={userId}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

@@ -46,10 +46,9 @@ directive:
     set:
       subject: $1ServiceAnnouncement$2
 ```
-
 ### Versioning
 
 ``` yaml
-module-version: 1.9.3
+module-version: 1.9.4
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

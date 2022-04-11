@@ -12,27 +12,27 @@ Invoke action copy
 
 ## SYNTAX
 
-### CopyExpanded1 (Default)
+### CopyExpanded (Default)
 ```
 Copy-MgUserMailFolderChildFolder -MailFolderId <String> -MailFolderId1 <String> -UserId <String>
  [-AdditionalProperties <Hashtable>] [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Copy1
+### Copy
 ```
 Copy-MgUserMailFolderChildFolder -MailFolderId <String> -MailFolderId1 <String> -UserId <String>
  -BodyParameter <IPaths1E02JcUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CopyViaIdentity1
+### CopyViaIdentity
 ```
 Copy-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity>
  -BodyParameter <IPaths1E02JcUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CopyViaIdentityExpanded1
+### CopyViaIdentityExpanded
 ```
 Copy-MgUserMailFolderChildFolder -InputObject <IUsersActionsIdentity> [-AdditionalProperties <Hashtable>]
  [-DestinationId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
+Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPaths1E02JcUsersUserIdMailfoldersMailfolderIdChildfoldersMailfolderId1MicrosoftGraphCopyPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Copy1, CopyViaIdentity1
+Parameter Sets: Copy, CopyViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CopyExpanded1, CopyViaIdentityExpanded1
+Parameter Sets: CopyExpanded, CopyViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -97,7 +97,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: CopyViaIdentity1, CopyViaIdentityExpanded1
+Parameter Sets: CopyViaIdentity, CopyViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -112,7 +112,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Copy1, CopyExpanded1
+Parameter Sets: Copy, CopyExpanded
 Aliases:
 
 Required: True
@@ -127,7 +127,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Copy1, CopyExpanded1
+Parameter Sets: Copy, CopyExpanded
 Aliases:
 
 Required: True
@@ -142,7 +142,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Copy1, CopyExpanded1
+Parameter Sets: Copy, CopyExpanded
 Aliases:
 
 Required: True
@@ -212,11 +212,13 @@ BODYPARAMETER <IPaths1E02JcUsersUserIdMailfoldersMailfolderIdChildfoldersMailfol
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

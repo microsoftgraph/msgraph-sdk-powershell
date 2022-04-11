@@ -93,6 +93,7 @@ Accept wildcard characters: False
 
 ### -CreatedDateTime
 The date and time when the key was originally backed up to Azure Active Directory.
+Not nullable.
 
 ```yaml
 Type: System.DateTime
@@ -107,7 +108,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeviceId
-ID of the device the BitLocker key is originally backed up from.
+Identifier of the device the BitLocker key is originally backed up from.
+Supports $filter (eq).
 
 ```yaml
 Type: System.String
@@ -154,6 +156,8 @@ Accept wildcard characters: False
 
 ### -Key
 The BitLocker recovery key.
+Returned only on $select.
+Not nullable.
 
 ```yaml
 Type: System.String
@@ -253,9 +257,9 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphBitlockerRecoveryKey>: bitlockerRecoveryKey
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory.
-  - `[DeviceId <String>]`: ID of the device the BitLocker key is originally backed up from.
-  - `[Key <String>]`: The BitLocker recovery key.
+  - `[CreatedDateTime <DateTime?>]`: The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
+  - `[DeviceId <String>]`: Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
+  - `[Key <String>]`: The BitLocker recovery key. Returned only on $select. Not nullable.
   - `[VolumeType <String>]`: volumeType
 
 INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
@@ -267,6 +271,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

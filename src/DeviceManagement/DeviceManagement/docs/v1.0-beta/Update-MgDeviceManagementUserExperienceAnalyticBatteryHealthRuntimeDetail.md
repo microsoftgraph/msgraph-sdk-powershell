@@ -16,7 +16,8 @@ User Experience Analytics Battery Health Runtime Details
 ```
 Update-MgDeviceManagementUserExperienceAnalyticBatteryHealthRuntimeDetail [-ActiveDevices <Int32>]
  [-AdditionalProperties <Hashtable>] [-BatteryRuntimeFair <Int32>] [-BatteryRuntimeGood <Int32>]
- [-BatteryRuntimePoor <Int32>] [-Id <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BatteryRuntimePoor <Int32>] [-Id <String>] [-LastRefreshedDateTime <DateTime>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -143,6 +144,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -LastRefreshedDateTime
+Recorded date time of this runtime details instance.
+
+```yaml
+Type: System.DateTime
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PassThru
 Returns true when the command succeeds
 
@@ -216,6 +232,7 @@ BODYPARAMETER <IMicrosoftGraphUserExperienceAnalyticsBatteryHealthRuntimeDetails
   - `[BatteryRuntimeFair <Int32?>]`: Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
   - `[BatteryRuntimeGood <Int32?>]`: Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
   - `[BatteryRuntimePoor <Int32?>]`: Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+  - `[LastRefreshedDateTime <DateTime?>]`: Recorded date time of this runtime details instance.
 
 ## RELATED LINKS
 

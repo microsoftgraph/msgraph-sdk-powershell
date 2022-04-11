@@ -19,13 +19,13 @@ Get-MgDriveListItemActivity -DriveId <String> -ListItemId <String> [-ExpandPrope
  [-Top <Int32>] [-All] [-CountVariable <String>] [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get
+### Get2
 ```
 Get-MgDriveListItemActivity -DriveId <String> -EndDateTime <String> -Interval <String> -ListItemId <String>
  -StartDateTime <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity
+### GetViaIdentity2
 ```
 Get-MgDriveListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -73,7 +73,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: True
@@ -88,7 +88,7 @@ Usage: endDateTime={endDateTime}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -134,7 +134,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity
+Parameter Sets: GetViaIdentity2
 Aliases:
 
 Required: True
@@ -149,7 +149,7 @@ Usage: interval={interval}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -164,7 +164,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get, List
+Parameter Sets: Get2, List
 Aliases:
 
 Required: True
@@ -254,7 +254,7 @@ Usage: startDateTime={startDateTime}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get2
 Aliases:
 
 Required: True
@@ -317,6 +317,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

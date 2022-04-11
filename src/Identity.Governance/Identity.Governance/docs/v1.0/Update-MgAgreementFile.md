@@ -12,7 +12,7 @@ Default PDF linked to this agreement.
 
 ## SYNTAX
 
-### UpdateExpanded1 (Default)
+### UpdateExpanded2 (Default)
 ```
 Update-MgAgreementFile -AgreementId <String> [-AdditionalProperties <Hashtable>] [-CreatedDateTime <DateTime>]
  [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>] [-FileName <String>] [-Id <String>]
@@ -21,19 +21,19 @@ Update-MgAgreementFile -AgreementId <String> [-AdditionalProperties <Hashtable>]
  [<CommonParameters>]
 ```
 
-### Update1
+### Update2
 ```
 Update-MgAgreementFile -AgreementId <String> -BodyParameter <IMicrosoftGraphAgreementFile> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentity1
+### UpdateViaIdentity2
 ```
 Update-MgAgreementFile -InputObject <IIdentityGovernanceIdentity>
  -BodyParameter <IMicrosoftGraphAgreementFile> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### UpdateViaIdentityExpanded1
+### UpdateViaIdentityExpanded2
 ```
 Update-MgAgreementFile -InputObject <IIdentityGovernanceIdentity> [-AdditionalProperties <Hashtable>]
  [-CreatedDateTime <DateTime>] [-DisplayName <String>] [-FileData <IMicrosoftGraphAgreementFileData>]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -69,7 +69,7 @@ key: id of agreement
 
 ```yaml
 Type: System.String
-Parameter Sets: Update1, UpdateExpanded1
+Parameter Sets: Update2, UpdateExpanded2
 Aliases:
 
 Required: True
@@ -85,7 +85,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFile
-Parameter Sets: Update1, UpdateViaIdentity1
+Parameter Sets: Update2, UpdateViaIdentity2
 Aliases:
 
 Required: True
@@ -101,7 +101,7 @@ For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -117,7 +117,7 @@ The localized display name is shown to end users who view the agreement.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ To construct, please use Get-Help -Online and see NOTES section for FILEDATA pro
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileData
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -149,7 +149,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -164,7 +164,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -180,7 +180,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IIdentityGovernanceIdentity
-Parameter Sets: UpdateViaIdentity1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateViaIdentity2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: True
@@ -197,7 +197,7 @@ Read-only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -213,7 +213,7 @@ Major version updates invalidate the agreement's acceptances on the correspondin
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -232,7 +232,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -248,7 +248,7 @@ To construct, please use Get-Help -Online and see NOTES section for LOCALIZATION
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphAgreementFileLocalization[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Parameter Sets: UpdateExpanded2, UpdateViaIdentityExpanded2
 Aliases:
 
 Required: False
@@ -332,7 +332,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFile>: agreementFile
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
@@ -359,7 +359,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFile>: agreementFile
 
 FILEDATA <IMicrosoftGraphAgreementFileData>: agreementFileData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Data <Byte[]>]`: 
+  - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -384,6 +384,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -394,6 +395,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -401,7 +404,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -420,7 +422,7 @@ LOCALIZATIONS <IMicrosoftGraphAgreementFileLocalization[]>: The localized versio
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.

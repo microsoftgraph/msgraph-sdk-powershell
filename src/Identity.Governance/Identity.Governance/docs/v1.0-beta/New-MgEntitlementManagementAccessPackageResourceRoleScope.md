@@ -354,15 +354,15 @@ ACCESSPACKAGERESOURCEROLE <IMicrosoftGraphAccessPackageResourceRole>: accessPack
       - `[OriginSystem <String>]`: The origin system for the scope.
       - `[RoleOriginId <String>]`: The origin system for the role, if different.
       - `[Url <String>]`: A resource locator for the scope.
-    - `[AddedBy <String>]`: Read-only.
+    - `[AddedBy <String>]`: The name of the user or application that first added this resource. Read-only.
     - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
       - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AttributeName <String>]`: The name of the attribute in the end system.
+      - `[AttributeName <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
       - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Unique identifier for the attribute.
+      - `[Id <String>]`: Unique identifier for the attribute on the access package resource. Read-only.
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
@@ -407,15 +407,15 @@ ACCESSPACKAGERESOURCESCOPE <IMicrosoftGraphAccessPackageResourceScope>: accessPa
       - `[OriginId <String>]`: The unique identifier of the resource role in the origin system. For a SharePoint Online site, the originId will be the sequence number of the role in the site.
       - `[OriginSystem <String>]`: The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.
     - `[AccessPackageResourceScopes <IMicrosoftGraphAccessPackageResourceScope[]>]`: Read-only. Nullable. Supports $expand.
-    - `[AddedBy <String>]`: Read-only.
+    - `[AddedBy <String>]`: The name of the user or application that first added this resource. Read-only.
     - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+    - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
       - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AttributeName <String>]`: The name of the attribute in the end system.
+      - `[AttributeName <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
       - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Id <String>]`: Unique identifier for the attribute.
+      - `[Id <String>]`: Unique identifier for the attribute on the access package resource. Read-only.
       - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
       - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
     - `[Description <String>]`: A description for the resource.
@@ -469,15 +469,15 @@ BODYPARAMETER <IMicrosoftGraphAccessPackageResourceRoleScope>: accessPackageReso
         - `[OriginSystem <String>]`: The origin system for the scope.
         - `[RoleOriginId <String>]`: The origin system for the role, if different.
         - `[Url <String>]`: A resource locator for the scope.
-      - `[AddedBy <String>]`: Read-only.
+      - `[AddedBy <String>]`: The name of the user or application that first added this resource. Read-only.
       - `[AddedOn <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-      - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains attribute information for the resource.
+      - `[Attributes <IMicrosoftGraphAccessPackageResourceAttribute[]>]`: Contains information about the attributes to be collected from the requestor and sent to the resource application.
         - `[AttributeDestination <IMicrosoftGraphAccessPackageResourceAttributeDestination>]`: accessPackageResourceAttributeDestination
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[AttributeName <String>]`: The name of the attribute in the end system.
+        - `[AttributeName <String>]`: The name of the attribute in the end system. If the destination is accessPackageUserDirectoryAttributeStore, then a user property such as jobTitle or a directory schema extension for the user object type, such as extension_2b676109c7c74ae2b41549205f1947ed_personalTitle.
         - `[AttributeSource <IMicrosoftGraphAccessPackageResourceAttributeSource>]`: accessPackageResourceAttributeSource
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Id <String>]`: Unique identifier for the attribute.
+        - `[Id <String>]`: Unique identifier for the attribute on the access package resource. Read-only.
         - `[IsEditable <Boolean?>]`: Specifies whether or not an existing attribute value can be edited by the requester.
         - `[IsPersistedOnAssignmentRemoval <Boolean?>]`: Specifies whether the attribute will remain in the end system after an assignment ends.
       - `[Description <String>]`: A description for the resource.
@@ -520,6 +520,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -530,6 +531,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -537,7 +540,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval

@@ -67,7 +67,8 @@ Accept wildcard characters: False
 ```
 
 ### -DeletedDateTime
-.
+Date and time when this object was deleted.
+Always null when the object hasn't been deleted.
 
 ```yaml
 Type: System.DateTime
@@ -150,7 +151,7 @@ To create the parameters described below, construct a hash table containing the 
 BODYPARAMETER <IMicrosoftGraphDirectoryObject>: directoryObject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[DeletedDateTime <DateTime?>]`: 
+  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
 
 ## RELATED LINKS
 

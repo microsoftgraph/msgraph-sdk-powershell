@@ -12,13 +12,13 @@ The collection of field definitions for this list.
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgDriveListColumn -ColumnDefinitionId <String> -DriveId <String> [-IfMatch <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgDriveListColumn -InputObject <IFilesIdentity> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -36,7 +36,7 @@ key: id of columnDefinition
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -51,7 +51,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -174,6 +174,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

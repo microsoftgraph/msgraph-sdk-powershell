@@ -260,8 +260,8 @@ BODYPARAMETER <IPaths1Trbs0NGroupsGroupIdConversationsConversationIdThreadsConve
   - `[ToRecipients <IMicrosoftGraphRecipient[]>]`: 
     - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Address <String>]`: The email address of an entity instance.
-      - `[Name <String>]`: The display name of an entity instance.
+      - `[Address <String>]`: The email address of the person or entity.
+      - `[Name <String>]`: The display name of the person or entity.
 
 INPUTOBJECT <IGroupsIdentity>: Identity Parameter
   - `[AttachmentId <String>]`: key: id of attachment
@@ -289,8 +289,8 @@ INPUTOBJECT <IGroupsIdentity>: Identity Parameter
 TORECIPIENTS <IMicrosoftGraphRecipient[]>: .
   - `[EmailAddress <IMicrosoftGraphEmailAddress>]`: emailAddress
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Address <String>]`: The email address of an entity instance.
-    - `[Name <String>]`: The display name of an entity instance.
+    - `[Address <String>]`: The email address of the person or entity.
+    - `[Name <String>]`: The display name of the person or entity.
 
 ## RELATED LINKS
 

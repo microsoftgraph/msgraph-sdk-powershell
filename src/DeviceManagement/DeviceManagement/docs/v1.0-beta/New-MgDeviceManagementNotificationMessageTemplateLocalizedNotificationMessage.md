@@ -12,7 +12,7 @@ The list of localized messages for this Notification Message Template.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -NotificationMessageTemplateId <String> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
@@ -20,21 +20,21 @@ New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -NotificationMessageTemplateId <String> -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> -BodyParameter <IMicrosoftGraphLocalizedNotificationMessage>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgDeviceManagementNotificationMessageTemplateLocalizedNotificationMessage
  -InputObject <IDeviceManagementIdentity> [-AdditionalProperties <Hashtable>] [-Id <String>] [-IsDefault]
@@ -54,7 +54,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -70,7 +70,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphLocalizedNotificationMessage
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -85,7 +85,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -101,7 +101,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IDeviceManagementIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -118,7 +118,7 @@ To unset, set this property to true on another Localized Notification Message.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -133,7 +133,7 @@ DateTime the object was last modified.
 
 ```yaml
 Type: System.DateTime
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -148,7 +148,7 @@ The Locale for which this message is destined.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -163,7 +163,7 @@ The Message Template content.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -178,7 +178,7 @@ key: id of notificationMessageTemplate
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -193,7 +193,7 @@ The Message Template Subject.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -378,6 +378,7 @@ INPUTOBJECT <IDeviceManagementIdentity>: Identity Parameter
   - `[UserExperienceAnalyticsScoreHistoryId <String>]`: key: id of userExperienceAnalyticsScoreHistory
   - `[UserExperienceAnalyticsWorkFromAnywhereDeviceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereDevice
   - `[UserExperienceAnalyticsWorkFromAnywhereMetricId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereMetric
+  - `[UserExperienceAnalyticsWorkFromAnywhereModelPerformanceId <String>]`: key: id of userExperienceAnalyticsWorkFromAnywhereModelPerformance
   - `[WindowsDeviceMalwareStateId <String>]`: key: id of windowsDeviceMalwareState
   - `[WindowsInformationProtectionAppLearningSummaryId <String>]`: key: id of windowsInformationProtectionAppLearningSummary
   - `[WindowsInformationProtectionNetworkLearningSummaryId <String>]`: key: id of windowsInformationProtectionNetworkLearningSummary

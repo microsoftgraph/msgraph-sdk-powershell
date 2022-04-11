@@ -348,8 +348,8 @@ To create the parameters described below, construct a hash table containing the 
 
 APPLIEDBY <IMicrosoftGraphUserIdentity>: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 
@@ -360,8 +360,8 @@ BODYPARAMETER <IMicrosoftGraphAccessReviewDecision>: accessReviewDecision
   - `[AccessReviewId <String>]`: The feature-generated id of the access review.
   - `[AppliedBy <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[AppliedDateTime <DateTime?>]`: The date and time when the review decision was applied.
@@ -394,6 +394,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -404,6 +405,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -411,7 +414,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -427,8 +429,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
 
 REVIEWEDBY <IMicrosoftGraphUserIdentity>: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 

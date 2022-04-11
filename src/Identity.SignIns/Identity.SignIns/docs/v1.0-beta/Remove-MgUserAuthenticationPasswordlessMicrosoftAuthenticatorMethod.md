@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## SYNTAX
 
@@ -26,7 +26,7 @@ Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod -InputObject
 ```
 
 ## DESCRIPTION
-Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## EXAMPLES
 
@@ -168,6 +168,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

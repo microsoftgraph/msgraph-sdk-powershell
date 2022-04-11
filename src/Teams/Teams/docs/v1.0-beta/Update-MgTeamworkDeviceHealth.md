@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgTeamworkDeviceHealth
 
 ## SYNOPSIS
-Update the navigation property health in teamwork
+The health properties of the device.
 
 ## SYNTAX
 
@@ -49,7 +49,7 @@ Update-MgTeamworkDeviceHealth -InputObject <ITeamsIdentity> [-AdditionalProperti
 ```
 
 ## DESCRIPTION
-Update the navigation property health in teamwork
+The health properties of the device.
 
 ## EXAMPLES
 
@@ -119,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+The UTC date and time when the device health document was created.
 
 ```yaml
 Type: System.DateTime
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+The UTC date and time when the device health detail was last modified.
 
 ```yaml
 Type: System.DateTime
@@ -348,31 +348,31 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
   - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConnectionStatus <String>]`: teamworkConnectionStatus
-    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
   - `[CreatedBy <IMicrosoftGraphIdentitySet>]`: identitySet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Application <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
     - `[Device <IMicrosoftGraphIdentity>]`: identity
     - `[User <IMicrosoftGraphIdentity>]`: identity
-  - `[CreatedDateTime <DateTime?>]`: 
+  - `[CreatedDateTime <DateTime?>]`: The UTC date and time when the device health document was created.
   - `[HardwareHealth <IMicrosoftGraphTeamworkHardwareHealth>]`: teamworkHardwareHealth
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ComputeHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
-      - `[IsOptional <Boolean?>]`: 
+      - `[IsOptional <Boolean?>]`: True if the peripheral is optional. Used for health computation.
       - `[Peripheral <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
-        - `[DisplayName <String>]`: 
-        - `[ProductId <String>]`: 
-        - `[VendorId <String>]`: 
+        - `[DisplayName <String>]`: Display name for the peripheral.
+        - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
+        - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
     - `[HdmiIngestHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
   - `[LastModifiedBy <IMicrosoftGraphIdentitySet>]`: identitySet
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: The UTC date and time when the device health detail was last modified.
   - `[LoginStatus <IMicrosoftGraphTeamworkLoginStatus>]`: teamworkLoginStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExchangeConnection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
@@ -382,7 +382,7 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[CommunicationSpeakerHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
     - `[ContentCameraHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
-    - `[DisplayHealthCollection <IMicrosoftGraphTeamworkPeripheralHealth[]>]`: 
+    - `[DisplayHealthCollection <IMicrosoftGraphTeamworkPeripheralHealth[]>]`: The health details about displays.
     - `[MicrophoneHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
     - `[RoomCameraHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
     - `[SpeakerHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
@@ -390,8 +390,8 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AdminAgentSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[AvailableVersion <String>]`: 
-      - `[CurrentVersion <String>]`: 
+      - `[AvailableVersion <String>]`: The available software version to update.
+      - `[CurrentVersion <String>]`: The current software version.
       - `[SoftwareFreshness <String>]`: teamworkSoftwareFreshness
     - `[CompanyPortalSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus
     - `[FirmwareSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus
@@ -402,14 +402,14 @@ BODYPARAMETER <IMicrosoftGraphTeamworkDeviceHealth>: teamworkDeviceHealth
 CONNECTION <IMicrosoftGraphTeamworkConnection>: teamworkConnection
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[ConnectionStatus <String>]`: teamworkConnectionStatus
-  - `[LastModifiedDateTime <DateTime?>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
 
 CREATEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -420,17 +420,18 @@ HARDWAREHEALTH <IMicrosoftGraphTeamworkHardwareHealth>: teamworkHardwareHealth
     - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConnectionStatus <String>]`: teamworkConnectionStatus
-      - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[IsOptional <Boolean?>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
+    - `[IsOptional <Boolean?>]`: True if the peripheral is optional. Used for health computation.
     - `[Peripheral <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisplayName <String>]`: 
-      - `[ProductId <String>]`: 
-      - `[VendorId <String>]`: 
+      - `[DisplayName <String>]`: Display name for the peripheral.
+      - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
+      - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
   - `[HdmiIngestHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
+  - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
   - `[ChannelId <String>]`: key: id of channel
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageHostedContentId <String>]`: key: id of chatMessageHostedContent
@@ -443,6 +444,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OpenShiftId <String>]`: key: id of openShift
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
+  - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
@@ -455,11 +457,14 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: Usage: userId={userId}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 
@@ -467,8 +472,8 @@ LASTMODIFIEDBY <IMicrosoftGraphIdentitySet>: identitySet
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Application <IMicrosoftGraphIdentity>]`: identity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
   - `[Device <IMicrosoftGraphIdentity>]`: identity
   - `[User <IMicrosoftGraphIdentity>]`: identity
 
@@ -477,7 +482,7 @@ LOGINSTATUS <IMicrosoftGraphTeamworkLoginStatus>: teamworkLoginStatus
   - `[ExchangeConnection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConnectionStatus <String>]`: teamworkConnectionStatus
-    - `[LastModifiedDateTime <DateTime?>]`: 
+    - `[LastModifiedDateTime <DateTime?>]`: Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
   - `[SkypeConnection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
   - `[TeamsConnection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
 
@@ -488,16 +493,16 @@ PERIPHERALSHEALTH <IMicrosoftGraphTeamworkPeripheralsHealth>: teamworkPeripheral
     - `[Connection <IMicrosoftGraphTeamworkConnection>]`: teamworkConnection
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ConnectionStatus <String>]`: teamworkConnectionStatus
-      - `[LastModifiedDateTime <DateTime?>]`: 
-    - `[IsOptional <Boolean?>]`: 
+      - `[LastModifiedDateTime <DateTime?>]`: Time at which the state was last changed. For example, indicates connected since when the state is connected and disconnected since when the state is disconnected.
+    - `[IsOptional <Boolean?>]`: True if the peripheral is optional. Used for health computation.
     - `[Peripheral <IMicrosoftGraphTeamworkPeripheral>]`: teamworkPeripheral
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[DisplayName <String>]`: 
-      - `[ProductId <String>]`: 
-      - `[VendorId <String>]`: 
+      - `[DisplayName <String>]`: Display name for the peripheral.
+      - `[ProductId <String>]`: The product ID of the device. Each product from a vendor has its own ID.
+      - `[VendorId <String>]`: The unique identifier for the vendor of the device. Each vendor has a unique ID.
   - `[ContentCameraHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
-  - `[DisplayHealthCollection <IMicrosoftGraphTeamworkPeripheralHealth[]>]`: 
+  - `[DisplayHealthCollection <IMicrosoftGraphTeamworkPeripheralHealth[]>]`: The health details about displays.
   - `[MicrophoneHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
   - `[RoomCameraHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
   - `[SpeakerHealth <IMicrosoftGraphTeamworkPeripheralHealth>]`: teamworkPeripheralHealth
@@ -506,8 +511,8 @@ SOFTWAREUPDATEHEALTH <IMicrosoftGraphTeamworkSoftwareUpdateHealth>: teamworkSoft
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[AdminAgentSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[AvailableVersion <String>]`: 
-    - `[CurrentVersion <String>]`: 
+    - `[AvailableVersion <String>]`: The available software version to update.
+    - `[CurrentVersion <String>]`: The current software version.
     - `[SoftwareFreshness <String>]`: teamworkSoftwareFreshness
   - `[CompanyPortalSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus
   - `[FirmwareSoftwareUpdateStatus <IMicrosoftGraphTeamworkSoftwareUpdateStatus>]`: teamworkSoftwareUpdateStatus

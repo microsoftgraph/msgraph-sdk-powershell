@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPasswordMethod
 
 ## SYNOPSIS
-Get passwordMethods from users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity> [
 ```
 
 ## DESCRIPTION
-Get passwordMethods from users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## EXAMPLES
 
@@ -264,6 +264,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

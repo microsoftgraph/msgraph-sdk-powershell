@@ -15,8 +15,8 @@ Update the navigation property tenants in directory
 ### UpdateExpanded (Default)
 ```
 Update-MgDirectoryOutboundSharedUserProfileTenant -OutboundSharedUserProfileUserId <String>
- -TenantReferenceTenantId <String> [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
- [-Id <String>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -TenantReferenceTenantId <String> [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update
@@ -35,8 +35,8 @@ Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirecto
 ### UpdateViaIdentityExpanded
 ```
 Update-MgDirectoryOutboundSharedUserProfileTenant -InputObject <IIdentityDirectoryManagementIdentity>
- [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>] [-Id <String>] [-TenantId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-AdditionalProperties <Hashtable>] [-TenantId <String>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -74,36 +74,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DeletedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -238,8 +208,6 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphTenantReference>: tenantReference
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[TenantId <String>]`: 
 
 INPUTOBJECT <IIdentityDirectoryManagementIdentity>: Identity Parameter

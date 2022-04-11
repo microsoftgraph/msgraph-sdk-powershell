@@ -507,11 +507,11 @@ BODYPARAMETER <IMicrosoftGraphGovernanceRoleAssignmentRequest>: governanceRoleAs
     - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
   - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Status <String>]`: 
-    - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-      - `[Key <String>]`: Key.
-      - `[Value <String>]`: Value.
-    - `[SubStatus <String>]`: 
+    - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
+    - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
+      - `[Key <String>]`: Key for the key-value pair.
+      - `[Value <String>]`: Value for the key-value pair.
+    - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
   - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
   - `[SubjectId <String>]`: Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.
   - `[Type <String>]`: Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.
@@ -539,6 +539,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -549,6 +550,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -556,7 +559,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -619,11 +621,11 @@ RESOURCE <IMicrosoftGraphGovernanceResource>: governanceResource
       - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
     - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[Status <String>]`: 
-      - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-        - `[Key <String>]`: Key.
-        - `[Value <String>]`: Value.
-      - `[SubStatus <String>]`: 
+      - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
+      - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
+        - `[Key <String>]`: Key for the key-value pair.
+        - `[Value <String>]`: Value for the key-value pair.
+      - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
     - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
@@ -685,11 +687,11 @@ ROLEDEFINITION <IMicrosoftGraphGovernanceRoleDefinition>: governanceRoleDefiniti
         - `[Type <String>]`: The role assignment schedule type. Only Once is supported for now.
       - `[Status <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>]`: governanceRoleAssignmentRequestStatus
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[Status <String>]`: 
-        - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-          - `[Key <String>]`: Key.
-          - `[Value <String>]`: Value.
-        - `[SubStatus <String>]`: 
+        - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
+        - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
+          - `[Key <String>]`: Key for the key-value pair.
+          - `[Value <String>]`: Value for the key-value pair.
+        - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
       - `[Subject <IMicrosoftGraphGovernanceSubject>]`: governanceSubject
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Id <String>]`: Read-only.
@@ -746,11 +748,11 @@ SCHEDULE <IMicrosoftGraphGovernanceSchedule>: governanceSchedule
 
 STATUS <IMicrosoftGraphGovernanceRoleAssignmentRequestStatus>: governanceRoleAssignmentRequestStatus
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Status <String>]`: 
-  - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: 
-    - `[Key <String>]`: Key.
-    - `[Value <String>]`: Value.
-  - `[SubStatus <String>]`: 
+  - `[Status <String>]`: The status of the role assignment request. The value can be InProgress or Closed.
+  - `[StatusDetails <IMicrosoftGraphKeyValue[]>]`: The details of the status of the role assignment request. It represents the evaluation results of different rules.
+    - `[Key <String>]`: Key for the key-value pair.
+    - `[Value <String>]`: Value for the key-value pair.
+  - `[SubStatus <String>]`: The sub status of the role assignment request. The values can be Accepted, PendingEvaluation, Granted, Denied, PendingProvisioning, Provisioned, PendingRevocation, Revoked, Canceled, Failed, PendingApprovalProvisioning, PendingApproval, FailedAsResourceIsLocked, PendingAdminDecision, AdminApproved, AdminDenied, TimedOut, and ProvisioningStarted.
 
 SUBJECT <IMicrosoftGraphGovernanceSubject>: governanceSubject
   - `[(Any) <Object>]`: This indicates any property can be added to this object.

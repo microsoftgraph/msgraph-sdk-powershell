@@ -12,23 +12,23 @@ Invoke function getActivitiesByInterval
 
 ## SYNTAX
 
-### Get1 (Default)
+### Get (Default)
 ```
 Get-MgDriveListItemActivity -DriveId <String> -ListItemId <String> [<CommonParameters>]
 ```
 
-### Get2
+### Get1
 ```
 Get-MgDriveListItemActivity -DriveId <String> -EndDateTime <String> -Interval <String> -ListItemId <String>
  -StartDateTime <String> [<CommonParameters>]
 ```
 
-### GetViaIdentity1
+### GetViaIdentity
 ```
 Get-MgDriveListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
 
-### GetViaIdentity2
+### GetViaIdentity1
 ```
 Get-MgDriveListItemActivity -InputObject <IFilesIdentity> [<CommonParameters>]
 ```
@@ -45,7 +45,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -60,7 +60,7 @@ Usage: endDateTime={endDateTime}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -76,7 +76,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: GetViaIdentity1, GetViaIdentity2
+Parameter Sets: GetViaIdentity, GetViaIdentity1
 Aliases:
 
 Required: True
@@ -91,7 +91,7 @@ Usage: interval={interval}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -106,7 +106,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Get1, Get2
+Parameter Sets: Get, Get1
 Aliases:
 
 Required: True
@@ -121,7 +121,7 @@ Usage: startDateTime={startDateTime}
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get1
 Aliases:
 
 Required: True
@@ -167,6 +167,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

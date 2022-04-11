@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgPolicyRoleManagementPolicyRule
 
 ## SYNOPSIS
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgPolicyRoleManagementPolicyRule -InputObject <IIdentitySignInsIdentity> [-E
 ```
 
 ## DESCRIPTION
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ## EXAMPLES
 
@@ -265,6 +265,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

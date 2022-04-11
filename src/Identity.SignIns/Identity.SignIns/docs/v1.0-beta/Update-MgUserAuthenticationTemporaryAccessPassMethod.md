@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Update the navigation property temporaryAccessPassMethods in users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Update the navigation property temporaryAccessPassMethods in users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 
@@ -338,6 +338,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

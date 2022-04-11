@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgReportAuthenticationMethodUserRegistrationDetail
 
 ## SYNOPSIS
-Delete navigation property userRegistrationDetails for reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgReportAuthenticationMethodUserRegistrationDetail -InputObject <IReports
 ```
 
 ## DESCRIPTION
-Delete navigation property userRegistrationDetails for reports
+Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multi-factor authentication, self-service password reset, and passwordless authentication).
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Set-MgShareListContentTypeColumnSourceColumnByRef
 
 ## SYNOPSIS
-The source column for content type column.
+The source column for the content type column.
 
 ## SYNTAX
 
@@ -38,7 +38,7 @@ Set-MgShareListContentTypeColumnSourceColumnByRef -InputObject <IFilesIdentity>
 ```
 
 ## DESCRIPTION
-The source column for content type column.
+The source column for the content type column.
 
 ## EXAMPLES
 
@@ -219,6 +219,7 @@ INPUTOBJECT <IFilesIdentity>: Identity Parameter
   - `[SharedDriveItemId <String>]`: key: id of sharedDriveItem
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[SubscriptionId <String>]`: key: id of subscription
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

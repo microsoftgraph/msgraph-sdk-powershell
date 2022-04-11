@@ -12,13 +12,13 @@ Delete entity from subscriptions
 
 ## SYNTAX
 
-### Delete (Default)
+### Delete1 (Default)
 ```
 Remove-MgSubscription -SubscriptionId <String> [-IfMatch <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### DeleteViaIdentity
+### DeleteViaIdentity1
 ```
 Remove-MgSubscription -InputObject <IChangeNotificationsIdentity> [-IfMatch <String>] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -52,7 +52,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IChangeNotificationsIdentity
-Parameter Sets: DeleteViaIdentity
+Parameter Sets: DeleteViaIdentity1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of subscription
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete1
 Aliases:
 
 Required: True

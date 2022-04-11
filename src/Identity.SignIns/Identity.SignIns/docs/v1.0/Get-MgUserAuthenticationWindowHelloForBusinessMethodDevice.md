@@ -9,6 +9,9 @@ schema: 2.0.0
 
 ## SYNOPSIS
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ## SYNTAX
 
@@ -27,6 +30,9 @@ Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice -InputObject <IIdenti
 
 ## DESCRIPTION
 The registered device on which this Windows Hello for Business key resides.
+Supports $expand.
+When you get a user's Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand.
+For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
 
 ## EXAMPLES
 
@@ -137,6 +143,7 @@ INPUTOBJECT <IIdentitySignInsIdentity>: Identity Parameter
   - `[BitlockerRecoveryKeyId <String>]`: key: id of bitlockerRecoveryKey
   - `[ClaimsMappingPolicyId <String>]`: key: id of claimsMappingPolicy
   - `[ConditionalAccessPolicyId <String>]`: key: id of conditionalAccessPolicy
+  - `[CrossTenantAccessPolicyConfigurationPartnerTenantId <String>]`: key: tenantId of crossTenantAccessPolicyConfigurationPartner
   - `[DataLossPreventionPolicyId <String>]`: key: id of dataLossPreventionPolicy
   - `[DataPolicyOperationId <String>]`: key: id of dataPolicyOperation
   - `[DefaultUserRoleOverrideId <String>]`: key: id of defaultUserRoleOverride

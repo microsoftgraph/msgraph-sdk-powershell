@@ -341,8 +341,8 @@ BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
   - `[DisplayName <String>]`: The name of the control.
   - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
     - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
   - `[Program <IMicrosoftGraphProgram>]`: program
@@ -354,8 +354,8 @@ BODYPARAMETER <IMicrosoftGraphProgramControl>: programControl
   - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
   - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-    - `[Id <String>]`: The identifier of the identity. This property is read-only.
+    - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+    - `[Id <String>]`: Unique identifier for the identity.
     - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
   - `[Status <String>]`: The life cycle status of the control.
 
@@ -382,6 +382,7 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
   - `[AccessReviewReviewerId <String>]`: key: id of accessReviewReviewer
   - `[AccessReviewScheduleDefinitionId <String>]`: key: id of accessReviewScheduleDefinition
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AgreementAcceptanceId <String>]`: key: id of agreementAcceptance
   - `[AgreementFileLocalizationId <String>]`: key: id of agreementFileLocalization
   - `[AgreementFileVersionId <String>]`: key: id of agreementFileVersion
@@ -392,6 +393,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[ApprovalStepId <String>]`: key: id of approvalStep
   - `[BusinessFlowTemplateId <String>]`: key: id of businessFlowTemplate
   - `[ConnectedOrganizationId <String>]`: key: id of connectedOrganization
+  - `[CustomAccessPackageWorkflowExtensionId <String>]`: key: id of customAccessPackageWorkflowExtension
+  - `[CustomExtensionHandlerId <String>]`: key: id of customExtensionHandler
   - `[DirectoryObjectId <String>]`: key: id of directoryObject
   - `[GovernanceInsightId <String>]`: key: id of governanceInsight
   - `[GovernanceResourceId <String>]`: key: id of governanceResource
@@ -399,7 +402,6 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[GovernanceRoleAssignmentRequestId <String>]`: key: id of governanceRoleAssignmentRequest
   - `[GovernanceRoleDefinitionId <String>]`: key: id of governanceRoleDefinition
   - `[GovernanceRoleSettingId <String>]`: key: id of governanceRoleSetting
-  - `[GroupId <String>]`: key: id of group
   - `[On <String>]`: Usage: on={on}
   - `[PrivilegedAccessId <String>]`: key: id of privilegedAccess
   - `[PrivilegedApprovalId <String>]`: key: id of privilegedApproval
@@ -415,8 +417,8 @@ INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
 
 OWNER <IMicrosoftGraphUserIdentity>: userIdentity
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
   - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
 
@@ -431,16 +433,16 @@ PROGRAM <IMicrosoftGraphProgram>: program
     - `[DisplayName <String>]`: The name of the control.
     - `[Owner <IMicrosoftGraphUserIdentity>]`: userIdentity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
       - `[IPAddress <String>]`: Indicates the client IP address used by user performing the activity (audit log only).
       - `[UserPrincipalName <String>]`: The userPrincipalName attribute of the user.
     - `[Program <IMicrosoftGraphProgram>]`: program
     - `[ProgramId <String>]`: The programId of the program this control is a part of. Required on create.
     - `[Resource <IMicrosoftGraphProgramResource>]`: programResource
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
       - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
     - `[Status <String>]`: The life cycle status of the control.
   - `[Description <String>]`: The description of the program.
@@ -448,8 +450,8 @@ PROGRAM <IMicrosoftGraphProgram>: program
 
 RESOURCE <IMicrosoftGraphProgramResource>: programResource
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-  - `[Id <String>]`: The identifier of the identity. This property is read-only.
+  - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+  - `[Id <String>]`: Unique identifier for the identity.
   - `[Type <String>]`: Type of the resource, indicating whether it is a group or an app.
 
 ## RELATED LINKS

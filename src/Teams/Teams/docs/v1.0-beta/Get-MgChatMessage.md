@@ -8,17 +8,16 @@ schema: 2.0.0
 # Get-MgChatMessage
 
 ## SYNOPSIS
-A collection of all the messages in the chat.
-Nullable.
+Invoke function getAllMessages
 
 ## SYNTAX
 
-### Get3 (Default)
+### Get (Default)
 ```
 Get-MgChatMessage [<CommonParameters>]
 ```
 
-### Get2
+### Get3
 ```
 Get-MgChatMessage -ChatId <String> -ChatMessageId <String> [-ExpandProperty <String[]>] [-Property <String[]>]
  [<CommonParameters>]
@@ -38,8 +37,7 @@ Get-MgChatMessage -ChatId <String> [-ExpandProperty <String[]>] [-Filter <String
 ```
 
 ## DESCRIPTION
-A collection of all the messages in the chat.
-Nullable.
+Invoke function getAllMessages
 
 ## EXAMPLES
 
@@ -65,7 +63,7 @@ key: id of chat
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2, List1
+Parameter Sets: Get3, List1
 Aliases:
 
 Required: True
@@ -80,7 +78,7 @@ key: id of chatMessage
 
 ```yaml
 Type: System.String
-Parameter Sets: Get2
+Parameter Sets: Get3
 Aliases:
 
 Required: True
@@ -111,7 +109,7 @@ Expand related entities
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity1, List1
+Parameter Sets: Get3, GetViaIdentity1, List1
 Aliases: Expand
 
 Required: False
@@ -172,7 +170,7 @@ Select properties to be returned
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Get2, GetViaIdentity1, List1
+Parameter Sets: Get3, GetViaIdentity1, List1
 Aliases: Select
 
 Required: False
@@ -263,6 +261,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 INPUTOBJECT <ITeamsIdentity>: Identity Parameter
+  - `[AssociatedTeamInfoId <String>]`: key: id of associatedTeamInfo
   - `[ChannelId <String>]`: key: id of channel
   - `[ChatId <String>]`: key: id of chat
   - `[ChatMessageHostedContentId <String>]`: key: id of chatMessageHostedContent
@@ -275,6 +274,7 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[OpenShiftId <String>]`: key: id of openShift
   - `[ResourceSpecificPermissionGrantId <String>]`: key: id of resourceSpecificPermissionGrant
   - `[SchedulingGroupId <String>]`: key: id of schedulingGroup
+  - `[SharedWithChannelTeamInfoId <String>]`: key: id of sharedWithChannelTeamInfo
   - `[ShiftId <String>]`: key: id of shift
   - `[SwapShiftsChangeRequestId <String>]`: key: id of swapShiftsChangeRequest
   - `[TeamId <String>]`: key: id of team
@@ -287,11 +287,14 @@ INPUTOBJECT <ITeamsIdentity>: Identity Parameter
   - `[TeamworkDeviceOperationId <String>]`: key: id of teamworkDeviceOperation
   - `[TeamworkTagId <String>]`: key: id of teamworkTag
   - `[TeamworkTagMemberId <String>]`: key: id of teamworkTagMember
+  - `[TenantId <String>]`: Usage: tenantId={tenantId}
   - `[TimeCardId <String>]`: key: id of timeCard
   - `[TimeOffId <String>]`: key: id of timeOff
   - `[TimeOffReasonId <String>]`: key: id of timeOffReason
   - `[TimeOffRequestId <String>]`: key: id of timeOffRequest
   - `[UserId <String>]`: key: id of user
+  - `[UserId1 <String>]`: Usage: userId={userId}
+  - `[UserPrincipalName <String>]`: Usage: userPrincipalName={userPrincipalName}
   - `[UserScopeTeamsAppInstallationId <String>]`: key: id of userScopeTeamsAppInstallation
   - `[WorkforceIntegrationId <String>]`: key: id of workforceIntegration
 

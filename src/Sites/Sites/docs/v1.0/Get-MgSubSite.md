@@ -8,31 +8,30 @@ schema: 2.0.0
 # Get-MgSubSite
 
 ## SYNOPSIS
-The collection of the sub-sites under this site.
+Get entity from sites by key
 
 ## SYNTAX
 
-### List2 (Default)
+### Get1 (Default)
+```
+Get-MgSubSite [-SiteId <String>] [-ExpandProperty <String[]>] [-Property <String[]>] [<CommonParameters>]
+```
+
+### GetViaIdentity1
+```
+Get-MgSubSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
+ [<CommonParameters>]
+```
+
+### List2
 ```
 Get-MgSubSite [-SiteId <String>] [-ExpandProperty <String[]>] [-Filter <String>] [-Property <String[]>]
  [-Search <String>] [-Skip <Int32>] [-Sort <String[]>] [-Top <Int32>] [-All] [-CountVariable <String>]
  [-PageSize <Int32>] [<CommonParameters>]
 ```
 
-### Get4
-```
-Get-MgSubSite -SiteId1 <String> [-SiteId <String>] [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
-### GetViaIdentity4
-```
-Get-MgSubSite -InputObject <ISitesIdentity> [-ExpandProperty <String[]>] [-Property <String[]>]
- [<CommonParameters>]
-```
-
 ## DESCRIPTION
-The collection of the sub-sites under this site.
+Get entity from sites by key
 
 ## EXAMPLES
 
@@ -105,7 +104,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ISitesIdentity
-Parameter Sets: GetViaIdentity4
+Parameter Sets: GetViaIdentity1
 Aliases:
 
 Required: True
@@ -165,27 +164,12 @@ key: id of site
 
 ```yaml
 Type: System.String
-Parameter Sets: Get4, List2
+Parameter Sets: Get1, List2
 Aliases:
 
 Required: False
 Position: Named
 Default value: "root"
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SiteId1
-key: id of site
-
-```yaml
-Type: System.String
-Parameter Sets: Get4
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -259,7 +243,6 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[ColumnDefinitionId <String>]`: key: id of columnDefinition
   - `[ColumnLinkId <String>]`: key: id of columnLink
   - `[ContentTypeId <String>]`: key: id of contentType
-  - `[DriveId <String>]`: key: id of drive
   - `[EndDateTime <String>]`: Usage: endDateTime={endDateTime}
   - `[GroupId <String>]`: key: id of group
   - `[IncludePersonalNotebooks <Boolean?>]`: Usage: includePersonalNotebooks={includePersonalNotebooks}
@@ -278,13 +261,13 @@ INPUTOBJECT <ISitesIdentity>: Identity Parameter
   - `[SetId <String>]`: key: id of set
   - `[SetId1 <String>]`: key: id of set
   - `[SiteId <String>]`: key: id of site
-  - `[SiteId1 <String>]`: key: id of site
   - `[SitePageId <String>]`: key: id of sitePage
   - `[StartDateTime <String>]`: Usage: startDateTime={startDateTime}
   - `[StoreId <String>]`: key: id of store
   - `[SubscriptionId <String>]`: key: id of subscription
   - `[TermId <String>]`: key: id of term
   - `[TermId1 <String>]`: key: id of term
+  - `[Token <String>]`: Usage: token={token}
   - `[UserId <String>]`: key: id of user
 
 ## RELATED LINKS

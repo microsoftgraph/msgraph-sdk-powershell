@@ -12,13 +12,13 @@ Invoke action accept
 
 ## SYNTAX
 
-### Accept (Default)
+### Accept1 (Default)
 ```
 Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage -MailFolderId <String>
  -MessageId <String> -UserId <String> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### AcceptViaIdentity
+### AcceptViaIdentity1
 ```
 Invoke-MgAcceptUserMailFolderMessageMicrosoftGraphCalendarSharingMessage -InputObject <IUsersActionsIdentity>
  [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -37,7 +37,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IUsersActionsIdentity
-Parameter Sets: AcceptViaIdentity
+Parameter Sets: AcceptViaIdentity1
 Aliases:
 
 Required: True
@@ -52,7 +52,7 @@ key: id of mailFolder
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept
+Parameter Sets: Accept1
 Aliases:
 
 Required: True
@@ -67,7 +67,7 @@ key: id of message
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept
+Parameter Sets: Accept1
 Aliases:
 
 Required: True
@@ -82,7 +82,7 @@ key: id of user
 
 ```yaml
 Type: System.String
-Parameter Sets: Accept
+Parameter Sets: Accept1
 Aliases:
 
 Required: True
@@ -146,11 +146,13 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[AccessReviewInstanceDecisionItemId <String>]`: key: id of accessReviewInstanceDecisionItem
   - `[AccessReviewInstanceId <String>]`: key: id of accessReviewInstance
+  - `[AccessReviewStageId <String>]`: key: id of accessReviewStage
   - `[AppLogCollectionRequestId <String>]`: key: id of appLogCollectionRequest
   - `[AuthenticationMethodId <String>]`: key: id of authenticationMethod
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

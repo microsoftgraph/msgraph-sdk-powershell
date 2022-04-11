@@ -65,7 +65,9 @@ Accept wildcard characters: False
 ```
 
 ### -Addresses
-Addresses associated with the customer, including home, business and other addresses.
+Addresses associated with the customer.
+The attribute type of physicalAddress is not supported in v1.0.
+Internally we map the addresses to the type others.
 To construct, please use Get-Help -Online and see NOTES section for ADDRESSES properties and create a hash table.
 
 ```yaml
@@ -241,7 +243,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ADDRESSES <IMicrosoftGraphPhysicalAddress[]>: Addresses associated with the customer, including home, business and other addresses.
+ADDRESSES <IMicrosoftGraphPhysicalAddress[]>: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
   - `[City <String>]`: The city.
   - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
   - `[PostOfficeBox <String>]`: The post office box number.
@@ -255,7 +257,7 @@ BODYPARAMETER <IMicrosoftGraphBookingCustomer>: Represents a customer of the bus
   - `[EmailAddress <String>]`: The email address of the person.
   - `[DisplayName <String>]`: A name for the derived entity, which interfaces with customers.
   - `[Id <String>]`: Read-only.
-  - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer, including home, business and other addresses.
+  - `[Addresses <IMicrosoftGraphPhysicalAddress[]>]`: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
     - `[City <String>]`: The city.
     - `[CountryOrRegion <String>]`: The country or region. It's a free-format string value, for example, 'United States'.
     - `[PostOfficeBox <String>]`: The post office box number.

@@ -14,9 +14,8 @@ Create new navigation property to outboundSharedUserProfiles for directory
 
 ### CreateExpanded (Default)
 ```
-New-MgDirectoryOutboundSharedUserProfile [-AdditionalProperties <Hashtable>] [-DeletedDateTime <DateTime>]
- [-Id <String>] [-Tenants <IMicrosoftGraphTenantReference[]>] [-UserId <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+New-MgDirectoryOutboundSharedUserProfile [-AdditionalProperties <Hashtable>]
+ [-Tenants <IMicrosoftGraphTenantReference[]>] [-UserId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Create
@@ -60,36 +59,6 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -DeletedDateTime
-.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Id
-Read-only.
-
-```yaml
-Type: System.String
-Parameter Sets: CreateExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -177,17 +146,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IMicrosoftGraphOutboundSharedUserProfile>: outboundSharedUserProfile
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: 
-    - `[Id <String>]`: Read-only.
     - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 
 TENANTS <IMicrosoftGraphTenantReference[]>: .
-  - `[DeletedDateTime <DateTime?>]`: 
-  - `[Id <String>]`: Read-only.
   - `[TenantId <String>]`: 
 
 ## RELATED LINKS
