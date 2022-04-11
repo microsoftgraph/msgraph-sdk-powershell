@@ -34,6 +34,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Authenticator.LogOut(authContext);
 
             GraphSession.Instance.AuthContext = null;
+            GraphSession.Instance.GraphHttpClient = null;
         }
 
         protected override void StopProcessing()
