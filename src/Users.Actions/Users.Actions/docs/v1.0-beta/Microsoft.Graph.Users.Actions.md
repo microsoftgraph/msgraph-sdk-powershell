@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Users.Actions
-Module Guid: bb29eac4-1e76-489f-81c3-f711295144e0
+Module Guid: 7b5c668d-59a2-48a9-b13a-fa6d1cbe8578
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.users.actions
 Help Version: 1.0.0.0
 Locale: en-US
@@ -260,6 +260,9 @@ Invoke action reply
 ### [Invoke-MgReplyUserMessage](Invoke-MgReplyUserMessage.md)
 Invoke action reply
 
+### [Invoke-MgReprovisionUserCloudPc](Invoke-MgReprovisionUserCloudPc.md)
+Invoke action reprovision
+
 ### [Invoke-MgRetireUserManagedDevice](Invoke-MgRetireUserManagedDevice.md)
 Retire a device
 
@@ -280,6 +283,9 @@ Invoke action snoozeReminder
 
 ### [Invoke-MgTranslateUserExchangeId](Invoke-MgTranslateUserExchangeId.md)
 Invoke action translateExchangeIds
+
+### [Invoke-MgTroubleshootUserCloudPc](Invoke-MgTroubleshootUserCloudPc.md)
+Invoke action troubleshoot
 
 ### [Invoke-MgUnsubscribeUserMailFolderMessage](Invoke-MgUnsubscribeUserMailFolderMessage.md)
 Invoke action unsubscribe
@@ -365,6 +371,12 @@ Retire all devices from management for this user
 ### [Remove-MgUserManagedDeviceUserFromSharedAppleDevice](Remove-MgUserManagedDeviceUserFromSharedAppleDevice.md)
 Delete user from shared Apple device
 
+### [Rename-MgUserCloudPc](Rename-MgUserCloudPc.md)
+Invoke action rename
+
+### [Rename-MgUserCloudPcUserAccountType](Rename-MgUserCloudPcUserAccountType.md)
+Invoke action changeUserAccountType
+
 ### [Request-MgUserManagedDeviceRemoteAssistance](Request-MgUserManagedDeviceRemoteAssistance.md)
 Request remote assistance
 
@@ -379,6 +391,9 @@ Invoke action resetDecisions
 
 ### [Resize-MgUserManagedDeviceCloudPc](Resize-MgUserManagedDeviceCloudPc.md)
 Invoke action resizeCloudPc
+
+### [Restart-MgUserCloudPc](Restart-MgUserCloudPc.md)
+Invoke action reboot
 
 ### [Restart-MgUserManagedDeviceNow](Restart-MgUserManagedDeviceNow.md)
 Reboot device
@@ -442,6 +457,9 @@ Bypass activation lock
 
 ### [Start-MgUserManagedDeviceConfigurationManagerAction](Start-MgUserManagedDeviceConfigurationManagerAction.md)
 Trigger action on ConfigurationManager client
+
+### [Stop-MgUserCloudPcGracePeriod](Stop-MgUserCloudPcGracePeriod.md)
+Invoke action endGracePeriod
 
 ### [Stop-MgUserEvent](Stop-MgUserEvent.md)
 Invoke action cancel

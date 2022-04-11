@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Security
-Module Guid: ca0cff59-1dec-40ae-8222-84f5b16f1c22
+Module Guid: ceaa73ef-2352-45d1-85f3-db3ce3e227c3
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.security
 Help Version: 1.0.0.0
 Locale: en-US
@@ -19,13 +19,13 @@ Read-only.
 Nullable.
 
 ### [Get-MgSecurityAttackSimulation](Get-MgSecurityAttackSimulation.md)
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ### [Get-MgSecurityAttackSimulationAutomation](Get-MgSecurityAttackSimulationAutomation.md)
-Get simulationAutomations from security
+Represents simulation automations created to run on a tenant.
 
 ### [Get-MgSecurityAttackSimulationAutomationRun](Get-MgSecurityAttackSimulationAutomationRun.md)
-Get runs from security
+A collection of simulation automation runs.
 
 ### [Get-MgSecurityCloudAppSecurityProfile](Get-MgSecurityCloudAppSecurityProfile.md)
 Get cloudAppSecurityProfiles from security
@@ -80,13 +80,13 @@ Read-only.
 Nullable.
 
 ### [New-MgSecurityAttackSimulation](New-MgSecurityAttackSimulation.md)
-Represent attack simulation and training campaign of a tenant.
+Represents an attack simulation training campaign in a tenant.
 
 ### [New-MgSecurityAttackSimulationAutomation](New-MgSecurityAttackSimulationAutomation.md)
-Create new navigation property to simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ### [New-MgSecurityAttackSimulationAutomationRun](New-MgSecurityAttackSimulationAutomationRun.md)
-Create new navigation property to runs for security
+A collection of simulation automation runs.
 
 ### [New-MgSecurityCloudAppSecurityProfile](New-MgSecurityCloudAppSecurityProfile.md)
 Create new navigation property to cloudAppSecurityProfiles for security
@@ -132,10 +132,10 @@ Nullable.
 Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
 
 ### [Remove-MgSecurityAttackSimulationAutomation](Remove-MgSecurityAttackSimulationAutomation.md)
-Delete navigation property simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ### [Remove-MgSecurityAttackSimulationAutomationRun](Remove-MgSecurityAttackSimulationAutomationRun.md)
-Delete navigation property runs for security
+A collection of simulation automation runs.
 
 ### [Remove-MgSecurityCloudAppSecurityProfile](Remove-MgSecurityCloudAppSecurityProfile.md)
 Delete navigation property cloudAppSecurityProfiles for security
@@ -211,10 +211,10 @@ Nullable.
 Invoke action updateAlerts
 
 ### [Update-MgSecurityAttackSimulationAutomation](Update-MgSecurityAttackSimulationAutomation.md)
-Update the navigation property simulationAutomations in security
+Represents simulation automations created to run on a tenant.
 
 ### [Update-MgSecurityAttackSimulationAutomationRun](Update-MgSecurityAttackSimulationAutomationRun.md)
-Update the navigation property runs in security
+A collection of simulation automation runs.
 
 ### [Update-MgSecurityCloudAppSecurityProfile](Update-MgSecurityCloudAppSecurityProfile.md)
 Update the navigation property cloudAppSecurityProfiles in security

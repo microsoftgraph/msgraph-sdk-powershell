@@ -1137,6 +1137,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -1332,6 +1333,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -1355,6 +1358,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -1453,6 +1457,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
       responses:
         '200':
@@ -2017,6 +2023,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -2040,6 +2048,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -2142,6 +2151,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -2881,6 +2891,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -2979,6 +2991,7 @@ paths:
                 - userType
                 - mailboxSettings
                 - deviceEnrollmentLimit
+                - print
                 - aboutMe
                 - birthday
                 - hireDate
@@ -2990,6 +3003,7 @@ paths:
                 - schools
                 - skills
                 - analytics
+                - cloudPCs
                 - usageRights
                 - informationProtection
                 - appRoleAssignments
@@ -3065,6 +3079,7 @@ paths:
               enum:
                 - '*'
                 - analytics
+                - cloudPCs
                 - usageRights
                 - informationProtection
                 - appRoleAssignments
@@ -3315,6 +3330,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -4271,6 +4288,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -4294,6 +4313,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -4398,6 +4418,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -5139,6 +5160,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -5237,6 +5260,7 @@ paths:
                 - userType
                 - mailboxSettings
                 - deviceEnrollmentLimit
+                - print
                 - aboutMe
                 - birthday
                 - hireDate
@@ -5248,6 +5272,7 @@ paths:
                 - schools
                 - skills
                 - analytics
+                - cloudPCs
                 - usageRights
                 - informationProtection
                 - appRoleAssignments
@@ -5323,6 +5348,7 @@ paths:
               enum:
                 - '*'
                 - analytics
+                - cloudPCs
                 - usageRights
                 - informationProtection
                 - appRoleAssignments
@@ -5573,6 +5599,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -7093,6 +7121,8 @@ components:
               type: string
               description: The DateTimeOffset when the printer share was created. Read-only.
               format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
             allowedGroups:
               type: array
               items:
@@ -7765,6 +7795,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -7819,6 +7851,10 @@ components:
               description: A list for the user to enumerate their skills. Returned only on $select.
             analytics:
               $ref: '#/components/schemas/microsoft.graph.userAnalytics'
+            cloudPCs:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.cloudPC'
             usageRights:
               type: array
               items:
@@ -8504,6 +8540,17 @@ components:
         - counterClockwiseFromBottomRight
         - clockwiseFromBottomRight
       type: string
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.printEvent:
       title: printEvent
       enum:
@@ -9362,12 +9409,19 @@ components:
               $ref: '#/components/schemas/microsoft.graph.teamSpecialization'
             summary:
               $ref: '#/components/schemas/microsoft.graph.teamSummary'
+            tenantId:
+              type: string
+              nullable: true
             visibility:
               $ref: '#/components/schemas/microsoft.graph.teamVisibilityType'
             webUrl:
               type: string
               description: 'A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.'
               nullable: true
+            allChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
             channels:
               type: array
               items:
@@ -9375,6 +9429,10 @@ components:
               description: The collection of channels and messages associated with the team.
             group:
               $ref: '#/components/schemas/microsoft.graph.group'
+            incomingChannels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.channel'
             installedApps:
               type: array
               items:
@@ -9696,6 +9754,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+      additionalProperties:
+        type: object
     microsoft.graph.userAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9709,6 +9777,83 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.activityStatistics'
               description: The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPC:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPC
+          type: object
+          properties:
+            aadDeviceId:
+              type: string
+              description: The Azure Active Directory (Azure AD) device ID of the Cloud PC.
+              nullable: true
+            displayName:
+              type: string
+              description: The display name of the Cloud PC.
+              nullable: true
+            gracePeriodEndDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The date and time when the grace period ends and reprovisioning/deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+              nullable: true
+            imageDisplayName:
+              type: string
+              description: Name of the OS image that's on the Cloud PC.
+              nullable: true
+            lastLoginResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcLoginResult'
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: 'The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.'
+              format: date-time
+            lastRemoteActionResult:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcRemoteActionResult'
+            managedDeviceId:
+              type: string
+              description: The Intune device ID of the Cloud PC.
+              nullable: true
+            managedDeviceName:
+              type: string
+              description: The Intune device name of the Cloud PC.
+              nullable: true
+            onPremisesConnectionName:
+              type: string
+              description: The on-premises connection that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            osVersion:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcOperatingSystem'
+            provisioningPolicyId:
+              type: string
+              description: The provisioning policy ID of the Cloud PC.
+              nullable: true
+            provisioningPolicyName:
+              type: string
+              description: The provisioning policy that is applied during the provisioning of Cloud PCs.
+              nullable: true
+            servicePlanId:
+              type: string
+              description: The service plan ID of the Cloud PC.
+              nullable: true
+            servicePlanName:
+              type: string
+              description: The service plan name of the Cloud PC.
+              nullable: true
+            servicePlanType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcServicePlanType'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatus'
+            statusDetails:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+            userAccountType:
+              $ref: '#/components/schemas/microsoft.graph.cloudPcUserAccountType'
+            userPrincipalName:
+              type: string
+              description: The user principal name (UPN) of the user assigned to the Cloud PC.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.usageRight:
@@ -9804,7 +9949,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -11770,18 +11915,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+              description: Represents the email addresses registered to a user for authentication.
             fido2Methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             operations:
               type: array
               items:
@@ -11790,14 +11939,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+              description: Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
             passwordMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+              description: Represents the details of the password authentication method registered to a user for authentication.
             phoneMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+              description: Represents the phone registered to a user for authentication.
             softwareOathMethods:
               type: array
               items:
@@ -11806,10 +11958,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+              description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.tasks:
@@ -11906,6 +12060,10 @@ components:
         - title: userTeamwork
           type: object
           properties:
+            associatedTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.associatedTeamInfo'
             installedApps:
               type: array
               items:
@@ -13073,6 +13231,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -13636,18 +13796,21 @@ components:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of guests in a team.
           format: int32
           nullable: true
         membersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of members in a team.
           format: int32
           nullable: true
         ownersCount:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
+          description: Count of owners in a team.
           format: int32
           nullable: true
       additionalProperties:
@@ -13691,6 +13854,9 @@ components:
               $ref: '#/components/schemas/microsoft.graph.channelMembershipType'
             moderationSettings:
               $ref: '#/components/schemas/microsoft.graph.channelModerationSettings'
+            tenantId:
+              type: string
+              nullable: true
             webUrl:
               type: string
               description: 'A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.'
@@ -13707,6 +13873,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
               description: A collection of all the messages in the channel. A navigation property. Nullable.
+            sharedWithTeams:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.sharedWithChannelTeamInfo'
             tabs:
               type: array
               items:
@@ -14057,6 +14227,107 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    microsoft.graph.cloudPcLoginResult:
+      title: cloudPcLoginResult
+      type: object
+      properties:
+        time:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'The time of the Cloud PC sign in action. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''. Read-only.'
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcRemoteActionResult:
+      title: cloudPcRemoteActionResult
+      type: object
+      properties:
+        actionName:
+          type: string
+          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
+          nullable: true
+        actionState:
+          $ref: '#/components/schemas/microsoft.graph.actionState'
+        cloudPcId:
+          type: string
+          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
+          nullable: true
+        lastUpdatedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        managedDeviceId:
+          type: string
+          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
+          nullable: true
+        startDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
+          format: date-time
+          nullable: true
+        statusDetails:
+          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcOperatingSystem:
+      title: cloudPcOperatingSystem
+      enum:
+        - windows10
+        - windows11
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcServicePlanType:
+      title: cloudPcServicePlanType
+      enum:
+        - enterprise
+        - business
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcStatus:
+      title: cloudPcStatus
+      enum:
+        - notProvisioned
+        - provisioning
+        - provisioned
+        - inGracePeriod
+        - deprovisioning
+        - failed
+        - provisionedWithWarnings
+        - resizing
+        - restoring
+        - pendingProvision
+        - unknownFutureValue
+      type: string
+    microsoft.graph.cloudPcStatusDetails:
+      title: cloudPcStatusDetails
+      type: object
+      properties:
+        additionalInformation:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
+          description: Any additional information about the Cloud PC status.
+        code:
+          type: string
+          description: The code associated with the Cloud PC status.
+          nullable: true
+        message:
+          type: string
+          description: The status message.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.cloudPcUserAccountType:
+      title: cloudPcUserAccountType
+      enum:
+        - standardUser
+        - administrator
+        - unknownFutureValue
+      type: string
     microsoft.graph.usageRightState:
       title: usageRightState
       enum:
@@ -14978,40 +15249,6 @@ components:
           additionalProperties:
             type: object
           description: Enrollment Configuration Assignment
-    microsoft.graph.cloudPcRemoteActionResult:
-      title: cloudPcRemoteActionResult
-      type: object
-      properties:
-        actionName:
-          type: string
-          description: 'The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.'
-          nullable: true
-        actionState:
-          $ref: '#/components/schemas/microsoft.graph.actionState'
-        cloudPcId:
-          type: string
-          description: The ID of the Cloud PC device on which the remote action is performed. Read-only.
-          nullable: true
-        lastUpdatedDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        managedDeviceId:
-          type: string
-          description: The ID of the Intune managed device on which the remote action is performed. Read-only.
-          nullable: true
-        startDateTime:
-          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-          type: string
-          description: 'Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as ''2014-01-01T00:00:00Z''.'
-          format: date-time
-          nullable: true
-        statusDetails:
-          $ref: '#/components/schemas/microsoft.graph.cloudPcStatusDetails'
-      additionalProperties:
-        type: object
     microsoft.graph.chassisType:
       title: chassisType
       enum:
@@ -17672,6 +17909,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.taskStatus_v2'
             textBody:
               type: string
+              description: The task body in text format that typically contains information about the task.
               nullable: true
             viewpoint:
               $ref: '#/components/schemas/microsoft.graph.taskViewpoint'
@@ -17910,6 +18148,13 @@ components:
               nullable: true
             teamsApp:
               $ref: '#/components/schemas/microsoft.graph.teamsApp'
+          additionalProperties:
+            type: object
+    microsoft.graph.associatedTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: associatedTeamInfo
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.userScopeTeamsAppInstallation:
@@ -20261,6 +20506,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -20273,6 +20532,10 @@ components:
           type: boolean
           description: Specifies whether to display the entire term path or only the term label.
           nullable: true
+        parentTerm:
+          $ref: '#/components/schemas/microsoft.graph.termStore.term'
+        termSet:
+          $ref: '#/components/schemas/microsoft.graph.termStore.set'
       additionalProperties:
         type: object
     microsoft.graph.textColumn:
@@ -20374,7 +20637,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
@@ -20457,20 +20720,6 @@ components:
         target:
           type: string
           description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
           nullable: true
       additionalProperties:
         type: object
@@ -20840,6 +21089,21 @@ components:
           $ref: '#/components/schemas/microsoft.graph.userNewMessageRestriction'
       additionalProperties:
         type: object
+    microsoft.graph.sharedWithChannelTeamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.teamInfo'
+        - title: sharedWithChannelTeamInfo
+          type: object
+          properties:
+            isHostTeam:
+              type: boolean
+              nullable: true
+            allowedMembers:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.conversationMember'
+          additionalProperties:
+            type: object
     microsoft.graph.teamsApp:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -21234,6 +21498,17 @@ components:
         - Focus
         - Chat
         - Call
+      type: string
+    microsoft.graph.actionState:
+      title: actionState
+      enum:
+        - none
+        - pending
+        - canceled
+        - active
+        - done
+        - failed
+        - notSupported
       type: string
     microsoft.graph.bitlockerRecoveryKey:
       allOf:
@@ -21955,36 +22230,6 @@ components:
       additionalProperties:
         type: object
       description: Base type for assignment targets.
-    microsoft.graph.actionState:
-      title: actionState
-      enum:
-        - none
-        - pending
-        - canceled
-        - active
-        - done
-        - failed
-        - notSupported
-      type: string
-    microsoft.graph.cloudPcStatusDetails:
-      title: cloudPcStatusDetails
-      type: object
-      properties:
-        additionalInformation:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.keyValuePair'
-          description: Any additional information about the Cloud PC status.
-        code:
-          type: string
-          description: The code associated with the Cloud PC status.
-          nullable: true
-        message:
-          type: string
-          description: The status message.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.configurationManagerClientState:
       title: configurationManagerClientState
       enum:
@@ -23045,6 +23290,10 @@ components:
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrantId:
+              type: string
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -23170,6 +23419,7 @@ components:
           items:
             type: string
             nullable: true
+          description: The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.
         reminderDateTime:
           $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
       additionalProperties:
@@ -23389,6 +23639,22 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.teamInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: teamInfo
+          type: object
+          properties:
+            displayName:
+              type: string
+              nullable: true
+            tenantId:
+              type: string
+              nullable: true
+            team:
+              $ref: '#/components/schemas/microsoft.graph.team'
+          additionalProperties:
+            type: object
     microsoft.graph.wellknownListName:
       title: wellknownListName
       enum:
@@ -24118,6 +24384,53 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
           additionalProperties:
             type: object
+    microsoft.graph.termStore.term:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: term
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of term creation. Read-only.
+              format: date-time
+              nullable: true
+            descriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
+              description: Description about term that is dependent on the languageTag.
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
+              description: Label metadata for a term.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last date and time of term modification. Read-only.
+              format: date-time
+              nullable: true
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Collection of properties on the term.
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: Children of current term.
+            relations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
+              description: To indicate which terms are related to the current term as either pinned or reused.
+            set:
+              $ref: '#/components/schemas/microsoft.graph.termStore.set'
+          additionalProperties:
+            type: object
     microsoft.graph.displayNameLocalization:
       title: displayNameLocalization
       type: object
@@ -24225,53 +24538,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.termStore.term:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: term
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of term creation. Read-only.
-              format: date-time
-              nullable: true
-            descriptions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
-              description: Description about term that is dependent on the languageTag.
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
-              description: Label metadata for a term.
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last date and time of term modification. Read-only.
-              format: date-time
-              nullable: true
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Collection of properties on the term.
-            children:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: Children of current term.
-            relations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
-              description: To indicate which terms are related to the current term as either pinned or reused.
-            set:
-              $ref: '#/components/schemas/microsoft.graph.termStore.set'
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25153,6 +25419,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval

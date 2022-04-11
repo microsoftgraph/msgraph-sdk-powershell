@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.Governance
-Module Guid: d87fa2f5-51b7-4a24-bb9b-da93e24fb6e4
+Module Guid: 3562c685-ac24-4455-b8b2-9c5e76dfa3b7
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.governance
 Help Version: 1.0.0.0
 Locale: en-US
@@ -41,12 +41,42 @@ Invoke action getApplicablePolicyRequirements
 ### [Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Get-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
 
+### [Get-MgEntitlementManagementAccessPackageAssignmentPolicy](Get-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+Get assignmentPolicies from identityGovernance
+
 ### [Get-MgEntitlementManagementAccessPackageCatalog](Get-MgEntitlementManagementAccessPackageCatalog.md)
 Read-only.
 Nullable.
 
 ### [Get-MgEntitlementManagementAssignment](Get-MgEntitlementManagementAssignment.md)
 Represents the grant of an access package to a subject (user or group).
+
+### [Get-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Get-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
+Get ref of assignmentPolicy from identityGovernance
+
+### [Get-MgEntitlementManagementAssignmentPolicy](Get-MgEntitlementManagementAssignmentPolicy.md)
+Get assignmentPolicies from identityGovernance
+
+### [Get-MgEntitlementManagementAssignmentPolicyAccessPackage](Get-MgEntitlementManagementAssignmentPolicyAccessPackage.md)
+The access package with this policy.
+Read-only.
+Nullable.
+Supports $expand.
+
+### [Get-MgEntitlementManagementAssignmentPolicyAccessPackageApplicablePolicyRequirement](Get-MgEntitlementManagementAssignmentPolicyAccessPackageApplicablePolicyRequirement.md)
+Invoke action getApplicablePolicyRequirements
+
+### [Get-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Get-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
+The access package with this policy.
+Read-only.
+Nullable.
+Supports $expand.
+
+### [Get-MgEntitlementManagementAssignmentPolicyCatalog](Get-MgEntitlementManagementAssignmentPolicyCatalog.md)
+Get catalog from identityGovernance
+
+### [Get-MgEntitlementManagementAssignmentPolicyCatalogByRef](Get-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
+Get ref of catalog from identityGovernance
 
 ### [Get-MgEntitlementManagementAssignmentRequest](Get-MgEntitlementManagementAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.
@@ -108,6 +138,7 @@ Information about acceptances of this agreement.
 PDFs linked to this agreement.
 This property is in the process of being deprecated.
 Use the  file property instead.
+Supports $expand.
 
 ### [New-MgAgreementFileLocalization](New-MgAgreementFileLocalization.md)
 The localized version of the terms of use agreement files attached to the agreement.
@@ -126,8 +157,14 @@ Represents access package objects.
 ### [New-MgEntitlementManagementAccessPackageAssignmentApprovalStage](New-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
 
+### [New-MgEntitlementManagementAccessPackageAssignmentPolicy](New-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+Create new navigation property to assignmentPolicies for identityGovernance
+
 ### [New-MgEntitlementManagementAssignment](New-MgEntitlementManagementAssignment.md)
 Represents the grant of an access package to a subject (user or group).
+
+### [New-MgEntitlementManagementAssignmentPolicy](New-MgEntitlementManagementAssignmentPolicy.md)
+Create new navigation property to assignmentPolicies for identityGovernance
 
 ### [New-MgEntitlementManagementAssignmentRequest](New-MgEntitlementManagementAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.
@@ -180,13 +217,31 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 Represents access package objects.
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApproval](Remove-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Delete navigation property accessPackageAssignmentApprovals for identityGovernance
+Approval stages for assignment requests.
 
 ### [Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Remove-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
 
+### [Remove-MgEntitlementManagementAccessPackageAssignmentPolicy](Remove-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+Delete navigation property assignmentPolicies for identityGovernance
+
 ### [Remove-MgEntitlementManagementAssignment](Remove-MgEntitlementManagementAssignment.md)
 Represents the grant of an access package to a subject (user or group).
+
+### [Remove-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Remove-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
+Delete ref of navigation property assignmentPolicy for identityGovernance
+
+### [Remove-MgEntitlementManagementAssignmentPolicy](Remove-MgEntitlementManagementAssignmentPolicy.md)
+Delete navigation property assignmentPolicies for identityGovernance
+
+### [Remove-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Remove-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
+The access package with this policy.
+Read-only.
+Nullable.
+Supports $expand.
+
+### [Remove-MgEntitlementManagementAssignmentPolicyCatalogByRef](Remove-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
+Delete ref of navigation property catalog for identityGovernance
 
 ### [Remove-MgEntitlementManagementAssignmentRequest](Remove-MgEntitlementManagementAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.
@@ -208,6 +263,18 @@ Represents a tenant's customizable terms of use agreement that's created and man
 
 ### [Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance](Remove-MgIdentityGovernanceTermOfUseAgreementAcceptance.md)
 Represents the current status of a user's response to a company's customizable terms of use agreement.
+
+### [Set-MgEntitlementManagementAssignmentAssignmentPolicyByRef](Set-MgEntitlementManagementAssignmentAssignmentPolicyByRef.md)
+Update the ref of navigation property assignmentPolicy in identityGovernance
+
+### [Set-MgEntitlementManagementAssignmentPolicyAccessPackageByRef](Set-MgEntitlementManagementAssignmentPolicyAccessPackageByRef.md)
+The access package with this policy.
+Read-only.
+Nullable.
+Supports $expand.
+
+### [Set-MgEntitlementManagementAssignmentPolicyCatalogByRef](Set-MgEntitlementManagementAssignmentPolicyCatalogByRef.md)
+Update the ref of navigation property catalog in identityGovernance
 
 ### [Split-MgEntitlementManagementConnectedOrganization](Split-MgEntitlementManagementConnectedOrganization.md)
 Split elements of one or more Azure AD entitlement management connected organizations, returned by Get-MgEntitlementManagementConnectedOrganization, to simplify reporting.
@@ -240,13 +307,19 @@ Customized versions of the terms of use agreement in the Azure AD tenant.
 Represents access package objects.
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApproval](Update-MgEntitlementManagementAccessPackageAssignmentApproval.md)
-Update the navigation property accessPackageAssignmentApprovals in identityGovernance
+Approval stages for assignment requests.
 
 ### [Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage](Update-MgEntitlementManagementAccessPackageAssignmentApprovalStage.md)
 A collection of stages in the approval decision.
 
+### [Update-MgEntitlementManagementAccessPackageAssignmentPolicy](Update-MgEntitlementManagementAccessPackageAssignmentPolicy.md)
+Update the navigation property assignmentPolicies in identityGovernance
+
 ### [Update-MgEntitlementManagementAssignment](Update-MgEntitlementManagementAssignment.md)
 Represents the grant of an access package to a subject (user or group).
+
+### [Update-MgEntitlementManagementAssignmentPolicy](Update-MgEntitlementManagementAssignmentPolicy.md)
+Update the navigation property assignmentPolicies in identityGovernance
 
 ### [Update-MgEntitlementManagementAssignmentRequest](Update-MgEntitlementManagementAssignmentRequest.md)
 Represents access package assignment requests created by or on behalf of a user.

@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.SignIns
-Module Guid: 3a04e785-db4a-488f-a888-183e4ea3e8f8
+Module Guid: cf73060f-79d8-4272-961c-dae18e24eb64
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.signins
 Help Version: 1.0.0.0
 Locale: en-US
@@ -181,13 +181,12 @@ The policy for the assignment.
 The policy for the assignment.
 
 ### [Get-MgPolicyRoleManagementPolicyEffectiveRule](Get-MgPolicyRoleManagementPolicyEffectiveRule.md)
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ### [Get-MgPolicyRoleManagementPolicyRule](Get-MgPolicyRoleManagementPolicyRule.md)
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ### [Get-MgPolicyServicePrincipalCreationPolicy](Get-MgPolicyServicePrincipalCreationPolicy.md)
 Get servicePrincipalCreationPolicies from policies
@@ -229,16 +228,16 @@ Get policies from trustFramework
 Get media content for the navigation property policies from trustFramework
 
 ### [Get-MgUserAuthenticationEmailMethod](Get-MgUserAuthenticationEmailMethod.md)
-Get emailMethods from users
+Represents the email addresses registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationFido2Method](Get-MgUserAuthenticationFido2Method.md)
-Get fido2Methods from users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationMethod](Get-MgUserAuthenticationMethod.md)
-Get methods from users
+Represents all authentication methods registered to a user.
 
 ### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethod](Get-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Get microsoftAuthenticatorMethods from users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Get-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
 The registered device on which Microsoft Authenticator resides.
@@ -248,25 +247,25 @@ This property is null if the device is not registered for passwordless Phone Sig
 Get operations from users
 
 ### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod.md)
-Get passwordlessMicrosoftAuthenticatorMethods from users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
 Get device from users
 
 ### [Get-MgUserAuthenticationPasswordMethod](Get-MgUserAuthenticationPasswordMethod.md)
-Get passwordMethods from users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationPhoneMethod](Get-MgUserAuthenticationPhoneMethod.md)
-Get phoneMethods from users
+Represents the phone registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationSoftwareOathMethod](Get-MgUserAuthenticationSoftwareOathMethod.md)
 Get softwareOathMethods from users
 
 ### [Get-MgUserAuthenticationTemporaryAccessPassMethod](Get-MgUserAuthenticationTemporaryAccessPassMethod.md)
-Get temporaryAccessPassMethods from users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ### [Get-MgUserAuthenticationWindowHello](Get-MgUserAuthenticationWindowHello.md)
-Get windowsHelloForBusinessMethods from users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ### [Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Get-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
@@ -410,13 +409,12 @@ Represents the role management policies.
 Represents the role management policy assignments.
 
 ### [New-MgPolicyRoleManagementPolicyEffectiveRule](New-MgPolicyRoleManagementPolicyEffectiveRule.md)
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ### [New-MgPolicyRoleManagementPolicyRule](New-MgPolicyRoleManagementPolicyRule.md)
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ### [New-MgPolicyServicePrincipalCreationPolicy](New-MgPolicyServicePrincipalCreationPolicy.md)
 Create new navigation property to servicePrincipalCreationPolicies for policies
@@ -452,34 +450,34 @@ Invoke action generateKey
 Create new navigation property to policies for trustFramework
 
 ### [New-MgUserAuthenticationEmailMethod](New-MgUserAuthenticationEmailMethod.md)
-Create new navigation property to emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ### [New-MgUserAuthenticationFido2Method](New-MgUserAuthenticationFido2Method.md)
-Create new navigation property to fido2Methods for users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ### [New-MgUserAuthenticationMethod](New-MgUserAuthenticationMethod.md)
-Create new navigation property to methods for users
+Represents all authentication methods registered to a user.
 
 ### [New-MgUserAuthenticationMicrosoftAuthenticatorMethod](New-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Create new navigation property to microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ### [New-MgUserAuthenticationOperation](New-MgUserAuthenticationOperation.md)
 Create new navigation property to operations for users
 
 ### [New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod](New-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod.md)
-Create new navigation property to passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ### [New-MgUserAuthenticationPhoneMethod](New-MgUserAuthenticationPhoneMethod.md)
-Create new navigation property to phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ### [New-MgUserAuthenticationSoftwareOathMethod](New-MgUserAuthenticationSoftwareOathMethod.md)
 Create new navigation property to softwareOathMethods for users
 
 ### [New-MgUserAuthenticationTemporaryAccessPassMethod](New-MgUserAuthenticationTemporaryAccessPassMethod.md)
-Create new navigation property to temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ### [New-MgUserAuthenticationWindowHello](New-MgUserAuthenticationWindowHello.md)
-Create new navigation property to windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ### [Remove-MgDataPolicyOperation](Remove-MgDataPolicyOperation.md)
 Delete entity from dataPolicyOperations
@@ -622,13 +620,12 @@ Represents the role management policy assignments.
 The policy for the assignment.
 
 ### [Remove-MgPolicyRoleManagementPolicyEffectiveRule](Remove-MgPolicyRoleManagementPolicyEffectiveRule.md)
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ### [Remove-MgPolicyRoleManagementPolicyRule](Remove-MgPolicyRoleManagementPolicyRule.md)
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ### [Remove-MgPolicyServicePrincipalCreationPolicy](Remove-MgPolicyServicePrincipalCreationPolicy.md)
 Delete navigation property servicePrincipalCreationPolicies for policies
@@ -661,16 +658,16 @@ Delete navigation property keySets for trustFramework
 Delete navigation property policies for trustFramework
 
 ### [Remove-MgUserAuthenticationEmailMethod](Remove-MgUserAuthenticationEmailMethod.md)
-Delete navigation property emailMethods for users
+Represents the email addresses registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationFido2Method](Remove-MgUserAuthenticationFido2Method.md)
-Delete navigation property fido2Methods for users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationMethod](Remove-MgUserAuthenticationMethod.md)
-Delete navigation property methods for users
+Represents all authentication methods registered to a user.
 
 ### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Delete navigation property microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Remove-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
 The registered device on which Microsoft Authenticator resides.
@@ -680,25 +677,25 @@ This property is null if the device is not registered for passwordless Phone Sig
 Delete navigation property operations for users
 
 ### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod.md)
-Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Remove-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
 Delete navigation property device for users
 
 ### [Remove-MgUserAuthenticationPasswordMethod](Remove-MgUserAuthenticationPasswordMethod.md)
-Delete navigation property passwordMethods for users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationPhoneMethod](Remove-MgUserAuthenticationPhoneMethod.md)
-Delete navigation property phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationSoftwareOathMethod](Remove-MgUserAuthenticationSoftwareOathMethod.md)
 Delete navigation property softwareOathMethods for users
 
 ### [Remove-MgUserAuthenticationTemporaryAccessPassMethod](Remove-MgUserAuthenticationTemporaryAccessPassMethod.md)
-Delete navigation property temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ### [Remove-MgUserAuthenticationWindowHello](Remove-MgUserAuthenticationWindowHello.md)
-Delete navigation property windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ### [Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Remove-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.
@@ -871,13 +868,12 @@ Represents the role management policies.
 Represents the role management policy assignments.
 
 ### [Update-MgPolicyRoleManagementPolicyEffectiveRule](Update-MgPolicyRoleManagementPolicyEffectiveRule.md)
-The list of effective rules like approval rule, expiration rule, etc.
-evaluated based on inherited referenced rules.
-E.g.
-If there is a tenant wide policy to enforce enabling approval rule, the effective rule will be to enable approval even if the polcy has a rule to disable approval.
+Not implemented.
+The list of effective rules like approval rules and expiration rules evaluated based on inherited referenced rules.
+For example, if there is a tenant-wide policy to enforce enabling an approval rule, the effective rule will be to enable approval even if the policy has a rule to disable approval.
 
 ### [Update-MgPolicyRoleManagementPolicyRule](Update-MgPolicyRoleManagementPolicyRule.md)
-The collection of rules like approval rule, expiration rule, etc.
+The collection of rules like approval rules and expiration rules.
 
 ### [Update-MgPolicyServicePrincipalCreationPolicy](Update-MgPolicyServicePrincipalCreationPolicy.md)
 Update the navigation property servicePrincipalCreationPolicies in policies
@@ -913,16 +909,16 @@ Update the navigation property keySets in trustFramework
 Update the navigation property policies in trustFramework
 
 ### [Update-MgUserAuthenticationEmailMethod](Update-MgUserAuthenticationEmailMethod.md)
-Update the navigation property emailMethods in users
+Represents the email addresses registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationFido2Method](Update-MgUserAuthenticationFido2Method.md)
-Update the navigation property fido2Methods in users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationMethod](Update-MgUserAuthenticationMethod.md)
-Update the navigation property methods in users
+Represents all authentication methods registered to a user.
 
 ### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethod](Update-MgUserAuthenticationMicrosoftAuthenticatorMethod.md)
-Update the navigation property microsoftAuthenticatorMethods in users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice](Update-MgUserAuthenticationMicrosoftAuthenticatorMethodDevice.md)
 The registered device on which Microsoft Authenticator resides.
@@ -932,22 +928,22 @@ This property is null if the device is not registered for passwordless Phone Sig
 Update the navigation property operations in users
 
 ### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod.md)
-Update the navigation property passwordlessMicrosoftAuthenticatorMethods in users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice](Update-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethodDevice.md)
 Update the navigation property device in users
 
 ### [Update-MgUserAuthenticationPhoneMethod](Update-MgUserAuthenticationPhoneMethod.md)
-Update the navigation property phoneMethods in users
+Represents the phone registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationSoftwareOathMethod](Update-MgUserAuthenticationSoftwareOathMethod.md)
 Update the navigation property softwareOathMethods in users
 
 ### [Update-MgUserAuthenticationTemporaryAccessPassMethod](Update-MgUserAuthenticationTemporaryAccessPassMethod.md)
-Update the navigation property temporaryAccessPassMethods in users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ### [Update-MgUserAuthenticationWindowHello](Update-MgUserAuthenticationWindowHello.md)
-Update the navigation property windowsHelloForBusinessMethods in users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ### [Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice](Update-MgUserAuthenticationWindowHelloForBusinessMethodDevice.md)
 The registered device on which this Windows Hello for Business key resides.

@@ -13,11 +13,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
-    "/drives/{drive-id}/bundles/{driveItem-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Files.yml"
-    },
-    "/drives/{drive-id}/bundles/{driveItem-id}/content": {
+    "/drives/{drive-id}/bundles/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -25,11 +21,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
-    "/drives/{drive-id}/following/{driveItem-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Files.yml"
-    },
-    "/drives/{drive-id}/following/{driveItem-id}/content": {
+    "/drives/{drive-id}/following/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
@@ -261,11 +253,7 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },
-    "/drives/{drive-id}/special/{driveItem-id}": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/Files.yml"
-    },
-    "/drives/{drive-id}/special/{driveItem-id}/content": {
+    "/drives/{drive-id}/special/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Files.yml"
     },

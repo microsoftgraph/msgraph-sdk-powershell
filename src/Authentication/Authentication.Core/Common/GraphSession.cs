@@ -73,6 +73,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }
 
+        public HttpClient GraphHttpClient { get; set; }
+
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.
         /// </summary>

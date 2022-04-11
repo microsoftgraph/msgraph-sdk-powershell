@@ -43,7 +43,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "The client id of your application.")]
         [Alias("AppId")]
         public string ClientId { get; set; }
-        
+
         [Parameter(ParameterSetName = Constants.AppParameterSet,
             Position = 2,
             HelpMessage = "The subject distinguished name of a certificate. The Certificate will be retrieved from the current user's certificate store.")]
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             HelpMessage = "Sets the HTTP client timeout in seconds.")]
         [ValidateNotNullOrEmpty]
         public double ClientTimeout { get; set; }
-        
+
         [Parameter(Mandatory = false,
             DontShow = true,
             HelpMessage = "Wait for .NET debugger to attach")]
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private IGraphEnvironment environment;
-        
+
         protected override void BeginProcessing()
         {
             if (Break)
@@ -166,11 +166,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 IAuthContext authContext = new AuthContext { TenantId = TenantId, PSHostVersion = this.Host.Version };
                 if (MyInvocation.BoundParameters.ContainsKey(nameof(ClientTimeout)))
                     authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
-                
+
                 GraphSession.Instance.Environment = environment;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
 
+                GraphSession.Instance.GraphHttpClient = null;
                 switch (ParameterSetName)
                 {
                     case Constants.UserParameterSet:

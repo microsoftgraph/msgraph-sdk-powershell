@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.CloudCommunications
-Module Guid: 56446793-92e0-4972-b493-2b3e3a00b75d
+Module Guid: bbd6e8f6-9971-489a-a2bb-067f6d1a03fa
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.cloudcommunications
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,6 +11,9 @@ Locale: en-US
 Microsoft Graph PowerShell Cmdlets
 
 ## Microsoft.Graph.CloudCommunications Cmdlets
+### [Add-MgCommunicationCallLargeGalleryView](Add-MgCommunicationCallLargeGalleryView.md)
+Invoke action addLargeGalleryView
+
 ### [Clear-MgCommunicationPresence](Clear-MgCommunicationPresence.md)
 Invoke action clearPresence
 
@@ -23,6 +26,9 @@ Get calls from communications
 ### [Get-MgCommunicationCallAudioRoutingGroup](Get-MgCommunicationCallAudioRoutingGroup.md)
 Read-only.
 Nullable.
+
+### [Get-MgCommunicationCallContentSharingSession](Get-MgCommunicationCallContentSharingSession.md)
+Get contentSharingSessions from communications
 
 ### [Get-MgCommunicationCallOperation](Get-MgCommunicationCallOperation.md)
 Read-only.
@@ -68,12 +74,6 @@ One online meeting can only have one registration enabled.
 ### [Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Get-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [Get-MgCommunicationOnlineMeetingTranscript](Get-MgCommunicationOnlineMeetingTranscript.md)
-Get transcripts from communications
-
-### [Get-MgCommunicationOnlineMeetingTranscriptContent](Get-MgCommunicationOnlineMeetingTranscriptContent.md)
-Get media content for the navigation property transcripts from communications
-
 ### [Get-MgCommunicationPresence](Get-MgCommunicationPresence.md)
 Invoke action getPresencesByUserId
 
@@ -103,12 +103,6 @@ One online meeting can only have one registration enabled.
 
 ### [Get-MgUserOnlineMeetingRegistrationCustomQuestion](Get-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
-
-### [Get-MgUserOnlineMeetingTranscript](Get-MgUserOnlineMeetingTranscript.md)
-Get transcripts from users
-
-### [Get-MgUserOnlineMeetingTranscriptContent](Get-MgUserOnlineMeetingTranscriptContent.md)
-Get media content for the navigation property transcripts from users
 
 ### [Get-MgUserPresence](Get-MgUserPresence.md)
 Get presence from users
@@ -168,6 +162,9 @@ Create new navigation property to calls for communications
 Read-only.
 Nullable.
 
+### [New-MgCommunicationCallContentSharingSession](New-MgCommunicationCallContentSharingSession.md)
+Create new navigation property to contentSharingSessions for communications
+
 ### [New-MgCommunicationCallOperation](New-MgCommunicationCallOperation.md)
 Read-only.
 Nullable.
@@ -196,9 +193,6 @@ Read-only.
 ### [New-MgCommunicationOnlineMeetingRegistrationCustomQuestion](New-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [New-MgCommunicationOnlineMeetingTranscript](New-MgCommunicationOnlineMeetingTranscript.md)
-Create new navigation property to transcripts for communications
-
 ### [New-MgCommunicationPresence](New-MgCommunicationPresence.md)
 Create new navigation property to presences for communications
 
@@ -216,15 +210,15 @@ Read-only.
 ### [New-MgUserOnlineMeetingRegistrationCustomQuestion](New-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [New-MgUserOnlineMeetingTranscript](New-MgUserOnlineMeetingTranscript.md)
-Create new navigation property to transcripts for users
-
 ### [Remove-MgCommunicationCall](Remove-MgCommunicationCall.md)
 Delete navigation property calls for communications
 
 ### [Remove-MgCommunicationCallAudioRoutingGroup](Remove-MgCommunicationCallAudioRoutingGroup.md)
 Read-only.
 Nullable.
+
+### [Remove-MgCommunicationCallContentSharingSession](Remove-MgCommunicationCallContentSharingSession.md)
+Delete navigation property contentSharingSessions for communications
 
 ### [Remove-MgCommunicationCallOperation](Remove-MgCommunicationCallOperation.md)
 Read-only.
@@ -258,9 +252,6 @@ One online meeting can only have one registration enabled.
 ### [Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Remove-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [Remove-MgCommunicationOnlineMeetingTranscript](Remove-MgCommunicationOnlineMeetingTranscript.md)
-Delete navigation property transcripts for communications
-
 ### [Remove-MgCommunicationPresence](Remove-MgCommunicationPresence.md)
 Delete navigation property presences for communications
 
@@ -282,9 +273,6 @@ One online meeting can only have one registration enabled.
 ### [Remove-MgUserOnlineMeetingRegistrationCustomQuestion](Remove-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [Remove-MgUserOnlineMeetingTranscript](Remove-MgUserOnlineMeetingTranscript.md)
-Delete navigation property transcripts for users
-
 ### [Remove-MgUserPresence](Remove-MgUserPresence.md)
 Delete navigation property presence for users
 
@@ -299,9 +287,6 @@ Update media content for the navigation property onlineMeetings in communication
 
 ### [Set-MgCommunicationOnlineMeetingRecording](Set-MgCommunicationOnlineMeetingRecording.md)
 Update media content for the navigation property onlineMeetings in communications
-
-### [Set-MgCommunicationOnlineMeetingTranscriptContent](Set-MgCommunicationOnlineMeetingTranscriptContent.md)
-Update media content for the navigation property transcripts in communications
 
 ### [Set-MgCommunicationPresence](Set-MgCommunicationPresence.md)
 Invoke action setPresence
@@ -318,9 +303,6 @@ Update media content for the navigation property onlineMeetings in users
 ### [Set-MgUserOnlineMeetingRecording](Set-MgUserOnlineMeetingRecording.md)
 Update media content for the navigation property onlineMeetings in users
 
-### [Set-MgUserOnlineMeetingTranscriptContent](Set-MgUserOnlineMeetingTranscriptContent.md)
-Update media content for the navigation property transcripts in users
-
 ### [Start-MgCommunicationCallParticipantHoldMusic](Start-MgCommunicationCallParticipantHoldMusic.md)
 Invoke action startHoldMusic
 
@@ -333,6 +315,9 @@ Invoke action stopHoldMusic
 ### [Update-MgCommunicationCallAudioRoutingGroup](Update-MgCommunicationCallAudioRoutingGroup.md)
 Read-only.
 Nullable.
+
+### [Update-MgCommunicationCallContentSharingSession](Update-MgCommunicationCallContentSharingSession.md)
+Update the navigation property contentSharingSessions in communications
 
 ### [Update-MgCommunicationCallOperation](Update-MgCommunicationCallOperation.md)
 Read-only.
@@ -369,9 +354,6 @@ One online meeting can only have one registration enabled.
 ### [Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion](Update-MgCommunicationOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
 
-### [Update-MgCommunicationOnlineMeetingTranscript](Update-MgCommunicationOnlineMeetingTranscript.md)
-Update the navigation property transcripts in communications
-
 ### [Update-MgCommunicationPresence](Update-MgCommunicationPresence.md)
 Update the navigation property presences in communications
 
@@ -392,9 +374,6 @@ One online meeting can only have one registration enabled.
 
 ### [Update-MgUserOnlineMeetingRegistrationCustomQuestion](Update-MgUserOnlineMeetingRegistrationCustomQuestion.md)
 Custom registration questions.
-
-### [Update-MgUserOnlineMeetingTranscript](Update-MgUserOnlineMeetingTranscript.md)
-Update the navigation property transcripts in users
 
 ### [Update-MgUserPresence](Update-MgUserPresence.md)
 Update the navigation property presence in users

@@ -6234,6 +6234,7 @@ paths:
       tags:
         - users.authentication
       summary: Get authentication from users
+      description: The authentication methods that are supported for the user.
       operationId: users_GetAuthentication
       parameters:
         - name: user-id
@@ -6306,6 +6307,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property authentication in users
+      description: The authentication methods that are supported for the user.
       operationId: users_UpdateAuthentication
       parameters:
         - name: user-id
@@ -6332,6 +6334,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property authentication for users
+      description: The authentication methods that are supported for the user.
       operationId: users_DeleteAuthentication
       parameters:
         - name: user-id
@@ -6357,6 +6360,7 @@ paths:
       tags:
         - users.authentication
       summary: Get fido2Methods from users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_ListFido2Methods
       parameters:
         - name: user-id
@@ -6453,6 +6457,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to fido2Methods for users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_CreateFido2Methods
       parameters:
         - name: user-id
@@ -6484,6 +6489,7 @@ paths:
       tags:
         - users.authentication
       summary: Get fido2Methods from users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_GetFido2Methods
       parameters:
         - name: user-id
@@ -6544,6 +6550,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property fido2Methods in users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_UpdateFido2Methods
       parameters:
         - name: user-id
@@ -6577,6 +6584,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property fido2Methods for users
+      description: Represents the FIDO2 security keys registered to a user for authentication.
       operationId: users.authentication_DeleteFido2Methods
       parameters:
         - name: user-id
@@ -6609,6 +6617,7 @@ paths:
       tags:
         - users.authentication
       summary: Get methods from users
+      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_ListMethods
       parameters:
         - name: user-id
@@ -6687,6 +6696,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to methods for users
+      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_CreateMethods
       parameters:
         - name: user-id
@@ -6718,6 +6728,7 @@ paths:
       tags:
         - users.authentication
       summary: Get methods from users
+      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_GetMethods
       parameters:
         - name: user-id
@@ -6772,6 +6783,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property methods in users
+      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_UpdateMethods
       parameters:
         - name: user-id
@@ -6805,6 +6817,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property methods for users
+      description: Represents all authentication methods registered to a user.
       operationId: users.authentication_DeleteMethods
       parameters:
         - name: user-id
@@ -6837,6 +6850,7 @@ paths:
       tags:
         - users.authentication
       summary: Get microsoftAuthenticatorMethods from users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_ListMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -6929,6 +6943,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to microsoftAuthenticatorMethods for users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_CreateMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -6960,6 +6975,7 @@ paths:
       tags:
         - users.authentication
       summary: Get microsoftAuthenticatorMethods from users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_GetMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -7026,6 +7042,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property microsoftAuthenticatorMethods in users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_UpdateMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -7059,6 +7076,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property microsoftAuthenticatorMethods for users
+      description: The details of the Microsoft Authenticator app registered to a user for authentication.
       operationId: users.authentication_DeleteMicrosoftAuthenticatorMethods
       parameters:
         - name: user-id
@@ -7269,6 +7287,7 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_ListWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -7358,6 +7377,7 @@ paths:
       tags:
         - users.authentication
       summary: Create new navigation property to windowsHelloForBusinessMethods for users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_CreateWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -7389,6 +7409,7 @@ paths:
       tags:
         - users.authentication
       summary: Get windowsHelloForBusinessMethods from users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_GetWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -7454,6 +7475,7 @@ paths:
       tags:
         - users.authentication
       summary: Update the navigation property windowsHelloForBusinessMethods in users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_UpdateWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -7487,6 +7509,7 @@ paths:
       tags:
         - users.authentication
       summary: Delete navigation property windowsHelloForBusinessMethods for users
+      description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       operationId: users.authentication_DeleteWindowsHelloForBusinessMethods
       parameters:
         - name: user-id
@@ -8482,7 +8505,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
           additionalProperties:
             type: object
@@ -8841,18 +8864,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.fido2AuthenticationMethod:
@@ -9091,6 +9118,8 @@ components:
       properties:
         applications:
           $ref: '#/components/schemas/microsoft.graph.conditionalAccessApplications'
+        clientApplications:
+          $ref: '#/components/schemas/microsoft.graph.conditionalAccessClientApplications'
         clientAppTypes:
           type: array
           items:
@@ -11486,6 +11515,22 @@ components:
           description: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
       additionalProperties:
         type: object
+    microsoft.graph.conditionalAccessClientApplications:
+      title: conditionalAccessClientApplications
+      type: object
+      properties:
+        excludeServicePrincipals:
+          type: array
+          items:
+            type: string
+          description: Service principal IDs excluded from the policy scope.
+        includeServicePrincipals:
+          type: array
+          items:
+            type: string
+          description: 'Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.'
+      additionalProperties:
+        type: object
     microsoft.graph.conditionalAccessClientApp:
       title: conditionalAccessClientApp
       enum:
@@ -11529,12 +11574,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.'
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
         includePlatforms:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.conditionalAccessDevicePlatform'
-          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.'
+          description: 'Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.'
       additionalProperties:
         type: object
     microsoft.graph.riskLevel:
@@ -12657,6 +12702,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -14790,6 +14837,7 @@ components:
         - macOS
         - all
         - unknownFutureValue
+        - linux
       type: string
     microsoft.graph.conditionalAccessSessionControl:
       title: conditionalAccessSessionControl
@@ -16218,6 +16266,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -16335,7 +16397,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
@@ -18196,20 +18258,6 @@ components:
               description: Collection of tables that are part of the worksheet. Read-only.
           additionalProperties:
             type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.fieldValueSet:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'

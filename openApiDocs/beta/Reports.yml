@@ -6569,32 +6569,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
-  '/reports/microsoft.graph.getTenantSecureScores(period={period})':
-    get:
-      tags:
-        - reports.Functions
-      summary: Invoke function getTenantSecureScores
-      operationId: reports_getTenantSecureScores
-      parameters:
-        - name: period
-          in: path
-          description: 'Usage: period={period}'
-          required: true
-          schema:
-            maximum: 2147483647
-            minimum: -2147483648
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.report'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
   '/reports/microsoft.graph.getUserArchivedPrintJobs(userId=''{userId}'',startDateTime={startDateTime},endDateTime={endDateTime})':
     get:
       tags:
@@ -8590,7 +8564,7 @@ components:
               items:
                 type: string
                 nullable: true
-              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq operator only).'
+              description: 'Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).'
             signInIdentifier:
               type: string
               description: The identification that the user provided to sign in. It may be the userPrincipalName but it's also populated when a user signs in using other identifiers.

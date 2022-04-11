@@ -518,44 +518,13 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drives.driveItem
-      summary: Create new navigation property to bundles for drives
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_CreateBundles
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/bundles/{driveItem-id}':
+  '/drives/{drive-id}/bundles/$ref':
     get:
       tags:
         - drives.driveItem
-      summary: Get bundles from drives
+      summary: Get ref of bundles from drives
       description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_GetBundles
+      operationId: drives_ListGraphRefBundles
       parameters:
         - name: drive-id
           in: path
@@ -564,16 +533,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -582,139 +549,103 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - createdBy
+                - createdBy desc
                 - createdDateTime
+                - createdDateTime desc
                 - description
+                - description desc
                 - eTag
+                - eTag desc
                 - lastModifiedBy
+                - lastModifiedBy desc
                 - lastModifiedDateTime
+                - lastModifiedDateTime desc
                 - name
+                - name desc
                 - parentReference
+                - parentReference desc
                 - webUrl
+                - webUrl desc
                 - audio
+                - audio desc
                 - bundle
+                - bundle desc
                 - content
+                - content desc
                 - cTag
+                - cTag desc
                 - deleted
+                - deleted desc
                 - file
+                - file desc
                 - fileSystemInfo
+                - fileSystemInfo desc
                 - folder
+                - folder desc
                 - image
+                - image desc
                 - location
+                - location desc
                 - malware
+                - malware desc
                 - package
+                - package desc
                 - pendingOperations
+                - pendingOperations desc
                 - photo
+                - photo desc
                 - publication
+                - publication desc
                 - remoteItem
+                - remoteItem desc
                 - root
+                - root desc
                 - searchResult
+                - searchResult desc
                 - shared
+                - shared desc
                 - sharepointIds
+                - sharepointIds desc
                 - size
+                - size desc
                 - specialFolder
+                - specialFolder desc
                 - video
+                - video desc
                 - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
+                - webDavUrl desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          description: Retrieved navigation property links
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: drives.Bundles.GetCreatedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            lastModifiedByUser:
-              operationId: drives.Bundles.GetLastModifiedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            workbook:
-              operationId: drives.Bundles.GetWorkbook
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            analytics:
-              operationId: drives.Bundles.GetAnalytics
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            children:
-              operationId: drives.Bundles.ListChildren
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            listItem:
-              operationId: drives.Bundles.GetListItem
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            permissions:
-              operationId: drives.Bundles.ListPermissions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            subscriptions:
-              operationId: drives.Bundles.ListSubscriptions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            thumbnails:
-              operationId: drives.Bundles.ListThumbnails
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            versions:
-              operationId: drives.Bundles.ListVersions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
+                title: Collection of links of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
-    patch:
+    post:
       tags:
         - drives.driveItem
-      summary: Update the navigation property bundles in drives
+      summary: Create new navigation property ref to bundles for drives
       description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_UpdateBundles
+      operationId: drives_CreateGraphRefBundles
       parameters:
         - name: drive-id
           in: path
@@ -723,121 +654,24 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref value
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drives.driveItem
-      summary: Delete navigation property bundles for drives
-      description: 'Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.'
-      operationId: drives_DeleteBundles
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/bundles/{driveItem-id}/content':
-    get:
-      tags:
-        - drives.driveItem
-      summary: Get media content for the navigation property bundles from drives
-      operationId: drives_GetBundlesContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      responses:
-        '200':
-          description: Retrieved media content
+        '201':
+          description: Created navigation property link.
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - drives.driveItem
-      summary: Update media content for the navigation property bundles in drives
-      operationId: drives_SetBundlesContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1040,44 +874,13 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drives.driveItem
-      summary: Create new navigation property to following for drives
-      description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_CreateFollowing
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/following/{driveItem-id}':
+  '/drives/{drive-id}/following/$ref':
     get:
       tags:
         - drives.driveItem
-      summary: Get following from drives
+      summary: Get ref of following from drives
       description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_GetFollowing
+      operationId: drives_ListGraphRefFollowing
       parameters:
         - name: drive-id
           in: path
@@ -1086,16 +889,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -1104,139 +905,103 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - createdBy
+                - createdBy desc
                 - createdDateTime
+                - createdDateTime desc
                 - description
+                - description desc
                 - eTag
+                - eTag desc
                 - lastModifiedBy
+                - lastModifiedBy desc
                 - lastModifiedDateTime
+                - lastModifiedDateTime desc
                 - name
+                - name desc
                 - parentReference
+                - parentReference desc
                 - webUrl
+                - webUrl desc
                 - audio
+                - audio desc
                 - bundle
+                - bundle desc
                 - content
+                - content desc
                 - cTag
+                - cTag desc
                 - deleted
+                - deleted desc
                 - file
+                - file desc
                 - fileSystemInfo
+                - fileSystemInfo desc
                 - folder
+                - folder desc
                 - image
+                - image desc
                 - location
+                - location desc
                 - malware
+                - malware desc
                 - package
+                - package desc
                 - pendingOperations
+                - pendingOperations desc
                 - photo
+                - photo desc
                 - publication
+                - publication desc
                 - remoteItem
+                - remoteItem desc
                 - root
+                - root desc
                 - searchResult
+                - searchResult desc
                 - shared
+                - shared desc
                 - sharepointIds
+                - sharepointIds desc
                 - size
+                - size desc
                 - specialFolder
+                - specialFolder desc
                 - video
+                - video desc
                 - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
+                - webDavUrl desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          description: Retrieved navigation property links
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: drives.Following.GetCreatedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            lastModifiedByUser:
-              operationId: drives.Following.GetLastModifiedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            workbook:
-              operationId: drives.Following.GetWorkbook
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            analytics:
-              operationId: drives.Following.GetAnalytics
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            children:
-              operationId: drives.Following.ListChildren
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            listItem:
-              operationId: drives.Following.GetListItem
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            permissions:
-              operationId: drives.Following.ListPermissions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            subscriptions:
-              operationId: drives.Following.ListSubscriptions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            thumbnails:
-              operationId: drives.Following.ListThumbnails
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            versions:
-              operationId: drives.Following.ListVersions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
+                title: Collection of links of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
-    patch:
+    post:
       tags:
         - drives.driveItem
-      summary: Update the navigation property following in drives
+      summary: Create new navigation property ref to following for drives
       description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_UpdateFollowing
+      operationId: drives_CreateGraphRefFollowing
       parameters:
         - name: drive-id
           in: path
@@ -1245,121 +1010,24 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref value
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drives.driveItem
-      summary: Delete navigation property following for drives
-      description: The list of items the user is following. Only in OneDrive for Business.
-      operationId: drives_DeleteFollowing
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/following/{driveItem-id}/content':
-    get:
-      tags:
-        - drives.driveItem
-      summary: Get media content for the navigation property following from drives
-      operationId: drives_GetFollowingContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      responses:
-        '200':
-          description: Retrieved media content
+        '201':
+          description: Created navigation property link.
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - drives.driveItem
-      summary: Update media content for the navigation property following in drives
-      operationId: drives_SetFollowingContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2124,6 +1792,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -2171,6 +1841,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -2303,6 +1974,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -2463,6 +2135,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4021,6 +3694,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -4068,6 +3743,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4200,6 +3876,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -4365,6 +4043,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -4412,6 +4092,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4558,6 +4239,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -4740,6 +4422,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -7672,44 +7355,13 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - drives.driveItem
-      summary: Create new navigation property to special for drives
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_CreateSpecial
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-      requestBody:
-        description: New navigation property
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
-        required: true
-      responses:
-        '201':
-          description: Created navigation property.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/special/{driveItem-id}':
+  '/drives/{drive-id}/special/$ref':
     get:
       tags:
         - drives.driveItem
-      summary: Get special from drives
+      summary: Get ref of special from drives
       description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_GetSpecial
+      operationId: drives_ListGraphRefSpecial
       parameters:
         - name: drive-id
           in: path
@@ -7718,16 +7370,14 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: $select
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
           in: query
-          description: Select properties to be returned
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -7736,139 +7386,103 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - createdBy
+                - createdBy desc
                 - createdDateTime
+                - createdDateTime desc
                 - description
+                - description desc
                 - eTag
+                - eTag desc
                 - lastModifiedBy
+                - lastModifiedBy desc
                 - lastModifiedDateTime
+                - lastModifiedDateTime desc
                 - name
+                - name desc
                 - parentReference
+                - parentReference desc
                 - webUrl
+                - webUrl desc
                 - audio
+                - audio desc
                 - bundle
+                - bundle desc
                 - content
+                - content desc
                 - cTag
+                - cTag desc
                 - deleted
+                - deleted desc
                 - file
+                - file desc
                 - fileSystemInfo
+                - fileSystemInfo desc
                 - folder
+                - folder desc
                 - image
+                - image desc
                 - location
+                - location desc
                 - malware
+                - malware desc
                 - package
+                - package desc
                 - pendingOperations
+                - pendingOperations desc
                 - photo
+                - photo desc
                 - publication
+                - publication desc
                 - remoteItem
+                - remoteItem desc
                 - root
+                - root desc
                 - searchResult
+                - searchResult desc
                 - shared
+                - shared desc
                 - sharepointIds
+                - sharepointIds desc
                 - size
+                - size desc
                 - specialFolder
+                - specialFolder desc
                 - video
+                - video desc
                 - webDavUrl
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - createdByUser
-                - lastModifiedByUser
-                - workbook
-                - analytics
-                - children
-                - listItem
-                - permissions
-                - subscriptions
-                - thumbnails
-                - versions
+                - webDavUrl desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          description: Retrieved navigation property links
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.driveItem'
-          links:
-            createdByUser:
-              operationId: drives.Special.GetCreatedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            lastModifiedByUser:
-              operationId: drives.Special.GetLastModifiedByUser
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            workbook:
-              operationId: drives.Special.GetWorkbook
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            analytics:
-              operationId: drives.Special.GetAnalytics
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            children:
-              operationId: drives.Special.ListChildren
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            listItem:
-              operationId: drives.Special.GetListItem
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            permissions:
-              operationId: drives.Special.ListPermissions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            subscriptions:
-              operationId: drives.Special.ListSubscriptions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            thumbnails:
-              operationId: drives.Special.ListThumbnails
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
-            versions:
-              operationId: drives.Special.ListVersions
-              parameters:
-                drive-id: $request.path.drive-id
-                driveItem-id: $request.path.driveItem-id
+                title: Collection of links of driveItem
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
       x-ms-docs-operation-type: operation
-    patch:
+    post:
       tags:
         - drives.driveItem
-      summary: Update the navigation property special in drives
+      summary: Create new navigation property ref to special for drives
       description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_UpdateSpecial
+      operationId: drives_CreateGraphRefSpecial
       parameters:
         - name: drive-id
           in: path
@@ -7877,121 +7491,24 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
       requestBody:
-        description: New navigation property values
+        description: New navigation property ref value
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/microsoft.graph.driveItem'
+              type: object
+              additionalProperties:
+                type: object
         required: true
       responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - drives.driveItem
-      summary: Delete navigation property special for drives
-      description: Collection of common folders available in OneDrive. Read-only. Nullable.
-      operationId: drives_DeleteSpecial
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/drives/{drive-id}/special/{driveItem-id}/content':
-    get:
-      tags:
-        - drives.driveItem
-      summary: Get media content for the navigation property special from drives
-      operationId: drives_GetSpecialContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      responses:
-        '200':
-          description: Retrieved media content
+        '201':
+          description: Created navigation property link.
           content:
-            application/octet-stream:
+            application/json:
               schema:
-                type: string
-                format: binary
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - drives.driveItem
-      summary: Update media content for the navigation property special in drives
-      operationId: drives_SetSpecialContent
-      parameters:
-        - name: drive-id
-          in: path
-          description: 'key: id of drive'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: drive
-        - name: driveItem-id
-          in: path
-          description: 'key: id of driveItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: driveItem
-      requestBody:
-        description: New media content.
-        content:
-          application/octet-stream:
-            schema:
-              type: string
-              format: binary
-        required: true
-      responses:
-        '204':
-          description: Success
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -9744,6 +9261,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -9791,6 +9310,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -9923,6 +9443,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -10083,6 +9604,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -11641,6 +11163,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -11688,6 +11212,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -11820,6 +11345,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -11985,6 +11512,8 @@ paths:
                 - readOnly desc
                 - required
                 - required desc
+                - sourceContentType
+                - sourceContentType desc
                 - term
                 - term desc
                 - text
@@ -12032,6 +11561,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -12178,6 +11708,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -12360,6 +11891,7 @@ paths:
                 - propagateChanges
                 - readOnly
                 - required
+                - sourceContentType
                 - term
                 - text
                 - thumbnail
@@ -17476,6 +17008,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -18812,6 +18346,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -18929,7 +18477,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
@@ -18975,20 +18523,6 @@ components:
           type: integer
           description: Specifies the position in which the Content Type appears in the selection UI.
           format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
           nullable: true
       additionalProperties:
         type: object
@@ -20823,7 +20357,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
           additionalProperties:
             type: object
@@ -22194,18 +21728,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.chat:

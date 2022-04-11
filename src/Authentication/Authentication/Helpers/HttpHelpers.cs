@@ -60,14 +60,18 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <returns></returns>
         public static HttpClient GetGraphHttpClient(IAuthContext authContext = null)
         {
+            if (GraphSession.Instance?.GraphHttpClient != null)
+                return GraphSession.Instance.GraphHttpClient;
             authContext = authContext ?? GraphSession.Instance.AuthContext;
             if (authContext is null)
             {
                 throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProvider(authContext);
-            return GetGraphHttpClient(authProvider, authContext.ClientTimeout);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            var newHttpClient = GetGraphHttpClient(authProvider, authContext.ClientTimeout);
+            GraphSession.Instance.GraphHttpClient = newHttpClient;
+            return newHttpClient;
         }
 
         /// <summary>

@@ -15,7 +15,7 @@ Invoke action redirect
 ### RedirectExpanded (Default)
 ```
 Invoke-MgRedirectUserInsightSharedResourceMicrosoftGraphPrintJob -SharedInsightId <String> -UserId <String>
- [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
+ [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration1>]
  [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -36,7 +36,7 @@ Invoke-MgRedirectUserInsightSharedResourceMicrosoftGraphPrintJob -InputObject <I
 ### RedirectViaIdentityExpanded
 ```
 Invoke-MgRedirectUserInsightSharedResourceMicrosoftGraphPrintJob -InputObject <IUsersActionsIdentity>
- [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration>]
+ [-AdditionalProperties <Hashtable>] [-Configuration <IMicrosoftGraphPrintJobConfiguration1>]
  [-DestinationPrinterId <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -83,7 +83,7 @@ printJobConfiguration
 To construct, please use Get-Help -Online and see NOTES section for CONFIGURATION properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJobConfiguration
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJobConfiguration1
 Parameter Sets: RedirectExpanded, RedirectViaIdentityExpanded
 Aliases:
 
@@ -197,7 +197,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrintJob1
 
 ## NOTES
 
@@ -210,14 +210,14 @@ To create the parameters described below, construct a hash table containing the 
 
 BODYPARAMETER <IPaths82AjwzUsersUserIdInsightsSharedSharedinsightIdResourceMicrosoftGraphPrintjobMicrosoftGraphRedirectPostRequestbodyContentApplicationJsonSchema>: .
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Configuration <IMicrosoftGraphPrintJobConfiguration>]`: printJobConfiguration
+  - `[Configuration <IMicrosoftGraphPrintJobConfiguration1>]`: printJobConfiguration
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
-    - `[ColorMode <String>]`: printColorMode
+    - `[ColorMode <String>]`: 
     - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
     - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
-    - `[DuplexMode <String>]`: printDuplexMode
-    - `[FeedOrientation <String>]`: printerFeedOrientation
+    - `[DuplexMode <String>]`: 
+    - `[FeedOrientation <String>]`: 
     - `[Finishings <String[]>]`: Finishing processes to use when printing.
     - `[FitPdfToPage <Boolean?>]`: 
     - `[InputBin <String>]`: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
@@ -229,10 +229,10 @@ BODYPARAMETER <IPaths82AjwzUsersUserIdInsightsSharedSharedinsightIdResourceMicro
       - `[Top <Int32?>]`: The margin in microns from the top edge.
     - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
     - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
-    - `[MultipageLayout <String>]`: printMultipageLayout
-    - `[Orientation <String>]`: printOrientation
+    - `[MultipageLayout <String>]`: 
+    - `[Orientation <String>]`: 
     - `[OutputBin <String>]`: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-    - `[PageRanges <IMicrosoftGraphIntegerRange[]>]`: The page ranges to print. Read-only.
+    - `[PageRanges <IMicrosoftGraphIntegerRange1[]>]`: The page ranges to print. Read-only.
       - `[End <Int64?>]`: The inclusive upper bound of the integer range.
       - `[Start <Int64?>]`: The inclusive lower bound of the integer range.
     - `[PagesPerSheet <Int32?>]`: The number of document pages to print on each sheet.
@@ -240,14 +240,14 @@ BODYPARAMETER <IPaths82AjwzUsersUserIdInsightsSharedSharedinsightIdResourceMicro
     - `[Scaling <String>]`: printScaling
   - `[DestinationPrinterId <String>]`: 
 
-CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>: printJobConfiguration
+CONFIGURATION <IMicrosoftGraphPrintJobConfiguration1>: printJobConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Collate <Boolean?>]`: Whether the printer should collate pages wehen printing multiple copies of a multi-page document.
-  - `[ColorMode <String>]`: printColorMode
+  - `[ColorMode <String>]`: 
   - `[Copies <Int32?>]`: The number of copies that should be printed. Read-only.
   - `[Dpi <Int32?>]`: The resolution to use when printing the job, expressed in dots per inch (DPI). Read-only.
-  - `[DuplexMode <String>]`: printDuplexMode
-  - `[FeedOrientation <String>]`: printerFeedOrientation
+  - `[DuplexMode <String>]`: 
+  - `[FeedOrientation <String>]`: 
   - `[Finishings <String[]>]`: Finishing processes to use when printing.
   - `[FitPdfToPage <Boolean?>]`: 
   - `[InputBin <String>]`: The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
@@ -259,10 +259,10 @@ CONFIGURATION <IMicrosoftGraphPrintJobConfiguration>: printJobConfiguration
     - `[Top <Int32?>]`: The margin in microns from the top edge.
   - `[MediaSize <String>]`: The media size to use when printing. Supports standard size names for ISO and ANSI media sizes. Valid values listed in the printerCapabilities topic.
   - `[MediaType <String>]`: The default media (such as paper) type to print the document on.
-  - `[MultipageLayout <String>]`: printMultipageLayout
-  - `[Orientation <String>]`: printOrientation
+  - `[MultipageLayout <String>]`: 
+  - `[Orientation <String>]`: 
   - `[OutputBin <String>]`: The output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-  - `[PageRanges <IMicrosoftGraphIntegerRange[]>]`: The page ranges to print. Read-only.
+  - `[PageRanges <IMicrosoftGraphIntegerRange1[]>]`: The page ranges to print. Read-only.
     - `[End <Int64?>]`: The inclusive upper bound of the integer range.
     - `[Start <Int64?>]`: The inclusive lower bound of the integer range.
   - `[PagesPerSheet <Int32?>]`: The number of document pages to print on each sheet.
@@ -278,6 +278,7 @@ INPUTOBJECT <IUsersActionsIdentity>: Identity Parameter
   - `[BaseTaskId <String>]`: key: id of baseTask
   - `[BaseTaskListId <String>]`: key: id of baseTaskList
   - `[CalendarId <String>]`: key: id of calendar
+  - `[CloudPcId <String>]`: key: id of cloudPC
   - `[DeviceEnrollmentConfigurationId <String>]`: key: id of deviceEnrollmentConfiguration
   - `[DeviceLogCollectionResponseId <String>]`: key: id of deviceLogCollectionResponse
   - `[EventId <String>]`: key: id of event

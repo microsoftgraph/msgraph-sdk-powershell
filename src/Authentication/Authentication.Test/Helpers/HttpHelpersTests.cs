@@ -72,5 +72,112 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // reset static instance.
             GraphSession.Reset();
         }
+
+        [Fact]
+        public void GetGraphHttpClientShouldReturnInSessionHttpClientWhenSessionHasAClient()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+            };
+            GraphSession.Instance.GraphHttpClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://test.contoso.com/v1.0/")
+            };
+
+            HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
+
+            Assert.NotNull(httpClient);
+            Assert.NotNull(GraphSession.Instance.GraphHttpClient);
+            Assert.Equal(httpClient.BaseAddress, GraphSession.Instance.GraphHttpClient.BaseAddress);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void GetGraphHttpClientShouldReturnNewHttpClientWhenSessionHasNoClient()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+            };
+            GraphSession.Instance.GraphHttpClient = null;
+
+            HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
+
+            Assert.NotNull(httpClient);
+            Assert.NotNull(GraphSession.Instance.GraphHttpClient);
+            Assert.Equal(httpClient.BaseAddress, GraphSession.Instance.GraphHttpClient.BaseAddress);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void GetGraphHttpClientShouldReturnNewHttpClientWhenSessionIsNew()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+            };
+
+            HttpClient httpClient = HttpHelpers.GetGraphHttpClient();
+
+            Assert.NotNull(httpClient);
+            Assert.NotNull(GraphSession.Instance.GraphHttpClient);
+            Assert.Equal(httpClient.BaseAddress, GraphSession.Instance.GraphHttpClient.BaseAddress);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public void GetGraphHttpClientShouldReturnNewHttpClientSignOutThenSignIn()
+        {
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+            };
+
+            var dummyClient = new HttpClient
+            {
+                BaseAddress = new Uri("https://test.contoso.com/v1.0/")
+            };
+            GraphSession.Instance.GraphHttpClient = dummyClient;
+            HttpClient httpClientAttempt1 = HttpHelpers.GetGraphHttpClient();
+
+            // Mock sign out.
+            Authenticator.LogOut(GraphSession.Instance.AuthContext);
+            GraphSession.Instance.AuthContext = null;
+            GraphSession.Instance.GraphHttpClient = null;
+
+            // Mock sign in.
+            GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.AuthContext = new AuthContext
+            {
+                AuthType = AuthenticationType.UserProvidedAccessToken,
+                ContextScope = ContextScope.Process,
+            };
+            HttpClient httpClientAttempt2 = HttpHelpers.GetGraphHttpClient();
+
+            Assert.NotNull(httpClientAttempt1);
+            Assert.NotNull(httpClientAttempt2);
+            Assert.NotNull(GraphSession.Instance.GraphHttpClient);
+            Assert.NotEqual(httpClientAttempt2.BaseAddress, httpClientAttempt1.BaseAddress);
+            Assert.Equal(httpClientAttempt1.BaseAddress, dummyClient.BaseAddress);
+            Assert.Equal(httpClientAttempt2.BaseAddress, GraphSession.Instance.GraphHttpClient.BaseAddress);
+
+            // reset static instance.
+            GraphSession.Reset();
+        }
     }
 }

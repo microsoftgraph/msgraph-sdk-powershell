@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgApplicationSynchronizationTemplate
 
 ## SYNOPSIS
-Create new navigation property to templates for applications
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgApplicationSynchronizationTemplate -InputObject <IApplicationsIdentity> [-
 ```
 
 ## DESCRIPTION
-Create new navigation property to templates for applications
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgServicePrincipalSynchronizationTemplate
 
 ## SYNOPSIS
-Update the navigation property templates in servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## SYNTAX
 
@@ -43,7 +43,7 @@ Update-MgServicePrincipalSynchronizationTemplate -InputObject <IApplicationsIden
 ```
 
 ## DESCRIPTION
-Update the navigation property templates in servicePrincipals
+Pre-configured synchronization settings for a particular application.
 
 ## EXAMPLES
 
