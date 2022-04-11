@@ -3,6 +3,7 @@
 // ------------------------------------------------------------------------------
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public void GetGraphHttpClientShouldReturnNewHttpClientSignOutThenSignIn()
+        public async Task GetGraphHttpClientShouldReturnNewHttpClientSignOutThenSignInAsync()
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.AuthContext = new AuthContext
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             HttpClient httpClientAttempt1 = HttpHelpers.GetGraphHttpClient();
 
             // Mock sign out.
-            Authenticator.LogOut(GraphSession.Instance.AuthContext);
+            await AuthenticationHelpers.LogoutAsync(GraphSession.Instance.AuthContext);
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
 

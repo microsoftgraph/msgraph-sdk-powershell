@@ -1,5 +1,6 @@
 ﻿using Azure.Core;
 using Azure.Identity;
+using Microsoft.Graph.Authentication.Test.Mocks;
 using Microsoft.Graph.PowerShell.Authentication;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
@@ -15,12 +16,15 @@ using Xunit;
 
 namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    public class AuthenticationHelpersTests
+    public class AuthenticationHelpersTests : IDisposable
     {
+        private MockAuthRecord mockAuthRecord;
         public AuthenticationHelpersTests()
         {
             GraphSession.Initialize(() => new GraphSession());
             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
+            mockAuthRecord = new MockAuthRecord("test");
+            mockAuthRecord.SerializeToFile();
         }
 
         [Fact]
@@ -145,7 +149,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
                 CertificateSubjectName = "cn=dummyCert",
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = Guid.NewGuid().ToString(),
             };
             CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
 
@@ -171,7 +176,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
                 Certificate = certificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = Guid.NewGuid().ToString()
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -196,7 +202,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 ClientId = Guid.NewGuid().ToString(),
                 CertificateSubjectName = dummyCertName,
                 Certificate = inMemoryCertificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId= Guid.NewGuid().ToString()
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -223,7 +230,8 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 ClientId = Guid.NewGuid().ToString(),
                 CertificateThumbprint = storedDummyCertificate.Thumbprint,
                 Certificate = inMemoryCertificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = Guid.NewGuid().ToString(),
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -237,7 +245,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public void ShouldThrowIfNonExistentCertNameIsProvided()
+        public async Task ShouldThrowIfNonExistentCertNameIsProvidedAsync()
         {
             // Arrange
             var dummyCertName = "CN=NonExistingCert";
@@ -246,17 +254,19 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
                 CertificateSubjectName = dummyCertName,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = Guid.NewGuid().ToString(),
             };
+
             // Act
-            async void action() => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.ThrowsAny<Exception>(action);
+            Assert.Equal($"{dummyCertName} certificate was not found or has expired.", exception.Message);
         }
 
         [Fact]
-        public void ShouldThrowIfNullInMemoryCertIsProvided()
+        public async Task ShouldThrowIfNullInMemoryCertIsProvidedAsync()
         {
             // Arrange
             AuthContext appOnlyAuthContext = new AuthContext
@@ -264,13 +274,15 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
                 AuthType = AuthenticationType.AppOnly,
                 ClientId = Guid.NewGuid().ToString(),
                 Certificate = null,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = Guid.NewGuid().ToString(),
             };
+
             // Act
-            async void action() => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
+            var exception = await Assert.ThrowsAsync<ArgumentNullException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.Throws<ArgumentNullException>(action);
+            Assert.Equal("certificate", exception.ParamName);
         }
 
         /// <summary>
@@ -342,6 +354,6 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             xStore.Remove(xCertificate);
         }
 #endif
-
+        public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }

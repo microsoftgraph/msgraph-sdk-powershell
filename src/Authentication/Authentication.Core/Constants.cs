@@ -9,14 +9,14 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
     public static class Constants
     {
         public const int MaxAuthenticationTimeOutInSeconds = 120;
-        public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
+        public const string DefaultTenant = "common";
         internal const string DefaultProfile = "v1.0";
         internal const int TokenExpirationBufferInMinutes = 5;
-        internal const string DefaultTenant = "common";
         internal const string DefaultAzureADEndpoint = "https://login.microsoftonline.com";
         internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";
         internal const string CacheName = "mg.msal.cache";
         internal const string AuthRecordName = "mg.authrecord.json";
+        public static readonly string GraphDirectoryPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.UserProfile), ".mg");
         internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);
     }
 }

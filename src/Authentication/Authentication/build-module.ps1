@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 $ModuleName = "Authentication"
 $ModulePrefix = "Microsoft.Graph"
 $netStandard = "netstandard2.0"
-$netCoreApp = "netcoreapp3.1"
+$netApp = "net6.0"
 $netFx = "net472"
 $copyExtensions = @('.dll', '.pdb')
 
@@ -65,7 +65,7 @@ Write-Host -ForegroundColor Green 'Compiling module...'
 # Build authentication.core for each framework.
 Push-Location $coreSrc
 dotnet publish -c $Configuration -f $netStandard --verbosity quiet /nologo
-dotnet publish -c $Configuration -f $netCoreApp --verbosity quiet /nologo
+dotnet publish -c $Configuration -f $netApp --verbosity quiet /nologo
 dotnet publish -c $Configuration -f $netFx --verbosity quiet /nologo
 Pop-Location
 
@@ -104,7 +104,7 @@ Where-Object { $_.Extension -in $copyExtensions } |
 Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outDeps }
 
-Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netCoreApp/publish/" |
+Get-ChildItem -Path "$coreSrc/bin/$Configuration/$netApp/publish/" |
 Where-Object { -not $CoreAssemblies.Contains($_.BaseName) } |
 ForEach-Object { [void]$Deps.Add($_.Name); Copy-Item -Path $_.FullName -Destination $outCore }
 

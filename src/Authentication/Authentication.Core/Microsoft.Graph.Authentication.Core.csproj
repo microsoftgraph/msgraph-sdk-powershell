@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net472</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net6.0;net472</TargetFrameworks>
     <RootNamespace>Microsoft.Graph.PowerShell.Authentication.Core</RootNamespace>
-    <Version>1.9.3</Version>
+    <Version>1.9.4</Version>
   </PropertyGroup>
   <PropertyGroup>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -17,7 +17,6 @@
     <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.16.0" />
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.16.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.16.0" />
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22000.196" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
     <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />

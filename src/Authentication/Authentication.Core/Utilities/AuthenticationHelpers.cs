@@ -227,7 +227,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 certificate = authContext.Certificate;
 
             if (certificate is null)
-                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, Name {authContext.CertificateSubjectName} or In-Memory could not be found");
+                throw new ArgumentNullException(nameof(certificate), $"Certificate with the Specified ThumbPrint {authContext.CertificateThumbprint}, SubjectName {authContext.CertificateSubjectName}, or In-Memory was not found or has expired.");
 
             return certificate;
         }

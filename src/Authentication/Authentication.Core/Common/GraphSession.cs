@@ -7,6 +7,7 @@ using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
 using System.Collections;
+using System.Net.Http;
 using System.Security;
 using System.Threading;
 
