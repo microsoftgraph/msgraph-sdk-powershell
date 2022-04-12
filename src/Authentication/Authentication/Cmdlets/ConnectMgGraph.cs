@@ -9,7 +9,9 @@ using System.Linq;
 using System.Management.Automation;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication.Common;
@@ -64,7 +66,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
             Position = 1,
             Mandatory = true,
             HelpMessage = "Specifies a bearer token for Microsoft Graph service. Access tokens do timeout and you'll have to handle their refresh.")]
-        public string AccessToken { get; set; }
+        public SecureString AccessToken { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet)]
         [Parameter(ParameterSetName = Constants.UserParameterSet,
@@ -168,10 +170,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     authContext.ClientTimeout = TimeSpan.FromSeconds(ClientTimeout);
 
                 GraphSession.Instance.Environment = environment;
+                GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
-
-                GraphSession.Instance.GraphHttpClient = null;
+                
                 switch (ParameterSetName)
                 {
                     case Constants.UserParameterSet:
@@ -209,7 +211,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
                             authContext.TokenCredentialType = TokenCredentialType.UserProvidedTokenCredential;
                             authContext.ContextScope = ContextScope.Process;
-                            GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, AccessToken).SecurePassword;
+                            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(new NetworkCredential(string.Empty, AccessToken).Password));
                         }
                         break;
                 }
@@ -281,7 +283,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 case Constants.AccessTokenParameterSet:
                     {
                         // AccessToken
-                        if (string.IsNullOrEmpty(AccessToken))
+                        if (AccessToken.Length < 1)
                             this.ThrowParameterError(nameof(AccessToken));
                     }
                     break;

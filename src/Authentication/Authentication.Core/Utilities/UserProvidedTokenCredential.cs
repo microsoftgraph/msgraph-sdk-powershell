@@ -5,6 +5,7 @@
 using Azure.Core;
 using System;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,19 +13,13 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
 {
     public class UserProvidedTokenCredential : TokenCredential
     {
-        private readonly NetworkCredential _userProvidedToken;
-
-        public UserProvidedTokenCredential(NetworkCredential userProvidedToken)
-        {
-            _userProvidedToken = userProvidedToken;
-        }
-
         public override AccessToken GetToken(TokenRequestContext requestContext, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
-            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(_userProvidedToken.Password);
+            var token = Encoding.UTF8.GetString(GraphSession.Instance.InMemoryTokenCache.ReadTokenData());
+            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(token);
             var exp = jwtPayload?.Exp == null ? DateTimeOffset.Now.AddMinutes(55) : DateTimeOffset.FromUnixTimeSeconds(jwtPayload.Exp);
-            return new AccessToken(_userProvidedToken.Password, exp);
+            return new AccessToken(token, exp);
         }
 
         public override ValueTask<AccessToken> GetTokenAsync(TokenRequestContext requestContext, CancellationToken cancellationToken)

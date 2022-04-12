@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <version>1.9.3</version>
+    <version>1.9.4</version>
     <id>Microsoft.Graph.Authentication</id>
     <description>Microsoft Graph PowerShell authentication module</description>
     <authors>Microsoft</authors>

@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -32,7 +33,7 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         {
             // Arrange
             string accessToken = "ACCESS_TOKEN_VIA_DELEGATE_PROVIDER";
-            GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, accessToken).SecurePassword;
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(accessToken));
             AuthContext userProvidedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,

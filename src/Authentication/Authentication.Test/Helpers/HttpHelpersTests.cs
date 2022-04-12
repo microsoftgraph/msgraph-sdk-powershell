@@ -5,6 +5,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Xunit;
@@ -140,9 +141,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
         }
 
         [Fact]
-        public async Task GetGraphHttpClientShouldReturnNewHttpClientSignOutThenSignInAsync()
+        public async Task GetGraphHttpClientShouldReturnNewHttpClientOnSignOutThenSignInAsync()
         {
             GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
             GraphSession.Instance.AuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,

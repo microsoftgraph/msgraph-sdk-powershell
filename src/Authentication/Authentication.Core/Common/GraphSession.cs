@@ -36,27 +36,10 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// </summary>
         public IDataStore DataStore { get; set; }
 
-        private byte[] _msalToken;
-
-        /// <summary>
-        /// Gets or Sets a session based token.
-        /// This returns an empty byte[] when token is not present.
-        /// </summary>
-        public byte[] MSALToken
-        {
-            get { return _msalToken ?? Array.Empty<byte>(); }
-            set { _msalToken = value; }
-        }
-
         /// <summary>
         /// Holds in-memory token cache from Azure.Identity for the lifetime of a precess.
         /// </summary>
         public InMemoryTokenCache InMemoryTokenCache { get; set; }
-
-        /// <summary>
-        /// Gets or Sets a user provided access token for calling Microsoft Graph service.
-        /// </summary>
-        public SecureString UserProvidedToken { get; set; }
 
         /// <summary>
         /// The name of the selected Microsoft Graph profile.

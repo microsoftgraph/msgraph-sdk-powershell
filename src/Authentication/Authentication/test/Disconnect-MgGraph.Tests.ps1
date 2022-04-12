@@ -15,18 +15,15 @@ BeforeAll {
         TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedTokenCredential
     }
 }
-
-Describe 'Disconnect-MgGraph Cmdlet Info' {
-    it 'ShouldHaveOneParameterSets' {
+Describe 'Disconnect-MgGraph' {
+    it 'Should have one ParameterSets' {
         $DisconnectMgGraphCommand = Get-Command Disconnect-MgGraph
         $DisconnectMgGraphCommand | Should -Not -BeNullOrEmpty
         $DisconnectMgGraphCommand.ParameterSets | Should -HaveCount 1
         $DisconnectMgGraphCommand.ParameterSets.Parameters | Should -HaveCount 11 # PS common parameters.
     }
-}
 
-Describe 'Disconnect-MgGraph' {
-    It 'Should Remove Current AuthContext' {
+    It 'Should remove current AuthContext' {
         {
             [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.AuthContext = $MockAuthContext
 			$AuthContextBeforeDisconnect = Get-MgContext

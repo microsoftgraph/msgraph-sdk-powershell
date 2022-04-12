@@ -48,8 +48,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
             await AuthenticationHelpers.LogoutAsync(authContext);
-            GraphSession.Instance.AuthContext = null;
-            GraphSession.Instance.GraphHttpClient = null;
         }
 
         protected override void StopProcessing()

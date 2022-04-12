@@ -40,7 +40,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
                 case AuthenticationType.AppOnly:
                     return await GetClientCertificateCredentialAsync(authContext).ConfigureAwait(false);
                 case AuthenticationType.UserProvidedAccessToken:
-                    return new UserProvidedTokenCredential(new NetworkCredential(string.Empty, GraphSession.Instance.UserProvidedToken));
+                    return new UserProvidedTokenCredential();
                 default:
                     throw new NotSupportedException($"{authContext.AuthType} is not supported.");
             }
@@ -296,13 +296,10 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
         /// <param name="authContext">The <see cref="IAuthContext"/> to sign-out from.</param>
         public static async Task LogoutAsync(IAuthContext authContext)
         {
-            if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
-                GraphSession.Instance.UserProvidedToken = null;
-            else
-            {
-                GraphSession.Instance.InMemoryTokenCache.ClearCache();
-                await DeleteAuthRecordAsync().ConfigureAwait(false);
-            }
+            GraphSession.Instance.InMemoryTokenCache.ClearCache();
+            GraphSession.Instance.AuthContext = null;
+            GraphSession.Instance.GraphHttpClient = null;
+            await DeleteAuthRecordAsync().ConfigureAwait(false);   
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
