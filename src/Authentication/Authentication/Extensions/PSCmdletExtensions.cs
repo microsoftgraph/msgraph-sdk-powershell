@@ -35,38 +35,6 @@ namespace Microsoft.Graph.PowerShell
         }
 
         /// <summary>
-        /// Executes a PowerShell script.
-        /// </summary>
-        /// <typeparam name="T">The output type to return.</typeparam>
-        /// <param name="cmdlet">The executing cmdlet.</param>
-        /// <param name="contents">The PowerShell script to execute.</param>
-        /// <returns>The result for the executed script.</returns>
-        internal static List<T> ExecuteScript<T>(this PSCmdlet cmdlet, string contents)
-        {
-            List<T> output = new List<T>();
-
-            using (System.Management.Automation.PowerShell powershell = System.Management.Automation.PowerShell.Create(RunspaceMode.CurrentRunspace))
-            {
-                powershell.AddScript(contents);
-                Collection<T> result = powershell.Invoke<T>();
-
-                if (cmdlet.SessionState != null)
-                {
-                    powershell.Streams.Error.ForEach(e => cmdlet.WriteError(e));
-                    powershell.Streams.Verbose.ForEach(r => cmdlet.WriteVerbose(r.Message));
-                    powershell.Streams.Warning.ForEach(r => cmdlet.WriteWarning(r.Message));
-                }
-
-                if (result != null && result.Count > 0)
-                {
-                    output.AddRange(result);
-                }
-            }
-
-            return output;
-        }
-
-        /// <summary>
         /// Determines is a parameter has been provided by the user.
         /// </summary>
         /// <param name="cmdlet">The executing cmdlet.</param>
@@ -117,7 +85,7 @@ namespace Microsoft.Graph.PowerShell
         /// </summary>
         /// <param name="cmdlet">The calling cmdlet.</param>
         /// <returns>A new instance of <see cref="GraphSettings"/>.</returns>
-        internal static GraphSettings GetContextSettings(this PSCmdlet cmdlet)
+        internal static GraphSettings GetContextSettings(this PSCmdlet _)
             => new GraphSettings(ProtectedFileProvider.CreateFileProvider(Constants.ContextSettingsPath, FileProtection.SharedRead));
 
         internal static IEnumerable<T> RunScript<T>(string script)

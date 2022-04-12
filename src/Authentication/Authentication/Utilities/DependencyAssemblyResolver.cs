@@ -76,7 +76,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Utilities
             AppDomain.CurrentDomain.AssemblyResolve -= HandleResolveEvent;
         }
 
-
         private static Assembly HandleResolveEvent(object sender, ResolveEventArgs args)
         {
             try

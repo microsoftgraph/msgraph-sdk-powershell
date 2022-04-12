@@ -325,7 +325,7 @@ namespace Microsoft.Graph.Authentication.Test.Mocks
                 if (chars[i] == '*')
                     sb.Append(".*");
                 else if (chars[i] == '?')
-                    sb.Append(".");
+                    sb.Append('.');
                 else if ("+()^$.{}|\\".IndexOf(chars[i]) != -1)
                     sb.Append('\\').Append(chars[i]); // prefix all meta-characters with backslash.
                 else

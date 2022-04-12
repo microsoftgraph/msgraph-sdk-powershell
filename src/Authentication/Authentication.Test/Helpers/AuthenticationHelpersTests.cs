@@ -139,7 +139,19 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             GraphSession.Reset();
         }
 
-#if NETCORE
+        [Fact]
+        public async Task ShouldThrowWhenAuthContextIsNullAsync()
+        {
+            // Act
+            var exception = await Assert.ThrowsAsync<PowerShell.AuthenticationException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(null, default));
+
+            // Assert
+            Assert.Equal(PowerShell.Authentication.Core.ErrorConstants.Message.MissingAuthContext, exception.Message);
+
+            // reset
+            GraphSession.Reset();
+        }
+
         [Fact]
         public async Task ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvidedAsync()
         {
@@ -147,10 +159,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = "cn=dummyCert",
                 ContextScope = ContextScope.Process,
-                TenantId = Guid.NewGuid().ToString(),
+                TenantId = mockAuthRecord.TenantId
             };
             CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
 
@@ -163,7 +175,6 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             // reset
             DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
             GraphSession.Reset();
-
         }
 
         [Fact]
@@ -174,10 +185,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 Certificate = certificate,
                 ContextScope = ContextScope.Process,
-                TenantId = Guid.NewGuid().ToString()
+                TenantId = mockAuthRecord.TenantId
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -199,11 +210,11 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = dummyCertName,
                 Certificate = inMemoryCertificate,
                 ContextScope = ContextScope.Process,
-                TenantId= Guid.NewGuid().ToString()
+                TenantId= mockAuthRecord.TenantId
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -227,11 +238,11 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 CertificateThumbprint = storedDummyCertificate.Thumbprint,
                 Certificate = inMemoryCertificate,
                 ContextScope = ContextScope.Process,
-                TenantId = Guid.NewGuid().ToString(),
+                TenantId = mockAuthRecord.TenantId
             };
             // Act
             TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
@@ -252,10 +263,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 CertificateSubjectName = dummyCertName,
                 ContextScope = ContextScope.Process,
-                TenantId = Guid.NewGuid().ToString(),
+                TenantId = mockAuthRecord.TenantId
             };
 
             // Act
@@ -272,10 +283,10 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 Certificate = null,
                 ContextScope = ContextScope.Process,
-                TenantId = Guid.NewGuid().ToString(),
+                TenantId = mockAuthRecord.TenantId
             };
 
             // Act
@@ -321,39 +332,43 @@ namespace Microsoft.Graph.Authentication.Test.Helpers
 
         private static void DeleteSelfSignedCertByName(string certificateName)
         {
-            using X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
-            xStore.Open(OpenFlags.ReadWrite);
+            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            {
+                xStore.Open(OpenFlags.ReadWrite);
 
-            X509Certificate2Collection unexpiredCerts = xStore.Certificates
-               .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-               .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
+                X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                   .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
+                   .Find(X509FindType.FindBySubjectDistinguishedName, certificateName, false);
 
-            // Only return current cert.
-            var xCertificate = unexpiredCerts
-                .OfType<X509Certificate2>()
-                .OrderByDescending(c => c.NotBefore)
-                .FirstOrDefault();
+                // Only return current cert.
+                var xCertificate = unexpiredCerts
+                    .OfType<X509Certificate2>()
+                    .OrderByDescending(c => c.NotBefore)
+                    .FirstOrDefault();
 
-            xStore.Remove(xCertificate);
+                xStore.Remove(xCertificate);
+            }
         }
         private static void DeleteSelfSignedCertByThumbprint(string certificateThumbPrint)
         {
-            using X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
-            xStore.Open(OpenFlags.ReadWrite);
+            using (X509Store xStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+            {
+                xStore.Open(OpenFlags.ReadWrite);
 
-            X509Certificate2Collection unexpiredCerts = xStore.Certificates
-                .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
-                .Find(X509FindType.FindByThumbprint, certificateThumbPrint, false);
+                X509Certificate2Collection unexpiredCerts = xStore.Certificates
+                    .Find(X509FindType.FindByTimeValid, DateTime.Now, false)
+                    .Find(X509FindType.FindByThumbprint, certificateThumbPrint, false);
 
-            // Only return current cert.
-            var xCertificate = unexpiredCerts
-                .OfType<X509Certificate2>()
-                .OrderByDescending(c => c.NotBefore)
-                .FirstOrDefault();
+                // Only return current cert.
+                var xCertificate = unexpiredCerts
+                    .OfType<X509Certificate2>()
+                    .OrderByDescending(c => c.NotBefore)
+                    .FirstOrDefault();
 
-            xStore.Remove(xCertificate);
+                xStore.Remove(xCertificate);
+            }
         }
-#endif
+        
         public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }

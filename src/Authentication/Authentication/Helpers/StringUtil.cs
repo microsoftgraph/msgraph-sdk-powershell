@@ -49,7 +49,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 if (0 < bodyBuilder.Length)
                 {
-                    bodyBuilder.Append("&");
+                    bodyBuilder.Append('&');
                 }
 
                 var value = content[key];

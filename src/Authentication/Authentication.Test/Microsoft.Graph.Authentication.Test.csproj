@@ -5,10 +5,6 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <DefineConstants>$(DefineConstants);NETCORE</DefineConstants>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <!-- As described in this post https://devblogs.microsoft.com/powershell/depending-on-the-right-powershell-nuget-package-in-your-net-project, reference the SDK for dotnetcore-->

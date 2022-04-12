@@ -165,7 +165,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
         /// <returns>True is successful, otherwise false.</returns>
         internal bool TryDeserializeObject<T>(string serialization, out T result, JsonConverter converter = null)
         {
-            result = default(T);
+            result = default;
             bool success = false;
             try
             {
@@ -220,8 +220,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
                     nameof(name));
             }
 
-            IGraphEnvironment environment;
-            if (TryRemoveEnvironment(name, out environment))
+            if (TryRemoveEnvironment(name, out IGraphEnvironment environment))
             {
                 return environment;
             }
