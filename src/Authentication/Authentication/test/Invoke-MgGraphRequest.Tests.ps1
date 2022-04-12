@@ -1,7 +1,7 @@
 ﻿
 Describe 'Invoke-MgGraphRequest Command' {
      BeforeAll {
-         $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
+          $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
           . $utils
           $ModuleName = "Microsoft.Graph.Authentication"
           $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
@@ -106,11 +106,11 @@ Describe 'Invoke-MgGraphRequest Command' {
      }
 
      Context 'Empty Body Requests' {
-         It 'Should Not Throw when Body is Empty for POST Requests' {
-                { 
+          It 'Should Not Throw when Body is Empty for POST Requests' {
+               {
                     Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST -Verbose
-                } | Should  -Not -Throw
-         }
+               } | Should  -Not -Throw
+          }
      }
 
      AfterAll {

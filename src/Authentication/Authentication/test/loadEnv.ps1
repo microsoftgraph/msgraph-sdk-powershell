@@ -23,10 +23,12 @@ if (Test-Path -Path (Join-Path $PSScriptRoot $envFile)) {
 }
 $env = @{}
 if (Test-Path -Path $envFilePath) {
-    # Load dummy auth configuration.
+    # Load dummy auth configuration. This is used to run Pester tests.
     $env = Get-Content (Join-Path $PSScriptRoot $envFile) | ConvertFrom-Json -AsHashTable
     [Microsoft.Graph.PowerShell.Authentication.GraphSession]::Instance.AuthContext = New-Object Microsoft.Graph.PowerShell.Authentication.AuthContext -Property @{
         ClientId = $env.ClientId
         TenantId = $env.TenantId
+        AuthType = [Microsoft.Graph.PowerShell.Authentication.AuthenticationType]::UserProvidedAccessToken
+        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedTokenCredential
     }
 }

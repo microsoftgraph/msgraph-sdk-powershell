@@ -994,39 +994,37 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 try
                 {
                     PrepareSession();
-                    using (var client = HttpHelpers.GetGraphHttpClient(this.MyInvocation))
+                    var client = HttpHelpers.GetGraphHttpClient(this.MyInvocation);
+                    ValidateRequestUri();
+                    using (var httpRequestMessage = GetRequest(client, Uri))
                     {
-                        ValidateRequestUri();
-                        using (var httpRequestMessage = GetRequest(client, Uri))
+                        var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage);
+                        FillRequestStream(httpRequestMessage);
+                        try
                         {
-                            var httpRequestMessageFormatter = new HttpMessageFormatter(httpRequestMessage);
-                            FillRequestStream(httpRequestMessage);
-                            try
+                            await ReportRequestStatusAsync(httpRequestMessageFormatter);
+                            var httpResponseMessage = await GetResponseAsync(client, httpRequestMessage);
+                            var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage);
+                            await ReportResponseStatusASync(httpResponseMessageFormatter);
+                            var isSuccess = httpResponseMessage.IsSuccessStatusCode;
+                            if (ShouldCheckHttpStatus && !isSuccess)
                             {
-                                await ReportRequestStatusAsync(httpRequestMessageFormatter);
-                                var httpResponseMessage = await GetResponseAsync(client, httpRequestMessage);
-                                var httpResponseMessageFormatter = new HttpMessageFormatter(httpResponseMessage);
-                                await ReportResponseStatusASync(httpResponseMessageFormatter);
-                                var isSuccess = httpResponseMessage.IsSuccessStatusCode;
-                                if (ShouldCheckHttpStatus && !isSuccess)
-                                {
-                                    var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
-                                    ThrowTerminatingError(httpErrorRecord);
-                                }
-                                await ProcessResponseAsync(httpResponseMessage);
+                                var httpErrorRecord = await GenerateHttpErrorRecordAsync(httpResponseMessageFormatter, httpRequestMessage);
+                                ThrowTerminatingError(httpErrorRecord);
                             }
-                            catch (HttpRequestException ex)
+                            await ProcessResponseAsync(httpResponseMessage);
+                        }
+                        catch (HttpRequestException ex)
+                        {
+                            var er = new ErrorRecord(ex, ErrorConstants.Codes.InvokeGraphHttpResponseException,
+                                ErrorCategory.InvalidOperation,
+                                httpRequestMessage);
+                            if (ex.InnerException != null)
                             {
-                                var er = new ErrorRecord(ex, ErrorConstants.Codes.InvokeGraphHttpResponseException,
-                                    ErrorCategory.InvalidOperation,
-                                    httpRequestMessage);
-                                if (ex.InnerException != null)
-                                {
-                                    er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
-                                }
+                                er.ErrorDetails = new ErrorDetails(ex.InnerException.Message);
+                            }
 
-                                ThrowTerminatingError(er);
-                            }
+                            ThrowTerminatingError(er);
                         }
                     }
                 }
