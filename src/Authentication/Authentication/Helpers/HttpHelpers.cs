@@ -42,6 +42,16 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 httpClient.DefaultRequestHeaders.Add(headerName, previousSDKHeaders.Prepend(headerValue));
             }
         }
+        
+        private static void ReplaceSDKHeader(HttpClient httpClient, string headerName, string headerValue)
+        {
+            if (!httpClient.DefaultRequestHeaders.Contains(headerName)) {
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
+            } else {
+                httpClient.DefaultRequestHeaders.Remove(headerName);
+                httpClient.DefaultRequestHeaders.Add(headerName, headerValue);
+            }
+        }
 
         public static HttpClient GetGraphHttpClient(InvocationInfo invocationInfo, IAuthContext authContext = null)
         {
@@ -49,7 +59,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             if (authContext is null) { throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext); }
             var httpClient = GetGraphHttpClient(authContext);
             var requestUserAgent = new RequestUserAgent(authContext.PSHostVersion, invocationInfo);
-            PrependSDKHeader(httpClient, HttpKnownHeaderNames.UserAgent, requestUserAgent.UserAgent);
+            ReplaceSDKHeader(httpClient, HttpKnownHeaderNames.UserAgent, requestUserAgent.UserAgent);
             return httpClient;
         }
 
