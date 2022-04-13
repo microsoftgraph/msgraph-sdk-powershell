@@ -57,7 +57,9 @@ paths:
               operationId: security.ListSecureScoreControlProfiles
             secureScores:
               operationId: security.ListSecureScores
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -75,7 +77,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /security/alerts:
@@ -247,22 +251,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of alert
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.alert'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.alertCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -272,7 +264,6 @@ paths:
       tags:
         - security.alert
       summary: Create new navigation property to alerts for security
-      description: Read-only. Nullable.
       operationId: security_CreateAlerts
       requestBody:
         description: New navigation property
@@ -288,7 +279,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.alert'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/security/alerts/{alert-id}':
@@ -299,13 +292,6 @@ paths:
       description: Read-only. Nullable.
       operationId: security_GetAlerts
       parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
         - name: $select
           in: query
           description: Select properties to be returned
@@ -376,23 +362,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.alert'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - security.alert
       summary: Update the navigation property alerts in security
-      description: Read-only. Nullable.
       operationId: security_UpdateAlerts
-      parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
       requestBody:
         description: New navigation property values
         content:
@@ -403,23 +382,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - security.alert
       summary: Delete navigation property alerts for security
-      description: Read-only. Nullable.
       operationId: security_DeleteAlerts
       parameters:
-        - name: alert-id
-          in: path
-          description: 'key: id of alert'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: alert
         - name: If-Match
           in: header
           description: ETag
@@ -428,7 +401,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /security/secureScoreControlProfiles:
@@ -539,22 +514,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of secureScoreControlProfile
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.secureScoreControlProfileCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -579,7 +542,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/security/secureScoreControlProfiles/{secureScoreControlProfile-id}':
@@ -589,13 +554,6 @@ paths:
       summary: Get secureScoreControlProfiles from security
       operationId: security_GetSecureScoreControlProfiles
       parameters:
-        - name: secureScoreControlProfile-id
-          in: path
-          description: 'key: id of secureScoreControlProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScoreControlProfile
         - name: $select
           in: query
           description: Select properties to be returned
@@ -646,7 +604,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -654,14 +614,6 @@ paths:
         - security.secureScoreControlProfile
       summary: Update the navigation property secureScoreControlProfiles in security
       operationId: security_UpdateSecureScoreControlProfiles
-      parameters:
-        - name: secureScoreControlProfile-id
-          in: path
-          description: 'key: id of secureScoreControlProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScoreControlProfile
       requestBody:
         description: New navigation property values
         content:
@@ -672,7 +624,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -681,13 +635,6 @@ paths:
       summary: Delete navigation property secureScoreControlProfiles for security
       operationId: security_DeleteSecureScoreControlProfiles
       parameters:
-        - name: secureScoreControlProfile-id
-          in: path
-          description: 'key: id of secureScoreControlProfile'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScoreControlProfile
         - name: If-Match
           in: header
           description: ETag
@@ -696,7 +643,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /security/secureScores:
@@ -780,22 +729,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of secureScore
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.secureScore'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.secureScoreCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -820,7 +757,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/security/secureScores/{secureScore-id}':
@@ -830,13 +769,6 @@ paths:
       summary: Get secureScores from security
       operationId: security_GetSecureScores
       parameters:
-        - name: secureScore-id
-          in: path
-          description: 'key: id of secureScore'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScore
         - name: $select
           in: query
           description: Select properties to be returned
@@ -878,7 +810,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.secureScore'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -886,14 +820,6 @@ paths:
         - security.secureScore
       summary: Update the navigation property secureScores in security
       operationId: security_UpdateSecureScores
-      parameters:
-        - name: secureScore-id
-          in: path
-          description: 'key: id of secureScore'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScore
       requestBody:
         description: New navigation property values
         content:
@@ -904,7 +830,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -913,13 +841,6 @@ paths:
       summary: Delete navigation property secureScores for security
       operationId: security_DeleteSecureScores
       parameters:
-        - name: secureScore-id
-          in: path
-          description: 'key: id of secureScore'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: secureScore
         - name: If-Match
           in: header
           description: ETag
@@ -928,7 +849,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -1953,13 +1876,49 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.alertCollectionResponse:
+      title: Collection of alert
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.alert'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.secureScoreControlProfileCollectionResponse:
+      title: Collection of secureScoreControlProfile
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfile'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.secureScoreCollectionResponse:
+      title: Collection of secureScore
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.secureScore'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.fileHash:
@@ -2120,7 +2079,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2132,15 +2091,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.fileHashType:
@@ -2155,7 +2112,7 @@ components:
         - ctph
         - unknownFutureValue
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2167,15 +2124,39 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.alertCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.alertCollectionResponse'
+    microsoft.graph.secureScoreControlProfileCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.secureScoreControlProfileCollectionResponse'
+    microsoft.graph.secureScoreCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.secureScoreCollectionResponse'
   parameters:
     top:
       name: $top

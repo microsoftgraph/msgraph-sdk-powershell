@@ -11,15 +11,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceCompliancePolicies_assign
-      parameters:
-        - name: deviceCompliancePolicy-id
-          in: path
-          description: 'key: id of deviceCompliancePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceCompliancePolicy
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_assign
       requestBody:
         description: Action parameters
         content:
@@ -40,9 +32,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                title: Collection of deviceCompliancePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -51,15 +49,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action scheduleActionsForRules
-      operationId: deviceManagement.deviceCompliancePolicies_scheduleActionsForRules
-      parameters:
-        - name: deviceCompliancePolicy-id
-          in: path
-          description: 'key: id of deviceCompliancePolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceCompliancePolicy
+      operationId: deviceManagement.deviceCompliancePolicies.deviceCompliancePolicy_scheduleActionsForRules
       requestBody:
         description: Action parameters
         content:
@@ -85,15 +75,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceConfigurations_assign
-      parameters:
-        - name: deviceConfiguration-id
-          in: path
-          description: 'key: id of deviceConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceConfiguration
+      operationId: deviceManagement.deviceConfigurations.deviceConfiguration_assign
       requestBody:
         description: Action parameters
         content:
@@ -114,9 +96,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                title: Collection of deviceConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -125,15 +113,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action assign
-      operationId: deviceManagement.deviceEnrollmentConfigurations_assign
-      parameters:
-        - name: deviceEnrollmentConfiguration-id
-          in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_assign
       requestBody:
         description: Action parameters
         content:
@@ -159,15 +139,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action setPriority
-      operationId: deviceManagement.deviceEnrollmentConfigurations_setPriority
-      parameters:
-        - name: deviceEnrollmentConfiguration-id
-          in: path
-          description: 'key: id of deviceEnrollmentConfiguration'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceEnrollmentConfiguration
+      operationId: deviceManagement.deviceEnrollmentConfigurations.deviceEnrollmentConfiguration_setPriority
       requestBody:
         description: Action parameters
         content:
@@ -194,15 +166,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action sync
-      operationId: deviceManagement.exchangeConnectors_sync
-      parameters:
-        - name: deviceManagementExchangeConnector-id
-          in: path
-          description: 'key: id of deviceManagementExchangeConnector'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: deviceManagementExchangeConnector
+      operationId: deviceManagement.exchangeConnectors.deviceManagementExchangeConnector_sync
       requestBody:
         description: Action parameters
         content:
@@ -247,9 +211,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                title: Collection of importedWindowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -259,15 +229,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action bypassActivationLock
       description: Bypass activation lock
-      operationId: deviceManagement.managedDevices_bypassActivationLock
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_bypassActivationLock
       responses:
         '204':
           description: Success
@@ -280,15 +242,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action cleanWindowsDevice
       description: Clean Windows device
-      operationId: deviceManagement.managedDevices_cleanWindowsDevice
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_cleanWindowsDevice
       requestBody:
         description: Action parameters
         content:
@@ -314,15 +268,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action deleteUserFromSharedAppleDevice
       description: Delete user from shared Apple device
-      operationId: deviceManagement.managedDevices_deleteUserFromSharedAppleDevice
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_deleteUserFromSharedAppleDevice
       requestBody:
         description: Action parameters
         content:
@@ -348,15 +294,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disableLostMode
       description: Disable lost mode
-      operationId: deviceManagement.managedDevices_disableLostMode
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_disableLostMode
       responses:
         '204':
           description: Success
@@ -369,15 +307,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action locateDevice
       description: Locate a device
-      operationId: deviceManagement.managedDevices_locateDevice
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_locateDevice
       responses:
         '204':
           description: Success
@@ -390,15 +320,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action logoutSharedAppleDeviceActiveUser
       description: Logout shared Apple device active user
-      operationId: deviceManagement.managedDevices_logoutSharedAppleDeviceActiveUser
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_logoutSharedAppleDeviceActiveUser
       responses:
         '204':
           description: Success
@@ -411,15 +333,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action rebootNow
       description: Reboot device
-      operationId: deviceManagement.managedDevices_rebootNow
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_rebootNow
       responses:
         '204':
           description: Success
@@ -432,15 +346,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action recoverPasscode
       description: Recover passcode
-      operationId: deviceManagement.managedDevices_recoverPasscode
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_recoverPasscode
       responses:
         '204':
           description: Success
@@ -453,15 +359,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action remoteLock
       description: Remote lock
-      operationId: deviceManagement.managedDevices_remoteLock
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_remoteLock
       responses:
         '204':
           description: Success
@@ -474,15 +372,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action requestRemoteAssistance
       description: Request remote assistance
-      operationId: deviceManagement.managedDevices_requestRemoteAssistance
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_requestRemoteAssistance
       responses:
         '204':
           description: Success
@@ -495,15 +385,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action resetPasscode
       description: Reset passcode
-      operationId: deviceManagement.managedDevices_resetPasscode
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_resetPasscode
       responses:
         '204':
           description: Success
@@ -516,15 +398,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action retire
       description: Retire a device
-      operationId: deviceManagement.managedDevices_retire
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_retire
       responses:
         '204':
           description: Success
@@ -537,15 +411,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action shutDown
       description: Shut down device
-      operationId: deviceManagement.managedDevices_shutDown
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_shutDown
       responses:
         '204':
           description: Success
@@ -557,15 +423,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action syncDevice
-      operationId: deviceManagement.managedDevices_syncDevice
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_syncDevice
       responses:
         '204':
           description: Success
@@ -577,15 +435,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action updateWindowsDeviceAccount
-      operationId: deviceManagement.managedDevices_updateWindowsDeviceAccount
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_updateWindowsDeviceAccount
       requestBody:
         description: Action parameters
         content:
@@ -609,15 +459,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderScan
-      operationId: deviceManagement.managedDevices_windowsDefenderScan
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderScan
       requestBody:
         description: Action parameters
         content:
@@ -642,15 +484,7 @@ paths:
       tags:
         - deviceManagement.Actions
       summary: Invoke action windowsDefenderUpdateSignatures
-      operationId: deviceManagement.managedDevices_windowsDefenderUpdateSignatures
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_windowsDefenderUpdateSignatures
       responses:
         '204':
           description: Success
@@ -663,15 +497,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action wipe
       description: Wipe a device
-      operationId: deviceManagement.managedDevices_wipe
-      parameters:
-        - name: managedDevice-id
-          in: path
-          description: 'key: id of managedDevice'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: managedDevice
+      operationId: deviceManagement.managedDevices.managedDevice_wipe
       requestBody:
         description: Action parameters
         content:
@@ -709,15 +535,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action sendTestMessage
       description: Sends test message using the specified notificationMessageTemplate in the default locale
-      operationId: deviceManagement.notificationMessageTemplates_sendTestMessage
-      parameters:
-        - name: notificationMessageTemplate-id
-          in: path
-          description: 'key: id of notificationMessageTemplate'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: notificationMessageTemplate
+      operationId: deviceManagement.notificationMessageTemplates.notificationMessageTemplate_sendTestMessage
       responses:
         '204':
           description: Success
@@ -730,15 +548,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action beginOnboarding
       description: A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-      operationId: deviceManagement.remoteAssistancePartners_beginOnboarding
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: 'key: id of remoteAssistancePartner'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_beginOnboarding
       responses:
         '204':
           description: Success
@@ -751,15 +561,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action disconnect
       description: A request to remove the active TeamViewer connector
-      operationId: deviceManagement.remoteAssistancePartners_disconnect
-      parameters:
-        - name: remoteAssistancePartner-id
-          in: path
-          description: 'key: id of remoteAssistancePartner'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: remoteAssistancePartner
+      operationId: deviceManagement.remoteAssistancePartners.remoteAssistancePartner_disconnect
       responses:
         '204':
           description: Success
@@ -821,9 +623,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -888,9 +695,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -955,9 +767,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1022,9 +839,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1089,9 +911,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1156,9 +983,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1223,9 +1055,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1290,9 +1127,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1357,9 +1199,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1424,9 +1271,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1488,9 +1340,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1555,9 +1412,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1622,9 +1484,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1689,9 +1556,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1756,9 +1628,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1823,9 +1700,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1835,15 +1717,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action assignUserToDevice
       description: Assigns user to Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_assignUserToDevice
-      parameters:
-        - name: windowsAutopilotDeviceIdentity-id
-          in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_assignUserToDevice
       requestBody:
         description: Action parameters
         content:
@@ -1872,15 +1746,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action unassignUserFromDevice
       description: Unassigns the user from an Autopilot device.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_unassignUserFromDevice
-      parameters:
-        - name: windowsAutopilotDeviceIdentity-id
-          in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_unassignUserFromDevice
       responses:
         '204':
           description: Success
@@ -1893,15 +1759,7 @@ paths:
         - deviceManagement.Actions
       summary: Invoke action updateDeviceProperties
       description: Updates properties on Autopilot devices.
-      operationId: deviceManagement.windowsAutopilotDeviceIdentities_updateDeviceProperties
-      parameters:
-        - name: windowsAutopilotDeviceIdentity-id
-          in: path
-          description: 'key: id of windowsAutopilotDeviceIdentity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: windowsAutopilotDeviceIdentity
+      operationId: deviceManagement.windowsAutopilotDeviceIdentities.windowsAutopilotDeviceIdentity_updateDeviceProperties
       requestBody:
         description: Action parameters
         content:
@@ -1990,6 +1848,16 @@ components:
         - deltaSync
       type: string
       description: The type of Exchange Connector sync requested.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorSyncType
+        modelAsString: false
+        values:
+          - value: fullSync
+            description: Discover all the device in Exchange.
+            name: fullSync
+          - value: deltaSync
+            description: Discover only the device in Exchange which have updated during the delta sync window.
+            name: deltaSync
     microsoft.graph.importedWindowsAutopilotDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2128,13 +1996,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceActionType:
@@ -2149,6 +2017,31 @@ components:
         - pushNotification
       type: string
       description: Scheduled Action Type Enum
+      x-ms-enum:
+        name: deviceComplianceActionType
+        modelAsString: false
+        values:
+          - value: noAction
+            description: No Action
+            name: noAction
+          - value: notification
+            description: Send Notification
+            name: notification
+          - value: block
+            description: Block the device in AAD
+            name: block
+          - value: retire
+            description: Retire the device
+            name: retire
+          - value: wipe
+            description: Wipe the device
+            name: wipe
+          - value: removeResourceAccessProfiles
+            description: Remove Resource Access Profiles from the device
+            name: removeResourceAccessProfiles
+          - value: pushNotification
+            description: Send push notification to device
+            name: pushNotification
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
       title: importedWindowsAutopilotDeviceIdentityImportStatus
       enum:
@@ -2158,7 +2051,26 @@ components:
         - complete
         - error
       type: string
-    odata.error.main:
+      x-ms-enum:
+        name: importedWindowsAutopilotDeviceIdentityImportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown status.
+            name: unknown
+          - value: pending
+            description: Pending status.
+            name: pending
+          - value: partial
+            description: Partial status.
+            name: partial
+          - value: complete
+            description: Complete status.
+            name: complete
+          - value: error
+            description: Error status.
+            name: error
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2170,18 +2082,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2193,15 +2103,21 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2

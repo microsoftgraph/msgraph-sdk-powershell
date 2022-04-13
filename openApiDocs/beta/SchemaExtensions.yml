@@ -72,22 +72,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of schemaExtension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.schemaExtension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.schemaExtensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -112,7 +100,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.schemaExtension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/schemaExtensions/{schemaExtension-id}':
@@ -122,13 +112,6 @@ paths:
       summary: Get entity from schemaExtensions by key
       operationId: schemaExtensions.schemaExtension_GetSchemaExtension
       parameters:
-        - name: schemaExtension-id
-          in: path
-          description: 'key: id of schemaExtension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: schemaExtension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -165,7 +148,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.schemaExtension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -173,14 +158,6 @@ paths:
         - schemaExtensions.schemaExtension
       summary: Update entity in schemaExtensions
       operationId: schemaExtensions.schemaExtension_UpdateSchemaExtension
-      parameters:
-        - name: schemaExtension-id
-          in: path
-          description: 'key: id of schemaExtension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: schemaExtension
       requestBody:
         description: New property values
         content:
@@ -191,7 +168,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -200,13 +179,6 @@ paths:
       summary: Delete entity from schemaExtensions
       operationId: schemaExtensions.schemaExtension_DeleteSchemaExtension
       parameters:
-        - name: schemaExtension-id
-          in: path
-          description: 'key: id of schemaExtension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: schemaExtension
         - name: If-Match
           in: header
           description: ETag
@@ -215,7 +187,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -271,16 +245,28 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.schemaExtensionCollectionResponse:
+      title: Collection of schemaExtension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.schemaExtension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -292,18 +278,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -315,15 +299,27 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.schemaExtensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.schemaExtensionCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   parameters:
     top:
       name: $top

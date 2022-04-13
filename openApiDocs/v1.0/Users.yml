@@ -133,6 +133,8 @@ paths:
                 - passwordProfile desc
                 - postalCode
                 - postalCode desc
+                - preferredDataLocation
+                - preferredDataLocation desc
                 - preferredLanguage
                 - preferredLanguage desc
                 - provisionedPlans
@@ -238,6 +240,7 @@ paths:
                 - passwordPolicies
                 - passwordProfile
                 - postalCode
+                - preferredDataLocation
                 - preferredLanguage
                 - provisionedPlans
                 - proxyAddresses
@@ -368,22 +371,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of user
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.user'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.userCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -408,7 +399,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.user'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}':
@@ -418,13 +411,6 @@ paths:
       summary: Get entity from users by key
       operationId: users.user_GetUser
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
@@ -492,6 +478,7 @@ paths:
                 - passwordPolicies
                 - passwordProfile
                 - postalCode
+                - preferredDataLocation
                 - preferredLanguage
                 - provisionedPlans
                 - proxyAddresses
@@ -812,7 +799,9 @@ paths:
               operationId: users.GetTodo
               parameters:
                 user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -820,14 +809,6 @@ paths:
         - users.user
       summary: Update entity in users
       operationId: users.user_UpdateUser
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New property values
         content:
@@ -838,7 +819,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -847,13 +830,6 @@ paths:
       summary: Delete entity from users
       operationId: users.user_DeleteUser
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -862,7 +838,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/createdObjects':
@@ -873,13 +851,6 @@ paths:
       description: Directory objects that were created by the user. Read-only. Nullable.
       operationId: users_ListCreatedObjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -927,50 +898,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/createdObjects/$ref':
+  '/users/{user-id}/createdObjects/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of createdObjects from users
+      summary: Get createdObjects from users
       description: Directory objects that were created by the user. Read-only. Nullable.
-      operationId: users_ListGraphRefCreatedObjects
+      operationId: users_GetCreatedObjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -979,66 +926,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to createdObjects for users
-      description: Directory objects that were created by the user. Read-only. Nullable.
-      operationId: users_CreateGraphRefCreatedObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/directReports':
@@ -1049,13 +960,6 @@ paths:
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
       operationId: users_ListDirectReports
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1103,50 +1007,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/directReports/$ref':
+  '/users/{user-id}/directReports/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of directReports from users
+      summary: Get directReports from users
       description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefDirectReports
+      operationId: users_GetDirectReports
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -1155,66 +1035,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to directReports for users
-      description: The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefDirectReports
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/extensions':
@@ -1225,13 +1069,6 @@ paths:
       description: The collection of open extensions defined for the user. Read-only. Nullable.
       operationId: users_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1276,22 +1113,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1301,16 +1126,7 @@ paths:
       tags:
         - users.extension
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the user. Read-only. Nullable.
       operationId: users_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1325,7 +1141,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/extensions/{extension-id}':
@@ -1336,20 +1154,6 @@ paths:
       description: The collection of open extensions defined for the user. Read-only. Nullable.
       operationId: users_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1381,30 +1185,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.extension
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the user. Read-only. Nullable.
       operationId: users_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -1415,30 +1205,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.extension
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the user. Read-only. Nullable.
       operationId: users_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -1447,7 +1224,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/licenseDetails':
@@ -1458,13 +1237,6 @@ paths:
       description: A collection of this user's license details. Read-only.
       operationId: users_ListLicenseDetails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1518,22 +1290,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of licenseDetails
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.licenseDetailsCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1543,16 +1303,7 @@ paths:
       tags:
         - users.licenseDetails
       summary: Create new navigation property to licenseDetails for users
-      description: A collection of this user's license details. Read-only.
       operationId: users_CreateLicenseDetails
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -1567,7 +1318,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/licenseDetails/{licenseDetails-id}':
@@ -1578,20 +1331,6 @@ paths:
       description: A collection of this user's license details. Read-only.
       operationId: users_GetLicenseDetails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: licenseDetails-id
-          in: path
-          description: 'key: id of licenseDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: licenseDetails
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1626,30 +1365,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.licenseDetails'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.licenseDetails
       summary: Update the navigation property licenseDetails in users
-      description: A collection of this user's license details. Read-only.
       operationId: users_UpdateLicenseDetails
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: licenseDetails-id
-          in: path
-          description: 'key: id of licenseDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: licenseDetails
       requestBody:
         description: New navigation property values
         content:
@@ -1660,30 +1385,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.licenseDetails
       summary: Delete navigation property licenseDetails for users
-      description: A collection of this user's license details. Read-only.
       operationId: users_DeleteLicenseDetails
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: licenseDetails-id
-          in: path
-          description: 'key: id of licenseDetails'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: licenseDetails
         - name: If-Match
           in: header
           description: ETag
@@ -1692,7 +1404,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/manager':
@@ -1703,13 +1417,6 @@ paths:
       description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
       operationId: users_GetManager
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1742,86 +1449,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-  '/users/{user-id}/manager/$ref':
-    get:
-      tags:
-        - users.directoryObject
-      summary: Get ref of manager from users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_GetGraphRefManager
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.directoryObject
-      summary: Update the ref of navigation property manager in users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_SetGraphRefManager
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.directoryObject
-      summary: Delete ref of navigation property manager for users
-      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
-      operationId: users_DeleteGraphRefManager
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/memberOf':
@@ -1832,13 +1462,6 @@ paths:
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
       operationId: users_ListMemberOf
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1886,50 +1509,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/memberOf/$ref':
+  '/users/{user-id}/memberOf/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of memberOf from users
+      summary: Get memberOf from users
       description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefMemberOf
+      operationId: users_GetMemberOf
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -1938,66 +1537,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to memberOf for users
-      description: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefMemberOf
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/oauth2PermissionGrants':
@@ -2007,13 +1570,6 @@ paths:
       summary: Get oauth2PermissionGrants from users
       operationId: users_ListOauth2PermissionGrants
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2073,49 +1629,25 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of oAuth2PermissionGrant
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.oAuth2PermissionGrantCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/oauth2PermissionGrants/$ref':
+  '/users/{user-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}':
     get:
       tags:
         - users.oAuth2PermissionGrant
-      summary: Get ref of oauth2PermissionGrants from users
-      operationId: users_ListGraphRefOauth2PermissionGrants
+      summary: Get oauth2PermissionGrants from users
+      operationId: users_GetOauth2PermissionGrants
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -2124,73 +1656,34 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - clientId
-                - clientId desc
                 - consentType
-                - consentType desc
                 - principalId
-                - principalId desc
                 - resourceId
-                - resourceId desc
                 - scope
-                - scope desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of oAuth2PermissionGrant
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.oAuth2PermissionGrant
-      summary: Create new navigation property ref to oauth2PermissionGrants for users
-      operationId: users_CreateGraphRefOauth2PermissionGrants
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook':
@@ -2201,13 +1694,6 @@ paths:
       description: Read-only.
       operationId: users_GetOutlook
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2233,23 +1719,16 @@ paths:
               operationId: users.Outlook.ListMasterCategories
               parameters:
                 user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
       summary: Update the navigation property outlook in users
-      description: Read-only.
       operationId: users_UpdateOutlook
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -2260,23 +1739,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.outlookUser
       summary: Delete navigation property outlook for users
-      description: Read-only.
       operationId: users_DeleteOutlook
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -2285,7 +1758,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/masterCategories':
@@ -2296,13 +1771,6 @@ paths:
       description: A list of categories defined for the user.
       operationId: users.outlook_ListMasterCategories
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -2340,22 +1808,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of outlookCategory
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.outlookCategory'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.outlookCategoryCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2365,16 +1821,7 @@ paths:
       tags:
         - users.outlookUser
       summary: Create new navigation property to masterCategories for users
-      description: A list of categories defined for the user.
       operationId: users.outlook_CreateMasterCategories
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -2389,7 +1836,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/outlook/masterCategories/{outlookCategory-id}':
@@ -2400,20 +1849,6 @@ paths:
       description: A list of categories defined for the user.
       operationId: users.outlook_GetMasterCategories
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookCategory-id
-          in: path
-          description: 'key: id of outlookCategory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookCategory
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2435,30 +1870,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.outlookCategory'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.outlookUser
       summary: Update the navigation property masterCategories in users
-      description: A list of categories defined for the user.
       operationId: users.outlook_UpdateMasterCategories
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookCategory-id
-          in: path
-          description: 'key: id of outlookCategory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookCategory
       requestBody:
         description: New navigation property values
         content:
@@ -2469,30 +1890,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.outlookUser
       summary: Delete navigation property masterCategories for users
-      description: A list of categories defined for the user.
       operationId: users.outlook_DeleteMasterCategories
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: outlookCategory-id
-          in: path
-          description: 'key: id of outlookCategory'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: outlookCategory
         - name: If-Match
           in: header
           description: ETag
@@ -2501,7 +1909,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/ownedDevices':
@@ -2512,13 +1922,6 @@ paths:
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedDevices
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2566,50 +1969,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/ownedDevices/$ref':
+  '/users/{user-id}/ownedDevices/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of ownedDevices from users
+      summary: Get ownedDevices from users
       description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefOwnedDevices
+      operationId: users_GetOwnedDevices
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -2618,66 +1997,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to ownedDevices for users
-      description: Devices that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefOwnedDevices
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/ownedObjects':
@@ -2688,13 +2031,6 @@ paths:
       description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListOwnedObjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2742,50 +2078,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/ownedObjects/$ref':
+  '/users/{user-id}/ownedObjects/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of ownedObjects from users
+      summary: Get ownedObjects from users
       description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefOwnedObjects
+      operationId: users_GetOwnedObjects
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -2794,66 +2106,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to ownedObjects for users
-      description: Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefOwnedObjects
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/photo':
@@ -2864,13 +2140,6 @@ paths:
       description: The user's profile photo. Read-only.
       operationId: users_GetPhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2892,23 +2161,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photo in users
-      description: The user's profile photo. Read-only.
       operationId: users_UpdatePhoto
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -2919,23 +2181,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photo for users
-      description: The user's profile photo. Read-only.
       operationId: users_DeletePhoto
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -2944,7 +2200,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/photo/$value':
@@ -2952,16 +2210,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Get media content for the navigation property photo from users
-      description: The user's profile photo. Read-only.
       operationId: users_GetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       responses:
         '200':
           description: Retrieved media content
@@ -2970,23 +2219,16 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
       tags:
         - users.profilePhoto
       summary: Update media content for the navigation property photo in users
-      description: The user's profile photo. Read-only.
       operationId: users_SetPhotoContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New media content.
         content:
@@ -2998,7 +2240,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/photos':
@@ -3009,13 +2253,6 @@ paths:
       description: Read-only. Nullable.
       operationId: users_ListPhotos
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -3053,22 +2290,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of profilePhoto
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.profilePhotoCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3078,16 +2303,7 @@ paths:
       tags:
         - users.profilePhoto
       summary: Create new navigation property to photos for users
-      description: Read-only. Nullable.
       operationId: users_CreatePhotos
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3102,7 +2318,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/photos/{profilePhoto-id}':
@@ -3113,20 +2331,6 @@ paths:
       description: Read-only. Nullable.
       operationId: users_GetPhotos
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: profilePhoto-id
-          in: path
-          description: 'key: id of profilePhoto'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: profilePhoto
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3148,30 +2352,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.profilePhoto'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.profilePhoto
       summary: Update the navigation property photos in users
-      description: Read-only. Nullable.
       operationId: users_UpdatePhotos
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: profilePhoto-id
-          in: path
-          description: 'key: id of profilePhoto'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: profilePhoto
       requestBody:
         description: New navigation property values
         content:
@@ -3182,30 +2372,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.profilePhoto
       summary: Delete navigation property photos for users
-      description: Read-only. Nullable.
       operationId: users_DeletePhotos
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: profilePhoto-id
-          in: path
-          description: 'key: id of profilePhoto'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: profilePhoto
         - name: If-Match
           in: header
           description: ETag
@@ -3214,7 +2391,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/photos/{profilePhoto-id}/$value':
@@ -3223,21 +2402,6 @@ paths:
         - users.profilePhoto
       summary: Get media content for the navigation property photos from users
       operationId: users_GetPhotosContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: profilePhoto-id
-          in: path
-          description: 'key: id of profilePhoto'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: profilePhoto
       responses:
         '200':
           description: Retrieved media content
@@ -3246,7 +2410,9 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
@@ -3254,21 +2420,6 @@ paths:
         - users.profilePhoto
       summary: Update media content for the navigation property photos in users
       operationId: users_SetPhotosContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: profilePhoto-id
-          in: path
-          description: 'key: id of profilePhoto'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: profilePhoto
       requestBody:
         description: New media content.
         content:
@@ -3280,7 +2431,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/registeredDevices':
@@ -3291,13 +2444,6 @@ paths:
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
       operationId: users_ListRegisteredDevices
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3345,50 +2491,26 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/registeredDevices/$ref':
+  '/users/{user-id}/registeredDevices/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of registeredDevices from users
+      summary: Get registeredDevices from users
       description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      operationId: users_ListGraphRefRegisteredDevices
+      operationId: users_GetRegisteredDevices
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -3397,66 +2519,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to registeredDevices for users
-      description: Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-      operationId: users_CreateGraphRefRegisteredDevices
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/settings':
@@ -3467,13 +2553,6 @@ paths:
       description: Read-only. Nullable.
       operationId: users_GetSettings
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3514,23 +2593,16 @@ paths:
               operationId: users.Settings.GetShiftPreferences
               parameters:
                 user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
       summary: Update the navigation property settings in users
-      description: Read-only. Nullable.
       operationId: users_UpdateSettings
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -3541,23 +2613,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.userSettings
       summary: Delete navigation property settings for users
-      description: Read-only. Nullable.
       operationId: users_DeleteSettings
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -3566,7 +2632,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/settings/shiftPreferences':
@@ -3577,13 +2645,6 @@ paths:
       description: The shift preferences for the user.
       operationId: users.settings_GetShiftPreferences
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3619,23 +2680,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.shiftPreferences'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.userSettings
       summary: Update the navigation property shiftPreferences in users
-      description: The shift preferences for the user.
       operationId: users.settings_UpdateShiftPreferences
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -3646,23 +2700,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.userSettings
       summary: Delete navigation property shiftPreferences for users
-      description: The shift preferences for the user.
       operationId: users.settings_DeleteShiftPreferences
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -3671,7 +2719,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo':
@@ -3682,13 +2732,6 @@ paths:
       description: Represents the To Do services available to a user.
       operationId: users_GetTodo
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3727,23 +2770,16 @@ paths:
               operationId: users.Todo.ListLists
               parameters:
                 user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property todo in users
-      description: Represents the To Do services available to a user.
       operationId: users_UpdateTodo
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -3754,23 +2790,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property todo for users
-      description: Represents the To Do services available to a user.
       operationId: users_DeleteTodo
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -3779,7 +2809,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists':
@@ -3790,13 +2822,6 @@ paths:
       description: The task lists in the users mailbox.
       operationId: users.todo_ListLists
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3857,22 +2882,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of todoTaskList
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.todoTaskListCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3882,16 +2895,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to lists for users
-      description: The task lists in the users mailbox.
       operationId: users.todo_CreateLists
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3906,7 +2910,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTaskList'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}':
@@ -3917,20 +2923,6 @@ paths:
       description: The task lists in the users mailbox.
       operationId: users.todo_GetLists
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3981,30 +2973,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 todoTaskList-id: $request.path.todoTaskList-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property lists in users
-      description: The task lists in the users mailbox.
       operationId: users.todo_UpdateLists
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
       requestBody:
         description: New navigation property values
         content:
@@ -4015,30 +2993,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property lists for users
-      description: The task lists in the users mailbox.
       operationId: users.todo_DeleteLists
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
         - name: If-Match
           in: header
           description: ETag
@@ -4047,7 +3012,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions':
@@ -4058,20 +3025,6 @@ paths:
       description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4116,22 +3069,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4141,23 +3082,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
       requestBody:
         description: New navigation property
         content:
@@ -4172,7 +3097,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/extensions/{extension-id}':
@@ -4183,27 +3110,6 @@ paths:
       description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4235,37 +3141,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -4276,37 +3161,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the task list. Nullable.
       operationId: users.todo.lists_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -4315,7 +3180,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks':
@@ -4326,20 +3193,6 @@ paths:
       description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_ListTasks
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4424,22 +3277,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of todoTask
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.todoTask'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.todoTaskCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4449,23 +3290,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to tasks for users
-      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_CreateTasks
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
       requestBody:
         description: New navigation property
         content:
@@ -4480,7 +3305,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}':
@@ -4491,27 +3318,6 @@ paths:
       description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_GetTasks
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4572,37 +3378,16 @@ paths:
                 user-id: $request.path.user-id
                 todoTaskList-id: $request.path.todoTaskList-id
                 todoTask-id: $request.path.todoTask-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property tasks in users
-      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_UpdateTasks
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
       requestBody:
         description: New navigation property values
         content:
@@ -4613,37 +3398,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property tasks for users
-      description: The tasks in this task list. Read-only. Nullable.
       operationId: users.todo.lists_DeleteTasks
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
         - name: If-Match
           in: header
           description: ETag
@@ -4652,7 +3417,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions':
@@ -4663,27 +3430,6 @@ paths:
       description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4728,22 +3474,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4753,30 +3487,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
       requestBody:
         description: New navigation property
         content:
@@ -4791,7 +3502,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions/{extension-id}':
@@ -4802,34 +3515,6 @@ paths:
       description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4861,44 +3546,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -4909,44 +3566,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the task. Nullable.
       operationId: users.todo.lists.tasks_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -4955,7 +3585,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources':
@@ -4966,27 +3598,6 @@ paths:
       description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_ListLinkedResources
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5043,22 +3654,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of linkedResource
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.linkedResource'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.linkedResourceCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -5068,30 +3667,7 @@ paths:
       tags:
         - users.todo
       summary: Create new navigation property to linkedResources for users
-      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_CreateLinkedResources
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
       requestBody:
         description: New navigation property
         content:
@@ -5106,7 +3682,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/linkedResources/{linkedResource-id}':
@@ -5117,34 +3695,6 @@ paths:
       description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_GetLinkedResources
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: linkedResource-id
-          in: path
-          description: 'key: id of linkedResource'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: linkedResource
         - name: $select
           in: query
           description: Select properties to be returned
@@ -5180,44 +3730,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.todo
       summary: Update the navigation property linkedResources in users
-      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_UpdateLinkedResources
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: linkedResource-id
-          in: path
-          description: 'key: id of linkedResource'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: linkedResource
       requestBody:
         description: New navigation property values
         content:
@@ -5228,44 +3750,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.todo
       summary: Delete navigation property linkedResources for users
-      description: A collection of resources linked to the task.
       operationId: users.todo.lists.tasks_DeleteLinkedResources
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: todoTaskList-id
-          in: path
-          description: 'key: id of todoTaskList'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTaskList
-        - name: todoTask-id
-          in: path
-          description: 'key: id of todoTask'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: todoTask
-        - name: linkedResource-id
-          in: path
-          description: 'key: id of linkedResource'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: linkedResource
         - name: If-Match
           in: header
           description: ETag
@@ -5274,7 +3769,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/transitiveMemberOf':
@@ -5284,13 +3781,6 @@ paths:
       summary: Get transitiveMemberOf from users
       operationId: users_ListTransitiveMemberOf
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -5338,49 +3828,25 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/transitiveMemberOf/$ref':
+  '/users/{user-id}/transitiveMemberOf/{directoryObject-id}':
     get:
       tags:
         - users.directoryObject
-      summary: Get ref of transitiveMemberOf from users
-      operationId: users_ListGraphRefTransitiveMemberOf
+      summary: Get transitiveMemberOf from users
+      operationId: users_GetTransitiveMemberOf
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - $ref: '#/components/parameters/top'
-        - $ref: '#/components/parameters/skip'
-        - $ref: '#/components/parameters/search'
-        - $ref: '#/components/parameters/filter'
-        - $ref: '#/components/parameters/count'
-        - name: $orderby
+        - name: $select
           in: query
-          description: Order items by property values
+          description: Select properties to be returned
           style: form
           explode: false
           schema:
@@ -5389,65 +3855,30 @@ paths:
             items:
               enum:
                 - id
-                - id desc
                 - deletedDateTime
-                - deletedDateTime desc
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
               type: string
       responses:
         '200':
-          description: Retrieved navigation property links
+          description: Retrieved navigation property
           content:
             application/json:
               schema:
-                title: Collection of links of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      type: string
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        4XX:
           $ref: '#/components/responses/error'
-      x-ms-pageable:
-        nextLinkName: '@odata.nextLink'
-        operationName: listMore
-      x-ms-docs-operation-type: operation
-    post:
-      tags:
-        - users.directoryObject
-      summary: Create new navigation property ref to transitiveMemberOf for users
-      operationId: users_CreateGraphRefTransitiveMemberOf
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-      requestBody:
-        description: New navigation property ref value
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '201':
-          description: Created navigation property link.
-          content:
-            application/json:
-              schema:
-                type: object
-                additionalProperties:
-                  type: object
-        default:
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -5630,7 +4061,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq) on null values only.
+              description: Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -5654,6 +4085,10 @@ components:
             postalCode:
               type: string
               description: 'The postal code for the user''s postal address. The postal code is specific to the user''s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).'
+              nullable: true
+            preferredDataLocation:
+              type: string
+              description: 'The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.'
               nullable: true
             preferredLanguage:
               type: string
@@ -8323,13 +6758,133 @@ components:
         - waitingOnOthers
         - deferred
       type: string
-    odata.error:
+    microsoft.graph.userCollectionResponse:
+      title: Collection of user
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.user'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.extensionCollectionResponse:
+      title: Collection of extension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.licenseDetailsCollectionResponse:
+      title: Collection of licenseDetails
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.licenseDetails'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.oAuth2PermissionGrantCollectionResponse:
+      title: Collection of oAuth2PermissionGrant
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrant'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.outlookCategoryCollectionResponse:
+      title: Collection of outlookCategory
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.outlookCategory'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.profilePhotoCollectionResponse:
+      title: Collection of profilePhoto
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.profilePhoto'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.todoTaskListCollectionResponse:
+      title: Collection of todoTaskList
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.todoTaskList'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.todoTaskCollectionResponse:
+      title: Collection of todoTask
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.todoTask'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.linkedResourceCollectionResponse:
+      title: Collection of linkedResource
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.linkedResource'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.automaticRepliesSetting:
@@ -9470,6 +8025,31 @@ components:
         - configManager
       type: string
       description: Compliance state.
+      x-ms-enum:
+        name: complianceState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: compliant
+            description: Compliant.
+            name: compliant
+          - value: noncompliant
+            description: Device is non-compliant and is blocked from corporate resources.
+            name: noncompliant
+          - value: conflict
+            description: Conflict with other rules.
+            name: conflict
+          - value: error
+            description: Error.
+            name: error
+          - value: inGracePeriod
+            description: Device is non-compliant but still has access to corporate resources
+            name: inGracePeriod
+          - value: configManager
+            description: Managed by Config Manager
+            name: configManager
     microsoft.graph.configurationManagerClientEnabledFeatures:
       title: configurationManagerClientEnabledFeatures
       type: object
@@ -9536,6 +8116,49 @@ components:
         - appleUserEnrollmentWithServiceAccount
       type: string
       description: Possible ways of adding a mobile device to management.
+      x-ms-enum:
+        name: deviceEnrollmentType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: 'Default value, enrollment type was not collected.'
+            name: unknown
+          - value: userEnrollment
+            description: User driven enrollment through BYOD channel.
+            name: userEnrollment
+          - value: deviceEnrollmentManager
+            description: User enrollment with a device enrollment manager account.
+            name: deviceEnrollmentManager
+          - value: appleBulkWithUser
+            description: 'Apple bulk enrollment with user challenge. (DEP, Apple Configurator)'
+            name: appleBulkWithUser
+          - value: appleBulkWithoutUser
+            description: 'Apple bulk enrollment without user challenge. (DEP, Apple Configurator, Mobile Config)'
+            name: appleBulkWithoutUser
+          - value: windowsAzureADJoin
+            description: Windows 10 Azure AD Join.
+            name: windowsAzureADJoin
+          - value: windowsBulkUserless
+            description: Windows 10 Bulk enrollment through ICD with certificate.
+            name: windowsBulkUserless
+          - value: windowsAutoEnrollment
+            description: Windows 10 automatic enrollment. (Add work account)
+            name: windowsAutoEnrollment
+          - value: windowsBulkAzureDomainJoin
+            description: Windows 10 bulk Azure AD Join.
+            name: windowsBulkAzureDomainJoin
+          - value: windowsCoManagement
+            description: Windows 10 Co-Management triggered by AutoPilot or Group Policy.
+            name: windowsCoManagement
+          - value: windowsAzureADJoinUsingDeviceAuth
+            description: Windows 10 Azure AD Join using Device Auth.
+            name: windowsAzureADJoinUsingDeviceAuth
+          - value: appleUserEnrollment
+            description: Device managed by Apple user enrollment
+            name: appleUserEnrollment
+          - value: appleUserEnrollmentWithServiceAccount
+            description: Device managed by Apple user enrollment with service account
+            name: appleUserEnrollmentWithServiceAccount
     microsoft.graph.deviceHealthAttestationState:
       title: deviceHealthAttestationState
       type: object
@@ -9684,6 +8307,34 @@ components:
         - unknown
       type: string
       description: Device registration status.
+      x-ms-enum:
+        name: deviceRegistrationState
+        modelAsString: false
+        values:
+          - value: notRegistered
+            description: The device is not registered.
+            name: notRegistered
+          - value: registered
+            description: The device is registered.
+            name: registered
+          - value: revoked
+            description: 'The device has been blocked, wiped or retired.'
+            name: revoked
+          - value: keyConflict
+            description: The device has a key conflict.
+            name: keyConflict
+          - value: approvalPending
+            description: The device is pending approval.
+            name: approvalPending
+          - value: certificateReset
+            description: The device certificate has been reset.
+            name: certificateReset
+          - value: notRegisteredPendingEnrollment
+            description: The device is not registered and pending enrollment.
+            name: notRegisteredPendingEnrollment
+          - value: unknown
+            description: The device registration status is unknown.
+            name: unknown
     microsoft.graph.deviceManagementExchangeAccessState:
       title: deviceManagementExchangeAccessState
       enum:
@@ -9694,6 +8345,25 @@ components:
         - quarantined
       type: string
       description: Device Exchange Access State.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessState
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state discovered from Exchange
+            name: none
+          - value: unknown
+            description: Device access state to Exchange is unknown
+            name: unknown
+          - value: allowed
+            description: Device has access to Exchange
+            name: allowed
+          - value: blocked
+            description: Device is Blocked in Exchange
+            name: blocked
+          - value: quarantined
+            description: Device is Quarantined in Exchange
+            name: quarantined
     microsoft.graph.deviceManagementExchangeAccessStateReason:
       title: deviceManagementExchangeAccessStateReason
       enum:
@@ -9715,6 +8385,58 @@ components:
         - deviceNotKnownWithManagedApp
       type: string
       description: Device Exchange Access State Reason.
+      x-ms-enum:
+        name: deviceManagementExchangeAccessStateReason
+        modelAsString: false
+        values:
+          - value: none
+            description: No access state reason discovered from Exchange
+            name: none
+          - value: unknown
+            description: Unknown access state reason
+            name: unknown
+          - value: exchangeGlobalRule
+            description: Access state determined by Exchange Global rule
+            name: exchangeGlobalRule
+          - value: exchangeIndividualRule
+            description: Access state determined by Exchange Individual rule
+            name: exchangeIndividualRule
+          - value: exchangeDeviceRule
+            description: Access state determined by Exchange Device rule
+            name: exchangeDeviceRule
+          - value: exchangeUpgrade
+            description: Access state due to Exchange upgrade
+            name: exchangeUpgrade
+          - value: exchangeMailboxPolicy
+            description: Access state determined by Exchange Mailbox Policy
+            name: exchangeMailboxPolicy
+          - value: other
+            description: Access state determined by Exchange
+            name: other
+          - value: compliant
+            description: Access state granted by compliance challenge
+            name: compliant
+          - value: notCompliant
+            description: Access state revoked by compliance challenge
+            name: notCompliant
+          - value: notEnrolled
+            description: Access state revoked by management challenge
+            name: notEnrolled
+          - value: unknownLocation
+            description: Access state due to unknown location
+            name: unknownLocation
+          - value: mfaRequired
+            description: Access state due to MFA challenge
+            name: mfaRequired
+          - value: azureADBlockDueToAccessPolicy
+            description: Access State revoked by AAD Access Policy
+            name: azureADBlockDueToAccessPolicy
+          - value: compromisedPassword
+            description: Access State revoked by compromised password
+            name: compromisedPassword
+          - value: deviceNotKnownWithManagedApp
+            description: Access state revoked by managed application challenge
+            name: deviceNotKnownWithManagedApp
     microsoft.graph.managedDeviceOwnerType:
       title: managedDeviceOwnerType
       enum:
@@ -9723,6 +8445,19 @@ components:
         - personal
       type: string
       description: Owner type of device.
+      x-ms-enum:
+        name: managedDeviceOwnerType
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown.
+            name: unknown
+          - value: company
+            description: Owned by company.
+            name: company
+          - value: personal
+            description: Owned by person.
+            name: personal
     microsoft.graph.managementAgentType:
       title: managementAgentType
       enum:
@@ -9740,6 +8475,46 @@ components:
         - microsoft365ManagedMdm
         - msSense
       type: string
+      x-ms-enum:
+        name: managementAgentType
+        modelAsString: false
+        values:
+          - value: eas
+            description: The device is managed by Exchange server.
+            name: eas
+          - value: mdm
+            description: The device is managed by Intune MDM.
+            name: mdm
+          - value: easMdm
+            description: The device is managed by both Exchange server and Intune MDM.
+            name: easMdm
+          - value: intuneClient
+            description: Intune client managed.
+            name: intuneClient
+          - value: easIntuneClient
+            description: The device is EAS and Intune client dual managed.
+            name: easIntuneClient
+          - value: configurationManagerClient
+            description: The device is managed by Configuration Manager.
+            name: configurationManagerClient
+          - value: configurationManagerClientMdm
+            description: The device is managed by Configuration Manager and MDM.
+            name: configurationManagerClientMdm
+          - value: configurationManagerClientMdmEas
+            description: 'The device is managed by Configuration Manager, MDM and Eas.'
+            name: configurationManagerClientMdmEas
+          - value: unknown
+            description: Unknown management agent type.
+            name: unknown
+          - value: jamf
+            description: The device attributes are fetched from Jamf.
+            name: jamf
+          - value: googleCloudDevicePolicyController
+            description: The device is managed by Google's CloudDPC.
+            name: googleCloudDevicePolicyController
+          - value: microsoft365ManagedMdm
+            description: This device is managed by Microsoft 365 through Intune.
+            name: microsoft365ManagedMdm
     microsoft.graph.managedDevicePartnerReportedHealthState:
       title: managedDevicePartnerReportedHealthState
       enum:
@@ -9755,6 +8530,40 @@ components:
         - misconfigured
       type: string
       description: Available health states for the Device Health API
+      x-ms-enum:
+        name: managedDevicePartnerReportedHealthState
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Device health state is not yet reported
+            name: unknown
+          - value: activated
+            description: 'Device has been activated by a mobile threat defense partner, but has not yet reported health.'
+            name: activated
+          - value: deactivated
+            description: Device has been deactivated by a mobile threat defense partner. The device health is not known.
+            name: deactivated
+          - value: secured
+            description: Device is considered secured by the mobile threat defense partner.
+            name: secured
+          - value: lowSeverity
+            description: Device is considered low threat by the mobile threat defense partner.
+            name: lowSeverity
+          - value: mediumSeverity
+            description: Device is considered medium threat by the mobile threat defense partner.
+            name: mediumSeverity
+          - value: highSeverity
+            description: Device is considered high threat by the mobile threat defense partner.
+            name: highSeverity
+          - value: unresponsive
+            description: Device is considered unresponsive by the mobile threat defense partner. The device health is not known.
+            name: unresponsive
+          - value: compromised
+            description: Device is considered compromised by the Threat Defense partner. This means the device has an active Threat or Risk which cannot be easily remediated by the end user and the user should contact their IT Admin.
+            name: compromised
+          - value: misconfigured
+            description: Device is considered misconfigured with the Threat Defense partner. This means the device is missing a required profile or configuration for the Threat Defense Partner to function properly and is thus threat or risk analysis is not able to complete.
+            name: misconfigured
     microsoft.graph.deviceCompliancePolicyState:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9851,6 +8660,16 @@ components:
         - rootedDevice
       type: string
       description: The reason for which a user has been flagged
+      x-ms-enum:
+        name: managedAppFlaggedReason
+        modelAsString: false
+        values:
+          - value: none
+            description: No issue.
+            name: none
+          - value: rootedDevice
+            description: The app registration is running on a rooted/unlocked device.
+            name: rootedDevice
     microsoft.graph.managedAppPolicy:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -11008,7 +9827,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Specifies the group type and its membership.  If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static.  Returned by default. Supports $filter (eq, not).'
+              description: 'Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it''s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).'
             hasMembersWithLicenseErrors:
               type: boolean
               description: 'Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).'
@@ -11064,7 +9883,7 @@ components:
               nullable: true
             onPremisesSecurityIdentifier:
               type: string
-              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter on null values. Read-only.
+              description: Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
               nullable: true
             onPremisesSyncEnabled:
               type: boolean
@@ -11072,7 +9891,7 @@ components:
               nullable: true
             preferredDataLocation:
               type: string
-              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see  OneDrive Online Multi-Geo. Nullable. Returned by default.'
+              description: 'The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator''s preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.'
               nullable: true
             preferredLanguage:
               type: string
@@ -11134,6 +9953,7 @@ components:
               nullable: true
             isArchived:
               type: boolean
+              description: When a group is associated with a team this property deternunes whether the team is in read-only mode.
               nullable: true
             appRoleAssignments:
               type: array
@@ -11151,7 +9971,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'UMembers of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
+              description: 'The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,''Role'')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).'
             membersWithLicenseErrors:
               type: array
               items:
@@ -11480,7 +10300,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.recurrenceRangeType'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -11492,15 +10312,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.externalAudienceScope:
@@ -13142,6 +11960,31 @@ components:
         - notSupported
       type: string
       description: State of the action on the device
+      x-ms-enum:
+        name: actionState
+        modelAsString: false
+        values:
+          - value: none
+            description: Not a valid action state
+            name: none
+          - value: pending
+            description: Action is pending
+            name: pending
+          - value: canceled
+            description: Action has been cancelled.
+            name: canceled
+          - value: active
+            description: Action is active.
+            name: active
+          - value: done
+            description: Action completed without errors.
+            name: done
+          - value: failed
+            description: Action failed
+            name: failed
+          - value: notSupported
+            description: Action is not supported.
+            name: notSupported
     microsoft.graph.policyPlatformType:
       title: policyPlatformType
       enum:
@@ -13155,6 +11998,34 @@ components:
         - all
       type: string
       description: Supported platform types for policies.
+      x-ms-enum:
+        name: policyPlatformType
+        modelAsString: false
+        values:
+          - value: android
+            description: Android.
+            name: android
+          - value: androidForWork
+            description: AndroidForWork.
+            name: androidForWork
+          - value: iOS
+            description: iOS.
+            name: iOS
+          - value: macOS
+            description: MacOS.
+            name: macOS
+          - value: windowsPhone81
+            description: WindowsPhone 8.1.
+            name: windowsPhone81
+          - value: windows81AndLater
+            description: Windows 8.1 and later
+            name: windows81AndLater
+          - value: windows10AndLater
+            description: Windows 10 and later.
+            name: windows10AndLater
+          - value: all
+            description: All platforms.
+            name: all
     microsoft.graph.deviceCompliancePolicySettingState:
       title: deviceCompliancePolicySettingState
       type: object
@@ -14485,7 +13356,7 @@ components:
         - noEnd
         - numbered
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -14497,8 +13368,14 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
     microsoft.graph.attendeeType:
       title: attendeeType
       enum:
@@ -16247,12 +15124,72 @@ components:
           additionalProperties:
             type: object
   responses:
+    microsoft.graph.userCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    microsoft.graph.extensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.licenseDetailsCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.licenseDetailsCollectionResponse'
+    microsoft.graph.oAuth2PermissionGrantCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.oAuth2PermissionGrantCollectionResponse'
+    microsoft.graph.outlookCategoryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.outlookCategoryCollectionResponse'
+    microsoft.graph.profilePhotoCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.profilePhotoCollectionResponse'
+    microsoft.graph.todoTaskListCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.todoTaskListCollectionResponse'
+    microsoft.graph.todoTaskCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.todoTaskCollectionResponse'
+    microsoft.graph.linkedResourceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.linkedResourceCollectionResponse'
   parameters:
     top:
       name: $top

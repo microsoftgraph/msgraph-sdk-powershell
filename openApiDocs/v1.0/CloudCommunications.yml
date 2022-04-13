@@ -61,7 +61,9 @@ paths:
               operationId: communications.ListOnlineMeetings
             presences:
               operationId: communications.ListPresences
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -79,7 +81,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /communications/callRecords:
@@ -162,22 +166,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of callRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.callRecords.callRecordCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -202,7 +194,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/callRecords/{callRecord-id}':
@@ -212,13 +206,6 @@ paths:
       summary: Get callRecords from communications
       operationId: communications_GetCallRecords
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
         - name: $select
           in: query
           description: Select properties to be returned
@@ -266,7 +253,9 @@ paths:
               operationId: communications.CallRecords.ListSessions
               parameters:
                 callRecord-id: $request.path.callRecord-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -274,14 +263,6 @@ paths:
         - communications.callRecord
       summary: Update the navigation property callRecords in communications
       operationId: communications_UpdateCallRecords
-      parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
       requestBody:
         description: New navigation property values
         content:
@@ -292,7 +273,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -301,13 +284,6 @@ paths:
       summary: Delete navigation property callRecords for communications
       operationId: communications_DeleteCallRecords
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
         - name: If-Match
           in: header
           description: ETag
@@ -316,7 +292,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/callRecords/{callRecord-id}/sessions':
@@ -327,13 +305,6 @@ paths:
       description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_ListSessions
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -398,22 +369,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of session
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.session'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.callRecords.sessionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -423,16 +382,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to sessions for communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_CreateSessions
-      parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
       requestBody:
         description: New navigation property
         content:
@@ -447,7 +397,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.session'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/callRecords/{callRecord-id}/sessions/{session-id}':
@@ -458,20 +410,6 @@ paths:
       description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_GetSessions
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
         - name: $select
           in: query
           description: Select properties to be returned
@@ -517,30 +455,16 @@ paths:
               parameters:
                 callRecord-id: $request.path.callRecord-id
                 session-id: $request.path.session-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.callRecord
       summary: Update the navigation property sessions in communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_UpdateSessions
-      parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
       requestBody:
         description: New navigation property values
         content:
@@ -551,30 +475,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.callRecord
       summary: Delete navigation property sessions for communications
-      description: 'List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.'
       operationId: communications.callRecords_DeleteSessions
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
         - name: If-Match
           in: header
           description: ETag
@@ -583,7 +494,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments':
@@ -594,20 +507,6 @@ paths:
       description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_ListSegments
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -670,22 +569,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of segment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.callRecords.segmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -695,23 +582,7 @@ paths:
       tags:
         - communications.callRecord
       summary: Create new navigation property to segments for communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_CreateSegments
-      parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
       requestBody:
         description: New navigation property
         content:
@@ -726,7 +597,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/callRecords/{callRecord-id}/sessions/{session-id}/segments/{segment-id}':
@@ -737,27 +610,6 @@ paths:
       description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_GetSegments
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
-        - name: segment-id
-          in: path
-          description: 'key: id of segment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: segment
         - name: $select
           in: query
           description: Select properties to be returned
@@ -795,37 +647,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.callRecord
       summary: Update the navigation property segments in communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_UpdateSegments
-      parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
-        - name: segment-id
-          in: path
-          description: 'key: id of segment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: segment
       requestBody:
         description: New navigation property values
         content:
@@ -836,37 +667,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.callRecord
       summary: Delete navigation property segments for communications
-      description: The list of segments involved in the session. Read-only. Nullable.
       operationId: communications.callRecords.sessions_DeleteSegments
       parameters:
-        - name: callRecord-id
-          in: path
-          description: 'key: id of callRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: callRecord
-        - name: session-id
-          in: path
-          description: 'key: id of session'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: session
-        - name: segment-id
-          in: path
-          description: 'key: id of segment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: segment
         - name: If-Match
           in: header
           description: ETag
@@ -875,7 +686,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /communications/calls:
@@ -995,22 +808,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of call
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.call'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.callCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1035,7 +836,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.call'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}':
@@ -1045,13 +848,6 @@ paths:
       summary: Get calls from communications
       operationId: communications_GetCalls
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1122,7 +918,9 @@ paths:
               operationId: communications.Calls.ListParticipants
               parameters:
                 call-id: $request.path.call-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -1130,14 +928,6 @@ paths:
         - communications.call
       summary: Update the navigation property calls in communications
       operationId: communications_UpdateCalls
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
       requestBody:
         description: New navigation property values
         content:
@@ -1148,7 +938,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -1157,13 +949,6 @@ paths:
       summary: Delete navigation property calls for communications
       operationId: communications_DeleteCalls
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
         - name: If-Match
           in: header
           description: ETag
@@ -1172,7 +957,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/audioRoutingGroups':
@@ -1183,13 +970,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_ListAudioRoutingGroups
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1243,22 +1023,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of audioRoutingGroup
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.audioRoutingGroupCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1268,16 +1036,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to audioRoutingGroups for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateAudioRoutingGroups
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
       requestBody:
         description: New navigation property
         content:
@@ -1292,7 +1051,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/audioRoutingGroups/{audioRoutingGroup-id}':
@@ -1303,20 +1064,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_GetAudioRoutingGroups
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: audioRoutingGroup-id
-          in: path
-          description: 'key: id of audioRoutingGroup'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: audioRoutingGroup
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1351,30 +1098,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.call
       summary: Update the navigation property audioRoutingGroups in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateAudioRoutingGroups
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: audioRoutingGroup-id
-          in: path
-          description: 'key: id of audioRoutingGroup'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: audioRoutingGroup
       requestBody:
         description: New navigation property values
         content:
@@ -1385,30 +1118,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.call
       summary: Delete navigation property audioRoutingGroups for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteAudioRoutingGroups
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: audioRoutingGroup-id
-          in: path
-          description: 'key: id of audioRoutingGroup'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: audioRoutingGroup
         - name: If-Match
           in: header
           description: ETag
@@ -1417,7 +1137,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/microsoft.graph.answer':
@@ -1425,15 +1147,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action answer
-      operationId: communications.calls_answer
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_answer
       requestBody:
         description: Action parameters
         content:
@@ -1471,15 +1185,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action cancelMediaProcessing
-      operationId: communications.calls_cancelMediaProcessing
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_cancelMediaProcessing
       requestBody:
         description: Action parameters
         content:
@@ -1508,15 +1214,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action changeScreenSharingRole
-      operationId: communications.calls_changeScreenSharingRole
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_changeScreenSharingRole
       requestBody:
         description: Action parameters
         content:
@@ -1540,15 +1238,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action keepAlive
-      operationId: communications.calls_keepAlive
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_keepAlive
       responses:
         '204':
           description: Success
@@ -1560,15 +1250,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      operationId: communications.calls_mute
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_mute
       requestBody:
         description: Action parameters
         content:
@@ -1597,15 +1279,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action playPrompt
-      operationId: communications.calls_playPrompt
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_playPrompt
       requestBody:
         description: Action parameters
         content:
@@ -1638,15 +1312,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action recordResponse
-      operationId: communications.calls_recordResponse
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_recordResponse
       requestBody:
         description: Action parameters
         content:
@@ -1710,15 +1376,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action redirect
-      operationId: communications.calls_redirect
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_redirect
       requestBody:
         description: Action parameters
         content:
@@ -1753,15 +1411,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action reject
-      operationId: communications.calls_reject
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_reject
       requestBody:
         description: Action parameters
         content:
@@ -1788,15 +1438,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action subscribeToTone
-      operationId: communications.calls_subscribeToTone
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_subscribeToTone
       requestBody:
         description: Action parameters
         content:
@@ -1825,15 +1467,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action transfer
-      operationId: communications.calls_transfer
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_transfer
       requestBody:
         description: Action parameters
         content:
@@ -1859,15 +1493,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action unmute
-      operationId: communications.calls_unmute
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_unmute
       requestBody:
         description: Action parameters
         content:
@@ -1896,15 +1522,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action updateRecordingStatus
-      operationId: communications.calls_updateRecordingStatus
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call_updateRecordingStatus
       requestBody:
         description: Action parameters
         content:
@@ -1938,13 +1556,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_ListOperations
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1998,22 +1609,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of commsOperation
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.commsOperation'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.commsOperationCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2023,16 +1622,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to operations for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateOperations
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
       requestBody:
         description: New navigation property
         content:
@@ -2047,7 +1637,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/operations/{commsOperation-id}':
@@ -2058,20 +1650,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_GetOperations
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: commsOperation-id
-          in: path
-          description: 'key: id of commsOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: commsOperation
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2106,30 +1684,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.commsOperation'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.call
       summary: Update the navigation property operations in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateOperations
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: commsOperation-id
-          in: path
-          description: 'key: id of commsOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: commsOperation
       requestBody:
         description: New navigation property values
         content:
@@ -2140,30 +1704,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.call
       summary: Delete navigation property operations for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteOperations
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: commsOperation-id
-          in: path
-          description: 'key: id of commsOperation'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: commsOperation
         - name: If-Match
           in: header
           description: ETag
@@ -2172,7 +1723,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/participants':
@@ -2183,13 +1736,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_ListParticipants
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2252,22 +1798,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of participant
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.participant'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.participantCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2277,16 +1811,7 @@ paths:
       tags:
         - communications.call
       summary: Create new navigation property to participants for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_CreateParticipants
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
       requestBody:
         description: New navigation property
         content:
@@ -2301,7 +1826,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/participants/{participant-id}':
@@ -2312,20 +1839,6 @@ paths:
       description: Read-only. Nullable.
       operationId: communications.calls_GetParticipants
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2363,30 +1876,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.participant'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.call
       summary: Update the navigation property participants in communications
-      description: Read-only. Nullable.
       operationId: communications.calls_UpdateParticipants
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
       requestBody:
         description: New navigation property values
         content:
@@ -2397,30 +1896,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.call
       summary: Delete navigation property participants for communications
-      description: Read-only. Nullable.
       operationId: communications.calls_DeleteParticipants
       parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
         - name: If-Match
           in: header
           description: ETag
@@ -2429,7 +1915,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/calls/{call-id}/participants/{participant-id}/microsoft.graph.mute':
@@ -2437,22 +1925,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action mute
-      operationId: communications.calls.participants_mute
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
+      operationId: communications.calls.call.participants.participant_mute
       requestBody:
         description: Action parameters
         content:
@@ -2481,22 +1954,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action startHoldMusic
-      operationId: communications.calls.participants_startHoldMusic
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
+      operationId: communications.calls.call.participants.participant_startHoldMusic
       requestBody:
         description: Action parameters
         content:
@@ -2527,22 +1985,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action stopHoldMusic
-      operationId: communications.calls.participants_stopHoldMusic
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
-        - name: participant-id
-          in: path
-          description: 'key: id of participant'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: participant
+      operationId: communications.calls.call.participants.participant_stopHoldMusic
       requestBody:
         description: Action parameters
         content:
@@ -2571,15 +2014,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action invite
-      operationId: communications.calls.participants_invite
-      parameters:
-        - name: call-id
-          in: path
-          description: 'key: id of call'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: call
+      operationId: communications.calls.call.participants_invite
       requestBody:
         description: Action parameters
         content:
@@ -2657,9 +2092,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.presence'
+                title: Collection of cloudCommunications
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.presence'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -2782,22 +2223,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of onlineMeeting
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2822,7 +2251,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}':
@@ -2832,13 +2263,6 @@ paths:
       summary: Get onlineMeetings from communications
       operationId: communications_GetOnlineMeetings
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2899,7 +2323,9 @@ paths:
               operationId: communications.OnlineMeetings.ListAttendanceReports
               parameters:
                 onlineMeeting-id: $request.path.onlineMeeting-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2907,14 +2333,6 @@ paths:
         - communications.onlineMeeting
       summary: Update the navigation property onlineMeetings in communications
       operationId: communications_UpdateOnlineMeetings
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New navigation property values
         content:
@@ -2925,7 +2343,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2934,13 +2354,6 @@ paths:
       summary: Delete navigation property onlineMeetings for communications
       operationId: communications_DeleteOnlineMeetings
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
@@ -2949,7 +2362,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports':
@@ -2960,13 +2375,6 @@ paths:
       description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_ListAttendanceReports
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3022,22 +2430,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingAttendanceReport
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3047,16 +2443,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceReports for communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_CreateAttendanceReports
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New navigation property
         content:
@@ -3071,7 +2458,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}':
@@ -3082,20 +2471,6 @@ paths:
       description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_GetAttendanceReports
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3138,30 +2513,16 @@ paths:
               parameters:
                 onlineMeeting-id: $request.path.onlineMeeting-id
                 meetingAttendanceReport-id: $request.path.meetingAttendanceReport-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceReports in communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_UpdateAttendanceReports
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -3172,30 +2533,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceReports for communications
-      description: The attendance reports of an online meeting. Read-only.
       operationId: communications.onlineMeetings_DeleteAttendanceReports
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
@@ -3204,7 +2552,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
@@ -3215,20 +2565,6 @@ paths:
       description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3288,22 +2624,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3313,23 +2637,7 @@ paths:
       tags:
         - communications.onlineMeeting
       summary: Create new navigation property to attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_CreateAttendanceRecords
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -3344,7 +2652,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
@@ -3355,27 +2665,6 @@ paths:
       description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3412,37 +2701,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - communications.onlineMeeting
       summary: Update the navigation property attendanceRecords in communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_UpdateAttendanceRecords
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -3453,37 +2721,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - communications.onlineMeeting
       summary: Delete navigation property attendanceRecords for communications
-      description: List of attendance records of an attendance report. Read-only.
       operationId: communications.onlineMeetings.attendanceReports_DeleteAttendanceRecords
       parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
@@ -3492,23 +2740,18 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
       tags:
         - communications.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from communications
+      summary: Get attendeeReport for the navigation property onlineMeetings from communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communications_GetOnlineMeetingsAttendeeReport
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       responses:
         '200':
           description: Retrieved media content
@@ -3517,22 +2760,17 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
       tags:
         - communications.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in communications
+      summary: Update attendeeReport for the navigation property onlineMeetings in communications
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: communications_SetOnlineMeetingsAttendeeReport
-      parameters:
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New media content.
         content:
@@ -3544,7 +2782,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /communications/onlineMeetings/microsoft.graph.createOrGet:
@@ -3649,22 +2889,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of presence
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.presence'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.presenceCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3689,7 +2917,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/presences/{presence-id}':
@@ -3699,13 +2929,6 @@ paths:
       summary: Get presences from communications
       operationId: communications_GetPresences
       parameters:
-        - name: presence-id
-          in: path
-          description: 'key: id of presence'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: presence
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3739,7 +2962,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -3747,14 +2972,6 @@ paths:
         - communications.presence
       summary: Update the navigation property presences in communications
       operationId: communications_UpdatePresences
-      parameters:
-        - name: presence-id
-          in: path
-          description: 'key: id of presence'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: presence
       requestBody:
         description: New navigation property values
         content:
@@ -3765,7 +2982,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -3774,13 +2993,6 @@ paths:
       summary: Delete navigation property presences for communications
       operationId: communications_DeletePresences
       parameters:
-        - name: presence-id
-          in: path
-          description: 'key: id of presence'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: presence
         - name: If-Match
           in: header
           description: ETag
@@ -3789,7 +3001,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/communications/presences/{presence-id}/microsoft.graph.clearPresence':
@@ -3797,15 +3011,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action clearPresence
-      operationId: communications.presences_clearPresence
-      parameters:
-        - name: presence-id
-          in: path
-          description: 'key: id of presence'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: presence
+      operationId: communications.presences.presence_clearPresence
       requestBody:
         description: Action parameters
         content:
@@ -3830,15 +3036,7 @@ paths:
       tags:
         - communications.Actions
       summary: Invoke action setPresence
-      operationId: communications.presences_setPresence
-      parameters:
-        - name: presence-id
-          in: path
-          description: 'key: id of presence'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: presence
+      operationId: communications.presences.presence_setPresence
       requestBody:
         description: Action parameters
         content:
@@ -3874,13 +3072,6 @@ paths:
       summary: Get onlineMeetings from users
       operationId: users_ListOnlineMeetings
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3993,22 +3184,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of onlineMeeting
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.onlineMeetingCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4019,14 +3198,6 @@ paths:
         - users.onlineMeeting
       summary: Create new navigation property to onlineMeetings for users
       operationId: users_CreateOnlineMeetings
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -4041,7 +3212,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}':
@@ -4051,20 +3224,6 @@ paths:
       summary: Get onlineMeetings from users
       operationId: users_GetOnlineMeetings
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4126,7 +3285,9 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4134,21 +3295,6 @@ paths:
         - users.onlineMeeting
       summary: Update the navigation property onlineMeetings in users
       operationId: users_UpdateOnlineMeetings
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New navigation property values
         content:
@@ -4159,7 +3305,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4168,20 +3316,6 @@ paths:
       summary: Delete navigation property onlineMeetings for users
       operationId: users_DeleteOnlineMeetings
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - name: If-Match
           in: header
           description: ETag
@@ -4190,7 +3324,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports':
@@ -4201,20 +3337,6 @@ paths:
       description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_ListAttendanceReports
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4270,22 +3392,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of meetingAttendanceReport
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.meetingAttendanceReportCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4295,23 +3405,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceReports for users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_CreateAttendanceReports
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New navigation property
         content:
@@ -4326,7 +3420,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}':
@@ -4337,27 +3433,6 @@ paths:
       description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_GetAttendanceReports
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4401,37 +3476,16 @@ paths:
                 user-id: $request.path.user-id
                 onlineMeeting-id: $request.path.onlineMeeting-id
                 meetingAttendanceReport-id: $request.path.meetingAttendanceReport-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceReports in users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_UpdateAttendanceReports
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
       requestBody:
         description: New navigation property values
         content:
@@ -4442,37 +3496,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceReports for users
-      description: The attendance reports of an online meeting. Read-only.
       operationId: users.onlineMeetings_DeleteAttendanceReports
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - name: If-Match
           in: header
           description: ETag
@@ -4481,7 +3515,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords':
@@ -4492,27 +3528,6 @@ paths:
       description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_ListAttendanceRecords
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4572,22 +3587,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attendanceRecord
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.attendanceRecordCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4597,30 +3600,7 @@ paths:
       tags:
         - users.onlineMeeting
       summary: Create new navigation property to attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_CreateAttendanceRecords
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
       requestBody:
         description: New navigation property
         content:
@@ -4635,7 +3615,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendanceReports/{meetingAttendanceReport-id}/attendanceRecords/{attendanceRecord-id}':
@@ -4646,34 +3628,6 @@ paths:
       description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_GetAttendanceRecords
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4710,44 +3664,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.onlineMeeting
       summary: Update the navigation property attendanceRecords in users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_UpdateAttendanceRecords
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
       requestBody:
         description: New navigation property values
         content:
@@ -4758,44 +3684,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.onlineMeeting
       summary: Delete navigation property attendanceRecords for users
-      description: List of attendance records of an attendance report. Read-only.
       operationId: users.onlineMeetings.attendanceReports_DeleteAttendanceRecords
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
-        - name: meetingAttendanceReport-id
-          in: path
-          description: 'key: id of meetingAttendanceReport'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: meetingAttendanceReport
-        - name: attendanceRecord-id
-          in: path
-          description: 'key: id of attendanceRecord'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attendanceRecord
         - name: If-Match
           in: header
           description: ETag
@@ -4804,30 +3703,18 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/onlineMeetings/{onlineMeeting-id}/attendeeReport':
     get:
       tags:
         - users.onlineMeeting
-      summary: Get media content for the navigation property onlineMeetings from users
+      summary: Get attendeeReport for the navigation property onlineMeetings from users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: users_GetOnlineMeetingsAttendeeReport
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       responses:
         '200':
           description: Retrieved media content
@@ -4836,29 +3723,17 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
       tags:
         - users.onlineMeeting
-      summary: Update media content for the navigation property onlineMeetings in users
+      summary: Update attendeeReport for the navigation property onlineMeetings in users
+      description: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
       operationId: users_SetOnlineMeetingsAttendeeReport
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: onlineMeeting-id
-          in: path
-          description: 'key: id of onlineMeeting'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: onlineMeeting
       requestBody:
         description: New media content.
         content:
@@ -4870,7 +3745,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/presence':
@@ -4880,13 +3757,6 @@ paths:
       summary: Get presence from users
       operationId: users_GetPresence
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4920,7 +3790,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.presence'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -4928,14 +3800,6 @@ paths:
         - users.presence
       summary: Update the navigation property presence in users
       operationId: users_UpdatePresence
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -4946,7 +3810,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -4955,13 +3821,6 @@ paths:
       summary: Delete navigation property presence for users
       operationId: users_DeletePresence
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -4970,7 +3829,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -6212,13 +5073,145 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.callRecordCollectionResponse:
+      title: Collection of callRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecord'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.sessionCollectionResponse:
+      title: Collection of session
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.session'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callRecords.segmentCollectionResponse:
+      title: Collection of segment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.segment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.callCollectionResponse:
+      title: Collection of call
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.call'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.audioRoutingGroupCollectionResponse:
+      title: Collection of audioRoutingGroup
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.commsOperationCollectionResponse:
+      title: Collection of commsOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.participantCollectionResponse:
+      title: Collection of participant
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.participant'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.onlineMeetingCollectionResponse:
+      title: Collection of onlineMeeting
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeeting'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.meetingAttendanceReportCollectionResponse:
+      title: Collection of meetingAttendanceReport
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReport'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.attendanceRecordCollectionResponse:
+      title: Collection of attendanceRecord
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attendanceRecord'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.presenceCollectionResponse:
+      title: Collection of presence
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.presence'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.callRecords.userAgent:
@@ -6695,7 +5688,7 @@ components:
         - unknownFutureValue
         - producer
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -6707,15 +5700,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.callRecords.networkConnectionType:
@@ -6755,7 +5746,7 @@ components:
         - callerToCallee
         - calleeToCaller
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -6767,15 +5758,87 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.callRecords.callRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.callRecordCollectionResponse'
+    microsoft.graph.callRecords.sessionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.sessionCollectionResponse'
+    microsoft.graph.callRecords.segmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callRecords.segmentCollectionResponse'
+    microsoft.graph.callCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.callCollectionResponse'
+    microsoft.graph.audioRoutingGroupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.audioRoutingGroupCollectionResponse'
+    microsoft.graph.commsOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.commsOperationCollectionResponse'
+    microsoft.graph.participantCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.participantCollectionResponse'
+    microsoft.graph.onlineMeetingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.onlineMeetingCollectionResponse'
+    microsoft.graph.meetingAttendanceReportCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.meetingAttendanceReportCollectionResponse'
+    microsoft.graph.attendanceRecordCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.attendanceRecordCollectionResponse'
+    microsoft.graph.presenceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.presenceCollectionResponse'
   parameters:
     top:
       name: $top
