@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationMethod
 
 ## SYNOPSIS
-Create new navigation property to methods for users
+Represents all authentication methods registered to a user.
 
 ## SYNTAX
 
@@ -37,7 +37,7 @@ New-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-Additio
 ```
 
 ## DESCRIPTION
-Create new navigation property to methods for users
+Represents all authentication methods registered to a user.
 
 ## EXAMPLES
 

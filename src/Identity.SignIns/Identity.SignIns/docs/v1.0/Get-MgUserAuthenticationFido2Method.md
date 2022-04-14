@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationFido2Method
 
 ## SYNOPSIS
-Get fido2Methods from users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationFido2Method -InputObject <IIdentitySignInsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get fido2Methods from users
+Represents the FIDO2 security keys registered to a user for authentication.
 
 ## EXAMPLES
 

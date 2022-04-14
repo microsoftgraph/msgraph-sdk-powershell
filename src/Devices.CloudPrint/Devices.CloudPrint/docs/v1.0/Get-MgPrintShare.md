@@ -229,7 +229,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterShare
+### Microsoft.Graph.PowerShell.Models.IMicrosoftGraphPrinterShare1
 
 ## NOTES
 

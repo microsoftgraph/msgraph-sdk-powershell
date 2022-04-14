@@ -422,18 +422,12 @@ BODYPARAMETER <IMicrosoftGraphDirectory>: directory
     - `[ResourceType <String>]`: 
     - `[Status <String>]`: recommendationStatus
   - `[InboundSharedUserProfiles <IMicrosoftGraphInboundSharedUserProfile[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[Id <String>]`: Read-only.
     - `[DisplayName <String>]`: 
     - `[HomeTenantId <String>]`: 
     - `[UserId <String>]`: 
     - `[UserPrincipalName <String>]`: 
   - `[OutboundSharedUserProfiles <IMicrosoftGraphOutboundSharedUserProfile[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[Id <String>]`: Read-only.
     - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-      - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-      - `[Id <String>]`: Read-only.
       - `[TenantId <String>]`: 
     - `[UserId <String>]`: 
   - `[Recommendations <IMicrosoftGraphRecommendation[]>]`: 
@@ -512,19 +506,13 @@ IMPACTEDRESOURCES <IMicrosoftGraphRecommendationResource[]>: .
   - `[Status <String>]`: recommendationStatus
 
 INBOUNDSHAREDUSERPROFILES <IMicrosoftGraphInboundSharedUserProfile[]>: .
-  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
   - `[DisplayName <String>]`: 
   - `[HomeTenantId <String>]`: 
   - `[UserId <String>]`: 
   - `[UserPrincipalName <String>]`: 
 
 OUTBOUNDSHAREDUSERPROFILES <IMicrosoftGraphOutboundSharedUserProfile[]>: .
-  - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-  - `[Id <String>]`: Read-only.
   - `[Tenants <IMicrosoftGraphTenantReference[]>]`: 
-    - `[DeletedDateTime <DateTime?>]`: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-    - `[Id <String>]`: Read-only.
     - `[TenantId <String>]`: 
   - `[UserId <String>]`: 
 

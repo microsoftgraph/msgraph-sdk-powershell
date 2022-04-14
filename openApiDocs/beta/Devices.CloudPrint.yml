@@ -1137,6 +1137,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -1332,6 +1333,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -1355,6 +1358,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -1453,6 +1457,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
       responses:
         '200':
@@ -2017,6 +2023,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -2040,6 +2048,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -2142,6 +2151,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -2881,6 +2891,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -2979,6 +2991,7 @@ paths:
                 - userType
                 - mailboxSettings
                 - deviceEnrollmentLimit
+                - print
                 - aboutMe
                 - birthday
                 - hireDate
@@ -3317,6 +3330,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -4273,6 +4288,8 @@ paths:
                 - allowAllUsers desc
                 - createdDateTime
                 - createdDateTime desc
+                - viewPoint
+                - viewPoint desc
               type: string
         - name: $select
           in: query
@@ -4296,6 +4313,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -4400,6 +4418,7 @@ paths:
                 - status
                 - allowAllUsers
                 - createdDateTime
+                - viewPoint
                 - jobs
                 - allowedGroups
                 - allowedUsers
@@ -5141,6 +5160,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -5239,6 +5260,7 @@ paths:
                 - userType
                 - mailboxSettings
                 - deviceEnrollmentLimit
+                - print
                 - aboutMe
                 - birthday
                 - hireDate
@@ -5577,6 +5599,8 @@ paths:
                 - mailboxSettings desc
                 - deviceEnrollmentLimit
                 - deviceEnrollmentLimit desc
+                - print
+                - print desc
                 - aboutMe
                 - aboutMe desc
                 - birthday
@@ -7097,6 +7121,8 @@ components:
               type: string
               description: The DateTimeOffset when the printer share was created. Read-only.
               format: date-time
+            viewPoint:
+              $ref: '#/components/schemas/microsoft.graph.printerShareViewpoint'
             allowedGroups:
               type: array
               items:
@@ -7769,6 +7795,8 @@ components:
               type: integer
               description: The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
               format: int32
+            print:
+              $ref: '#/components/schemas/microsoft.graph.userPrint'
             aboutMe:
               type: string
               description: A freeform text entry field for the user to describe themselves. Returned only on $select.
@@ -8512,6 +8540,17 @@ components:
         - counterClockwiseFromBottomRight
         - clockwiseFromBottomRight
       type: string
+    microsoft.graph.printerShareViewpoint:
+      title: printerShareViewpoint
+      type: object
+      properties:
+        lastUsedDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.printEvent:
       title: printEvent
       enum:
@@ -9715,6 +9754,16 @@ components:
           $ref: '#/components/schemas/microsoft.graph.workingHours'
       additionalProperties:
         type: object
+    microsoft.graph.userPrint:
+      title: userPrint
+      type: object
+      properties:
+        recentPrinterShares:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.printerShare'
+      additionalProperties:
+        type: object
     microsoft.graph.userAnalytics:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -9900,7 +9949,7 @@ components:
               description: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
             scope:
               type: string
-              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
+              description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.'
               nullable: true
             startTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
@@ -11866,18 +11915,22 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.emailAuthenticationMethod'
+              description: Represents the email addresses registered to a user for authentication.
             fido2Methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.fido2AuthenticationMethod'
+              description: Represents the FIDO2 security keys registered to a user for authentication.
             methods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authenticationMethod'
+              description: Represents all authentication methods registered to a user.
             microsoftAuthenticatorMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.microsoftAuthenticatorAuthenticationMethod'
+              description: The details of the Microsoft Authenticator app registered to a user for authentication.
             operations:
               type: array
               items:
@@ -11886,14 +11939,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod'
+              description: Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
             passwordMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.passwordAuthenticationMethod'
+              description: Represents the details of the password authentication method registered to a user for authentication.
             phoneMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.phoneAuthenticationMethod'
+              description: Represents the phone registered to a user for authentication.
             softwareOathMethods:
               type: array
               items:
@@ -11902,10 +11958,12 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.temporaryAccessPassAuthenticationMethod'
+              description: Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
             windowsHelloForBusinessMethods:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.windowsHelloForBusinessAuthenticationMethod'
+              description: Represents the Windows Hello for Business authentication method registered to a user for authentication.
           additionalProperties:
             type: object
     microsoft.graph.tasks:
@@ -13173,6 +13231,8 @@ components:
               type: boolean
               description: Specifies whether the column value isn't optional.
               nullable: true
+            sourceContentType:
+              $ref: '#/components/schemas/microsoft.graph.contentTypeInfo'
             term:
               $ref: '#/components/schemas/microsoft.graph.termColumn'
             text:
@@ -20446,6 +20506,20 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.contentTypeInfo:
+      title: contentTypeInfo
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the content type.
+          nullable: true
+        name:
+          type: string
+          description: The name of the content type.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.termColumn:
       title: termColumn
       type: object
@@ -20458,6 +20532,10 @@ components:
           type: boolean
           description: Specifies whether to display the entire term path or only the term label.
           nullable: true
+        parentTerm:
+          $ref: '#/components/schemas/microsoft.graph.termStore.term'
+        termSet:
+          $ref: '#/components/schemas/microsoft.graph.termStore.set'
       additionalProperties:
         type: object
     microsoft.graph.textColumn:
@@ -20559,7 +20637,7 @@ components:
           nullable: true
         shouldPrefixNameToFile:
           type: boolean
-          description: Add the name of the document set to each file name.
+          description: Indicates whether to add the name of the document set to each file name.
           nullable: true
         welcomePageUrl:
           type: string
@@ -20642,20 +20720,6 @@ components:
         target:
           type: string
           description: The target of the error.
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.contentTypeInfo:
-      title: contentTypeInfo
-      type: object
-      properties:
-        id:
-          type: string
-          description: The id of the content type.
-          nullable: true
-        name:
-          type: string
-          description: The name of the content type.
           nullable: true
       additionalProperties:
         type: object
@@ -23226,6 +23290,10 @@ components:
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrantId:
+              type: string
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -24316,6 +24384,53 @@ components:
               $ref: '#/components/schemas/microsoft.graph.driveItem'
           additionalProperties:
             type: object
+    microsoft.graph.termStore.term:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: term
+          type: object
+          properties:
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time of term creation. Read-only.
+              format: date-time
+              nullable: true
+            descriptions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
+              description: Description about term that is dependent on the languageTag.
+            labels:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
+              description: Label metadata for a term.
+            lastModifiedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Last date and time of term modification. Read-only.
+              format: date-time
+              nullable: true
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.keyValue'
+              description: Collection of properties on the term.
+            children:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.term'
+              description: Children of current term.
+            relations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
+              description: To indicate which terms are related to the current term as either pinned or reused.
+            set:
+              $ref: '#/components/schemas/microsoft.graph.termStore.set'
+          additionalProperties:
+            type: object
     microsoft.graph.displayNameLocalization:
       title: displayNameLocalization
       type: object
@@ -24423,53 +24538,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.termStore.term:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: term
-          type: object
-          properties:
-            createdDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time of term creation. Read-only.
-              format: date-time
-              nullable: true
-            descriptions:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedDescription'
-              description: Description about term that is dependent on the languageTag.
-            labels:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.localizedLabel'
-              description: Label metadata for a term.
-            lastModifiedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Last date and time of term modification. Read-only.
-              format: date-time
-              nullable: true
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.keyValue'
-              description: Collection of properties on the term.
-            children:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.term'
-              description: Children of current term.
-            relations:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.termStore.relation'
-              description: To indicate which terms are related to the current term as either pinned or reused.
-            set:
-              $ref: '#/components/schemas/microsoft.graph.termStore.set'
-          additionalProperties:
-            type: object
     microsoft.graph.termStore.relation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -25351,6 +25419,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     microsoft.graph.attendanceInterval:
       title: attendanceInterval

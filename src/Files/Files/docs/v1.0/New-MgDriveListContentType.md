@@ -12,7 +12,7 @@ The collection of content types present in this list.
 
 ## SYNTAX
 
-### CreateExpanded (Default)
+### CreateExpanded1 (Default)
 ```
 New-MgDriveListContentType -DriveId <String> [-AdditionalProperties <Hashtable>]
  [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
@@ -25,19 +25,19 @@ New-MgDriveListContentType -DriveId <String> [-AdditionalProperties <Hashtable>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
+### Create1
 ```
 New-MgDriveListContentType -DriveId <String> -BodyParameter <IMicrosoftGraphContentType1> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### CreateViaIdentity
+### CreateViaIdentity1
 ```
 New-MgDriveListContentType -InputObject <IFilesIdentity> -BodyParameter <IMicrosoftGraphContentType1>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CreateViaIdentityExpanded
+### CreateViaIdentityExpanded1
 ```
 New-MgDriveListContentType -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-AssociatedHubsUrls <String[]>] [-Base <IMicrosoftGraphContentType1>]
@@ -62,7 +62,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -79,7 +79,7 @@ Enforcing a content type means that the content type will be applied to the list
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -95,7 +95,7 @@ To construct, please use Get-Help -Online and see NOTES section for BASE propert
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -111,7 +111,7 @@ To construct, please use Get-Help -Online and see NOTES section for BASETYPES pr
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -127,7 +127,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentType1
-Parameter Sets: Create, CreateViaIdentity
+Parameter Sets: Create1, CreateViaIdentity1
 Aliases:
 
 Required: True
@@ -143,7 +143,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNLINKS 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnLink[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -159,7 +159,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNPOSITI
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -175,7 +175,7 @@ To construct, please use Get-Help -Online and see NOTES section for COLUMNS prop
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphColumnDefinition1[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -190,7 +190,7 @@ The descriptive text for the item.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -206,7 +206,7 @@ To construct, please use Get-Help -Online and see NOTES section for DOCUMENTSET 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSet1
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -222,7 +222,7 @@ To construct, please use Get-Help -Online and see NOTES section for DOCUMENTTEMP
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphDocumentSetContent
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -237,7 +237,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: Create1, CreateExpanded1
 Aliases:
 
 Required: True
@@ -253,7 +253,7 @@ Helps organize related content types.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -268,7 +268,7 @@ Indicates whether the content type is hidden in the list's 'New' menu.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -283,7 +283,7 @@ Read-only.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -299,7 +299,7 @@ To construct, please use Get-Help -Online and see NOTES section for INHERITEDFRO
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphItemReference
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -315,7 +315,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentity1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -330,7 +330,7 @@ Specifies if a content type is a built-in content type.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -345,7 +345,7 @@ The name of the content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -361,7 +361,7 @@ To construct, please use Get-Help -Online and see NOTES section for ORDER proper
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphContentTypeOrder
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -376,7 +376,7 @@ The unique identifier of the content type.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -391,7 +391,7 @@ If true, any changes made to the content type will be pushed to inherited conten
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -406,7 +406,7 @@ If true, the content type can't be modified unless this value is first set to fa
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -422,7 +422,7 @@ Only site collection administrators can seal or unseal content types.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: CreateExpanded1, CreateViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -558,6 +558,10 @@ BASE <IMicrosoftGraphContentType1>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -628,15 +632,13 @@ BASE <IMicrosoftGraphContentType1>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -743,6 +745,10 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -813,15 +819,13 @@ BASETYPES <IMicrosoftGraphContentType1[]>: The collection of content types that 
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -929,6 +933,10 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[Id <String>]`: The id of the content type.
+      - `[Name <String>]`: The name of the content type.
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -999,15 +1007,13 @@ BODYPARAMETER <IMicrosoftGraphContentType1>: contentType
   - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-      - `[Id <String>]`: The id of the content type.
-      - `[Name <String>]`: The name of the content type.
     - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
       - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
       - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
       - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
     - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
     - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-    - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+    - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
     - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
     - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
   - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -1110,6 +1116,10 @@ COLUMNPOSITIONS <IMicrosoftGraphColumnDefinition1[]>: Column order information i
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1240,6 +1250,10 @@ COLUMNS <IMicrosoftGraphColumnDefinition1[]>: The collection of column definitio
   - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
   - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
   - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+  - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Id <String>]`: The id of the content type.
+    - `[Name <String>]`: The name of the content type.
   - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1380,6 +1394,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
     - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
     - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
     - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+    - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
     - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1445,7 +1460,7 @@ DOCUMENTSET <IMicrosoftGraphDocumentSet1>: documentSet
         - `[DisplayName <String>]`: If present, the value of this field contains the displayName string that has been set for the language present in the languageTag field.
         - `[LanguageTag <String>]`: Provides the language culture-code and friendly name of the language that the displayName field has been provided in.
       - `[Formula <String>]`: The formula to validate column value. For examples, see Examples of common formulas in lists.
-  - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+  - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
   - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
   - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
 

@@ -276,7 +276,7 @@ BODYPARAMETER <IPaths1H47062UsersUserIdOnlinemeetingsMicrosoftGraphCreateorgetPo
           - `[Id <String>]`: Unique identifier for the identity.
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[Role <String>]`: onlineMeetingRole
+      - `[Role <String>]`: 
       - `[Upn <String>]`: User principal name of the participant.
     - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
     - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
@@ -331,7 +331,7 @@ PARTICIPANTS <IMicrosoftGraphMeetingParticipants>: meetingParticipants
         - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[Role <String>]`: onlineMeetingRole
+    - `[Role <String>]`: 
     - `[Upn <String>]`: User principal name of the participant.
   - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
   - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo

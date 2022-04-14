@@ -563,7 +563,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
           - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
-            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+            - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
               - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -571,9 +571,9 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
               - `[DisplayName <String>]`: The display name of the key as given by the user.
               - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+            - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
               - `[Id <String>]`: Read-only.
-            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+            - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -613,7 +613,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[DeviceTag <String>]`: Tags containing app metadata.
               - `[DisplayName <String>]`: The name of the device on which this app is registered.
               - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+            - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
               - `[Id <String>]`: Read-only.
               - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
               - `[Device <IMicrosoftGraphDevice>]`: device
@@ -1092,6 +1092,10 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                 - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
                 - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
                 - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+                - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+                  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+                  - `[Id <String>]`: The id of the content type.
+                  - `[Name <String>]`: The name of the content type.
                 - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -1171,15 +1175,13 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
                 - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
                   - `[(Any) <Object>]`: This indicates any property can be added to this object.
                   - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-                    - `[Id <String>]`: The id of the content type.
-                    - `[Name <String>]`: The name of the content type.
                   - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
                     - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
                     - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
                     - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
                   - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
                   - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-                  - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+                  - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
                   - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
                   - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
                 - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -2036,7 +2038,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[IsEnabled <Boolean?>]`: Indicates whether the rule is enabled to be applied to messages.
               - `[IsReadOnly <Boolean?>]`: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
               - `[Sequence <Int32?>]`: Indicates the order in which the rule is executed, among other rules.
-            - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
+            - `[Messages <IMicrosoftGraphMessage[]>]`: The collection of messages in the mailFolder.
               - `[Categories <String[]>]`: The categories associated with the item
               - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
               - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -2142,7 +2144,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[PlatformVersion <String>]`: Operating System version
             - `[UserId <String>]`: The user Id to who this app registration belongs.
             - `[Version <String>]`: Version of the entity.
-          - `[ManagedDevices <IMicrosoftGraphManagedDevice1[]>]`: The managed devices associated with the user.
+          - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The managed devices associated with the user.
             - `[Id <String>]`: Read-only.
             - `[ActivationLockBypassCode <String>]`: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
             - `[AndroidSecurityPatchLevel <String>]`: Android security patch level. This property is read-only.
@@ -2289,7 +2291,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[WiFiMacAddress <String>]`: Wi-Fi MAC. This property is read-only.
           - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
           - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-          - `[Messages <IMicrosoftGraphMessage1[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
+          - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
           - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
           - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant1[]>]`: 
@@ -2298,7 +2300,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
             - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
             - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+            - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
           - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
           - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
           - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -2385,7 +2387,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
               - `[(Any) <Object>]`: This indicates any property can be added to this object.
               - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
                 - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-                - `[Role <String>]`: onlineMeetingRole
+                - `[Role <String>]`: 
                 - `[Upn <String>]`: User principal name of the participant.
               - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
             - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -2393,7 +2395,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[Subject <String>]`: The subject of the online meeting.
             - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
           - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-          - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
+          - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[Id <String>]`: Read-only.
             - `[MasterCategories <IMicrosoftGraphOutlookCategory[]>]`: A list of categories defined for the user.
@@ -2409,7 +2411,7 @@ ANALYTICS <IMicrosoftGraphItemAnalytics1>: itemAnalytics
             - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
             - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
           - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-          - `[People <IMicrosoftGraphPerson1[]>]`: People that are relevant to the user. Read-only. Nullable.
+          - `[People <IMicrosoftGraphPerson[]>]`: People that are relevant to the user. Read-only. Nullable.
             - `[Id <String>]`: Read-only.
             - `[Birthday <String>]`: The person's birthday.
             - `[CompanyName <String>]`: The name of the person's company.
@@ -3035,7 +3037,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
     - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
         - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -3043,9 +3045,9 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
         - `[DisplayName <String>]`: The display name of the key as given by the user.
         - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
         - `[Id <String>]`: Read-only.
-      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -3085,7 +3087,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[DeviceTag <String>]`: Tags containing app metadata.
         - `[DisplayName <String>]`: The name of the device on which this app is registered.
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -4044,6 +4046,10 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
           - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+          - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The id of the content type.
+            - `[Name <String>]`: The name of the content type.
           - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -4123,15 +4129,13 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
           - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-              - `[Id <String>]`: The id of the content type.
-              - `[Name <String>]`: The name of the content type.
             - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
               - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
               - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
             - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
             - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-            - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+            - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
             - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
             - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
           - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -4910,7 +4914,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[IsEnabled <Boolean?>]`: Indicates whether the rule is enabled to be applied to messages.
         - `[IsReadOnly <Boolean?>]`: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
         - `[Sequence <Int32?>]`: Indicates the order in which the rule is executed, among other rules.
-      - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
+      - `[Messages <IMicrosoftGraphMessage[]>]`: The collection of messages in the mailFolder.
         - `[Categories <String[]>]`: The categories associated with the item
         - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -5016,7 +5020,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[PlatformVersion <String>]`: Operating System version
       - `[UserId <String>]`: The user Id to who this app registration belongs.
       - `[Version <String>]`: Version of the entity.
-    - `[ManagedDevices <IMicrosoftGraphManagedDevice1[]>]`: The managed devices associated with the user.
+    - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The managed devices associated with the user.
       - `[Id <String>]`: Read-only.
       - `[ActivationLockBypassCode <String>]`: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
       - `[AndroidSecurityPatchLevel <String>]`: Android security patch level. This property is read-only.
@@ -5163,7 +5167,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[WiFiMacAddress <String>]`: Wi-Fi MAC. This property is read-only.
     - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-    - `[Messages <IMicrosoftGraphMessage1[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
+    - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant1[]>]`: 
@@ -5172,7 +5176,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
       - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -5259,7 +5263,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -5267,7 +5271,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-    - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
+    - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[MasterCategories <IMicrosoftGraphOutlookCategory[]>]`: A list of categories defined for the user.
@@ -5283,7 +5287,7 @@ BODYPARAMETER <IMicrosoftGraphListItem1>: listItem
       - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
       - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
     - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-    - `[People <IMicrosoftGraphPerson1[]>]`: People that are relevant to the user. Read-only. Nullable.
+    - `[People <IMicrosoftGraphPerson[]>]`: People that are relevant to the user. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Birthday <String>]`: The person's birthday.
       - `[CompanyName <String>]`: The name of the person's company.
@@ -5527,7 +5531,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
   - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
       - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -5535,9 +5539,9 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
       - `[DisplayName <String>]`: The display name of the key as given by the user.
       - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
       - `[Id <String>]`: Read-only.
-    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -5577,7 +5581,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[DeviceTag <String>]`: Tags containing app metadata.
       - `[DisplayName <String>]`: The name of the device on which this app is registered.
       - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -6572,6 +6576,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
         - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+        - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -6657,7 +6662,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
             - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
           - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
           - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-          - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+          - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
           - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
           - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
         - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -7436,7 +7441,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[IsEnabled <Boolean?>]`: Indicates whether the rule is enabled to be applied to messages.
       - `[IsReadOnly <Boolean?>]`: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
       - `[Sequence <Int32?>]`: Indicates the order in which the rule is executed, among other rules.
-    - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
+    - `[Messages <IMicrosoftGraphMessage[]>]`: The collection of messages in the mailFolder.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -7542,7 +7547,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[PlatformVersion <String>]`: Operating System version
     - `[UserId <String>]`: The user Id to who this app registration belongs.
     - `[Version <String>]`: Version of the entity.
-  - `[ManagedDevices <IMicrosoftGraphManagedDevice1[]>]`: The managed devices associated with the user.
+  - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The managed devices associated with the user.
     - `[Id <String>]`: Read-only.
     - `[ActivationLockBypassCode <String>]`: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
     - `[AndroidSecurityPatchLevel <String>]`: Android security patch level. This property is read-only.
@@ -7689,7 +7694,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[WiFiMacAddress <String>]`: Wi-Fi MAC. This property is read-only.
   - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-  - `[Messages <IMicrosoftGraphMessage1[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
+  - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant1[]>]`: 
@@ -7698,7 +7703,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
     - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
     - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
   - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -7785,7 +7790,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -7793,7 +7798,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Subject <String>]`: The subject of the online meeting.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-  - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
+  - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[MasterCategories <IMicrosoftGraphOutlookCategory[]>]`: A list of categories defined for the user.
@@ -7809,7 +7814,7 @@ CREATEDBYUSER <IMicrosoftGraphUser1>: user
     - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
   - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-  - `[People <IMicrosoftGraphPerson1[]>]`: People that are relevant to the user. Read-only. Nullable.
+  - `[People <IMicrosoftGraphPerson[]>]`: People that are relevant to the user. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Birthday <String>]`: The person's birthday.
     - `[CompanyName <String>]`: The name of the person's company.
@@ -8026,7 +8031,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
     - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
-      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+      - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
         - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -8034,9 +8039,9 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
         - `[DisplayName <String>]`: The display name of the key as given by the user.
         - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+      - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
         - `[Id <String>]`: Read-only.
-      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+      - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -8076,7 +8081,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[DeviceTag <String>]`: Tags containing app metadata.
         - `[DisplayName <String>]`: The name of the device on which this app is registered.
         - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+      - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
         - `[Id <String>]`: Read-only.
         - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
         - `[Device <IMicrosoftGraphDevice>]`: device
@@ -8555,6 +8560,10 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
           - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
           - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
           - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+          - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
+            - `[(Any) <Object>]`: This indicates any property can be added to this object.
+            - `[Id <String>]`: The id of the content type.
+            - `[Name <String>]`: The name of the content type.
           - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -8634,15 +8643,13 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
           - `[DocumentSet <IMicrosoftGraphDocumentSet1>]`: documentSet
             - `[(Any) <Object>]`: This indicates any property can be added to this object.
             - `[AllowedContentTypes <IMicrosoftGraphContentTypeInfo[]>]`: Content types allowed in document set.
-              - `[Id <String>]`: The id of the content type.
-              - `[Name <String>]`: The name of the content type.
             - `[DefaultContents <IMicrosoftGraphDocumentSetContent[]>]`: Default contents of document set.
               - `[ContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
               - `[FileName <String>]`: Name of the file in resource folder that should be added as a default content or a template in the document set.
               - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
             - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
             - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-            - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+            - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
             - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
             - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
           - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -9528,7 +9535,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[IsEnabled <Boolean?>]`: Indicates whether the rule is enabled to be applied to messages.
         - `[IsReadOnly <Boolean?>]`: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
         - `[Sequence <Int32?>]`: Indicates the order in which the rule is executed, among other rules.
-      - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
+      - `[Messages <IMicrosoftGraphMessage[]>]`: The collection of messages in the mailFolder.
         - `[Categories <String[]>]`: The categories associated with the item
         - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -9634,7 +9641,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[PlatformVersion <String>]`: Operating System version
       - `[UserId <String>]`: The user Id to who this app registration belongs.
       - `[Version <String>]`: Version of the entity.
-    - `[ManagedDevices <IMicrosoftGraphManagedDevice1[]>]`: The managed devices associated with the user.
+    - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The managed devices associated with the user.
       - `[Id <String>]`: Read-only.
       - `[ActivationLockBypassCode <String>]`: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
       - `[AndroidSecurityPatchLevel <String>]`: Android security patch level. This property is read-only.
@@ -9781,7 +9788,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[WiFiMacAddress <String>]`: Wi-Fi MAC. This property is read-only.
     - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
     - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-    - `[Messages <IMicrosoftGraphMessage1[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
+    - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
     - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
     - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant1[]>]`: 
@@ -9790,7 +9797,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
       - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
       - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+      - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
     - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
     - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
     - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -9877,7 +9884,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
           - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-          - `[Role <String>]`: onlineMeetingRole
+          - `[Role <String>]`: 
           - `[Upn <String>]`: User principal name of the participant.
         - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
       - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -9885,7 +9892,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[Subject <String>]`: The subject of the online meeting.
       - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
     - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-    - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
+    - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Id <String>]`: Read-only.
       - `[MasterCategories <IMicrosoftGraphOutlookCategory[]>]`: A list of categories defined for the user.
@@ -9901,7 +9908,7 @@ DRIVEITEM <IMicrosoftGraphDriveItem1>: driveItem
       - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
       - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
     - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-    - `[People <IMicrosoftGraphPerson1[]>]`: People that are relevant to the user. Read-only. Nullable.
+    - `[People <IMicrosoftGraphPerson[]>]`: People that are relevant to the user. Read-only. Nullable.
       - `[Id <String>]`: Read-only.
       - `[Birthday <String>]`: The person's birthday.
       - `[CompanyName <String>]`: The name of the person's company.
@@ -10532,7 +10539,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
   - `[Authentication <IMicrosoftGraphAuthentication>]`: authentication
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
-    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: 
+    - `[Fido2Methods <IMicrosoftGraphFido2AuthenticationMethod[]>]`: Represents the FIDO2 security keys registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[AaGuid <String>]`: Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
       - `[AttestationCertificates <String[]>]`: The attestation certificate(s) attached to this security key.
@@ -10540,9 +10547,9 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[CreatedDateTime <DateTime?>]`: The timestamp when this key was registered to the user.
       - `[DisplayName <String>]`: The display name of the key as given by the user.
       - `[Model <String>]`: The manufacturer-assigned model of the FIDO2 security key.
-    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: 
+    - `[Methods <IMicrosoftGraphAuthenticationMethod[]>]`: Represents all authentication methods registered to a user.
       - `[Id <String>]`: Read-only.
-    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: 
+    - `[MicrosoftAuthenticatorMethods <IMicrosoftGraphMicrosoftAuthenticatorAuthenticationMethod[]>]`: The details of the Microsoft Authenticator app registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -10582,7 +10589,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[DeviceTag <String>]`: Tags containing app metadata.
       - `[DisplayName <String>]`: The name of the device on which this app is registered.
       - `[PhoneAppVersion <String>]`: Numerical version of this instance of the Authenticator app.
-    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: 
+    - `[WindowsHelloForBusinessMethods <IMicrosoftGraphWindowsHelloForBusinessAuthenticationMethod[]>]`: Represents the Windows Hello for Business authentication method registered to a user for authentication.
       - `[Id <String>]`: Read-only.
       - `[CreatedDateTime <DateTime?>]`: The date and time that this Windows Hello for Business key was registered.
       - `[Device <IMicrosoftGraphDevice>]`: device
@@ -11577,6 +11584,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
         - `[ReadOnly <Boolean?>]`: Specifies whether the column values can be modified.
         - `[Required <Boolean?>]`: Specifies whether the column value isn't optional.
         - `[SourceColumn <IMicrosoftGraphColumnDefinition1>]`: columnDefinition
+        - `[SourceContentType <IMicrosoftGraphContentTypeInfo>]`: contentTypeInfo
         - `[Term <IMicrosoftGraphTermColumn1>]`: termColumn
           - `[(Any) <Object>]`: This indicates any property can be added to this object.
           - `[AllowMultipleValues <Boolean?>]`: Specifies whether the column will allow more than one value.
@@ -11662,7 +11670,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
             - `[FolderName <String>]`: Folder name in which the file will be placed when a new document set is created in the library.
           - `[PropagateWelcomePageChanges <Boolean?>]`: Specifies whether to push welcome page changes to inherited content types.
           - `[SharedColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
-          - `[ShouldPrefixNameToFile <Boolean?>]`: Add the name of the document set to each file name.
+          - `[ShouldPrefixNameToFile <Boolean?>]`: Indicates whether to add the name of the document set to each file name.
           - `[WelcomePageColumns <IMicrosoftGraphColumnDefinition1[]>]`: 
           - `[WelcomePageUrl <String>]`: Welcome page absolute URL.
         - `[DocumentTemplate <IMicrosoftGraphDocumentSetContent>]`: documentSetContent
@@ -12441,7 +12449,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[IsEnabled <Boolean?>]`: Indicates whether the rule is enabled to be applied to messages.
       - `[IsReadOnly <Boolean?>]`: Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
       - `[Sequence <Int32?>]`: Indicates the order in which the rule is executed, among other rules.
-    - `[Messages <IMicrosoftGraphMessage1[]>]`: The collection of messages in the mailFolder.
+    - `[Messages <IMicrosoftGraphMessage[]>]`: The collection of messages in the mailFolder.
       - `[Categories <String[]>]`: The categories associated with the item
       - `[ChangeKey <String>]`: Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
       - `[CreatedDateTime <DateTime?>]`: The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
@@ -12547,7 +12555,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[PlatformVersion <String>]`: Operating System version
     - `[UserId <String>]`: The user Id to who this app registration belongs.
     - `[Version <String>]`: Version of the entity.
-  - `[ManagedDevices <IMicrosoftGraphManagedDevice1[]>]`: The managed devices associated with the user.
+  - `[ManagedDevices <IMicrosoftGraphManagedDevice[]>]`: The managed devices associated with the user.
     - `[Id <String>]`: Read-only.
     - `[ActivationLockBypassCode <String>]`: Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
     - `[AndroidSecurityPatchLevel <String>]`: Android security patch level. This property is read-only.
@@ -12694,7 +12702,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[WiFiMacAddress <String>]`: Wi-Fi MAC. This property is read-only.
   - `[Manager <IMicrosoftGraphDirectoryObject>]`: directoryObject
   - `[MemberOf <IMicrosoftGraphDirectoryObject[]>]`: The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-  - `[Messages <IMicrosoftGraphMessage1[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
+  - `[Messages <IMicrosoftGraphMessage[]>]`: The messages in a mailbox or folder. Read-only. Nullable.
   - `[MobilePhone <String>]`: The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[MySite <String>]`: The URL for the user's personal site. Returned only on $select.
   - `[Oauth2PermissionGrants <IMicrosoftGraphOAuth2PermissionGrant1[]>]`: 
@@ -12703,7 +12711,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[ConsentType <String>]`: Indicates if authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Non-admin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).
     - `[PrincipalId <String>]`: The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal.
     - `[ResourceId <String>]`: The id of the resource service principal to which access is authorized. This identifies the API which the client is authorized to attempt to call on behalf of a signed-in user.
-    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.
+    - `[Scope <String>]`: A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the oauth2PermissionScopes property of the resource service principal.
   - `[OfficeLocation <String>]`: The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
   - `[OnPremisesDistinguishedName <String>]`: Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
   - `[OnPremisesDomainName <String>]`: Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -12790,7 +12798,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
         - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
-        - `[Role <String>]`: onlineMeetingRole
+        - `[Role <String>]`: 
         - `[Upn <String>]`: User principal name of the participant.
       - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
     - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
@@ -12798,7 +12806,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[Subject <String>]`: The subject of the online meeting.
     - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
   - `[OtherMails <String[]>]`: A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith).
-  - `[Outlook <IMicrosoftGraphOutlookUser1>]`: outlookUser
+  - `[Outlook <IMicrosoftGraphOutlookUser>]`: outlookUser
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Id <String>]`: Read-only.
     - `[MasterCategories <IMicrosoftGraphOutlookCategory[]>]`: A list of categories defined for the user.
@@ -12814,7 +12822,7 @@ LASTMODIFIEDBYUSER <IMicrosoftGraphUser1>: user
     - `[ForceChangePasswordNextSignInWithMfa <Boolean?>]`: If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
     - `[Password <String>]`: The password for the user. This property is required when a user is created. It can be updated, but the user will be required to change the password on the next login. The password must satisfy minimum requirements as specified by the user’s passwordPolicies property. By default, a strong password is required.
   - `[PastProjects <String[]>]`: A list for the user to enumerate their past projects. Returned only on $select.
-  - `[People <IMicrosoftGraphPerson1[]>]`: People that are relevant to the user. Read-only. Nullable.
+  - `[People <IMicrosoftGraphPerson[]>]`: People that are relevant to the user. Read-only. Nullable.
     - `[Id <String>]`: Read-only.
     - `[Birthday <String>]`: The person's birthday.
     - `[CompanyName <String>]`: The name of the person's company.

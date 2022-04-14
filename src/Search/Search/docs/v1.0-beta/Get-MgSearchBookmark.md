@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchBookmark
 
 ## SYNOPSIS
-Get bookmarks from search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchBookmark -InputObject <ISearchIdentity> [-ExpandProperty <String[]>]
 ```
 
 ## DESCRIPTION
-Get bookmarks from search
+Administrative answer in Microsoft Search results for common search queries in an organization.
 
 ## EXAMPLES
 

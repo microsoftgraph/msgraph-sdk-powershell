@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Delete navigation property temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Delete navigation property temporaryAccessPassMethods for users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 

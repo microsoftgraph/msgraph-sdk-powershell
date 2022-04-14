@@ -9,6 +9,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
 
     using System;
     using System.Collections;
+    using System.Net.Http;
     using System.Security;
     using System.Threading;
 
@@ -67,6 +68,8 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// Represents a collection of Microsoft Graph PowerShell meta-info.
         /// </summary>
         public Hashtable[] MgCommandMetadata { get; set; }
+
+        public HttpClient GraphHttpClient { get; set; }
 
         /// <summary>
         /// Gets an instance of <see cref="GraphSession"/>.

@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Update the navigation property windowsHelloForBusinessMethods in users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -44,7 +44,7 @@ Update-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property windowsHelloForBusinessMethods in users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

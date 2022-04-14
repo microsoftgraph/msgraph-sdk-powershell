@@ -46,11 +46,6 @@ directive:
       variant: Validate1|ValidateExpanded1|Validate3|ValidateExpanded3
     remove: true
   - where:
-      verb: Test
-      subject: ^GroupDynamicMembership$
-      variant: Evaluate1|EvaluateExpanded1
-    remove: true
-  - where:
       verb: Get
       subject: (Group)AvailableExtensionProperty
     remove: true
@@ -59,6 +54,12 @@ directive:
       subject: ^(GroupLifecyclePolicy)(\1)+
     set:
       subject: $1
+  - where:
+      verb: Test
+      subject: ^(GroupDynamicMembership)$
+      variant: Evaluate1|EvaluateExpanded1
+    set:
+      subject: $1Rule
   - where:
       verb: Get
       subject: ^Group$
@@ -141,6 +142,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.4
+module-version: 1.9.5
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -17,19 +17,18 @@ Update the navigation property onlineMeetings in communications
 Update-MgCommunicationOnlineMeeting -OnlineMeetingId <String> [-AccessLevel <String>]
  [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
  [-AllowedPresenters <String>] [-AllowMeetingChat <String>] [-AllowTeamworkReactions]
- [-AlternativeRecordingInputFile <String>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]
+ [-AlternativeRecordingInputFile <String>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]
  [-AttendeeReportInputFile <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
  [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>] [-CanceledDateTime <DateTime>]
  [-Capabilities <String[]>] [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>]
  [-EndDateTime <DateTime>] [-EntryExitAnnouncement] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
  [-Id <String>] [-IsBroadcast] [-IsCancelled] [-IsEntryExitAnnounced]
- [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinUrl <String>]
- [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
- [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
+ [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]
+ [-JoinUrl <String>] [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
+ [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Registration <IMicrosoftGraphMeetingRegistration>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Update1
@@ -49,19 +48,18 @@ Update-MgCommunicationOnlineMeeting -InputObject <ICloudCommunicationsIdentity>
 Update-MgCommunicationOnlineMeeting -InputObject <ICloudCommunicationsIdentity> [-AccessLevel <String>]
  [-AdditionalProperties <Hashtable>] [-AllowAttendeeToEnableCamera] [-AllowAttendeeToEnableMic]
  [-AllowedPresenters <String>] [-AllowMeetingChat <String>] [-AllowTeamworkReactions]
- [-AlternativeRecordingInputFile <String>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]
+ [-AlternativeRecordingInputFile <String>] [-AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]
  [-AttendeeReportInputFile <String>] [-AudioConferencing <IMicrosoftGraphAudioConferencing>]
  [-BroadcastSettings <IMicrosoftGraphBroadcastMeetingSettings1>] [-CanceledDateTime <DateTime>]
  [-Capabilities <String[]>] [-ChatInfo <IMicrosoftGraphChatInfo>] [-CreationDateTime <DateTime>]
  [-EndDateTime <DateTime>] [-EntryExitAnnouncement] [-ExpirationDateTime <DateTime>] [-ExternalId <String>]
  [-Id <String>] [-IsBroadcast] [-IsCancelled] [-IsEntryExitAnnounced]
- [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinUrl <String>]
- [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
- [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]
+ [-JoinInformation <IMicrosoftGraphItemBody>] [-JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]
+ [-JoinUrl <String>] [-LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]
+ [-MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]
  [-Participants <IMicrosoftGraphMeetingParticipants1>] [-RecordAutomatically] [-RecordingInputFile <String>]
  [-Registration <IMicrosoftGraphMeetingRegistration>] [-StartDateTime <DateTime>] [-Subject <String>]
- [-Transcripts <IMicrosoftGraphCallTranscript[]>] [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-VideoTeleconferenceId <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -162,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -AllowTeamworkReactions
-Indicates if Teams reactions are enabled for the meeting.
+Indicates whether Teams reactions are enabled for the meeting.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -198,7 +196,7 @@ Read-only.
 To construct, please use Get-Help -Online and see NOTES section for ATTENDANCEREPORTS properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport[]
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1[]
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -210,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -AttendeeReportInputFile
-Input File for AttendeeReport (The content stream of the attendee report of a Teams live event.
+Input File for AttendeeReport (The content stream of the attendee report of a Microsoft Teams live event.
 Read-only.)
 
 ```yaml
@@ -429,7 +427,7 @@ Accept wildcard characters: False
 ```
 
 ### -IsBroadcast
-Indicates whether this is a Teams live event.
+Indicates if this is a Teams live event.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -489,6 +487,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -JoinMeetingIdSettings
+joinMeetingIdSettings
+To construct, please use Get-Help -Online and see NOTES section for JOINMEETINGIDSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphJoinMeetingIdSettings
+Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -JoinUrl
 .
 
@@ -525,7 +539,7 @@ meetingAttendanceReport
 To construct, please use Get-Help -Online and see NOTES section for MEETINGATTENDANCEREPORT properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphMeetingAttendanceReport1
 Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
 Aliases:
 
@@ -659,22 +673,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Transcripts
-.
-To construct, please use Get-Help -Online and see NOTES section for TRANSCRIPTS properties and create a hash table.
-
-```yaml
-Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCallTranscript[]
-Parameter Sets: UpdateExpanded1, UpdateViaIdentityExpanded1
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -VideoTeleconferenceId
 The video teleconferencing ID.
 Read-only.
@@ -744,9 +742,9 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-ATTENDANCEREPORTS <IMicrosoftGraphMeetingAttendanceReport[]>: The attendance reports of an online meeting. Read-only.
+ATTENDANCEREPORTS <IMicrosoftGraphMeetingAttendanceReport1[]>: The attendance reports of an online meeting. Read-only.
   - `[Id <String>]`: Read-only.
-  - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+  - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
     - `[Id <String>]`: Read-only.
     - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
       - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -755,8 +753,9 @@ ATTENDANCEREPORTS <IMicrosoftGraphMeetingAttendanceReport[]>: The attendance rep
     - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
     - `[Identity <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
+    - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
     - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
   - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -779,12 +778,12 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[AllowAttendeeToEnableCamera <Boolean?>]`: Indicates whether attendees can turn on their camera.
   - `[AllowAttendeeToEnableMic <Boolean?>]`: Indicates whether attendees can turn on their microphone.
   - `[AllowMeetingChat <String>]`: meetingChatMode
-  - `[AllowTeamworkReactions <Boolean?>]`: Indicates if Teams reactions are enabled for the meeting.
+  - `[AllowTeamworkReactions <Boolean?>]`: Indicates whether Teams reactions are enabled for the meeting.
   - `[AllowedPresenters <String>]`: onlineMeetingPresenters
   - `[AlternativeRecording <Byte[]>]`: The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
-  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport[]>]`: The attendance reports of an online meeting. Read-only.
+  - `[AttendanceReports <IMicrosoftGraphMeetingAttendanceReport1[]>]`: The attendance reports of an online meeting. Read-only.
     - `[Id <String>]`: Read-only.
-    - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+    - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
       - `[Id <String>]`: Read-only.
       - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
         - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -793,14 +792,15 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
       - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
       - `[Identity <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
+      - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
       - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
       - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
     - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
     - `[MeetingStartDateTime <DateTime?>]`: UTC time when the meeting started. Read-only.
     - `[TotalParticipantCount <Int32?>]`: Total number of participants. Read-only.
-  - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Teams live event. Read-only.
+  - `[AttendeeReport <Byte[]>]`: The content stream of the attendee report of a Microsoft Teams live event. Read-only.
   - `[AudioConferencing <IMicrosoftGraphAudioConferencing>]`: audioConferencing
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ConferenceId <String>]`: The conference id of the online meeting.
@@ -825,7 +825,7 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[Capabilities <String[]>]`: 
   - `[ChatInfo <IMicrosoftGraphChatInfo>]`: chatInfo
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+    - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
     - `[ReplyChainMessageId <String>]`: The ID of the reply message.
     - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
   - `[CreationDateTime <DateTime?>]`: The meeting creation time in UTC. Read-only.
@@ -833,32 +833,37 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
   - `[EntryExitAnnouncement <Boolean?>]`: 
   - `[ExpirationDateTime <DateTime?>]`: 
   - `[ExternalId <String>]`: The external ID. A custom ID. Optional.
-  - `[IsBroadcast <Boolean?>]`: Indicates whether this is a Teams live event.
+  - `[IsBroadcast <Boolean?>]`: Indicates if this is a Teams live event.
   - `[IsCancelled <Boolean?>]`: 
   - `[IsEntryExitAnnounced <Boolean?>]`: Indicates whether to announce when callers join or leave.
   - `[JoinInformation <IMicrosoftGraphItemBody>]`: itemBody
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[Content <String>]`: The content of the item.
     - `[ContentType <String>]`: bodyType
+  - `[JoinMeetingIdSettings <IMicrosoftGraphJoinMeetingIdSettings>]`: joinMeetingIdSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[IsPasscodeRequired <Boolean?>]`: 
+    - `[JoinMeetingId <String>]`: 
+    - `[Passcode <String>]`: 
   - `[JoinUrl <String>]`: 
   - `[LobbyBypassSettings <IMicrosoftGraphLobbyBypassSettings>]`: lobbyBypassSettings
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
     - `[Scope <String>]`: lobbyBypassScope
-  - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport>]`: meetingAttendanceReport
+  - `[MeetingAttendanceReport <IMicrosoftGraphMeetingAttendanceReport1>]`: meetingAttendanceReport
   - `[Participants <IMicrosoftGraphMeetingParticipants1>]`: meetingParticipants
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+    - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
       - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
         - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[Device <IMicrosoftGraphIdentity>]`: identity
         - `[User <IMicrosoftGraphIdentity>]`: identity
-      - `[Role <String>]`: onlineMeetingRole
+      - `[Role <String>]`: 
       - `[Upn <String>]`: User principal name of the participant.
-    - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-    - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-    - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+    - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+    - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+    - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
   - `[RecordAutomatically <Boolean?>]`: Indicates whether to record the meeting automatically.
   - `[Recording <Byte[]>]`: The content stream of the recording of a Teams live event. Read-only.
   - `[Registration <IMicrosoftGraphMeetingRegistration>]`: meetingRegistration
@@ -885,10 +890,6 @@ BODYPARAMETER <IMicrosoftGraphOnlineMeeting1>: onlineMeeting
     - `[Subject <String>]`: The subject of the meeting.
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the online meeting.
-  - `[Transcripts <IMicrosoftGraphCallTranscript[]>]`: 
-    - `[Id <String>]`: Read-only.
-    - `[Content <Byte[]>]`: 
-    - `[CreatedDateTime <DateTime?>]`: 
   - `[VideoTeleconferenceId <String>]`: The video teleconferencing ID. Read-only.
 
 BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSettings
@@ -906,7 +907,7 @@ BROADCASTSETTINGS <IMicrosoftGraphBroadcastMeetingSettings1>: broadcastMeetingSe
 
 CHATINFO <IMicrosoftGraphChatInfo>: chatInfo
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[MessageId <String>]`: The unique identifier for a message in a Microsoft Teams channel.
+  - `[MessageId <String>]`: The unique identifier of a message in a Microsoft Teams channel.
   - `[ReplyChainMessageId <String>]`: The ID of the reply message.
   - `[ThreadId <String>]`: The unique identifier for a thread in Microsoft Teams.
 
@@ -915,8 +916,8 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
+  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
   - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting
@@ -930,15 +931,21 @@ JOININFORMATION <IMicrosoftGraphItemBody>: itemBody
   - `[Content <String>]`: The content of the item.
   - `[ContentType <String>]`: bodyType
 
+JOINMEETINGIDSETTINGS <IMicrosoftGraphJoinMeetingIdSettings>: joinMeetingIdSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[IsPasscodeRequired <Boolean?>]`: 
+  - `[JoinMeetingId <String>]`: 
+  - `[Passcode <String>]`: 
+
 LOBBYBYPASSSETTINGS <IMicrosoftGraphLobbyBypassSettings>: lobbyBypassSettings
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[IsDialInBypassEnabled <Boolean?>]`: Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
   - `[Scope <String>]`: lobbyBypassScope
 
-MEETINGATTENDANCEREPORT <IMicrosoftGraphMeetingAttendanceReport>: meetingAttendanceReport
+MEETINGATTENDANCEREPORT <IMicrosoftGraphMeetingAttendanceReport1>: meetingAttendanceReport
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Id <String>]`: Read-only.
-  - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord[]>]`: List of attendance records of an attendance report. Read-only.
+  - `[AttendanceRecords <IMicrosoftGraphAttendanceRecord1[]>]`: List of attendance records of an attendance report. Read-only.
     - `[Id <String>]`: Read-only.
     - `[AttendanceIntervals <IMicrosoftGraphAttendanceInterval[]>]`: List of time periods between joining and leaving a meeting.
       - `[DurationInSeconds <Int32?>]`: Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
@@ -947,8 +954,9 @@ MEETINGATTENDANCEREPORT <IMicrosoftGraphMeetingAttendanceReport>: meetingAttenda
     - `[EmailAddress <String>]`: Email address of the user associated with this atttendance record.
     - `[Identity <IMicrosoftGraphIdentity>]`: identity
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-      - `[Id <String>]`: The identifier of the identity. This property is read-only.
+      - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+      - `[Id <String>]`: Unique identifier for the identity.
+    - `[RegistrantId <String>]`: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
     - `[Role <String>]`: Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
     - `[TotalAttendanceInSeconds <Int32?>]`: Total duration of the attendances in seconds.
   - `[MeetingEndDateTime <DateTime?>]`: UTC time when the meeting ended. Read-only.
@@ -957,20 +965,20 @@ MEETINGATTENDANCEREPORT <IMicrosoftGraphMeetingAttendanceReport>: meetingAttenda
 
 PARTICIPANTS <IMicrosoftGraphMeetingParticipants1>: meetingParticipants
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo[]>]`: Information of the meeting attendees.
+  - `[Attendees <IMicrosoftGraphMeetingParticipantInfo1[]>]`: Information of the meeting attendees.
     - `[Identity <IMicrosoftGraphIdentitySet>]`: identitySet
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[Application <IMicrosoftGraphIdentity>]`: identity
         - `[(Any) <Object>]`: This indicates any property can be added to this object.
-        - `[DisplayName <String>]`: The display name of the identity. This property is read-only.
-        - `[Id <String>]`: The identifier of the identity. This property is read-only.
+        - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
+        - `[Id <String>]`: Unique identifier for the identity.
       - `[Device <IMicrosoftGraphIdentity>]`: identity
       - `[User <IMicrosoftGraphIdentity>]`: identity
-    - `[Role <String>]`: onlineMeetingRole
+    - `[Role <String>]`: 
     - `[Upn <String>]`: User principal name of the participant.
-  - `[Contributors <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
-  - `[Organizer <IMicrosoftGraphMeetingParticipantInfo>]`: meetingParticipantInfo
-  - `[Producers <IMicrosoftGraphMeetingParticipantInfo[]>]`: 
+  - `[Contributors <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
+  - `[Organizer <IMicrosoftGraphMeetingParticipantInfo1>]`: meetingParticipantInfo
+  - `[Producers <IMicrosoftGraphMeetingParticipantInfo1[]>]`: 
 
 REGISTRATION <IMicrosoftGraphMeetingRegistration>: meetingRegistration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -994,11 +1002,6 @@ REGISTRATION <IMicrosoftGraphMeetingRegistration>: meetingRegistration
     - `[DisplayName <String>]`: Display name of the speaker.
   - `[StartDateTime <DateTime?>]`: The meeting start time in UTC.
   - `[Subject <String>]`: The subject of the meeting.
-
-TRANSCRIPTS <IMicrosoftGraphCallTranscript[]>: .
-  - `[Id <String>]`: Read-only.
-  - `[Content <Byte[]>]`: 
-  - `[CreatedDateTime <DateTime?>]`: 
 
 ## RELATED LINKS
 

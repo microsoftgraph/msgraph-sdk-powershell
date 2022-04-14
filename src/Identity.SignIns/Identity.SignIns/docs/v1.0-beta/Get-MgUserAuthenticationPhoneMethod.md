@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Get phoneMethods from users
+Represents the phone registered to a user for authentication.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity> [-Ex
 ```
 
 ## DESCRIPTION
-Get phoneMethods from users
+Represents the phone registered to a user for authentication.
 
 ## EXAMPLES
 
