@@ -17,6 +17,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core
         internal static readonly string DefaultGraphEndpoint = "https://graph.microsoft.com";
         internal const string CacheName = "mg.msal.cache";
         internal const string AuthRecordName = "mg.authrecord.json";
+        internal const int MaxAuthRetry = 2;
         internal static readonly string AuthRecordPath = Path.Combine(GraphDirectoryPath, AuthRecordName);
     }
 }

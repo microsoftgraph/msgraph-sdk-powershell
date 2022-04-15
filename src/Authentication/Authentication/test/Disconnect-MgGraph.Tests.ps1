@@ -12,7 +12,7 @@ BeforeAll {
         ClientId = $RandomId
         TenantId = $RandomId
         AuthType = [Microsoft.Graph.PowerShell.Authentication.AuthenticationType]::UserProvidedAccessToken
-        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedTokenCredential
+        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedAccessToken
     }
 }
 Describe 'Disconnect-MgGraph' {

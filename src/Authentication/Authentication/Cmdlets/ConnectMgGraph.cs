@@ -93,8 +93,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         [Parameter(ParameterSetName = Constants.UserParameterSet,
             Mandatory = false, HelpMessage = "Use device code authentication instead of a browser control.")]
-        [Alias("DeviceCode", "DeviceAuth", "Device")]
-        public SwitchParameter UseDeviceAuthentication { get; set; }
+        [Alias("UseDeviceAuthentication", "DeviceCode", "DeviceAuth", "Device")]
+        public SwitchParameter UseDeviceCode { get; set; }
 
         [Parameter(ParameterSetName = Constants.AppParameterSet)]
         [Parameter(ParameterSetName = Constants.AccessTokenParameterSet)]
@@ -185,13 +185,9 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                             authContext.AuthType = AuthenticationType.Delegated;
                             string[] processedScopes = ProcessScopes(Scopes);
                             authContext.Scopes = !processedScopes.Any() ? new[] { "User.Read" } : processedScopes;
-                            if (RuntimeInformation.OSDescription.ContainsValue("WSL", StringComparison.InvariantCultureIgnoreCase))
-                                // Use process scope when on WSL. WSL does not have secret service that's used to cache tokens on Linux, see https://github.com/microsoft/WSL/issues/4254.
-                                authContext.ContextScope = ContextScope.Process;
-                            else
-                                // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
-                                authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
-                            authContext.TokenCredentialType = UseDeviceAuthentication ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
+                            // Default to CurrentUser but allow the customer to change this via `-ContextScope`.
+                            authContext.ContextScope = this.IsParameterBound(nameof(ContextScope)) ? ContextScope : ContextScope.CurrentUser;
+                            authContext.TokenCredentialType = UseDeviceCode ? TokenCredentialType.DeviceCode : TokenCredentialType.InteractiveBrowser;
                         }
                         break;
                     case Constants.AppParameterSet:
@@ -209,7 +205,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                     case Constants.AccessTokenParameterSet:
                         {
                             authContext.AuthType = AuthenticationType.UserProvidedAccessToken;
-                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedTokenCredential;
+                            authContext.TokenCredentialType = TokenCredentialType.UserProvidedAccessToken;
                             authContext.ContextScope = ContextScope.Process;
                             GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(new NetworkCredential(string.Empty, AccessToken).Password));
                         }
@@ -218,7 +214,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
                 try
                 {
-                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token);
+                    GraphSession.Instance.AuthContext = await AuthenticationHelpers.AuthenticateAsync(authContext, _cancellationTokenSource.Token).ConfigureAwait(false);
                 }
                 catch (Exception)
                 {

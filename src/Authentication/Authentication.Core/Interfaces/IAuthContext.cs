@@ -25,7 +25,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         InteractiveBrowser,
         DeviceCode,
         ClientCertificate,
-        UserProvidedTokenCredential
+        UserProvidedAccessToken
     }
 
     public interface IAuthContext

@@ -29,6 +29,6 @@ if (Test-Path -Path $envFilePath) {
         ClientId = $env.ClientId
         TenantId = $env.TenantId
         AuthType = [Microsoft.Graph.PowerShell.Authentication.AuthenticationType]::UserProvidedAccessToken
-        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedTokenCredential
+        TokenCredentialType = [Microsoft.Graph.PowerShell.Authentication.TokenCredentialType]::UserProvidedAccessToken
     }
 }

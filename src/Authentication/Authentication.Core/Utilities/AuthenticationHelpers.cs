@@ -4,11 +4,11 @@
 using Azure.Core;
 using Azure.Identity;
 using Microsoft.Identity.Client;
+using Microsoft.Identity.Client.Extensions.Msal;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
@@ -138,47 +138,69 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             return new TokenCredentialAuthProvider(GetTokenCredentialAsync(authContext, default).GetAwaiter().GetResult(), GetScopes(authContext));
         }
 
-        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        public static async Task<IAuthContext> AuthenticateAsync(IAuthContext authContext, CancellationToken cancellationToken)
         {
             if (authContext is null)
                 throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
-            try
+            IAuthContext signInAuthContext = null;
+            bool retrySignIn = true;
+            int retryCount = 0;
+            while (retrySignIn && retryCount <= Constants.MaxAuthRetry)
             {
-                var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken);
-                var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
-                JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
-                return authContext;
-            }
-            catch (AuthenticationFailedException authEx)
-            {
-                switch (authEx.InnerException)
+                try
                 {
-                    case MsalClientException msalClientEx:
-                        if (msalClientEx.ErrorCode == MsalError.LinuxXdgOpen)
-                        {
-                            // Retry with device code authentication.
-                            authContext.TokenCredentialType = TokenCredentialType.DeviceCode;
-                            return await AuthenticateAsync(authContext, cancellationToken);
-                        }
-                        break;
-                    case MsalServiceException msalServiceEx:
-                        if (msalServiceEx.StatusCode == 400 && msalServiceEx.ErrorCode == "invalid_scope"
-                            && string.IsNullOrWhiteSpace(authContext.TenantId)
-                            && authContext.TokenCredentialType == TokenCredentialType.DeviceCode)
-                        {
-                            // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
-                            throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
-                        }
-                        break;
-                    case TaskCanceledException taskCanceledEx:
-                        throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
+                    signInAuthContext = await SignInAsync(authContext, cancellationToken);
+                    retrySignIn = false;
                 }
-                throw;
+                catch (AuthenticationFailedException authEx)
+                {
+                    if (authEx.InnerException is MsalCachePersistenceException)
+                    {
+                        // Can't securely persist token on disk. Retry with in-memory cache.
+                        authContext.ContextScope = ContextScope.Process;
+                        retrySignIn = true;
+                        retryCount++;
+                    }
+                    else if (authEx.InnerException is MsalClientException msalClientEx
+                        && msalClientEx?.ErrorCode == MsalError.LinuxXdgOpen ||
+                        (authEx.Message?.ToLower()?.Contains("unable to open a web page") ?? false))
+                    {
+                        // Can't open browser. Retry with device code authentication.
+                        authContext.TokenCredentialType = TokenCredentialType.DeviceCode;
+                        retrySignIn = true;
+                        retryCount++;
+                    }
+                    else if (authEx.InnerException is MsalServiceException msalServiceEx
+                        && msalServiceEx.StatusCode == 400 && msalServiceEx.ErrorCode == "invalid_scope"
+                        && string.IsNullOrWhiteSpace(authContext.TenantId)
+                        && authContext.TokenCredentialType == TokenCredentialType.DeviceCode)
+                    {
+                        // MSAL scope validation error. Ask customer to specify sign-in audience or tenant Id.
+                        throw new MsalClientException(msalServiceEx.ErrorCode, $"{msalServiceEx.Message}.\r\n{ErrorConstants.Message.InvalidScope}", msalServiceEx);
+                    }
+                    else
+                        throw;
+                }
+                catch (TaskCanceledException taskCanceledEx)
+                {
+                    throw new Exception(string.Format(CultureInfo.CurrentCulture, ErrorConstants.Message.AuthenticationTimeout, Constants.MaxAuthenticationTimeOutInSeconds), taskCanceledEx);
+                }
+                catch (Exception ex)
+                {
+                    throw ex.InnerException ?? ex;
+                }
             }
-            catch (Exception ex)
-            {
-                throw ex.InnerException ?? ex;
-            }
+            return signInAuthContext;
+        }
+
+        private static async Task<IAuthContext> SignInAsync(IAuthContext authContext, CancellationToken cancellationToken = default)
+        {
+            if (authContext is null)
+                throw new AuthenticationException(ErrorConstants.Message.MissingAuthContext);
+            var tokenCredential = await GetTokenCredentialAsync(authContext, cancellationToken).ConfigureAwait(false);
+            var token = await tokenCredential.GetTokenAsync(new TokenRequestContext(GetScopes(authContext)), cancellationToken).ConfigureAwait(false);
+            JwtHelpers.DecodeJWT(token.Token, null, ref authContext);
+            return authContext;
         }
 
         private static string[] GetScopes(IAuthContext authContext)
@@ -299,7 +321,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
             GraphSession.Instance.InMemoryTokenCache.ClearCache();
             GraphSession.Instance.AuthContext = null;
             GraphSession.Instance.GraphHttpClient = null;
-            await DeleteAuthRecordAsync().ConfigureAwait(false);   
+            await DeleteAuthRecordAsync().ConfigureAwait(false);
         }
 
         private static async Task<AuthenticationRecord> ReadAuthRecordAsync()
