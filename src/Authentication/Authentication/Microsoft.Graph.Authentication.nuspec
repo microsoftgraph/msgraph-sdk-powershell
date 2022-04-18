@@ -39,6 +39,7 @@
     <file src="artifacts\Dependencies\System.Runtime.CompilerServices.Unsafe.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Text.Json.dll" target="Dependencies" />
     <file src="artifacts\Dependencies\System.Buffers.dll" target="Dependencies" />
+    <file src="artifacts\Dependencies\System.Numerics.Vectors.dll" target="Dependencies" />
     <!-- Copy framework dependent assemblies to respective framework directory. -->
     <!-- Core-->
     <file src="artifacts\Dependencies\Core\Microsoft.Identity.Client.dll" target="Dependencies\Core" />

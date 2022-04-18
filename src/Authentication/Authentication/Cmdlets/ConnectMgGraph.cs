@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using System.Net;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -17,7 +16,6 @@ using System.Threading.Tasks;
 using Microsoft.Graph.PowerShell.Authentication.Common;
 using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
 using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
-using Microsoft.Graph.PowerShell.Authentication.Extensions;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using Microsoft.Graph.PowerShell.Authentication.Models;
@@ -173,7 +171,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 GraphSession.Instance.GraphHttpClient = null;
                 if (GraphSession.Instance.InMemoryTokenCache is null)
                     GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
-                
+
                 switch (ParameterSetName)
                 {
                     case Constants.UserParameterSet:
@@ -218,6 +216,8 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
                 }
                 catch (Exception)
                 {
+                    // Reset session instance on error. This will allow the user to re-authenticate without holding on to the previous auth context.
+                    await AuthenticationHelpers.LogoutAsync();
                     throw;
                 }
                 WriteObject("Welcome To Microsoft Graph!");

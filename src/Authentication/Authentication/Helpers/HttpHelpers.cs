@@ -78,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProvider(authContext);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(authContext).ConfigureAwait(false).GetAwaiter().GetResult();
             var newHttpClient = GetGraphHttpClient(authProvider, authContext.ClientTimeout);
             GraphSession.Instance.GraphHttpClient = newHttpClient;
             return newHttpClient;

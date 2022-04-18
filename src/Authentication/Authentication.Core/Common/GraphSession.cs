@@ -8,7 +8,6 @@ using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 using System;
 using System.Collections;
 using System.Net.Http;
-using System.Security;
 using System.Threading;
 
 namespace Microsoft.Graph.PowerShell.Authentication
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.PowerShell.Authentication
         /// <param name="instanceCreator">A func to create an instance.</param>
         public static void Initialize(Func<GraphSession> instanceCreator)
         {
-            Initialize(instanceCreator, false);
+            Initialize(instanceCreator, overwrite: false);
         }
 
         /// <summary>

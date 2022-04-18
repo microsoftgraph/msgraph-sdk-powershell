@@ -42,12 +42,11 @@ namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 
         private async Task ProcessRecordAsync()
         {
-            IAuthContext authContext = GraphSession.Instance.AuthContext;
-            if (authContext == null)
+            if (GraphSession.Instance.AuthContext is null)
                 ThrowTerminatingError(
                     new ErrorRecord(new Exception("No application to sign out from."), Guid.NewGuid().ToString(), ErrorCategory.InvalidArgument, null));
 
-            await AuthenticationHelpers.LogoutAsync(authContext);
+            await AuthenticationHelpers.LogoutAsync();
         }
 
         protected override void StopProcessing()

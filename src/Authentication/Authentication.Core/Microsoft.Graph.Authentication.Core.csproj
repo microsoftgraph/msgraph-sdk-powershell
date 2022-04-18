@@ -10,21 +10,20 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Azure.Core" Version="1.22.0" />
-    <PackageReference Include="Azure.Identity" Version="1.5.0" />
+    <PackageReference Include="Azure.Core" Version="1.24.0" />
+    <PackageReference Include="Azure.Identity" Version="1.6.0" />
     <PackageReference Include="Microsoft.Graph.Core" Version="2.0.8" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.41.0" />
-    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.16.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.16.0" />
-    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.16.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.16.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.43.1" />
+    <PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.20.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.17.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.17.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.17.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.17.0" />
     <!--Always ensure this version matches the versions of System.Security.Cryptography.* dependencies of Microsoft.Identity.Client when targeting PowerShell 6 and below.-->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Text.Json" Version="6.0.3" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <PreLoadAssemblies Include="$(RepoTools)Lib\System.Security.Cryptography.ProtectedData.dll" />
   </ItemGroup>
   <Target Name="CopyFiles" AfterTargets="Build">
     <Copy SourceFiles="@(PreLoadAssemblies)" DestinationFolder="$(OutputPath)/publish" />

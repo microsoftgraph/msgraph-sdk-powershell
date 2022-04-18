@@ -24,7 +24,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Core.TokenCache
             _sessionLock.EnterReadLock();
             try
             {
-                return await Task.FromResult(TokenCache);
+                return await Task.FromResult(TokenCache).ConfigureAwait(false);
             }
             finally
             {
