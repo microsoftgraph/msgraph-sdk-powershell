@@ -96,6 +96,18 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementManagedDevice
 ```
 ### Versioning
 
