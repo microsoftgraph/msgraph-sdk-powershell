@@ -4,9 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Security;
-using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-using Microsoft.Graph.PowerShell.Authentication.Models;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
@@ -26,16 +23,6 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// Gets or Sets the User Agent when using HttpClient
         /// </summary>
         public string UserAgent { get; set; }
-
-        /// <summary>
-        /// Gets or Sets a User Specified JWT Token
-        /// </summary>
-        public SecureString Token { get; set; }
-
-        /// <summary>
-        /// Gets or Sets the AuthenticationType to be used for the current Session
-        /// </summary>
-        public GraphRequestAuthenticationType AuthenticationType { get; set; }
 
         /// <summary>
         /// Construct a new instance of a WebRequestSession object.

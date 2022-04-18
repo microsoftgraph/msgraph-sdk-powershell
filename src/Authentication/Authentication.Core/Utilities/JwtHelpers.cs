@@ -2,16 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-namespace Microsoft.Graph.PowerShell.Authentication.Helpers
-{
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication.Core;
-    using Microsoft.Identity.Client;
-    using Newtonsoft.Json;
-    using System;
-    using System.Globalization;
-    using System.IdentityModel.Tokens.Jwt;
+using Microsoft.Identity.Client;
+using Newtonsoft.Json;
+using System;
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
 
+namespace Microsoft.Graph.PowerShell.Authentication.Core.Utilities
+{
     /// <summary>
     /// A JwtHelpers class.
     /// </summary>
@@ -25,7 +23,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
         /// <param name="authContext">An <see cref="IAuthContext"/> to store JWT claims in.</param>
         internal static void DecodeJWT(string jwToken, IAccount account, ref IAuthContext authContext)
         {
-            var jwtPayload = JwtHelpers.DecodeToObject<Models.JwtPayload>(jwToken);
+            var jwtPayload = DecodeToObject<Models.JwtPayload>(jwToken);
             if (authContext.AuthType == AuthenticationType.UserProvidedAccessToken)
             {
                 if (jwtPayload == null)
@@ -36,7 +34,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                             "AccessToken"));
                 }
 
-                if (jwtPayload.Exp <= JwtHelpers.ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
+                if (jwtPayload.Exp <= ConvertToUnixTimestamp(DateTime.UtcNow + TimeSpan.FromMinutes(Constants.TokenExpirationBufferInMinutes)))
                 {
                     throw new Exception(string.Format(
                             CultureInfo.CurrentCulture,
@@ -79,17 +77,12 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
             {
                 string decodedJWT = Decode(jwtString);
                 if (decodedJWT == null)
-                    return default(T);
+                    return default;
                 return JsonConvert.DeserializeObject<T>(decodedJWT);
             }
             catch (Exception ex)
             {
-                throw new AuthenticationException(
-                        new Error
-                        {
-                            Code = ErrorConstants.Codes.InvalidJWT,
-                            Message = ErrorConstants.Message.InvalidJWT
-                        }, ex);
+                throw new AuthenticationException(ErrorConstants.Message.InvalidJWT, ex);
             }
         }
 

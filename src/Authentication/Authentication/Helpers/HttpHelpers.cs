@@ -1,28 +1,28 @@
 ﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
+using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Reflection;
+using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using System.Management.Automation;
+using System;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Helpers
 {
-    using Microsoft.Graph.PowerShell.Authentication.Cmdlets;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net.Http;
-    using System.Reflection;
-    using System.Security.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Handlers;
-    using System.Management.Automation;
-    using System;
-
     /// <summary>
     /// A HTTP helper class.
     /// </summary>
     public static class HttpHelpers
     {
         /// The version for current assembly.
-        private static AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
+        private static readonly AssemblyName AssemblyInfo = typeof(ConnectMgGraph).GetTypeInfo().Assembly.GetName();
 
         /// The value for the Auth module version header.
-        private static string AuthModuleVersionHeaderValue =
+        private static readonly string AuthModuleVersionHeaderValue =
             string.Format(Constants.SDKHeaderValue,
                 AssemblyInfo.Version.Major,
                 AssemblyInfo.Version.Minor,
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.PowerShell.Authentication.Helpers
                 throw new AuthenticationException(Core.ErrorConstants.Message.MissingAuthContext);
             }
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(authContext);
+            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthenticationProviderAsync(authContext).ConfigureAwait(false).GetAwaiter().GetResult();
             var newHttpClient = GetGraphHttpClient(authProvider, authContext.ClientTimeout);
             GraphSession.Instance.GraphHttpClient = newHttpClient;
             return newHttpClient;

@@ -5,13 +5,11 @@
 using System;
 using Microsoft.Graph.PowerShell.Authentication.Helpers;
 using Microsoft.Graph.PowerShell.Authentication.Models;
+using System.Management.Automation;
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
 
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
-    using System.Management.Automation;
-
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-
     public static class GraphSessionInitializer
     {
         /// <summary>

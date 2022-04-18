@@ -1,25 +1,24 @@
+using Microsoft.Graph.PowerShell.Authentication.Handlers;
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using Xunit;
+
 namespace Microsoft.Graph.Authentication.Test
 {
-    using Microsoft.Graph.PowerShell.Authentication.Handlers;
-    using System;
-    using System.Linq;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Xunit;
     public class ODataQueryOptionsHandlerTests : IDisposable
     {
         private HttpMessageInvoker _invoker;
         private FakeSuccessHandler _fakeSuccessHandler;
         private ODataQueryOptionsHandler _graphODataHandler;
-        private string _randomGuid;
 
         public ODataQueryOptionsHandlerTests()
         {
             this._fakeSuccessHandler = new FakeSuccessHandler();
             this._graphODataHandler = new ODataQueryOptionsHandler(_fakeSuccessHandler);
             this._invoker = new HttpMessageInvoker(_graphODataHandler);
-            this._randomGuid = Guid.NewGuid().ToString();
         }
 
         public void Dispose()

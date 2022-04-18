@@ -1,23 +1,30 @@
-﻿namespace Microsoft.Graph.Authentication.Test.Helpers
+﻿using Azure.Core;
+using Azure.Identity;
+using Microsoft.Graph.Authentication.Test.Mocks;
+using Microsoft.Graph.PowerShell.Authentication;
+using Microsoft.Graph.PowerShell.Authentication.Core.TokenCache;
+using Microsoft.Graph.PowerShell.Authentication.Core.Utilities;
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+using Xunit;
+
+namespace Microsoft.Graph.Authentication.Test.Helpers
 {
-    using Microsoft.Graph.Auth;
-    using Microsoft.Graph.PowerShell.Authentication;
-    using Microsoft.Graph.PowerShell.Authentication.Helpers;
-
-    using System;
-    using System.Linq;
-    using System.Net;
-    using System.Net.Http;
-    using System.Security.Cryptography;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Threading.Tasks;
-
-    using Xunit;
-    public class AuthenticationHelpersTests
+    public class AuthenticationHelpersTests : IDisposable
     {
+        private MockAuthRecord mockAuthRecord;
         public AuthenticationHelpersTests()
         {
             GraphSession.Initialize(() => new GraphSession());
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache();
+            mockAuthRecord = new MockAuthRecord("test");
+            mockAuthRecord.SerializeToFile();
         }
 
         [Fact]
@@ -25,21 +32,21 @@
         {
             // Arrange
             string accessToken = "ACCESS_TOKEN_VIA_DELEGATE_PROVIDER";
-            GraphSession.Instance.UserProvidedToken = new NetworkCredential(string.Empty, accessToken).SecurePassword;
+            GraphSession.Instance.InMemoryTokenCache = new InMemoryTokenCache(Encoding.UTF8.GetBytes(accessToken));
             AuthContext userProvidedAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.UserProvidedAccessToken,
                 ContextScope = ContextScope.Process
             };
 
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(userProvidedAuthContext);
+            IAuthenticationProvider authProvider = await AuthenticationHelpers.GetAuthenticationProviderAsync(userProvidedAuthContext);
             HttpRequestMessage requestMessage = new HttpRequestMessage();
 
             // Act
             await authProvider.AuthenticateRequestAsync(requestMessage);
 
             // Assert
-            Assert.IsType<DelegateAuthenticationProvider>(authProvider);
+            Assert.IsType<TokenCredentialAuthProvider>(authProvider);
             Assert.Equal("Bearer", requestMessage.Headers.Authorization.Scheme);
             Assert.Equal(accessToken, requestMessage.Headers.Authorization.Parameter);
 
@@ -48,7 +55,7 @@
         }
 
         [Fact]
-        public void ShouldUseDeviceCodeWhenSpecifiedByUser()
+        public async Task ShouldUseDeviceCodeWhenSpecifiedByUserAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -56,20 +63,20 @@
                 AuthType = AuthenticationType.Delegated,
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
-                AuthProviderType = AuthProviderType.DeviceCodeProvider
+                TokenCredentialType = TokenCredentialType.DeviceCode
             };
 
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<DeviceCodeProvider>(authProvider);
+            Assert.IsType<DeviceCodeCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
         }
         [Fact]
-        public void ShouldUseDeviceCodeWhenFallback()
+        public async Task ShouldUseDeviceCodeWhenFallbackAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -77,20 +84,20 @@
                 AuthType = AuthenticationType.Delegated,
                 Scopes = new[] { "User.Read" },
                 ContextScope = ContextScope.Process,
-                AuthProviderType = AuthProviderType.DeviceCodeProviderFallBack
+                TokenCredentialType = TokenCredentialType.DeviceCode
             };
 
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<DeviceCodeProvider>(authProvider);
+            Assert.IsType<DeviceCodeCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
         }
         [Fact]
-        public void ShouldUseInteractiveProviderWhenDelegated()
+        public async Task ShouldUseInteractiveProviderWhenDelegatedAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -101,17 +108,17 @@
             };
 
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<InteractiveAuthenticationProvider>(authProvider);
+            Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
         }
 
         [Fact]
-        public void ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvided()
+        public async Task ShouldUseInteractiveAuthenticationProviderWhenDelegatedContextAndClientIdIsProvidedAsync()
         {
             // Arrange
             AuthContext delegatedAuthContext = new AuthContext
@@ -123,66 +130,77 @@
             };
 
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(delegatedAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(delegatedAuthContext, default);
 
             // Assert
-            Assert.IsType<InteractiveAuthenticationProvider>(authProvider);
+            Assert.IsType<InteractiveBrowserCredential>(tokenCredential);
 
             // reset static instance.
             GraphSession.Reset();
         }
 
-#if NETCORE
         [Fact]
-        public void ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvided()
+        public async Task ShouldThrowWhenAuthContextIsNullAsync()
+        {
+            // Act
+            var exception = await Assert.ThrowsAsync<PowerShell.AuthenticationException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(null, default));
+
+            // Assert
+            Assert.Equal(PowerShell.Authentication.Core.ErrorConstants.Message.MissingAuthContext, exception.Message);
+
+            // reset
+            GraphSession.Reset();
+        }
+
+        [Fact]
+        public async Task ShouldUseClientCredentialProviderWhenAppOnlyContextIsProvidedAsync()
         {
             // Arrange
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
-                CertificateName = "cn=dummyCert",
-                ContextScope = ContextScope.Process
+                ClientId = mockAuthRecord.ClientId,
+                CertificateSubjectName = "cn=dummyCert",
+                ContextScope = ContextScope.Process,
+                TenantId = mockAuthRecord.TenantId
             };
-            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateName);
+            CreateAndStoreSelfSignedCert(appOnlyAuthContext.CertificateSubjectName);
 
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCredentialProvider>(authProvider);
+            Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             // reset
-            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateName);
+            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
             GraphSession.Reset();
-
         }
 
         [Fact]
-        public void ShouldUseInMemoryCertificateWhenProvided()
+        public async Task ShouldUseInMemoryCertificateWhenProvidedAsync()
         {
             // Arrange
             var certificate = CreateSelfSignedCert("cn=inmemorycert");
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 Certificate = certificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = mockAuthRecord.TenantId
             };
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCredentialProvider>(authProvider);
-            var clientCredentialProvider = (ClientCredentialProvider)authProvider;
-            // Assert: That the certificate created and set above is the same as used here.
-            Assert.Equal(clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate, certificate);
+            Assert.IsType<ClientCertificateCredential>(tokenCredential);
+
             GraphSession.Reset();
         }
 
         [Fact]
-        public void ShouldUseCertNameInsteadOfPassedInCertificateWhenBothAreSpecified()
+        public async Task ShouldUseCertNameInsteadOfPassedInCertificateWhenBothAreSpecifiedAsync()
         {
             // Arrange
             var dummyCertName = "CN=dummycert";
@@ -192,28 +210,25 @@
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
-                CertificateName = dummyCertName,
+                ClientId = mockAuthRecord.ClientId,
+                CertificateSubjectName = dummyCertName,
                 Certificate = inMemoryCertificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId= mockAuthRecord.TenantId
             };
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCredentialProvider>(authProvider);
-            var clientCredentialProvider = (ClientCredentialProvider)authProvider;
-            // Assert: That the certificate used is dummycert, that is in the store
-            Assert.NotEqual(inMemoryCertName, clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate.SubjectName.Name);
-            Assert.Equal(appOnlyAuthContext.CertificateName, clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate.SubjectName.Name);
+            Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             //CleanUp
-            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateName);
+            DeleteSelfSignedCertByName(appOnlyAuthContext.CertificateSubjectName);
             GraphSession.Reset();
         }
 
         [Fact]
-        public void ShouldUseCertThumbPrintInsteadOfPassedInCertificateWhenBothAreSpecified()
+        public async Task ShouldUseCertThumbPrintInsteadOfPassedInCertificateWhenBothAreSpecifiedAsync()
         {
             // Arrange
             var dummyCertName = "CN=dummycert";
@@ -223,20 +238,17 @@
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 CertificateThumbprint = storedDummyCertificate.Thumbprint,
                 Certificate = inMemoryCertificate,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = mockAuthRecord.TenantId
             };
             // Act
-            IAuthenticationProvider authProvider = AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            TokenCredential tokenCredential = await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default);
 
             // Assert
-            Assert.IsType<ClientCredentialProvider>(authProvider);
-            var clientCredentialProvider = (ClientCredentialProvider)authProvider;
-            // Assert: That the certificate used is dummycert (Thumbprint), that is in the store
-            Assert.NotEqual(inMemoryCertName, clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate.SubjectName.Name);
-            Assert.Equal(appOnlyAuthContext.CertificateThumbprint, clientCredentialProvider.ClientApplication.AppConfig.ClientCredentialCertificate.Thumbprint);
+            Assert.IsType<ClientCertificateCredential>(tokenCredential);
 
             //CleanUp
             DeleteSelfSignedCertByThumbprint(appOnlyAuthContext.CertificateThumbprint);
@@ -244,40 +256,44 @@
         }
 
         [Fact]
-        public void ShouldThrowIfNonExistentCertNameIsProvided()
+        public async Task ShouldThrowIfNonExistentCertNameIsProvidedAsync()
         {
             // Arrange
             var dummyCertName = "CN=NonExistingCert";
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
-                CertificateName = dummyCertName,
-                ContextScope = ContextScope.Process
+                ClientId = mockAuthRecord.ClientId,
+                CertificateSubjectName = dummyCertName,
+                ContextScope = ContextScope.Process,
+                TenantId = mockAuthRecord.TenantId
             };
+
             // Act
-            Action action = () => AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            var exception = await Assert.ThrowsAsync<Exception>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.ThrowsAny<Exception>(action);
+            Assert.Equal($"{dummyCertName} certificate was not found or has expired.", exception.Message);
         }
 
         [Fact]
-        public void ShouldThrowIfNullInMemoryCertIsProvided()
+        public async Task ShouldThrowIfNullInMemoryCertIsProvidedAsync()
         {
             // Arrange
             AuthContext appOnlyAuthContext = new AuthContext
             {
                 AuthType = AuthenticationType.AppOnly,
-                ClientId = Guid.NewGuid().ToString(),
+                ClientId = mockAuthRecord.ClientId,
                 Certificate = null,
-                ContextScope = ContextScope.Process
+                ContextScope = ContextScope.Process,
+                TenantId = mockAuthRecord.TenantId
             };
+
             // Act
-            Action action = () => AuthenticationHelpers.GetAuthProvider(appOnlyAuthContext);
+            var exception = await Assert.ThrowsAsync<ArgumentNullException>(async () => await AuthenticationHelpers.GetTokenCredentialAsync(appOnlyAuthContext, default));
 
             //Assert
-            Assert.Throws<ArgumentNullException>(action);
+            Assert.Equal("certificate", exception.ParamName);
         }
 
         /// <summary>
@@ -308,17 +324,10 @@
             // We have to export cert to dummy cert since `CreateSelfSigned` creates a cert without a private key.
             X509Certificate2 cert = certificateRequest.CreateSelfSigned(DateTimeOffset.Now, DateTimeOffset.Now.AddYears(5));
 
-            X509Certificate2 dummyCert = null;
-            if (PowerShell.Authentication.Helpers.OperatingSystem.IsMacOS())
-            {
-                dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.Exportable);
-            }
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                return new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.Exportable);
             else
-            {
-                dummyCert = new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
-            }
-
-            return dummyCert;
+                return new X509Certificate2(cert.Export(X509ContentType.Pfx, "P@55w0rd"), "P@55w0rd", X509KeyStorageFlags.PersistKeySet);
         }
 
         private static void DeleteSelfSignedCertByName(string certificateName)
@@ -359,7 +368,7 @@
                 xStore.Remove(xCertificate);
             }
         }
-#endif
-
+        
+        public void Dispose() => mockAuthRecord.DeleteCache();
     }
 }

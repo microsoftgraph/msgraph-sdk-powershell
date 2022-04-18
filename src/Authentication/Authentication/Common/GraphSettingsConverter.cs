@@ -2,14 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Interfaces;
+using Microsoft.Graph.PowerShell.Authentication.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
-    using Microsoft.Graph.PowerShell.Authentication.Interfaces;
-    using Microsoft.Graph.PowerShell.Authentication.Models;
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-
     /// <summary>
     /// A <see cref="JsonConverter"/> for <see cref="GraphSettings"/>.
     /// </summary>

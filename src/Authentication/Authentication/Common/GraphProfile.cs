@@ -2,15 +2,15 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using System;
+using System.Management.Automation;
+using System.Linq;
+using System.Collections;
+using System.Collections.ObjectModel;
+using System.IO;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Common
 {
-    using System;
-    using System.Management.Automation;
-    using System.Linq;
-    using System.Collections;
-    using System.Collections.ObjectModel;
-    using System.IO;
-
     /// <summary>
     /// Methods for working with Microsoft Graph profiles.
     /// </summary>
@@ -26,15 +26,15 @@ namespace Microsoft.Graph.PowerShell.Authentication.Common
             string nameParameter = $"-Name { (moduleNames != null && moduleNames.Any() ? GetCommaSeparatedQuotedList(moduleNames) : "Microsoft.Graph*" )}";
             string listAvailableParameter = listAvailable ? " -ListAvailable" : String.Empty;
             string command = $"Get-Module {nameParameter}{listAvailableParameter}";
-            Collection<PSObject> modules = listAvailable ? PowerShell.Create().AddScript(command).Invoke<PSObject>() : invokeCommand.NewScriptBlock(command).Invoke();
-            return modules != null ? modules.Select(m => m?.BaseObject as PSModuleInfo).Where(m => m != null).ToArray() : new PSModuleInfo[] { };
+            Collection<PSObject> modules = listAvailable ? System.Management.Automation.PowerShell.Create().AddScript(command).Invoke<PSObject>() : invokeCommand.NewScriptBlock(command).Invoke();
+            return modules != null ? modules.Select(m => m?.BaseObject as PSModuleInfo).Where(m => m != null).ToArray() : Array.Empty<PSModuleInfo>();
         }
 
         public static string[] GetProfiles(PSModuleInfo moduleInfo)
         {
             var moduleProfileInfo = (moduleInfo?.PrivateData as Hashtable)?["Profiles"];
             var moduleProfiles = moduleProfileInfo as object[] ?? (moduleProfileInfo != null ? new[] { moduleProfileInfo } : null);
-            return moduleProfiles != null && moduleProfiles.Any() ? moduleProfiles.Cast<string>().ToArray() : new string[] { };
+            return moduleProfiles != null && moduleProfiles.Any() ? moduleProfiles.Cast<string>().ToArray() : Array.Empty<string>();
         }
 
         public static void ReloadModules(CommandInvocationIntrinsics invokeCommand, params PSModuleInfo[] moduleInfos)

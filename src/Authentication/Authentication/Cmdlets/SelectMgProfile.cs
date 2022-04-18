@@ -2,14 +2,14 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
+using Microsoft.Graph.PowerShell.Authentication.Extensions;
+using System;
+using System.Linq;
+using System.Management.Automation;
+using static Microsoft.Graph.PowerShell.Authentication.Common.GraphProfile;
+
 namespace Microsoft.Graph.PowerShell.Authentication.Cmdlets
 {
-    using Microsoft.Graph.PowerShell.Authentication.Extensions;
-    using System;
-    using System.Linq;
-    using System.Management.Automation;
-    using static Microsoft.Graph.PowerShell.Authentication.Common.GraphProfile;
-
     /// <summary>
     /// Select the current Microsoft Graph profile.
     /// </summary>

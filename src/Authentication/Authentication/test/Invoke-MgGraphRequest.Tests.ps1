@@ -1,7 +1,7 @@
 ﻿
 Describe 'Invoke-MgGraphRequest Command' {
      BeforeAll {
-         $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
+          $utils = Join-Path $PSScriptRoot "../../../../tools/Utilities/utils.ps1" -Resolve
           . $utils
           $ModuleName = "Microsoft.Graph.Authentication"
           $ModulePath = Join-Path $PSScriptRoot "..\artifacts\$ModuleName.psd1"
@@ -10,80 +10,48 @@ Describe 'Invoke-MgGraphRequest Command' {
           Connect-GraphTenant
      }
      Context 'Collection Results' {
-          It 'ShouldReturnPsObject' {
+          It 'Should return PsObject' {
                Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Management.Automation.PSObject]
           }
 
-          It 'ShouldReturnHashTable' {
+          It 'Should return HashTable' {
                Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Collections.Hashtable]
           }
 
-          It 'ShouldReturnJsonString' {
-               Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.String]
-          }
-
-          It 'ShouldReturnHttpResponseMessage' {
-               Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/v1.0/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
-          }
-
-          It 'ShouldReturnPsObjectBeta' {
-               Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Management.Automation.PSObject]
-          }
-
-          It 'ShouldReturnHashTableBeta' {
-               Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Collections.Hashtable]
-          }
-
-          It 'ShouldReturnJsonStringBeta' {
+          It 'Should return JsonString' {
                Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.String]
           }
 
-          It 'ShouldReturnHttpResponseMessageBeta' {
+          It 'Should return HttpResponseMessage' {
                Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/beta/users" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
           }
      }
      Context 'Single Entity' {
-          It 'ShouldReturnPsObject' {
+          It 'Should return PsObject' {
                Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Management.Automation.PSObject]
           }
 
-          It 'ShouldReturnHashTable' {
+          It 'Should return HashTable' {
                Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Collections.Hashtable]
           }
 
-          It 'ShouldReturnJsonString' {
-               Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.String]
-          }
-
-          It 'ShouldReturnHttpResponseMessage' {
-               Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
-          }
-
-          It 'ShouldReturnPsObjectBeta' {
-               Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/beta/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Management.Automation.PSObject]
-          }
-
-          It 'ShouldReturnHashTableBeta' {
-               Invoke-MgGraphRequest -OutputType Hashtable -Uri "https://graph.microsoft.com/beta/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Collections.Hashtable]
-          }
-
-          It 'ShouldReturnJsonStringBeta' {
+          It 'Should return JsonString' {
                Invoke-MgGraphRequest -OutputType Json -Uri "https://graph.microsoft.com/beta/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.String]
           }
 
-          It 'ShouldReturnHttpResponseMessageBeta' {
+          It 'Should return HttpResponseMessage' {
                Invoke-MgGraphRequest -OutputType HttpResponseMessage -Uri "https://graph.microsoft.com/beta/users/${env:DEFAULTUSERID}" | Should -BeOfType [System.Net.Http.HttpResponseMessage]
           }
      }
 
      Context 'Non-Json Responses' {
-          It 'Should Throw when -OutputFilePath is not Specified and Request Returns a Non-Json Response' {
+          It 'Should throw when -OutputFilePath is not specified and request returns a non-json response' {
                { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" } | Should -Throw
           }
-          It 'Should Not Throw when -OutputFilePath is Specified' {
+          It 'Should not throw when -OutputFilePath is specified' {
                { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -OutputFilePath ./data.csv } | Should -Not -Throw
           }
-          It 'Should Not Throw when -InferOutputFilePath is Specified' {
+          It 'Should not throw when -InferOutputFilePath is specified' {
                { Invoke-MgGraphRequest -OutputType PSObject -Uri "https://graph.microsoft.com/v1.0/reports/getTeamsUserActivityUserDetail(period='D7')" -InferOutputFileName } | Should -Not -Throw
           }
      }
@@ -106,11 +74,11 @@ Describe 'Invoke-MgGraphRequest Command' {
      }
 
      Context 'Empty Body Requests' {
-         It 'Should Not Throw when Body is Empty for POST Requests' {
-                { 
+          It 'Should Not Throw when Body is Empty for POST Requests' {
+               {
                     Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/v1.0/users/${env:DEFAULTUSERID}/revokeSignInSessions" -Method POST -Verbose
-                } | Should  -Not -Throw
-         }
+               } | Should  -Not -Throw
+          }
      }
 
      AfterAll {
