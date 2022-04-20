@@ -197,7 +197,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
-    "/planner/rosters/{plannerRoster-id}/plans/$ref": {
+    "/planner/rosters/{plannerRoster-id}/plans/{plannerPlan-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
@@ -241,7 +241,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
-    "/users/{user-id}/planner/favoritePlans/$ref": {
+    "/users/{user-id}/planner/favoritePlans/{plannerPlan-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
@@ -317,7 +317,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
-    "/users/{user-id}/planner/recentPlans/$ref": {
+    "/users/{user-id}/planner/recentPlans/{plannerPlan-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
@@ -325,7 +325,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
-    "/users/{user-id}/planner/rosterPlans/$ref": {
+    "/users/{user-id}/planner/rosterPlans/{plannerPlan-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Planner.yml"
     },
