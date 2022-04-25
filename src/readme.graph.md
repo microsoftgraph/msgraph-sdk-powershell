@@ -441,6 +441,10 @@ directive:
       variant: ^List$|^List2$|^Create$|^Create2$|^CreateExpanded$|^CreateExpanded2$|^CreateViaIdentity$|^CreateViaIdentity2$|^CreateViaIdentityExpanded$|^CreateViaIdentityExpanded2$
     set:
       subject: GroupTransitiveMemberOfByRef
+  - where:
+      subject: ^SiteSite(ByRef)$
+    set:
+      subject: SubSite$1
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^(User|ServicePrincipal|Contact|Device)(Member|TransitiveMember)ByRef$
