@@ -107,7 +107,17 @@ namespace Microsoft.Graph.PowerShell.Cmdlets.Custom
                 limit = top;
             }
 
-            int currentPageSize = invocationInfo.BoundParameters.ContainsKey("PageSize") ? PageSize : DefaultPageSize;
+            int currentPageSize = DefaultPageSize;
+            if(invocationInfo.BoundParameters.ContainsKey("PageSize"))
+            {
+                currentPageSize = PageSize;
+            }
+            
+            if(invocationInfo.BoundParameters.ContainsKey("All"))
+            {
+                currentPageSize = MaxPageSize;
+            }
+
             if (invocationInfo.BoundParameters.ContainsKey("Top") && limit < currentPageSize)
             {
                 currentPageSize = limit;
