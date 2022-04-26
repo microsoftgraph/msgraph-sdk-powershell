@@ -13,7 +13,7 @@ Id                                   DisplayName    Mail UserPrincipalName      
 
 ```
 
-This example assigns a license from the **Win10_VDA_E3** licensing plan to the unlicensed user **20084e64-44ba-4c8f-853a-aed51fa14c2b**.
+This example assigns a license from the **Win10_VDA_E3** licensing plan to the unlicensed user **20084e64-44ba-4c8f-853a-aed51fa14c2b**. For more information, see [assign licenses to users accounts with PowerShell](/microsoft-365/enterprise/assign-licenses-to-user-accounts-with-microsoft-365-powershell?view=o365-worldwide).
 
 ### Example 2: Assign more than one licenses to a user
 
