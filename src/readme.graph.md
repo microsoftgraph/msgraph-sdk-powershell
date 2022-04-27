@@ -58,38 +58,38 @@ declare-directive:
 ``` yaml
 directive:
   - no-inline:
-    - microsoft.graph.sharepointIds
-    - microsoft.graph.identitySet
-    - microsoft.graph.itemReference
-    - microsoft.graph.directoryObject
-    - microsoft.graph.user
-    - microsoft.graph.drive
-    - microsoft.graph.listItem
-    - microsoft.graph.post
-    - microsoft.graph.sectionGroup
-    - microsoft.graph.team
-    - microsoft.graph.recipient
-    - microsoft.graph.groupPolicyCategory
-    - microsoft.graph.printer
-    - microsoft.graph.printerShare
-    - microsoft.graph.governanceResource
-    - microsoft.graph.governanceRoleAssignment
-    - microsoft.graph.governanceRoleDefinition
-    - microsoft.graph.workbookOperationError
-    - microsoft.graph.parentLabelDetails
-    - microsoft.graph.ediscovery.tag
-    - microsoft.graph.ediscovery.sourceCollection
-    - microsoft.graph.contentType
-    - microsoft.graph.columnDefinition
-    - microsoft.graph.groupPolicyDefinition
-    - microsoft.graph.groupPolicyDefinitionValue
-    - microsoft.graph.synchronizationLinkedObjects
-    - microsoft.graph.security.security
-    - microsoft.graph.teamSummary
-    - microsoft.graph.security.informationProtection
-    - microsoft.graph.security.informationProtectionPolicySetting
-    - microsoft.graph.security.sensitivityLabel
-    - microsoft.graph.taskViewpoint
+    - MicrosoftGraphSharepointIds
+    - MicrosoftGraphIdentitySet
+    - MicrosoftGraphItemReference
+    - MicrosoftGraphDirectoryObject
+    - MicrosoftGraphUser
+    - MicrosoftGraphDrive
+    - MicrosoftGraphListItem
+    - MicrosoftGraphPost
+    - MicrosoftGraphSectionGroup
+    - MicrosoftGraphTeam
+    - MicrosoftGraphRecipient
+    - MicrosoftGraphGroupPolicyCategory
+    - MicrosoftGraphPrinter
+    - MicrosoftGraphPrinterShare
+    - MicrosoftGraphGovernanceResource
+    - MicrosoftGraphGovernanceRoleAssignment
+    - MicrosoftGraphGovernanceRoleDefinition
+    - MicrosoftGraphWorkbookOperationError
+    - MicrosoftGraphParentLabelDetails
+    - MicrosoftGraphEdiscoveryTag
+    - MicrosoftGraphEdiscoverySourceCollection
+    - MicrosoftGraphContentType
+    - MicrosoftGraphColumnDefinition
+    - MicrosoftGraphGroupPolicyDefinition
+    - MicrosoftGraphGroupPolicyDefinitionValue
+    - MicrosoftGraphSynchronizationLinkedObjects
+    - MicrosoftGraphSecuritySecurity
+    - MicrosoftGraphTeamSummary
+    - MicrosoftGraphSecurityInformationProtection
+    - MicrosoftGraphSecurityInformationProtectionPolicySetting
+    - MicrosoftGraphSecuritySensitivityLabel
+    - MicrosoftGraphTaskViewpoint
   # Set parameter alias
   - where:
       parameter-name: OrderBy
