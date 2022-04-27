@@ -52,7 +52,9 @@ paths:
               operationId: solutions.ListBookingBusinesses
             bookingCurrencies:
               operationId: solutions.ListBookingCurrencies
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -70,7 +72,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /solutions/bookingBusinesses:
@@ -169,22 +173,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingBusiness
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingBusinessCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -209,7 +201,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}':
@@ -219,13 +213,6 @@ paths:
       summary: Get bookingBusinesses from solutions
       operationId: solutions_GetBookingBusinesses
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - name: $select
           in: query
           description: Select properties to be returned
@@ -305,7 +292,9 @@ paths:
               operationId: solutions.BookingBusinesses.ListStaffMembers
               parameters:
                 bookingBusiness-id: $request.path.bookingBusiness-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -313,14 +302,6 @@ paths:
         - solutions.bookingBusiness
       summary: Update the navigation property bookingBusinesses in solutions
       operationId: solutions_UpdateBookingBusinesses
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property values
         content:
@@ -331,7 +312,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -340,13 +323,6 @@ paths:
       summary: Delete navigation property bookingBusinesses for solutions
       operationId: solutions_DeleteBookingBusinesses
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - name: If-Match
           in: header
           description: ETag
@@ -355,7 +331,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments':
@@ -366,13 +344,6 @@ paths:
       description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListAppointments
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -486,22 +457,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingAppointment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -511,16 +470,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to appointments for solutions
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateAppointments
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -535,7 +485,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}':
@@ -546,20 +498,6 @@ paths:
       description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetAppointments
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
         - name: $select
           in: query
           description: Select properties to be returned
@@ -614,30 +552,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property appointments in solutions
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateAppointments
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
       requestBody:
         description: New navigation property values
         content:
@@ -648,30 +572,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property appointments for solutions
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteAppointments
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
         - name: If-Match
           in: header
           description: ETag
@@ -680,7 +591,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/appointments/{bookingAppointment-id}/microsoft.graph.cancel':
@@ -689,22 +602,7 @@ paths:
         - solutions.Actions
       summary: Invoke action cancel
       description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
-      operationId: solutions.bookingBusinesses.appointments_cancel
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
+      operationId: solutions.bookingBusinesses.bookingBusiness.appointments.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -732,13 +630,6 @@ paths:
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCalendarView
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -852,22 +743,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingAppointment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -877,16 +756,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to calendarView for solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateCalendarView
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -901,7 +771,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}':
@@ -912,20 +784,6 @@ paths:
       description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCalendarView
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
         - name: $select
           in: query
           description: Select properties to be returned
@@ -980,30 +838,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property calendarView in solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateCalendarView
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
       requestBody:
         description: New navigation property values
         content:
@@ -1014,30 +858,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property calendarView for solutions
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteCalendarView
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
         - name: If-Match
           in: header
           description: ETag
@@ -1046,7 +877,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/calendarView/{bookingAppointment-id}/microsoft.graph.cancel':
@@ -1055,22 +888,7 @@ paths:
         - solutions.Actions
       summary: Invoke action cancel
       description: 'Cancels the giving booking appointment, sending a message to the involved parties.'
-      operationId: solutions.bookingBusinesses.calendarView_cancel
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingAppointment-id
-          in: path
-          description: 'key: id of bookingAppointment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingAppointment
+      operationId: solutions.bookingBusinesses.bookingBusiness.calendarView.bookingAppointment_cancel
       requestBody:
         description: Action parameters
         content:
@@ -1098,13 +916,6 @@ paths:
       description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1149,22 +960,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCustomerBase
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingCustomerBaseCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1174,16 +973,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to customers for solutions
-      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateCustomers
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -1198,7 +988,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customers/{bookingCustomerBase-id}':
@@ -1209,20 +1001,6 @@ paths:
       description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomerBase-id
-          in: path
-          description: 'key: id of bookingCustomerBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomerBase
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1254,30 +1032,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customers in solutions
-      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateCustomers
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomerBase-id
-          in: path
-          description: 'key: id of bookingCustomerBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomerBase
       requestBody:
         description: New navigation property values
         content:
@@ -1288,30 +1052,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customers for solutions
-      description: All the customers of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteCustomers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomerBase-id
-          in: path
-          description: 'key: id of bookingCustomerBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomerBase
         - name: If-Match
           in: header
           description: ETag
@@ -1320,7 +1071,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions':
@@ -1331,13 +1084,6 @@ paths:
       description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListCustomQuestions
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1391,22 +1137,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCustomQuestion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingCustomQuestionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1416,16 +1150,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to customQuestions for solutions
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateCustomQuestions
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -1440,7 +1165,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/customQuestions/{bookingCustomQuestion-id}':
@@ -1451,20 +1178,6 @@ paths:
       description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetCustomQuestions
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomQuestion-id
-          in: path
-          description: 'key: id of bookingCustomQuestion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomQuestion
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1499,30 +1212,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property customQuestions in solutions
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateCustomQuestions
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomQuestion-id
-          in: path
-          description: 'key: id of bookingCustomQuestion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomQuestion
       requestBody:
         description: New navigation property values
         content:
@@ -1533,30 +1232,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property customQuestions for solutions
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteCustomQuestions
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingCustomQuestion-id
-          in: path
-          description: 'key: id of bookingCustomQuestion'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCustomQuestion
         - name: If-Match
           in: header
           description: ETag
@@ -1565,7 +1251,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
@@ -1574,15 +1262,7 @@ paths:
         - solutions.Actions
       summary: Invoke action publish
       description: Makes the scheduling page of this business available to the general public.
-      operationId: solutions.bookingBusinesses_publish
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
+      operationId: solutions.bookingBusinesses.bookingBusiness_publish
       responses:
         '204':
           description: Success
@@ -1595,15 +1275,7 @@ paths:
         - solutions.Actions
       summary: Invoke action unpublish
       description: Prevents the general public from seeing the scheduling page of this business.
-      operationId: solutions.bookingBusinesses_unpublish
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
+      operationId: solutions.bookingBusinesses.bookingBusiness_unpublish
       responses:
         '204':
           description: Success
@@ -1618,13 +1290,6 @@ paths:
       description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListServices
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1726,22 +1391,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingService
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingService'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingServiceCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1751,16 +1404,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to services for solutions
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateServices
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -1775,7 +1419,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/services/{bookingService-id}':
@@ -1786,20 +1432,6 @@ paths:
       description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetServices
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingService-id
-          in: path
-          description: 'key: id of bookingService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingService
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1850,30 +1482,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingService'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property services in solutions
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateServices
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingService-id
-          in: path
-          description: 'key: id of bookingService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingService
       requestBody:
         description: New navigation property values
         content:
@@ -1884,30 +1502,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property services for solutions
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteServices
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingService-id
-          in: path
-          description: 'key: id of bookingService'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingService
         - name: If-Match
           in: header
           description: ETag
@@ -1916,7 +1521,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers':
@@ -1927,13 +1534,6 @@ paths:
       description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_ListStaffMembers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1978,22 +1578,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingStaffMemberBase
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingStaffMemberBaseCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2003,16 +1591,7 @@ paths:
       tags:
         - solutions.bookingBusiness
       summary: Create new navigation property to staffMembers for solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_CreateStaffMembers
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
       requestBody:
         description: New navigation property
         content:
@@ -2027,7 +1606,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingBusinesses/{bookingBusiness-id}/staffMembers/{bookingStaffMemberBase-id}':
@@ -2038,20 +1619,6 @@ paths:
       description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_GetStaffMembers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingStaffMemberBase-id
-          in: path
-          description: 'key: id of bookingStaffMemberBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingStaffMemberBase
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2083,30 +1650,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - solutions.bookingBusiness
       summary: Update the navigation property staffMembers in solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_UpdateStaffMembers
-      parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingStaffMemberBase-id
-          in: path
-          description: 'key: id of bookingStaffMemberBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingStaffMemberBase
       requestBody:
         description: New navigation property values
         content:
@@ -2117,30 +1670,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - solutions.bookingBusiness
       summary: Delete navigation property staffMembers for solutions
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: solutions.bookingBusinesses_DeleteStaffMembers
       parameters:
-        - name: bookingBusiness-id
-          in: path
-          description: 'key: id of bookingBusiness'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingBusiness
-        - name: bookingStaffMemberBase-id
-          in: path
-          description: 'key: id of bookingStaffMemberBase'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingStaffMemberBase
         - name: If-Match
           in: header
           description: ETag
@@ -2149,7 +1689,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   /solutions/bookingCurrencies:
@@ -2206,22 +1748,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCurrency
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.bookingCurrencyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2246,7 +1776,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/solutions/bookingCurrencies/{bookingCurrency-id}':
@@ -2256,13 +1788,6 @@ paths:
       summary: Get bookingCurrencies from solutions
       operationId: solutions_GetBookingCurrencies
       parameters:
-        - name: bookingCurrency-id
-          in: path
-          description: 'key: id of bookingCurrency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCurrency
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2295,7 +1820,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -2303,14 +1830,6 @@ paths:
         - solutions.bookingCurrency
       summary: Update the navigation property bookingCurrencies in solutions
       operationId: solutions_UpdateBookingCurrencies
-      parameters:
-        - name: bookingCurrency-id
-          in: path
-          description: 'key: id of bookingCurrency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCurrency
       requestBody:
         description: New navigation property values
         content:
@@ -2321,7 +1840,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -2330,13 +1851,6 @@ paths:
       summary: Delete navigation property bookingCurrencies for solutions
       operationId: solutions_DeleteBookingCurrencies
       parameters:
-        - name: bookingCurrency-id
-          in: path
-          description: 'key: id of bookingCurrency'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: bookingCurrency
         - name: If-Match
           in: header
           description: ETag
@@ -2345,7 +1859,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -2783,6 +2299,34 @@ components:
         - unknownFutureValue
       type: string
       description: Represents the type of pricing of a booking service.
+      x-ms-enum:
+        name: bookingPriceType
+        modelAsString: false
+        values:
+          - value: undefined
+            description: The price of the service is not defined.
+            name: undefined
+          - value: fixedPrice
+            description: The price of the service is fixed.
+            name: fixedPrice
+          - value: startingAt
+            description: 'The price of the service starts with a particular value, but can be higher based on the final services performed.'
+            name: startingAt
+          - value: hourly
+            description: The price of the service depends on the number of hours a staff member works on the service.
+            name: hourly
+          - value: free
+            description: The service is free.
+            name: free
+          - value: priceVaries
+            description: The price of the service varies.
+            name: priceVaries
+          - value: callUs
+            description: The price of the service is not listed.
+            name: callUs
+          - value: notSet
+            description: The price of the service is not set.
+            name: notSet
     microsoft.graph.bookingReminder:
       title: bookingReminder
       type: object
@@ -2849,13 +2393,97 @@ components:
           description: Indicates whether it is mandatory to answer the custom question.
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingBusinessCollectionResponse:
+      title: Collection of bookingBusiness
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingAppointmentCollectionResponse:
+      title: Collection of bookingAppointment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCustomerBaseCollectionResponse:
+      title: Collection of bookingCustomerBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomerBase'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCustomQuestionCollectionResponse:
+      title: Collection of bookingCustomQuestion
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingServiceCollectionResponse:
+      title: Collection of bookingService
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingService'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingStaffMemberBaseCollectionResponse:
+      title: Collection of bookingStaffMemberBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBase'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCurrencyCollectionResponse:
+      title: Collection of bookingCurrency
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.dayOfWeek:
@@ -2947,7 +2575,7 @@ components:
         - private
         - bing
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2959,18 +2587,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2982,15 +2608,63 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.bookingBusinessCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingBusinessCollectionResponse'
+    microsoft.graph.bookingAppointmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingAppointmentCollectionResponse'
+    microsoft.graph.bookingCustomerBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomerBaseCollectionResponse'
+    microsoft.graph.bookingCustomQuestionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestionCollectionResponse'
+    microsoft.graph.bookingServiceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingServiceCollectionResponse'
+    microsoft.graph.bookingStaffMemberBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberBaseCollectionResponse'
+    microsoft.graph.bookingCurrencyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCurrencyCollectionResponse'
   parameters:
     top:
       name: $top

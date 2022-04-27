@@ -14,13 +14,6 @@ paths:
       description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_GetInferenceClassification
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: $select
           in: query
           description: Select properties to be returned
@@ -46,23 +39,16 @@ paths:
               operationId: users.InferenceClassification.ListOverrides
               parameters:
                 user-id: $request.path.user-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.inferenceClassification
       summary: Update the navigation property inferenceClassification in users
-      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_UpdateInferenceClassification
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property values
         content:
@@ -73,23 +59,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.inferenceClassification
       summary: Delete navigation property inferenceClassification for users
-      description: Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
       operationId: users_DeleteInferenceClassification
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - name: If-Match
           in: header
           description: ETag
@@ -98,7 +78,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides':
@@ -109,13 +91,6 @@ paths:
       description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_ListOverrides
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -153,22 +128,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of inferenceClassificationOverride
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.inferenceClassificationOverrideCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -178,16 +141,7 @@ paths:
       tags:
         - users.inferenceClassification
       summary: Create new navigation property to overrides for users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_CreateOverrides
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -202,7 +156,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/inferenceClassification/overrides/{inferenceClassificationOverride-id}':
@@ -213,20 +169,6 @@ paths:
       description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_GetOverrides
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: inferenceClassificationOverride-id
-          in: path
-          description: 'key: id of inferenceClassificationOverride'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: inferenceClassificationOverride
         - name: $select
           in: query
           description: Select properties to be returned
@@ -248,30 +190,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.inferenceClassification
       summary: Update the navigation property overrides in users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_UpdateOverrides
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: inferenceClassificationOverride-id
-          in: path
-          description: 'key: id of inferenceClassificationOverride'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: inferenceClassificationOverride
       requestBody:
         description: New navigation property values
         content:
@@ -282,30 +210,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.inferenceClassification
       summary: Delete navigation property overrides for users
-      description: 'A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.'
       operationId: users.inferenceClassification_DeleteOverrides
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: inferenceClassificationOverride-id
-          in: path
-          description: 'key: id of inferenceClassificationOverride'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: inferenceClassificationOverride
         - name: If-Match
           in: header
           description: ETag
@@ -314,7 +229,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders':
@@ -325,13 +242,6 @@ paths:
       description: The user's mail folders. Read-only. Nullable.
       operationId: users_ListMailFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -386,22 +296,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of mailFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mailFolder'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -411,16 +309,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to mailFolders for users
-      description: The user's mail folders. Read-only. Nullable.
       operationId: users_CreateMailFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -435,7 +324,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}':
@@ -446,20 +337,6 @@ paths:
       description: The user's mail folders. Read-only. Nullable.
       operationId: users_GetMailFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - name: $select
           in: query
           description: Select properties to be returned
@@ -516,30 +393,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property mailFolders in users
-      description: The user's mail folders. Read-only. Nullable.
       operationId: users_UpdateMailFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
       requestBody:
         description: New navigation property values
         content:
@@ -550,30 +413,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property mailFolders for users
-      description: The user's mail folders. Read-only. Nullable.
       operationId: users_DeleteMailFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - name: If-Match
           in: header
           description: ETag
@@ -582,7 +432,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders':
@@ -593,20 +445,6 @@ paths:
       description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_ListChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -678,22 +516,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of mailFolder
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.mailFolder'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.mailFolderCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -703,23 +529,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to childFolders for users
-      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_CreateChildFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
       requestBody:
         description: New navigation property
         content:
@@ -734,7 +544,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.mailFolder'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}':
@@ -745,27 +557,6 @@ paths:
       description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_GetChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - name: $select
           in: query
           description: Select properties to be returned
@@ -844,37 +635,16 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 mailFolder-id1: $request.path.mailFolder-id1
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property childFolders in users
-      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_UpdateChildFolders
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
       requestBody:
         description: New navigation property values
         content:
@@ -885,37 +655,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property childFolders for users
-      description: The collection of child folders in the mailFolder.
       operationId: users.mailFolders_DeleteChildFolders
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: mailFolder-id1
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - name: If-Match
           in: header
           description: ETag
@@ -924,31 +674,19 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules':
     get:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders_ListMessageRules
+      operationId: users.mailFolders.childFolders_ListMessageRules
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -1004,22 +742,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of messageRule
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.messageRule'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1029,23 +755,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messageRules for users
-      description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders_CreateMessageRules
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
+      operationId: users.mailFolders.childFolders_CreateMessageRules
       requestBody:
         description: New navigation property
         content:
@@ -1060,38 +770,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}':
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messageRules/{messageRule-id}':
     get:
       tags:
         - users.mailFolder
       summary: Get messageRules from users
       description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders_GetMessageRules
+      operationId: users.mailFolders.childFolders_GetMessageRules
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: messageRule-id
-          in: path
-          description: 'key: id of messageRule'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: messageRule
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1119,37 +810,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.messageRule'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property messageRules in users
-      description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders_UpdateMessageRules
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: messageRule-id
-          in: path
-          description: 'key: id of messageRule'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: messageRule
+      operationId: users.mailFolders.childFolders_UpdateMessageRules
       requestBody:
         description: New navigation property values
         content:
@@ -1160,37 +830,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property messageRules for users
-      description: The collection of rules that apply to the user's Inbox folder.
-      operationId: users.mailFolders_DeleteMessageRules
+      operationId: users.mailFolders.childFolders_DeleteMessageRules
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: messageRule-id
-          in: path
-          description: 'key: id of messageRule'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: messageRule
         - name: If-Match
           in: header
           description: ETag
@@ -1199,31 +849,19 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages':
     get:
       tags:
         - users.mailFolder
       summary: Get messages from users
       description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders_ListMessages
+      operationId: users.mailFolders.childFolders_ListMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -1366,22 +1004,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of message
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.message'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1391,23 +1017,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to messages for users
-      description: The collection of messages in the mailFolder.
-      operationId: users.mailFolders_CreateMessages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
+      operationId: users.mailFolders.childFolders_CreateMessages
       requestBody:
         description: New navigation property
         content:
@@ -1422,7 +1032,1599 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
+      operationId: users.mailFolders.childFolders_GetMessages
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - changeKey
+                - createdDateTime
+                - lastModifiedDateTime
+                - bccRecipients
+                - body
+                - bodyPreview
+                - ccRecipients
+                - conversationId
+                - conversationIndex
+                - flag
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
+                - attachments
+                - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
+          links:
+            attachments:
+              operationId: users.mailFolders.childFolders.Messages.ListAttachments
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+                message-id: $request.path.message-id
+            extensions:
+              operationId: users.mailFolders.childFolders.Messages.ListExtensions
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+                message-id: $request.path.message-id
+            multiValueExtendedProperties:
+              operationId: users.mailFolders.childFolders.Messages.ListMultiValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+                message-id: $request.path.message-id
+            singleValueExtendedProperties:
+              operationId: users.mailFolders.childFolders.Messages.ListSingleValueExtendedProperties
+              parameters:
+                user-id: $request.path.user-id
+                mailFolder-id: $request.path.mailFolder-id
+                mailFolder-id1: $request.path.mailFolder-id1
+                message-id: $request.path.message-id
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property messages in users
+      operationId: users.mailFolders.childFolders_UpdateMessages
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.message'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property messages for users
+      operationId: users.mailFolders.childFolders_DeleteMessages
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/$value':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get media content for the navigation property messages from users
+      operationId: users.mailFolders.childFolders_GetMessagesContent
+      responses:
+        '200':
+          description: Retrieved media content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.mailFolder
+      summary: Update media content for the navigation property messages in users
+      operationId: users.mailFolders.childFolders_SetMessagesContent
+      requestBody:
+        description: New media content.
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
+      operationId: users.mailFolders.childFolders.messages_ListAttachments
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - contentType
+                - contentType desc
+                - isInline
+                - isInline desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - name
+                - name desc
+                - size
+                - size desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - isInline
+                - lastModifiedDateTime
+                - name
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to attachments for users
+      operationId: users.mailFolders.childFolders.messages_CreateAttachments
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attachment'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/attachments/{attachment-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get attachments from users
+      description: The fileAttachment and itemAttachment attachments for the message.
+      operationId: users.mailFolders.childFolders.messages_GetAttachments
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - contentType
+                - isInline
+                - lastModifiedDateTime
+                - name
+                - size
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.attachment'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property attachments in users
+      operationId: users.mailFolders.childFolders.messages_UpdateAttachments
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.attachment'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property attachments for users
+      operationId: users.mailFolders.childFolders.messages_DeleteAttachments
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_ListExtensions
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to extensions for users
+      operationId: users.mailFolders.childFolders.messages_CreateExtensions
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_GetExtensions
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property extensions in users
+      operationId: users.mailFolders.childFolders.messages_UpdateExtensions
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property extensions for users
+      operationId: users.mailFolders.childFolders.messages_DeleteExtensions
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/multiValueExtendedProperties':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_ListMultiValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to multiValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders.messages_CreateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_GetMultiValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property multiValueExtendedProperties in users
+      operationId: users.mailFolders.childFolders.messages_UpdateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders.messages_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/singleValueExtendedProperties':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_ListSingleValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to singleValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders.messages_CreateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the message. Nullable.
+      operationId: users.mailFolders.childFolders.messages_GetSingleValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property singleValueExtendedProperties in users
+      operationId: users.mailFolders.childFolders.messages_UpdateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders.messages_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/multiValueExtendedProperties':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+      operationId: users.mailFolders.childFolders_ListMultiValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to multiValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders_CreateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get multiValueExtendedProperties from users
+      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
+      operationId: users.mailFolders.childFolders_GetMultiValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property multiValueExtendedProperties in users
+      operationId: users.mailFolders.childFolders_UpdateMultiValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property multiValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders_DeleteMultiValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/singleValueExtendedProperties':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+      operationId: users.mailFolders.childFolders_ListSingleValueExtendedProperties
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - value
+                - value desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to singleValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders_CreateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/childFolders/{mailFolder-id1}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get singleValueExtendedProperties from users
+      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
+      operationId: users.mailFolders.childFolders_GetSingleValueExtendedProperties
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - value
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property singleValueExtendedProperties in users
+      operationId: users.mailFolders.childFolders_UpdateSingleValueExtendedProperties
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property singleValueExtendedProperties for users
+      operationId: users.mailFolders.childFolders_DeleteSingleValueExtendedProperties
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
+      operationId: users.mailFolders_ListMessageRules
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - actions
+                - actions desc
+                - conditions
+                - conditions desc
+                - displayName
+                - displayName desc
+                - exceptions
+                - exceptions desc
+                - hasError
+                - hasError desc
+                - isEnabled
+                - isEnabled desc
+                - isReadOnly
+                - isReadOnly desc
+                - sequence
+                - sequence desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actions
+                - conditions
+                - displayName
+                - exceptions
+                - hasError
+                - isEnabled
+                - isReadOnly
+                - sequence
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.messageRuleCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to messageRules for users
+      operationId: users.mailFolders_CreateMessageRules
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.messageRule'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.messageRule'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messageRules/{messageRule-id}':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get messageRules from users
+      description: The collection of rules that apply to the user's Inbox folder.
+      operationId: users.mailFolders_GetMessageRules
+      parameters:
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - actions
+                - conditions
+                - displayName
+                - exceptions
+                - hasError
+                - isEnabled
+                - isReadOnly
+                - sequence
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.messageRule'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.mailFolder
+      summary: Update the navigation property messageRules in users
+      operationId: users.mailFolders_UpdateMessageRules
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.messageRule'
+        required: true
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.mailFolder
+      summary: Delete navigation property messageRules for users
+      operationId: users.mailFolders_DeleteMessageRules
+      parameters:
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/mailFolders/{mailFolder-id}/messages':
+    get:
+      tags:
+        - users.mailFolder
+      summary: Get messages from users
+      description: The collection of messages in the mailFolder.
+      operationId: users.mailFolders_ListMessages
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - categories
+                - categories desc
+                - changeKey
+                - changeKey desc
+                - createdDateTime
+                - createdDateTime desc
+                - lastModifiedDateTime
+                - lastModifiedDateTime desc
+                - bccRecipients
+                - bccRecipients desc
+                - body
+                - body desc
+                - bodyPreview
+                - bodyPreview desc
+                - ccRecipients
+                - ccRecipients desc
+                - conversationId
+                - conversationId desc
+                - conversationIndex
+                - conversationIndex desc
+                - flag
+                - flag desc
+                - from
+                - from desc
+                - hasAttachments
+                - hasAttachments desc
+                - importance
+                - importance desc
+                - inferenceClassification
+                - inferenceClassification desc
+                - internetMessageHeaders
+                - internetMessageHeaders desc
+                - internetMessageId
+                - internetMessageId desc
+                - isDeliveryReceiptRequested
+                - isDeliveryReceiptRequested desc
+                - isDraft
+                - isDraft desc
+                - isRead
+                - isRead desc
+                - isReadReceiptRequested
+                - isReadReceiptRequested desc
+                - parentFolderId
+                - parentFolderId desc
+                - receivedDateTime
+                - receivedDateTime desc
+                - replyTo
+                - replyTo desc
+                - sender
+                - sender desc
+                - sentDateTime
+                - sentDateTime desc
+                - subject
+                - subject desc
+                - toRecipients
+                - toRecipients desc
+                - uniqueBody
+                - uniqueBody desc
+                - webLink
+                - webLink desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - categories
+                - changeKey
+                - createdDateTime
+                - lastModifiedDateTime
+                - bccRecipients
+                - body
+                - bodyPreview
+                - ccRecipients
+                - conversationId
+                - conversationIndex
+                - flag
+                - from
+                - hasAttachments
+                - importance
+                - inferenceClassification
+                - internetMessageHeaders
+                - internetMessageId
+                - isDeliveryReceiptRequested
+                - isDraft
+                - isRead
+                - isReadReceiptRequested
+                - parentFolderId
+                - receivedDateTime
+                - replyTo
+                - sender
+                - sentDateTime
+                - subject
+                - toRecipients
+                - uniqueBody
+                - webLink
+                - attachments
+                - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - attachments
+                - extensions
+                - multiValueExtendedProperties
+                - singleValueExtendedProperties
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.mailFolder
+      summary: Create new navigation property to messages for users
+      operationId: users.mailFolders_CreateMessages
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.message'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.message'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}':
@@ -1433,27 +2635,6 @@ paths:
       description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_GetMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1548,37 +2729,16 @@ paths:
                 user-id: $request.path.user-id
                 mailFolder-id: $request.path.mailFolder-id
                 message-id: $request.path.message-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property messages in users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_UpdateMessages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property values
         content:
@@ -1589,37 +2749,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property messages for users
-      description: The collection of messages in the mailFolder.
       operationId: users.mailFolders_DeleteMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - name: If-Match
           in: header
           description: ETag
@@ -1628,7 +2768,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/$value':
@@ -1637,28 +2779,6 @@ paths:
         - users.mailFolder
       summary: Get media content for the navigation property messages from users
       operationId: users.mailFolders_GetMessagesContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       responses:
         '200':
           description: Retrieved media content
@@ -1667,7 +2787,9 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
@@ -1675,28 +2797,6 @@ paths:
         - users.mailFolder
       summary: Update media content for the navigation property messages in users
       operationId: users.mailFolders_SetMessagesContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New media content.
         content:
@@ -1708,7 +2808,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments':
@@ -1719,27 +2821,6 @@ paths:
       description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_ListAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -1798,22 +2879,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attachment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -1823,30 +2892,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to attachments for users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_CreateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -1861,7 +2907,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/attachments/{attachment-id}':
@@ -1872,34 +2920,6 @@ paths:
       description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_GetAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1936,44 +2956,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property attachments in users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
       requestBody:
         description: New navigation property values
         content:
@@ -1984,44 +2976,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property attachments for users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.mailFolders.messages_DeleteAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
         - name: If-Match
           in: header
           description: ETag
@@ -2030,7 +2995,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions':
@@ -2041,27 +3008,6 @@ paths:
       description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -2105,22 +3051,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2130,30 +3064,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -2168,7 +3079,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/extensions/{extension-id}':
@@ -2179,34 +3092,6 @@ paths:
       description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2238,44 +3123,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -2286,44 +3143,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.mailFolders.messages_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -2332,7 +3162,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties':
@@ -2343,27 +3175,6 @@ paths:
       description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2411,22 +3222,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2436,30 +3235,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -2474,7 +3250,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -2485,34 +3263,6 @@ paths:
       description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2545,44 +3295,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -2593,44 +3315,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -2639,7 +3334,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties':
@@ -2650,27 +3347,6 @@ paths:
       description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -2718,22 +3394,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -2743,30 +3407,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -2781,7 +3422,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -2792,34 +3435,6 @@ paths:
       description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2852,44 +3467,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -2900,44 +3487,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.mailFolders.messages_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -2946,7 +3506,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties':
@@ -2957,20 +3519,6 @@ paths:
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3018,22 +3566,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3043,23 +3579,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
       requestBody:
         description: New navigation property
         content:
@@ -3074,7 +3594,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -3085,27 +3607,6 @@ paths:
       description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3138,37 +3639,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -3179,37 +3659,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -3218,7 +3678,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties':
@@ -3229,20 +3691,6 @@ paths:
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3290,22 +3738,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3315,23 +3751,7 @@ paths:
       tags:
         - users.mailFolder
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
       requestBody:
         description: New navigation property
         content:
@@ -3346,7 +3766,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/mailFolders/{mailFolder-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -3357,27 +3779,6 @@ paths:
       description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3410,37 +3811,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.mailFolder
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -3451,37 +3831,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.mailFolder
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.
       operationId: users.mailFolders_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: mailFolder-id
-          in: path
-          description: 'key: id of mailFolder'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: mailFolder
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -3490,7 +3850,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages':
@@ -3501,13 +3863,6 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_ListMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -3634,22 +3989,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of message
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.message'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.messageCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -3659,16 +4002,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to messages for users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_CreateMessages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
       requestBody:
         description: New navigation property
         content:
@@ -3683,7 +4017,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.message'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}':
@@ -3694,20 +4030,6 @@ paths:
       description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_GetMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - name: $select
           in: query
           description: Select properties to be returned
@@ -3782,30 +4104,16 @@ paths:
               parameters:
                 user-id: $request.path.user-id
                 message-id: $request.path.message-id
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
       summary: Update the navigation property messages in users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_UpdateMessages
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property values
         content:
@@ -3816,30 +4124,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
       summary: Delete navigation property messages for users
-      description: The messages in a mailbox or folder. Read-only. Nullable.
       operationId: users_DeleteMessages
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - name: If-Match
           in: header
           description: ETag
@@ -3848,7 +4143,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/$value':
@@ -3857,21 +4154,6 @@ paths:
         - users.message
       summary: Get media content for the navigation property messages from users
       operationId: users_GetMessagesContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       responses:
         '200':
           description: Retrieved media content
@@ -3880,7 +4162,9 @@ paths:
               schema:
                 type: string
                 format: binary
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     put:
@@ -3888,21 +4172,6 @@ paths:
         - users.message
       summary: Update media content for the navigation property messages in users
       operationId: users_SetMessagesContent
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New media content.
         content:
@@ -3914,7 +4183,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments':
@@ -3925,20 +4196,6 @@ paths:
       description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_ListAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -3997,22 +4254,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of attachment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.attachment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.attachmentCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4022,23 +4267,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to attachments for users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_CreateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -4053,7 +4282,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/attachments/{attachment-id}':
@@ -4064,27 +4295,6 @@ paths:
       description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_GetAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4121,37 +4331,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.attachment'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
       summary: Update the navigation property attachments in users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_UpdateAttachments
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
       requestBody:
         description: New navigation property values
         content:
@@ -4162,37 +4351,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
       summary: Delete navigation property attachments for users
-      description: The fileAttachment and itemAttachment attachments for the message.
       operationId: users.messages_DeleteAttachments
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: attachment-id
-          in: path
-          description: 'key: id of attachment'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: attachment
         - name: If-Match
           in: header
           description: ETag
@@ -4201,7 +4370,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions':
@@ -4212,20 +4383,6 @@ paths:
       description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_ListExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/filter'
@@ -4269,22 +4426,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of extension
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.extension'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4294,23 +4439,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to extensions for users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_CreateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -4325,7 +4454,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/extensions/{extension-id}':
@@ -4336,27 +4467,6 @@ paths:
       description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_GetExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4388,37 +4498,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.extension'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
       summary: Update the navigation property extensions in users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_UpdateExtensions
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
       requestBody:
         description: New navigation property values
         content:
@@ -4429,37 +4518,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
       summary: Delete navigation property extensions for users
-      description: The collection of open extensions defined for the message. Nullable.
       operationId: users.messages_DeleteExtensions
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: extension-id
-          in: path
-          description: 'key: id of extension'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: extension
         - name: If-Match
           in: header
           description: ETag
@@ -4468,7 +4537,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties':
@@ -4479,20 +4550,6 @@ paths:
       description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4540,22 +4597,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of multiValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4565,23 +4610,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_CreateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -4596,7 +4625,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/multiValueExtendedProperties/{multiValueLegacyExtendedProperty-id}':
@@ -4607,27 +4638,6 @@ paths:
       description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4660,37 +4670,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
       summary: Update the navigation property multiValueExtendedProperties in users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_UpdateMultiValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -4701,37 +4690,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
       summary: Delete navigation property multiValueExtendedProperties for users
-      description: The collection of multi-value extended properties defined for the message. Nullable.
       operationId: users.messages_DeleteMultiValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: multiValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of multiValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: multiValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -4740,7 +4709,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties':
@@ -4751,20 +4722,6 @@ paths:
       description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_ListSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
         - $ref: '#/components/parameters/top'
         - $ref: '#/components/parameters/skip'
         - $ref: '#/components/parameters/search'
@@ -4812,22 +4769,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of singleValueLegacyExtendedProperty
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -4837,23 +4782,7 @@ paths:
       tags:
         - users.message
       summary: Create new navigation property to singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_CreateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
       requestBody:
         description: New navigation property
         content:
@@ -4868,7 +4797,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/users/{user-id}/messages/{message-id}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty-id}':
@@ -4879,27 +4810,6 @@ paths:
       description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_GetSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: $select
           in: query
           description: Select properties to be returned
@@ -4932,37 +4842,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
       tags:
         - users.message
       summary: Update the navigation property singleValueExtendedProperties in users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_UpdateSingleValueExtendedProperties
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
       requestBody:
         description: New navigation property values
         content:
@@ -4973,37 +4862,17 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
       tags:
         - users.message
       summary: Delete navigation property singleValueExtendedProperties for users
-      description: The collection of single-value extended properties defined for the message. Nullable.
       operationId: users.messages_DeleteSingleValueExtendedProperties
       parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: message-id
-          in: path
-          description: 'key: id of message'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: message
-        - name: singleValueLegacyExtendedProperty-id
-          in: path
-          description: 'key: id of singleValueLegacyExtendedProperty'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: singleValueLegacyExtendedProperty
         - name: If-Match
           in: header
           description: ETag
@@ -5012,7 +4881,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
 components:
@@ -5625,13 +5496,109 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.inferenceClassificationOverrideCollectionResponse:
+      title: Collection of inferenceClassificationOverride
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverride'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.mailFolderCollectionResponse:
+      title: Collection of mailFolder
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.mailFolder'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.messageRuleCollectionResponse:
+      title: Collection of messageRule
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.messageRule'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.messageCollectionResponse:
+      title: Collection of message
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.message'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.attachmentCollectionResponse:
+      title: Collection of attachment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.attachment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.extensionCollectionResponse:
+      title: Collection of extension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
+      title: Collection of multiValueLegacyExtendedProperty
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedProperty'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
+      title: Collection of singleValueLegacyExtendedProperty
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedProperty'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.messageActionFlag:
@@ -5703,7 +5670,7 @@ components:
         - complete
         - flagged
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -5715,18 +5682,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -5738,15 +5703,69 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.inferenceClassificationOverrideCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.inferenceClassificationOverrideCollectionResponse'
+    microsoft.graph.mailFolderCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.mailFolderCollectionResponse'
+    microsoft.graph.messageRuleCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.messageRuleCollectionResponse'
+    microsoft.graph.messageCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.messageCollectionResponse'
+    microsoft.graph.attachmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.attachmentCollectionResponse'
+    microsoft.graph.extensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.multiValueLegacyExtendedPropertyCollectionResponse'
+    microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.singleValueLegacyExtendedPropertyCollectionResponse'
   parameters:
     top:
       name: $top

@@ -157,6 +157,34 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"
     },
+    "/security/subjectRightsRequests": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalAttachment()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/microsoft.graph.getFinalReport()": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/notes": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/notes/{authoredNote-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
+    "/security/subjectRightsRequests/{subjectRightsRequest-id}/team": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Security.yml"
+    },
     "/security/tiIndicators": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Security.yml"

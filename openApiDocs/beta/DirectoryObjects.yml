@@ -69,22 +69,10 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of directoryObject
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
-        default:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-pageable:
         nextLinkName: '@odata.nextLink'
@@ -109,7 +97,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/directoryObjects/{directoryObject-id}':
@@ -119,13 +109,6 @@ paths:
       summary: Get entity from directoryObjects by key
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
         - name: ConsistencyLevel
           in: header
           description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
@@ -167,7 +150,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     patch:
@@ -175,14 +160,6 @@ paths:
         - directoryObjects.directoryObject
       summary: Update entity in directoryObjects
       operationId: directoryObjects.directoryObject_UpdateDirectoryObject
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
       requestBody:
         description: New property values
         content:
@@ -193,7 +170,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
     delete:
@@ -202,13 +181,6 @@ paths:
       summary: Delete entity from directoryObjects
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
         - name: If-Match
           in: header
           description: ETag
@@ -217,7 +189,9 @@ paths:
       responses:
         '204':
           description: Success
-        default:
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
   '/directoryObjects/{directoryObject-id}/microsoft.graph.checkMemberGroups':
@@ -225,15 +199,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberGroups
-      operationId: directoryObjects_checkMemberGroups
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
+      operationId: directoryObjects.directoryObject_checkMemberGroups
       requestBody:
         description: Action parameters
         content:
@@ -254,9 +220,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -265,15 +237,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action checkMemberObjects
-      operationId: directoryObjects_checkMemberObjects
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
+      operationId: directoryObjects.directoryObject_checkMemberObjects
       requestBody:
         description: Action parameters
         content:
@@ -294,9 +258,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -305,15 +275,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberGroups
-      operationId: directoryObjects_getMemberGroups
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
+      operationId: directoryObjects.directoryObject_getMemberGroups
       requestBody:
         description: Action parameters
         content:
@@ -334,9 +296,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -345,15 +313,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action getMemberObjects
-      operationId: directoryObjects_getMemberObjects
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
+      operationId: directoryObjects.directoryObject_getMemberObjects
       requestBody:
         description: Action parameters
         content:
@@ -374,9 +334,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: string
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -385,15 +351,7 @@ paths:
       tags:
         - directoryObjects.Actions
       summary: Invoke action restore
-      operationId: directoryObjects_restore
-      parameters:
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
+      operationId: directoryObjects.directoryObject_restore
       responses:
         '200':
           description: Success
@@ -435,9 +393,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -534,16 +498,28 @@ components:
           description: Read-only.
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -555,18 +531,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -578,15 +552,27 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   parameters:
     top:
       name: $top
