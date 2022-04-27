@@ -6,7 +6,7 @@
 azure: false
 powershell: true
 version: latest
-use: "$(this-folder)../autorest.powershell"
+use: "@autorest/powershell@latest"
 metadata:
     authors: Microsoft Corporation
     owners: Microsoft Corporation
@@ -35,15 +35,6 @@ sanitize-names: false
 ``` yaml
 clear-output-folder: true
 output-folder: .
-```
-
-> Profiles
-
-``` yaml
-tag: all-api-versions
-profile:
-  - v1.0
-  - v1.0-beta
 ```
 
 > Custom Directives
