@@ -46,6 +46,4 @@ if (Test-Path $PackModulePS1) {
     # Copy package to artifacts folder.
     Write-Host -ForegroundColor Green "Copying '$NuGetPackage' to $ModuleArtifactLocation..."
     Copy-Item -Path $NuGetPackage -Destination $ModuleArtifactLocation -Force
-
-    Write-Host -ForegroundColor Green "-------------Done-------------"
 }

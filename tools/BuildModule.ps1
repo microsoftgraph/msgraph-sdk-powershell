@@ -42,7 +42,7 @@ else {
 }
 
 # Build module
-Write-Host -ForegroundColor Green "Building '$ModuleFullName' module..."
+Write-Debug "Building '$ModuleFullName' module..."
 & $BuildModulePS1 -Docs -Release -ExcludeExampleTemplates:$ExcludeExampleTemplates -ExcludeNotesSection:$ExcludeNotesSection
 if ($LASTEXITCODE) {
     Write-Error "Failed to build '$ModuleFullName' module."
@@ -73,8 +73,6 @@ else {
     }
 }
 
-Write-Host -ForegroundColor Green "Updating '$ModuleFullName' module manifest and nuspec..."
+Write-Debug "Updating '$ModuleFullName' module manifest and nuspec..."
 Update-ModuleManifest @ModuleManifestSettings
 Set-NuSpecValues -NuSpecFilePath $ModuleNuspec -VersionNumber $FullVersionNumber -Dependencies $RequiredModules -IconUrl $NuspecMetadata["iconUri"] -ReleaseNotes $ReleaseNotes
-
-Write-Host -ForegroundColor Green "-------------Done-------------"

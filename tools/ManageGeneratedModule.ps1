@@ -12,7 +12,6 @@ Param(
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string]$ModuleSrc,
     [Parameter(Mandatory = $true)][ValidateNotNullOrEmpty()][string] $ApiVersion
 )
-$LASTEXITCODE = $null
 $NugetPackagesToAdd = @("hyak.common")
 $NugetPackagesToRemove = @("Microsoft.CSharp")
 $AuthenticationProj = Join-Path $PSScriptRoot "..\src\Authentication\Authentication\Microsoft.Graph.Authentication.csproj"
@@ -41,9 +40,8 @@ $CustomCodePath = Join-Path $PSScriptRoot "\Custom\"
 # Add authentication project reference to generated module reference.
 Write-Debug "Executing: dotnet add $ModuleCsProj reference $AuthenticationProj"
 dotnet add $ModuleCsProj reference $AuthenticationProj | Out-Null
-if($LASTEXITCODE){
+if($LastExitCode){
     Write-Error "Failed to execute: dotnet add $ModuleCsProj reference $AuthenticationProj"
-    return
 }
 
 # Copy custom code to generated module.
@@ -57,8 +55,8 @@ foreach($Package in $NugetPackagesToRemove)
 {
     Write-Debug "Executing: dotnet remove $ModuleCsProj package $Package"
     dotnet remove $ModuleCsProj package $Package | Out-Null
-    if($LASTEXITCODE){
-        Write-Warning "Failed to execute: dotnet remove $ModuleCsProj package $Package"
+    if($LastExitCode){
+        Write-Error "Failed to execute: dotnet remove $ModuleCsProj package $Package"
     }
 }
 
@@ -67,8 +65,8 @@ foreach($Package in $NugetPackagesToAdd)
 {
     Write-Debug "Executing: dotnet add $ModuleCsProj package $Package"
     dotnet add $ModuleCsProj package $Package | Out-Null
-    if($LASTEXITCODE){
-        Write-Warning "Failed to execute: dotnet add $ModuleCsProj package $Package"
+    if($LastExitCode){
+        Write-Error "Failed to execute: dotnet add $ModuleCsProj package $Package"
     }
 }
 
@@ -79,4 +77,3 @@ foreach($Package in $NugetPackagesToAdd)
 #     Write-Error "Failed to execute: dotnet restore $GeneratedModuleSln"
 #     return
 # }
-Write-Host -ForegroundColor Green "-------------Done-------------"

@@ -61,7 +61,7 @@ function Set-ElementValue(
     [string] $ElementName, [string] $ElementValue) {
     if(-not $MetadataElement[$ElementName]){
         $NewElement = $XmlDocument.CreateElement($ElementName, $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewElement)
+        $MetadataElement.AppendChild($NewElement) | Out-Null
     }
     $MetadataElement[$ElementName].InnerText = $ElementValue
 }
@@ -72,7 +72,7 @@ function Set-Dependencies(
     [hashtable[]] $Dependencies) {
     if(-not $MetadataElement["dependencies"]){
         $NewDependenciesElement = $XmlDocument.CreateElement("dependencies", $XmlDocument.DocumentElement.NamespaceURI)
-        $MetadataElement.AppendChild($NewDependenciesElement)
+        $MetadataElement.AppendChild($NewDependenciesElement) | Out-Null
     } else {
         $MetadataElement["dependencies"].RemoveAll()   
     }
@@ -82,7 +82,7 @@ function Set-Dependencies(
         $NewDependencyElement.SetAttribute("id", $Dependency.ModuleName)
         $NewDependencyElement.SetAttribute("version", $Dependency.ModuleVersion ?? $Dependency.RequiredVersion)
 
-        $MetadataElement["dependencies"].AppendChild($NewDependencyElement)
+        $MetadataElement["dependencies"].AppendChild($NewDependencyElement) | Out-Null
     }
 }
 
