@@ -579,10 +579,10 @@ directive:
       {
         return $;
       } else {
-        let odataNextLinkRegex = /(^\s*)(if\s*\(\s*result.OdataNextLink\s*!=\s*null\s*\))/gmi
+        let odataNextLinkRegex = /(^\s*)(while\s*\(\s*_nextLink\s*!=\s*null\s*\))/gmi
         if($.match(odataNextLinkRegex)) {
           // Add custom -PageSize parameter to *_List cmdlets that support Odata next link.
-          $ = $.replace(odataNextLinkRegex, '$1if (result.OdataNextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
+          $ = $.replace(odataNextLinkRegex, '$1while (_nextLink != null && this.ShouldIteratePages(this.InvocationInformation.BoundParameters, result.Value.Length))\n$1');
 
           let psBaseClassImplementationRegex = /(\s*:\s*)(global::System.Management.Automation.PSCmdlet)/gmi
           $ = $.replace(psBaseClassImplementationRegex, '$1Microsoft.Graph.PowerShell.Cmdlets.Custom.ListCmdlet');
@@ -592,7 +592,7 @@ directive:
           let countPlaceholder = (!$.includes("SwitchParameter _count;")) ? 'global::System.Management.Automation.SwitchParameter _count;': ''
           $ = $.replace(beginProcessingRegex, `$1$2\n$1 ${countPlaceholder} ${topPlaceholder} if (this.InvocationInformation?.BoundParameters != null){ InitializeCmdlet(ref this.__invocationInfo, ref _top, ref _count); }\n$1`);
 
-          let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\.UsersUserListUser_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
+          let odataNextLinkCallRegex = /(^\s*)(await\s*this\.Client\..*_Call\(requestMessage\,\s*onOk\,\s*onDefault\,\s*this\,\s*Pipeline\)\;)/gmi
           $ = $.replace(odataNextLinkCallRegex, '$1requestMessage.RequestUri = GetOverflowItemsNextLinkUri(requestMessage.RequestUri);\n$1$2');
 
           // Set -Count parameter to private. This will be replaced by -CountVariable
