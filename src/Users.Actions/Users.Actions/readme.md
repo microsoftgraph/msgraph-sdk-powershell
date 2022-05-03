@@ -124,10 +124,28 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
+  - where:
+      verb: Invoke
+      subject: ^Bulk(UserManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkUserManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(UserManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkUserManagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Cloud(UserManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudUserManagedDevice
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.5
+module-version: 1.9.6
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
