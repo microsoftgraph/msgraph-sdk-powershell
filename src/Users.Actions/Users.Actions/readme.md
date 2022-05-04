@@ -40,7 +40,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*
+  - remove-path-by-operation: .*exceptionOccurrences.*|users\.onenote\..*.parent.*|users.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|users\.calendar\.events.*|users\.calendarGroups\.calendars.*|users\.calendars\.events.*|users\.events\.calendar\.events.*|users\.pendingAccessReviewInstances\.stages\.decisions.*|users\.pendingAccessReviewInstances(\.decisions|\.stages\.decisions)\.instance.*
 # Remove cmdlets.
   - where:
       verb: Clear
@@ -102,13 +102,13 @@ directive:
       subject: $1Default$2
   - where:
       verb: Invoke
-      subject: ^(Reply)(UserMessage|UserMailFolderMessage)$
+      subject: ^(Reply)(UserMessage|UserMailFolderMessage|UserMailFolderChildFolderMessage)$
       variant: ^Reply1$|^ReplyExpanded1$|^ReplyViaIdentity1$|^ReplyViaIdentityExpanded1$|^Reply3$|^ReplyExpanded3$|^ReplyViaIdentity3$|^ReplyViaIdentityExpanded3$
     set:
       subject: $1All$2
   - where:
       verb: New
-      subject: ^(User)(MessageReply|MailFolderMessageReply)$
+      subject: ^(User)(MessageReply|MailFolderMessageReply|MailFolderChildFolderMessageReply)$
       variant: ^Create1$|^CreateExpanded1$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$|^Create3$|^CreateExpanded3$|^CreateViaIdentity3$|^CreateViaIdentityExpanded3$
     set:
       subject: $1$2All

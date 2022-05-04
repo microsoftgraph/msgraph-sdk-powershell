@@ -556,7 +556,7 @@ directive:
 
         // Override OnDefault to handle all success, 2xx responses, as success and not error.
         let overrideOnDefaultRegex = /(\s*)(partial\s*void\s*overrideOnDefault)/gmi
-        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
+        let overrideOnDefaultImplementation = "$1partial void overrideOnDefault(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError> response, ref global::System.Threading.Tasks.Task<bool> returnNow) => this.OverrideOnDefault(responseMessage,ref returnNow);$1$2"
         $ = $.replace(overrideOnDefaultRegex, overrideOnDefaultImplementation);
 
         // Remove noisy log messages.
