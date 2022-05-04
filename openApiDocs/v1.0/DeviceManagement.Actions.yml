@@ -40,9 +40,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                title: Collection of deviceCompliancePolicy
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceCompliancePolicyAssignment'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -114,9 +120,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                title: Collection of deviceConfiguration
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.deviceConfigurationAssignment'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -247,9 +259,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                title: Collection of importedWindowsAutopilotDeviceIdentity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.importedWindowsAutopilotDeviceIdentity'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -821,9 +839,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -888,9 +911,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -955,9 +983,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1022,9 +1055,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1089,9 +1127,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1156,9 +1199,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1223,9 +1271,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1290,9 +1343,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1357,9 +1415,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1424,9 +1487,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1488,9 +1556,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1555,9 +1628,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1622,9 +1700,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1689,9 +1772,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1756,9 +1844,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1823,9 +1916,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -1990,6 +2088,16 @@ components:
         - deltaSync
       type: string
       description: The type of Exchange Connector sync requested.
+      x-ms-enum:
+        name: deviceManagementExchangeConnectorSyncType
+        modelAsString: false
+        values:
+          - value: fullSync
+            description: Discover all the device in Exchange.
+            name: fullSync
+          - value: deltaSync
+            description: Discover only the device in Exchange which have updated during the delta sync window.
+            name: deltaSync
     microsoft.graph.importedWindowsAutopilotDeviceIdentity:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -2128,13 +2236,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
     microsoft.graph.deviceComplianceActionType:
@@ -2149,6 +2257,31 @@ components:
         - pushNotification
       type: string
       description: Scheduled Action Type Enum
+      x-ms-enum:
+        name: deviceComplianceActionType
+        modelAsString: false
+        values:
+          - value: noAction
+            description: No Action
+            name: noAction
+          - value: notification
+            description: Send Notification
+            name: notification
+          - value: block
+            description: Block the device in AAD
+            name: block
+          - value: retire
+            description: Retire the device
+            name: retire
+          - value: wipe
+            description: Wipe the device
+            name: wipe
+          - value: removeResourceAccessProfiles
+            description: Remove Resource Access Profiles from the device
+            name: removeResourceAccessProfiles
+          - value: pushNotification
+            description: Send push notification to device
+            name: pushNotification
     microsoft.graph.importedWindowsAutopilotDeviceIdentityImportStatus:
       title: importedWindowsAutopilotDeviceIdentityImportStatus
       enum:
@@ -2158,7 +2291,26 @@ components:
         - complete
         - error
       type: string
-    odata.error.main:
+      x-ms-enum:
+        name: importedWindowsAutopilotDeviceIdentityImportStatus
+        modelAsString: false
+        values:
+          - value: unknown
+            description: Unknown status.
+            name: unknown
+          - value: pending
+            description: Pending status.
+            name: pending
+          - value: partial
+            description: Partial status.
+            name: partial
+          - value: complete
+            description: Complete status.
+            name: complete
+          - value: error
+            description: Error status.
+            name: error
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2170,18 +2322,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2193,15 +2343,21 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   securitySchemes:
     azureaadv2:
       type: oauth2

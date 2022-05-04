@@ -78,7 +78,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property insights in users
-      description: Read-only. Nullable.
       operationId: users_UpdateInsights
       parameters:
         - name: user-id
@@ -105,7 +104,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property insights for users
-      description: Read-only. Nullable.
       operationId: users_DeleteInsights
       parameters:
         - name: user-id
@@ -131,7 +129,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListShared
       parameters:
         - name: user-id
@@ -201,21 +199,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of sharedInsight
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.sharedInsightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -226,7 +210,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to shared for users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_CreateShared
       parameters:
         - name: user-id
@@ -258,7 +241,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get shared from users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetShared
       parameters:
         - name: user-id
@@ -332,7 +315,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property shared in users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_UpdateShared
       parameters:
         - name: user-id
@@ -366,7 +348,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property shared for users
-      description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
       operationId: users.insights_DeleteShared
       parameters:
         - name: user-id
@@ -449,103 +430,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/insights/shared/{sharedInsight-id}/lastSharedMethod/$ref':
-    get:
-      tags:
-        - users.officeGraphInsights
-      summary: Get ref of lastSharedMethod from users
-      operationId: users.insights.shared_GetGraphRefLastSharedMethod
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.officeGraphInsights
-      summary: Update the ref of navigation property lastSharedMethod in users
-      operationId: users.insights.shared_SetGraphRefLastSharedMethod
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.officeGraphInsights
-      summary: Delete ref of navigation property lastSharedMethod for users
-      operationId: users.insights.shared_DeleteGraphRefLastSharedMethod
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/shared/{sharedInsight-id}/resource':
     get:
       tags:
@@ -602,112 +486,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/insights/shared/{sharedInsight-id}/resource/$ref':
-    get:
-      tags:
-        - users.officeGraphInsights
-      summary: Get ref of resource from users
-      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.shared_GetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.officeGraphInsights
-      summary: Update the ref of navigation property resource in users
-      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.shared_SetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.officeGraphInsights
-      summary: Delete ref of navigation property resource for users
-      description: 'Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.shared_DeleteGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: sharedInsight-id
-          in: path
-          description: 'key: id of sharedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: sharedInsight
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/trending':
     get:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListTrending
       parameters:
         - name: user-id
@@ -775,21 +559,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of trending
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.trending'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.trendingCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -800,7 +570,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to trending for users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_CreateTrending
       parameters:
         - name: user-id
@@ -832,7 +601,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get trending from users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetTrending
       parameters:
         - name: user-id
@@ -899,7 +668,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property trending in users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_UpdateTrending
       parameters:
         - name: user-id
@@ -933,7 +701,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property trending for users
-      description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
       operationId: users.insights_DeleteTrending
       parameters:
         - name: user-id
@@ -1017,112 +784,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/insights/trending/{trending-id}/resource/$ref':
-    get:
-      tags:
-        - users.officeGraphInsights
-      summary: Get ref of resource from users
-      description: Used for navigating to the trending document.
-      operationId: users.insights.trending_GetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: trending-id
-          in: path
-          description: 'key: id of trending'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: trending
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.officeGraphInsights
-      summary: Update the ref of navigation property resource in users
-      description: Used for navigating to the trending document.
-      operationId: users.insights.trending_SetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: trending-id
-          in: path
-          description: 'key: id of trending'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: trending
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.officeGraphInsights
-      summary: Delete ref of navigation property resource for users
-      description: Used for navigating to the trending document.
-      operationId: users.insights.trending_DeleteGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: trending-id
-          in: path
-          description: 'key: id of trending'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: trending
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/insights/used':
     get:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_ListUsed
       parameters:
         - name: user-id
@@ -1187,21 +854,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of usedInsight
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.usedInsight'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.usedInsightCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1212,7 +865,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Create new navigation property to used for users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_CreateUsed
       parameters:
         - name: user-id
@@ -1244,7 +896,7 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Get used from users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+      description: Access this property from the derived type itemInsights.
       operationId: users.insights_GetUsed
       parameters:
         - name: user-id
@@ -1310,7 +962,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Update the navigation property used in users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_UpdateUsed
       parameters:
         - name: user-id
@@ -1344,7 +995,6 @@ paths:
       tags:
         - users.officeGraphInsights
       summary: Delete navigation property used for users
-      description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
       operationId: users.insights_DeleteUsed
       parameters:
         - name: user-id
@@ -1428,112 +1078,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/insights/used/{usedInsight-id}/resource/$ref':
-    get:
-      tags:
-        - users.officeGraphInsights
-      summary: Get ref of resource from users
-      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.used_GetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: usedInsight-id
-          in: path
-          description: 'key: id of usedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: usedInsight
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.officeGraphInsights
-      summary: Update the ref of navigation property resource in users
-      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.used_SetGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: usedInsight-id
-          in: path
-          description: 'key: id of usedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: usedInsight
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.officeGraphInsights
-      summary: Delete ref of navigation property resource for users
-      description: 'Used for navigating to the item that was used. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.'
-      operationId: users.insights.used_DeleteGraphRefResource
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: usedInsight-id
-          in: path
-          description: 'key: id of usedInsight'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: usedInsight
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/people':
     get:
       tags:
         - users.person
       summary: Get people from users
-      description: People that are relevant to the user. Read-only. Nullable.
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_ListPeople
       parameters:
         - name: user-id
@@ -1632,21 +1182,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of person
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.person'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.personCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1657,7 +1193,6 @@ paths:
       tags:
         - users.person
       summary: Create new navigation property to people for users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_CreatePeople
       parameters:
         - name: user-id
@@ -1689,7 +1224,7 @@ paths:
       tags:
         - users.person
       summary: Get people from users
-      description: People that are relevant to the user. Read-only. Nullable.
+      description: 'Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user''s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.'
       operationId: users_GetPeople
       parameters:
         - name: user-id
@@ -1751,7 +1286,6 @@ paths:
       tags:
         - users.person
       summary: Update the navigation property people in users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_UpdatePeople
       parameters:
         - name: user-id
@@ -1785,7 +1319,6 @@ paths:
       tags:
         - users.person
       summary: Delete navigation property people for users
-      description: People that are relevant to the user. Read-only. Nullable.
       operationId: users_DeletePeople
       parameters:
         - name: user-id
@@ -1825,17 +1358,17 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.sharedInsight'
-              description: 'Calculated relationship identifying documents shared with or by the user. This includes URLs, file attachments, and reference attachments to OneDrive for Business and SharePoint files found in Outlook messages and meetings. This also includes URLs and reference attachments to Teams conversations. Ordered by recency of share.'
+              description: Access this property from the derived type itemInsights.
             trending:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.trending'
-              description: 'Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user''s closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.'
+              description: Access this property from the derived type itemInsights.
             used:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.usedInsight'
-              description: 'Calculated relationship identifying the latest documents viewed or modified by a user, including OneDrive for Business and SharePoint documents, ranked by recency of use.'
+              description: Access this property from the derived type itemInsights.
           additionalProperties:
             type: object
     microsoft.graph.sharedInsight:
@@ -2087,7 +1620,7 @@ components:
         lastModifiedDateTime:
           pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
           type: string
-          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time.For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
+          description: 'The date and time the resource was last modified by the user. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.'
           format: date-time
           nullable: true
       additionalProperties:
@@ -2190,13 +1723,61 @@ components:
           $ref: '#/components/schemas/microsoft.graph.websiteType'
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.sharedInsightCollectionResponse:
+      title: Collection of sharedInsight
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.sharedInsight'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.trendingCollectionResponse:
+      title: Collection of trending
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.trending'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.usedInsightCollectionResponse:
+      title: Collection of usedInsight
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.usedInsight'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.personCollectionResponse:
+      title: Collection of person
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.person'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.insightIdentity:
@@ -2326,7 +1907,7 @@ components:
         - blog
         - profile
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -2338,18 +1919,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -2361,15 +1940,45 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.sharedInsightCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.sharedInsightCollectionResponse'
+    microsoft.graph.trendingCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.trendingCollectionResponse'
+    microsoft.graph.usedInsightCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.usedInsightCollectionResponse'
+    microsoft.graph.personCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.personCollectionResponse'
   parameters:
     top:
       name: $top
