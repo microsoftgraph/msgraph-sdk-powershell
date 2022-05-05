@@ -96,10 +96,76 @@ directive:
     set:
       verb: New
       subject: $1WindowsDefenderUpdateSignature
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementComanagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementComanagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementDetectedAppManagedDevice)RestoreCloudPc$
+    set:
+      subject: BulkRestore$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceRestoreCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementComanagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementComanagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementDetectedAppManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementDetectedAppManagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Bulk(DeviceManagementManagedDevice)ReprovisionCloudPc$
+    set:
+      subject: BulkReprovision$1CloudPc
+      alias: Invoke-MgBulkDeviceManagementManagedDeviceReprovisionCloudPc
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementDeviceHealthScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementDeviceShellScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementDeviceShellScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementScriptDeviceRunStateManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementScriptDeviceRunStateManagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementComanagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementComanagedDevice
+  - where:
+      verb: Invoke
+      subject: ^Cloud(DeviceManagementManagedDevice)$
+    set:
+      subject: Reprovision$1CloudPc
+      alias: Invoke-MgCloudDeviceManagementManagedDevice
 ```
 ### Versioning
 
 ``` yaml
-module-version: 1.9.5
+module-version: 1.9.6
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```
