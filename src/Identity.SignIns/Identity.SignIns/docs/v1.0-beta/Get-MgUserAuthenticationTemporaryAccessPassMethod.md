@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationTemporaryAccessPassMethod
 
 ## SYNOPSIS
-Get temporaryAccessPassMethods from users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgUserAuthenticationTemporaryAccessPassMethod -InputObject <IIdentitySignIns
 ```
 
 ## DESCRIPTION
-Get temporaryAccessPassMethods from users
+Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
 
 ## EXAMPLES
 

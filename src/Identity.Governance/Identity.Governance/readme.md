@@ -184,7 +184,7 @@ directive:
       subject: (.*)(EntitlementManagement)CatalogGraphRefAccessPackage
     remove: true
   - where:
-      verb: Get|New|Remove|Update|Set
+      verb: Get|New|Remove|Update|Set|Invoke
       subject: (.*)(EntitlementManagement)CatalogAccessPackage
     remove: true
   - where:
@@ -335,6 +335,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.4
+module-version: 1.9.6
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

@@ -332,7 +332,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFile>: agreementFile
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
@@ -359,7 +359,7 @@ BODYPARAMETER <IMicrosoftGraphAgreementFile>: agreementFile
 
 FILEDATA <IMicrosoftGraphAgreementFileData>: agreementFileData
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
-  - `[Data <Byte[]>]`: 
+  - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
 
 INPUTOBJECT <IIdentityGovernanceIdentity>: Identity Parameter
   - `[AccessPackageAssignmentId <String>]`: key: id of accessPackageAssignment
@@ -422,7 +422,7 @@ LOCALIZATIONS <IMicrosoftGraphAgreementFileLocalization[]>: The localized versio
   - `[DisplayName <String>]`: Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
   - `[FileData <IMicrosoftGraphAgreementFileData>]`: agreementFileData
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[Data <Byte[]>]`: 
+    - `[Data <Byte[]>]`: Data that represents the terms of use PDF document. Read-only.
   - `[FileName <String>]`: Name of the agreement file (for example, TOU.pdf). Read-only.
   - `[IsDefault <Boolean?>]`: If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
   - `[IsMajorVersion <Boolean?>]`: Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.

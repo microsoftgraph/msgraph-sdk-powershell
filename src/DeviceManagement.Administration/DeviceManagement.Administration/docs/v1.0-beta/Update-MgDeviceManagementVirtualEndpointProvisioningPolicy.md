@@ -20,7 +20,8 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy -CloudPcProvisioningP
  [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>] [-Id <String>]
  [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>]
  [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ### Update
@@ -46,7 +47,8 @@ Update-MgDeviceManagementVirtualEndpointProvisioningPolicy
  [-DisplayName <String>] [-DomainJoinConfiguration <IMicrosoftGraphCloudPcDomainJoinConfiguration>]
  [-Id <String>] [-ImageDisplayName <String>] [-ImageId <String>] [-ImageType <String>]
  [-MicrosoftManagedDesktop <IMicrosoftGraphMicrosoftManagedDesktop>] [-OnPremisesConnectionId <String>]
- [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>] [-PassThru] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -294,6 +296,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -WindowsSettings
+cloudPcWindowsSettings
+To construct, please use Get-Help -Online and see NOTES section for WINDOWSSETTINGS properties and create a hash table.
+
+```yaml
+Type: Microsoft.Graph.PowerShell.Models.IMicrosoftGraphCloudPcWindowsSettings
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -374,6 +392,9 @@ BODYPARAMETER <IMicrosoftGraphCloudPcProvisioningPolicy>: cloudPcProvisioningPol
     - `[Profile <String>]`: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
     - `[Type <String>]`: microsoftManagedDesktopType
   - `[OnPremisesConnectionId <String>]`: The ID of the cloudPcOnPremisesConnection. To ensure that Cloud PCs have network connectivity and that they domain join, choose a connection with a virtual network that’s validated by the Cloud PC service.
+  - `[WindowsSettings <IMicrosoftGraphCloudPcWindowsSettings>]`: cloudPcWindowsSettings
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[Language <String>]`: The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 
 DOMAINJOINCONFIGURATION <IMicrosoftGraphCloudPcDomainJoinConfiguration>: cloudPcDomainJoinConfiguration
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -437,6 +458,10 @@ MICROSOFTMANAGEDDESKTOP <IMicrosoftGraphMicrosoftManagedDesktop>: microsoftManag
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
   - `[Profile <String>]`: The name of the Microsoft Managed Desktop profile that the Windows 365 Cloud PC is associated with.
   - `[Type <String>]`: microsoftManagedDesktopType
+
+WINDOWSSETTINGS <IMicrosoftGraphCloudPcWindowsSettings>: cloudPcWindowsSettings
+  - `[(Any) <Object>]`: This indicates any property can be added to this object.
+  - `[Language <String>]`: The Windows language/region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).
 
 ## RELATED LINKS
 

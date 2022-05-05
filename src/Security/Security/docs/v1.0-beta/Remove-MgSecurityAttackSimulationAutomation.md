@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Delete navigation property simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgSecurityAttackSimulationAutomation -InputObject <ISecurityIdentity> [-I
 ```
 
 ## DESCRIPTION
-Delete navigation property simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ## EXAMPLES
 

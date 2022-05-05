@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgSecurityAttackSimulationAutomation
 
 ## SYNOPSIS
-Create new navigation property to simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ## SYNTAX
 
@@ -29,7 +29,7 @@ New-MgSecurityAttackSimulationAutomation -BodyParameter <IMicrosoftGraphSimulati
 ```
 
 ## DESCRIPTION
-Create new navigation property to simulationAutomations for security
+Represents simulation automations created to run on a tenant.
 
 ## EXAMPLES
 
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreatedDateTime
-.
+Date and time when the attack simulation automation was created.
 
 ```yaml
 Type: System.DateTime
@@ -98,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-.
+Description of the attack simulation automation.
 
 ```yaml
 Type: System.String
@@ -113,7 +113,8 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayName
-.
+Display name of the attack simulation automation.
+Supports $filter and $orderby.
 
 ```yaml
 Type: System.String
@@ -159,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastModifiedDateTime
-.
+Date and time when the attack simulation automation was most recently modified.
 
 ```yaml
 Type: System.DateTime
@@ -174,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -LastRunDateTime
-.
+Date and time of the latest run of the attack simulation automation.
 
 ```yaml
 Type: System.DateTime
@@ -189,7 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### -NextRunDateTime
-.
+Date and time of the upcoming run of the attack simulation automation.
 
 ```yaml
 Type: System.DateTime
@@ -204,7 +205,7 @@ Accept wildcard characters: False
 ```
 
 ### -Runs
-.
+A collection of simulation automation runs.
 To construct, please use Get-Help -Online and see NOTES section for RUNS properties and create a hash table.
 
 ```yaml
@@ -293,18 +294,18 @@ BODYPARAMETER <IMicrosoftGraphSimulationAutomation>: simulationAutomation
     - `[DisplayName <String>]`: The identity's display name. Note that this may not always be available or up to date. For example, if a user changes their display name, the API may show the new value in a future response, but the items associated with the user won't show up as having changed when using delta.
     - `[Id <String>]`: Unique identifier for the identity.
     - `[Email <String>]`: Email address of the user.
-  - `[CreatedDateTime <DateTime?>]`: 
-  - `[Description <String>]`: 
-  - `[DisplayName <String>]`: 
+  - `[CreatedDateTime <DateTime?>]`: Date and time when the attack simulation automation was created.
+  - `[Description <String>]`: Description of the attack simulation automation.
+  - `[DisplayName <String>]`: Display name of the attack simulation automation. Supports $filter and $orderby.
   - `[LastModifiedBy <IMicrosoftGraphEmailIdentity>]`: emailIdentity
-  - `[LastModifiedDateTime <DateTime?>]`: 
-  - `[LastRunDateTime <DateTime?>]`: 
-  - `[NextRunDateTime <DateTime?>]`: 
-  - `[Runs <IMicrosoftGraphSimulationAutomationRun[]>]`: 
+  - `[LastModifiedDateTime <DateTime?>]`: Date and time when the attack simulation automation was most recently modified.
+  - `[LastRunDateTime <DateTime?>]`: Date and time of the latest run of the attack simulation automation.
+  - `[NextRunDateTime <DateTime?>]`: Date and time of the upcoming run of the attack simulation automation.
+  - `[Runs <IMicrosoftGraphSimulationAutomationRun[]>]`: A collection of simulation automation runs.
     - `[Id <String>]`: Read-only.
-    - `[EndDateTime <DateTime?>]`: 
-    - `[SimulationId <String>]`: 
-    - `[StartDateTime <DateTime?>]`: 
+    - `[EndDateTime <DateTime?>]`: Date and time when the run ends in an attack simulation automation.
+    - `[SimulationId <String>]`: Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
+    - `[StartDateTime <DateTime?>]`: Date and time when the run starts in an attack simulation automation.
     - `[Status <String>]`: simulationAutomationRunStatus
   - `[Status <String>]`: simulationAutomationStatus
 
@@ -320,11 +321,11 @@ LASTMODIFIEDBY <IMicrosoftGraphEmailIdentity>: emailIdentity
   - `[Id <String>]`: Unique identifier for the identity.
   - `[Email <String>]`: Email address of the user.
 
-RUNS <IMicrosoftGraphSimulationAutomationRun[]>: .
+RUNS <IMicrosoftGraphSimulationAutomationRun[]>: A collection of simulation automation runs.
   - `[Id <String>]`: Read-only.
-  - `[EndDateTime <DateTime?>]`: 
-  - `[SimulationId <String>]`: 
-  - `[StartDateTime <DateTime?>]`: 
+  - `[EndDateTime <DateTime?>]`: Date and time when the run ends in an attack simulation automation.
+  - `[SimulationId <String>]`: Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
+  - `[StartDateTime <DateTime?>]`: Date and time when the run starts in an attack simulation automation.
   - `[Status <String>]`: simulationAutomationRunStatus
 
 ## RELATED LINKS

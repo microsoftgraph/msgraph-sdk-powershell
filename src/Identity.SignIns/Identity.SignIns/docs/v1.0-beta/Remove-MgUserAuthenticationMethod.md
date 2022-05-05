@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationMethod
 
 ## SYNOPSIS
-Delete navigation property methods for users
+Represents all authentication methods registered to a user.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationMethod -InputObject <IIdentitySignInsIdentity> [-IfMa
 ```
 
 ## DESCRIPTION
-Delete navigation property methods for users
+Represents all authentication methods registered to a user.
 
 ## EXAMPLES
 

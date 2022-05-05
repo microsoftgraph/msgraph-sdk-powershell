@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Get passwordlessMicrosoftAuthenticatorMethods from users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## SYNTAX
 
@@ -33,7 +33,7 @@ Get-MgUserAuthenticationPasswordlessMicrosoftAuthenticatorMethod -InputObject <I
 ```
 
 ## DESCRIPTION
-Get passwordlessMicrosoftAuthenticatorMethods from users
+Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
 
 ## EXAMPLES
 

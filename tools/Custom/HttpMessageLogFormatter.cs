@@ -12,18 +12,19 @@ namespace Microsoft.Graph.PowerShell
     using System.Net.Http.Headers;
     using System.Text;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
     using System.Xml.Linq;
 
     public static class HttpMessageLogFormatter
     {
-        public static string GetHttpRequestLog(HttpRequestMessage request)
+        public static async Task<string> GetHttpRequestLogAsync(HttpRequestMessage request)
         {
             if (request == null) return string.Empty;
 
             string body = string.Empty;
             try
             {
-                body = (request.Content == null) ? string.Empty : FormatString(request.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                body = (request.Content == null) ? string.Empty : FormatString(await request.Content.ReadAsStringAsync());
             }
             catch { }
 
@@ -36,14 +37,14 @@ namespace Microsoft.Graph.PowerShell
             return stringBuilder.ToString();
         }
 
-        public static string GetHttpResponseLog(HttpResponseMessage response)
+        public static async Task<string> GetHttpResponseLogAsync(HttpResponseMessage response)
         {
             if (response == null) return string.Empty;
 
             string body = string.Empty;
             try
             {
-                body = (response.Content == null) ? string.Empty : FormatString(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                body = (response.Content == null) ? string.Empty : FormatString(await response.Content.ReadAsStringAsync());
             }
             catch { }
 

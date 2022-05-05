@@ -8,7 +8,7 @@ schema: 2.0.0
 # Remove-MgUserAuthenticationPasswordMethod
 
 ## SYNOPSIS
-Delete navigation property passwordMethods for users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -25,7 +25,7 @@ Remove-MgUserAuthenticationPasswordMethod -InputObject <IIdentitySignInsIdentity
 ```
 
 ## DESCRIPTION
-Delete navigation property passwordMethods for users
+Represents the details of the password authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

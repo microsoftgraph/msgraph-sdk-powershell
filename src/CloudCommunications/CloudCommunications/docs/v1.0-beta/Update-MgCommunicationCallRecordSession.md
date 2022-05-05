@@ -264,7 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -StartDateTime
-UTC fime when the first user joined the session.
+UTC time when the first user joined the session.
 The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time.
 For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
@@ -435,7 +435,7 @@ BODYPARAMETER <IMicrosoftGraphCallRecordsSession>: session
         - `[StreamId <String>]`: Unique identifier for the stream.
         - `[WasMediaBypassed <Boolean?>]`: True if the media stream bypassed the Mediation Server and went straight between client and PSTN Gateway/PBX, false otherwise.
     - `[StartDateTime <DateTime?>]`: UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-  - `[StartDateTime <DateTime?>]`: UTC fime when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+  - `[StartDateTime <DateTime?>]`: UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 
 CALLEE <IMicrosoftGraphCallRecordsEndpoint>: endpoint
   - `[(Any) <Object>]`: This indicates any property can be added to this object.
@@ -461,8 +461,8 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
+  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
   - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting

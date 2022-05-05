@@ -12,27 +12,27 @@ Invoke action cancelMediaProcessing
 
 ## SYNTAX
 
-### CancelExpanded1 (Default)
+### CancelExpanded (Default)
 ```
 Stop-MgCommunicationCallMediaProcessing -CallId <String> [-AdditionalProperties <Hashtable>]
  [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Cancel1
+### Cancel
 ```
 Stop-MgCommunicationCallMediaProcessing -CallId <String>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentity1
+### CancelViaIdentity
 ```
 Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
  -BodyParameter <IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema>
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### CancelViaIdentityExpanded1
+### CancelViaIdentityExpanded
 ```
 Stop-MgCommunicationCallMediaProcessing -InputObject <ICloudCommunicationsIdentity>
  [-AdditionalProperties <Hashtable>] [-ClientContext <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -50,7 +50,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
+Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -66,7 +66,7 @@ To construct, please use Get-Help -Online and see NOTES section for BODYPARAMETE
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IPathsYp37FjCommunicationsCallsCallIdMicrosoftGraphCancelmediaprocessingPostRequestbodyContentApplicationJsonSchema
-Parameter Sets: Cancel1, CancelViaIdentity1
+Parameter Sets: Cancel, CancelViaIdentity
 Aliases:
 
 Required: True
@@ -81,7 +81,7 @@ key: id of call
 
 ```yaml
 Type: System.String
-Parameter Sets: Cancel1, CancelExpanded1
+Parameter Sets: Cancel, CancelExpanded
 Aliases:
 
 Required: True
@@ -96,7 +96,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CancelExpanded1, CancelViaIdentityExpanded1
+Parameter Sets: CancelExpanded, CancelViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -112,7 +112,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.ICloudCommunicationsIdentity
-Parameter Sets: CancelViaIdentity1, CancelViaIdentityExpanded1
+Parameter Sets: CancelViaIdentity, CancelViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -184,8 +184,8 @@ INPUTOBJECT <ICloudCommunicationsIdentity>: Identity Parameter
   - `[AudioRoutingGroupId <String>]`: key: id of audioRoutingGroup
   - `[CallId <String>]`: key: id of call
   - `[CallRecordId <String>]`: key: id of callRecord
-  - `[CallTranscriptId <String>]`: key: id of callTranscript
   - `[CommsOperationId <String>]`: key: id of commsOperation
+  - `[ContentSharingSessionId <String>]`: key: id of contentSharingSession
   - `[MeetingAttendanceReportId <String>]`: key: id of meetingAttendanceReport
   - `[MeetingRegistrationQuestionId <String>]`: key: id of meetingRegistrationQuestion
   - `[OnlineMeetingId <String>]`: key: id of onlineMeeting

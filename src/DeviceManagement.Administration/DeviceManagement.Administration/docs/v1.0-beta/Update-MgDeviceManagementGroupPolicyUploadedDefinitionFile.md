@@ -170,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -FileName
-The file name of the uploaded ADML file.
+The file name of the ADMX file without the path.
+For example: edge.admx
 
 ```yaml
 Type: System.String
@@ -464,6 +465,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
         - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
         - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
         - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
+        - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
         - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
         - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
         - `[PolicyType <String>]`: Type of Group Policy File or Definition.
@@ -497,6 +499,7 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
     - `[Version <String>]`: Setting definition version
   - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
   - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
+  - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
   - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
   - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
   - `[PolicyType <String>]`: Type of Group Policy File or Definition.
@@ -506,7 +509,6 @@ BODYPARAMETER <IMicrosoftGraphGroupPolicyUploadedDefinitionFile>: The entity rep
   - `[Id <String>]`: Read-only.
   - `[Content <Byte[]>]`: The contents of the uploaded ADMX file.
   - `[DefaultLanguageCode <String>]`: The default language of the uploaded ADMX file.
-  - `[FileName <String>]`: The file name of the uploaded ADML file.
   - `[GroupPolicyOperations <IMicrosoftGraphGroupPolicyOperation[]>]`: The list of operations on the uploaded ADMX file.
     - `[Id <String>]`: Read-only.
     - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
@@ -534,6 +536,7 @@ DEFINITIONS <IMicrosoftGraphGroupPolicyDefinition[]>: The group policy definitio
       - `[Definitions <IMicrosoftGraphGroupPolicyDefinition[]>]`: The group policy definitions associated with the file.
       - `[Description <String>]`: The localized description of the policy settings in the ADMX file. The default value is empty.
       - `[DisplayName <String>]`: The localized friendly name of the ADMX file.
+      - `[FileName <String>]`: The file name of the ADMX file without the path. For example: edge.admx
       - `[LanguageCodes <String[]>]`: The supported language codes for the ADMX file.
       - `[LastModifiedDateTime <DateTime?>]`: The date and time the entity was last modified.
       - `[PolicyType <String>]`: Type of Group Policy File or Definition.

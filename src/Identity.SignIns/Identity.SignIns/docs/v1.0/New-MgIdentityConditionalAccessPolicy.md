@@ -275,6 +275,10 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
       - `[IncludeAuthenticationContextClassReferences <String[]>]`: Authentication context class references include. Supported values are c1 through c25.
       - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
     - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+    - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
+      - `[(Any) <Object>]`: This indicates any property can be added to this object.
+      - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
+      - `[IncludeServicePrincipals <String[]>]`: Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
     - `[Devices <IMicrosoftGraphConditionalAccessDevices1>]`: conditionalAccessDevices
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[DeviceFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
@@ -285,10 +289,10 @@ BODYPARAMETER <IMicrosoftGraphConditionalAccessPolicy1>: conditionalAccessPolicy
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
       - `[ExcludeLocations <String[]>]`: Location IDs excluded from scope of policy.
       - `[IncludeLocations <String[]>]`: Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
-    - `[Platforms <IMicrosoftGraphConditionalAccessPlatforms1>]`: conditionalAccessPlatforms
+    - `[Platforms <IMicrosoftGraphConditionalAccessPlatforms>]`: conditionalAccessPlatforms
       - `[(Any) <Object>]`: This indicates any property can be added to this object.
-      - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
-      - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+      - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+      - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
     - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
     - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers
@@ -339,6 +343,10 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet1>: conditionalAccessCon
     - `[IncludeAuthenticationContextClassReferences <String[]>]`: Authentication context class references include. Supported values are c1 through c25.
     - `[IncludeUserActions <String[]>]`: User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
   - `[ClientAppTypes <String[]>]`: Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+  - `[ClientApplications <IMicrosoftGraphConditionalAccessClientApplications>]`: conditionalAccessClientApplications
+    - `[(Any) <Object>]`: This indicates any property can be added to this object.
+    - `[ExcludeServicePrincipals <String[]>]`: Service principal IDs excluded from the policy scope.
+    - `[IncludeServicePrincipals <String[]>]`: Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
   - `[Devices <IMicrosoftGraphConditionalAccessDevices1>]`: conditionalAccessDevices
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[DeviceFilter <IMicrosoftGraphConditionalAccessFilter>]`: conditionalAccessFilter
@@ -349,10 +357,10 @@ CONDITIONS <IMicrosoftGraphConditionalAccessConditionSet1>: conditionalAccessCon
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
     - `[ExcludeLocations <String[]>]`: Location IDs excluded from scope of policy.
     - `[IncludeLocations <String[]>]`: Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
-  - `[Platforms <IMicrosoftGraphConditionalAccessPlatforms1>]`: conditionalAccessPlatforms
+  - `[Platforms <IMicrosoftGraphConditionalAccessPlatforms>]`: conditionalAccessPlatforms
     - `[(Any) <Object>]`: This indicates any property can be added to this object.
-    - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
-    - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue.
+    - `[ExcludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
+    - `[IncludePlatforms <String[]>]`: Possible values are: android, iOS, windows, windowsPhone, macOS, linux, all, unknownFutureValue.
   - `[SignInRiskLevels <String[]>]`: Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
   - `[UserRiskLevels <String[]>]`: User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
   - `[Users <IMicrosoftGraphConditionalAccessUsers>]`: conditionalAccessUsers

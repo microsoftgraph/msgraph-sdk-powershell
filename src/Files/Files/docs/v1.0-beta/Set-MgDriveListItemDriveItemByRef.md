@@ -12,25 +12,25 @@ For document libraries, the driveItem relationship exposes the listItem as a [dr
 
 ## SYNTAX
 
-### SetExpanded (Default)
+### SetExpanded1 (Default)
 ```
 Set-MgDriveListItemDriveItemByRef -DriveId <String> -ListItemId <String> [-AdditionalProperties <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Set
+### Set1
 ```
 Set-MgDriveListItemDriveItemByRef -DriveId <String> -ListItemId <String> -BodyParameter <Hashtable>
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentity
+### SetViaIdentity1
 ```
 Set-MgDriveListItemDriveItemByRef -InputObject <IFilesIdentity> -BodyParameter <Hashtable> [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### SetViaIdentityExpanded
+### SetViaIdentityExpanded1
 ```
 Set-MgDriveListItemDriveItemByRef -InputObject <IFilesIdentity> [-AdditionalProperties <Hashtable>]
  [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -48,7 +48,7 @@ Additional Parameters
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Parameter Sets: SetExpanded1, SetViaIdentityExpanded1
 Aliases:
 
 Required: False
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: Set, SetViaIdentity
+Parameter Sets: Set1, SetViaIdentity1
 Aliases:
 
 Required: True
@@ -78,7 +78,7 @@ key: id of drive
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
@@ -94,7 +94,7 @@ To construct, please use Get-Help -Online and see NOTES section for INPUTOBJECT 
 
 ```yaml
 Type: Microsoft.Graph.PowerShell.Models.IFilesIdentity
-Parameter Sets: SetViaIdentity, SetViaIdentityExpanded
+Parameter Sets: SetViaIdentity1, SetViaIdentityExpanded1
 Aliases:
 
 Required: True
@@ -109,7 +109,7 @@ key: id of listItem
 
 ```yaml
 Type: System.String
-Parameter Sets: Set, SetExpanded
+Parameter Sets: Set1, SetExpanded1
 Aliases:
 
 Required: True
