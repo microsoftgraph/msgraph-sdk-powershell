@@ -99,6 +99,8 @@ directive:
     - microsoft.graph.security.informationProtectionPolicySetting
     - microsoft.graph.security.sensitivityLabel
     - microsoft.graph.taskViewpoint
+    - microsoft.graph.security.ediscoveryReviewTag
+    - microsoft.graph.security.ediscoverySearch
   # Set parameter alias
   - where:
       parameter-name: OrderBy
@@ -726,6 +728,26 @@ directive:
         // Add '.ToLower()' at the end of all 'Count.ToString()'
         let countRegex = /(Count\.ToString\(\))/gmi
         $ = $.replace(countRegex, '$1.ToLower()');
+        return $;
+      }
+
+# Fix enums with underscore.
+  - from: source-file-csharp
+    where: $
+    transform: >
+      if (!$documentPath.match(/generated%5Capi%5CSupport%5C(WindowsMalwareCategory|RunAsAccountType|(AssignmentFilter|DeviceScope)Operator).cs/gmi))
+      {
+        return $;
+      } else {
+        // Add underscore to enum properties that have underscore in their value to avoid duplicates.
+        let remoteControlSoftwareRegex = /RemoteControlSoftware(\s*=\s*@"remote_Control_Software")/gmi
+        $ = $.replace(remoteControlSoftwareRegex, 'Remote_Control_Software$1');
+
+        let equalsRegex = /Equals(\s*=\s*@"equals")/gmi
+        $ = $.replace(equalsRegex, '_Equals$1');
+
+        let systemRegex = /System(\s*=\s*@"system")/gmi
+        $ = $.replace(systemRegex, '_System$1');
         return $;
       }
 ```
