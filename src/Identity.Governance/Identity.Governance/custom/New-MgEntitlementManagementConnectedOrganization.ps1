@@ -33,6 +33,7 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 function New-MgEntitlementManagementConnectedOrganization {
 [OutputType([Microsoft.Graph.PowerShell.Models.IMicrosoftGraphConnectedOrganization])]
 [CmdletBinding(DefaultParameterSetName='CreateWithDomainIdentitySource', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
     [Parameter(ParameterSetName='CreateWithDomainIdentitySource')]

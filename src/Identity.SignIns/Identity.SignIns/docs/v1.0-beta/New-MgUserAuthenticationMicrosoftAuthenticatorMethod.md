@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationMicrosoftAuthenticatorMethod
 
 ## SYNOPSIS
-Create new navigation property to microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ New-MgUserAuthenticationMicrosoftAuthenticatorMethod -InputObject <IIdentitySign
 ```
 
 ## DESCRIPTION
-Create new navigation property to microsoftAuthenticatorMethods for users
+The details of the Microsoft Authenticator app registered to a user for authentication.
 
 ## EXAMPLES
 

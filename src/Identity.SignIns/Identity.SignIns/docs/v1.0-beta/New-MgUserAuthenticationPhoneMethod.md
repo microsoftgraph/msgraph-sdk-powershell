@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Create new navigation property to phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ## SYNTAX
 
@@ -39,7 +39,7 @@ New-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to phoneMethods for users
+Represents the phone registered to a user for authentication.
 
 ## EXAMPLES
 

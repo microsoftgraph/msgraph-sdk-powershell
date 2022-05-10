@@ -26,6 +26,7 @@ https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.gove
 #>
 function Split-MgEntitlementManagementConnectedOrganization {
 [CmdletBinding(DefaultParameterSetName='SplitByIdentitySource', PositionalBinding=$false, ConfirmImpact='Medium')]
+[Microsoft.Graph.PowerShell.Profile('v1.0-beta')]
 param(
 
     [Parameter(ValueFromPipeline=$true,ParameterSetName='SplitByIdentitySource')]

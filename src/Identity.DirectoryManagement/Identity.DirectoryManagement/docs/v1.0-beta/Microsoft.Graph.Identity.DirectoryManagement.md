@@ -1,6 +1,6 @@
 ---
 Module Name: Microsoft.Graph.Identity.DirectoryManagement
-Module Guid: d346f578-73bb-473f-86a5-bce3a2e9a76a
+Module Guid: a50d2977-5583-408e-a9a6-d89dc03e1054
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/microsoft.graph.identity.directorymanagement
 Help Version: 1.0.0.0
 Locale: en-US
@@ -439,6 +439,9 @@ Nullable.
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
 
+### [Get-MgOrganizationSettingMicrosoftApplicationDataAccess](Get-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Get microsoftApplicationDataAccess from organization
+
 ### [Get-MgOrganizationSettingPersonInsight](Get-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
 List peopleInsights returns the settings to display or return people insights in an organization.
@@ -829,6 +832,9 @@ Nullable.
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
 
+### [Remove-MgOrganizationSettingMicrosoftApplicationDataAccess](Remove-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Delete navigation property microsoftApplicationDataAccess for organization
+
 ### [Remove-MgOrganizationSettingPersonInsight](Remove-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.
 List peopleInsights returns the settings to display or return people insights in an organization.
@@ -1035,6 +1041,9 @@ Nullable.
 ### [Update-MgOrganizationSettingItemInsight](Update-MgOrganizationSettingItemInsight.md)
 Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites.
 List itemInsights returns the settings to display or return item insights in an organization.
+
+### [Update-MgOrganizationSettingMicrosoftApplicationDataAccess](Update-MgOrganizationSettingMicrosoftApplicationDataAccess.md)
+Update the navigation property microsoftApplicationDataAccess in organization
 
 ### [Update-MgOrganizationSettingPersonInsight](Update-MgOrganizationSettingPersonInsight.md)
 Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365.

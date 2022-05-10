@@ -1,0 +1,35 @@
+{
+  "Update-MgSecurityAlert+[NoContext]+[NoScenario]+$PATCH+https://graph.microsoft.com/v1.0/security/alerts/00000000-0000-0000-0000-000000000000+1": {
+    "Request": {
+      "Method": "PATCH",
+      "RequestUri": "https://graph.microsoft.com/v1.0/security/alerts/00000000-0000-0000-0000-000000000000",
+      "Content": "{\r\n  \"assignedTo\": \"String\",\r\n  \"closedDateTime\": \"2022-03-01T00:00:00.0000000Z\",\r\n  \"comments\": [ \"String\" ],\r\n  \"feedback\": \"@odata.type: microsoft.graph.alertFeedback\",\r\n  \"status\": \"@odata.type: microsoft.graph.alertStatus\",\r\n  \"tags\": [ \"String\" ],\r\n  \"vendorInformation\": {\r\n    \"provider\": \"String\",\r\n    \"vendor\": \"String\"\r\n  }\r\n}",
+      "Headers": {
+        "Prefer": "return=representation"
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Length": ["338"]
+      }
+    },
+    "Response": {
+      "StatusCode": 200,
+      "Headers": {
+        "Transfer-Encoding": ["chunked"],
+        "Vary": ["Accept-Encoding"],
+        "Strict-Transport-Security": ["max-age=31536000"],
+        "request-id": ["e2d34d94-16c0-4d29-9c32-65dce562071d"],
+        "client-request-id": ["e2d34d94-16c0-4d29-9c32-65dce562071d"],
+        "x-ms-ags-diagnostic": [
+          "{\"ServerInfo\":{\"DataCenter\":\"West Central US\",\"Slice\":\"E\",\"Ring\":\"1\",\"ScaleUnit\":\"000\",\"RoleInstance\":\"CY4PEPF00005257\"}}"
+        ],
+        "Date": ["Tue, 29 Mar 2022 22:12:52 GMT"]
+      },
+      "ContentHeaders": {
+        "Content-Type": ["application/json"],
+        "Content-Encoding": ["gzip"]
+      },
+      "Content": "{\r\"assignedTo\":\"String\",\r\"closedDateTime\":\"String(timestamp)\",\r\"comments\":[\r\"String\"\r],\r\"feedback\":\"@odata.type:microsoft.graph.alertFeedback\",\r\"status\":\"@odata.type:microsoft.graph.alertStatus\",\r\"tags\":[\r\"String\"\r],\r\"vendorInformation\":{\r\"provider\":\"String\",\r\"vendor\":\"String\"\r}\r}"
+    }
+  }
+}

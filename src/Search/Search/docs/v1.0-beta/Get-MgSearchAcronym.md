@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-MgSearchAcronym
 
 ## SYNOPSIS
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## SYNTAX
 
@@ -32,7 +32,7 @@ Get-MgSearchAcronym -InputObject <ISearchIdentity> [-ExpandProperty <String[]>] 
 ```
 
 ## DESCRIPTION
-Get acronyms from search
+Administrative answer in Microsoft Search results to define common acronyms in a organization.
 
 ## EXAMPLES
 

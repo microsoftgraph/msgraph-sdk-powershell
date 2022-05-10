@@ -7607,10 +7607,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
                 - displayName
                 - displayName desc
                 - homeTenantId
@@ -7630,8 +7626,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - displayName
                 - homeTenantId
                 - userId
@@ -7718,8 +7712,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - displayName
                 - homeTenantId
                 - userId
@@ -7872,10 +7864,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
                 - userId
                 - userId desc
               type: string
@@ -7889,8 +7877,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - userId
                 - tenants
               type: string
@@ -7976,8 +7962,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - userId
                 - tenants
               type: string
@@ -8088,10 +8072,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - id desc
-                - deletedDateTime
-                - deletedDateTime desc
                 - tenantId
                 - tenantId desc
               type: string
@@ -8105,8 +8085,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - tenantId
               type: string
         - name: $expand
@@ -8205,8 +8183,6 @@ paths:
             type: array
             items:
               enum:
-                - id
-                - deletedDateTime
                 - tenantId
               type: string
         - name: $expand
@@ -13762,6 +13738,7 @@ paths:
             items:
               enum:
                 - id
+                - microsoftApplicationDataAccess
                 - itemInsights
                 - peopleInsights
                 - profileCardProperties
@@ -13777,6 +13754,7 @@ paths:
             items:
               enum:
                 - '*'
+                - microsoftApplicationDataAccess
                 - itemInsights
                 - peopleInsights
                 - profileCardProperties
@@ -13789,6 +13767,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.organizationSettings'
           links:
+            microsoftApplicationDataAccess:
+              operationId: organization.Settings.GetMicrosoftApplicationDataAccess
+              parameters:
+                organization-id: $request.path.organization-id
             itemInsights:
               operationId: organization.Settings.GetItemInsights
               parameters:
@@ -13940,6 +13922,106 @@ paths:
       summary: Delete navigation property itemInsights for organization
       description: 'Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.'
       operationId: organization.settings_DeleteItemInsights
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/organization/{organization-id}/settings/microsoftApplicationDataAccess':
+    get:
+      tags:
+        - organization.organizationSettings
+      summary: Get microsoftApplicationDataAccess from organization
+      operationId: organization.settings_GetMicrosoftApplicationDataAccess
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - disabledForGroup
+                - isEnabledForAllMicrosoftApplications
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - organization.organizationSettings
+      summary: Update the navigation property microsoftApplicationDataAccess in organization
+      operationId: organization.settings_UpdateMicrosoftApplicationDataAccess
+      parameters:
+        - name: organization-id
+          in: path
+          description: 'key: id of organization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: organization
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - organization.organizationSettings
+      summary: Delete navigation property microsoftApplicationDataAccess for organization
+      operationId: organization.settings_DeleteMicrosoftApplicationDataAccess
       parameters:
         - name: organization-id
           in: path
@@ -15695,45 +15777,39 @@ components:
           additionalProperties:
             type: object
     microsoft.graph.inboundSharedUserProfile:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: inboundSharedUserProfile
-          type: object
-          properties:
-            displayName:
-              type: string
-            homeTenantId:
-              type: string
-            userId:
-              type: string
-            userPrincipalName:
-              type: string
-          additionalProperties:
-            type: object
+      title: inboundSharedUserProfile
+      type: object
+      properties:
+        displayName:
+          type: string
+        homeTenantId:
+          type: string
+        userId:
+          type: string
+        userPrincipalName:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.outboundSharedUserProfile:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: outboundSharedUserProfile
-          type: object
-          properties:
-            userId:
-              type: string
-            tenants:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.tenantReference'
-          additionalProperties:
-            type: object
+      title: outboundSharedUserProfile
+      type: object
+      properties:
+        userId:
+          type: string
+        tenants:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.tenantReference'
+      additionalProperties:
+        type: object
     microsoft.graph.tenantReference:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        - title: tenantReference
-          type: object
-          properties:
-            tenantId:
-              type: string
-          additionalProperties:
-            type: object
+      title: tenantReference
+      type: object
+      properties:
+        tenantId:
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.recommendation:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -16157,6 +16233,8 @@ components:
         - title: organizationSettings
           type: object
           properties:
+            microsoftApplicationDataAccess:
+              $ref: '#/components/schemas/microsoft.graph.microsoftApplicationDataAccessSettings'
             itemInsights:
               $ref: '#/components/schemas/microsoft.graph.insightsSettings'
             peopleInsights:
@@ -16176,11 +16254,25 @@ components:
           properties:
             disabledForGroup:
               type: string
-              description: 'The ID of an Azure AD group, of which the specified type of insights are disabled for its members. Default is empty. Optional.'
+              description: 'The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.'
               nullable: true
             isEnabledInOrganization:
               type: boolean
               description: true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.microsoftApplicationDataAccessSettings:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: microsoftApplicationDataAccessSettings
+          type: object
+          properties:
+            disabledForGroup:
+              type: string
+              nullable: true
+            isEnabledForAllMicrosoftApplications:
+              type: boolean
               nullable: true
           additionalProperties:
             type: object

@@ -42,38 +42,20 @@ directive:
   - remove-path-by-operation: .*\.onenote\..*\.parent.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|sites\..*_(Create|Get|Update|Delete)Activities$|sites\..*\.activities.*|^sites_(remove|add)$
 # Remove cmdlets
   - where:
-      verb: Remove
+      verb: Remove|New
       subject: ^Site$
-    hide: true
+    remove: true
 # Rename cmdlets
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^Get1$|^Get4$|^GetViaIdentity1$|^GetViaIdentity4$|^List$|^List2$
-    set:
-      subject: SubSite
-  - where:
-      verb: Update
-      subject: ^Site$
-      variant: ^Update$|^UpdateExpanded$|^UpdateViaIdentity$|^UpdateViaIdentityExpanded$|^Update2$|^UpdateExpanded2$|^UpdateViaIdentity2$|^UpdateViaIdentityExpanded2$
-    set:
-      subject: SubSite
-  - where:
-      verb: New
-      subject: ^Site$
-      variant: ^Create$|^CreateExpanded$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Create2$|^CreateExpanded2$|^CreateViaIdentity1$|^CreateViaIdentityExpanded1$
-    set:
-      subject: SubSite
-  - where:
-      verb: Remove
-      subject: ^Site$
-      variant: ^Delete$|^DeleteViaIdentity$|^Delete2$|^DeleteViaIdentity2$
+      variant: ^List$|^List2$
     set:
       subject: SubSite
   - where:
       verb: Get
       subject: (^Site$)
-      variant: ^Get$|^GetViaIdentity$|^Get3$|^GetViaIdentity3$
+      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
     set:
       subject: $1ByPath
   - where:
@@ -110,6 +92,6 @@ directive:
 ### Versioning
 
 ``` yaml
-module-version: 1.9.4
+module-version: 1.9.6
 release-notes: See https://aka.ms/GraphPowerShell-Release.
 ```

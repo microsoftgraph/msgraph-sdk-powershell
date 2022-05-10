@@ -8,7 +8,7 @@ schema: 2.0.0
 # New-MgUserAuthenticationWindowHello
 
 ## SYNOPSIS
-Create new navigation property to windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ New-MgUserAuthenticationWindowHello -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Create new navigation property to windowsHelloForBusinessMethods for users
+Represents the Windows Hello for Business authentication method registered to a user for authentication.
 
 ## EXAMPLES
 

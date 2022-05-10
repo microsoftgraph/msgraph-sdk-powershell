@@ -8,7 +8,7 @@ schema: 2.0.0
 # Update-MgUserAuthenticationPhoneMethod
 
 ## SYNOPSIS
-Update the navigation property phoneMethods in users
+Represents the phone registered to a user for authentication.
 
 ## SYNTAX
 
@@ -41,7 +41,7 @@ Update-MgUserAuthenticationPhoneMethod -InputObject <IIdentitySignInsIdentity>
 ```
 
 ## DESCRIPTION
-Update the navigation property phoneMethods in users
+Represents the phone registered to a user for authentication.
 
 ## EXAMPLES
 

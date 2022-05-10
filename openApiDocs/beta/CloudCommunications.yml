@@ -993,6 +993,7 @@ paths:
                 - toneInfo
                 - transcription
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1008,6 +1009,7 @@ paths:
               enum:
                 - '*'
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1108,6 +1110,7 @@ paths:
                 - toneInfo
                 - transcription
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1123,6 +1126,7 @@ paths:
               enum:
                 - '*'
                 - audioRoutingGroups
+                - contentSharingSessions
                 - operations
                 - participants
               type: string
@@ -1136,6 +1140,10 @@ paths:
           links:
             audioRoutingGroups:
               operationId: communications.Calls.ListAudioRoutingGroups
+              parameters:
+                call-id: $request.path.call-id
+            contentSharingSessions:
+              operationId: communications.Calls.ListContentSharingSessions
               parameters:
                 call-id: $request.path.call-id
             operations:
@@ -1444,6 +1452,271 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/contentSharingSessions':
+    get:
+      tags:
+        - communications.call
+      summary: Get contentSharingSessions from communications
+      operationId: communications.calls_ListContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                title: Collection of contentSharingSession
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+                  '@odata.nextLink':
+                    type: string
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - communications.call
+      summary: Create new navigation property to contentSharingSessions for communications
+      operationId: communications.calls_CreateContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/contentSharingSessions/{contentSharingSession-id}':
+    get:
+      tags:
+        - communications.call
+      summary: Get contentSharingSessions from communications
+      operationId: communications.calls_GetContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - communications.call
+      summary: Update the navigation property contentSharingSessions in communications
+      operationId: communications.calls_UpdateContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - communications.call
+      summary: Delete navigation property contentSharingSessions for communications
+      operationId: communications.calls_DeleteContentSharingSessions
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+        - name: contentSharingSession-id
+          in: path
+          description: 'key: id of contentSharingSession'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: contentSharingSession
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/communications/calls/{call-id}/microsoft.graph.addLargeGalleryView':
+    post:
+      tags:
+        - communications.Actions
+      summary: Invoke action addLargeGalleryView
+      operationId: communications.calls_addLargeGalleryView
+      parameters:
+        - name: call-id
+          in: path
+          description: 'key: id of call'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: call
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                clientContext:
+                  type: string
+                  nullable: true
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.addLargeGalleryViewOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/communications/calls/{call-id}/microsoft.graph.answer':
     post:
       tags:
@@ -3516,6 +3789,8 @@ paths:
                 - emailAddress desc
                 - identity
                 - identity desc
+                - registrantId
+                - registrantId desc
                 - role
                 - role desc
                 - totalAttendanceInSeconds
@@ -3535,6 +3810,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -3654,6 +3930,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -3957,6 +4234,8 @@ paths:
                 - emailAddress desc
                 - identity
                 - identity desc
+                - registrantId
+                - registrantId desc
                 - role
                 - role desc
                 - totalAttendanceInSeconds
@@ -3976,6 +4255,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -4081,6 +4361,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -5769,6 +6050,8 @@ paths:
                 - emailAddress desc
                 - identity
                 - identity desc
+                - registrantId
+                - registrantId desc
                 - role
                 - role desc
                 - totalAttendanceInSeconds
@@ -5788,6 +6071,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -5921,6 +6205,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -6281,6 +6566,8 @@ paths:
                 - emailAddress desc
                 - identity
                 - identity desc
+                - registrantId
+                - registrantId desc
                 - role
                 - role desc
                 - totalAttendanceInSeconds
@@ -6300,6 +6587,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -6419,6 +6707,7 @@ paths:
                 - attendanceIntervals
                 - emailAddress
                 - identity
+                - registrantId
                 - role
                 - totalAttendanceInSeconds
               type: string
@@ -7345,6 +7634,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.audioRoutingGroup'
               description: Read-only. Nullable.
+            contentSharingSessions:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.contentSharingSession'
             operations:
               type: array
               items:
@@ -7377,6 +7670,20 @@ components:
                 type: string
                 nullable: true
               description: List of source participant ids.
+          additionalProperties:
+            type: object
+    microsoft.graph.contentSharingSession:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: contentSharingSession
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.addLargeGalleryViewOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.commsOperation'
+        - title: addLargeGalleryViewOperation
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.mediaConfig:
@@ -7883,6 +8190,10 @@ components:
               nullable: true
             identity:
               $ref: '#/components/schemas/microsoft.graph.identity'
+            registrantId:
+              type: string
+              description: Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+              nullable: true
             role:
               type: string
               description: 'Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.'
@@ -8095,6 +8406,9 @@ components:
       type: object
       properties:
         hideBotAfterEscalation:
+          type: boolean
+          nullable: true
+        isContentSharingNotificationEnabled:
           type: boolean
           nullable: true
       additionalProperties:
@@ -9197,6 +9511,7 @@ components:
         - presenter
         - unknownFutureValue
         - producer
+        - coorganizer
       type: string
     odata.error.main:
       required:
