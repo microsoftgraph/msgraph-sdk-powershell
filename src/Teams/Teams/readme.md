@@ -39,7 +39,7 @@ subject-prefix: ''
 ``` yaml
 directive:
 # Remove invalid paths.
-  - remove-path-by-operation: teams_GetGroup|team_ListTeam
+  - remove-path-by-operation: teams_GetGroup|team_ListTeam|users\.joinedTeams.*|users_(Get|Update|Delete|Create)JoinedTeams|.*_UpdateInstalledApps
 # Remove cmdlets
   - where:
       verb: Remove
