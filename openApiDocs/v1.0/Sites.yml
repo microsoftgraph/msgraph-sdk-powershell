@@ -59072,6 +59072,7 @@ paths:
       tags:
         - sites.site
       summary: Get entities from sites
+      description: Search for sites
       operationId: sites.site_ListSite
       parameters:
         - $ref: '#/components/parameters/top'
@@ -59204,6 +59205,7 @@ paths:
       tags:
         - sites.site
       summary: Get entity from sites by key
+      description: Get a site resource
       operationId: sites.site_GetSite
       parameters:
         - name: site-id
@@ -115252,7 +115254,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:

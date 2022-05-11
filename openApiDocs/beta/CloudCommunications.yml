@@ -7458,13 +7458,14 @@ components:
           $ref: '#/components/schemas/microsoft.graph.identitySet'
         participantId:
           type: string
+          description: Optional. The ID of the target participant.
           nullable: true
         removeFromDefaultAudioRoutingGroup:
           type: boolean
           nullable: true
         replacesCallId:
           type: string
-          description: Optional. The call which the target idenity is currently a part of. This call will be dropped once the participant is added.
+          description: 'Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.'
           nullable: true
       additionalProperties:
         type: object

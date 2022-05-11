@@ -11,6 +11,7 @@ paths:
       tags:
         - accessReviews.accessReview
       summary: Get entities from accessReviews
+      description: List accessReviews
       operationId: accessReviews.accessReview_ListAccessReview
       parameters:
         - $ref: '#/components/parameters/top'
@@ -106,6 +107,7 @@ paths:
       tags:
         - accessReviews.accessReview
       summary: Add new entity to accessReviews
+      description: Create accessReview
       operationId: accessReviews.accessReview_CreateAccessReview
       requestBody:
         description: New entity
@@ -129,6 +131,7 @@ paths:
       tags:
         - accessReviews.accessReview
       summary: Get entity from accessReviews by key
+      description: Get accessReview
       operationId: accessReviews.accessReview_GetAccessReview
       parameters:
         - name: accessReview-id
@@ -211,6 +214,7 @@ paths:
       tags:
         - accessReviews.accessReview
       summary: Update entity in accessReviews
+      description: Update accessReview
       operationId: accessReviews.accessReview_UpdateAccessReview
       parameters:
         - name: accessReview-id
@@ -237,6 +241,7 @@ paths:
       tags:
         - accessReviews.accessReview
       summary: Delete entity from accessReviews
+      description: Delete accessReview
       operationId: accessReviews.accessReview_DeleteAccessReview
       parameters:
         - name: accessReview-id
@@ -3817,6 +3822,7 @@ paths:
       tags:
         - businessFlowTemplates.businessFlowTemplate
       summary: Get entities from businessFlowTemplates
+      description: List businessFlowTemplates
       operationId: businessFlowTemplates.businessFlowTemplate_ListBusinessFlowTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -31716,38 +31722,6 @@ paths:
         - identityGovernance.Functions
       summary: Invoke function additionalAccess
       operationId: identityGovernance.entitlementManagement.accessPackageAssignments_additionalAccess
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                title: Collection of accessPackageAssignment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.accessPackageAssignment'
-                additionalProperties:
-                  type: object
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: function
-  '/identityGovernance/entitlementManagement/accessPackageAssignments/microsoft.graph.additionalAccess(accessPackageId=''{accessPackageId}'')':
-    get:
-      tags:
-        - identityGovernance.Functions
-      summary: Invoke function additionalAccess
-      operationId: identityGovernance.entitlementManagement.accessPackageAssignments_additionalAccess
-      parameters:
-        - name: accessPackageId
-          in: path
-          description: 'Usage: accessPackageId=''{accessPackageId}'''
-          required: true
-          schema:
-            type: string
-            nullable: true
       responses:
         '200':
           description: Success
@@ -65615,6 +65589,7 @@ paths:
       tags:
         - privilegedApproval.privilegedApproval
       summary: Get entities from privilegedApproval
+      description: List privilegedApproval
       operationId: privilegedApproval.privilegedApproval_ListPrivilegedApproval
       parameters:
         - $ref: '#/components/parameters/top'
@@ -65703,6 +65678,7 @@ paths:
       tags:
         - privilegedApproval.privilegedApproval
       summary: Add new entity to privilegedApproval
+      description: Create privilegedApproval
       operationId: privilegedApproval.privilegedApproval_CreatePrivilegedApproval
       requestBody:
         description: New entity
@@ -65726,6 +65702,7 @@ paths:
       tags:
         - privilegedApproval.privilegedApproval
       summary: Get entity from privilegedApproval by key
+      description: Get privilegedApproval
       operationId: privilegedApproval.privilegedApproval_GetPrivilegedApproval
       parameters:
         - name: privilegedApproval-id
@@ -65795,6 +65772,7 @@ paths:
       tags:
         - privilegedApproval.privilegedApproval
       summary: Update entity in privilegedApproval
+      description: Update privilegedapproval
       operationId: privilegedApproval.privilegedApproval_UpdatePrivilegedApproval
       parameters:
         - name: privilegedApproval-id
@@ -66421,6 +66399,7 @@ paths:
       tags:
         - privilegedOperationEvents.privilegedOperationEvent
       summary: Get entities from privilegedOperationEvents
+      description: List privilegedOperationEvents
       operationId: privilegedOperationEvents.privilegedOperationEvent_ListPrivilegedOperationEvent
       parameters:
         - $ref: '#/components/parameters/top'
@@ -66655,6 +66634,7 @@ paths:
       tags:
         - privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest
       summary: Get entities from privilegedRoleAssignmentRequests
+      description: List privilegedRoleAssignmentRequests
       operationId: privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest_ListPrivilegedRoleAssignmentRequest
       parameters:
         - $ref: '#/components/parameters/top'
@@ -66747,6 +66727,7 @@ paths:
       tags:
         - privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest
       summary: Add new entity to privilegedRoleAssignmentRequests
+      description: Create privilegedRoleAssignmentRequest
       operationId: privilegedRoleAssignmentRequests.privilegedRoleAssignmentRequest_CreatePrivilegedRoleAssignmentRequest
       requestBody:
         description: New entity
@@ -67418,6 +67399,7 @@ paths:
       tags:
         - privilegedRoleAssignments.privilegedRoleAssignment
       summary: Get entities from privilegedRoleAssignments
+      description: List privilegedRoleAssignments
       operationId: privilegedRoleAssignments.privilegedRoleAssignment_ListPrivilegedRoleAssignment
       parameters:
         - $ref: '#/components/parameters/top'
@@ -67492,6 +67474,7 @@ paths:
       tags:
         - privilegedRoleAssignments.privilegedRoleAssignment
       summary: Add new entity to privilegedRoleAssignments
+      description: Create privilegedRoleAssignment
       operationId: privilegedRoleAssignments.privilegedRoleAssignment_CreatePrivilegedRoleAssignment
       requestBody:
         description: New entity
@@ -67515,6 +67498,7 @@ paths:
       tags:
         - privilegedRoleAssignments.privilegedRoleAssignment
       summary: Get entity from privilegedRoleAssignments by key
+      description: Get privilegedRoleAssignment
       operationId: privilegedRoleAssignments.privilegedRoleAssignment_GetPrivilegedRoleAssignment
       parameters:
         - name: privilegedRoleAssignment-id
@@ -67600,6 +67584,7 @@ paths:
       tags:
         - privilegedRoleAssignments.privilegedRoleAssignment
       summary: Delete entity from privilegedRoleAssignments
+      description: Delete privilegedRoleAssignment
       operationId: privilegedRoleAssignments.privilegedRoleAssignment_DeletePrivilegedRoleAssignment
       parameters:
         - name: privilegedRoleAssignment-id
@@ -68200,6 +68185,7 @@ paths:
       tags:
         - privilegedRoles.privilegedRole
       summary: Get entities from privilegedRoles
+      description: List privilegedRoles
       operationId: privilegedRoles.privilegedRole_ListPrivilegedRole
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68289,6 +68275,7 @@ paths:
       tags:
         - privilegedRoles.privilegedRole
       summary: Get entity from privilegedRoles by key
+      description: Get privilegedRole
       operationId: privilegedRoles.privilegedRole_GetPrivilegedRole
       parameters:
         - name: privilegedRole-id
@@ -68842,6 +68829,7 @@ paths:
       tags:
         - programControls.programControl
       summary: Get entities from programControls
+      description: List programControls
       operationId: programControls.programControl_ListProgramControl
       parameters:
         - $ref: '#/components/parameters/top'
@@ -68925,6 +68913,7 @@ paths:
       tags:
         - programControls.programControl
       summary: Add new entity to programControls
+      description: Create programControl
       operationId: programControls.programControl_CreateProgramControl
       requestBody:
         description: New entity
@@ -69036,6 +69025,7 @@ paths:
       tags:
         - programControls.programControl
       summary: Delete entity from programControls
+      description: Delete programControl
       operationId: programControls.programControl_DeleteProgramControl
       parameters:
         - name: programControl-id
@@ -69427,6 +69417,7 @@ paths:
       tags:
         - programControlTypes.programControlType
       summary: Get entities from programControlTypes
+      description: List programControlTypes
       operationId: programControlTypes.programControlType_ListProgramControlType
       parameters:
         - $ref: '#/components/parameters/top'
@@ -69613,6 +69604,7 @@ paths:
       tags:
         - programs.program
       summary: Get entities from programs
+      description: List programs
       operationId: programs.program_ListProgram
       parameters:
         - $ref: '#/components/parameters/top'
@@ -69678,6 +69670,7 @@ paths:
       tags:
         - programs.program
       summary: Add new entity to programs
+      description: Create program
       operationId: programs.program_CreateProgram
       requestBody:
         description: New entity
@@ -69757,6 +69750,7 @@ paths:
       tags:
         - programs.program
       summary: Update entity in programs
+      description: Update program
       operationId: programs.program_UpdateProgram
       parameters:
         - name: program-id
@@ -69783,6 +69777,7 @@ paths:
       tags:
         - programs.program
       summary: Delete entity from programs
+      description: Delete program
       operationId: programs.program_DeleteProgram
       parameters:
         - name: program-id
@@ -79997,7 +79992,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.sharedWithChannelTeamInfo:
@@ -81511,7 +81506,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string

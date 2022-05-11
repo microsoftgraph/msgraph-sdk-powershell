@@ -11,6 +11,7 @@ paths:
       tags:
         - drives.drive
       summary: Get entities from drives
+      description: Helpers (examples that aren't included in the docs)
       operationId: drives.drive_ListDrive
       parameters:
         - $ref: '#/components/parameters/top'
@@ -151,6 +152,7 @@ paths:
       tags:
         - drives.drive
       summary: Get entity from drives by key
+      description: Helpers (examples that aren't included in the docs)
       operationId: drives.drive_GetDrive
       parameters:
         - name: drive-id
@@ -34651,6 +34653,7 @@ paths:
       tags:
         - shares.sharedDriveItem
       summary: Get entities from shares
+      description: Accessing shared DriveItems
       operationId: shares.sharedDriveItem_ListSharedDriveItem
       parameters:
         - $ref: '#/components/parameters/top'
@@ -34779,6 +34782,7 @@ paths:
       tags:
         - shares.sharedDriveItem
       summary: Get entity from shares by key
+      description: Accessing shared DriveItems
       operationId: shares.sharedDriveItem_GetSharedDriveItem
       parameters:
         - name: sharedDriveItem-id
@@ -67679,7 +67683,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -74493,7 +74497,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.teamsAsyncOperation:

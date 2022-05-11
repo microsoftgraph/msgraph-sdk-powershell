@@ -11,6 +11,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Get entities from groupLifecyclePolicies
+      description: List groupLifecyclePolicies
       operationId: groupLifecyclePolicies.groupLifecyclePolicy_ListGroupLifecyclePolicy
       parameters:
         - $ref: '#/components/parameters/top'
@@ -77,6 +78,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Add new entity to groupLifecyclePolicies
+      description: Create groupLifecyclePolicy
       operationId: groupLifecyclePolicies.groupLifecyclePolicy_CreateGroupLifecyclePolicy
       requestBody:
         description: New entity
@@ -100,6 +102,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Get entity from groupLifecyclePolicies by key
+      description: Get groupLifecyclePolicy
       operationId: groupLifecyclePolicies.groupLifecyclePolicy_GetGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
@@ -150,6 +153,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Update entity in groupLifecyclePolicies
+      description: Update groupLifecyclePolicy
       operationId: groupLifecyclePolicies.groupLifecyclePolicy_UpdateGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
@@ -176,6 +180,7 @@ paths:
       tags:
         - groupLifecyclePolicies.groupLifecyclePolicy
       summary: Delete entity from groupLifecyclePolicies
+      description: Delete groupLifecyclePolicy
       operationId: groupLifecyclePolicies.groupLifecyclePolicy_DeleteGroupLifecyclePolicy
       parameters:
         - name: groupLifecyclePolicy-id
@@ -285,6 +290,7 @@ paths:
       tags:
         - groups.group
       summary: Get entities from groups
+      description: Add custom data to groups using schema extensions
       operationId: groups.group_ListGroup
       parameters:
         - name: ConsistencyLevel
@@ -522,6 +528,7 @@ paths:
       tags:
         - groups.group
       summary: Add new entity to groups
+      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
       operationId: groups.group_CreateGroup
       requestBody:
         description: New entity
@@ -545,6 +552,7 @@ paths:
       tags:
         - groups.group
       summary: Get entity from groups by key
+      description: Get group
       operationId: groups.group_GetGroup
       parameters:
         - name: group-id
@@ -554,15 +562,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: group
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -803,6 +802,7 @@ paths:
       tags:
         - groups.group
       summary: Update entity in groups
+      description: Update group
       operationId: groups.group_UpdateGroup
       parameters:
         - name: group-id
@@ -829,6 +829,7 @@ paths:
       tags:
         - groups.group
       summary: Delete entity from groups
+      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
       operationId: groups.group_DeleteGroup
       parameters:
         - name: group-id
@@ -20985,7 +20986,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.provisionChannelEmailResult:

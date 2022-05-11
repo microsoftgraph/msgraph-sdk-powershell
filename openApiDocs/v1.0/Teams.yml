@@ -588,6 +588,7 @@ paths:
       tags:
         - chats.chat
       summary: Get entities from chats
+      description: List chats
       operationId: chats.chat_ListChat
       parameters:
         - $ref: '#/components/parameters/top'
@@ -674,6 +675,7 @@ paths:
       tags:
         - chats.chat
       summary: Add new entity to chats
+      description: Create chat
       operationId: chats.chat_CreateChat
       requestBody:
         description: New entity
@@ -2080,7 +2082,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: chats.messages_ListReplies
       parameters:
         - name: chat-id
@@ -2257,7 +2259,7 @@ paths:
       tags:
         - chats.chatMessage
       summary: Get replies from chats
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: chats.messages_GetReplies
       parameters:
         - name: chat-id
@@ -4760,7 +4762,7 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.channels.messages_ListReplies
       parameters:
         - name: group-id
@@ -4951,7 +4953,7 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.channels.messages_GetReplies
       parameters:
         - name: group-id
@@ -8065,7 +8067,7 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.primaryChannel.messages_ListReplies
       parameters:
         - name: group-id
@@ -8242,7 +8244,7 @@ paths:
       tags:
         - groups.team
       summary: Get replies from groups
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: groups.team.primaryChannel.messages_GetReplies
       parameters:
         - name: group-id
@@ -11399,6 +11401,7 @@ paths:
       tags:
         - teams.team
       summary: Get entities from teams
+      description: List teams
       operationId: teams.team_ListTeam
       parameters:
         - $ref: '#/components/parameters/top'
@@ -11511,6 +11514,7 @@ paths:
       tags:
         - teams.team
       summary: Add new entity to teams
+      description: Create team
       operationId: teams.team_CreateTeam
       requestBody:
         description: New entity
@@ -11534,6 +11538,7 @@ paths:
       tags:
         - teams.team
       summary: Get entity from teams by key
+      description: Get team
       operationId: teams.team_GetTeam
       parameters:
         - name: team-id
@@ -11643,6 +11648,7 @@ paths:
       tags:
         - teams.team
       summary: Update entity in teams
+      description: Update team
       operationId: teams.team_UpdateTeam
       parameters:
         - name: team-id
@@ -13169,7 +13175,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.channels.messages_ListReplies
       parameters:
         - name: team-id
@@ -13360,7 +13366,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.channels.messages_GetReplies
       parameters:
         - name: team-id
@@ -16962,7 +16968,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.primaryChannel.messages_ListReplies
       parameters:
         - name: team-id
@@ -17139,7 +17145,7 @@ paths:
       tags:
         - teams.channel
       summary: Get replies from teams
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: teams.primaryChannel.messages_GetReplies
       parameters:
         - name: team-id
@@ -22398,7 +22404,7 @@ paths:
       tags:
         - users.chat
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.chats.messages_ListReplies
       parameters:
         - name: user-id
@@ -22589,7 +22595,7 @@ paths:
       tags:
         - users.chat
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.chats.messages_GetReplies
       parameters:
         - name: user-id
@@ -25409,7 +25415,7 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.channels.messages_ListReplies
       parameters:
         - name: user-id
@@ -25614,7 +25620,7 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.channels.messages_GetReplies
       parameters:
         - name: user-id
@@ -29150,7 +29156,7 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.primaryChannel.messages_ListReplies
       parameters:
         - name: user-id
@@ -29341,7 +29347,7 @@ paths:
       tags:
         - users.team
       summary: Get replies from users
-      description: Replies for a specified message.
+      description: Replies for a specified message. Supports $expand for channel messages.
       operationId: users.joinedTeams.primaryChannel.messages_GetReplies
       parameters:
         - name: user-id
@@ -33655,7 +33661,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.chatMessageHostedContent:

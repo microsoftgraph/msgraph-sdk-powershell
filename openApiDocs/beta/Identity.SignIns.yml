@@ -11,6 +11,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get entities from dataPolicyOperations
+      description: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_ListDataPolicyOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -109,6 +110,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get entity from dataPolicyOperations by key
+      description: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_GetDataPolicyOperation
       parameters:
         - name: dataPolicyOperation-id
@@ -1115,6 +1117,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Get entities from identityProviders
+      description: List identityProviders (deprecated)
       operationId: identityProviders.identityProvider_ListIdentityProvider
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1190,6 +1193,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Add new entity to identityProviders
+      description: Create identityProvider (deprecated)
       operationId: identityProviders.identityProvider_CreateIdentityProvider
       requestBody:
         description: New entity
@@ -1219,6 +1223,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Get entity from identityProviders by key
+      description: Get identityProvider (deprecated)
       operationId: identityProviders.identityProvider_GetIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -1308,6 +1313,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Delete entity from identityProviders
+      description: Delete identityProvider (deprecated)
       operationId: identityProviders.identityProvider_DeleteIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -3789,6 +3795,7 @@ paths:
       tags:
         - invitations.invitation
       summary: Add new entity to invitations
+      description: 'Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups'
       operationId: invitations.invitation_CreateInvitation
       requestBody:
         description: New entity
@@ -4438,6 +4445,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Get entities from oauth2PermissionGrants
+      description: List oauth2PermissionGrants (delegated permission grants)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_ListOAuth2PermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -4516,6 +4524,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Add new entity to oauth2PermissionGrants
+      description: Create oAuth2PermissionGrant (a delegated permission grant)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_CreateOAuth2PermissionGrant
       requestBody:
         description: New entity
@@ -12658,6 +12667,7 @@ paths:
       tags:
         - riskDetections.riskDetection
       summary: Get entities from riskDetections
+      description: List riskDetection
       operationId: riskDetections.riskDetection_ListRiskDetection
       parameters:
         - $ref: '#/components/parameters/top'
@@ -12914,6 +12924,7 @@ paths:
       tags:
         - riskyUsers.riskyUser
       summary: Get entities from riskyUsers
+      description: List riskyUsers
       operationId: riskyUsers.riskyUser_ListRiskyUser
       parameters:
         - $ref: '#/components/parameters/top'
@@ -13020,6 +13031,7 @@ paths:
       tags:
         - riskyUsers.riskyUser
       summary: Get entity from riskyUsers by key
+      description: Get riskyUser
       operationId: riskyUsers.riskyUser_GetRiskyUser
       parameters:
         - name: riskyUser-id
@@ -29713,7 +29725,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -37772,7 +37784,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.teamsAsyncOperation:

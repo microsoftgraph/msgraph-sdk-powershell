@@ -11,6 +11,7 @@ paths:
       tags:
         - security.security
       summary: Get security
+      description: security resource type
       operationId: security.security_GetSecurity
       parameters:
         - name: $select

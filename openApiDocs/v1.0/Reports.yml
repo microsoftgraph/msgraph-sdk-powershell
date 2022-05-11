@@ -11,6 +11,7 @@ paths:
       tags:
         - auditLogs.auditLogRoot
       summary: Get auditLogs
+      description: auditLogRoot resource type
       operationId: auditLogs.auditLogRoot_GetAuditLogRoot
       parameters:
         - name: $select

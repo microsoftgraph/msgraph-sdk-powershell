@@ -103,6 +103,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Get entity from directoryObjects by key
+      description: Get directoryObject
       operationId: directoryObjects.directoryObject_GetDirectoryObject
       parameters:
         - name: directoryObject-id
@@ -112,15 +113,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -186,6 +178,7 @@ paths:
       tags:
         - directoryObjects.directoryObject
       summary: Delete entity from directoryObjects
+      description: Delete directoryObject
       operationId: directoryObjects.directoryObject_DeleteDirectoryObject
       parameters:
         - name: directoryObject-id

@@ -11,6 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entities from bookingBusinesses
+      description: List bookingBusinesses
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -113,6 +114,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Add new entity to bookingBusinesses
+      description: Create bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -2193,6 +2195,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get entities from bookingCurrencies
+      description: List bookingCurrencies
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'

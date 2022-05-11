@@ -36383,6 +36383,7 @@ paths:
       tags:
         - places.place
       summary: Get entities from places
+      description: Get place
       operationId: places.place_ListPlace
       parameters:
         - $ref: '#/components/parameters/top'
@@ -36475,6 +36476,7 @@ paths:
       tags:
         - places.place
       summary: Get entity from places by key
+      description: Get place
       operationId: places.place_GetPlace
       parameters:
         - name: place-id

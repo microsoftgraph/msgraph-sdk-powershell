@@ -11,6 +11,7 @@ paths:
       tags:
         - applications.application
       summary: Get entities from applications
+      description: List applications
       operationId: applications.application_ListApplication
       parameters:
         - name: ConsistencyLevel
@@ -185,6 +186,7 @@ paths:
       tags:
         - applications.application
       summary: Add new entity to applications
+      description: Create application
       operationId: applications.application_CreateApplication
       requestBody:
         description: New entity
@@ -208,6 +210,7 @@ paths:
       tags:
         - applications.application
       summary: Get entity from applications by key
+      description: Get application
       operationId: applications.application_GetApplication
       parameters:
         - name: application-id
@@ -217,15 +220,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: application
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -333,6 +327,7 @@ paths:
       tags:
         - applications.application
       summary: Update entity in applications
+      description: Configure required Azure AD Graph permissions for an app registration
       operationId: applications.application_UpdateApplication
       parameters:
         - name: application-id
@@ -359,6 +354,7 @@ paths:
       tags:
         - applications.application
       summary: Delete entity from applications
+      description: Delete application
       operationId: applications.application_DeleteApplication
       parameters:
         - name: application-id
@@ -1853,6 +1849,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get entities from applicationTemplates
+      description: List applicationTemplates
       operationId: applicationTemplates.applicationTemplate_ListApplicationTemplate
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1957,6 +1954,7 @@ paths:
       tags:
         - applicationTemplates.applicationTemplate
       summary: Get entity from applicationTemplates by key
+      description: Get applicationTemplate
       operationId: applicationTemplates.applicationTemplate_GetApplicationTemplate
       parameters:
         - name: applicationTemplate-id
@@ -2348,6 +2346,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get entities from servicePrincipals
+      description: Configure required Azure AD Graph permissions for an app registration
       operationId: servicePrincipals.servicePrincipal_ListServicePrincipal
       parameters:
         - name: ConsistencyLevel
@@ -2541,6 +2540,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Add new entity to servicePrincipals
+      description: Create servicePrincipal
       operationId: servicePrincipals.servicePrincipal_CreateServicePrincipal
       requestBody:
         description: New entity
@@ -2564,6 +2564,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Get entity from servicePrincipals by key
+      description: Get servicePrincipal
       operationId: servicePrincipals.servicePrincipal_GetServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -2573,15 +2574,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: servicePrincipal
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -2738,6 +2730,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Update entity in servicePrincipals
+      description: 'Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)'
       operationId: servicePrincipals.servicePrincipal_UpdateServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -2764,6 +2757,7 @@ paths:
       tags:
         - servicePrincipals.servicePrincipal
       summary: Delete entity from servicePrincipals
+      description: Delete servicePrincipal
       operationId: servicePrincipals.servicePrincipal_DeleteServicePrincipal
       parameters:
         - name: servicePrincipal-id
@@ -6013,6 +6007,7 @@ components:
               description: 'Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).'
             serviceManagementReference:
               type: string
+              description: References application or service contact information from a Service or Asset Management database. Nullable.
               nullable: true
             signInAudience:
               type: string

@@ -11,6 +11,7 @@ paths:
       tags:
         - users.user
       summary: Get entities from users
+      description: List users
       operationId: users.user_ListUser
       parameters:
         - name: ConsistencyLevel
@@ -439,6 +440,7 @@ paths:
       tags:
         - users.user
       summary: Add new entity to users
+      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
       operationId: users.user_CreateUser
       requestBody:
         description: New entity
@@ -462,6 +464,7 @@ paths:
       tags:
         - users.user
       summary: Get entity from users by key
+      description: Helpers (examples that aren't included in the docs)
       operationId: users.user_GetUser
       parameters:
         - name: user-id
@@ -471,15 +474,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: user
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -981,6 +975,7 @@ paths:
       tags:
         - users.user
       summary: Update entity in users
+      description: 'Assign, update, or remove custom security attributes using the Microsoft Graph API (Preview)'
       operationId: users.user_UpdateUser
       parameters:
         - name: user-id
@@ -1007,6 +1002,7 @@ paths:
       tags:
         - users.user
       summary: Delete entity from users
+      description: 'Tutorial: Use the Privileged Identity Management (PIM) API to assign Azure AD roles'
       operationId: users.user_DeleteUser
       parameters:
         - name: user-id
@@ -14861,7 +14857,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'Device sku number, see also: GetProductInfo function (sysinfoapi.h). Valid values 0 to 2147483647. This property is read-only.'
+              description: 'Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.'
               format: int32
             specificationVersion:
               type: string
@@ -22215,7 +22211,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.teamsAsyncOperation:
