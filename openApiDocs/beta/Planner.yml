@@ -2809,6 +2809,7 @@ paths:
       tags:
         - planner.planner
       summary: Get planner
+      description: planner resource type
       operationId: planner.planner_GetPlanner
       parameters:
         - name: $select

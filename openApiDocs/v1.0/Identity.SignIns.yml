@@ -11,6 +11,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get entities from dataPolicyOperations
+      description: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_ListDataPolicyOperation
       parameters:
         - $ref: '#/components/parameters/top'
@@ -109,6 +110,7 @@ paths:
       tags:
         - dataPolicyOperations.dataPolicyOperation
       summary: Get entity from dataPolicyOperations by key
+      description: Get dataPolicyOperation
       operationId: dataPolicyOperations.dataPolicyOperation_GetDataPolicyOperation
       parameters:
         - name: dataPolicyOperation-id
@@ -703,6 +705,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Get entities from identityProviders
+      description: List identityProviders (deprecated)
       operationId: identityProviders.identityProvider_ListIdentityProvider
       parameters:
         - $ref: '#/components/parameters/top'
@@ -778,6 +781,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Add new entity to identityProviders
+      description: Create identityProvider (deprecated)
       operationId: identityProviders.identityProvider_CreateIdentityProvider
       requestBody:
         description: New entity
@@ -807,6 +811,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Get entity from identityProviders by key
+      description: Get identityProvider (deprecated)
       operationId: identityProviders.identityProvider_GetIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -896,6 +901,7 @@ paths:
       tags:
         - identityProviders.identityProvider
       summary: Delete entity from identityProviders
+      description: Delete identityProvider (deprecated)
       operationId: identityProviders.identityProvider_DeleteIdentityProvider
       parameters:
         - name: identityProvider-id
@@ -1829,6 +1835,7 @@ paths:
       tags:
         - invitations.invitation
       summary: Add new entity to invitations
+      description: 'Tutorial: Use the access reviews API to review guest access to your Microsoft 365 groups'
       operationId: invitations.invitation_CreateInvitation
       requestBody:
         description: New entity
@@ -2362,6 +2369,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Get entities from oauth2PermissionGrants
+      description: List oauth2PermissionGrants (delegated permission grants)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_ListOAuth2PermissionGrant
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2434,6 +2442,7 @@ paths:
       tags:
         - oauth2PermissionGrants.oAuth2PermissionGrant
       summary: Add new entity to oauth2PermissionGrants
+      description: Create oAuth2PermissionGrant (a delegated permission grant)
       operationId: oauth2PermissionGrants.oAuth2PermissionGrant_CreateOAuth2PermissionGrant
       requestBody:
         description: New entity
@@ -16972,7 +16981,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.chatMessage'
-              description: Replies for a specified message.
+              description: Replies for a specified message. Supports $expand for channel messages.
           additionalProperties:
             type: object
     microsoft.graph.teamsTab:

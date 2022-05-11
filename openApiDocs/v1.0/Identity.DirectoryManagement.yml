@@ -11,6 +11,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Get entities from contacts
+      description: List orgContacts
       operationId: contacts.orgContact_ListOrgContact
       parameters:
         - name: ConsistencyLevel
@@ -153,6 +154,7 @@ paths:
       tags:
         - contacts.orgContact
       summary: Get entity from contacts by key
+      description: Get orgContact
       operationId: contacts.orgContact_GetOrgContact
       parameters:
         - name: orgContact-id
@@ -162,15 +164,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: orgContact
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1075,6 +1068,7 @@ paths:
       tags:
         - contracts.contract
       summary: Get entities from contracts
+      description: List contracts
       operationId: contracts.contract_ListContract
       parameters:
         - $ref: '#/components/parameters/top'
@@ -1170,6 +1164,7 @@ paths:
       tags:
         - contracts.contract
       summary: Get entity from contracts by key
+      description: Get Contract
       operationId: contracts.contract_GetContract
       parameters:
         - name: contract-id
@@ -1598,6 +1593,7 @@ paths:
       tags:
         - devices.device
       summary: Get entities from devices
+      description: List devices
       operationId: devices.device_ListDevice
       parameters:
         - name: ConsistencyLevel
@@ -1734,6 +1730,7 @@ paths:
       tags:
         - devices.device
       summary: Add new entity to devices
+      description: Create device
       operationId: devices.device_CreateDevice
       requestBody:
         description: New entity
@@ -1757,6 +1754,7 @@ paths:
       tags:
         - devices.device
       summary: Get entity from devices by key
+      description: Get device
       operationId: devices.device_GetDevice
       parameters:
         - name: device-id
@@ -1766,15 +1764,6 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: device
-        - name: ConsistencyLevel
-          in: header
-          description: 'Indicates the requested consistency level. Documentation URL: https://developer.microsoft.com/en-us/office/blogs/microsoft-graph-advanced-queries-for-directory-objects-are-now-generally-available/'
-          schema:
-            type: string
-          examples:
-            example-1:
-              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
-              value: eventual
         - name: $select
           in: query
           description: Select properties to be returned
@@ -1864,6 +1853,7 @@ paths:
       tags:
         - devices.device
       summary: Update entity in devices
+      description: Update device
       operationId: devices.device_UpdateDevice
       parameters:
         - name: device-id
@@ -1890,6 +1880,7 @@ paths:
       tags:
         - devices.device
       summary: Delete entity from devices
+      description: Delete device
       operationId: devices.device_DeleteDevice
       parameters:
         - name: device-id
@@ -2975,6 +2966,7 @@ paths:
                 - id
                 - administrativeUnits
                 - deletedItems
+                - federationConfigurations
               type: string
         - name: $expand
           in: query
@@ -2989,6 +2981,7 @@ paths:
                 - '*'
                 - administrativeUnits
                 - deletedItems
+                - federationConfigurations
               type: string
       responses:
         '200':
@@ -3002,6 +2995,8 @@ paths:
               operationId: directory.ListAdministrativeUnits
             deletedItems:
               operationId: directory.ListDeletedItems
+            federationConfigurations:
+              operationId: directory.ListFederationConfigurations
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4022,11 +4017,221 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  /directory/federationConfigurations:
+    get:
+      tags:
+        - directory.identityProviderBase
+      summary: Get federationConfigurations from directory
+      description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+      operationId: directory_ListFederationConfigurations
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.identityProviderBaseCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.identityProviderBase
+      summary: Create new navigation property to federationConfigurations for directory
+      operationId: directory_CreateFederationConfigurations
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/federationConfigurations/{identityProviderBase-id}':
+    get:
+      tags:
+        - directory.identityProviderBase
+      summary: Get federationConfigurations from directory
+      description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
+      operationId: directory_GetFederationConfigurations
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - directory.identityProviderBase
+      summary: Update the navigation property federationConfigurations in directory
+      operationId: directory_UpdateFederationConfigurations
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - directory.identityProviderBase
+      summary: Delete navigation property federationConfigurations for directory
+      operationId: directory_DeleteFederationConfigurations
+      parameters:
+        - name: identityProviderBase-id
+          in: path
+          description: 'key: id of identityProviderBase'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identityProviderBase
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  /directory/federationConfigurations/microsoft.graph.availableProviderTypes():
+    get:
+      tags:
+        - directory.Functions
+      summary: Invoke function availableProviderTypes
+      operationId: directory.federationConfigurations_availableProviderTypes
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of identityProviderBase
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      type: string
+                      nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
   /directoryRoles:
     get:
       tags:
         - directoryRoles.directoryRole
       summary: Get entities from directoryRoles
+      description: List directoryRoles
       operationId: directoryRoles.directoryRole_ListDirectoryRole
       parameters:
         - $ref: '#/components/parameters/skip'
@@ -4099,6 +4304,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Add new entity to directoryRoles
+      description: Activate directoryRole
       operationId: directoryRoles.directoryRole_CreateDirectoryRole
       requestBody:
         description: New entity
@@ -4122,6 +4328,7 @@ paths:
       tags:
         - directoryRoles.directoryRole
       summary: Get entity from directoryRoles by key
+      description: Get directoryRole
       operationId: directoryRoles.directoryRole_GetDirectoryRole
       parameters:
         - name: directoryRole-id
@@ -4940,6 +5147,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Get entities from directoryRoleTemplates
+      description: List directoryRoleTemplates
       operationId: directoryRoleTemplates.directoryRoleTemplate_ListDirectoryRoleTemplate
       parameters:
         - $ref: '#/components/parameters/skip'
@@ -5028,6 +5236,7 @@ paths:
       tags:
         - directoryRoleTemplates.directoryRoleTemplate
       summary: Get entity from directoryRoleTemplates by key
+      description: Get directoryRoleTemplate
       operationId: directoryRoleTemplates.directoryRoleTemplate_GetDirectoryRoleTemplate
       parameters:
         - name: directoryRoleTemplate-id
@@ -5454,6 +5663,7 @@ paths:
       tags:
         - domains.domain
       summary: Get entities from domains
+      description: List domains
       operationId: domains.domain_ListDomain
       parameters:
         - $ref: '#/components/parameters/top'
@@ -5525,6 +5735,7 @@ paths:
                 - state
                 - supportedServices
                 - domainNameReferences
+                - federationConfiguration
                 - serviceConfigurationRecords
                 - verificationDnsRecords
               type: string
@@ -5540,6 +5751,7 @@ paths:
               enum:
                 - '*'
                 - domainNameReferences
+                - federationConfiguration
                 - serviceConfigurationRecords
                 - verificationDnsRecords
               type: string
@@ -5556,6 +5768,7 @@ paths:
       tags:
         - domains.domain
       summary: Add new entity to domains
+      description: Create domain
       operationId: domains.domain_CreateDomain
       requestBody:
         description: New entity
@@ -5579,6 +5792,7 @@ paths:
       tags:
         - domains.domain
       summary: Get entity from domains by key
+      description: Get domain
       operationId: domains.domain_GetDomain
       parameters:
         - name: domain-id
@@ -5613,6 +5827,7 @@ paths:
                 - state
                 - supportedServices
                 - domainNameReferences
+                - federationConfiguration
                 - serviceConfigurationRecords
                 - verificationDnsRecords
               type: string
@@ -5628,6 +5843,7 @@ paths:
               enum:
                 - '*'
                 - domainNameReferences
+                - federationConfiguration
                 - serviceConfigurationRecords
                 - verificationDnsRecords
               type: string
@@ -5641,6 +5857,10 @@ paths:
           links:
             domainNameReferences:
               operationId: domains.ListDomainNameReferences
+              parameters:
+                domain-id: $request.path.domain-id
+            federationConfiguration:
+              operationId: domains.ListFederationConfiguration
               parameters:
                 domain-id: $request.path.domain-id
             serviceConfigurationRecords:
@@ -5658,6 +5878,7 @@ paths:
       tags:
         - domains.domain
       summary: Update entity in domains
+      description: Update domain
       operationId: domains.domain_UpdateDomain
       parameters:
         - name: domain-id
@@ -5684,6 +5905,7 @@ paths:
       tags:
         - domains.domain
       summary: Delete entity from domains
+      description: Delete domain
       operationId: domains.domain_DeleteDomain
       parameters:
         - name: domain-id
@@ -5709,7 +5931,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
-      description: 'Read-only, Nullable'
+      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
       operationId: domains_ListDomainNameReferences
       parameters:
         - name: domain-id
@@ -5778,7 +6000,7 @@ paths:
       tags:
         - domains.directoryObject
       summary: Get domainNameReferences from domains
-      description: 'Read-only, Nullable'
+      description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
       operationId: domains_GetDomainNameReferences
       parameters:
         - name: domain-id
@@ -5827,6 +6049,274 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/federationConfiguration':
+    get:
+      tags:
+        - domains.internalDomainFederation
+      summary: Get federationConfiguration from domains
+      description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
+      operationId: domains_ListFederationConfiguration
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - displayName
+                - displayName desc
+                - issuerUri
+                - issuerUri desc
+                - metadataExchangeUri
+                - metadataExchangeUri desc
+                - passiveSignInUri
+                - passiveSignInUri desc
+                - preferredAuthenticationProtocol
+                - preferredAuthenticationProtocol desc
+                - signingCertificate
+                - signingCertificate desc
+                - activeSignInUri
+                - activeSignInUri desc
+                - federatedIdpMfaBehavior
+                - federatedIdpMfaBehavior desc
+                - isSignedAuthenticationRequestRequired
+                - isSignedAuthenticationRequestRequired desc
+                - nextSigningCertificate
+                - nextSigningCertificate desc
+                - promptLoginBehavior
+                - promptLoginBehavior desc
+                - signingCertificateUpdateStatus
+                - signingCertificateUpdateStatus desc
+                - signOutUri
+                - signOutUri desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - issuerUri
+                - metadataExchangeUri
+                - passiveSignInUri
+                - preferredAuthenticationProtocol
+                - signingCertificate
+                - activeSignInUri
+                - federatedIdpMfaBehavior
+                - isSignedAuthenticationRequestRequired
+                - nextSigningCertificate
+                - promptLoginBehavior
+                - signingCertificateUpdateStatus
+                - signOutUri
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.internalDomainFederationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - domains.internalDomainFederation
+      summary: Create new navigation property to federationConfiguration for domains
+      operationId: domains_CreateFederationConfiguration
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/domains/{domain-id}/federationConfiguration/{internalDomainFederation-id}':
+    get:
+      tags:
+        - domains.internalDomainFederation
+      summary: Get federationConfiguration from domains
+      description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
+      operationId: domains_GetFederationConfiguration
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: internalDomainFederation-id
+          in: path
+          description: 'key: id of internalDomainFederation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: internalDomainFederation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - displayName
+                - issuerUri
+                - metadataExchangeUri
+                - passiveSignInUri
+                - preferredAuthenticationProtocol
+                - signingCertificate
+                - activeSignInUri
+                - federatedIdpMfaBehavior
+                - isSignedAuthenticationRequestRequired
+                - nextSigningCertificate
+                - promptLoginBehavior
+                - signingCertificateUpdateStatus
+                - signOutUri
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - domains.internalDomainFederation
+      summary: Update the navigation property federationConfiguration in domains
+      operationId: domains_UpdateFederationConfiguration
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: internalDomainFederation-id
+          in: path
+          description: 'key: id of internalDomainFederation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: internalDomainFederation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - domains.internalDomainFederation
+      summary: Delete navigation property federationConfiguration for domains
+      operationId: domains_DeleteFederationConfiguration
+      parameters:
+        - name: domain-id
+          in: path
+          description: 'key: id of domain'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: domain
+        - name: internalDomainFederation-id
+          in: path
+          description: 'key: id of internalDomainFederation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: internalDomainFederation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5893,7 +6383,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
-      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
       operationId: domains_ListServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6004,7 +6494,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get serviceConfigurationRecords from domains
-      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
+      description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
       operationId: domains_GetServiceConfigurationRecords
       parameters:
         - name: domain-id
@@ -6129,7 +6619,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
-      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
       operationId: domains_ListVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6240,7 +6730,7 @@ paths:
       tags:
         - domains.domainDnsRecord
       summary: Get verificationDnsRecords from domains
-      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
+      description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
       operationId: domains_GetVerificationDnsRecords
       parameters:
         - name: domain-id
@@ -6365,6 +6855,7 @@ paths:
       tags:
         - organization.organization
       summary: Get entities from organization
+      description: List organization
       operationId: organization.organization_ListOrganization
       parameters:
         - $ref: '#/components/parameters/top'
@@ -6520,6 +7011,7 @@ paths:
       tags:
         - organization.organization
       summary: Get entity from organization by key
+      description: Get organization
       operationId: organization.organization_GetOrganization
       parameters:
         - name: organization-id
@@ -6609,6 +7101,7 @@ paths:
       tags:
         - organization.organization
       summary: Update entity in organization
+      description: Update organization
       operationId: organization.organization_UpdateOrganization
       parameters:
         - name: organization-id
@@ -7971,6 +8464,7 @@ paths:
       tags:
         - subscribedSkus.subscribedSku
       summary: Get entities from subscribedSkus
+      description: List subscribedSkus
       operationId: subscribedSkus.subscribedSku_ListSubscribedSku
       parameters:
         - $ref: '#/components/parameters/search'
@@ -8056,6 +8550,7 @@ paths:
       tags:
         - subscribedSkus.subscribedSku
       summary: Get entity from subscribedSkus by key
+      description: Get subscribedSku
       operationId: subscribedSkus.subscribedSku_GetSubscribedSku
       parameters:
         - name: subscribedSku-id
@@ -8671,6 +9166,11 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
               description: Recently deleted items. Read-only. Nullable.
+            federationConfigurations:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+              description: Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
           additionalProperties:
             type: object
     microsoft.graph.administrativeUnit:
@@ -8722,6 +9222,18 @@ components:
               description: Unique identifier for the directory role that the member is in.
             roleMemberInfo:
               $ref: '#/components/schemas/microsoft.graph.identity'
+          additionalProperties:
+            type: object
+    microsoft.graph.identityProviderBase:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identityProviderBase
+          type: object
+          properties:
+            displayName:
+              type: string
+              description: The display name of the identity provider.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.directoryRole:
@@ -8824,22 +9336,57 @@ components:
               type: array
               items:
                 type: string
-              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable'
+              description: 'The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values which you can add/remove using Graph API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.'
             domainNameReferences:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: 'Read-only, Nullable'
+              description: 'The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.'
+            federationConfiguration:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
+              description: Domain settings configured by customer when federated with Azure AD. Supports $expand.
             serviceConfigurationRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
-              description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable'
+              description: 'DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.'
             verificationDnsRecords:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.domainDnsRecord'
-              description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable'
+              description: 'DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Azure AD. Read-only, Nullable. Supports $expand.'
+          additionalProperties:
+            type: object
+    microsoft.graph.internalDomainFederation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.samlOrWsFedProvider'
+        - title: internalDomainFederation
+          type: object
+          properties:
+            activeSignInUri:
+              type: string
+              description: URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+              nullable: true
+            federatedIdpMfaBehavior:
+              $ref: '#/components/schemas/microsoft.graph.federatedIdpMfaBehavior'
+            isSignedAuthenticationRequestRequired:
+              type: boolean
+              description: 'If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.'
+              nullable: true
+            nextSigningCertificate:
+              type: string
+              description: 'Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP''s token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.'
+              nullable: true
+            promptLoginBehavior:
+              $ref: '#/components/schemas/microsoft.graph.promptLoginBehavior'
+            signingCertificateUpdateStatus:
+              $ref: '#/components/schemas/microsoft.graph.signingCertificateUpdateStatus'
+            signOutUri:
+              type: string
+              description: URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.domainDnsRecord:
@@ -8856,16 +9403,16 @@ components:
               description: Value used when configuring the name of the DNS record at the DNS host.
             recordType:
               type: string
-              description: 'Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, TxtKey'
+              description: 'Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.'
               nullable: true
             supportedService:
               type: string
-              description: 'Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune'
+              description: 'Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.'
             ttl:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable
+              description: Value to use when configuring the time-to-live (ttl) property of the DNS record at the DNS host. Not nullable.
               format: int32
           additionalProperties:
             type: object
@@ -9179,6 +9726,64 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.samlOrWsFedProvider:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        - title: samlOrWsFedProvider
+          type: object
+          properties:
+            issuerUri:
+              type: string
+              description: Issuer URI of the federation server.
+              nullable: true
+            metadataExchangeUri:
+              type: string
+              description: URI of the metadata exchange endpoint used for authentication from rich client applications.
+              nullable: true
+            passiveSignInUri:
+              type: string
+              description: URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
+              nullable: true
+            preferredAuthenticationProtocol:
+              $ref: '#/components/schemas/microsoft.graph.authenticationProtocol'
+            signingCertificate:
+              type: string
+              description: 'Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP''s token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn''t present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn''t available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.'
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.federatedIdpMfaBehavior:
+      title: federatedIdpMfaBehavior
+      enum:
+        - acceptIfMfaDoneByFederatedIdp
+        - enforceMfaByFederatedIdp
+        - rejectMfaByFederatedIdp
+        - unknownFutureValue
+      type: string
+    microsoft.graph.promptLoginBehavior:
+      title: promptLoginBehavior
+      enum:
+        - translateToFreshPasswordAuthentication
+        - nativeSupport
+        - disabled
+        - unknownFutureValue
+      type: string
+    microsoft.graph.signingCertificateUpdateStatus:
+      title: signingCertificateUpdateStatus
+      type: object
+      properties:
+        certificateUpdateResult:
+          type: string
+          description: 'Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.'
+          nullable: true
+        lastRunDateTime:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          description: Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
+          format: date-time
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.assignedPlan:
       title: assignedPlan
       type: object
@@ -9243,7 +9848,7 @@ components:
       properties:
         capabilities:
           type: string
-          description: 'For example, ''Email'', ''OfficeCommunicationsOnline''.'
+          description: 'For example, Email, OfficeCommunicationsOnline.'
           nullable: true
         isDefault:
           type: boolean
@@ -9251,15 +9856,15 @@ components:
           nullable: true
         isInitial:
           type: boolean
-          description: 'true if this is the initial domain associated with the tenant; otherwise, false'
+          description: 'true if this is the initial domain associated with the tenant; otherwise, false.'
           nullable: true
         name:
           type: string
-          description: 'The domain name; for example, ''contoso.onmicrosoft.com'''
+          description: 'The domain name; for example, contoso.onmicrosoft.com.'
           nullable: true
         type:
           type: string
-          description: 'For example, ''Managed''.'
+          description: 'For example, Managed.'
           nullable: true
       additionalProperties:
         type: object
@@ -9498,6 +10103,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      title: Collection of identityProviderBase
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBase'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.directoryRoleCollectionResponse:
       title: Collection of directoryRole
       type: object
@@ -9530,6 +10147,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.domain'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.internalDomainFederationCollectionResponse:
+      title: Collection of internalDomainFederation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.internalDomainFederation'
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -9595,6 +10224,13 @@ components:
         - otherFax
         - pager
         - radio
+      type: string
+    microsoft.graph.authenticationProtocol:
+      title: authenticationProtocol
+      enum:
+        - wsFed
+        - saml
+        - unknownFutureValue
       type: string
     microsoft.graph.certificateAuthority:
       title: certificateAuthority
@@ -9713,6 +10349,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.scopedRoleMembershipCollectionResponse'
+    microsoft.graph.identityProviderBaseCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.identityProviderBaseCollectionResponse'
     microsoft.graph.directoryRoleCollectionResponse:
       description: Retrieved collection
       content:
@@ -9731,6 +10373,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.domainCollectionResponse'
+    microsoft.graph.internalDomainFederationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.internalDomainFederationCollectionResponse'
     microsoft.graph.domainDnsRecordCollectionResponse:
       description: Retrieved collection
       content:

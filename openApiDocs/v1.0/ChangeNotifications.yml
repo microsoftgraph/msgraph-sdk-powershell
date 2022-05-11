@@ -11,6 +11,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Get entities from subscriptions
+      description: List subscriptions
       operationId: subscriptions.subscription_ListSubscription
       parameters:
         - $ref: '#/components/parameters/search'
@@ -53,6 +54,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Add new entity to subscriptions
+      description: Change notifications for Outlook resources in Microsoft Graph
       operationId: subscriptions.subscription_CreateSubscription
       requestBody:
         description: New entity
@@ -76,6 +78,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Get entity from subscriptions by key
+      description: Get subscription
       operationId: subscriptions.subscription_GetSubscription
       parameters:
         - name: subscription-id
@@ -125,6 +128,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Update entity in subscriptions
+      description: Update subscription
       operationId: subscriptions.subscription_UpdateSubscription
       parameters:
         - name: subscription-id
@@ -151,6 +155,7 @@ paths:
       tags:
         - subscriptions.subscription
       summary: Delete entity from subscriptions
+      description: Delete subscription
       operationId: subscriptions.subscription_DeleteSubscription
       parameters:
         - name: subscription-id
