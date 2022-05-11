@@ -140,21 +140,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of externalConnection
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.externalConnectors.externalConnectionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -310,6 +296,1048 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get groups from external
+      description: Read-only. Nullable.
+      operationId: external.connections_ListGroups
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - description
+                - description desc
+                - displayName
+                - displayName desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.externalConnectors.externalGroupCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.externalConnection
+      summary: Create new navigation property to groups for external
+      operationId: external.connections_CreateGroups
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get groups from external
+      description: Read-only. Nullable.
+      operationId: external.connections_GetGroups
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - description
+                - displayName
+                - members
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - members
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+          links:
+            members:
+              operationId: external.connections.Groups.ListMembers
+              parameters:
+                externalConnection-id: $request.path.externalConnection-id
+                externalGroup-id: $request.path.externalGroup-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property groups in external
+      operationId: external.connections_UpdateGroups
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property groups for external
+      operationId: external.connections_DeleteGroups
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+      operationId: external.connections.groups_ListMembers
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.externalConnectors.identityCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.externalConnection
+      summary: Create new navigation property to members for external
+      operationId: external.connections.groups_CreateMembers
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/groups/{externalGroup-id}/members/{identity-id}':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get members from external
+      description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+      operationId: external.connections.groups_GetMembers
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - name: identity-id
+          in: path
+          description: 'key: id of identity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identity
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - type
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property members in external
+      operationId: external.connections.groups_UpdateMembers
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - name: identity-id
+          in: path
+          description: 'key: id of identity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identity
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property members for external
+      operationId: external.connections.groups_DeleteMembers
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalGroup-id
+          in: path
+          description: 'key: id of externalGroup'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalGroup
+        - name: identity-id
+          in: path
+          description: 'key: id of identity'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: identity
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/items':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get items from external
+      description: Read-only. Nullable.
+      operationId: external.connections_ListItems
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - acl
+                - acl desc
+                - content
+                - content desc
+                - properties
+                - properties desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acl
+                - content
+                - properties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.externalConnectors.externalItemCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.externalConnection
+      summary: Create new navigation property to items for external
+      operationId: external.connections_CreateItems
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/items/{externalItem-id}':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get items from external
+      description: Read-only. Nullable.
+      operationId: external.connections_GetItems
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: 'key: id of externalItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - acl
+                - content
+                - properties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property items in external
+      operationId: external.connections_UpdateItems
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: 'key: id of externalItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property items for external
+      operationId: external.connections_DeleteItems
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: externalItem-id
+          in: path
+          description: 'key: id of externalItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalItem
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/operations':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get operations from external
+      description: Read-only. Nullable.
+      operationId: external.connections_ListOperations
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - error
+                - error desc
+                - status
+                - status desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - error
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.externalConnectors.connectionOperationCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - external.externalConnection
+      summary: Create new navigation property to operations for external
+      operationId: external.connections_CreateOperations
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/operations/{connectionOperation-id}':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get operations from external
+      description: Read-only. Nullable.
+      operationId: external.connections_GetOperations
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: connectionOperation-id
+          in: path
+          description: 'key: id of connectionOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectionOperation
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - error
+                - status
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property operations in external
+      operationId: external.connections_UpdateOperations
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: connectionOperation-id
+          in: path
+          description: 'key: id of connectionOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectionOperation
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property operations for external
+      operationId: external.connections_DeleteOperations
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: connectionOperation-id
+          in: path
+          description: 'key: id of connectionOperation'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectionOperation
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/external/connections/{externalConnection-id}/schema':
+    get:
+      tags:
+        - external.externalConnection
+      summary: Get schema from external
+      description: Read-only. Nullable.
+      operationId: external.connections_GetSchema
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - baseType
+                - properties
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - external.externalConnection
+      summary: Update the navigation property schema in external
+      operationId: external.connections_UpdateSchema
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - external.externalConnection
+      summary: Delete navigation property schema for external
+      operationId: external.connections_DeleteSchema
+      parameters:
+        - name: externalConnection-id
+          in: path
+          description: 'key: id of externalConnection'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: externalConnection
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   /search:
     get:
       tags:
@@ -395,9 +1423,15 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/microsoft.graph.searchResponse'
+                title: Collection of searchEntity
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.searchResponse'
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -448,6 +1482,82 @@ components:
               description: Read-only. Nullable.
             schema:
               $ref: '#/components/schemas/microsoft.graph.externalConnectors.schema'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.externalGroup:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalGroup
+          type: object
+          properties:
+            description:
+              type: string
+              description: The description of the external group. Optional.
+              nullable: true
+            displayName:
+              type: string
+              description: The friendly name of the external group. Optional.
+              nullable: true
+            members:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.identity:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: identity
+          type: object
+          properties:
+            type:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityType'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.externalItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: externalItem
+          type: object
+          properties:
+            acl:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.acl'
+              description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
+            content:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContent'
+            properties:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.properties'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.connectionOperation:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: connectionOperation
+          type: object
+          properties:
+            error:
+              $ref: '#/components/schemas/microsoft.graph.publicError'
+            status:
+              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationStatus'
+          additionalProperties:
+            type: object
+    microsoft.graph.externalConnectors.schema:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: schema
+          type: object
+          properties:
+            baseType:
+              type: string
+              description: Must be set to microsoft.graph.externalItem. Required.
+            properties:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.externalConnectors.property'
+              description: 'The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.'
           additionalProperties:
             type: object
     microsoft.graph.searchEntity:
@@ -569,216 +1679,14 @@ components:
         - limitExceeded
         - unknownFutureValue
       type: string
-    microsoft.graph.externalConnectors.externalGroup:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalGroup
-          type: object
-          properties:
-            description:
-              type: string
-              description: The description of the external group. Optional.
-              nullable: true
-            displayName:
-              type: string
-              description: The friendly name of the external group. Optional.
-              nullable: true
-            members:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
-              description: 'A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.'
-          additionalProperties:
-            type: object
-    microsoft.graph.externalConnectors.externalItem:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: externalItem
-          type: object
-          properties:
-            acl:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.acl'
-              description: An array of access control entries. Each entry specifies the access granted to a user or group. Required.
-            content:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemContent'
-            properties:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.properties'
-          additionalProperties:
-            type: object
-    microsoft.graph.externalConnectors.connectionOperation:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: connectionOperation
-          type: object
-          properties:
-            error:
-              $ref: '#/components/schemas/microsoft.graph.publicError'
-            status:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationStatus'
-          additionalProperties:
-            type: object
-    microsoft.graph.externalConnectors.schema:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: schema
-          type: object
-          properties:
-            baseType:
-              type: string
-              description: Must be set to microsoft.graph.externalConnector.externalItem. Required.
-            properties:
-              type: array
-              items:
-                $ref: '#/components/schemas/microsoft.graph.externalConnectors.property'
-              description: 'The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.'
-          additionalProperties:
-            type: object
-    microsoft.graph.aggregationOption:
-      title: aggregationOption
-      type: object
-      properties:
-        bucketDefinition:
-          $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
-        field:
-          type: string
-          description: Computes aggregation on the field while the field exists in current entity type. Required.
-        size:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.entityType:
-      title: entityType
+    microsoft.graph.externalConnectors.identityType:
+      title: identityType
       enum:
-        - event
-        - message
-        - driveItem
-        - externalItem
-        - site
-        - list
-        - listItem
-        - drive
+        - user
+        - group
+        - externalGroup
         - unknownFutureValue
       type: string
-    microsoft.graph.searchQuery:
-      title: searchQuery
-      type: object
-      properties:
-        queryString:
-          type: string
-          description: The search query containing the search terms. Required.
-      additionalProperties:
-        type: object
-    microsoft.graph.searchAlterationOptions:
-      title: searchAlterationOptions
-      type: object
-      properties:
-        enableModification:
-          type: boolean
-          description: 'Indicates whether spelling modifications are enabled. If enabled, the user will get the search results for the corrected query in case of no results for the original query with typos. The response will also include the spelling modification information in the queryAlterationResponse property. Optional.'
-          nullable: true
-        enableSuggestion:
-          type: boolean
-          description: 'Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.resultTemplateOption:
-      title: resultTemplateOption
-      type: object
-      properties:
-        enableResultTemplate:
-          type: boolean
-          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. Optional.'
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.sortProperty:
-      title: sortProperty
-      type: object
-      properties:
-        isDescending:
-          type: boolean
-          description: 'True if the sort order is descending. Default is false, with the sort order as ascending. Optional.'
-          nullable: true
-        name:
-          type: string
-          description: The name of the property to sort on. Required.
-      additionalProperties:
-        type: object
-    microsoft.graph.searchHitsContainer:
-      title: searchHitsContainer
-      type: object
-      properties:
-        aggregations:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchAggregation'
-          description: Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
-        hits:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchHit'
-          description: A collection of the search results.
-        moreResultsAvailable:
-          type: boolean
-          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
-          nullable: true
-        total:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
-          format: int32
-          nullable: true
-      additionalProperties:
-        type: object
-    microsoft.graph.alterationResponse:
-      title: alterationResponse
-      type: object
-      properties:
-        originalQueryString:
-          type: string
-          description: Defines the original user query string.
-          nullable: true
-        queryAlteration:
-          $ref: '#/components/schemas/microsoft.graph.searchAlteration'
-        queryAlterationType:
-          $ref: '#/components/schemas/microsoft.graph.searchAlterationType'
-      additionalProperties:
-        type: object
-    microsoft.graph.resultTemplateDictionary:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
-        - title: resultTemplateDictionary
-          type: object
-          additionalProperties:
-            type: object
-    odata.error:
-      required:
-        - error
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/odata.error.main'
-      additionalProperties:
-        type: object
-    microsoft.graph.externalConnectors.identity:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: identity
-          type: object
-          properties:
-            type:
-              $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityType'
-          additionalProperties:
-            type: object
     microsoft.graph.externalConnectors.acl:
       title: acl
       type: object
@@ -789,7 +1697,7 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.aclType'
         value:
           type: string
-          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup'
+          description: 'The unique identifer of the identity. In case of Azure Active Directory identities, value is set to the object identifier of the user, group or tenant for types user, group and everyone (and everyoneExceptGuests) respectively. In case of external groups value is set to the ID of the externalGroup.'
       additionalProperties:
         type: object
     microsoft.graph.externalConnectors.externalItemContent:
@@ -867,13 +1775,13 @@ components:
           nullable: true
         isSearchable:
           type: boolean
-          description: Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
+          description: Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
           nullable: true
         labels:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.externalConnectors.label'
-          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue. Optional.'
+          description: 'Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (e.g. better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl, containerName, containerUrl. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: iconUrl, containerName, containerUrl.'
         name:
           type: string
           description: 'The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, '', '', <, >, `, ^.  Required.'
@@ -881,142 +1789,200 @@ components:
           $ref: '#/components/schemas/microsoft.graph.externalConnectors.propertyType'
       additionalProperties:
         type: object
-    microsoft.graph.bucketAggregationDefinition:
-      title: bucketAggregationDefinition
+    microsoft.graph.aggregationOption:
+      title: aggregationOption
+      type: object
+      properties:
+        bucketDefinition:
+          $ref: '#/components/schemas/microsoft.graph.bucketAggregationDefinition'
+        field:
+          type: string
+          description: Computes aggregation on the field while the field exists in current entity type. Required.
+        size:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
+          format: int32
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.entityType:
+      title: entityType
+      enum:
+        - event
+        - message
+        - driveItem
+        - externalItem
+        - site
+        - list
+        - listItem
+        - drive
+        - unknownFutureValue
+      type: string
+    microsoft.graph.searchQuery:
+      title: searchQuery
+      type: object
+      properties:
+        queryString:
+          type: string
+          description: The search query containing the search terms. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlterationOptions:
+      title: searchAlterationOptions
+      type: object
+      properties:
+        enableModification:
+          type: boolean
+          description: 'Indicates whether spelling modifications are enabled. If enabled, user will get the search results for corrected query when there are no results for the original query with typos and get the spelling modification information in queryAlterationResponse property of the response. Optional.'
+          nullable: true
+        enableSuggestion:
+          type: boolean
+          description: 'Indicates whether spelling suggestions are enabled. If enabled, the user will get the search results for the original search query and suggestions for spelling correction in the queryAlterationResponse property of the response for the typos in the query. Optional.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.resultTemplateOption:
+      title: resultTemplateOption
+      type: object
+      properties:
+        enableResultTemplate:
+          type: boolean
+          description: 'Indicates whether search display layouts are enabled. If enabled, the user will get the result template to render the search results content in the resultTemplates property of the response. The result template is based on Adaptive Cards. This property is optional.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.sortProperty:
+      title: sortProperty
       type: object
       properties:
         isDescending:
           type: boolean
-          description: 'True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.'
+          description: 'True if the sort order is descending. Default is false, with the sort order as ascending. Optional.'
           nullable: true
-        minimumCount:
+        name:
+          type: string
+          description: The name of the property to sort on. Required.
+      additionalProperties:
+        type: object
+    microsoft.graph.searchHitsContainer:
+      title: searchHitsContainer
+      type: object
+      properties:
+        aggregations:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchAggregation'
+          description: Contains the collection of aggregations computed based on the provided aggregationOption specified in the request.
+        hits:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchHit'
+          description: A collection of the search results.
+        moreResultsAvailable:
+          type: boolean
+          description: 'Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.'
+          nullable: true
+        total:
           maximum: 2147483647
           minimum: -2147483648
           type: integer
-          description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
+          description: 'The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.'
           format: int32
           nullable: true
-        prefixFilter:
-          type: string
-          description: A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-          nullable: true
-        ranges:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.bucketAggregationRange'
-          description: Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
-        sortBy:
-          $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
       additionalProperties:
         type: object
-    microsoft.graph.searchAggregation:
-      title: searchAggregation
+    microsoft.graph.alterationResponse:
+      title: alterationResponse
       type: object
       properties:
-        buckets:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.searchBucket'
-          description: Defines the actual buckets of the computed aggregation.
-        field:
+        originalQueryString:
           type: string
-          description: Defines on which field the aggregation was computed on.
+          description: Defines the original user query string.
           nullable: true
+        queryAlteration:
+          $ref: '#/components/schemas/microsoft.graph.searchAlteration'
+        queryAlterationType:
+          $ref: '#/components/schemas/microsoft.graph.searchAlterationType'
       additionalProperties:
         type: object
-    microsoft.graph.searchHit:
-      title: searchHit
-      type: object
-      properties:
-        contentSource:
-          type: string
-          description: The name of the content source which the externalItem is part of .
-          nullable: true
-        hitId:
-          type: string
-          description: The internal identifier for the item.
-          nullable: true
-        rank:
-          maximum: 2147483647
-          minimum: -2147483648
-          type: integer
-          description: The rank or the order of the result.
-          format: int32
-          nullable: true
-        resultTemplateId:
-          type: string
-          description: ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
-          nullable: true
-        summary:
-          type: string
-          description: 'A summary of the result, if a summary is available.'
-          nullable: true
-        resource:
-          $ref: '#/components/schemas/microsoft.graph.entity'
-      additionalProperties:
-        type: object
-    microsoft.graph.searchAlteration:
-      title: searchAlteration
-      type: object
-      properties:
-        alteredHighlightedQueryString:
-          type: string
-          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.'
-          nullable: true
-        alteredQueryString:
-          type: string
-          description: Defines the altered query string with spelling correction.
-          nullable: true
-        alteredQueryTokens:
-          type: array
-          items:
-            $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
-          description: Represents changed segments related to an original user query.
-      additionalProperties:
-        type: object
-    microsoft.graph.searchAlterationType:
-      title: searchAlterationType
-      enum:
-        - suggestion
-        - modification
-        - unknownFutureValue
-      type: string
-    microsoft.graph.Dictionary:
-      title: Dictionary
-      type: object
-      additionalProperties:
-        type: object
-    odata.error.main:
-      required:
-        - code
-        - message
-      type: object
-      properties:
-        code:
-          type: string
-        message:
-          type: string
-        target:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/odata.error.detail'
-        innererror:
+    microsoft.graph.resultTemplateDictionary:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.Dictionary'
+        - title: resultTemplateDictionary
           type: object
           additionalProperties:
             type: object
-          description: The structure of this object is service-specific
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
       additionalProperties:
         type: object
-    microsoft.graph.externalConnectors.identityType:
-      title: identityType
-      enum:
-        - user
-        - group
-        - externalGroup
-        - unknownFutureValue
-      type: string
+    microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
+      title: Collection of externalConnection
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnection'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.externalGroupCollectionResponse:
+      title: Collection of externalGroup
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroup'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.identityCollectionResponse:
+      title: Collection of identity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.identity'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.externalItemCollectionResponse:
+      title: Collection of externalItem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItem'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.externalConnectors.connectionOperationCollectionResponse:
+      title: Collection of connectionOperation
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperation'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.externalConnectors.accessType:
       title: accessType
       enum:
@@ -1110,6 +2076,132 @@ components:
         - dateTimeCollection
         - unknownFutureValue
       type: string
+    microsoft.graph.bucketAggregationDefinition:
+      title: bucketAggregationDefinition
+      type: object
+      properties:
+        isDescending:
+          type: boolean
+          description: 'True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.'
+          nullable: true
+        minimumCount:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
+          format: int32
+          nullable: true
+        prefixFilter:
+          type: string
+          description: A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
+          nullable: true
+        ranges:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bucketAggregationRange'
+          description: Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
+        sortBy:
+          $ref: '#/components/schemas/microsoft.graph.bucketAggregationSortProperty'
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAggregation:
+      title: searchAggregation
+      type: object
+      properties:
+        buckets:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.searchBucket'
+          description: Defines the actual buckets of the computed aggregation.
+        field:
+          type: string
+          description: Defines on which field the aggregation was computed on.
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.searchHit:
+      title: searchHit
+      type: object
+      properties:
+        contentSource:
+          type: string
+          description: The name of the content source which the externalItem is part of .
+          nullable: true
+        hitId:
+          type: string
+          description: The internal identifier for the item.
+          nullable: true
+        rank:
+          maximum: 2147483647
+          minimum: -2147483648
+          type: integer
+          description: The rank or the order of the result.
+          format: int32
+          nullable: true
+        resultTemplateId:
+          type: string
+          description: 'ID of the result template for rendering the search result. This ID must map to a display layout in the resultTemplates dictionary, included in the searchresponse as well.'
+          nullable: true
+        summary:
+          type: string
+          description: 'A summary of the result, if a summary is available.'
+          nullable: true
+        resource:
+          $ref: '#/components/schemas/microsoft.graph.entity'
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlteration:
+      title: searchAlteration
+      type: object
+      properties:
+        alteredHighlightedQueryString:
+          type: string
+          description: 'Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)'
+          nullable: true
+        alteredQueryString:
+          type: string
+          description: Defines the altered query string with spelling correction.
+          nullable: true
+        alteredQueryTokens:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.alteredQueryToken'
+          description: Represents changed segments with respect to original query.
+      additionalProperties:
+        type: object
+    microsoft.graph.searchAlterationType:
+      title: searchAlterationType
+      enum:
+        - suggestion
+        - modification
+        - unknownFutureValue
+      type: string
+    microsoft.graph.Dictionary:
+      title: Dictionary
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innererror:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+      additionalProperties:
+        type: object
     microsoft.graph.bucketAggregationRange:
       title: bucketAggregationRange
       type: object
@@ -1175,7 +2267,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -1187,15 +2279,51 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.externalConnectors.externalConnectionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalConnectionCollectionResponse'
+    microsoft.graph.externalConnectors.externalGroupCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalGroupCollectionResponse'
+    microsoft.graph.externalConnectors.identityCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.identityCollectionResponse'
+    microsoft.graph.externalConnectors.externalItemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.externalItemCollectionResponse'
+    microsoft.graph.externalConnectors.connectionOperationCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.externalConnectors.connectionOperationCollectionResponse'
   parameters:
     top:
       name: $top

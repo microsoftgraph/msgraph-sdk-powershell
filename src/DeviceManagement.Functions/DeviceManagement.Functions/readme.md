@@ -45,12 +45,12 @@ directive:
       subject: $1ForPlatform
   - where:
       subject: ^(DeviceManagementRoleScopeTag)$
-      variant: ^Get$
+      variant: ^Get$|^GetViaIdentity$
     set:
       subject: $1ById
   - where:
       subject: ^(DeviceManagementRoleScopeTag)$
-      variant: ^Get1$|^GetViaIdentity$
+      variant: ^Get1$|^GetViaIdentity1$
     set:
       subject: $1ByResource
 ```

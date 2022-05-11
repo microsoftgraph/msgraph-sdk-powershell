@@ -38,7 +38,7 @@ subject-prefix: ''
 
 ``` yaml
 directive:
-  - remove-path-by-operation: .*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
+  - remove-path-by-operation: groups\.team.*$|groups\.sites\.onenote.*$|.*\.onenote\..*parent.*|.*\.calendarView.*|.*\.notebooks\.section.*|.*\.sectionGroups\.section.*|.*\.sections\.pages.*|.*\.calendar\.events\..*$|.*\.events\..*$
 # Remove cmdlets
   - where:
       verb: Test
@@ -129,6 +129,11 @@ directive:
       subject: ^(GroupOnenoteNotebookSectionGroupSectionPage)$
     set:
       subject: $1Content
+  - where:
+      verb: Get
+      subject: ^(.*ListItemActivity)$
+    set:
+      subject: $1ByInterval
 # Alias then rename cmdlets to avoid breaking change.
   - where:
       subject: ^(Group)(CreatedOnBehalf)$

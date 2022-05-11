@@ -13,7 +13,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/createdObjects/$ref": {
+    "/users/{user-id}/createdObjects/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -21,7 +21,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/directReports/$ref": {
+    "/users/{user-id}/directReports/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -45,15 +45,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/manager/$ref": {
-      "apiVersion": "v1.0-beta",
-      "originalLocation": "/openApiDocs/beta/Users.yml"
-    },
     "/users/{user-id}/memberOf": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/memberOf/$ref": {
+    "/users/{user-id}/memberOf/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -69,7 +65,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/oauth2PermissionGrants/$ref": {
+    "/users/{user-id}/oauth2PermissionGrants/{oAuth2PermissionGrant-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -241,7 +237,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/ownedDevices/$ref": {
+    "/users/{user-id}/ownedDevices/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -249,7 +245,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/ownedObjects/$ref": {
+    "/users/{user-id}/ownedObjects/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -277,7 +273,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/registeredDevices/$ref": {
+    "/users/{user-id}/registeredDevices/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -329,6 +325,14 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/checklistItems": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
+    "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/checklistItems/{checklistItem-id}": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
     "/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/extensions": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
@@ -349,7 +353,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/transitiveMemberOf/$ref": {
+    "/users/{user-id}/transitiveMemberOf/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
@@ -357,7 +361,7 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
-    "/users/{user-id}/transitiveReports/$ref": {
+    "/users/{user-id}/transitiveReports/{directoryObject-id}": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     }

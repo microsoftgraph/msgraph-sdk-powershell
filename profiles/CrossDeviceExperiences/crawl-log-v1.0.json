@@ -20,10 +20,6 @@
     "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
-    },
-    "/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref": {
-      "apiVersion": "v1.0",
-      "originalLocation": "/openApiDocs/v1.0/CrossDeviceExperiences.yml"
     }
   }
 }

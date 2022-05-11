@@ -16,7 +16,7 @@
         /// <returns>
         /// A <see cref="System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        public async System.Threading.Tasks.Task GroupsCreateGroupMember(string apiVersion, string groupId, Models.IMicrosoftGraphDirectoryObject body, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphDirectoryObject>, System.Threading.Tasks.Task> onCreated, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IOdataError>, System.Threading.Tasks.Task> onDefault, Runtime.IEventListener eventListener, Runtime.ISendAsync sender)
+        public async System.Threading.Tasks.Task GroupsCreateGroupMember(string apiVersion, string groupId, Models.IMicrosoftGraphDirectoryObject body, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphDirectoryObject>, System.Threading.Tasks.Task> onCreated, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphODataErrorsOdataError>, System.Threading.Tasks.Task> onDefault, Runtime.IEventListener eventListener, Runtime.ISendAsync sender)
         {
             // Constant Parameters
             using (NoSynchronizationContext)
@@ -54,7 +54,7 @@
         /// <returns>
         /// A <see cref="System.Threading.Tasks.Task" /> that will be complete when handling of the response is completed.
         /// </returns>
-        internal async System.Threading.Tasks.Task GroupsCreateGroupMember_Call(System.Net.Http.HttpRequestMessage request, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphDirectoryObject>, System.Threading.Tasks.Task> onCreated, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IOdataError>, System.Threading.Tasks.Task> onDefault, Runtime.IEventListener eventListener, Runtime.ISendAsync sender)
+        internal async System.Threading.Tasks.Task GroupsCreateGroupMember_Call(System.Net.Http.HttpRequestMessage request, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphDirectoryObject>, System.Threading.Tasks.Task> onCreated, System.Func<System.Net.Http.HttpResponseMessage, System.Threading.Tasks.Task<Models.IMicrosoftGraphODataErrorsOdataError>, System.Threading.Tasks.Task> onDefault, Runtime.IEventListener eventListener, Runtime.ISendAsync sender)
         {
             using (NoSynchronizationContext)
             {
@@ -77,7 +77,7 @@
                         default:
                             {
                                 await eventListener.Signal(Runtime.Events.BeforeResponseDispatch, _response); if (eventListener.Token.IsCancellationRequested) { return; }
-                                await onDefault(_response, _response.Content.ReadAsStringAsync().ContinueWith(body => Models.OdataError.FromJson(Runtime.Json.JsonNode.Parse(body.Result))));
+                                await onDefault(_response, _response.Content.ReadAsStringAsync().ContinueWith(body => Models.MicrosoftGraphODataErrorsOdataError.FromJson(Runtime.Json.JsonNode.Parse(body.Result))));
                                 break;
                             }
                     }

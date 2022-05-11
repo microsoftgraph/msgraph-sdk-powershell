@@ -33,9 +33,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -59,9 +64,14 @@ paths:
           content:
             application/json:
               schema:
-                type: string
-                format: base64url
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: string
+                    format: base64url
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
@@ -92,9 +102,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -125,9 +140,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -158,9 +178,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -191,9 +216,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -224,9 +254,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -257,9 +292,14 @@ paths:
           content:
             application/json:
               schema:
-                type: boolean
-                default: false
-                nullable: true
+                type: object
+                properties:
+                  value:
+                    type: boolean
+                    default: false
+                    nullable: true
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -314,7 +354,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property windows in admin
-      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_UpdateWindows
       requestBody:
         description: New navigation property values
@@ -333,7 +372,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property windows for admin
-      description: A container for all Windows Update for Business deployment service functionality. Read-only.
       operationId: admin_DeleteWindows
       parameters:
         - name: If-Match
@@ -406,7 +444,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property updates in admin
-      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_UpdateUpdates
       requestBody:
         description: New navigation property values
@@ -425,7 +462,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property updates for admin
-      description: Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
       operationId: admin.windows_DeleteUpdates
       parameters:
         - name: If-Match
@@ -490,7 +526,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property catalog in admin
-      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_UpdateCatalog
       requestBody:
         description: New navigation property values
@@ -509,7 +544,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property catalog for admin
-      description: Catalog of content that can be approved for deployment by the deployment service. Read-only.
       operationId: admin.windows.updates_DeleteCatalog
       parameters:
         - name: If-Match
@@ -584,21 +618,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of catalogEntry
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.catalogEntryCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -609,7 +629,6 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to entries for admin
-      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_CreateEntries
       requestBody:
         description: New navigation property
@@ -684,7 +703,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property entries in admin
-      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_UpdateEntries
       parameters:
         - name: catalogEntry-id
@@ -711,7 +729,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property entries for admin
-      description: Lists the content that you can approve for deployment. Read-only.
       operationId: admin.windows.updates.catalog_DeleteEntries
       parameters:
         - name: catalogEntry-id
@@ -801,21 +818,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of deployment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -826,7 +829,6 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to deployments for admin
-      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_CreateDeployments
       requestBody:
         description: New navigation property
@@ -910,7 +912,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property deployments in admin
-      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_UpdateDeployments
       parameters:
         - name: deployment-id
@@ -937,7 +938,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property deployments for admin
-      description: Deployments created using the deployment service. Read-only.
       operationId: admin.windows.updates_DeleteDeployments
       parameters:
         - name: deployment-id
@@ -1024,7 +1024,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property audience in admin
-      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_UpdateAudience
       parameters:
         - name: deployment-id
@@ -1051,7 +1050,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property audience for admin
-      description: Specifies the audience to which content is deployed.
       operationId: admin.windows.updates.deployments_DeleteAudience
       parameters:
         - name: deployment-id
@@ -1131,21 +1129,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of updatableAsset
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1156,7 +1140,6 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to exclusions for admin
-      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_CreateExclusions
       parameters:
         - name: deployment-id
@@ -1243,7 +1226,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property exclusions in admin
-      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_UpdateExclusions
       parameters:
         - name: deployment-id
@@ -1277,7 +1259,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property exclusions for admin
-      description: Specifies the assets to exclude from the audience.
       operationId: admin.windows.updates.deployments.audience_DeleteExclusions
       parameters:
         - name: deployment-id
@@ -1688,21 +1669,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of updatableAsset
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1713,7 +1680,6 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to members for admin
-      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_CreateMembers
       parameters:
         - name: deployment-id
@@ -1800,7 +1766,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property members in admin
-      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_UpdateMembers
       parameters:
         - name: deployment-id
@@ -1834,7 +1799,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property members for admin
-      description: Specifies the assets to include in the audience.
       operationId: admin.windows.updates.deployments.audience_DeleteMembers
       parameters:
         - name: deployment-id
@@ -2337,21 +2301,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of updatableAsset
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2362,7 +2312,6 @@ paths:
       tags:
         - admin.windows
       summary: Create new navigation property to updatableAssets for admin
-      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_CreateUpdatableAssets
       requestBody:
         description: New navigation property
@@ -2434,7 +2383,6 @@ paths:
       tags:
         - admin.windows
       summary: Update the navigation property updatableAssets in admin
-      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_UpdateUpdatableAssets
       parameters:
         - name: updatableAsset-id
@@ -2461,7 +2409,6 @@ paths:
       tags:
         - admin.windows
       summary: Delete navigation property updatableAssets for admin
-      description: Assets registered with the deployment service that can receive updates. Read-only.
       operationId: admin.windows.updates_DeleteUpdatableAssets
       parameters:
         - name: updatableAsset-id
@@ -2913,13 +2860,49 @@ components:
           $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentStateValue'
       additionalProperties:
         type: object
-    odata.error:
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.catalogEntryCollectionResponse:
+      title: Collection of catalogEntry
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntry'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
+      title: Collection of deployment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deployment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
+      title: Collection of updatableAsset
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAsset'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.monitoringSettings:
@@ -2997,7 +2980,7 @@ components:
         - archived
         - unknownFutureValue
       type: string
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -3009,15 +2992,13 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
     microsoft.graph.windowsUpdates.monitoringRule:
@@ -3055,7 +3036,7 @@ components:
         - unknownFutureValue
         - faultedByContentOutdated
       type: string
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -3067,8 +3048,14 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
     microsoft.graph.windowsUpdates.monitoringAction:
       title: monitoringAction
       enum:
@@ -3094,7 +3081,25 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.windowsUpdates.catalogEntryCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.catalogEntryCollectionResponse'
+    microsoft.graph.windowsUpdates.deploymentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.deploymentCollectionResponse'
+    microsoft.graph.windowsUpdates.updatableAssetCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.windowsUpdates.updatableAssetCollectionResponse'
   parameters:
     top:
       name: $top
