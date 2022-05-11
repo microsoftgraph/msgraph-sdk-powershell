@@ -49,6 +49,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Bookings.yml"
     },
+    "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Bookings.yml"
+    },
     "/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Bookings.yml"

@@ -11,6 +11,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Get entities from bookingBusinesses
+      description: List bookingBusinesses
       operationId: bookingBusinesses.bookingBusiness_ListBookingBusiness
       parameters:
         - $ref: '#/components/parameters/top'
@@ -102,21 +103,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingBusiness
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingBusinessCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -127,6 +114,7 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Add new entity to bookingBusinesses
+      description: Create bookingBusiness
       operationId: bookingBusinesses.bookingBusiness_CreateBookingBusiness
       requestBody:
         description: New entity
@@ -246,7 +234,6 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Update entity in bookingBusinesses
-      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_UpdateBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -273,7 +260,6 @@ paths:
       tags:
         - bookingBusinesses.bookingBusiness
       summary: Delete entity from bookingBusinesses
-      description: Represents a Microsot Bookings Business.
       operationId: bookingBusinesses.bookingBusiness_DeleteBookingBusiness
       parameters:
         - name: bookingBusiness-id
@@ -458,21 +444,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingAppointment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -483,7 +455,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to appointments for bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateAppointments
       parameters:
         - name: bookingBusiness-id
@@ -605,7 +576,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property appointments in bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateAppointments
       parameters:
         - name: bookingBusiness-id
@@ -639,7 +609,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property appointments for bookingBusinesses
-      description: All the appointments of this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteAppointments
       parameters:
         - name: bookingBusiness-id
@@ -884,21 +853,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingAppointment
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingAppointmentCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -909,7 +864,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Create new navigation property to calendarView for bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_CreateCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1043,7 +997,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Update the navigation property calendarView in bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1077,7 +1030,6 @@ paths:
       tags:
         - bookingBusinesses.bookingAppointment
       summary: Delete navigation property calendarView for bookingBusinesses
-      description: The set of appointments of this business in a specified date range. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteCalendarView
       parameters:
         - name: bookingBusiness-id
@@ -1217,21 +1169,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCustomer
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingCustomerCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1242,7 +1180,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Create new navigation property to customers for bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1333,7 +1270,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Update the navigation property customers in bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1367,7 +1303,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomer
       summary: Delete navigation property customers for bookingBusinesses
-      description: All the customers of this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteCustomers
       parameters:
         - name: bookingBusiness-id
@@ -1463,21 +1398,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCustomQuestion
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingCustomQuestionCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1488,7 +1409,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Create new navigation property to customQuestions for bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1578,7 +1498,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Update the navigation property customQuestions in bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1612,7 +1531,6 @@ paths:
       tags:
         - bookingBusinesses.bookingCustomQuestion
       summary: Delete navigation property customQuestions for bookingBusinesses
-      description: All the custom questions of this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteCustomQuestions
       parameters:
         - name: bookingBusiness-id
@@ -1640,6 +1558,56 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.getStaffAvailability':
+    post:
+      tags:
+        - bookingBusinesses.Actions
+      summary: Invoke action getStaffAvailability
+      operationId: bookingBusinesses_getStaffAvailability
+      parameters:
+        - name: bookingBusiness-id
+          in: path
+          description: 'key: id of bookingBusiness'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: bookingBusiness
+      requestBody:
+        description: Action parameters
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                staffIds:
+                  type: array
+                  items:
+                    type: string
+                startDateTime:
+                  $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+                endDateTime:
+                  $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of bookingBusiness
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.staffAvailabilityItem'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: action
   '/bookingBusinesses/{bookingBusiness-id}/microsoft.graph.publish':
     post:
       tags:
@@ -1798,21 +1766,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingService
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingService'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingServiceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1823,7 +1777,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Create new navigation property to services for bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateServices
       parameters:
         - name: bookingBusiness-id
@@ -1929,7 +1882,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Update the navigation property services in bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateServices
       parameters:
         - name: bookingBusiness-id
@@ -1963,7 +1915,6 @@ paths:
       tags:
         - bookingBusinesses.bookingService
       summary: Delete navigation property services for bookingBusinesses
-      description: All the services offered by this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteServices
       parameters:
         - name: bookingBusiness-id
@@ -2074,21 +2025,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingStaffMember
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingStaffMemberCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2099,7 +2036,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Create new navigation property to staffMembers for bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_CreateStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2194,7 +2130,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Update the navigation property staffMembers in bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_UpdateStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2228,7 +2163,6 @@ paths:
       tags:
         - bookingBusinesses.bookingStaffMember
       summary: Delete navigation property staffMembers for bookingBusinesses
-      description: All the staff members that provide services in this business. Read-only. Nullable.
       operationId: bookingBusinesses_DeleteStaffMembers
       parameters:
         - name: bookingBusiness-id
@@ -2261,6 +2195,7 @@ paths:
       tags:
         - bookingCurrencies.bookingCurrency
       summary: Get entities from bookingCurrencies
+      description: List bookingCurrencies
       operationId: bookingCurrencies.bookingCurrency_ListBookingCurrency
       parameters:
         - $ref: '#/components/parameters/top'
@@ -2310,21 +2245,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved entities
-          content:
-            application/json:
-              schema:
-                title: Collection of bookingCurrency
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.bookingCurrencyCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -2582,7 +2503,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: The current number of customers in the appointment
+              description: The current number of customers in the appointment.
               format: int32
             invoiceAmount:
               type: number
@@ -2602,7 +2523,7 @@ components:
               nullable: true
             isLocationOnline:
               type: boolean
-              description: 'If true, indicates that the appointment will be held online. Default value is false.'
+              description: True indicates that the appointment will be held online. Default value is false.
             joinWebUrl:
               type: string
               description: The URL of the online meeting for the appointment.
@@ -2618,7 +2539,7 @@ components:
               nullable: true
             optOutOfCustomerEmail:
               type: boolean
-              description: If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
+              description: True indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
             postBuffer:
               pattern: '^-?P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+([.][0-9]+)?S)?)?$'
               type: string
@@ -2642,7 +2563,7 @@ components:
               description: The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.
             selfServiceAppointmentId:
               type: string
-              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.'
+              description: 'An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.'
               nullable: true
             serviceId:
               type: string
@@ -2659,7 +2580,7 @@ components:
               nullable: true
             smsNotificationsEnabled:
               type: boolean
-              description: 'If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.'
+              description: True indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
             staffMemberIds:
               type: array
               items:
@@ -2681,7 +2602,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.physicalAddress'
-              description: Addresses associated with the customer. The attribute type of physicalAddress is not supported in v1.0. Internally we map the addresses to the type others.
+              description: 'Addresses associated with the customer, including home, business and other addresses.'
             phones:
               type: array
               items:
@@ -2710,6 +2631,34 @@ components:
           additionalProperties:
             type: object
           description: Represents a custom question of the business.
+    microsoft.graph.dateTimeTimeZone:
+      title: dateTimeTimeZone
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: 'A single point of time in a combined date and time representation ({date}T{time}). For example, ''2019-04-16T09:00:00''.'
+        timeZone:
+          type: string
+          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for possible values.'
+          nullable: true
+      additionalProperties:
+        type: object
+    microsoft.graph.staffAvailabilityItem:
+      title: staffAvailabilityItem
+      type: object
+      properties:
+        availabilityItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.availabilityItem'
+          description: Each item in this collection indicates a slot and the status of the staff member.
+        staffId:
+          type: string
+          description: The ID of the staff member.
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.bookingService:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.bookingNamedEntity'
@@ -2757,7 +2706,7 @@ components:
               maximum: 2147483647
               minimum: -2147483648
               type: integer
-              description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.'
+              description: 'The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.'
               format: int32
             notes:
               type: string
@@ -2965,19 +2914,6 @@ components:
       type: object
       additionalProperties:
         type: object
-    microsoft.graph.dateTimeTimeZone:
-      title: dateTimeTimeZone
-      type: object
-      properties:
-        dateTime:
-          type: string
-          description: 'A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).'
-        timeZone:
-          type: string
-          description: 'Represents a time zone, for example, ''Pacific Standard Time''. See below for more possible values.'
-          nullable: true
-      additionalProperties:
-        type: object
     microsoft.graph.bookingInvoiceStatus:
       title: bookingInvoiceStatus
       enum:
@@ -3001,6 +2937,34 @@ components:
         - notSet
       type: string
       description: Represents the type of pricing of a booking service.
+      x-ms-enum:
+        name: bookingPriceType
+        modelAsString: false
+        values:
+          - value: undefined
+            description: The price of the service is not defined.
+            name: undefined
+          - value: fixedPrice
+            description: The price of the service is fixed.
+            name: fixedPrice
+          - value: startingAt
+            description: 'The price of the service starts with a particular value, but can be higher based on the final services performed.'
+            name: startingAt
+          - value: hourly
+            description: The price of the service depends on the number of hours a staff member works on the service.
+            name: hourly
+          - value: free
+            description: The service is free.
+            name: free
+          - value: priceVaries
+            description: The price of the service varies.
+            name: priceVaries
+          - value: callUs
+            description: The price of the service is not listed.
+            name: callUs
+          - value: notSet
+            description: The price of the service is not set.
+            name: notSet
     microsoft.graph.bookingReminder:
       title: bookingReminder
       type: object
@@ -3050,16 +3014,32 @@ components:
         - radioButton
         - unknownFutureValue
       type: string
+    microsoft.graph.availabilityItem:
+      title: availabilityItem
+      type: object
+      properties:
+        endDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        serviceId:
+          type: string
+          description: 'Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.'
+          nullable: true
+        startDateTime:
+          $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
+        status:
+          $ref: '#/components/schemas/microsoft.graph.bookingsAvailabilityStatus'
+      additionalProperties:
+        type: object
     microsoft.graph.bookingQuestionAssignment:
       title: bookingQuestionAssignment
       type: object
       properties:
         isRequired:
           type: boolean
-          description: The ID of the custom question.
+          description: Indicates whether it is mandatory to answer the custom question.
         questionId:
           type: string
-          description: Indicates whether it is mandatory to answer the custom question.
+          description: If it is mandatory to answer the custom question.
       additionalProperties:
         type: object
     microsoft.graph.bookingStaffRole:
@@ -3070,13 +3050,97 @@ components:
         - viewer
         - externalGuest
       type: string
-    odata.error:
+    microsoft.graph.bookingBusinessCollectionResponse:
+      title: Collection of bookingBusiness
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingBusiness'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingAppointmentCollectionResponse:
+      title: Collection of bookingAppointment
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingAppointment'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCustomerCollectionResponse:
+      title: Collection of bookingCustomer
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomer'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCustomQuestionCollectionResponse:
+      title: Collection of bookingCustomQuestion
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestion'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingServiceCollectionResponse:
+      title: Collection of bookingService
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingService'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingStaffMemberCollectionResponse:
+      title: Collection of bookingStaffMember
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingStaffMember'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.bookingCurrencyCollectionResponse:
+      title: Collection of bookingCurrency
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.bookingCurrency'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.physicalAddressType:
@@ -3189,7 +3253,16 @@ components:
         - pager
         - radio
       type: string
-    odata.error.main:
+    microsoft.graph.bookingsAvailabilityStatus:
+      title: bookingsAvailabilityStatus
+      enum:
+        - available
+        - busy
+        - slotsAvailable
+        - outOfOffice
+        - unknownFutureValue
+      type: string
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -3201,18 +3274,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -3224,15 +3295,63 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.bookingBusinessCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingBusinessCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.bookingAppointmentCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingAppointmentCollectionResponse'
+    microsoft.graph.bookingCustomerCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomerCollectionResponse'
+    microsoft.graph.bookingCustomQuestionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCustomQuestionCollectionResponse'
+    microsoft.graph.bookingServiceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingServiceCollectionResponse'
+    microsoft.graph.bookingStaffMemberCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingStaffMemberCollectionResponse'
+    microsoft.graph.bookingCurrencyCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.bookingCurrencyCollectionResponse'
   parameters:
     top:
       name: $top
