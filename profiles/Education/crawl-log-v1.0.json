@@ -21,6 +21,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
+    "/education/classes/{educationClass-id}/assignmentCategories/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
     "/education/classes/{educationClass-id}/assignmentDefaults": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
@@ -38,6 +42,10 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
     "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/{educationCategory-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/classes/{educationClass-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -113,6 +121,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
+    "/education/classes/{educationClass-id}/assignments/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
     "/education/classes/{educationClass-id}/assignmentSettings": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
@@ -166,6 +178,10 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/categories/{educationCategory-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -238,6 +254,10 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
     "/education/me/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/me/assignments/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
@@ -333,6 +353,10 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
+    "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/categories/microsoft.graph.delta()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/microsoft.graph.publish": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
@@ -402,6 +426,10 @@
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },
     "/education/users/{educationUser-id}/assignments/{educationAssignment-id}/submissions/{educationSubmission-id}/submittedResources/{educationSubmissionResource-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Education.yml"
+    },
+    "/education/users/{educationUser-id}/assignments/microsoft.graph.delta()": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Education.yml"
     },

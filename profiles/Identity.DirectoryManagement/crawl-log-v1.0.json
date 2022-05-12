@@ -241,6 +241,18 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
+    "/directory/federationConfigurations": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/directory/federationConfigurations/{identityProviderBase-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/directory/federationConfigurations/microsoft.graph.availableProviderTypes()": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
     "/directoryRoles": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
@@ -354,6 +366,14 @@
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
     "/domains/{domain-id}/domainNameReferences/{directoryObject-id}": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/federationConfiguration": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
+    },
+    "/domains/{domain-id}/federationConfiguration/{internalDomainFederation-id}": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Identity.DirectoryManagement.yml"
     },
