@@ -3,7 +3,7 @@
 
 parameters:
   - name: BuildAgent
-    default: MsGraphBuildAgentsWindowsPsSDK
+    default: 1es-MsGraphBuildAgentsWindowsPsSDK
     displayName: Build Agent
 
   - name: AzureSubscription
