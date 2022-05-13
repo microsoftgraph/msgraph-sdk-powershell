@@ -26,7 +26,7 @@ Describe 'Get-MgSite' {
         It 'ShouldGetACollectionOfSites' {
             $Mock.PushScenario('ShouldGetACollectionOfSites')
 
-            # The API currently returns an empy collection.
+            # The API currently returns an empty collection.
             $Sites = Get-MgSite
             $Sites | Should -HaveCount 0
         }    
@@ -38,7 +38,7 @@ Describe 'Get-MgSite' {
 
             $SiteId = 'root'
             $Site = Get-MgSite -SiteId $SiteId
-            $Site | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
+            $Site | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite'
             $Site | Should -HaveCount 1
             $Site.Id | Should -Be 'dummyRootId'
             $Site.SiteCollection.HostName | Should -Be 'dummyroot.sharepoint.com'
@@ -52,7 +52,7 @@ Describe 'Get-MgSite' {
 
             $SiteId = 'root'
             $Site = Get-MgSite -InputObject @{ SiteId = $SiteId }
-            $Site | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite1'
+            $Site | Should -BeOfType -ExpectedType 'Microsoft.Graph.PowerShell.Models.MicrosoftGraphSite'
             $Site | Should -HaveCount 1
             $Site.Id | Should -Be 'dummyRootId'
             $Site.SiteCollection.HostName | Should -Be 'dummyroot.sharepoint.com'

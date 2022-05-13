@@ -24,21 +24,21 @@ Describe 'Get-MgSiteByPath' {
         $Mock.PushDescription('Get-MgSiteByPath')
     }
 
-    Context 'Get3' {
+    Context 'Get4' {
         It 'ShouldFailToGetSiteByPath' {
             $Mock.PushScenario('ShouldFailToGetSiteByPath')
 
             $SiteId = "root"
-            { Get-MgSiteByPath -SiteId $SiteId -Path "randomPath" -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_Get3' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
+            { Get-MgSiteByPath -SiteId $SiteId -Path "randomPath" -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_Get4' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
         }
     }
 
-    Context 'GetViaIdentity3' {
+    Context 'GetViaIdentity4' {
         It 'ShouldFailToGetSiteByPathViaInputObject' {
             $Mock.PushScenario('ShouldFailToGetSiteByPathViaInputObject')
 
             $SiteId = "root"
-            { Get-MgSiteByPath -InputObject @{ SiteId = $SiteId; Path = "randomPath" } -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_GetViaIdentity3' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
+            { Get-MgSiteByPath -InputObject @{ SiteId = $SiteId; Path = "randomPath" } -ErrorAction Stop } | Should -Throw -ErrorId 'invalidRequest,Microsoft.Graph.PowerShell.Cmdlets.GetMgSiteByPath_GetViaIdentity4' -ExpectedMessage 'Invalid request' -ExceptionType 'Microsoft.Graph.PowerShell.Runtime.RestException<Microsoft.Graph.PowerShell.Models.IMicrosoftGraphODataErrorsOdataError>'
             
         }
     }
