@@ -49,13 +49,13 @@ directive:
   - where:
       verb: Get
       subject: ^Site$
-      variant: ^List$|^List2$
+      variant: ^Get2$|^GetViaIdentity2$|^Get5$|^GetViaIdentity5$
     set:
       subject: SubSite
   - where:
       verb: Get
       subject: (^Site$)
-      variant: ^Get$|^GetViaIdentity$|^Get2$|^GetViaIdentity2$
+      variant: ^Get1$|^GetViaIdentity1$|^Get4$|^GetViaIdentity4$
     set:
       subject: $1ByPath
   - where:
