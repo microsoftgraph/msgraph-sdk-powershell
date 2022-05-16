@@ -91,7 +91,7 @@ directive:
   - where:
       verb: Get
       subject: ^(User)(CalendarSchedule)$
-      variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$|Get2$|^GetExpanded2$|^GetViaIdentity2$|^GetViaIdentityExpanded2$
+      variant: ^Get$|^GetExpanded$|^GetViaIdentity$|^GetViaIdentityExpanded$|Get1$|^GetExpanded1$|^GetViaIdentity1$|^GetViaIdentityExpanded1$
     set:
       subject: $1Default$2
   - where:

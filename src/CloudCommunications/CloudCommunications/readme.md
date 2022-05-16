@@ -45,13 +45,13 @@ directive:
   - where:
       verb: Invoke
       subject: ^Mute(CommunicationCallParticipant)$
-      variant: ^Mute1$|^MuteExpanded1$|^MuteViaIdentity1$|^MuteViaIdentityExpanded1$
+      variant: ^Mute2$|^MuteExpanded2$|^MuteViaIdentity2$|^MuteViaIdentityExpanded2$
     set:
       subject: MuteAll$1
   - where:
       verb: New
       subject: ^(CommunicationOnlineMeeting)$
-      variant: ^Create$|^CreateExpanded$|^Create2$|^CreateExpanded2$
+      variant: ^Create1$|^CreateExpanded1$|^Create3$|^CreateExpanded3$
     set:
       verb: Invoke
       subject: CreateOrGet$1

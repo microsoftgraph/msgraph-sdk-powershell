@@ -64,14 +64,14 @@ directive:
   - where:
       verb: Get
       subject: (^DirectorySettingTemplate$)
-      variant: Get|GetExpanded
+      variant: ^Get$|^GetExpanded$
     set:
       verb: Get
       subject: $1ById
   - where:
       verb: Get
       subject: (^DirectoryRoleTemplate$)
-      variant: Get|GetExpanded|Get1|GetExpanded1
+      variant: ^Get$|^GetExpanded$|^Get1$|^GetExpanded1$
     set:
       verb: Get
       subject: $1ById
@@ -84,7 +84,7 @@ directive:
   - where:
       verb: Get
       subject: (^AdministrativeUnit$)
-      variant: Get1|GetExpanded
+      variant: ^Get1$|^GetExpanded$
     set:
       subject: $1ById
   - where:
@@ -99,14 +99,14 @@ directive:
   - where:
       verb: Get
       subject: (^Device$)
-      variant: Get|GetExpanded|Get2|GetExpanded1
+      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
     set:
       verb: Get
       subject: $1ById
   - where:
       verb: Get
       subject: (^DirectoryRole$)
-      variant: Get1|GetExpanded|Get3|GetExpanded1
+      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
     set:
       verb: Get
       subject: $1ById
@@ -117,14 +117,14 @@ directive:
   - where:
       verb: Get
       subject: (^Contract$)
-      variant: Get1|GetExpanded|Get3|GetExpanded1
+      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
     set:
       verb: Get
       subject: $1ById
   - where:
       verb: Get
       subject: (^Organization$)
-      variant: Get1|GetExpanded|Get3|GetExpanded1
+      variant: ^Get1$|^GetExpanded$|^Get3$|^GetExpanded1$
     set:
       verb: Get
       subject: $1ById
