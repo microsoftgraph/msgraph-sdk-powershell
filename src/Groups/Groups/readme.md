@@ -69,13 +69,13 @@ directive:
   - where:
       verb: Get
       subject: ^GroupMember$
-      variant: ^Get$|^GetViaIdentity$|^List2$|^Get3$|^GetViaIdentity3$|^List5$
+      variant: ^Get$|^GetViaIdentity$|^List$|^Get3$|^GetViaIdentity3$|^List3$
     set:
       subject: GroupMemberOf
   - where:
       verb: Get
       subject: ^GroupMember$
-      variant: ^Get2$|^GetViaIdentity2$|^List1$|^Get5$|^GetViaIdentity5$|^List4$
+      variant: ^Get2$|^GetViaIdentity2$|^List2$|^Get5$|^GetViaIdentity5$|^List5$
     set:
       subject: GroupMemberWithLicenseError
   - where:
