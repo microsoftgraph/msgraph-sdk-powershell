@@ -8770,101 +8770,12 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/{directoryObject-id}':
-    get:
-      tags:
-        - identityGovernance.entitlementManagement
-      summary: Get externalSponsors from identityGovernance
-      description: Nullable.
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_GetExternalSponsors
-      parameters:
-        - name: connectedOrganization-id
-          in: path
-          description: 'key: id of connectedOrganization'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: connectedOrganization
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - identityGovernance.entitlementManagement
-      summary: Update the navigation property externalSponsors in identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_UpdateExternalSponsors
-      parameters:
-        - name: connectedOrganization-id
-          in: path
-          description: 'key: id of connectedOrganization'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: connectedOrganization
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/{directoryObject-id}/$ref':
     delete:
       tags:
         - identityGovernance.entitlementManagement
-      summary: Delete navigation property externalSponsors for identityGovernance
-      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteExternalSponsors
+      summary: Delete ref of navigation property externalSponsors for identityGovernance
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_DeleteGraphRefExternalSponsors
       parameters:
         - name: connectedOrganization-id
           in: path
@@ -8885,9 +8796,92 @@ paths:
           description: ETag
           schema:
             type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization-id}/externalSponsors/$ref':
+    get:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Get ref of externalSponsors from identityGovernance
+      description: Nullable.
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_ListGraphRefExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - identityGovernance.entitlementManagement
+      summary: Create new navigation property ref to externalSponsors for identityGovernance
+      operationId: identityGovernance.entitlementManagement.connectedOrganizations_CreateGraphRefExternalSponsors
+      parameters:
+        - name: connectedOrganization-id
+          in: path
+          description: 'key: id of connectedOrganization'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: connectedOrganization
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -13105,6 +13099,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.agreementFileData:
       title: agreementFileData
       type: object
@@ -13486,6 +13492,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
   parameters:
     search:
       name: $search

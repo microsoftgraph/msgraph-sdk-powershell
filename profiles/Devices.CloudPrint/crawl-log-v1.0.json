@@ -93,7 +93,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
     },
-    "/print/shares/{printerShare-id}/allowedGroups/{group-id}": {
+    "/print/shares/{printerShare-id}/allowedGroups/{group-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+    },
+    "/print/shares/{printerShare-id}/allowedGroups/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
     },
@@ -101,7 +105,11 @@
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
     },
-    "/print/shares/{printerShare-id}/allowedUsers/{user-id}": {
+    "/print/shares/{printerShare-id}/allowedUsers/{user-id}/$ref": {
+      "apiVersion": "v1.0",
+      "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
+    },
+    "/print/shares/{printerShare-id}/allowedUsers/$ref": {
       "apiVersion": "v1.0",
       "originalLocation": "/openApiDocs/v1.0/Devices.CloudPrint.yml"
     },

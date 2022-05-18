@@ -1912,13 +1912,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}':
-    get:
+  '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref':
+    delete:
       tags:
         - users.device
-      summary: Get registeredOwners from users
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: users.devices_GetRegisteredOwners
+      summary: Delete ref of navigation property registeredOwners for users
+      operationId: users.devices_DeleteGraphRefRegisteredOwners
       parameters:
         - name: user-id
           in: path
@@ -1941,9 +1940,52 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredOwners/$ref':
+    get:
+      tags:
+        - users.device
+      summary: Get ref of registeredOwners from users
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      operationId: users.devices_ListGraphRefRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -1952,27 +1994,57 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property ref to registeredOwners for users
+      operationId: users.devices_CreateGraphRefRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -2754,7 +2826,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -2769,7 +2841,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system.
+              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -3139,6 +3211,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.usageRightCollectionResponse:
       title: Collection of usageRight
       type: object
@@ -3256,6 +3340,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.usageRightCollectionResponse:
       description: Retrieved collection
       content:

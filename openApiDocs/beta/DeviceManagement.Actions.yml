@@ -1671,8 +1671,12 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -4852,8 +4856,12 @@ paths:
                 type: object
         required: true
       responses:
-        '204':
+        '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.cloudPcBulkRemoteActionResult'
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: action
@@ -11286,14 +11294,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.restoreTimeRange:
-      title: restoreTimeRange
-      enum:
-        - before
-        - after
-        - beforeOrAfter
-        - unknownFutureValue
-      type: string
     microsoft.graph.cloudPcBulkRemoteActionResult:
       title: cloudPcBulkRemoteActionResult
       type: object
@@ -11324,6 +11324,14 @@ components:
           description: A list of all the Intune managed device IDs that completed the bulk action successfully.
       additionalProperties:
         type: object
+    microsoft.graph.restoreTimeRange:
+      title: restoreTimeRange
+      enum:
+        - before
+        - after
+        - beforeOrAfter
+        - unknownFutureValue
+      type: string
     microsoft.graph.managedDeviceRemoteAction:
       title: managedDeviceRemoteAction
       enum:

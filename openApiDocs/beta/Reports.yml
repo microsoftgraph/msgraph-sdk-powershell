@@ -2734,6 +2734,8 @@ paths:
               enum:
                 - id
                 - id desc
+                - defaultMfaMethod
+                - defaultMfaMethod desc
                 - isMfaCapable
                 - isMfaCapable desc
                 - isMfaRegistered
@@ -2764,6 +2766,7 @@ paths:
             items:
               enum:
                 - id
+                - defaultMfaMethod
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -2843,6 +2846,7 @@ paths:
             items:
               enum:
                 - id
+                - defaultMfaMethod
                 - isMfaCapable
                 - isMfaRegistered
                 - isPasswordlessCapable
@@ -9215,6 +9219,8 @@ components:
         - title: userRegistrationDetails
           type: object
           properties:
+            defaultMfaMethod:
+              $ref: '#/components/schemas/microsoft.graph.defaultMfaMethodType'
             isMfaCapable:
               type: boolean
               description: Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
@@ -10807,6 +10813,17 @@ components:
           format: int64
       additionalProperties:
         type: object
+    microsoft.graph.defaultMfaMethodType:
+      title: defaultMfaMethodType
+      enum:
+        - none
+        - mobilePhone
+        - alternateMobilePhone
+        - officePhone
+        - microsoftAuthenticatorPush
+        - softwareOneTimePasscode
+        - unknownFutureValue
+      type: string
     microsoft.graph.registrationAuthMethod:
       title: registrationAuthMethod
       enum:

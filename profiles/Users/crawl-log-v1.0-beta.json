@@ -45,6 +45,10 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"
     },
+    "/users/{user-id}/manager/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Users.yml"
+    },
     "/users/{user-id}/memberOf": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Users.yml"

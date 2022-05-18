@@ -11972,7 +11972,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get notes from security
-      description: List of notes associcated with the request.
+      description: List of notes associated with the request.
       operationId: security.subjectRightsRequests_ListNotes
       parameters:
         - name: subjectRightsRequest-id
@@ -12077,7 +12077,7 @@ paths:
       tags:
         - security.subjectRightsRequest
       summary: Get notes from security
-      description: List of notes associcated with the request.
+      description: List of notes associated with the request.
       operationId: security.subjectRightsRequests_GetNotes
       parameters:
         - name: subjectRightsRequest-id
@@ -13884,7 +13884,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -15099,6 +15099,7 @@ components:
               nullable: true
             contentQuery:
               type: string
+              description: KQL based content query that should be used for search. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
               nullable: true
             createdBy:
               $ref: '#/components/schemas/microsoft.graph.identitySet'
@@ -15122,6 +15123,7 @@ components:
               nullable: true
             externalId:
               type: string
+              description: The external ID for the request that is immutable after creation and is used for tracking the request for the external system. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
               nullable: true
             history:
               type: array
@@ -15130,9 +15132,11 @@ components:
               description: Collection of history change events.
             includeAllVersions:
               type: boolean
+              description: 'Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
               nullable: true
             includeAuthoredContent:
               type: boolean
+              description: Include content authored by the data subject. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.
               nullable: true
             insight:
               $ref: '#/components/schemas/microsoft.graph.subjectRightsRequestDetail'
@@ -15154,6 +15158,7 @@ components:
               $ref: '#/components/schemas/microsoft.graph.subjectRightsRequestMailboxLocation'
             pauseAfterEstimate:
               type: boolean
+              description: 'Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.'
               nullable: true
             regulations:
               type: array
@@ -15176,7 +15181,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.authoredNote'
-              description: List of notes associcated with the request.
+              description: List of notes associated with the request.
             team:
               $ref: '#/components/schemas/microsoft.graph.team'
           additionalProperties:
@@ -18626,7 +18631,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq and not).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
             assignedPlans:
               type: array
               items:
@@ -18812,7 +18817,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -18840,7 +18845,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             refreshTokensValidFromDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -21563,7 +21568,6 @@ components:
               nullable: true
             owner:
               type: string
-              description: 'ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.'
               nullable: true
             title:
               type: string
@@ -24153,7 +24157,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -24168,7 +24172,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system.
+              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -24509,6 +24513,10 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.resourceSpecificPermissionGrant'
               description: A collection of permissions granted to apps for the chat.
+            pinnedMessages:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.pinnedChatMessageInfo'
             tabs:
               type: array
               items:
@@ -30820,6 +30828,16 @@ components:
               nullable: true
             messageType:
               $ref: '#/components/schemas/microsoft.graph.chatMessageType'
+          additionalProperties:
+            type: object
+    microsoft.graph.pinnedChatMessageInfo:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: pinnedChatMessageInfo
+          type: object
+          properties:
+            message:
+              $ref: '#/components/schemas/microsoft.graph.chatMessage'
           additionalProperties:
             type: object
     microsoft.graph.associatedTeamInfo:

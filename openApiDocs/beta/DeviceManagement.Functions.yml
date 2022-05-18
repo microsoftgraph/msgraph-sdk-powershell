@@ -1404,6 +1404,62 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: function
+  '/deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getStorageAccounts(subscriptionId=''{subscriptionId}'')':
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getStorageAccounts
+      operationId: deviceManagement.virtualEndpoint.snapshots_getStorageAccounts
+      parameters:
+        - name: subscriptionId
+          in: path
+          description: 'Usage: subscriptionId=''{subscriptionId}'''
+          required: true
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcSnapshot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcForensicStorageAccount'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
+  /deviceManagement/virtualEndpoint/snapshots/microsoft.graph.getSubscriptions():
+    get:
+      tags:
+        - deviceManagement.Functions
+      summary: Invoke function getSubscriptions
+      operationId: deviceManagement.virtualEndpoint.snapshots_getSubscriptions
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: Collection of cloudPcSnapshot
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/microsoft.graph.cloudPcSubscription'
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: function
 components:
   schemas:
     microsoft.graph.assignmentFilterSupportedProperty:
@@ -2413,6 +2469,38 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.cloudPcForensicStorageAccount:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcForensicStorageAccount
+          type: object
+          properties:
+            storageAccountId:
+              type: string
+              description: The ID of the storage account.
+              nullable: true
+            storageAccountName:
+              type: string
+              description: The name of the storage account.
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.cloudPcSubscription:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: cloudPcSubscription
+          type: object
+          properties:
+            subscriptionId:
+              type: string
+              description: The ID of the subscription.
+              nullable: true
+            subscriptionName:
+              type: string
+              description: The name of the subscription.
+              nullable: true
+          additionalProperties:
+            type: object
     microsoft.graph.assignmentFilterOperator:
       title: assignmentFilterOperator
       enum:

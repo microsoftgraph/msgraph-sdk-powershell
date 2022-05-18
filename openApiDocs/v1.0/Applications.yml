@@ -430,7 +430,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_ListExtensionProperties
       parameters:
         - name: application-id
@@ -544,7 +544,7 @@ paths:
       tags:
         - applications.extensionProperty
       summary: Get extensionProperties from applications
-      description: Read-only. Nullable.
+      description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
       operationId: applications_GetExtensionProperties
       parameters:
         - name: application-id
@@ -1344,13 +1344,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/applications/{application-id}/owners/{directoryObject-id}':
-    get:
+  '/applications/{application-id}/owners/{directoryObject-id}/$ref':
+    delete:
       tags:
         - applications.directoryObject
-      summary: Get owners from applications
-      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
-      operationId: applications_GetOwners
+      summary: Delete ref of navigation property owners for applications
+      operationId: applications_DeleteGraphRefOwners
       parameters:
         - name: application-id
           in: path
@@ -1366,9 +1365,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/owners/$ref':
+    get:
+      tags:
+        - applications.directoryObject
+      summary: Get ref of owners from applications
+      description: Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+      operationId: applications_ListGraphRefOwners
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -1377,27 +1412,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - applications.directoryObject
+      summary: Create new navigation property ref to owners for applications
+      operationId: applications_CreateGraphRefOwners
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1483,12 +1541,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}':
-    get:
+  '/applications/{application-id}/tokenIssuancePolicies/{tokenIssuancePolicy-id}/$ref':
+    delete:
       tags:
         - applications.tokenIssuancePolicy
-      summary: Get tokenIssuancePolicies from applications
-      operationId: applications_GetTokenIssuancePolicies
+      summary: Delete ref of navigation property tokenIssuancePolicies for applications
+      operationId: applications_DeleteGraphRefTokenIssuancePolicies
       parameters:
         - name: application-id
           in: path
@@ -1504,9 +1562,44 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: tokenIssuancePolicy
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/tokenIssuancePolicies/$ref':
+    get:
+      tags:
+        - applications.tokenIssuancePolicy
+      summary: Get ref of tokenIssuancePolicies from applications
+      operationId: applications_ListGraphRefTokenIssuancePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -1515,39 +1608,58 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
+                - deletedDateTime desc
                 - description
+                - description desc
                 - displayName
+                - displayName desc
                 - definition
+                - definition desc
                 - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
+                - isOrganizationDefault desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - applications.tokenIssuancePolicy
+      summary: Create new navigation property ref to tokenIssuancePolicies for applications
+      operationId: applications_CreateGraphRefTokenIssuancePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenIssuancePolicy'
-          links:
-            appliesTo:
-              operationId: applications.TokenIssuancePolicies.ListAppliesTo
-              parameters:
-                application-id: $request.path.application-id
-                tokenIssuancePolicy-id: $request.path.tokenIssuancePolicy-id
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -1634,13 +1746,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}':
-    get:
+  '/applications/{application-id}/tokenLifetimePolicies/{tokenLifetimePolicy-id}/$ref':
+    delete:
       tags:
         - applications.tokenLifetimePolicy
-      summary: Get tokenLifetimePolicies from applications
-      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
-      operationId: applications_GetTokenLifetimePolicies
+      summary: Delete ref of navigation property tokenLifetimePolicies for applications
+      operationId: applications_DeleteGraphRefTokenLifetimePolicies
       parameters:
         - name: application-id
           in: path
@@ -1656,9 +1767,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: tokenLifetimePolicy
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/applications/{application-id}/tokenLifetimePolicies/$ref':
+    get:
+      tags:
+        - applications.tokenLifetimePolicy
+      summary: Get ref of tokenLifetimePolicies from applications
+      description: The tokenLifetimePolicies assigned to this application. Supports $expand.
+      operationId: applications_ListGraphRefTokenLifetimePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -1667,39 +1814,58 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
+                - deletedDateTime desc
                 - description
+                - description desc
                 - displayName
+                - displayName desc
                 - definition
+                - definition desc
                 - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
+                - isOrganizationDefault desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - applications.tokenLifetimePolicy
+      summary: Create new navigation property ref to tokenLifetimePolicies for applications
+      operationId: applications_CreateGraphRefTokenLifetimePolicies
+      parameters:
+        - name: application-id
+          in: path
+          description: 'key: id of application'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: application
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.tokenLifetimePolicy'
-          links:
-            appliesTo:
-              operationId: applications.TokenLifetimePolicies.ListAppliesTo
-              parameters:
-                application-id: $request.path.application-id
-                tokenLifetimePolicy-id: $request.path.tokenLifetimePolicy-id
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -3357,13 +3523,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}':
-    get:
+  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/{claimsMappingPolicy-id}/$ref':
+    delete:
       tags:
         - servicePrincipals.claimsMappingPolicy
-      summary: Get claimsMappingPolicies from servicePrincipals
-      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_GetClaimsMappingPolicies
+      summary: Delete ref of navigation property claimsMappingPolicies for servicePrincipals
+      operationId: servicePrincipals_DeleteGraphRefClaimsMappingPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -3379,9 +3544,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: claimsMappingPolicy
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/claimsMappingPolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.claimsMappingPolicy
+      summary: Get ref of claimsMappingPolicies from servicePrincipals
+      description: The claimsMappingPolicies assigned to this service principal. Supports $expand.
+      operationId: servicePrincipals_ListGraphRefClaimsMappingPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -3390,39 +3591,58 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
+                - deletedDateTime desc
                 - description
+                - description desc
                 - displayName
+                - displayName desc
                 - definition
+                - definition desc
                 - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
+                - isOrganizationDefault desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.claimsMappingPolicy
+      summary: Create new navigation property ref to claimsMappingPolicies for servicePrincipals
+      operationId: servicePrincipals_CreateGraphRefClaimsMappingPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.claimsMappingPolicy'
-          links:
-            appliesTo:
-              operationId: servicePrincipals.ClaimsMappingPolicies.ListAppliesTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                claimsMappingPolicy-id: $request.path.claimsMappingPolicy-id
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4103,13 +4323,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}':
-    get:
+  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy-id}/$ref':
+    delete:
       tags:
         - servicePrincipals.homeRealmDiscoveryPolicy
-      summary: Get homeRealmDiscoveryPolicies from servicePrincipals
-      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-      operationId: servicePrincipals_GetHomeRealmDiscoveryPolicies
+      summary: Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+      operationId: servicePrincipals_DeleteGraphRefHomeRealmDiscoveryPolicies
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -4125,9 +4344,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: homeRealmDiscoveryPolicy
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/homeRealmDiscoveryPolicies/$ref':
+    get:
+      tags:
+        - servicePrincipals.homeRealmDiscoveryPolicy
+      summary: Get ref of homeRealmDiscoveryPolicies from servicePrincipals
+      description: The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
+      operationId: servicePrincipals_ListGraphRefHomeRealmDiscoveryPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -4136,39 +4391,58 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
+                - deletedDateTime desc
                 - description
+                - description desc
                 - displayName
+                - displayName desc
                 - definition
+                - definition desc
                 - isOrganizationDefault
-                - appliesTo
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-                - appliesTo
+                - isOrganizationDefault desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.homeRealmDiscoveryPolicy
+      summary: Create new navigation property ref to homeRealmDiscoveryPolicies for servicePrincipals
+      operationId: servicePrincipals_CreateGraphRefHomeRealmDiscoveryPolicies
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.homeRealmDiscoveryPolicy'
-          links:
-            appliesTo:
-              operationId: servicePrincipals.HomeRealmDiscoveryPolicies.ListAppliesTo
-              parameters:
-                servicePrincipal-id: $request.path.servicePrincipal-id
-                homeRealmDiscoveryPolicy-id: $request.path.homeRealmDiscoveryPolicy-id
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5031,13 +5305,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}':
-    get:
+  '/servicePrincipals/{servicePrincipal-id}/owners/{directoryObject-id}/$ref':
+    delete:
       tags:
         - servicePrincipals.directoryObject
-      summary: Get owners from servicePrincipals
-      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
-      operationId: servicePrincipals_GetOwners
+      summary: Delete ref of navigation property owners for servicePrincipals
+      operationId: servicePrincipals_DeleteGraphRefOwners
       parameters:
         - name: servicePrincipal-id
           in: path
@@ -5053,9 +5326,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/servicePrincipals/{servicePrincipal-id}/owners/$ref':
+    get:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Get ref of owners from servicePrincipals
+      description: Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.
+      operationId: servicePrincipals_ListGraphRefOwners
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -5064,27 +5373,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - servicePrincipals.directoryObject
+      summary: Create new navigation property ref to owners for servicePrincipals
+      operationId: servicePrincipals_CreateGraphRefOwners
+      parameters:
+        - name: servicePrincipal-id
+          in: path
+          description: 'key: id of servicePrincipal'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: servicePrincipal
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6036,7 +6368,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.extensionProperty'
-              description: Read-only. Nullable.
+              description: Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
             homeRealmDiscoveryPolicies:
               type: array
               items:
@@ -6192,20 +6524,6 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.tokenIssuancePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: tokenIssuancePolicy
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.tokenLifetimePolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: tokenLifetimePolicy
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.applicationTemplate:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6520,13 +6838,6 @@ components:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
           additionalProperties:
             type: object
-    microsoft.graph.claimsMappingPolicy:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
-        - title: claimsMappingPolicy
-          type: object
-          additionalProperties:
-            type: object
     microsoft.graph.delegatedPermissionClassification:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -6645,6 +6956,20 @@ components:
               type: string
               description: 'A space-separated list of the claim values for delegated permissions which should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal.'
               nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.tokenIssuancePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenIssuancePolicy
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.tokenLifetimePolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: tokenLifetimePolicy
+          type: object
           additionalProperties:
             type: object
     microsoft.graph.addIn:
@@ -6981,6 +7306,13 @@ components:
           nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.claimsMappingPolicy:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.stsPolicy'
+        - title: claimsMappingPolicy
+          type: object
+          additionalProperties:
+            type: object
     microsoft.graph.permissionClassificationType:
       title: permissionClassificationType
       enum:
@@ -7042,6 +7374,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
         '@odata.nextLink':
           type: string
       additionalProperties:
@@ -7322,6 +7666,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.tokenIssuancePolicyCollectionResponse:
       description: Retrieved collection
       content:

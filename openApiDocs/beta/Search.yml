@@ -1262,6 +1262,7 @@ paths:
       tags:
         - external.externalConnection
       summary: Get quota from external
+      description: Read-only. Nullable.
       operationId: external.connections_GetQuota
       parameters:
         - name: externalConnection-id
@@ -2235,6 +2236,7 @@ components:
               nullable: true
             ingestedItemsCount:
               type: integer
+              description: 'The number of items ingested into a connection. This value is refreshed every 15 minutes. If the connection state is draft, then ingestedItemsCount will be null.'
               format: int64
               nullable: true
             name:
@@ -2334,6 +2336,7 @@ components:
           properties:
             itemsRemaining:
               type: integer
+              description: 'Returns the minimum number in a range that contains the following data: items remaining in the connection and remaining items at tenant-level. The following equation represents the formula used to calculate the minimum number: min(max capacity in the connection – number of items in the connection, tenant quota – number of items indexed in all connections). If the connection is nonmonetized (preview connector or preview content experience), then it returns the number of remaining items in the connection.'
               format: int64
               nullable: true
           additionalProperties:

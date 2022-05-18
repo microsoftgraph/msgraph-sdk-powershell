@@ -61,7 +61,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },
-    "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}": {
+    "/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
+    },
+    "/users/{user-id}/devices/{device-id}/registeredOwners/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/CrossDeviceExperiences.yml"
     },

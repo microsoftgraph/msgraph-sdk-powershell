@@ -1597,6 +1597,81 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/manager/$ref':
+    get:
+      tags:
+        - users.directoryObject
+      summary: Get ref of manager from users
+      description: 'The user or contact that is this user''s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.'
+      operationId: users_GetGraphRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      responses:
+        '200':
+          description: Retrieved navigation property link
+          content:
+            application/json:
+              schema:
+                type: string
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    put:
+      tags:
+        - users.directoryObject
+      summary: Update the ref of navigation property manager in users
+      operationId: users_SetGraphRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+      requestBody:
+        description: New navigation property ref values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReferenceUpdateSchema'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.directoryObject
+      summary: Delete ref of navigation property manager for users
+      operationId: users_DeleteGraphRefManager
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
   '/users/{user-id}/memberOf':
     get:
       tags:
@@ -3801,6 +3876,8 @@ paths:
                 - body desc
                 - bodyLastModifiedDateTime
                 - bodyLastModifiedDateTime desc
+                - categories
+                - categories desc
                 - completedDateTime
                 - completedDateTime desc
                 - createdDateTime
@@ -3835,6 +3912,7 @@ paths:
                 - id
                 - body
                 - bodyLastModifiedDateTime
+                - categories
                 - completedDateTime
                 - createdDateTime
                 - dueDateTime
@@ -3845,6 +3923,7 @@ paths:
                 - reminderDateTime
                 - status
                 - title
+                - checklistItems
                 - extensions
                 - linkedResources
               type: string
@@ -3859,6 +3938,7 @@ paths:
             items:
               enum:
                 - '*'
+                - checklistItems
                 - extensions
                 - linkedResources
               type: string
@@ -3950,6 +4030,7 @@ paths:
                 - id
                 - body
                 - bodyLastModifiedDateTime
+                - categories
                 - completedDateTime
                 - createdDateTime
                 - dueDateTime
@@ -3960,6 +4041,7 @@ paths:
                 - reminderDateTime
                 - status
                 - title
+                - checklistItems
                 - extensions
                 - linkedResources
               type: string
@@ -3974,6 +4056,7 @@ paths:
             items:
               enum:
                 - '*'
+                - checklistItems
                 - extensions
                 - linkedResources
               type: string
@@ -3985,6 +4068,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.todoTask'
           links:
+            checklistItems:
+              operationId: users.todo.lists.Tasks.ListChecklistItems
+              parameters:
+                user-id: $request.path.user-id
+                todoTaskList-id: $request.path.todoTaskList-id
+                todoTask-id: $request.path.todoTask-id
             extensions:
               operationId: users.todo.lists.Tasks.ListExtensions
               parameters:
@@ -4067,6 +4156,306 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: todoTask
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/checklistItems':
+    get:
+      tags:
+        - users.todo
+      summary: Get checklistItems from users
+      operationId: users.todo.lists.tasks_ListChecklistItems
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - checkedDateTime
+                - checkedDateTime desc
+                - createdDateTime
+                - createdDateTime desc
+                - displayName
+                - displayName desc
+                - isChecked
+                - isChecked desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - checkedDateTime
+                - createdDateTime
+                - displayName
+                - isChecked
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.checklistItemCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.todo
+      summary: Create new navigation property to checklistItems for users
+      operationId: users.todo.lists.tasks_CreateChecklistItems
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checklistItem'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/todo/lists/{todoTaskList-id}/tasks/{todoTask-id}/checklistItems/{checklistItem-id}':
+    get:
+      tags:
+        - users.todo
+      summary: Get checklistItems from users
+      operationId: users.todo.lists.tasks_GetChecklistItems
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: checklistItem-id
+          in: path
+          description: 'key: id of checklistItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: checklistItem
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - checkedDateTime
+                - createdDateTime
+                - displayName
+                - isChecked
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.todo
+      summary: Update the navigation property checklistItems in users
+      operationId: users.todo.lists.tasks_UpdateChecklistItems
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: checklistItem-id
+          in: path
+          description: 'key: id of checklistItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: checklistItem
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.checklistItem'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.todo
+      summary: Delete navigation property checklistItems for users
+      operationId: users.todo.lists.tasks_DeleteChecklistItems
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: todoTaskList-id
+          in: path
+          description: 'key: id of todoTaskList'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTaskList
+        - name: todoTask-id
+          in: path
+          description: 'key: id of todoTask'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: todoTask
+        - name: checklistItem-id
+          in: path
+          description: 'key: id of checklistItem'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: checklistItem
         - name: If-Match
           in: header
           description: ETag
@@ -4810,7 +5199,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.assignedLicense'
-              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq and not).'
+              description: 'The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).'
             assignedPlans:
               type: array
               items:
@@ -4984,7 +5373,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith).'
+              description: 'A list of additional email addresses for the user; for example: [''bob@contoso.com'', ''Robert@fabrikam.com''].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, and counting empty collections).'
             passwordPolicies:
               type: string
               description: 'Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).'
@@ -5012,7 +5401,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             showInAddressList:
               type: boolean
               description: 'true if the Outlook global address list should contain this user, otherwise false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false. Supports $filter (eq, ne, not, in).'
@@ -5336,6 +5725,16 @@ components:
               nullable: true
           additionalProperties:
             type: object
+    ReferenceUpdateSchema:
+      type: object
+      properties:
+        '@odata.id':
+          type: string
+        '@odata.type':
+          type: string
+          nullable: true
+      additionalProperties:
+        type: object
     microsoft.graph.oAuth2PermissionGrant:
       allOf:
         - $ref: '#/components/schemas/microsoft.graph.entity'
@@ -5496,6 +5895,11 @@ components:
               type: string
               description: 'The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: ''2020-01-01T00:00:00Z''.'
               format: date-time
+            categories:
+              type: array
+              items:
+                type: string
+                nullable: true
             completedDateTime:
               $ref: '#/components/schemas/microsoft.graph.dateTimeTimeZone'
             createdDateTime:
@@ -5525,6 +5929,10 @@ components:
               type: string
               description: A brief description of the task.
               nullable: true
+            checklistItems:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.checklistItem'
             extensions:
               type: array
               items:
@@ -5535,6 +5943,33 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.linkedResource'
               description: A collection of resources linked to the task.
+          additionalProperties:
+            type: object
+    microsoft.graph.checklistItem:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: checklistItem
+          type: object
+          properties:
+            checkedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was finished.
+              format: date-time
+              nullable: true
+            createdDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: The date and time when the checklistItem was created.
+              format: date-time
+            displayName:
+              type: string
+              description: Field indicating the title of checklistItem.
+              nullable: true
+            isChecked:
+              type: boolean
+              description: State indicating whether the item is checked off or not.
+              nullable: true
           additionalProperties:
             type: object
     microsoft.graph.linkedResource:
@@ -7789,6 +8224,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    microsoft.graph.checklistItemCollectionResponse:
+      title: Collection of checklistItem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.checklistItem'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.linkedResourceCollectionResponse:
       title: Collection of linkedResource
       type: object
@@ -9688,7 +10135,6 @@ components:
               nullable: true
             owner:
               type: string
-              description: 'ID of the Group that owns the plan. A valid group must exist before this field can be set. After it is set, this property can’t be updated.'
               nullable: true
             title:
               type: string
@@ -10854,7 +11300,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'Email addresses for the group that direct to the same group mailbox. For example: [''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com'']. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).'
             renewedDateTime:
               pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
               type: string
@@ -13640,7 +14086,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -13649,7 +14095,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system.
+              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -16269,6 +16715,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.todoTaskCollectionResponse'
+    microsoft.graph.checklistItemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.checklistItemCollectionResponse'
     microsoft.graph.linkedResourceCollectionResponse:
       description: Retrieved collection
       content:

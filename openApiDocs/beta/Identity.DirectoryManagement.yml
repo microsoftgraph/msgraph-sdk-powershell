@@ -528,13 +528,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}':
-    get:
+  '/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref':
+    delete:
       tags:
         - administrativeUnits.directoryObject
-      summary: Get members from administrativeUnits
-      description: Users and groups that are members of this administrative unit. Supports $expand.
-      operationId: administrativeUnits_GetMembers
+      summary: Delete ref of navigation property members for administrativeUnits
+      operationId: administrativeUnits_DeleteGraphRefMembers
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -550,9 +549,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/administrativeUnits/{administrativeUnit-id}/members/$ref':
+    get:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Get ref of members from administrativeUnits
+      description: Users and groups that are members of this administrative unit. Supports $expand.
+      operationId: administrativeUnits_ListGraphRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -561,27 +596,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - administrativeUnits.directoryObject
+      summary: Create new navigation property ref to members for administrativeUnits
+      operationId: administrativeUnits_CreateGraphRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -4189,13 +4247,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/devices/{device-id}/registeredOwners/{directoryObject-id}':
-    get:
+  '/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref':
+    delete:
       tags:
         - devices.directoryObject
-      summary: Get registeredOwners from devices
-      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
-      operationId: devices_GetRegisteredOwners
+      summary: Delete ref of navigation property registeredOwners for devices
+      operationId: devices_DeleteGraphRefRegisteredOwners
       parameters:
         - name: device-id
           in: path
@@ -4211,9 +4268,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/devices/{device-id}/registeredOwners/$ref':
+    get:
+      tags:
+        - devices.directoryObject
+      summary: Get ref of registeredOwners from devices
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      operationId: devices_ListGraphRefRegisteredOwners
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -4222,27 +4315,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - devices.directoryObject
+      summary: Create new navigation property ref to registeredOwners for devices
+      operationId: devices_CreateGraphRefRegisteredOwners
+      parameters:
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -5451,13 +5567,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/directory/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}':
-    get:
+  '/directory/administrativeUnits/{administrativeUnit-id}/members/{directoryObject-id}/$ref':
+    delete:
       tags:
         - directory.administrativeUnit
-      summary: Get members from directory
-      description: Users and groups that are members of this administrative unit. Supports $expand.
-      operationId: directory.administrativeUnits_GetMembers
+      summary: Delete ref of navigation property members for directory
+      operationId: directory.administrativeUnits_DeleteGraphRefMembers
       parameters:
         - name: administrativeUnit-id
           in: path
@@ -5473,9 +5588,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directory/administrativeUnits/{administrativeUnit-id}/members/$ref':
+    get:
+      tags:
+        - directory.administrativeUnit
+      summary: Get ref of members from directory
+      description: Users and groups that are members of this administrative unit. Supports $expand.
+      operationId: directory.administrativeUnits_ListGraphRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -5484,27 +5635,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.administrativeUnit
+      summary: Create new navigation property ref to members for directory
+      operationId: directory.administrativeUnits_CreateGraphRefMembers
+      parameters:
+        - name: administrativeUnit-id
+          in: path
+          description: 'key: id of administrativeUnit'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: administrativeUnit
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -6899,113 +7073,12 @@ paths:
         version: 2021-01/DirectoryFeatureRolloutPolicies
         description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
       x-ms-docs-operation-type: operation
-  '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}':
-    get:
-      tags:
-        - directory.featureRolloutPolicy
-      summary: Get appliesTo from directory
-      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
-      operationId: directory.featureRolloutPolicies_GetAppliesTo
-      parameters:
-        - name: featureRolloutPolicy-id
-          in: path
-          description: 'key: id of featureRolloutPolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: featureRolloutPolicy
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-        - name: $select
-          in: query
-          description: Select properties to be returned
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - id
-                - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
-              type: string
-      responses:
-        '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2021-06-30T00:00:00.0000000+00:00'
-        date: '2021-03-05T00:00:00.0000000+00:00'
-        version: 2021-01/DirectoryFeatureRolloutPolicies
-        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
-      x-ms-docs-operation-type: operation
-    patch:
-      tags:
-        - directory.featureRolloutPolicy
-      summary: Update the navigation property appliesTo in directory
-      operationId: directory.featureRolloutPolicies_UpdateAppliesTo
-      parameters:
-        - name: featureRolloutPolicy-id
-          in: path
-          description: 'key: id of featureRolloutPolicy'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: featureRolloutPolicy
-        - name: directoryObject-id
-          in: path
-          description: 'key: id of directoryObject'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: directoryObject
-      requestBody:
-        description: New navigation property values
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/microsoft.graph.directoryObject'
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      deprecated: true
-      x-ms-deprecation:
-        removalDate: '2021-06-30T00:00:00.0000000+00:00'
-        date: '2021-03-05T00:00:00.0000000+00:00'
-        version: 2021-01/DirectoryFeatureRolloutPolicies
-        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
-      x-ms-docs-operation-type: operation
+  '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/{directoryObject-id}/$ref':
     delete:
       tags:
         - directory.featureRolloutPolicy
-      summary: Delete navigation property appliesTo for directory
-      operationId: directory.featureRolloutPolicies_DeleteAppliesTo
+      summary: Delete ref of navigation property appliesTo for directory
+      operationId: directory.featureRolloutPolicies_DeleteGraphRefAppliesTo
       parameters:
         - name: featureRolloutPolicy-id
           in: path
@@ -7026,9 +7099,104 @@ paths:
           description: ETag
           schema:
             type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
       responses:
         '204':
           description: Success
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2021-06-30T00:00:00.0000000+00:00'
+        date: '2021-03-05T00:00:00.0000000+00:00'
+        version: 2021-01/DirectoryFeatureRolloutPolicies
+        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
+      x-ms-docs-operation-type: operation
+  '/directory/featureRolloutPolicies/{featureRolloutPolicy-id}/appliesTo/$ref':
+    get:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Get ref of appliesTo from directory
+      description: Nullable. Specifies a list of directoryObjects that feature is enabled for.
+      operationId: directory.featureRolloutPolicies_ListGraphRefAppliesTo
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      deprecated: true
+      x-ms-deprecation:
+        removalDate: '2021-06-30T00:00:00.0000000+00:00'
+        date: '2021-03-05T00:00:00.0000000+00:00'
+        version: 2021-01/DirectoryFeatureRolloutPolicies
+        description: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies.
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directory.featureRolloutPolicy
+      summary: Create new navigation property ref to appliesTo for directory
+      operationId: directory.featureRolloutPolicies_CreateGraphRefAppliesTo
+      parameters:
+        - name: featureRolloutPolicy-id
+          in: path
+          description: 'key: id of featureRolloutPolicy'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: featureRolloutPolicy
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       deprecated: true
@@ -9494,13 +9662,12 @@ paths:
         nextLinkName: '@odata.nextLink'
         operationName: listMore
       x-ms-docs-operation-type: operation
-  '/directoryRoles/{directoryRole-id}/members/{directoryObject-id}':
-    get:
+  '/directoryRoles/{directoryRole-id}/members/{directoryObject-id}/$ref':
+    delete:
       tags:
         - directoryRoles.directoryObject
-      summary: Get members from directoryRoles
-      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
-      operationId: directoryRoles_GetMembers
+      summary: Delete ref of navigation property members for directoryRoles
+      operationId: directoryRoles_DeleteGraphRefMembers
       parameters:
         - name: directoryRole-id
           in: path
@@ -9516,9 +9683,45 @@ paths:
           schema:
             type: string
           x-ms-docs-key-type: directoryObject
-        - name: $select
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
           in: query
-          description: Select properties to be returned
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/directoryRoles/{directoryRole-id}/members/$ref':
+    get:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Get ref of members from directoryRoles
+      description: 'Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.'
+      operationId: directoryRoles_ListGraphRefMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
           style: form
           explode: false
           schema:
@@ -9527,27 +9730,50 @@ paths:
             items:
               enum:
                 - id
+                - id desc
                 - deletedDateTime
-              type: string
-        - name: $expand
-          in: query
-          description: Expand related entities
-          style: form
-          explode: false
-          schema:
-            uniqueItems: true
-            type: array
-            items:
-              enum:
-                - '*'
+                - deletedDateTime desc
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - directoryRoles.directoryObject
+      summary: Create new navigation property ref to members for directoryRoles
+      operationId: directoryRoles_CreateGraphRefMembers
+      parameters:
+        - name: directoryRole-id
+          in: path
+          description: 'key: id of directoryRole'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryRole
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+                type: object
+                additionalProperties:
+                  type: object
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
@@ -15807,7 +16033,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For example: ''SMTP: bob@contoso.com'', ''smtp: bob@sales.contoso.com''. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             surname:
               type: string
               description: 'Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)'
@@ -15980,7 +16206,7 @@ components:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -15995,7 +16221,7 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system.
+              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
             trustType:
               type: string
               description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
@@ -17679,6 +17905,18 @@ components:
           type: string
       additionalProperties:
         type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
     microsoft.graph.scopedRoleMembershipCollectionResponse:
       title: Collection of scopedRoleMembership
       type: object
@@ -18195,6 +18433,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
     microsoft.graph.scopedRoleMembershipCollectionResponse:
       description: Retrieved collection
       content:

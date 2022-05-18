@@ -89,7 +89,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/printerShares/{printerShare-id}/allowedGroups/{group-id}": {
+    "/print/printerShares/{printerShare-id}/allowedGroups/{group-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/printerShares/{printerShare-id}/allowedGroups/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
@@ -97,7 +101,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/printerShares/{printerShare-id}/allowedUsers/{user-id}": {
+    "/print/printerShares/{printerShare-id}/allowedUsers/{user-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/printerShares/{printerShare-id}/allowedUsers/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
@@ -253,7 +261,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/shares/{printerShare-id}/allowedGroups/{group-id}": {
+    "/print/shares/{printerShare-id}/allowedGroups/{group-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/shares/{printerShare-id}/allowedGroups/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
@@ -261,7 +273,11 @@
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
-    "/print/shares/{printerShare-id}/allowedUsers/{user-id}": {
+    "/print/shares/{printerShare-id}/allowedUsers/{user-id}/$ref": {
+      "apiVersion": "v1.0-beta",
+      "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
+    },
+    "/print/shares/{printerShare-id}/allowedUsers/$ref": {
       "apiVersion": "v1.0-beta",
       "originalLocation": "/openApiDocs/beta/Devices.CloudPrint.yml"
     },
