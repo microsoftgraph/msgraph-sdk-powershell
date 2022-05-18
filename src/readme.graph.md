@@ -391,6 +391,12 @@ directive:
           - Body
           - DueDateTime
           - Importance
+# Rename parameters.
+  - where:
+      variant: ^(Create|CreateViaIdentity|Update|UpdateViaIdentity)\d*$
+      parameter-name: Body
+    set:
+      parameter-name: BodyParameter
 # Rename cmdlets
   - where:
       verb: Invoke
