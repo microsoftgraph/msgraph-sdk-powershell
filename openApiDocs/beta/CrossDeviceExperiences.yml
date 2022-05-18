@@ -106,21 +106,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of userActivity
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.userActivity'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.userActivityCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -131,7 +117,6 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to activities for users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_CreateActivities
       parameters:
         - name: user-id
@@ -239,7 +224,6 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property activities in users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_UpdateActivities
       parameters:
         - name: user-id
@@ -273,7 +257,6 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property activities for users
-      description: The user's activities across devices. Read-only. Nullable.
       operationId: users_DeleteActivities
       parameters:
         - name: user-id
@@ -393,21 +376,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of activityHistoryItem
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.activityHistoryItemCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -418,7 +387,6 @@ paths:
       tags:
         - users.userActivity
       summary: Create new navigation property to historyItems for users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_CreateHistoryItems
       parameters:
         - name: user-id
@@ -536,7 +504,6 @@ paths:
       tags:
         - users.userActivity
       summary: Update the navigation property historyItems in users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_UpdateHistoryItems
       parameters:
         - name: user-id
@@ -577,7 +544,6 @@ paths:
       tags:
         - users.userActivity
       summary: Delete navigation property historyItems for users
-      description: Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
       operationId: users.activities_DeleteHistoryItems
       parameters:
         - name: user-id
@@ -697,134 +663,6 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
-  '/users/{user-id}/activities/{userActivity-id}/historyItems/{activityHistoryItem-id}/activity/$ref':
-    get:
-      tags:
-        - users.userActivity
-      summary: Get ref of activity from users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_GetGraphRefActivity
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-      responses:
-        '200':
-          description: Retrieved navigation property link
-          content:
-            application/json:
-              schema:
-                type: string
-          links:
-            historyItems:
-              operationId: users.activities.historyItems.Activity.ListHistoryItems
-              parameters:
-                user-id: $request.path.user-id
-                userActivity-id: $request.path.userActivity-id
-                activityHistoryItem-id: $request.path.activityHistoryItem-id
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    put:
-      tags:
-        - users.userActivity
-      summary: Update the ref of navigation property activity in users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_SetGraphRefActivity
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-      requestBody:
-        description: New navigation property ref values
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties:
-                type: object
-        required: true
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
-    delete:
-      tags:
-        - users.userActivity
-      summary: Delete ref of navigation property activity for users
-      description: Optional. NavigationProperty/Containment; navigation property to the associated activity.
-      operationId: users.activities.historyItems_DeleteGraphRefActivity
-      parameters:
-        - name: user-id
-          in: path
-          description: 'key: id of user'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: user
-        - name: userActivity-id
-          in: path
-          description: 'key: id of userActivity'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: userActivity
-        - name: activityHistoryItem-id
-          in: path
-          description: 'key: id of activityHistoryItem'
-          required: true
-          schema:
-            type: string
-          x-ms-docs-key-type: activityHistoryItem
-        - name: If-Match
-          in: header
-          description: ETag
-          schema:
-            type: string
-      responses:
-        '204':
-          description: Success
-        default:
-          $ref: '#/components/responses/error'
-      x-ms-docs-operation-type: operation
   '/users/{user-id}/devices':
     get:
       tags:
@@ -892,6 +730,8 @@ paths:
                 - isCompliant desc
                 - isManaged
                 - isManaged desc
+                - isManagementRestricted
+                - isManagementRestricted desc
                 - isRooted
                 - isRooted desc
                 - managementType
@@ -958,6 +798,7 @@ paths:
                 - hostnames
                 - isCompliant
                 - isManaged
+                - isManagementRestricted
                 - isRooted
                 - managementType
                 - mdmAppId
@@ -1005,21 +846,7 @@ paths:
               type: string
       responses:
         '200':
-          description: Retrieved navigation property
-          content:
-            application/json:
-              schema:
-                title: Collection of device
-                type: object
-                properties:
-                  value:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/microsoft.graph.device'
-                  '@odata.nextLink':
-                    type: string
-                additionalProperties:
-                  type: object
+          $ref: '#/components/responses/microsoft.graph.deviceCollectionResponse'
         default:
           $ref: '#/components/responses/error'
       x-ms-pageable:
@@ -1106,6 +933,7 @@ paths:
                 - hostnames
                 - isCompliant
                 - isManaged
+                - isManagementRestricted
                 - isRooted
                 - managementType
                 - mdmAppId
@@ -1261,6 +1089,1508 @@ paths:
         default:
           $ref: '#/components/responses/error'
       x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/commands':
+    get:
+      tags:
+        - users.device
+      summary: Get commands from users
+      description: Set of commands sent to this device.
+      operationId: users.devices_ListCommands
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - appServiceName
+                - appServiceName desc
+                - error
+                - error desc
+                - packageFamilyName
+                - packageFamilyName desc
+                - payload
+                - payload desc
+                - permissionTicket
+                - permissionTicket desc
+                - postBackUri
+                - postBackUri desc
+                - status
+                - status desc
+                - type
+                - type desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appServiceName
+                - error
+                - packageFamilyName
+                - payload
+                - permissionTicket
+                - postBackUri
+                - status
+                - type
+                - responsepayload
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - responsepayload
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.commandCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property to commands for users
+      operationId: users.devices_CreateCommands
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.command'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/commands/{command-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get commands from users
+      description: Set of commands sent to this device.
+      operationId: users.devices_GetCommands
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: command-id
+          in: path
+          description: 'key: id of command'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: command
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - appServiceName
+                - error
+                - packageFamilyName
+                - payload
+                - permissionTicket
+                - postBackUri
+                - status
+                - type
+                - responsepayload
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+                - responsepayload
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.command'
+          links:
+            responsepayload:
+              operationId: users.devices.Commands.GetResponsepayload
+              parameters:
+                user-id: $request.path.user-id
+                device-id: $request.path.device-id
+                command-id: $request.path.command-id
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.device
+      summary: Update the navigation property commands in users
+      operationId: users.devices_UpdateCommands
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: command-id
+          in: path
+          description: 'key: id of command'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: command
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.command'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.device
+      summary: Delete navigation property commands for users
+      operationId: users.devices_DeleteCommands
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: command-id
+          in: path
+          description: 'key: id of command'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: command
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/commands/{command-id}/responsepayload':
+    get:
+      tags:
+        - users.device
+      summary: Get responsepayload from users
+      operationId: users.devices.commands_GetResponsepayload
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: command-id
+          in: path
+          description: 'key: id of command'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: command
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.payloadResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/extensions':
+    get:
+      tags:
+        - users.device
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
+      operationId: users.devices_ListExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.extensionCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property to extensions for users
+      operationId: users.devices_CreateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/extensions/{extension-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get extensions from users
+      description: The collection of open extensions defined for the device. Read-only. Nullable.
+      operationId: users.devices_GetExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.extension'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.device
+      summary: Update the navigation property extensions in users
+      operationId: users.devices_UpdateExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.extension'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.device
+      summary: Delete navigation property extensions for users
+      operationId: users.devices_DeleteExtensions
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: extension-id
+          in: path
+          description: 'key: id of extension'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: extension
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/memberOf':
+    get:
+      tags:
+        - users.device
+      summary: Get memberOf from users
+      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+      operationId: users.devices_ListMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/memberOf/{directoryObject-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get memberOf from users
+      description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
+      operationId: users.devices_GetMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredOwners':
+    get:
+      tags:
+        - users.device
+      summary: Get registeredOwners from users
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      operationId: users.devices_ListRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredOwners/{directoryObject-id}/$ref':
+    delete:
+      tags:
+        - users.device
+      summary: Delete ref of navigation property registeredOwners for users
+      operationId: users.devices_DeleteGraphRefRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+        - name: '@id'
+          in: query
+          description: Delete Uri
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredOwners/$ref':
+    get:
+      tags:
+        - users.device
+      summary: Get ref of registeredOwners from users
+      description: 'The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.'
+      operationId: users.devices_ListGraphRefRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/StringCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property ref to registeredOwners for users
+      operationId: users.devices_CreateGraphRefRegisteredOwners
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property ref value
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: object
+        required: true
+      responses:
+        '201':
+          description: Created navigation property link.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: object
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredUsers':
+    get:
+      tags:
+        - users.device
+      summary: Get registeredUsers from users
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      operationId: users.devices_ListRegisteredUsers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/registeredUsers/{directoryObject-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get registeredUsers from users
+      description: 'Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.'
+      operationId: users.devices_GetRegisteredUsers
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/transitiveMemberOf':
+    get:
+      tags:
+        - users.device
+      summary: Get transitiveMemberOf from users
+      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+      operationId: users.devices_ListTransitiveMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - deletedDateTime
+                - deletedDateTime desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/transitiveMemberOf/{directoryObject-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get transitiveMemberOf from users
+      description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+      operationId: users.devices_GetTransitiveMemberOf
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: directoryObject-id
+          in: path
+          description: 'key: id of directoryObject'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: directoryObject
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - deletedDateTime
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/usageRights':
+    get:
+      tags:
+        - users.device
+      summary: Get usageRights from users
+      description: Represents the usage rights a device has been granted.
+      operationId: users.devices_ListUsageRights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - id desc
+                - catalogId
+                - catalogId desc
+                - serviceIdentifier
+                - serviceIdentifier desc
+                - state
+                - state desc
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogId
+                - serviceIdentifier
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/microsoft.graph.usageRightCollectionResponse'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+      x-ms-docs-operation-type: operation
+    post:
+      tags:
+        - users.device
+      summary: Create new navigation property to usageRights for users
+      operationId: users.devices_CreateUsageRights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+      requestBody:
+        description: New navigation property
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.usageRight'
+        required: true
+      responses:
+        '201':
+          description: Created navigation property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+  '/users/{user-id}/devices/{device-id}/usageRights/{usageRight-id}':
+    get:
+      tags:
+        - users.device
+      summary: Get usageRights from users
+      description: Represents the usage rights a device has been granted.
+      operationId: users.devices_GetUsageRights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: usageRight-id
+          in: path
+          description: 'key: id of usageRight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usageRight
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - id
+                - catalogId
+                - serviceIdentifier
+                - state
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              enum:
+                - '*'
+              type: string
+      responses:
+        '200':
+          description: Retrieved navigation property
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.usageRight'
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    patch:
+      tags:
+        - users.device
+      summary: Update the navigation property usageRights in users
+      operationId: users.devices_UpdateUsageRights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: usageRight-id
+          in: path
+          description: 'key: id of usageRight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usageRight
+      requestBody:
+        description: New navigation property values
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microsoft.graph.usageRight'
+        required: true
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
+    delete:
+      tags:
+        - users.device
+      summary: Delete navigation property usageRights for users
+      operationId: users.devices_DeleteUsageRights
+      parameters:
+        - name: user-id
+          in: path
+          description: 'key: id of user'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: user
+        - name: device-id
+          in: path
+          description: 'key: id of device'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: device
+        - name: usageRight-id
+          in: path
+          description: 'key: id of usageRight'
+          required: true
+          schema:
+            type: string
+          x-ms-docs-key-type: usageRight
+        - name: If-Match
+          in: header
+          description: ETag
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Success
+        default:
+          $ref: '#/components/responses/error'
+      x-ms-docs-operation-type: operation
 components:
   schemas:
     microsoft.graph.userActivity:
@@ -1385,7 +2715,7 @@ components:
           properties:
             accountEnabled:
               type: boolean
-              description: 'true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
+              description: 'true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.'
               nullable: true
             alternativeSecurityIds:
               type: array
@@ -1410,7 +2740,7 @@ components:
               nullable: true
             deviceId:
               type: string
-              description: 'Unique identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
+              description: 'Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).'
               nullable: true
             deviceMetadata:
               type: string
@@ -1459,6 +2789,9 @@ components:
               type: boolean
               description: 'true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).'
               nullable: true
+            isManagementRestricted:
+              type: boolean
+              nullable: true
             isRooted:
               type: boolean
               description: true if device is rooted; false if device is jail-broken. This can only be updated by Intune.
@@ -1487,13 +2820,13 @@ components:
               nullable: true
             operatingSystemVersion:
               type: string
-              description: 'The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
+              description: 'Operating system version of the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).'
               nullable: true
             physicalIds:
               type: array
               items:
                 type: string
-              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith).'
+              description: 'For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).'
             profileType:
               type: string
               description: 'The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.'
@@ -1508,10 +2841,10 @@ components:
               type: array
               items:
                 type: string
-              description: List of labels applied to the device by the system.
+              description: List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).
             trustType:
               type: string
-              description: 'Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
+              description: 'Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory'
               nullable: true
             kind:
               type: string
@@ -1546,7 +2879,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that this device is a member of. Read-only. Nullable. Supports $expand.
+              description: Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
             registeredOwners:
               type: array
               items:
@@ -1561,7 +2894,7 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/microsoft.graph.directoryObject'
-              description: Groups that the device is a member of. This operation is transitive. Supports $expand.
+              description: Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
             extensions:
               type: array
               items:
@@ -1572,6 +2905,83 @@ components:
               items:
                 $ref: '#/components/schemas/microsoft.graph.command'
               description: Set of commands sent to this device.
+          additionalProperties:
+            type: object
+    microsoft.graph.command:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: command
+          type: object
+          properties:
+            appServiceName:
+              type: string
+              nullable: true
+            error:
+              type: string
+              nullable: true
+            packageFamilyName:
+              type: string
+              nullable: true
+            payload:
+              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
+            permissionTicket:
+              type: string
+              nullable: true
+            postBackUri:
+              type: string
+              nullable: true
+            status:
+              type: string
+              nullable: true
+            type:
+              type: string
+              nullable: true
+            responsepayload:
+              $ref: '#/components/schemas/microsoft.graph.payloadResponse'
+          additionalProperties:
+            type: object
+    microsoft.graph.payloadResponse:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: payloadResponse
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.extension:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: extension
+          type: object
+          additionalProperties:
+            type: object
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+              nullable: true
+          additionalProperties:
+            type: object
+    microsoft.graph.usageRight:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: usageRight
+          type: object
+          properties:
+            catalogId:
+              type: string
+              description: Product id corresponding to the usage right.
+            serviceIdentifier:
+              type: string
+              description: Identifier of the service corresponding to the usage right.
+            state:
+              $ref: '#/components/schemas/microsoft.graph.usageRightState'
           additionalProperties:
             type: object
     microsoft.graph.entity:
@@ -1618,20 +3028,6 @@ components:
           description: 'Required. Short text description of the user''s unique activity (for example, document name in cases where an activity refers to document creation)'
       additionalProperties:
         type: object
-    microsoft.graph.directoryObject:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: directoryObject
-          type: object
-          properties:
-            deletedDateTime:
-              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
-              type: string
-              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
-              format: date-time
-              nullable: true
-          additionalProperties:
-            type: object
     microsoft.graph.alternativeSecurityId:
       title: alternativeSecurityId
       type: object
@@ -1720,69 +3116,123 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.usageRight:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: usageRight
-          type: object
-          properties:
-            catalogId:
-              type: string
-              description: Product id corresponding to the usage right.
-            serviceIdentifier:
-              type: string
-              description: Identifier of the service corresponding to the usage right.
-            state:
-              $ref: '#/components/schemas/microsoft.graph.usageRightState'
-          additionalProperties:
-            type: object
-    microsoft.graph.extension:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: extension
-          type: object
-          additionalProperties:
-            type: object
-    microsoft.graph.command:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: command
-          type: object
-          properties:
-            appServiceName:
-              type: string
-              nullable: true
-            error:
-              type: string
-              nullable: true
-            packageFamilyName:
-              type: string
-              nullable: true
-            payload:
-              $ref: '#/components/schemas/microsoft.graph.payloadRequest'
-            permissionTicket:
-              type: string
-              nullable: true
-            postBackUri:
-              type: string
-              nullable: true
-            status:
-              type: string
-              nullable: true
-            type:
-              type: string
-              nullable: true
-            responsepayload:
-              $ref: '#/components/schemas/microsoft.graph.payloadResponse'
-          additionalProperties:
-            type: object
-    odata.error:
+    microsoft.graph.payloadRequest:
+      title: payloadRequest
+      type: object
+      additionalProperties:
+        type: object
+    microsoft.graph.usageRightState:
+      title: usageRightState
+      enum:
+        - active
+        - inactive
+        - warning
+        - suspended
+        - unknownFutureValue
+      type: string
+    microsoft.graph.userActivityCollectionResponse:
+      title: Collection of userActivity
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.userActivity'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.ODataErrors.ODataError:
       required:
         - error
       type: object
       properties:
         error:
-          $ref: '#/components/schemas/odata.error.main'
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+      additionalProperties:
+        type: object
+    microsoft.graph.activityHistoryItemCollectionResponse:
+      title: Collection of activityHistoryItem
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.activityHistoryItem'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.deviceCollectionResponse:
+      title: Collection of device
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.device'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.commandCollectionResponse:
+      title: Collection of command
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.command'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.extensionCollectionResponse:
+      title: Collection of extension
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.extension'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.directoryObject'
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    StringCollectionResponse:
+      title: Collection of string
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            type: string
+        '@odata.nextLink':
+          type: string
+      additionalProperties:
+        type: object
+    microsoft.graph.usageRightCollectionResponse:
+      title: Collection of usageRight
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.usageRight'
+        '@odata.nextLink':
+          type: string
       additionalProperties:
         type: object
     microsoft.graph.imageInfo:
@@ -1806,28 +3256,7 @@ components:
           nullable: true
       additionalProperties:
         type: object
-    microsoft.graph.usageRightState:
-      title: usageRightState
-      enum:
-        - active
-        - inactive
-        - warning
-        - suspended
-        - unknownFutureValue
-      type: string
-    microsoft.graph.payloadRequest:
-      title: payloadRequest
-      type: object
-      additionalProperties:
-        type: object
-    microsoft.graph.payloadResponse:
-      allOf:
-        - $ref: '#/components/schemas/microsoft.graph.entity'
-        - title: payloadResponse
-          type: object
-          additionalProperties:
-            type: object
-    odata.error.main:
+    microsoft.graph.ODataErrors.MainError:
       required:
         - code
         - message
@@ -1839,18 +3268,16 @@ components:
           type: string
         target:
           type: string
+          nullable: true
         details:
           type: array
           items:
-            $ref: '#/components/schemas/odata.error.detail'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
         innererror:
-          type: object
-          additionalProperties:
-            type: object
-          description: The structure of this object is service-specific
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
       additionalProperties:
         type: object
-    odata.error.detail:
+    microsoft.graph.ODataErrors.ErrorDetails:
       required:
         - code
         - message
@@ -1862,15 +3289,69 @@ components:
           type: string
         target:
           type: string
+          nullable: true
       additionalProperties:
         type: object
+    microsoft.graph.ODataErrors.InnerError:
+      type: object
+      additionalProperties:
+        type: object
+      description: The structure of this object is service-specific
   responses:
+    microsoft.graph.userActivityCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.userActivityCollectionResponse'
     error:
       description: error
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/odata.error'
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    microsoft.graph.activityHistoryItemCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.activityHistoryItemCollectionResponse'
+    microsoft.graph.deviceCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.deviceCollectionResponse'
+    microsoft.graph.commandCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.commandCollectionResponse'
+    microsoft.graph.extensionCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.extensionCollectionResponse'
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    StringCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/StringCollectionResponse'
+    microsoft.graph.usageRightCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.usageRightCollectionResponse'
   parameters:
     top:
       name: $top
